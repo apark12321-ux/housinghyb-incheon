@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import cors from "cors";
 import dotenv from "dotenv";
+import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { POSTS } from "./src/data/posts";
@@ -179,20 +180,130 @@ app.post("/api/contact", async (req, res) => {
   });
 });
 
+// SEO 관련 메타 태그 동적 수립 헬퍼 함수
+function injectMetaTags(html: string, post: any): string {
+  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/post/${post.id}`;
+  const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 인천, 부동산, 청약, 전세대출";
+  
+  // Title 대량 치환
+  let updatedHtml = html.replace(
+    /<title>.*?<\/title>/i,
+    `<title>${post.title} | 하우징허브 인천</title>`
+  );
+
+  const safeTitle = post.title.replace(/"/g, '&quot;');
+  const safeExcerpt = post.excerpt.replace(/"/g, '&quot;');
+
+  // Meta 태그 명확화
+  const metaTags = `
+    <meta name="description" content="${safeExcerpt}" />
+    <meta name="keywords" content="${keywords.replace(/"/g, '&quot;')}" />
+    <!-- Open Graph / Meta -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta property="og:title" content="${safeTitle}" />
+    <meta property="og:description" content="${safeExcerpt}" />
+    <meta property="og:image" content="${post.image || ''}" />
+    <meta property="og:site_name" content="하우징허브 인천" />
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="${canonicalUrl}" />
+    <meta property="twitter:title" content="${safeTitle}" />
+    <meta property="twitter:description" content="${safeExcerpt}" />
+    <meta property="twitter:image" content="${post.image || ''}" />
+    <link rel="canonical" href="${canonicalUrl}" />
+  `;
+
+  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
+  return updatedHtml;
+}
+
+function injectDefaultMetaTags(html: string): string {
+  const title = "하우징허브 인천 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
+  const desc = "인천 지역 부동산, 청약 가점 계산, 전세대출 한도 시뮬레이션, 이사 가이드 및 등기부 독소조항 무상 방어 지식을 제공하는 임차인 안심 정주 포털입니다.";
+  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/`;
+  
+  let updatedHtml = html.replace(
+    /<title>.*?<\/title>/i,
+    `<title>${title}</title>`
+  );
+
+  const metaTags = `
+    <meta name="description" content="${desc}" />
+    <meta name="keywords" content="인천 부동산, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 송도 청약, 청라 아파트, 검단 임대주택" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${desc}" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" />
+    <link rel="canonical" href="${canonicalUrl}" />
+  `;
+
+  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
+  return updatedHtml;
+}
+
 // Vite Middleware & Static Assets 서빙
 async function startServer() {
+  let viteInstance: any = null;
+
+  const handleHtmlServing = async (req: express.Request, res: express.Response) => {
+    try {
+      const isProd = process.env.NODE_ENV === "production";
+      const indexHtmlPath = isProd 
+        ? path.join(process.cwd(), "dist", "index.html")
+        : path.join(process.cwd(), "index.html");
+
+      if (!fs.existsSync(indexHtmlPath)) {
+        return res.status(404).send("파일을 찾을 수 없습니다. 빌드를 먼저 수행해 주십시오.");
+      }
+
+      let html = fs.readFileSync(indexHtmlPath, "utf-8");
+
+      // 개발환경 모드 빌드
+      if (!isProd && viteInstance) {
+        html = await viteInstance.transformIndexHtml(req.originalUrl, html);
+      }
+
+      // 게시글 고유값 파싱 (경로 /post/:id 혹은 쿼리스트링 ?post=)
+      const postId = req.params.id || (req.query.post as string);
+      if (postId) {
+        const post = POSTS.find(p => p.id === postId);
+        if (post) {
+          html = injectMetaTags(html, post);
+          return res.send(html);
+        }
+      }
+
+      // 기본 메타 기입
+      html = injectDefaultMetaTags(html);
+      return res.send(html);
+    } catch (err) {
+      console.error("HTML 렌더링 서빙 오류:", err);
+      return res.status(500).send("서버 서빙 오류가 발생했습니다.");
+    }
+  };
+
   if (process.env.NODE_ENV !== "production") {
-    const vite = await createViteServer({
+    viteInstance = await createViteServer({
       server: { middlewareMode: true },
-      appType: "spa",
+      appType: "custom",
     });
-    app.use(vite.middlewares);
+
+    // 라우터 처리 우선순위
+    app.get("/", handleHtmlServing);
+    app.get("/post/:id", handleHtmlServing);
+
+    app.use(viteInstance.middlewares);
   } else {
+    // 운영용 라우터 처리 우선순위
+    app.get("/", handleHtmlServing);
+    app.get("/post/:id", handleHtmlServing);
+
     const distPath = path.join(process.cwd(), "dist");
-    app.use(express.static(distPath));
-    app.get("*", (req, res) => {
-      res.sendFile(path.join(distPath, "index.html"));
-    });
+    app.use(express.static(distPath, { index: false })); // 자동 index.html 방지하여 메타 인젝터 오버라이드 유도
+
+    app.get("*", handleHtmlServing);
   }
 
   app.listen(PORT, "0.0.0.0", () => {

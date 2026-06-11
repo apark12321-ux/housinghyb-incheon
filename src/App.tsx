@@ -58,6 +58,62 @@ export default function App() {
   // 상세 보기 모달 관련
   const [activePost, setActivePost] = useState<Post | null>(null);
 
+  // URL에서 초기 /post/xxx 혹은 ?post=xxx 값을 읽어 상세 포스터 세팅 및 popstate 감지 (SEO 및 서치콘솔 최적화용)
+  useEffect(() => {
+    const handleLocationChange = () => {
+      const pathname = window.location.pathname;
+      const params = new URLSearchParams(window.location.search);
+      let postId: string | null = null;
+
+      if (pathname.startsWith("/post/")) {
+        postId = pathname.replace("/post/", "");
+      } else {
+        postId = params.get("post");
+      }
+
+      if (postId) {
+        const found = POSTS.find(p => p.id === postId);
+        if (found) {
+          setActivePost(found);
+        } else {
+          setActivePost(null);
+        }
+      } else {
+        setActivePost(null);
+      }
+    };
+
+    // 첫 실행시 파싱
+    handleLocationChange();
+
+    window.addEventListener("popstate", handleLocationChange);
+    return () => {
+      window.removeEventListener("popstate", handleLocationChange);
+    };
+  }, []);
+
+  // activePost의 변화에 따른 브라우저 주소 구체적 동기화 (SEO 친화적인 Path-based Routing 및 서치콘솔 안심 주소 적용)
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    const isPostPath = pathname.startsWith("/post/");
+    const pathPostId = isPostPath ? pathname.replace("/post/", "") : null;
+
+    if (activePost) {
+      if (pathPostId !== activePost.id) {
+        // 주소를 /post/아이디 로 깔끔하고 세밀하게 바꿉니다.
+        window.history.pushState({ postId: activePost.id }, "", `/post/${activePost.id}`);
+      }
+      // 동적으로 문서 타이틀 및 메타태그 보완 (브라우저 수준)
+      document.title = `${activePost.title} | 하우징허브 인천`;
+    } else {
+      if (isPostPath) {
+        // 상세보기를 닫았으므로 메인 사이트 주소인 / 로 깔끔하게 복귀합니다.
+        window.history.pushState(null, "", "/");
+      }
+      document.title = "하우징허브 인천 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
+    }
+  }, [activePost]);
+
   // 자가진단 계산기 탭: 'loan' (대출한도) | 'score' (청약가점)
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
 
