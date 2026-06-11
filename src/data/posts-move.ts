@@ -146,11 +146,11 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>이제 전입신고는 스마트폰으로 3분이면 끝나요</h2>
       <p>스마트폰 정부24를 이용해 계약서 사진 업로드 후 주민센터 방문 없이 확정일자 결합 신고를 신속 처리하는 이점을 안내합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-21</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-12</p>
     `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-21",
+    date: "2026-06-12",
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["전입신고", "정부24", "확정일자"]
@@ -162,11 +162,11 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>2026년, 집은 따뜻하게 비워내는 방향으로</h2>
       <p>모래색 샌드 톤, 포근함을 선사하는 곡선 라운드 소가구 활용, 수직 플랜테리어 배치 등 모던 가성비 포인트 연출법을 다룹니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-22</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-07</p>
     `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-22",
+    date: "2026-06-07",
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["인테리어트렌드", "워밍뉴트럴", "플랜테리어"]
@@ -178,11 +178,11 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>이사 며칠 전에야 알아보면 늦어요</h2>
       <p>대형 주방 가전 무상 수거 연계신청(1599-0903), 지자체 대형 가구 스티커 온라인 출수 등 비용을 최소화하는 방출 공식을 제공합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-29</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-03</p>
     `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-29",
+    date: "2026-06-03",
     image: "https://images.unsplash.com/photo-1591129841117-3adfd313e34f?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["이사폐기물", "대형가구스티커", "무상수거"]

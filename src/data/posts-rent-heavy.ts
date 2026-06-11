@@ -112,11 +112,11 @@ export const POSTS_RENT_HEAVY: Post[] = [
     content: `
       <h2>전세 공급 절벽, 미리 알고 준비해야 해요</h2>
       <p>수도권 아파트 입주량이 전년 대비 18~48% 대폭 하락하게 되는 건설 착공 잔재 후폭풍 시기, 임차권 갱신 확보 및 공공임대 대안 선회를 다룬 가이드입니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-20</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-09</p>
     `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-20",
+    date: "2026-06-09",
     image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["입주물량", "전세공급절벽", "2026전세난"]
@@ -128,11 +128,11 @@ export const POSTS_RENT_HEAVY: Post[] = [
     content: `
       <h2>세입자가 있는 집, 대출이 생각보다 까다로워요</h2>
       <p>세세 낀 매매의 입점 거주지 등록 전입신고 의무 충돌 함정과 중도금/퇴거 보증금 일자 수급 불일치를 극복하는 정밀 대환 자금 실무 정비 가이드입니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-28</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-04</p>
     `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-28",
+    date: "2026-06-04",
     image: "https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["세낀매매", "전세낀매매", "주택담보대출"]

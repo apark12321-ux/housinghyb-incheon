@@ -317,7 +317,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-05-21",
+    date: "2026-06-10",
     image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["공공임대주택", "행복주택", "국민임대", "영구임대", "LH청약센터", "전세난대안", "무주택", "청약통장", "주거안정", "마이홈포털"]
@@ -566,11 +566,11 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <h3 id="section5">2026 청약 전략: 무작정 넣지 마라</h3>
       <p>본인의 가점과 자격, 그리고 자금 묶임 상태를 버텨낼 수 있는 상환능력을 세밀하게 체크하여 트랙을 선회할 줄 알아야 합니다.</p>
       <p>정확한 청약 자격과 가점은 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a>에서 제공합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-26</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-05</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-05-26",
+    date: "2026-06-05",
     image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["분양가상한제", "로또청약", "청약경쟁률", "실거주의무", "전매제한", "2026청약", "시세차익", "특별공급", "청약전략", "청약홈"]

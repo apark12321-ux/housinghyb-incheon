@@ -283,11 +283,11 @@ export const POSTS_FINANCE: Post[] = [
     content: `
       <h2>결혼이 대출에 불리해지는 역설</h2>
       <p>단독 소득 시 혜택 보장에서 혼인 신고 시 합산 기준 초과라는 주거 세테크 모순을 극복하는 대출 계약 실행 시점 조율 및 정책 트랙 정돈법을 설명합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-20</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-11</p>
     `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-20",
+    date: "2026-06-11",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["결혼페널티", "정책대출", "소득합산"]
@@ -315,11 +315,11 @@ export const POSTS_FINANCE: Post[] = [
     content: `
       <h2>단 하루로 한 해 세금이 갈립니다</h2>
       <p>한 해의 소유세를 결정하는 6월 1일 과세 시점 판정의 법적 권리 이전 원리, 5월 31일 등기 마감과 6월 2일 매수 타이밍을 다룹니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-23</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-06</p>
     `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-23",
+    date: "2026-06-06",
     image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["보유세", "재산세", "종합부동산세"]
