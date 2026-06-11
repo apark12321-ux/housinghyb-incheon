@@ -37,7 +37,7 @@ interface Message {
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
-  const [searchTerm, setSearchTerm] = useState<string>("Incheon");
+  const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   
   // 북마크 관리
@@ -224,15 +224,18 @@ export default function App() {
 
   // 피드 필터링 로직
   const filteredPosts = useMemo(() => {
-    return POSTS.filter(post => {
+    const list = POSTS.filter(post => {
+      if (!post) return false;
       const matchCategory = selectedCategory === "전체" || post.category === selectedCategory;
-      const matchTag = !selectedTag || post.hashtags?.includes(selectedTag);
+      const matchTag = !selectedTag || (post.hashtags && post.hashtags.includes(selectedTag));
       const matchSearch = !searchTerm || 
-        post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        post.hashtags?.some(tag => tag.toLowerCase().includes(searchTerm.toLowerCase()));
+        (post.title && post.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
+        (post.hashtags && post.hashtags.some(tag => tag && tag.toLowerCase().includes(searchTerm.toLowerCase())));
       return matchCategory && matchTag && matchSearch;
     });
+    // 최신 날짜 역순 기사 배치 (최신글 선두 배치 및 시각성 보장)
+    return [...list].sort((a, b) => b.date.localeCompare(a.date));
   }, [selectedCategory, selectedTag, searchTerm]);
 
   // 대출 계산 결과 산식 (실시간 정밀 모의 분석)
