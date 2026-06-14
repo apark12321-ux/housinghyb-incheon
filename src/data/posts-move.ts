@@ -19,7 +19,71 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <p>조명 교체, 따뜻한 톤 온 톤 페인트 질감 보강, 매트 손잡이 전자기 커버 교체, 시트 타일 부착 등 가벼운 투자로 분위기를 환골탈태시키는 홈 스타일링 가이드입니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-09</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-09",
@@ -35,7 +99,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>포장이사 견적 비교 완벽 가이드</h2>
       <p>사다리차 비용 정산, 폐기물 대형 전용 영수처리, 초과 인건비 방지 특약 등 계약 당시 확정해야 하는 이사 추가비 방어 공식을 기록했습니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-04-29</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-04-29",
@@ -51,7 +179,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>보증금 묶인 상태에서 안전하게 이사하는 법</h2>
       <p>이사를 서둘러야 하는데 대항력을 잃지 않도록 등기사항 전부증명서에 임차권을 보존하는 법원 신청 및 전자소송 코치서입니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-05</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-05",
@@ -67,7 +259,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>원룸·오피스텔 가성비 인테리어 완벽 가이드</h2>
       <p>닫힌 수납 8: 열린 수납 2 정렬, 간접 전등 결합, 무점착 이탈 시트지 등 1주택 자들의 가벼운 원룸 인테리어 플랜을 제시합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-09",
@@ -83,7 +339,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>전입신고와 확정일자, 단 하루도 놓치면 안 되는 이유</h2>
       <p>잔금일 이사 직후 정부24를 이용해 다음날 대항력 발생의 빈틈을 메우는 전월세 실거래 동시 처리 요령을 알기 쉽게 알려 드립니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-04</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-04",
@@ -99,7 +419,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>관리비 월 5만 원 절약하는 6가지 실전 방법</h2>
       <p>보일러 외출 모드 전용 세팅, 3단계 누진세 방지 대기 전력 멀티탭 분할, 지자체 수도계량기 절수형 장착 등 고정 소비세 정산법을 안내합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-02</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-02",
@@ -115,7 +499,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>등기부등본, 일년에 한 번은 떼보자고요</h2>
       <p>인터넷등기소 700원 즉시 열람: 근저당 추가 변동, 임대 소유주 양도 사실, 압류 가압류 전조 체크 포인트를 전달합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-17</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-17",
@@ -131,7 +579,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>5월 이사, 한 달 전부터 챙겨야 해요</h2>
       <p>성수기 전출입일 이삿짐 차량 및 평일 예약 우대 유도법, D-30부터 단계별 버리는 물품 분리 요령 등 성수기 회피 팁을 제시합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-19</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-19",
@@ -324,7 +836,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>2026년, 집은 따뜻하게 비워내는 방향으로</h2>
       <p>모래색 샌드 톤, 포근함을 선사하는 곡선 라운드 소가구 활용, 수직 플랜테리어 배치 등 모던 가성비 포인트 연출법을 다룹니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-07</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-06-07",
@@ -340,7 +916,71 @@ export const POSTS_MOVE: Post[] = [
       <h2>이사 며칠 전에야 알아보면 늦어요</h2>
       <p>대형 주방 가전 무상 수거 연계신청(1599-0903), 지자체 대형 가구 스티커 온라인 출수 등 비용을 최소화하는 방출 공식을 제공합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-03</p>
-    `,
+    
+
+<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
+  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
+    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
+      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+    </h3>
+    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
+      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+    </p>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
+    <p class="text-xs text-slate-600 leading-relaxed mb-4">
+      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
+      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
+      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 가해성 고액 대부 담보 근저당을 도외 밀실 실행한 내역이 없는지 이탈 여부를 최종 대수 검사해야 보증금 수전 사기를 완강히 예방할 수 있습니다.
+    </p>
+
+    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
+      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
+        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
+      </h5>
+      <p class="text-xs text-blue-900 leading-relaxed font-sans">
+        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 공인중개사에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
+      </p>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
+      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
+        <div>이사 일지 순서</div>
+        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
+        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+      </div>
+      <div class="grid grid-cols-3 p-2.5">
+        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
+        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
+      </div>
+    </div>
+
+    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
+    <p class="text-xs text-slate-600 leading-relaxed">
+      인천 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 낙인 처리하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 완강히 우회 해쳐나가는 핵심 가이드라인이 될 것입니다.
+    </p>
+
+    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
+      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+    </p>
+  </div>
+</div>
+`,
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-06-03",
