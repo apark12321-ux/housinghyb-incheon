@@ -414,6 +414,8 @@ export default function App() {
             setSelectedCategory("전체");
             setSelectedTag(null);
             setSearchTerm("");
+            setActivePost(null);
+            setActiveLegalTab(null);
           }}>
             <div className="w-10 h-10 rounded-xl bg-blue-600 flex items-center justify-center text-white shadow-md shadow-blue-500/20">
               <Building2 className="w-5.5 h-5.5" />
@@ -435,6 +437,8 @@ export default function App() {
                 onClick={() => {
                   setSelectedCategory(cat);
                   setSelectedTag(null);
+                  setActivePost(null);
+                  setActiveLegalTab(null);
                 }}
                 className={`px-4 py-2 text-sm font-medium rounded-lg transition-all ${
                   selectedCategory === cat
