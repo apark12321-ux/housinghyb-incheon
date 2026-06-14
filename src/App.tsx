@@ -648,97 +648,125 @@ export default function App() {
             {/* 본문 콘텐츠 스크롤 및 탭 렌더링 */}
             <div className="p-6 sm:p-10 space-y-6 bg-slate-50/50 min-h-[400px]">
               {activeLegalTab === "privacy" && (
-                <div className="space-y-6 text-sm text-slate-700 leading-relaxed text-left">
+                <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base font-bold text-slate-900">개인정보처리방침 (Privacy Policy)</h4>
-                    <p className="text-xs text-slate-400 mt-1">공고일자 및 시행일자: 2026년 6월 9일</p>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">개인정보처리방침 (Comprehensive Privacy Policy)</h4>
+                    <p className="text-xs text-slate-400 mt-1">공고일자 및 시행일자: 2026년 6월 14일 (최종 고장 수정본)</p>
                   </div>
                   
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">제 1조 (목적 및 기본원칙)</h5>
-                    <p className="text-xs">
-                      하우징허브 인천(이하 '포털')은 이용자의 개인정보 수집 및 보호를 매우 중요하게 생각하며, 대한민국의 개인정보보호법 및 글로벌 프라이버시 표준 가이드라인을 완전하게 준수합니다. 본 방침은 포털이 이용자의 데이터를 보관, 가공, 보호하는 절차를 안내합니다.
+                    <h5 className="font-bold text-slate-900 text-sm">제 1조 (기본이념 및 목적)</h5>
+                    <p className="leading-relaxed">
+                      하우징허브 인천(이하 ‘본 포털’)은 귀하의 소중한 사생활 및 개인정보 보호를 언제나 최우선 가치로 추구합니다. 대한민국 개인정보보호법 실무 규정에 준하여 수립되었으며, 글로벌 프라이버시 데이터 표준인 유럽연합 일반개인정보보호법(GDPR) 및 미국 캘리포니아 소비자프라이버시법(CCPA)의 권장 사항을 널리 포괄적으로 수용하고 있습니다. 본 보호 처리 기안은 본 주거 안심 보도 포털이 기동하는 동안 수집하는 인프라 데이터 및 상담 문의 내역이 어떤 방식과 공정으로 암호화 관리, 제어 및 영구 파기되는지를 입체적으로 투명 고시합니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">제 2조 (개인정보 수집 항목 및 가공 범위)</h5>
-                    <p className="text-xs">
-                      포털은 회원제 가입 유무 및 본인인증을 원칙적으로 강제하지 않는 완전 공개형 안심 주거 매뉴얼로서, 단순 서비스 조회와 웹 자가진단 연산기 사용 중에 이용자의 실명, 주민등록번호, 연락처 등의 민감 정보를 <strong>일체 수집하거나 서버에 강제 기록하지 않습니다.</strong> 문의하기 등을 통해 남겨주신 연락 메일(Email)은 오직 질문 회신의 용도로만 사용하며 24시간 동안 임시 접수 처리 후 지체 없이 영구 파기합니다.
+                    <h5 className="font-bold text-slate-900 text-sm">제 2조 (개인정보의 처리 수집 범위 및 무저장 기본 원칙)</h5>
+                    <p className="leading-relaxed">
+                      본 포털은 이용자들에게 임차 대항력 보정용 점수 연산기, 대출 규제 주택 LTV 모의 가중기, 주거 가이드라인 등의 질적 고도 조언을 <strong>완전 개방된 비회원제 무상 형태</strong>로 공급하는 것을 철칙으로 삼고 있습니다.
                     </p>
-                  </section>
-
-                  <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">제 3조 (Google AdSense 광고 프로그램 및 제3자 쿠키 고지)</h5>
-                    <p className="text-xs">
-                      본 사이트는 사용성과 질적 서비스 충족을 위한 인프라 유지를 위해 구글(Google Inc.)을 포함한 제3자 제공업체의 광고 게재용 <strong>DoubleClick DART 쿠키(Cookie)</strong>를 활용할 수 있습니다.
-                    </p>
-                    <ul className="list-disc pl-5 text-xs text-slate-500 space-y-1">
-                      <li>구글을 포함한 제3자 제공업체는 사용자가 당사 웹사이트 또는 기타 다른 인터넷 사이트를 과거에 방문한 기록을 바탕으로 개개인 맞춤형 맞춤식 광고를 송출합니다.</li>
-                      <li>쿠키를 사용하는 것은 구글과 구글의 파트너사가 부적절한 로그 수집 없이 맞춤식 광고를 게재하기 위한 기술적 표준 조치입니다.</li>
-                      <li>이용자는 브라우저 설정에 진입하여 쿠키 저장을 거부할 수 있으며, Google 광고 설정 또는 www.aboutads.info를 통해 개인정보 맞춤형 정보수집 거부 설정 조치를 수시로 이관할 수 있습니다.</li>
+                    <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1">
+                      <li><strong>비수집의 원칙:</strong> 사용자가 LTV 시뮬레이터 및 취득세 연산기 이용 시 타이핑하는 자산 가격, 연간 근로 소득 수치, 대출액 등은 일시적인 모바일 클라이언트(React state) 상에서 휘발적으로 기동될 뿐, 어떠한 가상 서버 데이터베이스로도 통신 추출되거나 영구 저장되지 않습니다.</li>
+                      <li><strong>1:1 상담 시의 한계 수집:</strong> 유일하게 상담 질의 채널(Contact Center) 접수 시 작성되는 <em>성함, 이메일 주소, 자가 기입 피드백 의견 내용</em>은 고객 응대가 가닿는 단말 피드백 용도로만 소지되며, 접수 즉시 SSL 암호화 방화벽을 터널링하여 안심 보관 후 수렴 답변이 이뤄지는 24시간 도정 즉시 전면 영구적(물리적 로우 파일 포맷 복구 불능화)으로 소멸 조치 처리됩니다.</li>
                     </ul>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">제 4조 (데이터의 안전성 보증을 위한 암호화 조치)</h5>
-                    <p className="text-xs flex items-center space-x-1.5">
-                      <CheckCircle2 className="w-4 h-4 text-green-600" />
-                      <span>포털로 전송되는 모든 데이터 및 모의 진산 연산 데이터는SSL/TLS 웹보안 프로토콜 암호화 처리 후 통신되어 제3자 탈취 위협으로부터 안전하게 방어됩니다.</span>
+                    <h5 className="font-bold text-slate-900 text-sm">제 3조 (Google AdSense 광고 프로그램 운용 및 서드파티 맞춤 쿠키 고지)</h5>
+                    <p className="leading-relaxed">
+                      본 포털은 지속 가능한 안심 주거 매뉴얼 공급 인프라의 전용 관리 비용 채택을 도모하기 위해 Google Inc.(구글 엘엘씨) 및 공인 제3자 협력 광고 송출사의 DoubleClick 맞춤식 스폰서십 전용 광고 알고리즘을 부착 활용하고 있으며, 이에 귀속된 쿠키(Cookie) 기술 방식을 원만히 기술합니다.
+                    </p>
+                    <div className="bg-slate-100 p-4 rounded-xl border border-slate-205 leading-relaxed space-y-2 text-slate-600 mt-1.5 font-sans">
+                      <p><strong>1. 맞춤 데이터 수집:</strong> 구글 협력업체들은 사용자가 본 주거 서비스 포털은 물론 도외의 다양한 웹페이지들을 과거에 방문 탐색한 쿠키 및 이동 이력 흔적 가치(DART 쿠키 기술)를 자동 추적 인지하여 본 사용자에게 실효가 극대화된 맞춤형 타겟 광고를 노출하게 됩니다.</p>
+                      <p><strong>2. 로그 관리 비강제성:</strong> 어떠한 장치에서도 사용자의 본질적 보안 주소나 기밀 데이터는 가로채지지 않으며 단순한 카테고리 선점 로그 패턴만 활용됩니다.</p>
+                      <p><strong>3. 쿠키 거절 가동 조치:</strong> 사용자는 언제든지 이용하시는 크롬, 엣지, 사파리 등의 브라우저 옵션 메뉴에 진입하여 [쿠키 및 기타 사이트 데이터 차단] 권한 지정을 클릭함으로써 무단 추적을 완전히 일절 강제 차단할 수 있습니다. 또한 글로벌 표준인 구글 맞춤형 광고 설정 사이트 혹은 Network Advertising Initiative 거절 권리 도구(<a href="https://www.aboutads.info" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">www.aboutads.info</a>)를 상시 이관 적용할 수 있습니다.</p>
+                    </div>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">제 4조 (데이터 전송 구간의 첨단 SSL 암호 프로토콜 적용)</h5>
+                    <p className="leading-relaxed">
+                      상담 센터에서 제공되는 전용 데이터 교환 구간은 최첨단 웹 보안 통신 표준 규격인 <strong>SSL/TLS 대칭 가상 터널 키 암호화</strong> 처리를 전반 완비하여 인터넷 상의 어떠한 스니핑이나 가상 오염 소지로부터 완강히 보호함을 선포합니다.
+                    </p>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">제 5조 (개인정보 의무 주체의 권리 보증 및 소통 연락 기점)</h5>
+                    <p className="leading-relaxed">
+                      이용자는 24시간 가동되는 개인정보 파기 요구를 행사할 자격이 주어집니다. 본 포털의 프라이버시 안심 위원장 연락 창구는 이메일 <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong> 로 매칭 편성되어 접수 즉시 철저히 교감하겠습니다.
                     </p>
                   </section>
                 </div>
               )}
 
               {activeLegalTab === "terms" && (
-                <div className="space-y-6 text-sm text-slate-700 leading-relaxed text-left">
+                <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base font-bold text-slate-900">이용약관 (Terms of Service)</h4>
-                    <p className="text-xs text-slate-400 mt-1">최종 개정: 2026년 6월 9일</p>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">서비스 이용약관 (Standard Terms of Service)</h4>
+                    <p className="text-xs text-slate-400 mt-1">최종 공시 및 개정 일자: 2026년 6월 14일</p>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">개요 및 효력 선언</h5>
-                    <p className="text-xs">
-                      본 약관은 하우징허브 인천 포털에서 무상 제공하는 인천 송도, 청라, 검단 신도시 등 주택 계약 자가진단 툴, 이사 지식, 등기부 독소 계약 방어 가이드 등에 관한 이용 규칙을 규정합니다. 사용자는 본 사이트에 접속하여 지식을 정독함에 따라 이 약관 규범 전반에 동의한 것으로 간주합니다.
+                    <h5 className="font-bold text-slate-900 text-sm">제 1조 (목적 및 서비스 범위 선포)</h5>
+                    <p className="leading-relaxed">
+                      본 약관은 하우징허브 인천 포털에서 무상 공급하는 인천 송도, 청라, 검단, 계양 신도시 등 주거 점포 계약 자가 구제 진산 시뮬레이터 프로그램, 이사 시 안전 등기 관리 수칙 지식 가이드, 독소 부동산 조약 피하기 레슨 등에 관한 구체적 이용 질서 및 주체 간 책임을 엄밀히 규정합니다. 사용자는 본 시스템을 관람 개별 인가하거나 가치를 취한 즉시 약관 조항 전체에 순결히 영구 동의 수여한 것으로 법적 귀속 선언됩니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">글 및 저작 가치의 보호</h5>
-                    <p className="text-xs">
-                      하우징허브 인천이 보증하는 66선 전문 기고문, 무주택 지표, 대출 이자 역산 알고리즘 및 UI 레이아웃의 소유권은 하우징허브 인천에 전속되어 보호받습니다. 사용자는 무단 발췌 도용이나 불법 복제로 다른 매체에 전파할 수 없으며 위반 시 구상권 배상 조치가 취해집니다.
+                    <h5 className="font-bold text-slate-900 text-sm">제 2조 (저작가치 보호 및 지적재산권 한계)</h5>
+                    <p className="leading-relaxed">
+                      하우징허브 인천 포털 내 게재된 임차 전조 가인 66선 기사, 독점 보도 데이터 에디토리얼, LTV 세목 이자 역산 기법 기술 자바스크립트 수식, 반응형 비서 UI 구성 일체 등의 재산적 권리 및 특허 무형물 가치는 하우징허브 인천 개발 편집팀에 엄정히 전속 지분 귀속됩니다.
+                    </p>
+                    <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1">
+                      <li>사용자는 저작권자의 사전 정식 라이선스 날인 동의서 없이 상업적 매체나 타사 주거 블로그, 부동산 카페 등에 대단위 긁어가기 백도어 유통 및 무단 인쇄 복제를 완전 엄금합니다.</li>
+                      <li>다만, 비영리 목적의 공인 인프라 활용, 임대차 가해 사기 예방 공익 활동, 친구 및 소중한 친가 가족들에게 안심 가이드 주소를 단순 복사 전송하는 공유 권능은 널리 무상으로 허락 격려됩니다.</li>
+                    </ul>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">제 3조 (연산 시뮬레이터 활용 상의 제한 및 보칙)</h5>
+                    <p className="leading-relaxed">
+                      본 주거 사이트가 행하는 시중 금융 예측 데이터 한도는 단순 모의 점수 데이터에 기초합니다. 개개 이용자의 주택 신용 스코어 지수, 연체 가중 내역, 정부의 기습적 고가 주택 금융제한 긴급조치 발령 여부에 따라 각 금융 창구 실무 수리 내역과 엄밀한 시차가 성립할 수 있습니다. 사용자는 반드시 가결정 계약 집행 단계 직전, 공인 시중 은행 전용 부서 대부 실무 상담사 혹은 정식 소속 감정평가사 주체를 통해 크로스 체크를 선험해야 합니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">서비스 제공의 한계와 성격</h5>
-                    <p className="text-xs">
-                      본 포털이 연산해 제공하는 점수 결과와 예측 금액은 모의 참고용 계산으로써 금융기관의 최종 승인 내용과 상이할 수 있으며, 이로 인한 직접적인 피해에 포털은 법적 구속 보정을 부과하지 않습니다.
+                    <h5 className="font-bold text-slate-900 text-sm">제 4조 (관할 법원의 규정 및 특약)</h5>
+                    <p className="leading-relaxed">
+                      본 약관 조항 및 사이트 정보 수혜 과정상 성립 또는 논란되는 소송 전반에 관해서는 하우징허브 인천 본부를 관장하는 대한민국 <strong>인천지방법원</strong>을 유일무이한 합의 전속 관할 거점으로 선언합니다.
                     </p>
                   </section>
                 </div>
               )}
 
               {activeLegalTab === "disclaimer" && (
-                <div className="space-y-6 text-sm text-slate-700 leading-relaxed text-left">
+                <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base font-bold text-slate-900">포털 정보이용 면책고지 (Disclaimer)</h4>
-                    <p className="text-xs text-slate-450 mt-1">공시일자: 2026년 6월 9일</p>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">정보이용 면책고지 및 리스크 선언문 (Formal Disclaimer Cover)</h4>
+                    <p className="text-xs text-slate-450 mt-1">최종 개정 및 유효 효력 발효일: 2026년 6월 14일</p>
                   </div>
 
-                  <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200/50 flex items-start space-x-3 text-xs text-amber-950">
+                  <div className="p-4 bg-amber-50 rounded-2xl border border-amber-200/50 flex items-start space-x-3 text-xs text-amber-950 font-sans">
                     <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <p className="font-bold">반드시 정독해 주시기 바랍니다.</p>
-                      <p className="leading-relaxed">당 포털의 자가 계산 도구의 판단 지식과 LTV 계산 결과는 단순 모의 진단용 자료입니다. 시중 은행의 여신 자격과 금리 변동 요건에 비추어 차이가 극대화될 수 있습니다.</p>
+                      <p className="font-bold">⚠️ 임대인/임차인 계약 성사 전 최종 민형사 책임 경고 고지</p>
+                      <p className="leading-relaxed">하우징허브 인천 포털의 지식 보도는 선의의 목적 아래 배포되는 무상 공익 정보에 불과합니다. 귀하가 집행하시는 어떤 법리 계약의 결과에 대해서도 본 포털 관계자, 보도 주간사, AI 개발팀 등은 어떠한 직접적 법적 재정 보증이나 구제 변제 지급 보증을 일절 수립하지 않음을 엄히 공표 고지합니다.</p>
                     </div>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900">가치 예측 정보 오류 가능성 선언</h5>
-                    <p className="text-xs">
-                      하우징허브 포털은 국토부 고시에 귀속하여 최고 품질의 기사와 가이드를 배포하지만, 수시로 개정되는 부동산 및 주택법 지침 전반을 일체의 지체 없이 완벽하게 반영하지 못할 수 있습니다. 본 사이트 계산 및 정보를 토대로 수행하는 재산적 판단, 계약 귀속 전반에 관해 당 포털은 보상 혹은 법리 책임을 보증하지 않음을 고지합니다.
+                    <h5 className="font-bold text-slate-900 text-sm">제 1조 (국토교통부 수시 개정 정책 시차 및 자격 요건의 한계)</h5>
+                    <p className="leading-relaxed">
+                      본 서비스는 최대한 공기업 및 유관 연계 부처 공식 고사 일자에 결부하여 면밀히 사실 교정을 처리 중이나, 실시간 급개정 부동산 세액법, 취득 규율 수치 지형이 즉시 일사천리로 반영 완료 수립되지 못하여 발생하는 단기 수치 격차에 법리 책임을 보증하지 않습니다. 세입자 및 소유 이관 신청자 본인은 계약 조약 명시전 필수적으로 관할 주민동 자치 기획관, 구청 토지과 대장 공문, 혹은 현장 담당 노련 공인중개사의 실효 인허 확인 도장을 병행 점검해 나가시기를 권고합니다.
+                    </p>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">제 2조 (AI 주거 비서 솔루션 생성 정보의 참고 제한성)</h5>
+                    <p className="leading-relaxed">
+                      본 주거 포털에 내장 작동되는 생성적 인공지능 주택 컨설턴트 요법 및 인천 최적 입지 점수 추천 정보는 신소 기술 시너지의 보조 구상으로서, 고차원적 인과 맥락 번역 가치를 지니나 완강한 영구적 팩트를 정사하지 않을 성격이 희박 수준 내포됩니다. AI 추천 정보는 온당히 조력 장치 지식으로 고이 활용하시되 중대하고 막대한 예산 이송 투자 거래 결정 시점에서는 다각의 등본 및 현지 답사 등을 교차 대조 판단하셔야 합니다.
                     </p>
                   </section>
                 </div>

@@ -103,7 +103,7 @@ export const POSTS_MOVE: Post[] = [
     category: "이사-인테리어",
     author: "편집팀",
     date: "2026-05-02",
-    image: "https://images.unsplash.com/photo-1493663284031-b7eb5d1c0a3a?auto=format&fit=crop&q=80&w=800",
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["관리비절감", "전기요금절약", "난방비절감"]
   },
