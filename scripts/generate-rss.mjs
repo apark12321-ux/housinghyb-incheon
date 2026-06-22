@@ -17,10 +17,16 @@ const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
 const SITE_DESC = "청약·전월세·이사·대출 등 실생활 주거 정보를 제공하는 하우징허브입니다.";
 
-// 배포 URL과 동일한 slugify (제목 그대로 활용)
+// 배포 URL과 동일한 slugify (단어 사이 대시 적용)
 function slugify(title) {
   if (!title) return "";
-  return title.trim();
+  return title
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_:\-\+·\.\?,\!\[\]\(\)"']/g, "-")
+    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
 // HTML 태그 제거 (description 평문화)

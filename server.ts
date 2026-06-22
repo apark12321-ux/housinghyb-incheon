@@ -180,9 +180,20 @@ app.post("/api/contact", async (req, res) => {
   });
 });
 
+function slugify(title: string): string {
+  if (!title) return "";
+  return title
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_:\-\+·\.\?,\!\[\]\(\)"']/g, "-")
+    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
 // SEO 관련 메타 태그 동적 수립 헬퍼 함수
 function injectMetaTags(html: string, post: any): string {
-  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/post/${encodeURIComponent(post.title)}`;
+  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/post/${encodeURIComponent(slugify(post.title))}`;
   const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 인천, 부동산, 청약, 전세대출";
   
   // Title 대량 치환
@@ -269,7 +280,7 @@ async function startServer() {
       const rawPostId = req.params.id || (req.query.post as string);
       if (rawPostId) {
         const decodedPostId = decodeURIComponent(rawPostId);
-        const post = POSTS.find(p => p.title === decodedPostId || p.id === decodedPostId);
+        const post = POSTS.find(p => p.title === decodedPostId || p.id === decodedPostId || slugify(p.title) === decodedPostId);
         if (post) {
           html = injectMetaTags(html, post);
           return res.send(html);

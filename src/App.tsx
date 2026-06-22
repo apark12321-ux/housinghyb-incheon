@@ -28,7 +28,7 @@ import {
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
-import { Post, Category } from "./types";
+import { Post, Category, slugify } from "./types";
 
 interface Message {
   role: "user" | "model";
@@ -76,8 +76,10 @@ export default function App() {
       }
 
       if (postIdentifier) {
-        // 제목 혹은 ID로 둘 다 대칭 매칭을 시도하여 하위 호환성을 안심 보장합니다.
-        const found = POSTS.find(p => p.title === postIdentifier || p.id === postIdentifier);
+        // 제목, ID, 또는 slugify된 제목이 일치하는지 찾아 하위 호환성과 정확성을 모두 보장합니다.
+        const found = POSTS.find(
+          p => p.title === postIdentifier || p.id === postIdentifier || slugify(p.title) === postIdentifier
+        );
         if (found) {
           setActivePost(found);
         } else {
@@ -104,9 +106,10 @@ export default function App() {
     const pathPostIdentifier = isPostPath ? decodeURIComponent(pathname.replace("/post/", "")) : null;
 
     if (activePost) {
-      if (pathPostIdentifier !== activePost.title) {
-        // 주소를 /post/제목 으로 사용자 연동 규칙에 맞춰 깔끔히 변경합니다.
-        window.history.pushState({ postTitle: activePost.title }, "", `/post/${activePost.title}`);
+      const targetSlug = slugify(activePost.title);
+      if (pathPostIdentifier !== targetSlug) {
+        // 주소를 /post/slug-제목 으로 깔끔하게 변경합니다.
+        window.history.pushState({ postTitle: activePost.title }, "", `/post/${targetSlug}`);
       }
       // 동적으로 문서 타이틀 및 메타태그 보완 (브라우저 수준)
       document.title = `${activePost.title} | 하우징허브 인천`;

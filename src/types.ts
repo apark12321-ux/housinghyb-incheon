@@ -12,3 +12,14 @@ export interface Post {
 }
 
 export type Category = Post["category"];
+
+export function slugify(title: string): string {
+  if (!title) return "";
+  return title
+    .trim()
+    .toLowerCase()
+    .replace(/[\s_:\-\+·\.\?,\!\[\]\(\)"']/g, "-")
+    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
