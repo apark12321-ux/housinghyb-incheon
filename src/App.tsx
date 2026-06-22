@@ -126,12 +126,111 @@ export default function App() {
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
 
   // --- 법률 및 애드센스 정책 안심 확보 상태 (인라인 페이지화) ---
-  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | null>(null);
+  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | "indexing" | null>(null);
 
   // 페이지 전환 시 스크롤 상단 이동
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activePost, activeLegalTab]);
+  // --- Google Indexing API 관련 상태 ---
+  const [isIndexingConfigured, setIsIndexingConfigured] = useState<boolean>(false);
+  const [indexingClientEmail, setIndexingClientEmail] = useState<string>("");
+  const [indexingHistory, setIndexingHistory] = useState<any[]>([]);
+  const [credentialsText, setCredentialsText] = useState<string>("");
+  const [isConfiguringLoading, setIsConfiguringLoading] = useState<boolean>(false);
+  const [isSubmitUrlLoading, setIsSubmitUrlLoading] = useState<boolean>(false);
+  const [indexingFeedbackMessage, setIndexingFeedbackMessage] = useState<string>("");
+  const [customIndexingUrl, setCustomIndexingUrl] = useState<string>("");
+
+  const fetchIndexingStatus = async () => {
+    try {
+      const res = await fetch("/api/indexing/status");
+      if (res.ok) {
+        const data = await res.json();
+        setIsIndexingConfigured(data.isConfigured);
+        setIndexingClientEmail(data.clientEmail || "");
+        setIndexingHistory(data.history || []);
+      }
+    } catch (err) {
+      console.error("Failed to fetch Indexing API status:", err);
+    }
+  };
+
+  useEffect(() => {
+    if (activeLegalTab === "indexing") {
+      fetchIndexingStatus();
+    }
+  }, [activeLegalTab]);
+
+  const handleSaveCredentials = async () => {
+    if (!credentialsText.trim()) {
+      alert("서비스 계정 JSON 내용을 입력해 주세요.");
+      return;
+    }
+    setIsConfiguringLoading(true);
+    setIndexingFeedbackMessage("");
+    try {
+      const res = await fetch("/api/indexing/credentials", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ credentialsJson: credentialsText })
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || "자격 증명 등록 실패");
+      
+      alert(data.message);
+      setCredentialsText("");
+      fetchIndexingStatus();
+    } catch (err: any) {
+      alert(err.message || "설정 저장 중 에러가 발생했습니다.");
+    } finally {
+      setIsConfiguringLoading(false);
+    }
+  };
+
+  const handleDeleteCredentials = async () => {
+    if (!confirm("정말 등록된 Google Indexing API 자격증명을 삭제하시겠습니까?")) return;
+    setIsConfiguringLoading(true);
+    try {
+      const res = await fetch("/api/indexing/credentials", { method: "DELETE" });
+      const data = await res.json();
+      alert(data.message);
+      fetchIndexingStatus();
+    } catch (err: any) {
+      alert(err.message || "설정 삭제 중 에러가 발생했습니다.");
+    } finally {
+      setIsConfiguringLoading(false);
+    }
+  };
+
+  const handlePublishUrl = async (url: string, type: "URL_UPDATED" | "URL_DELETED" = "URL_UPDATED") => {
+    if (!url.trim()) {
+      alert("색인요청을 보낼 URL을 지정해 주세요.");
+      return;
+    }
+    setIsSubmitUrlLoading(true);
+    setIndexingFeedbackMessage(`색인 전송 처리 중: ${url}`);
+    try {
+      const res = await fetch("/api/indexing/publish", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ url, type })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        setIndexingFeedbackMessage(`❌ 구글 호출 실패: ${data.details || data.error}`);
+      } else {
+        setIndexingFeedbackMessage(`✅ 구글 Indexing API 전송 성공!\nGoogle 메타에 즉각 반영되어 봇 크롤링이 우선 배정됩니다.\n응답 ID: ${data.log?.id || "성공"}`);
+        setCustomIndexingUrl("");
+      }
+      fetchIndexingStatus();
+    } catch (err: any) {
+      setIndexingFeedbackMessage(`❌ 전송 실패: ${err.message}`);
+    } finally {
+      setIsSubmitUrlLoading(false);
+    }
+  };
+
   const [contactName, setContactName] = useState<string>("");
   const [contactEmail, setContactEmail] = useState<string>("");
   const [contactCategory, setContactCategory] = useState<string>("general");
@@ -654,6 +753,16 @@ export default function App() {
               >
                 ✉️ 1:1 안심 상담 및 문의
               </button>
+              <button
+                onClick={() => { setActiveLegalTab("indexing"); setIsContactSubmitted(false); }}
+                className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg flex items-center justify-center space-x-1.5 ${
+                  activeLegalTab === "indexing" 
+                    ? "bg-white text-blue-600 shadow-xs" 
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+                }`}
+              >
+                🚀 구글 색인 대행 (SEO API)
+              </button>
             </div>
 
             {/* 본문 콘텐츠 스크롤 및 탭 렌더링 */}
@@ -884,6 +993,239 @@ export default function App() {
                       </div>
                     </form>
                   )}
+                </div>
+              )}
+
+              {activeLegalTab === "indexing" && (
+                <div className="space-y-8 text-left font-sans">
+                  {/* 헤더 섹션 */}
+                  <div className="border-b border-slate-200 pb-4">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase">C안 가동안</span>
+                      <h4 className="text-base sm:text-lg font-bold text-slate-900">Google Indexing API 기동 및 전용 검색색인 제어 센터</h4>
+                    </div>
+                    <p className="text-xs text-slate-500 mt-1">
+                      구글 서치콘솔 수동 등록 지연 시, 구글 Indexing API 연동을 즉각 실행하여 포커싱 글 발행 즉시 크롤러 봇이 패치해가도록 자동화하는 실전 시스템입니다.
+                    </p>
+                  </div>
+
+                  {/* 전략 가이드 브리핑 */}
+                  <div className="bg-blue-900 text-white rounded-2xl p-5 sm:p-6 space-y-4 shadow-md">
+                    <div className="flex items-center space-x-2.5">
+                      <TrendingUp className="w-5 h-5 text-blue-300" />
+                      <h5 className="font-bold text-sm sm:text-base">구글 애드센스 승인 및 순위 선점 '선택과 집중' 전략 기획</h5>
+                    </div>
+                    <p className="text-xs text-slate-200 leading-relaxed font-sans">
+                      네 개 필터드 사이트 심사가 동치 지연되거나 전면 반려될 조짐이 있을 시, 가장 완성도가 높고 기획 완성도가 고도화된 <strong>주력 단일 사이트(예: zip9.kr 및 nutube.kr) 한 곳에 리소스와 트래픽을 100% 올인 집중</strong>하는 전략으로 즉각 선회하십시오. 단 한 사이트만 최종 관문(애드센스 고시)을 뚫어내면, 나머지 보조 영역들은 '하위 도메인(Subdomain) 연결' 기법을 태워 전방위 무검토 전면 승인으로 끌어올릴 수 있어 고도 성장이 편리합니다.
+                    </p>
+                  </div>
+
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    {/* 크리덴셜 입력 창 */}
+                    <div className="bg-white rounded-2xl p-5 border border-slate-200 space-y-4 shadow-xs">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                          <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">1</span>
+                          <h6 className="font-bold text-xs text-slate-800">구글 서비스 계정 키값(JSON) 등록</h6>
+                        </div>
+                        {isIndexingConfigured ? (
+                          <span className="text-[10px] bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-md font-bold">● 연결됨</span>
+                        ) : (
+                          <span className="text-[10px] bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-1 rounded-md font-bold">● 연결되지 않음</span>
+                        )}
+                      </div>
+
+                      <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                        Google Cloud Console에서 서비스 계정을 발급받은 뒤, <strong className="text-slate-700">Indexing API 권한 활성화 및 소유권 확인</strong> 조치를 완료하고 다운로드 받으신 비공개 키 JSON 텍스트 전문을 아래에 그대로 기입해 주십시오. (보관은 서버측 별도 안심 계정에 격리 보관됩니다)
+                      </p>
+
+                      {isIndexingConfigured && (
+                        <div className="bg-slate-50 p-2.5 rounded-lg text-slate-600 text-[10px] font-mono border border-slate-150 space-y-1">
+                          <p className="font-semibold text-slate-700">✓ 등록된 서비스 계정 이메일:</p>
+                          <p className="overflow-x-auto select-all">{indexingClientEmail || "분석 완료"}</p>
+                        </div>
+                      )}
+
+                      <div className="space-y-1">
+                        <textarea
+                          placeholder='{"type": "service_account", "project_id": ...}'
+                          rows={6}
+                          value={credentialsText}
+                          onChange={(e) => setCredentialsText(e.target.value)}
+                          className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-[10px] font-mono focus:ring-1 focus:ring-blue-500 focus:outline-none focus:bg-white leading-normal font-sans"
+                        />
+                      </div>
+
+                      <div className="flex gap-2">
+                        <button
+                          onClick={handleSaveCredentials}
+                          disabled={isConfiguringLoading}
+                          className="flex-1 bg-slate-900 hover:bg-slate-850 transition-colors text-white font-bold text-xs py-2.5 px-4 rounded-lg cursor-pointer"
+                        >
+                          {isConfiguringLoading ? "등록 처리 중..." : "새 키 적용 및 활성화"}
+                        </button>
+                        {isIndexingConfigured && (
+                          <button
+                            onClick={handleDeleteCredentials}
+                            disabled={isConfiguringLoading}
+                            className="bg-red-50 hover:bg-red-100 transition-colors text-red-650 font-bold text-xs py-2.5 px-4 rounded-lg border border-red-200 cursor-pointer0"
+                          >
+                            인증 키 파기
+                          </button>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* 수동 / 즉가 핑 송신 모듈 */}
+                    <div className="bg-white rounded-2xl p-5 border border-slate-200 space-y-4 shadow-xs">
+                      <div className="flex items-center space-x-2">
+                        <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">2</span>
+                        <h6 className="font-bold text-xs text-slate-800">구글 크롤러 즉각 소환 (색인 타겟 수동 전송)</h6>
+                      </div>
+
+                      <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                        작성한 포털 글 주소 혹은 사이트 주소를 기입하고 [색인 갱신 핑 전송] 버튼을 클릭해 보세요. 구글봇 크롤러를 타킷 주소로 즉시 긴급 소집하게 합니다.
+                      </p>
+
+                      <div className="space-y-3 pt-1">
+                        <div className="space-y-1">
+                          <label className="text-[10px] font-bold text-slate-600">대상 지정 전체 주소 (URL)</label>
+                          <div className="flex gap-2">
+                            <input
+                              type="text"
+                              value={customIndexingUrl}
+                              onChange={(e) => setCustomIndexingUrl(e.target.value)}
+                              placeholder="https://zip9.kr/post/인천에서-전세-못-구할-때"
+                              className="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-lg text-xs font-mono focus:ring-1 focus:ring-blue-500 focus:outline-none focus:bg-white"
+                            />
+                            <button
+                              onClick={() => handlePublishUrl(customIndexingUrl, "URL_UPDATED")}
+                              disabled={isSubmitUrlLoading || !isIndexingConfigured}
+                              className="bg-blue-600 hover:bg-blue-500 disabled:opacity-40 text-white font-bold text-xs px-4 py-2 rounded-lg cursor-pointer whitespace-nowrap"
+                            >
+                              색인 갱신 요청
+                            </button>
+                          </div>
+                        </div>
+
+                        <div className="flex justify-between items-center bg-slate-50 p-2.5 rounded-lg text-[10px] text-slate-500 font-sans border border-slate-100">
+                          <span>보도 일시 폐쇄 시 해제 요청도 지원합니다:</span>
+                          <button
+                            onClick={() => handlePublishUrl(customIndexingUrl, "URL_DELETED")}
+                            disabled={isSubmitUrlLoading || !isIndexingConfigured || !customIndexingUrl}
+                            className="text-[10px] text-red-650 hover:underline font-bold cursor-pointer"
+                          >
+                            검수 제외/삭제 요청(DELETE)
+                          </button>
+                        </div>
+                      </div>
+
+                      {indexingFeedbackMessage && (
+                        <div className={`p-3 rounded-lg text-xs leading-relaxed font-mono whitespace-pre-wrap ${
+                          indexingFeedbackMessage.includes("❌") ? "bg-red-50 text-red-705 border border-red-150" : "bg-emerald-50 text-emerald-850 border border-emerald-150"
+                        }`}>
+                          {indexingFeedbackMessage}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* 포스트별 간편 색요 대행 타임라인 */}
+                  <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4 shadow-xs font-sans text-left">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">3</span>
+                      <h6 className="font-bold text-xs text-slate-800">보도 아티클 간편 1-Click 구글봇 소출소 (신속 연결)</h6>
+                    </div>
+                    <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                      현재 등록된 보도 기사 중 구글 색인을 우선 타격할 아티클을 지정하면, 각 포스팅의 정밀 배포 Slug 주소로 즉각 구글 API 타격을 대행합니다.
+                    </p>
+
+                    <div className="max-h-60 overflow-y-auto border border-slate-200 rounded-xl divide-y divide-slate-100 bg-white">
+                      {POSTS.map(post => {
+                        const postUrl = `https://zip9.kr/post/${slugify(post.title)}`;
+                        return (
+                          <div key={post.id} className="p-3 hover:bg-slate-50 flex items-center justify-between text-xs gap-4 transition-colors">
+                            <div className="space-y-1 truncate text-left flex-1 font-sans">
+                              <p className="font-bold text-slate-800 truncate">{post.title}</p>
+                              <p className="text-[10px] text-slate-400 font-mono truncate select-all">{postUrl}</p>
+                            </div>
+                            <div className="flex gap-2 shrink-0">
+                              <button
+                                onClick={() => {
+                                  setCustomIndexingUrl(postUrl);
+                                  handlePublishUrl(postUrl, "URL_UPDATED");
+                                }}
+                                disabled={isSubmitUrlLoading || !isIndexingConfigured}
+                                className="bg-slate-100 hover:bg-blue-50 hover:text-blue-600 text-slate-705 font-bold text-[10px] px-2.5 py-1.5 rounded-md border border-slate-200 hover:border-blue-200 cursor-pointer transition-all"
+                              >
+                                색인 즉각 대행 🚀
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+
+                  {/* API 실시간 전송 전적 피드백 */}
+                  <div className="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 space-y-4 shadow-xs">
+                    <div className="flex items-center space-x-2">
+                      <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">4</span>
+                      <h6 className="font-bold text-xs text-slate-800">구글 Indexing API 실시간 색인 요청 로그 레코드 (최신 100건)</h6>
+                    </div>
+                    <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                      서버 측에서 발행 즉시 발생하거나 수동 가중된 실시간 구글 크롤러 색인 대기 지라 내역입니다.
+                    </p>
+
+                    {indexingHistory.length === 0 ? (
+                      <div className="p-8 text-center border-2 border-dashed border-slate-200 rounded-2xl text-xs text-slate-400">
+                        아직 접수된 구글 Indexing API 전송 내역이 없습니다. 가상의 갱신 단추를 누르거나 첫 색인 요청을 보내보세요.
+                      </div>
+                    ) : (
+                      <div className="overflow-x-auto">
+                        <table className="w-full text-xs text-left text-slate-550 border-collapse">
+                          <thead className="text-[11px] text-slate-700 bg-slate-50 font-bold uppercase font-sans">
+                            <tr className="border-b border-slate-250">
+                              <th className="p-3">요청시각</th>
+                              <th className="p-3">타겟 주소 (URL)</th>
+                              <th className="p-3">분류</th>
+                              <th className="p-3">상태</th>
+                              <th className="p-3">구글 API 응답</th>
+                            </tr>
+                          </thead>
+                          <tbody className="divide-y divide-slate-100">
+                            {indexingHistory.map((log) => (
+                              <tr key={log.id} className="hover:bg-slate-50/50 font-sans text-left">
+                                <td className="p-3 font-mono text-[10px] text-slate-600 whitespace-nowrap">
+                                  {new Date(log.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", second: "2-digit" })}
+                                </td>
+                                <td className="p-3 truncate max-w-xs font-mono text-[10.5px] text-slate-700 select-all font-semibold">
+                                  {log.url}
+                                </td>
+                                <td className="p-3 whitespace-nowrap">
+                                  <span className={`px-2 py-0.5 rounded-md text-[10px] font-bold ${
+                                    log.type === "URL_UPDATED" ? "bg-blue-50 text-blue-700" : "bg-red-50 text-red-700"
+                                  }`}>
+                                    {log.type === "URL_UPDATED" ? "색인요청" : "삭제요청"}
+                                  </span>
+                                </td>
+                                <td className="p-3 whitespace-nowrap">
+                                  <span className={`px-2 py-0.5 rounded-sm text-[10px] font-bold font-mono ${
+                                    log.status === "success" ? "text-emerald-700 bg-emerald-50" : "text-rose-700 bg-rose-50"
+                                  }`}>
+                                    {log.status === "success" ? "SUCCESS" : "ERROR"}
+                                  </span>
+                                </td>
+                                <td className="p-3 font-mono text-[10px] max-w-xxs truncate text-slate-500">
+                                  {log.status === "success" ? "LatestnotifyOk" : log.error || "통신 오류"}
+                                </td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )}
+                  </div>
                 </div>
               )}
             </div>
@@ -1632,6 +1974,14 @@ export default function App() {
                     >
                       <span>1:1 문의 제안 접수</span>
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
+                    </button>
+                  </li>
+                  <li>
+                    <button 
+                      onClick={() => { setActivePost(null); setActiveLegalTab("indexing"); }}
+                      className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none flex items-center space-x-1 font-semibold text-blue-300"
+                    >
+                      <span>🚀 구글 색인(SEO) 도구</span>
                     </button>
                   </li>
                 </ul>
