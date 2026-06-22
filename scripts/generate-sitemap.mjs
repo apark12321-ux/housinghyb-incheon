@@ -7,6 +7,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+import { POSTS } from "../src/data/posts.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -16,30 +17,12 @@ const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출
 
 function slugify(title) {
   if (!title) return "";
-  return title
-    .trim()
-    .toLowerCase()
-    .replace(/[\s_]+/g, "-")
-    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 25)
-    .replace(/-+$/g, "");
+  return title.trim();
 }
 
-// constants.ts에서 게시물 id, title, date를 정규식으로 추출 (가볍게)
+// POSTS 리스트 반환
 function loadPosts() {
-  const file = resolve(ROOT, "src/constants.ts");
-  if (!existsSync(file)) return [];
-  const src = readFileSync(file, "utf8");
-  const posts = [];
-  // 각 객체 블록을 찾는 단순한 매칭
-  const blockRe = /\{\s*id:\s*"([^"]+)"[\s\S]*?title:\s*"((?:[^"\\]|\\.)*)"[\s\S]*?date:\s*"([^"]+)"/g;
-  let m;
-  while ((m = blockRe.exec(src)) !== null) {
-    posts.push({ id: m[1], title: m[2].replace(/\\"/g, '"'), date: m[3] });
-  }
-  return posts;
+  return POSTS;
 }
 
 function xmlEscape(s) {

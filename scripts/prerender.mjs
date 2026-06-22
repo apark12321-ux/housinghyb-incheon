@@ -10,6 +10,7 @@
 import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, resolve, join } from "path";
+import { POSTS } from "../src/data/posts.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -22,15 +23,7 @@ const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출
 
 function slugify(title) {
   if (!title) return "";
-  return title
-    .trim()
-    .toLowerCase()
-    .replace(/[\s_]+/g, "-")
-    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 25)
-    .replace(/-+$/g, "");
+  return title.trim();
 }
 
 function stripHtml(html) {
@@ -82,31 +75,10 @@ function htmlEscape(s) {
 }
 
 /**
- * src/constants.ts에서 MOCK_POSTS 배열을 정규식으로 파싱.
- * 본 스크립트는 build 후 실행되므로 TS 컴파일 없이 raw 텍스트 처리.
+ * POSTS를 반환합니다.
  */
 function loadPosts() {
-  const file = resolve(ROOT, "src/constants.ts");
-  if (!existsSync(file)) return [];
-  const src = readFileSync(file, "utf8");
-  const posts = [];
-  // 각 객체 블록을 큰 단위로 매칭
-  const blockRe =
-    /\{\s*id:\s*"([^"]+)"[\s\S]*?title:\s*"((?:[^"\\]|\\.)*)"[\s\S]*?excerpt:\s*"((?:[^"\\]|\\.)*)"[\s\S]*?content:\s*`([\s\S]*?)`[\s\S]*?category:\s*"([^"]+)"[\s\S]*?author:\s*"([^"]+)"[\s\S]*?date:\s*"([^"]+)"[\s\S]*?image:\s*"([^"]+)"/g;
-  let m;
-  while ((m = blockRe.exec(src)) !== null) {
-    posts.push({
-      id: m[1],
-      title: m[2].replace(/\\"/g, '"'),
-      excerpt: m[3].replace(/\\"/g, '"'),
-      content: m[4],
-      category: m[5],
-      author: m[6],
-      date: m[7],
-      image: m[8],
-    });
-  }
-  return posts;
+  return POSTS;
 }
 
 /**
@@ -306,7 +278,7 @@ function articleJsonLd(post) {
       url: SITE_URL,
       logo: { "@type": "ImageObject", url: `${SITE_URL}/icon.svg` },
     },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/post/${slug}` },
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/post/${encodeURIComponent(slug)}` },
     articleSection: post.category,
     inLanguage: "ko-KR",
   };
@@ -430,13 +402,13 @@ function main() {
   // 4) 게시물 페이지 (가장 중요)
   for (const post of posts) {
     const slug = slugify(post.title) || post.id;
-    const path = `post/${encodeURIComponent(slug)}/index.html`;
+    const path = `post/${slug}/index.html`;
     const html = renderPage(
       template,
       {
         title: `${post.title} | ${SITE_NAME}`,
         description: post.excerpt || stripHtml(sanitizeContent(post.content)).slice(0, 155),
-        canonical: `${SITE_URL}/post/${slug}`,
+        canonical: `${SITE_URL}/post/${encodeURIComponent(slug)}`,
         ogType: "article",
         ogImage: post.image,
       },

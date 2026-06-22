@@ -8,6 +8,7 @@
 import { readFileSync, writeFileSync, existsSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+import { POSTS } from "../src/data/posts.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
@@ -16,18 +17,10 @@ const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
 const SITE_DESC = "청약·전월세·이사·대출 등 실생활 주거 정보를 제공하는 하우징허브입니다.";
 
-// 배포 URL과 동일한 slugify (slice 25 포함 — 현재 배포 URL과 일치시킴)
+// 배포 URL과 동일한 slugify (제목 그대로 활용)
 function slugify(title) {
   if (!title) return "";
-  return title
-    .trim()
-    .toLowerCase()
-    .replace(/[\s_]+/g, "-")
-    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 25)
-    .replace(/-+$/g, "");
+  return title.trim();
 }
 
 // HTML 태그 제거 (description 평문화)
@@ -51,25 +44,9 @@ function xmlEscape(str) {
     .replace(/'/g, "&apos;");
 }
 
-// constants.ts에서 게시물 추출
+// POSTS 리스트 반환
 function loadPosts() {
-  const file = resolve(ROOT, "src/constants.ts");
-  if (!existsSync(file)) return [];
-  const src = readFileSync(file, "utf8");
-  const posts = [];
-  const blockRe = /\{\s*id:\s*"([^"]+)"[\s\S]*?title:\s*"((?:[^"\\]|\\.)*)"[\s\S]*?excerpt:\s*"((?:[^"\\]|\\.)*)"[\s\S]*?content:\s*`([\s\S]*?)`[\s\S]*?category:\s*"([^"]+)"[\s\S]*?date:\s*"([^"]+)"/g;
-  let m;
-  while ((m = blockRe.exec(src)) !== null) {
-    posts.push({
-      id: m[1],
-      title: m[2].replace(/\\"/g, '"'),
-      excerpt: m[3].replace(/\\"/g, '"'),
-      content: m[4],
-      category: m[5],
-      date: m[6],
-    });
-  }
-  return posts;
+  return POSTS;
 }
 
 function buildRss(posts) {

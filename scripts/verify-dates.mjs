@@ -13,11 +13,12 @@
 import { readFileSync } from "fs";
 import { fileURLToPath } from "url";
 import { dirname, resolve } from "path";
+import { POSTS } from "../src/data/posts.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-// 오늘 날짜 (KST 기준 — 운영자가 한국에 있으므로 한국시간으로 판단)
+// 오늘 날짜 (KST 기준)
 const now = new Date();
 const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000); // UTC+9
 const TODAY = new Date(Date.UTC(kstNow.getUTCFullYear(), kstNow.getUTCMonth(), kstNow.getUTCDate()));
@@ -27,23 +28,15 @@ function parseDate(s) {
   return new Date(Date.UTC(y, m - 1, d));
 }
 
-const src = readFileSync(resolve(ROOT, "src/constants.ts"), "utf8");
-
-// 글 블록 분리
-const blockRe = /\{\s*id:\s*"([^"]+)"[\s\S]*?date:\s*"(\d{4}-\d{2}-\d{2})"[\s\S]*?\}(?=\s*,\s*\{\s*id:|\s*\];)/g;
-// content와 date를 함께 잡기 위해 별도 추출
-const objRe = /\{\s*id:\s*"([^"]+)"([\s\S]*?)\}(?=\s*,\s*\{\s*id:|\s*\];)/g;
-
 const problems = [];
 let count = 0;
-let m;
-while ((m = objRe.exec(src)) !== null) {
-  const id = m[1];
-  const body = m[2];
-  const dateM = body.match(/date:\s*"(\d{4}-\d{2}-\d{2})"/);
-  if (!dateM) continue;
+
+for (const post of POSTS) {
+  const id = post.id;
+  const content = post.content || "";
+  const pubDate = post.date;
+  if (!pubDate) continue;
   count++;
-  const pubDate = dateM[1];
   const pub = parseDate(pubDate);
 
   // 1) 미래 발행일
@@ -54,7 +47,7 @@ while ((m = objRe.exec(src)) !== null) {
   }
 
   // 2) & 3) 본문 최종 업데이트 날짜
-  const updM = body.match(/최종 업데이트:\s*(\d{4}-\d{2}-\d{2})/);
+  const updM = content.match(/최종 업데이트:\s*(\d{4}-\d{2}-\d{2})/) || content.match(/발행일:\s*(\d{4}-\d{2}-\d{2})/);
   if (updM) {
     const upd = parseDate(updM[1]);
     if (upd < pub) {
@@ -72,7 +65,7 @@ const todayStr = TODAY.toISOString().slice(0, 10);
 if (problems.length > 0) {
   console.error(`\n❌ [날짜 검증 실패] 오늘=${todayStr}, ${count}개 글 중 ${problems.length}건 문제:`);
   problems.forEach((p) => console.error("   " + p));
-  console.error("\n→ src/constants.ts의 날짜를 수정한 뒤 다시 빌드하세요.\n");
+  console.error("\n→ src/data/ 내의 날짜를 수정한 뒤 다시 빌드하세요.\n");
   process.exit(1);
 } else {
   console.log(`✅ [날짜 검증 통과] 오늘=${todayStr}, ${count}개 글 모두 정상 (미래날짜·모순 없음)`);
