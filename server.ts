@@ -182,7 +182,7 @@ app.post("/api/contact", async (req, res) => {
 
 // SEO 관련 메타 태그 동적 수립 헬퍼 함수
 function injectMetaTags(html: string, post: any): string {
-  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/post/${post.id}`;
+  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/post/${encodeURIComponent(post.title)}`;
   const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 인천, 부동산, 청약, 전세대출";
   
   // Title 대량 치환
@@ -266,9 +266,10 @@ async function startServer() {
       }
 
       // 게시글 고유값 파싱 (경로 /post/:id 혹은 쿼리스트링 ?post=)
-      const postId = req.params.id || (req.query.post as string);
-      if (postId) {
-        const post = POSTS.find(p => p.id === postId);
+      const rawPostId = req.params.id || (req.query.post as string);
+      if (rawPostId) {
+        const decodedPostId = decodeURIComponent(rawPostId);
+        const post = POSTS.find(p => p.title === decodedPostId || p.id === decodedPostId);
         if (post) {
           html = injectMetaTags(html, post);
           return res.send(html);

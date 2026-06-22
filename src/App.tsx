@@ -64,16 +64,20 @@ export default function App() {
     const handleLocationChange = () => {
       const pathname = window.location.pathname;
       const params = new URLSearchParams(window.location.search);
-      let postId: string | null = null;
+      let postIdentifier: string | null = null;
 
       if (pathname.startsWith("/post/")) {
-        postId = pathname.replace("/post/", "");
+        postIdentifier = decodeURIComponent(pathname.replace("/post/", ""));
       } else {
-        postId = params.get("post");
+        const queryPost = params.get("post");
+        if (queryPost) {
+          postIdentifier = decodeURIComponent(queryPost);
+        }
       }
 
-      if (postId) {
-        const found = POSTS.find(p => p.id === postId);
+      if (postIdentifier) {
+        // 제목 혹은 ID로 둘 다 대칭 매칭을 시도하여 하위 호환성을 안심 보장합니다.
+        const found = POSTS.find(p => p.title === postIdentifier || p.id === postIdentifier);
         if (found) {
           setActivePost(found);
         } else {
@@ -97,12 +101,12 @@ export default function App() {
   useEffect(() => {
     const pathname = window.location.pathname;
     const isPostPath = pathname.startsWith("/post/");
-    const pathPostId = isPostPath ? pathname.replace("/post/", "") : null;
+    const pathPostIdentifier = isPostPath ? decodeURIComponent(pathname.replace("/post/", "")) : null;
 
     if (activePost) {
-      if (pathPostId !== activePost.id) {
-        // 주소를 /post/아이디 로 깔끔하고 세밀하게 바꿉니다.
-        window.history.pushState({ postId: activePost.id }, "", `/post/${activePost.id}`);
+      if (pathPostIdentifier !== activePost.title) {
+        // 주소를 /post/제목 으로 사용자 연동 규칙에 맞춰 깔끔히 변경합니다.
+        window.history.pushState({ postTitle: activePost.title }, "", `/post/${activePost.title}`);
       }
       // 동적으로 문서 타이틀 및 메타태그 보완 (브라우저 수준)
       document.title = `${activePost.title} | 하우징허브 인천`;
