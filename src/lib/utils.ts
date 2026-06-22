@@ -26,12 +26,10 @@ export function slugify(title: string): string {
   return title
     .trim()
     .toLowerCase()
-    .replace(/[\s_]+/g, "-")
-    .replace(/[^\w\uAC00-\uD7A3\-]/g, "") // 영숫자, 한글, 하이픈만
+    .replace(/[\s_:\-\+·\.\?,\!\[\]\(\)"']/g, "-")
+    .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
     .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "")
-    .slice(0, 25)
-    .replace(/-+$/g, ""); // slice 후 끝에 하이픈 남으면 제거
+    .replace(/^-+|-+$/g, "");
 }
 
 /**
