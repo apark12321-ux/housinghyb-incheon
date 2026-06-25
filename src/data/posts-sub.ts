@@ -234,7 +234,7 @@ export const POSTS_SUB: Post[] = [
   {
     id: "sub-4",
     title: "전국 특별공급 완벽 정리: 신혼부부·생애최초·다자녀 중 내게 맞는 유형",
-    excerpt: "인천 청약을 준비하는 분들을 위해 특별공급 유형별 자격과 인천 실수요자에게 유리한 선택을 정리했습니다.",
+    excerpt: "수도권 청약을 준비하는 분들을 위해 특별공급 유형별 자격과 실수요자에게 유리한 선택을 정리했습니다.",
     content: `
       <div class="toc-numbered">
         <p><strong>한눈에 보기</strong></p>
@@ -299,7 +299,7 @@ export const POSTS_SUB: Post[] = [
   {
     id: "sub-5",
     title: "수도권 청약 가점 올리는 현실적 방법: 무주택기간·부양가족·통장기간",
-    excerpt: "인천 청약 당첨을 노리는 분들을 위해 가점 84점 구조와 점수를 현실적으로 올리는 방법을 분석했습니다.",
+    excerpt: "수도권 청약 당첨을 노리는 분들을 위해 가점 84점 구조와 점수를 현실적으로 올리는 방법을 분석했습니다.",
     content: `
       <div class="toc-card">
         <p><strong>목차</strong></p>
@@ -363,7 +363,7 @@ export const POSTS_SUB: Post[] = [
   {
     id: "sub-6",
     title: "전국 공공분양 vs 민간분양 비교: 분양가·전매제한·거주의무",
-    excerpt: "인천에서 청약을 고민하는 분들을 위해 공공분양과 민간분양의 차이를 분양가·전매제한·거주의무 기준으로 비교했습니다.",
+    excerpt: "수도권에서 청약을 고민하는 분들을 위해 공공분양과 민간분양의 차이를 분양가·전매제한·거주의무 기준으로 비교했습니다.",
     content: `
       <div class="toc-compact">
         <p><strong>글의 구성</strong></p>
@@ -426,7 +426,7 @@ export const POSTS_SUB: Post[] = [
   {
     id: "sub-7",
     title: "전국 분양권 양도소득세 정리: 보유기간별 세율과 일시적 2주택 특례",
-    excerpt: "인천에서 분양권을 거래하는 분들을 위해 보유 기간별 양도세율과 일시적 2주택 비과세 특례를 정리했습니다.",
+    excerpt: "수도권에서 분양권을 거래하는 분들을 위해 보유 기간별 양도세율과 일시적 2주택 비과세 특례를 정리했습니다.",
     content: `
       <div class="toc">
         <p><strong>목차</strong></p>
@@ -482,7 +482,7 @@ export const POSTS_SUB: Post[] = [
   {
     id: "sub-8",
     title: "토지거래허가구역 실거주 유예 확대: 수도권 무주택자가 알아야 할 점",
-    excerpt: "전국 토지거래허가구역 실거주 유예 확대 입법예고의 핵심을, 인천 무주택 실수요자 관점에서 정리했습니다.",
+    excerpt: "전국 토지거래허가구역 실거주 유예 확대 입법예고의 핵심을, 수도권 무주택 실수요자 관점에서 정리했습니다.",
     content: `
       <div class="toc-minimal">
         <p><strong>이 글의 순서</strong></p>

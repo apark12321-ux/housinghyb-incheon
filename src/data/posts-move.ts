@@ -24,17 +24,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -53,7 +53,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -61,11 +61,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -79,7 +79,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -94,7 +94,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-4",
     title: "서울·경기 포장이사 견적 비교: 사다리차·보관이사·추가 비용 정리",
-    excerpt: "인천에서 이사를 준비하는 분들을 위해 포장이사 견적 비교법과 숨은 추가 비용을 정리했습니다.",
+    excerpt: "수도권에서 이사를 준비하는 분들을 위해 포장이사 견적 비교법과 숨은 추가 비용을 정리했습니다.",
     content: `
       <h2>포장이사 견적 비교 완벽 가이드</h2>
       <p>사다리차 비용 정산, 폐기물 대형 전용 영수처리, 초과 인건비 방지 특약 등 계약 당시 확정해야 하는 이사 추가비 방어 공식을 기록했습니다.</p>
@@ -104,17 +104,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -133,7 +133,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -141,11 +141,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -159,7 +159,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -174,7 +174,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-5",
     title: "전국에서 보증금 묶인 채 이사하는 법: 임차권등기명령 활용",
-    excerpt: "인천 임차인이 보증금을 못 받은 상태에서 안전하게 이사하는 방법을 임차권등기명령 중심으로 정리했습니다.",
+    excerpt: "임차인이 보증금을 못 받은 상태에서 안전하게 이사하는 방법을 임차권등기명령 중심으로 정리했습니다.",
     content: `
       <h2>보증금 묶인 상태에서 안전하게 이사하는 법</h2>
       <p>이사를 서둘러야 하는데 대항력을 잃지 않도록 등기사항 전부증명서에 임차권을 보존하는 법원 신청 및 전자소송 코치서입니다.</p>
@@ -184,17 +184,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -213,7 +213,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -221,11 +221,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -239,7 +239,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -264,17 +264,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -293,7 +293,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -301,11 +301,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -319,7 +319,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -334,7 +334,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-7",
     title: "전국 임차인 필수: 전입신고와 확정일자 받는 순서",
-    excerpt: "인천에서 이사한 임차인을 위해 보증금을 지키는 전입신고·확정일자의 순서와 핵심을 정리했습니다.",
+    excerpt: "수도권에서 이사한 임차인을 위해 보증금을 지키는 전입신고·확정일자의 순서와 핵심을 정리했습니다.",
     content: `
       <h2>전입신고와 확정일자, 단 하루도 놓치면 안 되는 이유</h2>
       <p>잔금일 이사 직후 정부24를 이용해 다음날 대항력 발생의 빈틈을 메우는 전월세 실거래 동시 처리 요령을 알기 쉽게 알려 드립니다.</p>
@@ -344,17 +344,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -373,7 +373,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -381,11 +381,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -399,7 +399,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -414,7 +414,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-8",
     title: "전국 아파트 관리비 줄이는 6가지 방법: 월 5만원 절약하기",
-    excerpt: "인천 거주자를 위해 공용·전기·난방·수도 관리비를 줄이는 실전 절약법을 정리했습니다.",
+    excerpt: "수도권 거주자를 위해 공용·전기·난방·수도 관리비를 줄이는 실전 절약법을 정리했습니다.",
     content: `
       <h2>관리비 월 5만 원 절약하는 6가지 실전 방법</h2>
       <p>보일러 외출 모드 전용 세팅, 3단계 누진세 방지 대기 전력 멀티탭 분할, 지자체 수도계량기 절수형 장착 등 고정 소비세 정산법을 안내합니다.</p>
@@ -424,17 +424,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -453,7 +453,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -461,11 +461,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -479,7 +479,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -494,7 +494,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-9",
     title: "전국 우리 집 등기부등본 셀프 점검 5가지 포인트",
-    excerpt: "인천 거주자를 위해 1년에 한 번 등기부등본을 직접 확인하는 점검 포인트를 정리했습니다.",
+    excerpt: "수도권 거주자를 위해 1년에 한 번 등기부등본을 직접 확인하는 점검 포인트를 정리했습니다.",
     content: `
       <h2>등기부등본, 일년에 한 번은 떼보자고요</h2>
       <p>인터넷등기소 700원 즉시 열람: 근저당 추가 변동, 임대 소유주 양도 사실, 압류 가압류 전조 체크 포인트를 전달합니다.</p>
@@ -504,17 +504,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -533,7 +533,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -541,11 +541,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -559,7 +559,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -574,7 +574,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-10",
     title: "전국 이사 한 달 전 체크리스트: 성수기 막판 견적·예약 노하우",
-    excerpt: "인천에서 이사를 앞둔 분들을 위해 한 달 전부터 챙겨야 할 체크리스트와 견적 노하우를 정리했습니다.",
+    excerpt: "수도권에서 이사를 앞둔 분들을 위해 한 달 전부터 챙겨야 할 체크리스트와 견적 노하우를 정리했습니다.",
     content: `
       <h2>5월 이사, 한 달 전부터 챙겨야 해요</h2>
       <p>성수기 전출입일 이삿짐 차량 및 평일 예약 우대 유도법, D-30부터 단계별 버리는 물품 분리 요령 등 성수기 회피 팁을 제시합니다.</p>
@@ -584,17 +584,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -613,7 +613,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -621,11 +621,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -639,7 +639,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -748,7 +748,7 @@ export const POSTS_MOVE: Post[] = [
             <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-4 ring-white text-white text-[10px] font-bold">3</span>
             <span class="font-bold text-slate-900 text-sm mb-1 block">전 주소지 조회와 연대 구성원 지목 매핑</span>
             <p class="text-xs text-slate-500 leading-relaxed font-sans">
-              <strong>'전에 살던 하우스 주소 조회'</strong> 버튼을 가동하여 이전 주거지 기본 거점과 구성원 현황을 원클릭으로 통과시킵니다. 해당 탭 내에서 현 가구 중 신규 보금자리인 인천 등으로 같이 안심 이동을 추진하는 구성원 명의를 하나씩 지목해 지정해 줍니다.
+              <strong>'전에 살던 하우스 주소 조회'</strong> 버튼을 가동하여 이전 주거지 기본 거점과 구성원 현황을 원클릭으로 통과시킵니다. 해당 탭 내에서 현 가구 중 신규 보금자리인 수도권 등으로 같이 안심 이동을 추진하는 구성원 명의를 하나씩 지목해 지정해 줍니다.
             </p>
           </li>
           <li class="mb-6 ml-6">
@@ -818,7 +818,7 @@ export const POSTS_MOVE: Post[] = [
         <p class="text-sm text-slate-600 leading-relaxed text-left">
           내가 힘겹게 이룩한 소중한 근로의 가치물, 생애 첫 지위의 귀막강한 보금자리를 수호하고 이사 후 무탈하게 꿀잠 자며 임차인의 안락함을 누릴 수 있는 방안은 지치지 않는 사소한 행정 수칙 이행력에서 갈립니다. 등기소나 주민센터 방문 비용 0원, 반차 소비 zero인 3분의 스마트폰 행정 투자는 영구 보증 자산을 지키는 유일무이한 황금 지름길입니다. 이사 예정일이 닥쳤다면 이번 실전 절차 로드맵을 머리에 선험 입력해두고 망설임 없이 정부24 안심 원 패스 신고를 실행해 보시기 바랍니다.
         </p>
-        <p class="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-100 text-right">최종 업데이트 및 완정한 법리 교환 보도: 2026-06-12 | 하우징허브인천 안심 세입 센터</p>
+        <p class="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-100 text-right">최종 업데이트 및 완정한 법리 교환 보도: 2026-06-12 | 하우징허브수도권 안심 세입 센터</p>
       </div>
     `,
     category: "이사-인테리어",
@@ -831,7 +831,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-12",
     title: "2026 인테리어 트렌드 4가지: 수도권 우리 집 적용법",
-    excerpt: "워밍 뉴트럴부터 플랜테리어까지, 2026 인테리어 트렌드를 인천 가정에 적용하는 법을 정리했습니다.",
+    excerpt: "워밍 뉴트럴부터 플랜테리어까지, 2026 인테리어 트렌드를 수도권 가정에 적용하는 법을 정리했습니다.",
     content: `
       <h2>2026년, 집은 따뜻하게 비워내는 방향으로</h2>
       <p>모래색 샌드 톤, 포근함을 선사하는 곡선 라운드 소가구 활용, 수직 플랜테리어 배치 등 모던 가성비 포인트 연출법을 다룹니다.</p>
@@ -841,17 +841,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -870,7 +870,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -878,11 +878,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -896,7 +896,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
@@ -911,7 +911,7 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-13",
     title: "전국 이사 가전·가구 처분법: 폐기물 스티커부터 무상수거까지",
-    excerpt: "인천에서 이사할 때 가전·가구를 처분하는 절차를 폐기물 스티커·무상수거 중심으로 정리했습니다.",
+    excerpt: "수도권에서 이사할 때 가전·가구를 처분하는 절차를 폐기물 스티커·무상수거 중심으로 정리했습니다.",
     content: `
       <h2>이사 며칠 전에야 알아보면 늦어요</h2>
       <p>대형 주방 가전 무상 수거 연계신청(1599-0903), 지자체 대형 가구 스티커 온라인 출수 등 비용을 최소화하는 방출 공식을 제공합니다.</p>
@@ -921,17 +921,17 @@ export const POSTS_MOVE: Post[] = [
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
   <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
     <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">인천 이사 완전백서</span>
-      하우징허브 주거 케어: 인천 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
+      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
+      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
     </h3>
     <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      인천 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 인천 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
+      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
     </p>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
     <p class="text-xs text-slate-600 leading-relaxed mb-4">
       폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (전국 통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 인천 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
+      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
     </p>
 
     <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
@@ -950,7 +950,7 @@ export const POSTS_MOVE: Post[] = [
       </p>
     </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
+    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
         <div>이사 일지 순서</div>
@@ -958,11 +958,11 @@ export const POSTS_MOVE: Post[] = [
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">인천 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
+        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(인천도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
+        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
       </div>
       <div class="grid grid-cols-3 p-2.5">
         <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
@@ -976,7 +976,7 @@ export const POSTS_MOVE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 인천 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
+      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 공인중개사의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
     </p>
   </div>
 </div>
