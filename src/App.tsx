@@ -67,7 +67,7 @@ export default function App() {
   const [showDiagnosticPage, setShowDiagnosticPage] = useState<boolean>(false);
 
   // --- 법률 및 애드센스 정책 안심 확보 상태 (인라인 페이지화) ---
-  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | "indexing" | null>(null);
+  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | null>(null);
 
   // URL에서 초기 /post/xxx 혹은 ?post=xxx 혹은 서브페이지(/toolkit, /privacy, /terms 등)를 읽어 세팅 및 popstate 감지
   useEffect(() => {
@@ -98,11 +98,6 @@ export default function App() {
         return;
       } else if (pathname === "/contact" || pathname === "/partnership") {
         setActiveLegalTab("contact");
-        setShowDiagnosticPage(false);
-        setActivePost(null);
-        return;
-      } else if (pathname === "/indexing") {
-        setActiveLegalTab("indexing");
         setShowDiagnosticPage(false);
         setActivePost(null);
         return;
@@ -174,11 +169,9 @@ export default function App() {
         document.title = "정보이용 면책고지 | 하우징허브";
       } else if (activeLegalTab === "contact") {
         document.title = "1:1 안심 상담 및 문의 | 하우징허브";
-      } else if (activeLegalTab === "indexing") {
-        document.title = "Google Indexing API 제어 | 하우징허브";
       }
     } else {
-      const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership", "/indexing"];
+      const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership"];
       const isSubpage = subpages.includes(pathname) || pathname.startsWith("/post/");
       if (isSubpage) {
         window.history.pushState(null, "", "/");
@@ -191,105 +184,6 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activePost, activeLegalTab, showDiagnosticPage]);
-  // --- Google Indexing API 관련 상태 ---
-  const [isIndexingConfigured, setIsIndexingConfigured] = useState<boolean>(false);
-  const [indexingClientEmail, setIndexingClientEmail] = useState<string>("");
-  const [indexingHistory, setIndexingHistory] = useState<any[]>([]);
-  const [credentialsText, setCredentialsText] = useState<string>("");
-  const [isConfiguringLoading, setIsConfiguringLoading] = useState<boolean>(false);
-  const [isSubmitUrlLoading, setIsSubmitUrlLoading] = useState<boolean>(false);
-  const [indexingFeedbackMessage, setIndexingFeedbackMessage] = useState<string>("");
-  const [customIndexingUrl, setCustomIndexingUrl] = useState<string>("");
-
-  const fetchIndexingStatus = async () => {
-    try {
-      const res = await fetch("/api/indexing/status");
-      if (res.ok) {
-        const data = await res.json();
-        setIsIndexingConfigured(data.isConfigured);
-        setIndexingClientEmail(data.clientEmail || "");
-        setIndexingHistory(data.history || []);
-      }
-    } catch (err) {
-      console.error("Failed to fetch Indexing API status:", err);
-    }
-  };
-
-  useEffect(() => {
-    if (activeLegalTab === "indexing") {
-      fetchIndexingStatus();
-    }
-  }, [activeLegalTab]);
-
-  const handleSaveCredentials = async () => {
-    if (!credentialsText.trim()) {
-      alert("서비스 계정 JSON 내용을 입력해 주세요.");
-      return;
-    }
-    setIsConfiguringLoading(true);
-    setIndexingFeedbackMessage("");
-    try {
-      const res = await fetch("/api/indexing/credentials", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ credentialsJson: credentialsText })
-      });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || "자격 증명 등록 실패");
-      
-      alert(data.message);
-      setCredentialsText("");
-      fetchIndexingStatus();
-    } catch (err: any) {
-      alert(err.message || "설정 저장 중 에러가 발생했습니다.");
-    } finally {
-      setIsConfiguringLoading(false);
-    }
-  };
-
-  const handleDeleteCredentials = async () => {
-    if (!confirm("정말 등록된 Google Indexing API 자격증명을 삭제하시겠습니까?")) return;
-    setIsConfiguringLoading(true);
-    try {
-      const res = await fetch("/api/indexing/credentials", { method: "DELETE" });
-      const data = await res.json();
-      alert(data.message);
-      fetchIndexingStatus();
-    } catch (err: any) {
-      alert(err.message || "설정 삭제 중 에러가 발생했습니다.");
-    } finally {
-      setIsConfiguringLoading(false);
-    }
-  };
-
-  const handlePublishUrl = async (url: string, type: "URL_UPDATED" | "URL_DELETED" = "URL_UPDATED") => {
-    if (!url.trim()) {
-      alert("색인요청을 보낼 URL을 지정해 주세요.");
-      return;
-    }
-    setIsSubmitUrlLoading(true);
-    setIndexingFeedbackMessage(`색인 전송 처리 중: ${url}`);
-    try {
-      const res = await fetch("/api/indexing/publish", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ url, type })
-      });
-      const data = await res.json();
-      if (!res.ok) {
-        setIndexingFeedbackMessage(`❌ 구글 호출 실패: ${data.details || data.error}`);
-      } else {
-        setIndexingFeedbackMessage(`✅ 구글 Indexing API 전송 성공!\nGoogle 메타에 즉각 반영되어 봇 크롤링이 우선 배정됩니다.\n응답 ID: ${data.log?.id || "성공"}`);
-        setCustomIndexingUrl("");
-      }
-      fetchIndexingStatus();
-    } catch (err: any) {
-      setIndexingFeedbackMessage(`❌ 전송 실패: ${err.message}`);
-    } finally {
-      setIsSubmitUrlLoading(false);
-    }
-  };
-
   const [contactName, setContactName] = useState<string>("");
   const [contactEmail, setContactEmail] = useState<string>("");
   const [contactCategory, setContactCategory] = useState<string>("general");
@@ -1175,16 +1069,6 @@ export default function App() {
               >
                 ✉️ 1:1 안심 상담 및 문의
               </button>
-              <button
-                onClick={() => { setActiveLegalTab("indexing"); setIsContactSubmitted(false); }}
-                className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg flex items-center justify-center space-x-1.5 ${
-                  activeLegalTab === "indexing" 
-                    ? "bg-white text-blue-600 shadow-xs" 
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
-                }`}
-              >
-                🚀 구글 색인 대행 (SEO API)
-              </button>
             </div>
 
             {/* 본문 콘텐츠 스크롤 및 탭 렌더링 */}
@@ -1415,160 +1299,6 @@ export default function App() {
                       </div>
                     </form>
                   )}
-                </div>
-              )}
-
-              {activeLegalTab === "indexing" && (
-                <div className="space-y-8 text-left font-sans">
-                  {/* 헤더 섹션 */}
-                  <div className="border-b border-slate-200 pb-4">
-                    <div className="flex items-center space-x-2">
-                      <span className="bg-red-100 text-red-700 text-[10px] font-bold px-2 py-0.5 rounded-sm uppercase">C안 가동안</span>
-                      <h4 className="text-base sm:text-lg font-bold text-slate-900">Google Indexing API 기동 및 전용 검색색인 제어 센터</h4>
-                    </div>
-                    <p className="text-xs text-slate-500 mt-1">
-                      구글 서치콘솔 수동 등록 지연 시, 구글 Indexing API 연동을 즉각 실행하여 포커싱 글 발행 즉시 크롤러 봇이 패치해가도록 자동화하는 실전 시스템입니다.
-                    </p>
-                  </div>
-
-                  {/* 전략 가이드 브리핑 */}
-                  <div className="bg-blue-900 text-white rounded-2xl p-5 sm:p-6 space-y-4 shadow-md">
-                    <div className="flex items-center space-x-2.5">
-                      <TrendingUp className="w-5 h-5 text-blue-300" />
-                      <h5 className="font-bold text-sm sm:text-base">구글 애드센스 승인 및 순위 선점 '선택과 집중' 전략 기획</h5>
-                    </div>
-                    <p className="text-xs text-slate-200 leading-relaxed font-sans">
-                      네 개 필터드 사이트 심사가 동치 지연되거나 전면 반려될 조짐이 있을 시, 가장 완성도가 높고 기획 완성도가 고도화된 <strong>주력 단일 사이트(예: zip9.kr 및 nutube.kr) 한 곳에 리소스와 트래픽을 100% 올인 집중</strong>하는 전략으로 즉각 선회하십시오. 단 한 사이트만 최종 관문(애드센스 고시)을 뚫어내면, 나머지 보조 영역들은 '하위 도메인(Subdomain) 연결' 기법을 태워 전방위 무검토 전면 승인으로 끌어올릴 수 있어 고도 성장이 편리합니다.
-                    </p>
-                  </div>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    {/* 크리덴셜 입력 창 */}
-                    <div className="bg-white rounded-2xl p-5 border border-slate-200 space-y-4 shadow-xs">
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-2">
-                          <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">1</span>
-                          <h6 className="font-bold text-xs text-slate-800">구글 서비스 계정 키값(JSON) 등록</h6>
-                        </div>
-                        {isIndexingConfigured ? (
-                          <span className="text-[10px] bg-green-50 text-green-700 border border-green-200 px-2.5 py-1 rounded-md font-bold">● 연결됨</span>
-                        ) : (
-                          <span className="text-[10px] bg-amber-50 text-amber-700 border border-amber-200 px-2.5 py-1 rounded-md font-bold">● 연결되지 않음</span>
-                        )}
-                      </div>
-
-                      <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                        Google Cloud Console에서 서비스 계정을 발급받은 뒤, <strong className="text-slate-700">Indexing API 권한 활성화 및 소유권 확인</strong> 조치를 완료하고 다운로드 받으신 비공개 키 JSON 텍스트 전문을 아래에 그대로 기입해 주십시오. (보관은 서버측 별도 안심 계정에 격리 보관됩니다)
-                      </p>
-
-                      {isIndexingConfigured && (
-                        <div className="bg-slate-50 p-2.5 rounded-lg text-slate-600 text-[10px] font-mono border border-slate-150 space-y-1">
-                          <p className="font-semibold text-slate-700">✓ 등록된 서비스 계정 이메일:</p>
-                          <p className="overflow-x-auto select-all">{indexingClientEmail || "분석 완료"}</p>
-                        </div>
-                      )}
-
-                      <div className="space-y-1">
-                        <textarea
-                          placeholder='{"type": "service_account", "project_id": ...}'
-                          rows={6}
-                          value={credentialsText}
-                          onChange={(e) => setCredentialsText(e.target.value)}
-                          className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-[10px] font-mono focus:ring-1 focus:ring-blue-500 focus:outline-none focus:bg-white leading-normal font-sans"
-                        />
-                      </div>
-
-                      <div className="flex gap-2">
-                        <button
-                          onClick={handleSaveCredentials}
-                          disabled={isConfiguringLoading}
-                          className="flex-1 bg-blue-600 hover:bg-blue-500 transition-colors text-white font-bold text-xs py-2.5 px-4 rounded-lg cursor-pointer"
-                        >
-                          {isConfiguringLoading ? "설정 저장 중..." : "자격 증명 저장"}
-                        </button>
-                        {isIndexingConfigured && (
-                          <button
-                            onClick={handleDeleteCredentials}
-                            disabled={isConfiguringLoading}
-                            className="bg-red-50 hover:bg-red-100 text-red-600 border border-red-200 transition-colors font-bold text-xs py-2.5 px-4 rounded-lg cursor-pointer"
-                          >
-                            자격 삭제
-                          </button>
-                        )}
-                      </div>
-                    </div>
-
-                    {/* 실시간 색인 요청 실행기 */}
-                    <div className="bg-white rounded-2xl p-5 border border-slate-200 space-y-4 shadow-xs">
-                      <div className="flex items-center space-x-2">
-                        <span className="w-5 h-5 rounded-full bg-slate-100 flex items-center justify-center text-xs font-bold text-slate-700">2</span>
-                        <h6 className="font-bold text-xs text-slate-800">실시간 검색색인 호출 실행기</h6>
-                      </div>
-
-                      <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                        등록된 구글 API를 기동하여 특정 주소의 노출(색인 추가/업데이트) 또는 삭제를 요청합니다. 색인 상태 업데이트는 대개 수분에서 수시간 내 반영됩니다.
-                      </p>
-
-                      <div className="space-y-2">
-                        <label className="text-xs font-bold text-slate-700 block">색인 요청 대상 주소(URL)</label>
-                        <input 
-                          type="url"
-                          placeholder="https://zip9.kr/article/1"
-                          value={customIndexingUrl}
-                          onChange={(e) => setCustomIndexingUrl(e.target.value)}
-                          className="w-full px-3.5 py-2.5 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none focus:bg-white font-sans"
-                          disabled={!isIndexingConfigured}
-                        />
-                      </div>
-
-                      {indexingFeedbackMessage && (
-                        <div className="p-3 bg-slate-50 border border-slate-200 rounded-xl text-[11px] text-slate-700 whitespace-pre-wrap font-mono">
-                          {indexingFeedbackMessage}
-                        </div>
-                      )}
-
-                      <div className="flex gap-2.5">
-                        <button
-                          onClick={() => handlePublishUrl(customIndexingUrl, "URL_UPDATED")}
-                          disabled={isSubmitUrlLoading || !isIndexingConfigured}
-                          className="flex-1 bg-blue-600 hover:bg-blue-500 disabled:bg-slate-200 disabled:text-slate-400 disabled:cursor-not-allowed text-white font-bold text-xs py-2.5 px-4 rounded-lg transition-colors flex items-center justify-center space-x-1 cursor-pointer"
-                        >
-                          <Send className="w-3.5 h-3.5" />
-                          <span>색인 추가/업데이트 요청</span>
-                        </button>
-                        <button
-                          onClick={() => handlePublishUrl(customIndexingUrl, "URL_DELETED")}
-                          disabled={isSubmitUrlLoading || !isIndexingConfigured}
-                          className="bg-slate-100 hover:bg-slate-200 disabled:bg-slate-100 disabled:text-slate-300 disabled:cursor-not-allowed text-slate-700 border border-slate-200 transition-colors font-bold text-xs py-2.5 px-4 rounded-lg cursor-pointer"
-                        >
-                          색인 삭제 요청
-                        </button>
-                      </div>
-
-                      {/* 최근 색인 요청 기록 목록 */}
-                      <div className="pt-2 space-y-2">
-                        <h6 className="font-bold text-xs text-slate-800">최근 색인 실행 로그 (최대 5건)</h6>
-                        {indexingHistory && indexingHistory.length === 0 ? (
-                          <p className="text-[10px] text-slate-400">색인 요청 내역이 없습니다.</p>
-                        ) : (
-                          <div className="space-y-1.5 max-h-[160px] overflow-y-auto pr-1">
-                            {indexingHistory && indexingHistory.map((item: any, idx: number) => (
-                              <div key={idx} className="p-2 bg-slate-50/50 rounded-lg border border-slate-100 text-[10px] space-y-1">
-                                <div className="flex justify-between text-[9px] text-slate-400">
-                                  <span>{item.time || "방금 전"}</span>
-                                  <span className="font-bold uppercase text-blue-600">{item.type}</span>
-                                </div>
-                                <p className="text-slate-700 font-mono truncate">{item.url}</p>
-                                <p className={`text-[9px] ${item.status === "success" ? "text-green-600" : "text-red-500"}`}>
-                                  {item.status === "success" ? "✓ 성공" : `✗ 실패: ${item.error || "알 수 없음"}`}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
                 </div>
               )}
             </div>
@@ -2043,14 +1773,6 @@ export default function App() {
                       <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
                     </button>
                   </li>
-                  <li>
-                    <button 
-                      onClick={() => { setActivePost(null); setActiveLegalTab("indexing"); }}
-                      className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none flex items-center space-x-1 font-semibold text-blue-300"
-                    >
-                      <span>🚀 구글 색인(SEO) 도구</span>
-                    </button>
-                  </li>
                 </ul>
               </div>
             </div>
@@ -2061,9 +1783,6 @@ export default function App() {
             <p className="mt-2 sm:mt-0">All references are valid in South Korea regulations.</p>
           </div>
           
-          <div className="mt-4 pt-4 border-t border-slate-800/50 text-[10px] text-slate-600 leading-relaxed">
-            <p><strong>[AdSense Compliance Statement]</strong> 본 주거 마이크로 포털 하우징허브는 구글 애드센스(Google AdSense) 프로그램 정책을 엄격히 준수하며, 사용자 맞춤형 광고 매칭 및 트래픽 분석을 위해 서드파티 제공업체 쿠키(Cookie)를 조화롭게 활용할 수 있습니다. 사용자는 개인정보처리방침을 언제든지 검토하고 브라우저 설정 조율로 맞춤 수집을 강제 해제할 수 있습니다.</p>
-          </div>
         </div>
       </footer>
 
