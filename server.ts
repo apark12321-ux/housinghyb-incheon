@@ -380,8 +380,8 @@ function slugify(title: string): string {
 }
 
 // SEO 관련 메타 태그 동적 수립 헬퍼 함수
-function injectMetaTags(html: string, post: any): string {
-  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/post/${encodeURIComponent(slugify(post.title))}`;
+function injectMetaTags(html: string, post: any, baseUrl: string): string {
+  const canonicalUrl = `${baseUrl}/post/${encodeURIComponent(slugify(post.title))}`;
   const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 인천, 부동산, 청약, 전세대출";
   
   // Title 대량 치환
@@ -417,10 +417,10 @@ function injectMetaTags(html: string, post: any): string {
   return updatedHtml;
 }
 
-function injectDefaultMetaTags(html: string): string {
+function injectDefaultMetaTags(html: string, baseUrl: string): string {
   const title = "하우징허브 인천 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
   const desc = "인천 지역 부동산, 청약 가점 계산, 전세대출 한도 시뮬레이션, 이사 가이드 및 등기부 독소조항 무상 방어 지식을 제공하는 임차인 안심 정주 포털입니다.";
-  const canonicalUrl = `https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/`;
+  const canonicalUrl = `${baseUrl}/`;
   
   let updatedHtml = html.replace(
     /<title>.*?<\/title>/i,
@@ -442,9 +442,99 @@ function injectDefaultMetaTags(html: string): string {
   return updatedHtml;
 }
 
+function injectCategoryMetaTags(html: string, category: string, baseUrl: string): string {
+  const title = `${category} 실시간 알짜 정보 및 가이드 | 하우징허브 인천`;
+  let desc = "";
+  if (category === "청약-분양") {
+    desc = "인천 지역 최신 청약 일정, 분양 정보, 청약가점 계산법, 무순위 줍줍 분석 및 당첨 확률 높이는 꿀팁을 총망라합니다.";
+  } else if (category === "전월세") {
+    desc = "인천 아파트 및 주택 전월세 사기 방지 대책, 등기부등본 확인법, 전세보증보험 가입 가이드 및 임대차 요령을 제공합니다.";
+  } else if (category === "이사-인테리어") {
+    desc = "인천 이삿짐 센터 고르는 요령, 입주 청소 체크리스트, 전입신고 및 확정일자 받는 법, 셀프 인테리어 팁을 안내합니다.";
+  } else if (category === "대출-금융") {
+    desc = "디딤돌 대출, 버팀목 전세대출, 인천 임차보증금 이자 지원 및 서민 주거 안정을 위한 정부 지원 금융 혜택 총정리.";
+  } else {
+    desc = `하우징허브 인천 ${category} 정보 센터. 안심 주거 정주 포털에서 실시간 정보를 확인하세요.`;
+  }
+
+  const canonicalUrl = `${baseUrl}/category/${encodeURIComponent(category)}`;
+  
+  let updatedHtml = html.replace(
+    /<title>.*?<\/title>/i,
+    `<title>${title}</title>`
+  );
+
+  const metaTags = `
+    <meta name="description" content="${desc}" />
+    <meta name="keywords" content="인천 ${category}, 하우징허브 ${category}, 인천 부동산, ${category} 가이드" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${desc}" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" />
+    <link rel="canonical" href="${canonicalUrl}" />
+  `;
+
+  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
+  return updatedHtml;
+}
+
+function injectSubpageMetaTags(html: string, path: string, baseUrl: string): string {
+  let title = "하우징허브 인천";
+  let desc = "인천 지역 부동산, 청약 가점 계산, 전세대출 한도 시뮬레이션, 이사 가이드 및 등기부 독소조항 무상 방어 지식을 제공하는 임차인 안심 정주 포털입니다.";
+  
+  if (path === "/about") {
+    title = "소개 및 가치 | 하우징허브 인천";
+    desc = "하우징허브 인천은 임차인의 정주 안정성과 안심 부동산 거래 환경을 실현하기 위해 설립된 공익 지향 정보 포털입니다.";
+  } else if (path === "/announcement") {
+    title = "공지사항 및 새소식 | 하우징허브 인천";
+    desc = "하우징허브 인천의 최신 정책 변화 공지, 신규 부동산 정보 가이드 추가 소식 및 공지사항을 확인하세요.";
+  } else if (path === "/partnership") {
+    title = "제휴 및 협업 문의 | 하우징허브 인천";
+    desc = "공인중개사, 이사업체, 법무법인 등 인천 시민 주거 정주 발전에 협력할 파트너사를 상시 모집합니다.";
+  } else if (path === "/terms") {
+    title = "서비스 이용약관 | 하우징허브 인천";
+    desc = "하우징허브 인천 서비스 이용 약관 및 사용자 정보 권리 보호 세부 조항 안내.";
+  } else if (path === "/privacy") {
+    title = "개인정보처리방침 | 하우징허브 인천";
+    desc = "하우징허브 인천은 사용자의 개인정보를 소중히 보호하며, 관련 법령을 엄격히 준수합니다.";
+  } else {
+    return injectDefaultMetaTags(html, baseUrl);
+  }
+
+  const canonicalUrl = `${baseUrl}${path}`;
+  
+  let updatedHtml = html.replace(
+    /<title>.*?<\/title>/i,
+    `<title>${title}</title>`
+  );
+
+  const metaTags = `
+    <meta name="description" content="${desc}" />
+    <meta name="keywords" content="인천 부동산, 하우징허브, 안심 포털" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="${canonicalUrl}" />
+    <meta property="og:title" content="${title}" />
+    <meta property="og:description" content="${desc}" />
+    <link rel="canonical" href="${canonicalUrl}" />
+  `;
+
+  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
+  return updatedHtml;
+}
+
 // Vite Middleware & Static Assets 서빙
 async function startServer() {
   let viteInstance: any = null;
+
+  const getBaseUrl = (req: express.Request): string => {
+    const host = req.headers.host || "";
+    if (host.includes("zip9.kr")) {
+      return "https://zip9.kr";
+    }
+    const protocol = req.secure || req.headers["x-forwarded-proto"] === "https" ? "https" : "http";
+    return `${protocol}://${host}`;
+  };
 
   const handleHtmlServing = async (req: express.Request, res: express.Response) => {
     try {
@@ -464,19 +554,39 @@ async function startServer() {
         html = await viteInstance.transformIndexHtml(req.originalUrl, html);
       }
 
-      // 게시글 고유값 파싱 (경로 /post/:id 혹은 쿼리스트링 ?post=)
+      const baseUrl = getBaseUrl(req);
+
+      // 1) 게시글 고유값 파싱 (경로 /post/:id 혹은 쿼리스트링 ?post=)
       const rawPostId = req.params.id || (req.query.post as string);
       if (rawPostId) {
         const decodedPostId = decodeURIComponent(rawPostId);
         const post = POSTS.find(p => p.title === decodedPostId || p.id === decodedPostId || slugify(p.title) === decodedPostId);
         if (post) {
-          html = injectMetaTags(html, post);
+          html = injectMetaTags(html, post, baseUrl);
           return res.send(html);
         }
       }
 
+      // 2) 카테고리 경로 파싱 (예: /category/:categoryName)
+      const pathParts = req.path.split("/");
+      const categoryIndex = pathParts.indexOf("category");
+      if (categoryIndex !== -1 && pathParts[categoryIndex + 1]) {
+        const rawCat = pathParts[categoryIndex + 1];
+        const decodedCat = decodeURIComponent(rawCat);
+        html = injectCategoryMetaTags(html, decodedCat, baseUrl);
+        return res.send(html);
+      }
+
+      // 3) 특정 서브페이지 경로 파싱 (예: /about, /announcement, /partnership, /terms, /privacy)
+      const subpages = ["/about", "/announcement", "/partnership", "/terms", "/privacy"];
+      const matchedPage = subpages.find(page => req.path === page);
+      if (matchedPage) {
+        html = injectSubpageMetaTags(html, matchedPage, baseUrl);
+        return res.send(html);
+      }
+
       // 기본 메타 기입
-      html = injectDefaultMetaTags(html);
+      html = injectDefaultMetaTags(html, baseUrl);
       return res.send(html);
     } catch (err) {
       console.error("HTML 렌더링 서빙 오류:", err);

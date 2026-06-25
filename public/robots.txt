@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /api/
-Sitemap: https://ais-pre-lnk44jyuihmknt4qtkkjpv-342329263953.asia-northeast1.run.app/sitemap.xml
+Sitemap: https://zip9.kr/sitemap.xml
