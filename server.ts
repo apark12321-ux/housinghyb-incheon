@@ -40,24 +40,22 @@ function getIndexingClient() {
   if (fs.existsSync(credPath)) {
     try {
       const credentials = JSON.parse(fs.readFileSync(credPath, "utf-8"));
-      auth = new google.auth.JWT(
-        credentials.client_email,
-        undefined,
-        credentials.private_key,
-        ["https://www.googleapis.com/auth/indexing"]
-      );
+      auth = new google.auth.JWT({
+        email: credentials.client_email,
+        key: credentials.private_key,
+        scopes: ["https://www.googleapis.com/auth/indexing"]
+      });
     } catch (e) {
       console.error("[Google Indexing API] Error reading credentials file:", e);
     }
   } else if (process.env.GOOGLE_INDEXING_CREDENTIALS) {
     try {
       const credentials = JSON.parse(process.env.GOOGLE_INDEXING_CREDENTIALS);
-      auth = new google.auth.JWT(
-        credentials.client_email,
-        undefined,
-        credentials.private_key,
-        ["https://www.googleapis.com/auth/indexing"]
-      );
+      auth = new google.auth.JWT({
+        email: credentials.client_email,
+        key: credentials.private_key,
+        scopes: ["https://www.googleapis.com/auth/indexing"]
+      });
     } catch (e) {
       console.error("[Google Indexing API] Error parsing GOOGLE_INDEXING_CREDENTIALS env:", e);
     }
@@ -486,6 +484,9 @@ function injectSubpageMetaTags(html: string, path: string, baseUrl: string): str
   if (path === "/about") {
     title = "소개 및 가치 | 하우징허브 인천";
     desc = "하우징허브 인천은 임차인의 정주 안정성과 안심 부동산 거래 환경을 실현하기 위해 설립된 공익 지향 정보 포털입니다.";
+  } else if (path === "/toolkit") {
+    title = "스마트 주거 자가진단 툴킷 | 하우징허브 인천";
+    desc = "인천 지역 LTV/DSR 대출한도 모의 계산 및 청약 자가 점수(84점 만점) 진단을 제공하는 스마트 안심 툴킷입니다.";
   } else if (path === "/announcement") {
     title = "공지사항 및 새소식 | 하우징허브 인천";
     desc = "하우징허브 인천의 최신 정책 변화 공지, 신규 부동산 정보 가이드 추가 소식 및 공지사항을 확인하세요.";
@@ -577,8 +578,8 @@ async function startServer() {
         return res.send(html);
       }
 
-      // 3) 특정 서브페이지 경로 파싱 (예: /about, /announcement, /partnership, /terms, /privacy)
-      const subpages = ["/about", "/announcement", "/partnership", "/terms", "/privacy"];
+      // 3) 특정 서브페이지 경로 파싱 (예: /about, /announcement, /partnership, /terms, /privacy, /toolkit)
+      const subpages = ["/about", "/announcement", "/partnership", "/terms", "/privacy", "/toolkit"];
       const matchedPage = subpages.find(page => req.path === page);
       if (matchedPage) {
         html = injectSubpageMetaTags(html, matchedPage, baseUrl);

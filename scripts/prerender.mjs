@@ -325,6 +325,16 @@ function main() {
   // 2) 정적 페이지들
   const staticPages = [
     {
+      path: "toolkit/index.html",
+      title: `스마트 주거 자가진단 툴킷 | ${SITE_NAME}`,
+      desc: `인천 임차인 및 내집마련 수요자를 위한 실시간 LTV/DSR 대출한도 모의계산 및 청약 가점(84점 만점) 판정 통합 진단기.`,
+      url: `${SITE_URL}/toolkit`,
+      body: buildStaticPageBody(
+        "하우징 통합 자가진단 툴킷",
+        `<p>하우징허브 인천 안심 자가진단 툴킷 페이지입니다. 본 진단기는 LTV, DSR 역산 공식을 결합한 대출 한도 모의 연산과 청약 가점(84점 만점)의 세부 지표 판정을 동시 실행하여 사용자의 안심 주거 계획 수립을 입체적으로 돕습니다.</p>`
+      ),
+    },
+    {
       path: "about/index.html",
       title: `소개 | ${SITE_NAME}`,
       desc: `${SITE_NAME}는 실용적이고 정확한 주거 정보를 전해드리는 미디어입니다.`,

@@ -45,6 +45,7 @@ function buildSitemap(posts) {
   const urls = [];
 
   urls.push({ loc: `${SITE_URL}/`, lastmod: today, changefreq: "daily", priority: "1.0" });
+  urls.push({ loc: `${SITE_URL}/toolkit`, lastmod: today, changefreq: "weekly", priority: "0.9" });
   urls.push({ loc: `${SITE_URL}/about`, lastmod: today, changefreq: "monthly", priority: "0.6" });
   urls.push({ loc: `${SITE_URL}/announcement`, lastmod: today, changefreq: "weekly", priority: "0.5" });
   urls.push({ loc: `${SITE_URL}/partnership`, lastmod: today, changefreq: "monthly", priority: "0.4" });
