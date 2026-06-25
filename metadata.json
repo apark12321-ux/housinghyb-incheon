@@ -1,6 +1,6 @@
 {
-  "name": "하우징허브 인천 (HousingHub Incheon)",
-  "description": "인천 지역 부동산·청약·전세 정보를 인천 거주자 관점에서 명쾌하게 전해 드리는 지역 밀착 실생활 주택 전용 허브 및 미디어 가이드입니다.",
+  "name": "하우징허브 (HousingHub)",
+  "description": "전국 및 주요지역(서울, 인천, 경기) 부동산·청약·전세 정보를 무주택 실수요자 관점에서 명쾌하게 전해 드리는 실생활 주택 전용 허브 및 미디어 가이드입니다.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

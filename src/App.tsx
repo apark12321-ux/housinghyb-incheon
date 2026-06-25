@@ -38,6 +38,7 @@ interface Message {
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
+  const [selectedRegion, setSelectedRegion] = useState<string>("전체");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   
@@ -154,27 +155,27 @@ export default function App() {
       if (pathname !== `/post/${targetSlug}`) {
         window.history.pushState({ postTitle: activePost.title }, "", `/post/${targetSlug}`);
       }
-      document.title = `${activePost.title} | 하우징허브 인천`;
+      document.title = `${activePost.title} | 하우징허브`;
     } else if (showDiagnosticPage) {
       if (pathname !== "/toolkit") {
         window.history.pushState(null, "", "/toolkit");
       }
-      document.title = "스마트 주거 자가진단 툴킷 | 하우징허브 인천";
+      document.title = "스마트 주거 자가진단 툴킷 | 하우징허브";
     } else if (activeLegalTab) {
       const targetPath = `/${activeLegalTab}`;
       if (pathname !== targetPath) {
         window.history.pushState(null, "", targetPath);
       }
       if (activeLegalTab === "privacy") {
-        document.title = "개인정보처리방침 | 하우징허브 인천";
+        document.title = "개인정보처리방침 | 하우징허브";
       } else if (activeLegalTab === "terms") {
-        document.title = "서비스 이용약관 | 하우징허브 인천";
+        document.title = "서비스 이용약관 | 하우징허브";
       } else if (activeLegalTab === "disclaimer") {
-        document.title = "정보이용 면책고지 | 하우징허브 인천";
+        document.title = "정보이용 면책고지 | 하우징허브";
       } else if (activeLegalTab === "contact") {
-        document.title = "1:1 안심 상담 및 문의 | 하우징허브 인천";
+        document.title = "1:1 안심 상담 및 문의 | 하우징허브";
       } else if (activeLegalTab === "indexing") {
-        document.title = "Google Indexing API 제어 | 하우징허브 인천";
+        document.title = "Google Indexing API 제어 | 하우징허브";
       }
     } else {
       const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership", "/indexing"];
@@ -182,7 +183,7 @@ export default function App() {
       if (isSubpage) {
         window.history.pushState(null, "", "/");
       }
-      document.title = "하우징허브 인천 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
+      document.title = "하우징허브 | 전국 실생활 청약, 임대, 전세대출 안심 정보 포털";
     }
   }, [activePost, showDiagnosticPage, activeLegalTab]);
 
@@ -354,7 +355,7 @@ export default function App() {
     return saved ? JSON.parse(saved) : [
       { 
         role: "model", 
-        text: "반갑습니다! <strong>하우징허브 인천 AI 안심 비서</strong>입니다. <br/>인천 송도·청라 등 분양 입지 가치, 전월세 사기 방어 안전조항, 스트레스 DSR 한도 대안까지 무엇이든 쉽고 정확하게 물어보세요! 😊", 
+        text: "반갑습니다! <strong>하우징허브 AI 주거 안심 비서</strong>입니다. <br/>전국의 청약 자격요건, 전월세 사기 차단 특약 조항, 스트레스 DSR 한도 분석부터 서울·인천·경기 등 관심 지역의 맞춤 입지 분석까지 무엇이든 물어보세요! 😊", 
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) 
       }
     ];
@@ -401,11 +402,31 @@ export default function App() {
         (post.title && post.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (post.hashtags && post.hashtags.some(tag => tag && tag.toLowerCase().includes(searchTerm.toLowerCase())));
-      return matchCategory && matchTag && matchSearch;
+      
+      let matchRegion = true;
+      if (selectedRegion !== "전체") {
+        const titleLower = (post.title || "").toLowerCase();
+        const excerptLower = (post.excerpt || "").toLowerCase();
+        const tagsLower = (post.hashtags || []).map(t => t.toLowerCase());
+
+        const isIncheon = titleLower.includes("인천") || titleLower.includes("송도") || titleLower.includes("청라") || titleLower.includes("검단") || titleLower.includes("계양") || excerptLower.includes("인천") || excerptLower.includes("송도") || excerptLower.includes("청라") || tagsLower.includes("인천") || tagsLower.includes("송도") || tagsLower.includes("청라") || tagsLower.includes("검단") || tagsLower.includes("계양");
+        const isSeoul = titleLower.includes("서울") || titleLower.includes("강남") || titleLower.includes("여의도") || titleLower.includes("용산") || titleLower.includes("마포") || excerptLower.includes("서울") || excerptLower.includes("강남") || excerptLower.includes("여의도") || tagsLower.includes("서울") || tagsLower.includes("강남") || tagsLower.includes("여의도") || tagsLower.includes("용산") || tagsLower.includes("마포");
+        const isGyeonggi = titleLower.includes("경기") || titleLower.includes("분당") || titleLower.includes("판교") || titleLower.includes("일산") || titleLower.includes("수원") || titleLower.includes("광교") || excerptLower.includes("경기") || excerptLower.includes("분당") || tagsLower.includes("경기") || tagsLower.includes("분당") || tagsLower.includes("판교") || tagsLower.includes("일산") || tagsLower.includes("수원");
+
+        if (selectedRegion === "인천") {
+          matchRegion = isIncheon || (!isSeoul && !isGyeonggi);
+        } else if (selectedRegion === "서울") {
+          matchRegion = isSeoul || (!isIncheon && !isGyeonggi);
+        } else if (selectedRegion === "경기") {
+          matchRegion = isGyeonggi || (!isIncheon && !isSeoul);
+        }
+      }
+
+      return matchCategory && matchTag && matchSearch && matchRegion;
     });
     // 최신 날짜 역순 기사 배치 (최신글 선두 배치 및 시각성 보장)
     return [...list].sort((a, b) => b.date.localeCompare(a.date));
-  }, [selectedCategory, selectedTag, searchTerm]);
+  }, [selectedCategory, selectedTag, searchTerm, selectedRegion]);
 
   // 대출 계산 결과 산식 (실시간 정밀 모의 분석)
   const loanAnalysisResult = useMemo(() => {
@@ -568,7 +589,7 @@ export default function App() {
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
       {/* 최상단 장식 바 - 테크놀로지 어보이드 규정에 귀속하여 온라인 핑, 포트 등의 슬롭 배제 */}
       <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-700 text-white text-xs text-center py-2 px-4 font-medium tracking-wide">
-        🎉 2026 하우징허브 프리미엄 인천 주거 안심 통합 가이드라인 가동 중
+        🎉 2026 하우징허브 프리미엄 전국 주거 안심 통합 가이드라인 가동 중
       </div>
 
       {/* 헤더 */}
@@ -576,6 +597,7 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
           <div className="flex items-center space-x-3 cursor-pointer select-none" onClick={() => {
             setSelectedCategory("전체");
+            setSelectedRegion("전체");
             setSelectedTag(null);
             setSearchTerm("");
             setActivePost(null);
@@ -588,9 +610,11 @@ export default function App() {
             <div>
               <h1 className="text-xl font-bold tracking-tight text-slate-900 font-display flex items-center space-x-1">
                 <span>HousingHub</span>
-                <span className="text-blue-600 text-sm font-semibold bg-blue-50 px-2 py-0.5 rounded-md ml-1.5">인천</span>
+                <span className="text-blue-600 text-[11px] font-semibold bg-blue-50 px-2 py-0.5 rounded-md ml-1.5 shadow-3xs">
+                  {selectedRegion === "전체" ? "전국" : selectedRegion}
+                </span>
               </h1>
-              <p className="text-[10px] text-slate-500 font-medium">Incheon Housing encyclopaedia</p>
+              <p className="text-[10px] text-slate-500 font-medium">National Housing Encyclopaedia</p>
             </div>
           </div>
 
@@ -748,7 +772,7 @@ export default function App() {
                 <button 
                   onClick={() => {
                     navigator.clipboard.writeText(window.location.href);
-                    alert("하우징허브 인천 주소지가 클립보드에 복사되었습니다! 소중한 분들에게 안심 정보를 나누어 보세요.");
+                    alert("하우징허브 주소지가 클립보드에 복사되었습니다! 소중한 분들에게 안심 정보를 나누어 보세요.");
                   }}
                   className="flex-1 sm:flex-initial flex items-center justify-center space-x-2 text-xs font-semibold px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors cursor-pointer"
                 >
@@ -1554,18 +1578,44 @@ export default function App() {
             {/* 히어로 환영 안내 */}
             <section className="relative overflow-hidden rounded-3xl bg-slate-900 text-white shadow-xl">
               <div className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-25" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200')` }}></div>
-              <div className="relative p-8 sm:p-12 max-w-3xl space-y-4">
+              <div className="relative p-8 sm:p-12 max-w-3xl space-y-5">
                 <div className="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-xs">
                   <TrendingUp className="w-3.5 h-3.5" />
                   <span>실시간 주거 안심 정보 마이크로 포털</span>
                 </div>
                 <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-display leading-tight">
-                  소중한 내 집 계약부터 대출 가치까지,<br/>인천 맞춤형 해결법을 한눈에.
+                  소중한 내 집 계약부터 대출 가치까지,<br/>전국 실생활 주거 안심 해결법.
                 </h2>
-                <p className="text-slate-300 text-base leading-relaxed max-w-2xl">
-                  하우징허브 인천은 송도·청라 등 분양 핵심 전략, 등기부 독소조항 무력화 특약, 스트레스 DSR 연도별 실익 등 실수요자가 반드시 숙지해야 할 지식백과 66선을 제공합니다.
+                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
+                  하우징허브는 주택 청약 분양 입지 분석, 임대차 계약 등기 안전조항, 스트레스 DSR 대안 한도까지 무주택 실수요자가 반드시 숙지해야 할 지식백과 66선을 제공합니다.
                 </p>
-                <div className="pt-2 flex flex-wrap gap-3">
+
+                {/* 지역별 스마트 허브 선택기 */}
+                <div className="py-1">
+                  <span className="text-[11px] text-blue-400 font-bold uppercase tracking-wider block mb-2.5">원하는 지역의 밀착 지식 허브 선택</span>
+                  <div className="flex flex-wrap gap-2">
+                    {[
+                      { key: "전체", label: "🌐 전국 종합", color: "bg-blue-600 border-blue-500" },
+                      { key: "서울", label: "🗼 서울 허브", color: "bg-indigo-600 border-indigo-500" },
+                      { key: "인천", label: "⚓ 인천 허브", color: "bg-teal-600 border-teal-500" },
+                      { key: "경기", label: "🌳 경기 허브", color: "bg-emerald-600 border-emerald-500" }
+                    ].map(reg => (
+                      <button
+                        key={reg.key}
+                        onClick={() => setSelectedRegion(reg.key)}
+                        className={`px-3.5 py-2 rounded-xl border text-xs font-semibold cursor-pointer transition-all ${
+                          selectedRegion === reg.key 
+                            ? `${reg.color} border-white text-white shadow-md scale-102` 
+                            : "bg-slate-800/65 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800"
+                        }`}
+                      >
+                        {reg.label}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="pt-1 flex flex-wrap gap-3">
                   <button 
                     onClick={() => setShowDiagnosticPage(true)}
                     className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-5 py-3 rounded-xl transition-all shadow-lg hover:shadow-blue-500/20 flex items-center space-x-2 text-sm cursor-pointer"
@@ -1592,9 +1642,14 @@ export default function App() {
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-100 pb-5">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center space-x-2">
-                        <span>📚 지식백과 보도실</span>
+                        <span>📚 {selectedRegion === "전체" ? "전국" : selectedRegion} 지식백과 보도실</span>
                       </h3>
-                      <p className="text-xs text-slate-500 mt-1 font-medium">인천 시민과 유주택 예정자를 위한 하우징 전문가 기고문 66선</p>
+                      <p className="text-xs text-slate-500 mt-1 font-medium">
+                        {selectedRegion === "전체" && "전국 무주택 서민과 실수요자를 위한 하우징 전문가 기고문 66선"}
+                        {selectedRegion === "인천" && "인천 시민과 인천지역 주거 청약 예정자를 위한 하우징 전문가 기고문"}
+                        {selectedRegion === "서울" && "서울 시민과 서울 수도권 주거 청약 예정자를 위한 하우징 전문가 기고문"}
+                        {selectedRegion === "경기" && "경기 도민과 경기 수도권 주거 청약 예정자를 위한 하우징 전문가 기고문"}
+                      </p>
                     </div>
                     
                     {/* 검색 영역 */}
@@ -1770,7 +1825,7 @@ export default function App() {
             {/* 실시간 2026 트렌드 타임라인 */}
             <div className="bg-slate-900 text-white rounded-3xl p-6 shadow-xs space-y-4">
               <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">2026 부동산 시행 예고</span>
-              <h4 className="text-base font-bold font-display">인천 실수요 세금/공급 달력</h4>
+              <h4 className="text-base font-bold font-display">{selectedRegion === "전체" ? "전국" : selectedRegion} 실수요 세금/공급 달력</h4>
               
               <div className="space-y-4 pl-1">
                 <div className="relative pl-4 border-l border-slate-700">
@@ -1816,7 +1871,7 @@ export default function App() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold font-display">하우징허브 스마트 AI 안심 비서</h4>
-                  <p className="text-[10px] text-green-400 font-medium">● 2026 인천 주거 컨설턴트 가동 중</p>
+                  <p className="text-[10px] text-green-400 font-medium">● 2026 {selectedRegion === "전체" ? "전국" : selectedRegion} 주거 컨설턴트 가동 중</p>
                 </div>
               </div>
               <button 
@@ -1862,7 +1917,7 @@ export default function App() {
             {/* 퀵버튼 추천 */}
             <div className="p-2 border-t border-slate-100 bg-white grid grid-cols-1 gap-1">
               <button 
-                onClick={() => handleQuickQuestion("인천 신혼 가구인데 신생아 대출이랑 보금자리론 중 무엇이 유리해?")}
+                onClick={() => handleQuickQuestion(`${selectedRegion === "전체" ? "수도권" : selectedRegion} 신혼 가구인데 신생아 대출이랑 보금자리론 중 무엇이 유리해?`)}
                 className="text-[10px] text-left text-slate-600 hover:text-blue-600 p-1.5 rounded-lg hover:bg-slate-50 transition-colors truncate"
               >
                 ❓ 신생아 특례 vs 보금자리론 비교해줘
@@ -1912,7 +1967,7 @@ export default function App() {
                 <h3 className="text-lg font-bold font-display tracking-tight">HousingHub</h3>
               </div>
               <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-                하우징허브 인천은 실수요자의 권리보호와 주거복지 증진을 목적으로 하는 무상의 정보 포털입니다. 법률 가이드, 시뮬레이션 계산 인프라를 철저히 검증해 세세히 전달합니다.
+                하우징허브는 실수요자의 권리보호와 주거복지 증진을 목적으로 하는 무상의 정보 포털입니다. 전국 종합 주거 지식과 서울·인천·경기 등 핵심 지역별 밀착 가이드를 철저히 검증해 세세히 전달합니다.
               </p>
             </div>
 
@@ -2002,12 +2057,12 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 font-medium">
-            <p>© 2026 HousingHub Incheon. Adhered to Google AdSense Publisher Policies & Global Privacy Standards.</p>
+            <p>© 2026 HousingHub. Adhered to Google AdSense Publisher Policies & Global Privacy Standards.</p>
             <p className="mt-2 sm:mt-0">All references are valid in South Korea regulations.</p>
           </div>
           
           <div className="mt-4 pt-4 border-t border-slate-800/50 text-[10px] text-slate-600 leading-relaxed">
-            <p><strong>[AdSense Compliance Statement]</strong> 본 주거 마이크로 포털 하우징허브 인천은 구글 애드센스(Google AdSense) 프로그램 정책을 엄격히 준수하며, 사용자 맞춤형 광고 매칭 및 트래픽 분석을 위해 서드파티 제공업체 쿠키(Cookie)를 조화롭게 활용할 수 있습니다. 사용자는 개인정보처리방침을 언제든지 검토하고 브라우저 설정 조율로 맞춤 수집을 강제 해제할 수 있습니다.</p>
+            <p><strong>[AdSense Compliance Statement]</strong> 본 주거 마이크로 포털 하우징허브는 구글 애드센스(Google AdSense) 프로그램 정책을 엄격히 준수하며, 사용자 맞춤형 광고 매칭 및 트래픽 분석을 위해 서드파티 제공업체 쿠키(Cookie)를 조화롭게 활용할 수 있습니다. 사용자는 개인정보처리방침을 언제든지 검토하고 브라우저 설정 조율로 맞춤 수집을 강제 해제할 수 있습니다.</p>
           </div>
         </div>
       </footer>
