@@ -481,11 +481,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
-      {/* 최상단 장식 바 - 테크놀로지 어보이드 규정에 귀속하여 온라인 핑, 포트 등의 슬롭 배제 */}
-      <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-indigo-700 text-white text-xs text-center py-2 px-4 font-medium tracking-wide">
-        🎉 2026 하우징허브 프리미엄 전국 주거 안심 통합 가이드라인 가동 중
-      </div>
-
       {/* 헤더 */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
@@ -1601,7 +1596,7 @@ export default function App() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold font-display">하우징허브 스마트 AI 안심 비서</h4>
-                  <p className="text-[10px] text-green-400 font-medium">● 2026 {selectedRegion === "전체" ? "전국" : selectedRegion} 주거 컨설턴트 가동 중</p>
+                  <p className="text-[10px] text-slate-400 font-medium">{selectedRegion === "전체" ? "전국" : selectedRegion} 지역 맞춤형 주거 컨설턴트</p>
                 </div>
               </div>
               <button 
