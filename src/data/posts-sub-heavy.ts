@@ -65,7 +65,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-05-24",
+    date: "2026-06-26",
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["9.7공급대책", "도심공공주택복합사업", "주택공급추진본부", "LH개혁", "용산공급", "과천공급", "태릉CC", "공공분양", "청약기회", "주택공급"]
@@ -154,11 +154,11 @@ export const POSTS_SUB_HEAVY: Post[] = [
       </ul>
       <p>무주택 실수요자에게는 이런 변화가 좋은 신호입니다. 시세가 정직해지고, 정보 비대칭이 줄어들면 매수 의사결정이 한결 수월해집니다. 단기적으로는 거래 절차가 복잡해 보일 수 있지만, 장기적으로는 시장의 안정성과 신뢰가 회복되는 방향입니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-01</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-25</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-01",
+    date: "2026-06-25",
     image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["공인중개사", "매매신고", "증빙자료", "자전거래차단", "실거래가띄우기", "부동산투명성", "시장교란행위", "2026부동산제도", "부동산감독원", "거래신고법"]
@@ -298,7 +298,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-05",
+    date: "2026-06-23",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["KB부동산보고서", "2026부동산", "서울매물증가", "강남구하락", "과천시", "시장안정세", "공인중개사설문", "공급대책", "세제개편", "실수요자전략"]
@@ -449,7 +449,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-17",
+    date: "2026-06-21",
     image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["공공임대주택", "행복주택", "국민임대", "영구임대", "LH청약센터", "전세난대안", "무주택", "청약통장", "주거안정", "마이홈포털"]
@@ -536,7 +536,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-07",
+    date: "2026-06-19",
     image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["양도세중과", "서울집값", "매물감소", "3주연속상승", "실수요자전략", "강남3구", "재건축", "내집마련", "스트레스DSR", "2026부동산"]
@@ -655,11 +655,11 @@ export const POSTS_SUB_HEAVY: Post[] = [
         </ul>
       </div>
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 정보 안내입니다. 청약 전 청약홈 공고와 각 단지 분양 정보를 반드시 다시 확인하세요.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-09</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-17</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-09",
+    date: "2026-06-17",
     image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["송도청약", "송도분양", "국제업무지구", "수도권청약", "송도아파트", "전매제한", "분양가", "청약자금계획", "수도권부동산", "청약홈"]
@@ -698,7 +698,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <h3 id="section5">2026 청약 전략: 무작정 넣지 마라</h3>
       <p>본인의 가점과 자격, 그리고 자금 묶임 상태를 버텨낼 수 있는 상환능력을 세밀하게 체크하여 트랙을 선회할 줄 알아야 합니다.</p>
       <p>정확한 청약 자격과 가점은 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a>에서 제공합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-12</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-14</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -768,7 +768,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-12",
+    date: "2026-06-14",
     image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["분양가상한제", "로또청약", "청약경쟁률", "실거주의무", "전매제한", "2026청약", "시세차익", "특별공급", "청약전략", "청약홈"]
@@ -810,7 +810,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
         <li><strong>✅ 실거주 적합성:</strong> 직장·학교·생활권과의 거리, 교통편</li>
         <li><strong>✅ 교통 호재 진위:</strong> 계획 단계인지 확정 단계인지 구분</li>
       </ul>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-15</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-11</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -880,7 +880,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-15",
+    date: "2026-06-11",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["청라국제도시", "청라아파트", "청라분양", "수도권청라", "청라자이", "청라시세", "수도권서구부동산", "청라매수", "수도권부동산", "실거래가"]
@@ -1029,7 +1029,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-20",
+    date: "2026-06-08",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["검단신도시", "계양테크노밸리", "수도권청약", "공공분양", "3기신도시", "예상가점", "청약가이드", "GTX호재", "수도권1호선연장", "분양가격"]
