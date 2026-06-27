@@ -22,6 +22,32 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// 구글 애드센스 및 검색 엔진 크롤러를 위한 최상단 정적 파일 전용 라우트
+app.get("/ads.txt", (req, res) => {
+  const adsPath = path.join(process.cwd(), "public", "ads.txt");
+  if (fs.existsSync(adsPath)) {
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    return res.sendFile(adsPath);
+  }
+  const distAdsPath = path.join(process.cwd(), "dist", "ads.txt");
+  if (fs.existsSync(distAdsPath)) {
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    return res.sendFile(distAdsPath);
+  }
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  return res.send("google.com, pub-9552509372228899, DIRECT, f08c47fec0942fa0");
+});
+
+app.get("/robots.txt", (req, res) => {
+  const robotsPath = path.join(process.cwd(), "public", "robots.txt");
+  if (fs.existsSync(robotsPath)) {
+    res.setHeader("Content-Type", "text/plain; charset=utf-8");
+    return res.sendFile(robotsPath);
+  }
+  res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  return res.send("User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://zip9.kr/sitemap.xml\n");
+});
+
 // API 1: 헬스체크 및 환경정보 제공
 app.get("/api/health", (req, res) => {
   res.json({
