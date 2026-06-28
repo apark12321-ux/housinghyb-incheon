@@ -90,6 +90,11 @@ export const POSTS_SUB: Post[] = [
       
       <h3 id="section1">1. 청약 통장 인정 한도 상향의 역사적 배경과 공공분양 전략</h3>
       <p><a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer">국토교통부</a>는 최근 주택청약종합저축의 월 납입 인정 한도를 기존 10만 원에서 25만 원으로 상향 조정한다고 발표했습니다. 이는 1983년 청약 제도가 도입된 이후 약 40년 만에 이루어진 기념비적인 변화로, 그간의 물가 상승과 국민 소득 수준의 비약적인 향상을 반영한 조치입니다. <strong>공공분양 일반공급의 당첨 합격선</strong>은 오로지 '저축 총액'에 의해 결정되는데, 과거에는 한 달에 아무리 많은 돈을 넣어도 딱 10만 원까지만 인정되었습니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" alt="현대 아파트 전경" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">인기 공공분양 단지 합격을 위해서는 인정 한도 상향에 맞춘 납입액 조율이 필수적입니다.</p>
+      </div>
       <p>이러한 경직된 제도 때문에 인기 지역인 서울이나 수도권 주요 신도시의 공공분양 당첨선인 2,000만 원~2,500만 원을 채우기 위해서는 무려 17년에서 20년이라는 긴 인내의 시간이 필요했습니다. 하지만 이번 상향 조치로 인해 한 달에 25만 원을 납입할 경우, 인기 단지 당첨선인 1,500만 원을 채우는 데 걸리는 시간이 기존 12년 6개월에서 단 5년으로 대폭 단축됩니다. 이는 가입 기간이 상대적으로 짧은 2030 청년 세대나 신혼부부들에게 공공분양 당첨의 '급행열차'를 탈 수 있는 기회를 제공하며, 주거 사다리를 복원하려는 정부의 강력한 의지가 담겨 있습니다. 공공분양 당첨을 인생의 목표로 삼았다면, 이제 월 25만 원 납입은 선택이 아닌 생존 전략이 되었습니다.</p>
 
       <h3 id="section2">2. 연말정산 소득공제 혜택 극대화: 240만 원에서 300만 원으로</h3>
@@ -160,6 +165,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3 id="section2">2. 나눔형 (이익 공유형): 시세 70% 가격과 초저금리 대출의 결합</h3>
       <p>나눔형은 뉴:홈 정책의 가장 혁신적인 모델로, 주변 시세의 70% 이하라는 파격적인 분양가로 책정됩니다. 이 유형의 가장 큰 매력은 <strong>'이익 공유'</strong>라는 개념입니다. 5년의 의무 거주 기간을 채운 뒤 집을 팔 때, 발생하는 시세 차익의 70%는 수분양자가 가져가고 나머지 30%는 국가(LH 등)에 귀속됩니다. 자칫 손해처럼 보일 수 있으나, 반대로 집값이 하락했을 때의 손실 역시 30%를 공공이 분담하므로 '하이 리스크 하이 리턴'이 아닌 '로우 리스크 미들 리턴'의 안정적인 구조를 가집니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="도심 건축" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">나눔형 뉴:홈은 뛰어난 도심 접근성과 혁신적인 전용 저리 금융 융자를 동시 지원합니다.</p>
+      </div>
       <p>더불어 나눔형 전용 모기지 대출 상품은 연 1.9~3.0%의 낮은 고정금리로 최장 40년간 집값의 80%(최대 5억 원)까지 대출이 가능합니다. DSR 규제가 강력한 상황에서 소득이 적은 청년들도 충분한 한도를 확보할 수 있게 해주는 유일한 통로입니다. 초기 자본이 부족하지만 빠르게 내 집을 소유하고 싶은 신혼부부나 사회초년생들에게 가장 강력하게 추천드리는 유형입니다.</p>
 
       <h3 id="section3">3. 선택형 (저렴한 임대 후 분양): 거주 안정성과 자산 형성의 징검다리</h3>
@@ -239,6 +249,11 @@ export const POSTS_SUB: Post[] = [
         <li><strong>무주택 또는 1주택 처분 조건:</strong> 신청 시점 기준 무주택, 또는 기존 주택 처분 약정 필요한 경우</li>
       </ul>
       <p>구체적인 소득·자산 기준 금액은 매년·정책 개편에 따라 조정돼요. 본인 가구가 해당하는지 정확히 확인하려면 <a href="https://nhuf.molit.go.kr" target="_blank" rel="noopener noreferrer">주택도시기금</a>의 '기금e든든'에서 모의 신청을 해보시는 게 가장 빠르고 정확해요.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1516600118366-71e840d85955?auto=format&fit=crop&q=80&w=800" alt="가족의 편안한 방" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">아이를 위한 소중한 보금자리 선택은 신생아 특례 정책 금융을 활용해 비용 부담을 크게 덜 수 있습니다.</p>
+      </div>
 
       <h3 id="section3">출산 추가 시 금리·기간 인센티브</h3>
       <p>이 제도의 강점 중 하나는 '추가 출산 인센티브'예요. 대출 실행 후 자녀를 더 낳으면 추가 혜택이 적용돼요.</p>
@@ -324,6 +339,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3 id="section2">2. 신혼부부 특별공급: 자격 요건과 우선공급 순위의 모든 것</h3>
       <p>신혼부부 특별공급은 혼인신고일로부터 7년 이내의 신혼부부 또는 예비 신혼부부, 그리고 6세 이하 자녀가 있는 한부모 가족이 대상입니다. 모든 세대구성원이 무주택자여야 하며, 청약통장은 가입 6개월 이상에 납입 6회 이상이 기본 요건입니다. <strong>소득 요건은 도시근로자 가구당 월평균소득의 130%(맞벌이 140%) 이하</strong>이며, 부동산 및 자동차 가액에 대한 자산 기준도 별도로 적용됩니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&q=80&w=800" alt="신혼 주택 인테리어" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">신혼부부 특별공급은 일반 청약 대비 현저히 낮은 경쟁률로 아늑한 첫 보금자리를 잡는 강력한 루트입니다.</p>
+      </div>
       <p>신혼부부 특별공급은 우선공급(70%)과 일반공급(30%)으로 나뉘는데, 우선공급은 소득 100% 이하 가구가 대상이고 자녀 수가 많을수록 가산점을 받습니다. 특히 자녀가 있는 신혼부부, 그중에서도 미성년 자녀 2명 이상인 가구는 동점자 경쟁에서 절대적으로 유리합니다. 혼인 기간이 짧고 자녀가 없는 신혼부부라면 우선공급보다는 일반공급에서 경쟁하는 것이 현실적이며, 자녀 출산 후 다시 도전하는 장기 전략도 검토할 만합니다.</p>
 
       <h3 id="section3">3. 생애최초 특별공급: 평생 한 번뿐인 기회의 활용 전략</h3>
@@ -389,6 +409,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3 id="section2">2. 무주택 기간 계산법: 만 30세 또는 혼인신고일 기준의 의미</h3>
       <p>무주택 기간은 만 30세 시점 또는 혼인신고일 중 더 빠른 날부터 계산을 시작합니다. 즉 만 25세에 결혼한 분이라면 결혼 시점부터, 미혼이라면 만 30세부터 무주택 기간이 카운트됩니다. <strong>1년 미만은 2점부터 시작해 1년마다 2점씩 가산되며 15년 이상이면 만점 32점</strong>을 받게 됩니다. 이론적으로 만 30세 미혼이 0점이고 만 45세가 되어야 만점에 도달하는 구조입니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&fit=crop&q=80&w=800" alt="주거 분석 및 계산" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">무주택 기간과 가점 계산 요소를 빈틈없이 자가 진단하여 정밀한 청약 단지를 낙점해야 합니다.</p>
+      </div>
       <p>여기서 매우 중요한 점은 본인뿐 아니라 세대원 전원이 무주택이어야 한다는 사실입니다. 배우자가 결혼 전에 잠시 보유했다 처분한 주택, 부모와 같이 사는 동안 부모 명의로 등기된 주택 등이 모두 영향을 줄 수 있으므로 정확한 등기 이력 확인이 필수입니다. <strong>일시적으로 주택을 소유했다 처분한 경우 그 기간만큼 무주택 기간이 차감</strong>되며, 부모 사망 시 일시적으로 상속받은 주택이 있어도 청약 신청 전 처분하면 무주택 인정이 가능합니다.</p>
 
       <h3 id="section3">3. 부양가족 수 산정 기준과 흔히 놓치는 함정들</h3>
@@ -449,6 +474,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3 id="section1">1. 공공분양과 민간분양의 근본적 차이점</h3>
       <p>공공분양은 <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer">한국토지주택공사</a>(LH), 서울주택도시공사(SH), 경기주택도시공사(GH) 등 공공기관이 시행하는 주택 공급 사업입니다. <strong>무주택 서민의 주거 안정이라는 정책적 목표</strong>가 명확하므로 가격이 시세보다 현저히 저렴하고, 그 대신 자격 요건이 엄격하며 다양한 제약이 따릅니다. 반면 민간분양은 GS건설, 현대건설, 삼성물산 등 민간 건설사가 분양하는 일반 아파트로, 자격 조건은 덜 까다롭지만 시세에 가깝게 가격이 책정됩니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="아름다운 주택 설계" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">공공분양과 민간분양은 가격 책정 및 금융 대출 우대 조항에서 성격이 크게 구분됩니다.</p>
+      </div>
       <p>두 유형의 가장 본질적인 차이는 '누가 운영하는가'에 있으며, 이로 인해 가격·자격·전매·거주의무 등 모든 조건이 갈라집니다. 어느 쪽이 무조건 좋다고 단정할 수는 없으며, 본인의 자금 상황하고 라이프스타일에 따라 합리적 선택이 다릅니다. <strong>자금이 부족하고 정착 의사가 강하다면 공공분양, 자금이 충분하고 자유도가 중요하다면 민간분양</strong>이라는 큰 원칙을 기억하셔야 합니다.</p>
 
       <h3 id="section2">2. 분양가 형성 방식과 시세 대비 가격 차이</h3>
@@ -516,6 +546,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3 id="section2">2. 보유 기간별 세율: 1년·2년·그 이후의 분기점</h3>
       <p>분양권 양도세율은 보유 기간에 따라 단계적으로 적용됩니다. <strong>1년 미만 보유 시 70%, 1년 이상 2년 미만 60%, 2년 이상 보유 시 기본세율(6~45%)</strong>이 적용됩니다. 즉 분양 받자마자 단기간에 매도하면 차익의 70%가 세금으로 사라집니다. 차익이 1억 원이면 7천만 원이 세금이 되는 셈입니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800" alt="금융 계산 서류" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">양도소득세 절세를 달성하려면 취득 시점부터 정확한 보유 기간을 설계하고 유지해야 합니다.</p>
+      </div>
       <p>2년 이상 보유하면 기본세율로 전환되어 일반 양도소득과 동일하게 누진세율이 적용됩니다. 차익이 8천만 원 이하면 24%, 1.5억 이하 35%, 3억 이하 38%, 5억 이하 40%, 10억 이하 42%, 10억 초과 45%로 차익 규모에 따라 세율이 누진됩니다. <strong>2년이라는 보유 기간이 절세의 절대적 핵심 분기점</strong>이며, 가능하면 2년 이상 보유 후 매도하는 것이 합리적입니다.</p>
 
       <h3 id="section3">3. 조정대상지역 중과세와 비조정지역의 큰 차이</h3>
@@ -572,6 +607,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3 id="section2">2. 5월 12일 발표의 핵심: 무엇이 어떻게 바뀌었나</h3>
       <p>이전에는 다주택자 양도소득세 중과 유예 종료와 다주택자 주택담보대출 만기 연장 제한에 따른 보완 조치로, <strong>일부 다주택자가 매도한 임대 중 주택에 한해서만</strong> 실거주 의무 유예가 적용됐습니다. 이로 인해 비거주 1주택자가 매도한 주택은 동일한 임대차 상태임에도 유예 혜택을 받지 못하는 형평성 문제가 제기됐습니다.</p>
+
+      <div class="my-6">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" alt="정부 청사 회의" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <p class="text-xs text-center text-slate-500 mt-2 font-medium">실거주 의무 완화와 토지거래허가구역 제도의 개편 사항을 올바르게 체크하여 분쟁을 예방하십시오.</p>
+      </div>
       <p>이번 발표 이후 <strong>발표일(5월 12일) 기준 임대차 계약이 체결된 토허구역 내 모든 주택</strong>으로 유예 대상이 확대됐습니다. 다주택자 매물과 비거주 1주택자 매물을 가리지 않고 동일한 유예 혜택이 적용됩니다. 김정 장관은 \"매도자 간 형평성 문제를 해소하고, 세입자가 있어 매도를 고민하던 이들의 시장 참여를 이끌어낼 것\"이라고 밝혔습니다.</p>
 
       <h3 id="section3">3. 매수자 자격 요건: 발표일 기준 무주택 유지 의무</h3>
