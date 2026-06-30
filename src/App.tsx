@@ -184,6 +184,22 @@ export default function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [activePost, activeLegalTab, showDiagnosticPage]);
+
+  // 토스트 알림 상태 및 기동 함수
+  const [toast, setToast] = useState<{ message: string; type: "success" | "error" | "info" } | null>(null);
+  const toastTimeoutRef = useRef<any>(null);
+
+  const showToast = (message: string, type: "success" | "error" | "info" = "info") => {
+    if (toastTimeoutRef.current) {
+      clearTimeout(toastTimeoutRef.current);
+    }
+    setToast({ message, type });
+    toastTimeoutRef.current = setTimeout(() => {
+      setToast(null);
+      toastTimeoutRef.current = null;
+    }, 4500);
+  };
+
   const [contactName, setContactName] = useState<string>("");
   const [contactEmail, setContactEmail] = useState<string>("");
   const [contactCategory, setContactCategory] = useState<string>("general");
@@ -195,7 +211,7 @@ export default function App() {
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!contactName.trim() || !contactEmail.trim() || !contactMessage.trim()) {
-      alert("이름, 이메일, 그리고 상세 의견 기재는 필수 항목입니다.");
+      showToast("이름, 이메일, 그리고 상세 의견 기재는 필수 항목입니다.", "error");
       return;
     }
     setIsContactLoading(true);
@@ -222,7 +238,7 @@ export default function App() {
       }
     } catch (err) {
       console.error(err);
-      alert("전송 중 네트워크 일시 혼선이 발생했습니다. 다시 접수해 주세요.");
+      showToast("전송 중 네트워크 일시 혼선이 발생했습니다. 다시 접수해 주세요.", "error");
     } finally {
       setIsContactLoading(false);
     }
@@ -661,7 +677,7 @@ export default function App() {
                 <button 
                   onClick={() => {
                     navigator.clipboard.writeText(window.location.href);
-                    alert("하우징허브 주소지가 클립보드에 복사되었습니다! 소중한 분들에게 안심 정보를 나누어 보세요.");
+                    showToast("하우징허브 주소지가 클립보드에 복사되었습니다! 소중한 분들에게 안심 정보를 나누어 보세요.", "success");
                   }}
                   className="flex-1 sm:flex-initial flex items-center justify-center space-x-2 text-xs font-semibold px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors cursor-pointer"
                 >
@@ -1780,6 +1796,36 @@ export default function App() {
           
         </div>
       </footer>
+
+      {/* 토스트 알림창 */}
+      <AnimatePresence>
+        {toast && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.95 }}
+            transition={{ duration: 0.25, ease: "easeOut" }}
+            className="fixed bottom-24 right-6 z-[60] max-w-sm w-full bg-slate-900/95 backdrop-blur-md border border-slate-700/50 text-white rounded-2xl p-4 shadow-2xl flex items-start space-x-3"
+          >
+            <div className="mt-0.5">
+              {toast.type === "success" && <CheckCircle2 className="w-5 h-5 text-green-400" />}
+              {toast.type === "error" && <AlertTriangle className="w-5 h-5 text-rose-400" />}
+              {toast.type === "info" && <BadgeAlert className="w-5 h-5 text-blue-400" />}
+            </div>
+            <div className="flex-1 space-y-1">
+              <p className="text-xs font-semibold leading-relaxed">
+                {toast.message}
+              </p>
+            </div>
+            <button
+              onClick={() => setToast(null)}
+              className="text-slate-400 hover:text-white p-0.5 hover:bg-slate-800/80 rounded-md transition-colors"
+            >
+              <X className="w-4 h-4" />
+            </button>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
 
     </div>

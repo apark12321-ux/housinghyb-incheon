@@ -116,50 +116,85 @@ function enrichPostContent(post: Post): Post {
   `;
 
   let newContent = post.content;
-  const h3Count = (newContent.match(/<h3/g) || []).length;
-  const h2Count = (newContent.match(/<h2/g) || []).length;
+
+  // 대소문자 무시하고 h2, h3 헤더 태그 매칭
+  const headingRegex = /<(h2|h3)[\s>]/gi;
+  const headings: { index: number; tag: string }[] = [];
+  let match;
+  while ((match = headingRegex.exec(newContent)) !== null) {
+    headings.push({
+      index: match.index,
+      tag: match[0]
+    });
+  }
+
+  // </p> 문단 종료 태그 매칭
+  const pCloseRegex = /<\/p>/gi;
+  const paragraphs: { index: number; tag: string }[] = [];
+  while ((match = pCloseRegex.exec(newContent)) !== null) {
+    paragraphs.push({
+      index: match.index,
+      tag: match[0]
+    });
+  }
 
   if (imgCount === 0) {
-    if (h3Count >= 3) {
-      let matchCount = 0;
-      newContent = newContent.replace(/<h3/g, (match) => {
-        matchCount++;
-        if (matchCount === 2) return imgHtml1 + match;
-        if (matchCount === 3) return imgHtml2 + match;
-        return match;
-      });
-    } else if (h2Count >= 3) {
-      let matchCount = 0;
-      newContent = newContent.replace(/<h2/g, (match) => {
-        matchCount++;
-        if (matchCount === 2) return imgHtml1 + match;
-        if (matchCount === 3) return imgHtml2 + match;
-        return match;
-      });
-    } else {
-      // subheading이 적은 경우 본문 첫 단락 뒤에 배치
-      if (newContent.includes("</p>")) {
-        newContent = newContent.replace("</p>", "</p>" + imgHtml1);
+    // 이미지 2개 신규 주입
+    if (headings.length >= 3) {
+      // 2번째와 3번째 헤더 바로 앞에 각각 삽입 (인덱스 밀림 방지를 위해 뒤에서부터 삽입)
+      const idx3 = headings[2].index;
+      const idx2 = headings[1].index;
+      newContent = newContent.slice(0, idx3) + imgHtml2 + newContent.slice(idx3);
+      newContent = newContent.slice(0, idx2) + imgHtml1 + newContent.slice(idx2);
+    } else if (headings.length === 2) {
+      // 1번째와 2번째 헤더 앞에 삽입
+      const idx2 = headings[1].index;
+      const idx1 = headings[0].index;
+      newContent = newContent.slice(0, idx2) + imgHtml2 + newContent.slice(idx2);
+      newContent = newContent.slice(0, idx1) + imgHtml1 + newContent.slice(idx1);
+    } else if (headings.length === 1) {
+      // 1번째 헤더 앞, 그리고 본문 어딘가나 문단 뒤에 삽입
+      const idx1 = headings[0].index;
+      if (paragraphs.length >= 3) {
+        const pIdx3 = paragraphs[2].index + 4; // </p> 뒤
+        if (pIdx3 > idx1) {
+          newContent = newContent.slice(0, pIdx3) + imgHtml2 + newContent.slice(pIdx3);
+          newContent = newContent.slice(0, idx1) + imgHtml1 + newContent.slice(idx1);
+        } else {
+          newContent = newContent.slice(0, idx1) + imgHtml2 + newContent.slice(idx1);
+          newContent = newContent.slice(0, pIdx3) + imgHtml1 + newContent.slice(pIdx3);
+        }
       } else {
-        newContent = newContent + imgHtml1;
+        newContent = newContent.slice(0, idx1) + imgHtml1 + newContent.slice(idx1) + imgHtml2;
+      }
+    } else {
+      // 헤더가 전혀 없는 경우 문단 단위로 삽입
+      if (paragraphs.length >= 4) {
+        const pIdx4 = paragraphs[3].index + 4;
+        const pIdx2 = paragraphs[1].index + 4;
+        newContent = newContent.slice(0, pIdx4) + imgHtml2 + newContent.slice(pIdx4);
+        newContent = newContent.slice(0, pIdx2) + imgHtml1 + newContent.slice(pIdx2);
+      } else if (paragraphs.length >= 2) {
+        const pIdx2 = paragraphs[paragraphs.length - 1].index + 4;
+        const pIdx1 = paragraphs[0].index + 4;
+        newContent = newContent.slice(0, pIdx2) + imgHtml2 + newContent.slice(pIdx2);
+        newContent = newContent.slice(0, pIdx1) + imgHtml1 + newContent.slice(pIdx1);
+      } else {
+        // 문단도 부족하면 맨 앞과 맨 뒤에 샌드위치 주입
+        newContent = imgHtml1 + newContent + imgHtml2;
       }
     }
   } else if (imgCount === 1) {
-    // 1개의 이미지만 본문에 있는 경우 두 번째 이미지를 3번째 subheading 또는 끝부분 근처에 보정 주입
-    if (h3Count >= 3) {
-      let matchCount = 0;
-      newContent = newContent.replace(/<h3/g, (match) => {
-        matchCount++;
-        if (matchCount === 3) return imgHtml2 + match;
-        return match;
-      });
-    } else if (h2Count >= 3) {
-      let matchCount = 0;
-      newContent = newContent.replace(/<h2/g, (match) => {
-        matchCount++;
-        if (matchCount === 3) return imgHtml2 + match;
-        return match;
-      });
+    // 이미지 1개 추가 주입
+    if (headings.length >= 3) {
+      const idx3 = headings[2].index;
+      newContent = newContent.slice(0, idx3) + imgHtml2 + newContent.slice(idx3);
+    } else if (headings.length >= 2) {
+      const idx2 = headings[1].index;
+      newContent = newContent.slice(0, idx2) + imgHtml2 + newContent.slice(idx2);
+    } else if (paragraphs.length >= 3) {
+      const pIdx3 = paragraphs[2].index + 4;
+      newContent = newContent.slice(0, pIdx3) + imgHtml2 + newContent.slice(pIdx3);
     } else {
       newContent = newContent + imgHtml2;
     }
