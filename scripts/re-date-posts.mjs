@@ -14,10 +14,12 @@ const sortedPosts = [...POSTS].sort((a, b) => {
   return a.id.localeCompare(b.id);
 });
 
-// 2) Generate exactly 60 sequential dates leading up to and including today (2026-06-22)
+// 2) Generate exactly 60 sequential dates leading up to and including today
 // Since there are 60 posts, having exactly 1 post per day spans exactly 60 days.
 // Let's compute these dates.
-const endDate = new Date("2026-06-22");
+const now = new Date();
+const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000); // UTC+9
+const endDate = new Date(Date.UTC(kstNow.getUTCFullYear(), kstNow.getUTCMonth(), kstNow.getUTCDate()));
 const newDates = [];
 for (let i = 59; i >= 0; i--) {
   const d = new Date(endDate);
