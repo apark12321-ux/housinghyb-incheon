@@ -59,11 +59,11 @@ export const POSTS_SUB: Post[] = [
 
       <h3>마치며: 안심 정주의 첫 단계는 나 자신의 꼼꼼함입니다</h3>
       <p>하우징허브 주거 안심 안테나는 임차인분들의 고품격 주거 정착과 안전한 자산 사수를 위해 상시 정책 지식과 실질적 가이드를 생산하고 있습니다. 작은 디테일 하나를 놓치지 않는 스마트한 확인 습관이 우리 가정의 보증금을 지켜냅니다. 오늘 소개한 3대 안심 특약과 확인 프로세스를 인쇄하여 계약서 작성 시 실물 대면용 지침서로 알차게 활용해 보시기 바랍니다.</p>
-      <p class="text-xs text-gray-400 mt-4">최종 업데이트: undefined</p>
+      <p class="text-xs text-gray-400 mt-4">최종 업데이트: 2026-07-01</p>
     `,
     category: "전월세",
     author: "편집팀",
-    date: "undefined",
+    date: "2026-07-01",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["전세사기", "보증보험", "대항력", "확정일자", "특약조항", "안심주거", "전월세계약", "등기부등본", "부동산법률"]
@@ -130,11 +130,11 @@ export const POSTS_SUB: Post[] = [
       <p>부동산 시장은 냉정합니다. 정책이 바뀌고 제도가 개편될 때마다 누군가는 기회를 잡고 누군가는 뒤처집니다. 이번 청약 통장 납입 한도 상향은 지난 40년 중 가장 큰 기회의 창이 열린 것과 같습니다. 월 25만 원이라는 금액이 당장은 부담스럽게 느껴질 수 있지만, 10년 뒤 그 자리에 들어선 아파트의 가치를 생각한다면 이는 세상에서 가장 수익률 높은 투자습니다. 오늘 바로 본인의 통장 계좌를 열어보십시오. 하우징허브는 여러분이 청약 당첨이라는 인생의 큰 성취를 이루는 그날까지 가장 정확하고 깊이 있는 정보로 함께하겠습니다.</p>
       <p>더 정확하고 최신 정보는 청약홈 등 공식 출처를 함께 확인하시기 바랍니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-01</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-30</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-07-01",
+    date: "2026-06-30",
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800",
     readTime: "15분",
     hashtags: ["청약통장", "내집마련", "공공분양", "소득공제", "재테크", "부동산꿀팁", "청약가점", "무주택자", "청약예치금", "부동산정책"]
@@ -201,11 +201,11 @@ export const POSTS_SUB: Post[] = [
       <p>부동산 가격이 요동치고 금리가 높아도 국가가 제공하는 공공의 기회는 늘 존재합니다. 뉴:홈은 당신의 주거 안정을 위한 가장 강력하고 저렴한 티켓입니다. 단순히 뉴스를 보고 넘어가는 것이 아니라, 직접 청약 홈 사이트를 방문해 공고문을 꼼꼼히 읽고 본인의 자격을 능숙하게 확인하는 습관을 기르세요. 오늘의 꼼꼼한 기록과 준비가 훗날 여러분의 아늑한 보금자리가 될 것입니다. 하우징허브는 여러분이 뉴:홈의 최종 당첨자가 되어 웃으며 입주하는 그날까지 가장 정확하고 방대한 정보로 함께하겠습니다.</p>
       <p>더 정확하고 최신 정보는 <a href="https://www.molit.go.kr" target="_blank" rel="noopener noreferrer">국토교통부</a> 등 공식 출처를 함께 확인하시기 바랍니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용 정보다. 실제 청약 자격과 당첨 가능성은 개별 단지 공고와 본인 조건에 따라 달라진다.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-27</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-26</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-27",
+    date: "2026-06-26",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["뉴홈", "공공분양", "주거지원", "나눔형", "선택형", "일반형", "사전청약", "청년주택", "내집마련", "부동산정책"]
@@ -304,11 +304,11 @@ export const POSTS_SUB: Post[] = [
       </ul>
       <p>자세한 신청 절차와 본인 자격은 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a>과 주택도시기금 '기금e든든'에서 직접 확인하시는 게 가장 정확해요. 정책은 매년 개편이 잦으니, 신청 시점에 최신 요건을 다시 점검하시는 게 안전해요.</p>
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 정책 안내예요. 금리·한도·자격은 정책 개편에 따라 변동되며, 본인 조건에 따라 실제 적용이 달라질 수 있어요. 신청 전 주택도시기금과 청약홈에서 최신 정보를 확인하세요.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-22</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-21</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-22",
+    date: "2026-06-21",
     image: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["신생아특례대출", "출산지원", "주택담보대출", "파격금리", "신생아특별공급", "부동산정책", "내집마련", "육아환경", "청약가점", "주택도시기금"]
@@ -374,11 +374,11 @@ export const POSTS_SUB: Post[] = [
       <p>또한 결혼 전 잠시 보유했다 처분한 주택, 부모 명의로 단독 등기되어 있던 시기의 동거 주택 등도 무주택 요건에 영향을 줄 수 있으므로 등기 이력을 꼼꼼히 확인해야 합니다. 위장 이혼이나 위장 분가 등 자격을 부정하게 취득하는 행위는 적발 시 당첨 취소뿐 아니라 향후 10년간 청약 자격이 박탈되며 형사처벌까지 받을 수 있는 중대한 사안입니다. 합법적인 범위 내에서 본인에게 가장 유리한 트랙을 선택하는 지혜가 필요합니다.</p>
       <p>더 정확하고 최신 정보는 <a href="https://apply.lh.or.kr" target="_blank" rel="noopener noreferrer">LH 청약센터</a> 등 공식 출처를 함께 확인하시기 바랍니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 청약 제도는 수시로 바뀐다. 신청 전 청약홈(<a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">applyhome.co.kr</a>) 공고를 반드시 다시 확인하라.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-15</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-14</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-15",
+    date: "2026-06-14",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["특별공급", "신혼부부특공", "생애최초", "다자녀특공", "노부모부양", "청약전략", "무주택자", "내집마련", "주거안정", "부동산정책"]
@@ -443,11 +443,11 @@ export const POSTS_SUB: Post[] = [
       <p>본인 가점이 50점 이하라면 다음과 같은 대안 트랙을 적극적으로 활용해야 합니다. 첫째, <strong>특별공급</strong>(신혼부부·생애최초·다자녀)은 가점이 아닌 별도 기준으로 선발하므로 가점이 낮아도 충분히 도전 가능합니다. 둘째, <strong>추첨제 비중이 높은 단지</strong>(전용 85㎡ 초과 민간분양은 50%가 추첨제)는 가점 무관하게 운에 맡길 수 있습니다.</p>
       <p>셋째, <strong>무순위 청약(이른바 '줍줍')</strong>은 일반 청약에서 미계약 물량을 추첨으로 재공급하는 제도로 청약통장도 필요 없고 가점도 보지 않습니다. 넷째, <strong>공공분양 일반공급</strong>은 가점이 아닌 저축 총액 기준이므로 청약통장 납입을 꾸준히 한 분에게 유리합니다. 가점이 낮다고 포기하지 마시고, 본인 여건에 맞는 대안 트랙을 적극 발굴하시는 것이 안전합니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용 정보다. 실제 청약 자격과 당첨 가능성은 개별 단지 공고와 본인 조건에 따라 달라진다.</p>
-      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-08</p>
+      <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-06-07</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-08",
+    date: "2026-06-07",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["청약가점", "가점계산", "무주택기간", "부양가족수", "청약통장", "민간분양", "주택청약", "내집마련전략", "청약커트라인", "부동산정보"]
@@ -515,7 +515,7 @@ export const POSTS_SUB: Post[] = [
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-06-01",
+    date: "2026-05-31",
     image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["공공분양", "민간분양", "분양가상한제", "전매제한", "거주의무", "분양권", "LH청약", "내집마련", "주택청약비교", "부동산정책"]
@@ -572,11 +572,11 @@ export const POSTS_SUB: Post[] = [
       <h3 id="section7">7. 양도세 신고 절차와 가산세 회피 체크포인트</h3>
       <p>양도소득세 신고는 양도일이 속한 달의 말일부터 <strong>2개월 이내가 원칙</strong>입니다. 예를 들어 5월 15일 분양권을 양도했다면 7월 31일까지 신고해야 합니다. 신고 누락 시 무신고 가산세(20%)와 납부지연 가산세가 추가로 부과되므로 매도 즉시 세무사 상담을 권장한다.</p>
       <p><a href="https://www.hometax.go.kr" target="_blank" rel="noopener noreferrer">홈택스</a>에서 본인이 직접 신고할 수도 있지만, 분양권 양도는 보유 기간·중과세·필요경비 등 변수가 많아 세무사 위임이 안전합니다. 세무사 수수료(통상 30~50만 원)는 절감 가능한 세금에 비해 매우 적은 비용입니다. <strong>※ 본 글은 일반 정보 제공 목적이며 실제 세무 처리는 반드시 세무 전문가의 상담을 통해 진행하검토해야 한다.</strong></p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-25</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-24</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-05-25",
+    date: "2026-05-24",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["분양권전매", "양도소득세", "취득세중과", "일시적2주택", "비과세특례", "부동산세금", "세무절세", "부동산투자", "주택세금", "절세전략"]
@@ -642,11 +642,11 @@ export const POSTS_SUB: Post[] = [
       <p>또한 매매 계약 시점에 임차인이 잔금일 이전 퇴거하면 '세입자 있는 주택' 요건이 깨질 수 있으므로, 특약으로 <strong>\"잔금일까지 임차인 거주 유지\"</strong>를 명시하는 것이 안전합니다. 매매가 대비 전세가율이 70% 이상인 매물은 향후 역전세 위험이 있으므로 자금 계획을 보수적으로 잡아야 합니다. 자세한 사항은 국토교통부 공식 자료와 관할 지자체 토지관리과에서 확인하권해드려요.</p>
       <p>더 정확하고 최신 정보는 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a> 등 공식 출처를 함께 확인하시기 바랍니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용 정보다. 실제 청약 자격과 당첨 가능성은 개별 단지 공고와 본인 조건에 따라 달라진다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-18</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-17</p>
     `,
     category: "청약-분양",
     author: "편집팀",
-    date: "2026-05-18",
+    date: "2026-05-17",
     image: "https://images.unsplash.com/photo-1467533003447-e295ff1b0435?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["토지거래허가구역", "실거주유예", "무주택자", "토허구역", "부동산거래신고법", "갭투자", "세입자있는집", "내집마련", "2026부동산정책", "국토교통부"]

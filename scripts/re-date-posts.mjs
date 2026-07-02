@@ -14,14 +14,14 @@ const sortedPosts = [...POSTS].sort((a, b) => {
   return a.id.localeCompare(b.id);
 });
 
-// 2) Generate exactly 60 sequential dates leading up to and including today
-// Since there are 60 posts, having exactly 1 post per day spans exactly 60 days.
+// 2) Generate exactly sortedPosts.length sequential dates leading up to and including today
+// Having exactly 1 post per day spans exactly sortedPosts.length days.
 // Let's compute these dates.
 const now = new Date();
 const kstNow = new Date(now.getTime() + 9 * 60 * 60 * 1000); // UTC+9
 const endDate = new Date(Date.UTC(kstNow.getUTCFullYear(), kstNow.getUTCMonth(), kstNow.getUTCDate()));
 const newDates = [];
-for (let i = 59; i >= 0; i--) {
+for (let i = sortedPosts.length - 1; i >= 0; i--) {
   const d = new Date(endDate);
   d.setDate(endDate.getDate() - i);
   const yyyy = d.getFullYear();
@@ -86,12 +86,12 @@ for (const fileName of dataFiles) {
 
     const newDate = idToNewDate[current.id];
 
-    // Replace the metadata date field: standard styles 'date: "YYYY-MM-DD"' or 'date: 'YYYY-MM-DD''
-    postChunk = postChunk.replace(/date:\s*["']\d{4}-\d{2}-\d{2}["']/g, `date: "${newDate}"`);
+    // Replace the metadata date field: standard styles 'date: "YYYY-MM-DD"', 'date: 'YYYY-MM-DD'', or 'date: "undefined"'
+    postChunk = postChunk.replace(/date:\s*["'](?:undefined|\d{4}-\d{2}-\d{2})["']/g, `date: "${newDate}"`);
 
     // Replace inline update/publication dates inside content field
-    postChunk = postChunk.replace(/최종 업데이트:\s*\d{4}-\d{2}-\d{2}/g, `최종 업데이트: ${newDate}`);
-    postChunk = postChunk.replace(/발행일:\s*\d{4}-\d{2}-\d{2}/g, `발행일: ${newDate}`);
+    postChunk = postChunk.replace(/최종 업데이트:\s*(?:undefined|\d{4}-\d{2}-\d{2})/g, `최종 업데이트: ${newDate}`);
+    postChunk = postChunk.replace(/발행일:\s*(?:undefined|\d{4}-\d{2}-\d{2})/g, `발행일: ${newDate}`);
 
     updatedContent += postChunk;
     lastIndex = chunkEnd;
@@ -106,4 +106,4 @@ for (const fileName of dataFiles) {
   console.log(`[Re-Date] Updated dates in ${fileName} (Processed ${filePosts.length} posts)`);
 }
 
-console.log("=== All posts successfully re-dated chronologically up to 2026-06-22 ===");
+console.log(`=== All posts successfully re-dated chronologically up to ${endDate.toISOString().slice(0, 10)} ===`);

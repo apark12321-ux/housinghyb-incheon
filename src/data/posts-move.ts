@@ -18,7 +18,7 @@ export const POSTS_MOVE: Post[] = [
         </ul>
       </div>
       <p>조명 교체, 따뜻한 톤 온 톤 페인트 질감 보강, 매트 손잡이 전자기 커버 교체, 시트 타일 부착 등 가벼운 투자로 분위기를 환골탈태시키는 홈 스타일링 가이드입니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-24</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-23</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -86,7 +86,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-06-24",
+    date: "2026-06-23",
     image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800",
     readTime: "25분",
     hashtags: ["셀프인테리어", "홈스타일링", "가성비인테리어"]
@@ -98,7 +98,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>포장이사 견적 비교 완벽 가이드</h2>
       <p>사다리차 비용 정산, 폐기물 대형 전용 영수처리, 초과 인건비 방지 특약 등 계약 당시 확정해야 하는 이사 추가비 방어 공식을 기록했습니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-19</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-18</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -166,7 +166,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-06-19",
+    date: "2026-06-18",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["포장이사", "이사견적", "이사비용"]
@@ -178,7 +178,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>보증금 묶인 상태에서 안전하게 이사하는 법</h2>
       <p>이사를 서둘러야 하는데 대항력을 잃지 않도록 등기사항 전부증명서에 임차권을 보존하는 법원 신청 및 전자소송 코치서입니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-12</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-11</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -246,7 +246,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-06-12",
+    date: "2026-06-11",
     image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["임차권등기명령", "보증금미반환", "안전한이사"]
@@ -258,7 +258,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>원룸·오피스텔 가성비 인테리어 완벽 가이드</h2>
       <p>닫힌 수납 8: 열린 수납 2 정렬, 간접 전등 결합, 무점착 이탈 시트지 등 1주택 자들의 가벼운 원룸 인테리어 플랜을 제시합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-06</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-05</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -326,7 +326,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-06-06",
+    date: "2026-06-05",
     image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["원룸인테리어", "오피스텔인테리어", "가성비꾸미기"]
@@ -338,7 +338,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>전입신고와 확정일자, 단 하루도 놓치면 안 되는 이유</h2>
       <p>잔금일 이사 직후 정부24를 이용해 다음날 대항력 발생의 빈틈을 메우는 전월세 실거래 동시 처리 요령을 알기 쉽게 알려 드립니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-30</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-29</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -406,7 +406,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-30",
+    date: "2026-05-29",
     image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["전입신고", "확정일자", "보증금보호"]
@@ -418,7 +418,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>관리비 월 5만 원 절약하는 6가지 실전 방법</h2>
       <p>보일러 외출 모드 전용 세팅, 3단계 누진세 방지 대기 전력 멀티탭 분할, 지자체 수도계량기 절수형 장착 등 고정 소비세 정산법을 안내합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-26</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-25</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -486,7 +486,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-26",
+    date: "2026-05-25",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["관리비절감", "전기요금절약", "난방비절감"]
@@ -498,7 +498,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>등기부등본, 일년에 한 번은 떼보자고요</h2>
       <p>인터넷등기소 700원 즉시 열람: 근저당 추가 변동, 임대 소유주 양도 사실, 압류 가압류 전조 체크 포인트를 전달합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-21</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-20</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -566,7 +566,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-21",
+    date: "2026-05-20",
     image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["등기부등본", "셀프점검", "부동산안전"]
@@ -578,7 +578,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>5월 이사, 한 달 전부터 챙겨야 해요</h2>
       <p>성수기 전출입일 이삿짐 차량 및 평일 예약 우대 유도법, D-30부터 단계별 버리는 물품 분리 요령 등 성수기 회피 팁을 제시합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-15</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-14</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -646,7 +646,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-15",
+    date: "2026-05-14",
     image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["이사성수기", "이사체크리스트", "이사업체비교"]
@@ -823,7 +823,7 @@ export const POSTS_MOVE: Post[] = [
     `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-09",
+    date: "2026-05-08",
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["전입신고", "정부24", "확정일자"]
@@ -835,7 +835,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>2026년, 집은 따뜻하게 비워내는 방향으로</h2>
       <p>모래색 샌드 톤, 포근함을 선사하는 곡선 라운드 소가구 활용, 수직 플랜테리어 배치 등 모던 가성비 포인트 연출법을 다룹니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-07</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-06</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -903,7 +903,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-07",
+    date: "2026-05-06",
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["인테리어트렌드", "워밍뉴트럴", "플랜테리어"]
@@ -915,7 +915,7 @@ export const POSTS_MOVE: Post[] = [
     content: `
       <h2>이사 며칠 전에야 알아보면 늦어요</h2>
       <p>대형 주방 가전 무상 수거 연계신청(1599-0903), 지자체 대형 가구 스티커 온라인 출수 등 비용을 최소화하는 방출 공식을 제공합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-04</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-03</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -983,7 +983,7 @@ export const POSTS_MOVE: Post[] = [
 `,
     category: "이사-인테리어",
     author: "편집팀",
-    date: "2026-05-04",
+    date: "2026-05-03",
     image: "https://images.unsplash.com/photo-1591129841117-3adfd313e34f?auto=format&fit=crop&q=80&w=800",
     readTime: "10분",
     hashtags: ["이사폐기물", "대형가구스티커", "무상수거"]
