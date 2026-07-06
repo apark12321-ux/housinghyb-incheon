@@ -30,7 +30,41 @@ app.get("/ads.txt", (req, res) => {
 
 app.get("/robots.txt", (req, res) => {
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
+  const distRobots = path.join(process.cwd(), "dist", "robots.txt");
+  if (fs.existsSync(distRobots)) {
+    return res.send(fs.readFileSync(distRobots, "utf-8"));
+  }
+  const publicRobots = path.join(process.cwd(), "public", "robots.txt");
+  if (fs.existsSync(publicRobots)) {
+    return res.send(fs.readFileSync(publicRobots, "utf-8"));
+  }
   return res.send("User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://zip9.kr/sitemap.xml\n");
+});
+
+app.get("/sitemap.xml", (req, res) => {
+  res.setHeader("Content-Type", "application/xml; charset=utf-8");
+  const distSitemap = path.join(process.cwd(), "dist", "sitemap.xml");
+  if (fs.existsSync(distSitemap)) {
+    return res.send(fs.readFileSync(distSitemap, "utf-8"));
+  }
+  const publicSitemap = path.join(process.cwd(), "public", "sitemap.xml");
+  if (fs.existsSync(publicSitemap)) {
+    return res.send(fs.readFileSync(publicSitemap, "utf-8"));
+  }
+  return res.status(404).send("Sitemap not found");
+});
+
+app.get("/rss.xml", (req, res) => {
+  res.setHeader("Content-Type", "application/xml; charset=utf-8");
+  const distRss = path.join(process.cwd(), "dist", "rss.xml");
+  if (fs.existsSync(distRss)) {
+    return res.send(fs.readFileSync(distRss, "utf-8"));
+  }
+  const publicRss = path.join(process.cwd(), "public", "rss.xml");
+  if (fs.existsSync(publicRss)) {
+    return res.send(fs.readFileSync(publicRss, "utf-8"));
+  }
+  return res.status(404).send("RSS not found");
 });
 
 app.get("/7065c4d36d9ee7471f10e55dd6f4a4bd.txt", (req, res) => {
@@ -393,6 +427,13 @@ async function startServer() {
         const decodedPostId = decodeURIComponent(rawPostId);
         const post = POSTS.find(p => p.title === decodedPostId || p.id === decodedPostId || slugify(p.title) === decodedPostId);
         if (post) {
+          if (isProd) {
+            const slug = slugify(post.title);
+            const prerenderedPostPath = path.join(process.cwd(), "dist", "post", slug, "index.html");
+            if (fs.existsSync(prerenderedPostPath)) {
+              return res.send(fs.readFileSync(prerenderedPostPath, "utf-8"));
+            }
+          }
           html = injectMetaTags(html, post, baseUrl);
           return res.send(html);
         }
@@ -404,6 +445,12 @@ async function startServer() {
       if (categoryIndex !== -1 && pathParts[categoryIndex + 1]) {
         const rawCat = pathParts[categoryIndex + 1];
         const decodedCat = decodeURIComponent(rawCat);
+        if (isProd) {
+          const prerenderedCatPath = path.join(process.cwd(), "dist", "category", decodedCat, "index.html");
+          if (fs.existsSync(prerenderedCatPath)) {
+            return res.send(fs.readFileSync(prerenderedCatPath, "utf-8"));
+          }
+        }
         html = injectCategoryMetaTags(html, decodedCat, baseUrl);
         return res.send(html);
       }
@@ -412,6 +459,13 @@ async function startServer() {
       const subpages = ["/about", "/announcement", "/partnership", "/terms", "/privacy", "/toolkit"];
       const matchedPage = subpages.find(page => req.path === page);
       if (matchedPage) {
+        if (isProd) {
+          const cleanPageName = matchedPage.replace(/^\//, "");
+          const prerenderedPagePath = path.join(process.cwd(), "dist", cleanPageName, "index.html");
+          if (fs.existsSync(prerenderedPagePath)) {
+            return res.send(fs.readFileSync(prerenderedPagePath, "utf-8"));
+          }
+        }
         html = injectSubpageMetaTags(html, matchedPage, baseUrl);
         return res.send(html);
       }
