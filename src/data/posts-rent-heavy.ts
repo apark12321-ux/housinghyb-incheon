@@ -140,7 +140,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-29",
+    date: "2026-07-03",
     image: "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["서울전세난","전세시장","아파트전세"]
@@ -216,7 +216,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p>외국인 부동산 거래신고 강화는 수도권 및 전국 주요 거점의 임대차 시장이 더욱 성숙해가는 과정입니다. 임차인 여러분은 변화하는 규제를 두려워하기보다는 이를 <strong>시장 투명화의 신호탄</strong>으로 받아들이시길 바랍니다.</p>
     <p>마지막으로 강조드리고 싶은 점은, 임대차 계약 체결 시 반드시 <strong>공인중개사를 통해 해당 주택의 거래 이력 및 외국인 임대인의 거주지 신고 여부를 확인</strong>하라는 것입니다. 특히 송도와 같이 고가 주택이 많은 지역일수록 전문적인 중개법인을 활용하여 계약의 안전성을 최우선으로 확보하는 지혜가 필요합니다. 정보는 곧 힘이며, 변화하는 규제 환경을 미리 숙지하는 것만으로도 여러분의 소중한 보증금을 지키는 가장 강력한 방패가 될 것입니다.</p>
     
-    <p style="color: #777; font-size: 0.9em;">본 포스트는 부동산 정책 전문 분석을 바탕으로 작성되었으며, 실제 계약 시에는 관련 법령을 반드시 재확인하시기 바랍니다. 최종 업데이트: 2026-06-20</p>
+    <p style="color: #777; font-size: 0.9em;">본 포스트는 부동산 정책 전문 분석을 바탕으로 작성되었으며, 실제 계약 시에는 관련 법령을 반드시 재확인하시기 바랍니다. 최종 업데이트: 2026-06-24</p>
 </div>
     
 
@@ -284,7 +284,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-20",
+    date: "2026-06-24",
     image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["외국인부동산","거래신고강화","자금조달계획서"]
@@ -360,7 +360,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p>전입신고 즉시 대항력 발생은 대한민국 부동산 시장의 투명성과 임차인 보호 수준을 한 단계 높이는 획기적인 전환점입니다. 그러나 여전히 부동산 거래는 방대한 정보가 교차하는 영역이기에, 스스로 공부하고 대비하는 임차인의 지혜가 필요합니다.</p>
     <p>특히 수도권과 같이 개발 호재와 구도심의 노후 주택이 혼재된 지역에서는 더욱 꼼꼼한 확인이 요구됩니다. 이번 개정안을 충분히 활용하여 보증금을 안전하게 지키고, 안정적인 주거 생활을 누리시길 바랍니다. 궁금한 사항이 있다면 관할 구청의 지적과나 법률 구조 공단의 상담을 통해 명확한 답을 얻는 것이 가장 안전한 방법입니다.</p>
 
-    <p style="color: #888; margin-top: 30px;">최종 업데이트: 2026-06-12 | 본 정보는 법률적 상담이 아닌 참고용 가이드이며, 실제 계약 시 반드시 전문가의 자문을 구하시기 바랍니다.</p>
+    <p style="color: #888; margin-top: 30px;">최종 업데이트: 2026-06-16 | 본 정보는 법률적 상담이 아닌 참고용 가이드이며, 실제 계약 시 반드시 전문가의 자문을 구하시기 바랍니다.</p>
 </div>
     
 
@@ -428,7 +428,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-12",
+    date: "2026-06-16",
     image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["전입신고","대항력","전세사기방지"]
@@ -577,7 +577,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-06",
+    date: "2026-06-10",
     image: "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["청년월세지원","청년주거지원","월20만원"]
@@ -658,7 +658,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 
     <p>결론적으로, 수도권 및 전국 주요 거점의 전세 시장은 선택과 집중이 필요한 시기입니다. 금융 정책의 변화를 읽고, 나의 가용 자산에 맞춘 안전한 계약을 체결하는 것만이 소중한 보증금을 지키는 유일한 길입니다. 오늘도 합리적인 임대차 계약을 준비하시는 모든 임차인분들의 주거 안정을 응원합니다.</p>
     
-    <p style="color: #999; font-size: 12px; margin-top: 30px;">최종 업데이트: 2026-05-30 | 본 콘텐츠는 부동산 시장의 일반적인 분석을 담고 있으며, 실제 계약 시에는 반드시 공인중개사 및 법률 전문가의 조언을 구하시기 바랍니다.</p>
+    <p style="color: #999; font-size: 12px; margin-top: 30px;">최종 업데이트: 2026-06-03 | 본 콘텐츠는 부동산 시장의 일반적인 분석을 담고 있으며, 실제 계약 시에는 반드시 공인중개사 및 법률 전문가의 조언을 구하시기 바랍니다.</p>
 </div>
     
 
@@ -726,7 +726,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-30",
+    date: "2026-06-03",
     image: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["전세시장","월세화","청년전세대출"]
@@ -864,7 +864,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-23",
+    date: "2026-05-27",
     image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["입주물량","전세공급절벽","2026전세난"]
@@ -931,7 +931,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </ul>
     <p>마지막으로 강조드리고 싶은 점은 <strong>자금 여력의 10%를 반드시 예비비로 확보</strong>하라는 것입니다. 금리 인상기에는 대출 이자 부담이 커질 수 있고, 전국 및 수도권 지역 내 공실 위험이나 세입자 퇴거 시 발생하는 복비 및 수리비가 생각보다 큰 지출을 초래할 수 있기 때문입니다. 철저한 사전 계획이야말로 부동산 성공 투자의 가장 확실한 지름길입니다.</p>
     
-    <p style="text-align: right; color: #888; font-size: 0.9em;">최종 업데이트: 2026-05-16</p>
+    <p style="text-align: right; color: #888; font-size: 0.9em;">최종 업데이트: 2026-05-20</p>
 </div>
     
 
@@ -999,7 +999,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-16",
+    date: "2026-05-20",
     image: "https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["세낀매매","전세낀매매","주택담보대출"]
@@ -1081,11 +1081,11 @@ export const POSTS_RENT_HEAVY: Post[] = [
         <li><strong>Q3. 전입 이후 몇 달 뒤에 다른 신착 근저당이 등록되었는데 이사가야 하나요?</strong><br>A. 다행히 세입자 본인이 잔금 당일 전입 및 확정 등기 이식을 완전무결하게 정착 완료해 두었다면, 나중에 가입된 사후 근저당 저당 등기는 소유권 이전이나 법원 경매가 실행되어도 임대차계약 존속과 보증금 환수 전결을 최우선 순위로 법적 보증 받으므로 일체 떨며 이탈 서둘러 이사하실 필요가 절대적으로 없습니다.</li>
       </ul>
 
-      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-11</p>
+      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-15</p>
     `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-11",
+    date: "2026-05-15",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["전세계약", "HUG보증보험", "안심전세", "체크리스트", "등기부등본", "근저당설정", "깡통전세", "전입신고", "확정일자", "수도권오피스텔"]
