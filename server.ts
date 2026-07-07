@@ -195,10 +195,10 @@ app.post("/api/advisor", async (req, res) => {
       });
       responseText = response.text;
     } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in chat, trying gemini-3.1-flash-lite...", primaryError);
+      console.warn("Primary model (gemini-3.5-flash) failed in chat, trying gemini-flash-latest...", primaryError);
       try {
-        const chatFallback = ai.chats.create({
-          model: "gemini-3.1-flash-lite",
+        const chatFallback1 = ai.chats.create({
+          model: "gemini-flash-latest",
           config: {
             systemInstruction: systemInstruction,
             temperature: 0.7
@@ -206,26 +206,43 @@ app.post("/api/advisor", async (req, res) => {
           history: cleanHistory
         });
 
-        const responseFallback = await chatFallback.sendMessage({
+        const responseFallback1 = await chatFallback1.sendMessage({
           message: message
         });
-        responseText = responseFallback.text;
-      } catch (fallbackError: any) {
-        console.error("Fallback model (gemini-3.1-flash-lite) also failed in chat, running local fallback:", fallbackError);
-        
-        let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
-        
-        const msg = message.toLowerCase();
-        if (msg.includes("청약") || msg.includes("통장")) {
-          fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. 특히 검단 및 송도 신도시 분양 일정을 모니터링하세요. 자가진단 탭의 '청약 가점 계산기'를 활용해서 자신의 정확한 가점을 점검해 보세요!`;
-        } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-          fallbackText += `<strong>💰 대출/자금 조언:</strong> 주택담보대출 LTV 조건과 함께 현재 스트레스 DSR 3단계 영향으로 내 대출 한도가 축소되었을 확률이 매우 높습니다. 자가진단 탭의 '대출 한도 계산기'를 돌려 안전한 이자 비중을 먼저 시뮬레이션해 보시는 것을 권장합니다!`;
-        } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기")) {
-          fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 반드시 대항력 효력 시점(익일 0시)을 커버할 수 있는 '당일 권리변동 금지 특약'과 '보증보험 가입 거절 시 무조건 환불 특약'을 기재하여 보증금을 끝까지 사수하셔야 안전합니다.`;
-        } else {
-          fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 66선 고품격 카테고리별 전문 주거 아티클들을 꼭 정독해 보세요! 또한, 상단의 '자가진단' 탭에서 청약 가점 시뮬레이션과 대출 이자 및 LTV 한도 계산기를 완전 무료로 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+        responseText = responseFallback1.text;
+      } catch (fallbackError1: any) {
+        console.warn("Model (gemini-flash-latest) failed in chat, trying gemini-3.1-flash-lite...", fallbackError1);
+        try {
+          const chatFallback2 = ai.chats.create({
+            model: "gemini-3.1-flash-lite",
+            config: {
+              systemInstruction: systemInstruction,
+              temperature: 0.7
+            },
+            history: cleanHistory
+          });
+
+          const responseFallback2 = await chatFallback2.sendMessage({
+            message: message
+          });
+          responseText = responseFallback2.text;
+        } catch (fallbackError2: any) {
+          console.error("Fallback model (gemini-3.1-flash-lite) also failed in chat, running local fallback:", fallbackError2);
+          
+          let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
+          
+          const msg = message.toLowerCase();
+          if (msg.includes("청약") || msg.includes("통장")) {
+            fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. 특히 검단 및 송도 신도시 분양 일정을 모니터링하세요. 자가진단 탭의 '청약 가점 계산기'를 활용해서 자신의 정확한 가점을 점검해 보세요!`;
+          } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
+            fallbackText += `<strong>💰 대출/자금 조언:</strong> 주택담보대출 LTV 조건과 함께 현재 스트레스 DSR 3단계 영향으로 내 대출 한도가 축소되었을 확률이 매우 높습니다. 자가진단 탭의 '대출 한도 계산기'를 돌려 안전한 이자 비중을 먼저 시뮬레이션해 보시는 것을 권장합니다!`;
+          } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기")) {
+            fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 반드시 대항력 효력 시점(익일 0시)을 커버할 수 있는 '당일 권리변동 금지 특약'과 '보증보험 가입 거절 시 무조건 환불 특약'을 기재하여 보증금을 끝까지 사수하셔야 안전합니다.`;
+          } else {
+            fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 66선 고품격 카테고리별 전문 주거 아티클들을 꼭 정독해 보세요! 또한, 상단의 '자가진단' 탭에서 청약 가점 시뮬레이션과 대출 이자 및 LTV 한도 계산기를 완전 무료로 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+          }
+          responseText = fallbackText;
         }
-        responseText = fallbackText;
       }
     }
 
@@ -281,26 +298,71 @@ app.post("/api/generate", async (req, res) => {
       });
       responseText = response.text;
     } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in generation, trying gemini-3.1-flash-lite...", primaryError);
-      const responseFallback = await ai.models.generateContent({
-        model: "gemini-3.1-flash-lite",
-        contents: prompt,
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              title: { type: Type.STRING },
-              content: { type: Type.STRING },
-              excerpt: { type: Type.STRING },
-              hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
-              readTime: { type: Type.STRING }
-            },
-            required: ["title", "content", "excerpt", "hashtags", "readTime"]
+      console.warn("Primary model (gemini-3.5-flash) failed in generation, trying gemini-flash-latest...", primaryError);
+      try {
+        const responseFallback1 = await ai.models.generateContent({
+          model: "gemini-flash-latest",
+          contents: prompt,
+          config: {
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: Type.OBJECT,
+              properties: {
+                title: { type: Type.STRING },
+                content: { type: Type.STRING },
+                excerpt: { type: Type.STRING },
+                hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
+                readTime: { type: Type.STRING }
+              },
+              required: ["title", "content", "excerpt", "hashtags", "readTime"]
+            }
           }
+        });
+        responseText = responseFallback1.text;
+      } catch (fallbackError1: any) {
+        console.warn("Model (gemini-flash-latest) failed in generation, trying gemini-3.1-flash-lite...", fallbackError1);
+        try {
+          const responseFallback2 = await ai.models.generateContent({
+            model: "gemini-3.1-flash-lite",
+            contents: prompt,
+            config: {
+              responseMimeType: "application/json",
+              responseSchema: {
+                type: Type.OBJECT,
+                properties: {
+                  title: { type: Type.STRING },
+                  content: { type: Type.STRING },
+                  excerpt: { type: Type.STRING },
+                  hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
+                  readTime: { type: Type.STRING }
+                },
+                required: ["title", "content", "excerpt", "hashtags", "readTime"]
+              }
+            }
+          });
+          responseText = responseFallback2.text;
+        } catch (fallbackError2: any) {
+          console.error("All models failed for dynamic post generation, running premium local fallback generation:", fallbackError2);
+          const localData = {
+            title: topic.trim() || "인천 부동산 핵심 가이드",
+            content: `
+              <h2>인천 부동산 및 주거 전문가 분석</h2>
+              <p>현재 인천 부동산 시장은 대단지 분양과 대출 금리 조정 국면 속에서 복합적인 변화를 맞이하고 있습니다. 이에 따라 실거주 목적의 청약 대기자와 기존 전월세 세입자들은 보다 신중하고 정교한 자금 설계 전략을 세워야 합니다.</p>
+              <h3>실거주자를 위한 체크리스트 및 핵심 조언</h3>
+              <ul>
+                <li><strong>철저한 자금 계획 수립:</strong> 주택담보대출 실행 시 본인의 스트레스 DSR 적용 비율과 이자 상환 능력을 자가진단 계산기로 정밀 모니터링하세요.</li>
+                <li><strong>지역별 분양 양극화 대비:</strong> 검단신도시, 송도국제도시 등 공공택지 분양 단지는 분양가 상한제가 적용되어 가점이 높거나 신혼부부 특별공급 자격을 갖춘 가구에게 좋은 선택지가 될 수 있습니다.</li>
+                <li><strong>전월세 계약 시 대항력 수호:</strong> 보증금을 안전하게 지키기 위해 계약 전 확정일자 부여 현황과 선순위 채권을 반드시 체크하고 계약 즉시 전입신고 및 확정일자를 취득해야 합니다.</li>
+              </ul>
+              <p>하우징허브 인천 주거 비서는 사용자의 소중한 주거 행복과 자산을 지키기 위한 최신 정책 변화와 팁을 신속하게 반영해 드립니다. 추가적인 대출 및 청약 가점 시뮬레이션은 상단 탭의 '자가진단' 탭에서 완벽하게 제공되고 있으니 지금 바로 사용해 보세요!</p>
+            `,
+            excerpt: `${topic}에 대한 하우징허브만의 명쾌하고 전문적인 분석 정보입니다.`,
+            hashtags: ["인천부동산", "인천주택", "부동산팁", "하우징허브", "안심주거"],
+            readTime: "3분"
+          };
+          responseText = JSON.stringify(localData);
         }
-      });
-      responseText = responseFallback.text;
+      }
     }
 
     const data = JSON.parse(responseText);

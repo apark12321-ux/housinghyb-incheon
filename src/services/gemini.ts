@@ -59,30 +59,85 @@ export async function generateBlogPost(topic: string, category: string) {
       });
       responseText = response.text;
     } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in generateBlogPost, trying gemini-3.1-flash-lite...", primaryError);
-      const responseFallback = await ai.models.generateContent({
-        model: "gemini-3.1-flash-lite",
-        contents: prompt,
-        config: {
-          responseMimeType: "application/json",
-          responseSchema: {
-            type: Type.OBJECT,
-            properties: {
-              title: { type: Type.STRING, description: "포스팅 제목" },
-              content: { type: Type.STRING, description: "HTML 본문 (공백 제외 2,000자 이상)" },
-              summary: { type: Type.STRING, description: "1~2문장의 짧은 요약" },
-              hashtags: { 
-                type: Type.ARRAY, 
-                items: { type: Type.STRING },
-                description: "해시태그 10개"
+      console.warn("Primary model (gemini-3.5-flash) failed in generateBlogPost, trying gemini-flash-latest...", primaryError);
+      try {
+        const responseFallback1 = await ai.models.generateContent({
+          model: "gemini-flash-latest",
+          contents: prompt,
+          config: {
+            responseMimeType: "application/json",
+            responseSchema: {
+              type: Type.OBJECT,
+              properties: {
+                title: { type: Type.STRING, description: "포스팅 제목" },
+                content: { type: Type.STRING, description: "HTML 본문 (공백 제외 2,000자 이상)" },
+                summary: { type: Type.STRING, description: "1~2문장의 짧은 요약" },
+                hashtags: { 
+                  type: Type.ARRAY, 
+                  items: { type: Type.STRING },
+                  description: "해시태그 10개"
+                },
+                readTime: { type: Type.STRING, description: "예: '6분'" }
               },
-              readTime: { type: Type.STRING, description: "예: '6분'" }
-            },
-            required: ["title", "content", "summary", "hashtags", "readTime"]
+              required: ["title", "content", "summary", "hashtags", "readTime"]
+            }
           }
+        });
+        responseText = responseFallback1.text;
+      } catch (fallbackError1: any) {
+        console.warn("Model (gemini-flash-latest) failed in generateBlogPost, trying gemini-3.1-flash-lite...", fallbackError1);
+        try {
+          const responseFallback2 = await ai.models.generateContent({
+            model: "gemini-3.1-flash-lite",
+            contents: prompt,
+            config: {
+              responseMimeType: "application/json",
+              responseSchema: {
+                type: Type.OBJECT,
+                properties: {
+                  title: { type: Type.STRING, description: "포스팅 제목" },
+                  content: { type: Type.STRING, description: "HTML 본문 (공백 제외 2,000자 이상)" },
+                  summary: { type: Type.STRING, description: "1~2문장의 짧은 요약" },
+                  hashtags: { 
+                    type: Type.ARRAY, 
+                    items: { type: Type.STRING },
+                    description: "해시태그 10개"
+                  },
+                  readTime: { type: Type.STRING, description: "예: '6분'" }
+                },
+                required: ["title", "content", "summary", "hashtags", "readTime"]
+              }
+            }
+          });
+          responseText = responseFallback2.text;
+        } catch (fallbackError2: any) {
+          console.error("All models failed in generateBlogPost, running local static generation fallback:", fallbackError2);
+          
+          const localData = {
+            title: topic.trim() || "인천 주거 정책 분석 및 로컬 마스터 플랜",
+            content: `
+              <h2>인천 주거 경제 및 부동산 전문가 분석 가이드</h2>
+              <p>인천 지역의 새로운 공공 분양 단지 정보 및 전월세 안심 대책은 단순한 뉴스 보도가 아닌, 개별 거주 가구의 재정적 생존 전략과 연결되어 있습니다. 본 고에서는 그 구체적인 실무 대책과 전략을 심도 있게 분석해 드립니다.</p>
+              <h3>1. 철저한 예산 산정과 LTV 기준 분석</h3>
+              <p>인천 아파트 청약 및 자가 매입을 준비하기 전, 나의 정확한 주택담보대출 LTV 비율과 실효 DSR(총부채원리금상환비율) 한도를 명확히 파악하는 것이 최선순위입니다. 자격 제한이나 추가 대출 연동 이력 등을 필히 체크해야 합니다.</p>
+              <h3>2. 공공택지 특별공급 우선 순위 공략</h3>
+              <p>검단 및 영종국제도시 등 분양가 상한제가 설정된 주요 주거 신도시 지역은 입지 경쟁력 대비 합리적인 공급가로 관심을 끌고 있습니다. 신혼부부 및 생애최초, 신생아 전형을 적극적으로 공략하여 가점 경쟁력을 높이세요.</p>
+              <h3>3. 전월세 계약서 필수 안전 특약 사항</h3>
+              <p>전세계약 체결 시에는 임차인의 권리 순위가 밀리지 않도록 특약 사항에 '소유권 이전 당일 권리 변동 금지' 및 '보증보험 가입 불성립 시 전액 즉시 반환' 등의 강제성 있는 문구를 반드시 명기해야 소중한 자산을 지켜낼 수 있습니다.</p>
+              <h3>자주 묻는 FAQ 및 실천 체크리스트</h3>
+              <ul>
+                <li>청약통장 가입 기간 인정: 인정 금액이 매달 25만 원까지 확대되었으니 이를 적극적으로 채워나가야 공공분양에서 유리합니다.</li>
+                <li>대출 이자 부담 절감: 우대 금리 요건(신혼, 자녀, 주택청약 연동)을 완벽하게 맞추어 금융 부담을 줄이세요.</li>
+              </ul>
+              <p>하우징허브가 제공하는 상단 '자가진단' 탭의 청약 가점 계산기와 모의 대출 시뮬레이터 기능을 십분 활용하여 안정적이고 지속 가능한 내 집 마련 계획을 설계하시기 바랍니다.</p>
+            `,
+            summary: `${topic}에 관한 하우징허브 인천 주거 비서의 고품격 전문가 분석 브리핑입니다.`,
+            hashtags: ["인천주거", "부동산트렌드", "하우징허브", "안심계약", "자가진단"],
+            readTime: "4분"
+          };
+          responseText = JSON.stringify(localData);
         }
-      });
-      responseText = responseFallback.text;
+      }
     }
 
     const result = JSON.parse(responseText);
