@@ -195,10 +195,10 @@ app.post("/api/advisor", async (req, res) => {
       });
       responseText = response.text;
     } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in chat, trying gemini-2.5-flash...", primaryError);
+      console.warn("Primary model (gemini-3.5-flash) failed in chat, trying gemini-3.1-flash-lite...", primaryError);
       try {
         const chatFallback = ai.chats.create({
-          model: "gemini-2.5-flash",
+          model: "gemini-3.1-flash-lite",
           config: {
             systemInstruction: systemInstruction,
             temperature: 0.7
@@ -211,7 +211,7 @@ app.post("/api/advisor", async (req, res) => {
         });
         responseText = responseFallback.text;
       } catch (fallbackError: any) {
-        console.error("Fallback model (gemini-2.5-flash) also failed in chat, running local fallback:", fallbackError);
+        console.error("Fallback model (gemini-3.1-flash-lite) also failed in chat, running local fallback:", fallbackError);
         
         let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
         
@@ -281,9 +281,9 @@ app.post("/api/generate", async (req, res) => {
       });
       responseText = response.text;
     } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in generation, trying gemini-2.5-flash...", primaryError);
+      console.warn("Primary model (gemini-3.5-flash) failed in generation, trying gemini-3.1-flash-lite...", primaryError);
       const responseFallback = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.1-flash-lite",
         contents: prompt,
         config: {
           responseMimeType: "application/json",

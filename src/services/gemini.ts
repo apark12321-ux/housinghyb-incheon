@@ -59,9 +59,9 @@ export async function generateBlogPost(topic: string, category: string) {
       });
       responseText = response.text;
     } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in generateBlogPost, trying gemini-2.5-flash...", primaryError);
+      console.warn("Primary model (gemini-3.5-flash) failed in generateBlogPost, trying gemini-3.1-flash-lite...", primaryError);
       const responseFallback = await ai.models.generateContent({
-        model: "gemini-2.5-flash",
+        model: "gemini-3.1-flash-lite",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
