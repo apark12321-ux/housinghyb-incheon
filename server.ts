@@ -154,19 +154,31 @@ app.post("/api/advisor", async (req, res) => {
       parts: [{ text: h.text }]
     }));
 
-    // 현재 사용자 대화 메시지 추가
-    formattedHistory.push({
-      role: "user" as const,
-      parts: [{ text: message }]
-    });
+    // Gemini API는 무조건 user 메시지로 대화가 시작되고, user-model이 번갈아 나타나야 합니다.
+    // 이를 보장하기 위해 history를 정제합니다.
+    const cleanHistory: any[] = [];
+    let expectedRole: "user" | "model" = "user";
+
+    for (const msg of formattedHistory) {
+      if (msg.role === expectedRole) {
+        cleanHistory.push(msg);
+        expectedRole = expectedRole === "user" ? "model" : "user";
+      }
+    }
+
+    // 만약 cleanHistory가 user로 끝난다면 (sendMessage에 user 메시지를 보낼 것이므로), 
+    // 중복 방지를 위해 마지막 user 메시지를 제외시킵니다.
+    if (cleanHistory.length > 0 && cleanHistory[cleanHistory.length - 1].role === "user") {
+      cleanHistory.pop();
+    }
 
     const chat = ai.chats.create({
-      model: "gemini-2.5-flash",
+      model: "gemini-3.5-flash",
       config: {
         systemInstruction: systemInstruction,
         temperature: 0.7
       },
-      history: formattedHistory.slice(0, -1) // 이전 대화들 주입
+      history: cleanHistory
     });
 
     const response = await chat.sendMessage({
@@ -204,7 +216,7 @@ app.post("/api/generate", async (req, res) => {
     `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-3.5-flash",
       contents: prompt,
       config: {
         responseMimeType: "application/json",
