@@ -165,6 +165,13 @@ function renderPage(template, meta, bodyContent, jsonLd) {
     html = html.replace("</head>", `${ld}\n  </head>`);
   }
 
+  // Google Site Verification
+  const siteVerificationToken = process.env.GOOGLE_SITE_VERIFICATION || "U1U64IvSTSjySxIRO1Sr598xGZz85FYPdKSSvo3B_BQ";
+  if (siteVerificationToken) {
+    const verTag = `<meta name="google-site-verification" content="${siteVerificationToken}" />`;
+    html = html.replace("</head>", `  ${verTag}\n  </head>`);
+  }
+
   // <div id="root"></div>에 정적 본문 prerendered 콘텐츠 주입.
   // React가 hydration할 때 이 내용은 root.innerHTML로 대체되므로 사용자 화면은 동일.
   // 크롤러는 JS 실행 없이 이 내용을 본다.

@@ -22,6 +22,23 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// WWW -> non-WWW 301 Redirect (SEO 최적화: 도메인 파편화 방지 및 검색엔진 노출 통일)
+app.use((req, res, next) => {
+  const host = req.headers.host || "";
+  if (host === "www.zip9.kr") {
+    return res.redirect(301, `https://zip9.kr${req.originalUrl}`);
+  }
+  next();
+});
+
+// 구글 서치 콘솔 파일 업로드식 인증 자동화 라우트
+// 구글 서치콘솔이 제공하는 어떠한 임의의 google[인증코드].html 파일 요청도 즉시 성공 응답하여 인증 완료 유도
+app.get("/google:verification_id.html", (req, res) => {
+  const code = req.params.verification_id;
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  return res.send(`google-site-verification: google${code}.html`);
+});
+
 // 구글 애드센스 및 검색 엔진 크롤러를 위한 최상단 정적 파일 전용 라우트
 app.get("/ads.txt", (req, res) => {
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
@@ -241,67 +258,128 @@ function slugify(title: string): string {
     .replace(/^-+|-+$/g, "");
 }
 
+// 통합 SEO 메타 태그 검색-치환 및 주입 헬퍼 함수
+function replaceOrInjectMetaTags(
+  html: string,
+  title: string,
+  desc: string,
+  canonicalUrl: string,
+  ogType = "website",
+  ogImage = "",
+  keywords = ""
+): string {
+  let updatedHtml = html;
+
+  // Title 치환
+  if (updatedHtml.match(/<title>[\s\S]*?<\/title>/i)) {
+    updatedHtml = updatedHtml.replace(/<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <title>${title}</title>\n</head>`);
+  }
+
+  // Description 치환
+  if (updatedHtml.match(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+name="description"\s+content="[^"]*"\s*\/?>/i, `<meta name="description" content="${desc}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <meta name="description" content="${desc}" />\n</head>`);
+  }
+
+  // Canonical 치환
+  if (updatedHtml.match(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i, `<link rel="canonical" href="${canonicalUrl}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
+  }
+
+  // OG Title 치환
+  if (updatedHtml.match(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+property="og:title"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:title" content="${title}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <meta property="og:title" content="${title}" />\n</head>`);
+  }
+
+  // OG Description 치환
+  if (updatedHtml.match(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+property="og:description"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:description" content="${desc}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <meta property="og:description" content="${desc}" />\n</head>`);
+  }
+
+  // OG Url 치환
+  if (updatedHtml.match(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:url" content="${canonicalUrl}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <meta property="og:url" content="${canonicalUrl}" />\n</head>`);
+  }
+
+  // OG Type 치환
+  if (updatedHtml.match(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:type" content="${ogType}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <meta property="og:type" content="${ogType}" />\n</head>`);
+  }
+
+  // Twitter Title 치환
+  if (updatedHtml.match(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:title" content="${title}" />`);
+  }
+
+  // Twitter Description 치환
+  if (updatedHtml.match(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+name="twitter:description"\s+content="[^"]*"\s*\/?>/i, `<meta name="twitter:description" content="${desc}" />`);
+  }
+
+  // OG Image 치환 및 삽입
+  if (ogImage) {
+    if (updatedHtml.match(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i)) {
+      updatedHtml = updatedHtml.replace(/<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/i, `<meta property="og:image" content="${ogImage}" />`);
+    } else {
+      updatedHtml = updatedHtml.replace("</head>", `  <meta property="og:image" content="${ogImage}" />\n</head>`);
+    }
+  }
+
+  // Keywords 치환 및 삽입
+  if (keywords) {
+    if (updatedHtml.match(/<meta\s+name="keywords"\s+content="[^"]*"\s*\/?>/i)) {
+      updatedHtml = updatedHtml.replace(/<meta\s+name="keywords"\s+content="[^"]*"\s*\/?>/i, `<meta name="keywords" content="${keywords}" />`);
+    } else {
+      updatedHtml = updatedHtml.replace("</head>", `  <meta name="keywords" content="${keywords}" />\n</head>`);
+    }
+  }
+
+  // Google Site Verification 태그 동적 삽입 (환경 변수 혹은 기본 코드 제공시)
+  const siteVerificationToken = process.env.GOOGLE_SITE_VERIFICATION || "U1U64IvSTSjySxIRO1Sr598xGZz85FYPdKSSvo3B_BQ";
+  if (siteVerificationToken) {
+    const verTag = `<meta name="google-site-verification" content="${siteVerificationToken}" />`;
+    if (updatedHtml.match(/<meta\s+name="google-site-verification"\s+content="[^"]*"\s*\/?>/i)) {
+      updatedHtml = updatedHtml.replace(/<meta\s+name="google-site-verification"\s+content="[^"]*"\s*\/?>/i, verTag);
+    } else {
+      updatedHtml = updatedHtml.replace("</head>", `  ${verTag}\n</head>`);
+    }
+  }
+
+  return updatedHtml;
+}
+
 // SEO 관련 메타 태그 동적 수립 헬퍼 함수
 function injectMetaTags(html: string, post: any, baseUrl: string): string {
   const canonicalUrl = `${baseUrl}/post/${encodeURIComponent(slugify(post.title))}`;
   const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 인천, 부동산, 청약, 전세대출";
+  const title = `${post.title} | 하우징허브 인천`;
+  const desc = post.excerpt;
+  const ogImage = post.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
   
-  // Title 대량 치환
-  let updatedHtml = html.replace(
-    /<title>.*?<\/title>/i,
-    `<title>${post.title} | 하우징허브 인천</title>`
-  );
-
-  const safeTitle = post.title.replace(/"/g, '&quot;');
-  const safeExcerpt = post.excerpt.replace(/"/g, '&quot;');
-
-  // Meta 태그 명확화
-  const metaTags = `
-    <meta name="description" content="${safeExcerpt}" />
-    <meta name="keywords" content="${keywords.replace(/"/g, '&quot;')}" />
-    <!-- Open Graph / Meta -->
-    <meta property="og:type" content="article" />
-    <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${safeTitle}" />
-    <meta property="og:description" content="${safeExcerpt}" />
-    <meta property="og:image" content="${post.image || ''}" />
-    <meta property="og:site_name" content="하우징허브 인천" />
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="${canonicalUrl}" />
-    <meta property="twitter:title" content="${safeTitle}" />
-    <meta property="twitter:description" content="${safeExcerpt}" />
-    <meta property="twitter:image" content="${post.image || ''}" />
-    <link rel="canonical" href="${canonicalUrl}" />
-  `;
-
-  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
-  return updatedHtml;
+  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "article", ogImage, keywords);
 }
 
 function injectDefaultMetaTags(html: string, baseUrl: string): string {
   const title = "하우징허브 인천 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
   const desc = "인천 지역 부동산, 청약 가점 계산, 전세대출 한도 시뮬레이션, 이사 가이드 및 등기부 독소조항 무상 방어 지식을 제공하는 임차인 안심 정주 포털입니다.";
   const canonicalUrl = `${baseUrl}/`;
+  const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
+  const keywords = "인천 부동산, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 송도 청약, 청라 아파트, 검단 임대주택";
   
-  let updatedHtml = html.replace(
-    /<title>.*?<\/title>/i,
-    `<title>${title}</title>`
-  );
-
-  const metaTags = `
-    <meta name="description" content="${desc}" />
-    <meta name="keywords" content="인천 부동산, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 송도 청약, 청라 아파트, 검단 임대주택" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${title}" />
-    <meta property="og:description" content="${desc}" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" />
-    <link rel="canonical" href="${canonicalUrl}" />
-  `;
-
-  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
-  return updatedHtml;
+  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", ogImage, keywords);
 }
 
 function injectCategoryMetaTags(html: string, category: string, baseUrl: string): string {
@@ -320,25 +398,10 @@ function injectCategoryMetaTags(html: string, category: string, baseUrl: string)
   }
 
   const canonicalUrl = `${baseUrl}/category/${encodeURIComponent(category)}`;
+  const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
+  const keywords = `인천 ${category}, 하우징허브 ${category}, 인천 부동산, ${category} 가이드`;
   
-  let updatedHtml = html.replace(
-    /<title>.*?<\/title>/i,
-    `<title>${title}</title>`
-  );
-
-  const metaTags = `
-    <meta name="description" content="${desc}" />
-    <meta name="keywords" content="인천 ${category}, 하우징허브 ${category}, 인천 부동산, ${category} 가이드" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${title}" />
-    <meta property="og:description" content="${desc}" />
-    <meta property="og:image" content="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800" />
-    <link rel="canonical" href="${canonicalUrl}" />
-  `;
-
-  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
-  return updatedHtml;
+  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", ogImage, keywords);
 }
 
 function injectSubpageMetaTags(html: string, path: string, baseUrl: string): string {
@@ -368,24 +431,9 @@ function injectSubpageMetaTags(html: string, path: string, baseUrl: string): str
   }
 
   const canonicalUrl = `${baseUrl}${path}`;
+  const keywords = "인천 부동산, 하우징허브, 안심 포털";
   
-  let updatedHtml = html.replace(
-    /<title>.*?<\/title>/i,
-    `<title>${title}</title>`
-  );
-
-  const metaTags = `
-    <meta name="description" content="${desc}" />
-    <meta name="keywords" content="인천 부동산, 하우징허브, 안심 포털" />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="${canonicalUrl}" />
-    <meta property="og:title" content="${title}" />
-    <meta property="og:description" content="${desc}" />
-    <link rel="canonical" href="${canonicalUrl}" />
-  `;
-
-  updatedHtml = updatedHtml.replace("</head>", `${metaTags}\n</head>`);
-  return updatedHtml;
+  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", "", keywords);
 }
 
 // Vite Middleware & Static Assets 서빙
