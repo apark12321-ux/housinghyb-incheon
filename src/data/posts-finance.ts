@@ -69,7 +69,7 @@ export const POSTS_FINANCE: Post[] = [
   </ul>
   <p>결론적으로, 수도권에서 집을 구할 때는 반드시 <strong>은행 대출 상담사(대주단)나 주택금융공사 상담센터를 통해 매수 전 '사전 대출 한도 조회'</strong>를 반드시 진행하십시오. 소중한 자산을 지키는 가장 확실한 첫걸음입니다.</p>
 
-  <p style="color:#777; font-size:0.9em; margin-top:30px;">최종 업데이트: 2026-07-01 | 작성자: 부동산·금융 전문 에디터</p>
+  <p style="color:#777; font-size:0.9em; margin-top:30px;">최종 업데이트: 2026-07-02 | 작성자: 부동산·금융 전문 에디터</p>
 </div>
     
 
@@ -139,7 +139,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-07-01",
+    date: "2026-07-02",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     readTime: "21분",
     hashtags: ["주택담보대출","LTV","DSR","DTI"]
@@ -284,7 +284,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-26",
+    date: "2026-06-27",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
     readTime: "19분",
     hashtags: ["원리금균등","원금균등","체증식상환"]
@@ -433,7 +433,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-21",
+    date: "2026-06-22",
     image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["디딤돌대출","정부지원대출","주택도시기금"]
@@ -515,7 +515,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>주택연금은 단순한 대출이 아니라 <strong>'나의 집을 노후의 연금으로 치환'</strong>하는 전략적 금융 상품입니다. 가입 시점의 주택 가격은 평가 가액일 뿐, 이후 집값이 오르더라도 연금 수령액은 유지되며, 집값이 하락해도 정부가 지급을 보증하므로 심리적 안정감이 매우 큽니다.</p>
     <p>특히 수도권은 재개발 및 GTX 등 교통 호재가 많은 지역입니다. 가입 전 본인 소유 아파트의 미래 가치와 현재 필요한 생활비를 꼼꼼히 비교하시길 권장합니다. <strong>재산세 25% 감면 혜택</strong>은 덤으로 따라오는 중요한 경제적 이득입니다. 전문가와 상담하시거나 한국주택금융공사 공식 홈페이지의 '예상 연금 조회' 서비스를 통해 본인의 예상 수령액을 지금 바로 확인해 보시기 바랍니다.</p>
     
-    <p style="color: #666; font-size: 0.9em;">최종 업데이트: 2026-06-19 | 수도권 노후 설계 전문 에디터</p>
+    <p style="color: #666; font-size: 0.9em;">최종 업데이트: 2026-06-20 | 수도권 노후 설계 전문 에디터</p>
 </div>
     
 
@@ -585,7 +585,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-19",
+    date: "2026-06-20",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["주택연금","노후자금","한국주택금융공사"]
@@ -664,7 +664,7 @@ export const POSTS_FINANCE: Post[] = [
       <h3 id="section5">5. 등기부등본 확인을 통한 융자선 정리와 보증 가치 고조</h3>
       <p>임대인(집주인)의 선순위 융자(근저당권 세팅)가 촘촘히 얽혀 있으면 은행 보증 심사에서 가차없이 한도가 반토막 나거나 미동의로 기각됩니다. 대출 실행 당일 다른 임차 권리로 변동을 원천 금지하는 '전세 독소 방지 특약'을 계약서에 선명히 삽입하고, 소량의 임대인 빚은 대출 잔금과 동시에 즉각 말소 처리를 선언하는 특약을 체결함으로써 은행이 안심하고 한도 80%를 전면 열어주도록 합당한 금융 명분을 세우십시오.</p>
       
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-14 | 감수: 하우징허브 주거금융 정책분석 지원부</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-15 | 감수: 하우징허브 주거금융 정책분석 지원부</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -733,7 +733,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-14",
+    date: "2026-06-15",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["전세대출","대출한도","부부소득합산"]
@@ -806,7 +806,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결론적으로, <strong>출산 가구라면 고민할 필요 없이 '신생아 특례 디딤돌 대출'이 1순위</strong>입니다. 금리 자체가 비교 불가한 수준이기 때문입니다. 하지만, 소득이 1.3억 원을 초과하거나 출산 계획이 없는 경우에는 보금자리론을 통해 장기 고정금리를 확보하는 것이 현명합니다.</p>
     <p>최종 선택을 위해서는 주택금융공사 홈페이지의 모의 계산기를 통해 본인의 LTV(주택담보대출비율)와 DTI(총부채상환비율)를 반드시 확인하시기 바랍니다. 전국 및 수도권 지역의 부동산 시장은 정책 변화에 민감하게 반응하므로, 신규 분양이나 매수 계약 체결 전 반드시 관련 금융 기관과 상담하여 실행 가능한 대출 한도를 확정 짓는 '대출 가능액 사전 확인(Pre-approval)' 절차를 거치시길 권장합니다. 안정적인 주거가 가계 경제의 기초 체력을 만든다는 점을 기억하십시오.</p>
 
-    <p style="font-size: 0.8rem; color: #888; margin-top: 2rem;">최종 업데이트: 2026-06-12 | 금융 정보는 정부 정책에 따라 수시로 변동될 수 있습니다.</p>
+    <p style="font-size: 0.8rem; color: #888; margin-top: 2rem;">최종 업데이트: 2026-06-13 | 금융 정보는 정부 정책에 따라 수시로 변동될 수 있습니다.</p>
 </div>
     
 
@@ -876,7 +876,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-12",
+    date: "2026-06-13",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["신생아특례대출","보금자리론","정책대출비교"]
@@ -1010,7 +1010,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-08",
+    date: "2026-06-09",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["중도상환수수료","주택담보대출","부분상환"]
@@ -1082,12 +1082,12 @@ export const POSTS_FINANCE: Post[] = [
 
     <p>결론적으로, 수도권 및 전국 주요 거점의 부동산 시장은 서울 접근성과 개발 호재라는 강점이 분명하지만, 세제 환경의 변화에 따라 수익률이 극명하게 갈릴 수 있습니다. 지금은 무리한 투자를 지양하고, 보유 자산의 세무 리스크를 꼼꼼히 점검하여 전문가와 함께 <strong>가장 효율적인 매도 시점을 설계</strong>해야 할 때입니다. 막연한 불안감보다는 정확한 법령 이해와 시뮬레이션을 통해 자산을 지켜내시길 바랍니다.</p>
 
-    <p style="font-size: 12px; color: #888; margin-top: 40px;">본 콘텐츠는 일반적인 정보를 제공하며, 실제 세무 신고 시에는 반드시 세무사 등 전문가의 개별 상담을 거치시기 바랍니다. 최종 업데이트: 2026-06-05</p>
+    <p style="font-size: 12px; color: #888; margin-top: 40px;">본 콘텐츠는 일반적인 정보를 제공하며, 실제 세무 신고 시에는 반드시 세무사 등 전문가의 개별 상담을 거치시기 바랍니다. 최종 업데이트: 2026-06-06</p>
 </div>
     `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-06-05",
+    date: "2026-06-06",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["양도세중과","다주택자","양도소득세"]
@@ -1240,7 +1240,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-31",
+    date: "2026-06-01",
     image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["장기보유특별공제","1주택자","양도세"]
@@ -1321,7 +1321,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>스트레스 DSR 3단계는 단순히 대출을 어렵게 만드는 제도가 아니라, <strong>가계의 상환 능력을 보수적으로 검증</strong>하여 금융 시스템의 안정을 꾀하는 조치입니다. 전국 및 수도권 지역에서 내 집 마련을 준비 중이라면, 무리한 대출보다는 본인의 가용 소득을 재점검하고 현금 흐름을 최적화하는 과정이 선행되어야 합니다.</p>
     <p>부동산 시장은 언제나 정책 변화에 민감하게 반응합니다. 대출 규제가 강화될수록 우량 자산에 대한 선호도는 높아집니다. <strong>본인의 대출 가능 금액을 금융기관 앱을 통해 수시로 확인</strong>하고, 금리 변동성에 대비한 자금 운용 계획을 세우는 것이 2026년 하반기 부동산 시장에서 살아남는 유일한 방법입니다.</p>
 
-    <p style="color: #999; font-size: 0.8em; margin-top: 20px;">최종 업데이트: 2026-05-26 | 본 내용은 일반적인 정보 제공을 목적으로 하며, 실제 대출 실행 시에는 금융기관의 공식 심사 기준에 따라 차이가 있을 수 있습니다.</p>
+    <p style="color: #999; font-size: 0.8em; margin-top: 20px;">최종 업데이트: 2026-05-27 | 본 내용은 일반적인 정보 제공을 목적으로 하며, 실제 대출 실행 시에는 금융기관의 공식 심사 기준에 따라 차이가 있을 수 있습니다.</p>
 </div>
     
 
@@ -1391,7 +1391,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-26",
+    date: "2026-05-27",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["스트레스DSR","DSR3단계","대출한도"]
@@ -1534,7 +1534,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-22",
+    date: "2026-05-23",
     image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["다주택자대출","주담대만기연장","가계부채관리"]
@@ -1670,7 +1670,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-17",
+    date: "2026-05-18",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["다주택자","양도세중과","유예종료"]
@@ -1751,7 +1751,7 @@ export const POSTS_FINANCE: Post[] = [
     `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-14",
+    date: "2026-05-15",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["결혼페널티","정책대출","소득합산"]
@@ -1826,7 +1826,7 @@ export const POSTS_FINANCE: Post[] = [
     </ol>
     <p>결론적으로, 지금의 풍선효과는 단순히 서울을 떠나는 현상이 아니라, <strong>'수도권 거주 벨트가 확대되는 과정'</strong>입니다. 수도권과 경기권의 가치가 서울과 동등한 수준으로 재평가받고 있는 시점에서, 본인의 소득 흐름에 맞춘 가장 안전하고 스마트한 진입 전략을 세우시길 바랍니다. 부동산 시장은 늘 변하지만, 준비된 사람에게는 언제나 기회의 창이 열려 있습니다.</p>
 
-    <p style="margin-top: 50px; font-size: 0.8em; color: #888;">최종 업데이트: 2026-05-11 | 작성자: 부동산·금융 전문 에디터</p>
+    <p style="margin-top: 50px; font-size: 0.8em; color: #888;">최종 업데이트: 2026-05-12 | 작성자: 부동산·금융 전문 에디터</p>
 </div>
     
 
@@ -1896,7 +1896,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-11",
+    date: "2026-05-12",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["풍선효과","수도권부동산","갭메우기"]
@@ -1966,7 +1966,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결론적으로 6월 1일은 단순히 세금을 내는 날이 아니라, 자산 운용의 효율성을 재점검하는 날이 되어야 합니다. 전국 및 수도권 지역의 부동산 가치가 상승함에 따라 공시가격 또한 매년 상향 조정되고 있으므로, 막연하게 '세금을 내야지'라고 생각하기보다는 국토교통부 부동산 공시가격 알리미 사이트를 통해 본인 소유 자산의 가치를 미리 파악해야 합니다.</p>
     <p>만약 올해 6월 1일을 앞두고 매도나 증여를 고민하고 계신다면, 반드시 <strong>관할 세무서나 세무 대리인과 상담</strong>하시기 바랍니다. 특히 수도권 및 전국 주요 거점의 경우 지역별 개발 호재에 따른 공시가 상승률이 상이하므로, 본인이 보유한 물건의 가치 상승분과 예상되는 보유세액을 비교하여 매도 결정을 내리는 것이 최선의 자산 방어 전략입니다. 여러분의 성공적인 부동산 관리를 응원합니다.</p>
     
-    <p style="text-align: right; color: #888; font-size: 0.9em;">최종 업데이트: 2026-05-09 | 작성자: 금융전문 에디터</p>
+    <p style="text-align: right; color: #888; font-size: 0.9em;">최종 업데이트: 2026-05-10 | 작성자: 금융전문 에디터</p>
 </div>
     
 
@@ -2036,7 +2036,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-09",
+    date: "2026-05-10",
     image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["보유세","재산세","종합부동산세"]
@@ -2111,7 +2111,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>셋째, <strong>정기적인 공시가격 이의신청</strong>입니다. 만약 주변 시세 대비 공시가격이 지나치게 높게 책정되었다고 판단된다면, '부동산공시가격알리미' 사이트에서 정해진 기간 내에 이의신청을 할 수 있습니다. 수도권 내 재개발 예정지나 노후 단지 등에서 이러한 사례가 빈번하니 꼼꼼히 확인하십시오.</p>
     <p>결론적으로 보유세는 '아는 만큼 줄일 수 있는 세금'입니다. 매년 바뀌는 부동산 정책과 세법을 예의주시하며, 수도권 및 전국 주요 도시 지역 내 세무 상담 서비스를 적극 활용해 안전한 자산 관리를 이어가시길 바랍니다.</p>
     
-    <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-08</p>
+    <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-09</p>
 </div>
     
 
@@ -2181,7 +2181,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-08",
+    date: "2026-05-09",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["보유세시뮬레이션","재산세계산","종합부동산세"]
@@ -2270,11 +2270,11 @@ export const POSTS_FINANCE: Post[] = [
         <li><strong>Q3. 저축 대출 이율이 몇 년 뒤 대폭 하락하게 되면 손해를 보지 않을까요?</strong><br>A. 추후 전 세계 금리가 유의미 하락 안도 안도선에 연동 도달하게 되면, 시기를 보아 중도상환 페널티 최소화 마지노 구간(대체로 3년 도래일 완성)에 당도했을 시 ‘저금리 대출 대환 승계’를 개진해 저렴한 채무로 갈아타서 리빌딩하면 그만입니다. 언제나 가치 이자 지도를 고지 수렴하여 재무 건강을 성경 수치로 대칭 보완 보완하십시오.</li>
       </ul>
 
-      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-06</p>
+      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-07</p>
     `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-05-06",
+    date: "2026-05-07",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
     hashtags: ["정책대출", "디딤돌대출", "신생아특례대출", "보금자리론", "주담대금리", "고정금리", "우대금리", "수도권아파트매수", "자금계획", "DSR"]
@@ -2382,11 +2382,11 @@ export const POSTS_FINANCE: Post[] = [
         <li><strong>Q3. 직장을 퇴사하고 이직 준비 기간에 들어가면 대출금을 일시에 전액 갚아야 하나요?</strong><br>A. 대출을 무사히 승인받아 실행한 이후라면, 중간에 이직이나 퇴사를 하더라도 기존에 체결한 1년 거치 3~4년 분할 상환 약정이 일시에 무효화되거나 즉시 전액 변제 통보가 날아오지 않습니다. 기존의 변제 계좌로 약정된 월납 원리금만 연체 없이 차분히 납부하신다면 이직 준비 기간에도 안전하게 저금리 융자 수혜를 보존 유지하실 수 있습니다.</li>
       </ul>
 
-      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-07-02</p>
+      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-07-03</p>
     `,
     category: "대출-금융",
     author: "편집팀",
-    date: "2026-07-02",
+    date: "2026-07-03",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
     readTime: "9분",
     hashtags: ["생활안정자금", "근로복지공단", "서민금융", "저금리대출", "생활안정자금대출", "소액생계비대출", "정부지원대출", "취약계층지원", "의료비대출", "혼례비대출"]

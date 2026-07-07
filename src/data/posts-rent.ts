@@ -46,7 +46,7 @@ export const POSTS_RENT: Post[] = [
 
       <h3 id="section7">7. 국세/지방세 완납 증명서 요구: 임대인의 체납 확인이 필수인 이유</h3>
       <p>등기부등본에도 나오지 않는 무서운 복병이 바로 <strong>'세금 체납'</strong>입니다. 계약 전 반드시 임대인에게 '국세 완납 증명서'와 '지방세 완납 증명서'를 요구하십시오. 국세청 홈택스를 통해 임대인의 동의 없이도 일정 조건 하에 체납 여부를 열람할 수 있습니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-28</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-29</p>
     
 
 <div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
@@ -113,7 +113,7 @@ export const POSTS_RENT: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-28",
+    date: "2026-06-29",
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
     readTime: "18분",
     hashtags: ["전세계약","등기부등본","보증금보호","전세사기","부동산법률","깡통전세","갑구을구","신탁등기","전입신고","확정일자"]
@@ -257,7 +257,7 @@ export const POSTS_RENT: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-23",
+    date: "2026-06-24",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
     readTime: "20분",
     hashtags: ["묵시적갱신","재계약","중개수수료","임대차보호법","계약갱신청구권"]
@@ -343,7 +343,7 @@ export const POSTS_RENT: Post[] = [
     `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-17",
+    date: "2026-06-18",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800",
     readTime: "16분",
     hashtags: ["전세보증보험","HUG","HF","SGI"]
@@ -416,7 +416,7 @@ export const POSTS_RENT: Post[] = [
     <p>모든 예방 조치를 다 하더라도 발생할 수 있는 사고를 대비해 <strong>HUG(주택도시보증공사)의 전세보증금반환보증보험</strong>은 반드시 가입해야 합니다. 전세 사기가 빈번한 전국 및 수도권 지역의 경우, 임대인이 가입을 기피하거나 의아한 반응을 보인다면 이는 100% 위험 신호로 간주하십시오. 보증보험 가입 조건에 부합하지 않는 매물은 그 자체가 '위험 자산'임을 인지해야 합니다.</p>
     <p><strong>마지막 당부의 말씀:</strong> 전세 사기는 '설마 내가 당하겠어?'라는 방심에서 시작됩니다. 부동산 중개수수료를 아까워하지 말고, 경험이 많은 공인중개사를 통해 권리 관계를 꼼꼼히 따져보십시오. 여러분의 소중한 자산을 지키는 것은 결국 꼼꼼한 확인과 법적 절차 준수에서 나옵니다.</p>
 
-    <p style="text-align: right; color: #888; font-size: 0.9em; margin-top: 30px;">최종 업데이트: 2026-06-06 | 작성자: 부동산 전문 에디터</p>
+    <p style="text-align: right; color: #888; font-size: 0.9em; margin-top: 30px;">최종 업데이트: 2026-06-07 | 작성자: 부동산 전문 에디터</p>
 </div>
     
 
@@ -484,7 +484,7 @@ export const POSTS_RENT: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-06-06",
+    date: "2026-06-07",
     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["전세사기","깡통전세","전세보증보험"]
@@ -553,7 +553,7 @@ export const POSTS_RENT: Post[] = [
     <p>최종적인 선택은 본인의 <strong>자산 운용 능력</strong>에 달려 있습니다. 만약 보증금 전액을 대출받아야 한다면 이자 비용이 월세보다 높을 확률이 큽니다. 반면, 자기 자본이 충분하다면 전세를 선택하여 주거비용을 0에 가깝게 유지하는 것이 자산 형성에 유리합니다.</p>
     <p><strong>핵심 조언:</strong> 전세 계약 시에는 전세보증보험 가입이 가능한지 반드시 확인하고, 반전세로 전환할 때는 앞서 언급한 전월세전환율 공식을 활용해 집주인과 협상하십시오. 무리한 대출보다는 <strong>보증금의 80% 이내에서 대출을 실행</strong>하는 것이 금리 인상기에도 버틸 수 있는 안전한 주거 전략입니다.</p>
 
-    <p style="color: #666; font-size: 0.9em; margin-top: 30px;">최종 업데이트: 2026-05-30 | 금융 및 부동산 자문은 전문가와 상담하십시오.</p>
+    <p style="color: #666; font-size: 0.9em; margin-top: 30px;">최종 업데이트: 2026-05-31 | 금융 및 부동산 자문은 전문가와 상담하십시오.</p>
 </div>
     
 
@@ -621,7 +621,7 @@ export const POSTS_RENT: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-30",
+    date: "2026-05-31",
     image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
     hashtags: ["전세월세비교","전월세전환율","기회비용"]
@@ -758,7 +758,7 @@ export const POSTS_RENT: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-23",
+    date: "2026-05-24",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
     hashtags: ["임대차3법","계약갱신청구권","전월세상한제"]
@@ -839,7 +839,7 @@ export const POSTS_RENT: Post[] = [
     <h2 id="section5">5. 결론: 전문가가 제언하는 보증금 회수 골든타임</h2>
     <p>보증금 반환 사고는 초기 대응이 빠를수록 회수 확률이 높아집니다. 수도권 및 전국 주요 거점의 경우 지역 내 전세 사기 피해자 지원 센터가 활발히 운영되고 있으므로, 혼자 고민하지 말고 법률 전문가나 공공기관의 도움을 적극적으로 구하시길 권장합니다.</p>
     <p>마지막으로 강조드리고 싶은 점은 <strong>'기록의 생활화'</strong>입니다. 임대인과의 모든 대화는 문자, 통화 녹취, 이메일 등 객관적 증거로 남겨두십시오. 보증금은 귀하의 소중한 재산입니다. 오늘 설명해 드린 절차들을 차근차근 밟아 나간다면, 법의 테두리 안에서 충분히 보증금을 보호하고 회수할 수 있습니다. 힘든 시기이지만 끝까지 포기하지 마시고 정당한 권리를 찾으시길 진심으로 응원합니다.</p>
-    <p style="color: #666; font-size: 0.9em;">최종 업데이트: 2026-05-16 | 법률 자문은 각 지역 법률구조공단(국번 없이 132)을 통해 전문가 상담을 반드시 병행하시기 바랍니다.</p>
+    <p style="color: #666; font-size: 0.9em;">최종 업데이트: 2026-05-17 | 법률 자문은 각 지역 법률구조공단(국번 없이 132)을 통해 전문가 상담을 반드시 병행하시기 바랍니다.</p>
 </div>
     
 
@@ -907,7 +907,7 @@ export const POSTS_RENT: Post[] = [
 `,
     category: "전월세",
     author: "편집팀",
-    date: "2026-05-16",
+    date: "2026-05-17",
     image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
     hashtags: ["보증금반환","임차권등기명령","내용증명"]
