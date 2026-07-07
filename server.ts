@@ -13,7 +13,14 @@ dotenv.config();
 const aiApiKey = process.env.GEMINI_API_KEY;
 let ai: any = null;
 if (aiApiKey) {
-  ai = new GoogleGenAI({ apiKey: aiApiKey });
+  ai = new GoogleGenAI({
+    apiKey: aiApiKey,
+    httpOptions: {
+      headers: {
+        'User-Agent': 'aistudio-build',
+      }
+    }
+  });
 }
 
 const app = express();
@@ -172,20 +179,57 @@ app.post("/api/advisor", async (req, res) => {
       cleanHistory.pop();
     }
 
-    const chat = ai.chats.create({
-      model: "gemini-3.5-flash",
-      config: {
-        systemInstruction: systemInstruction,
-        temperature: 0.7
-      },
-      history: cleanHistory
-    });
+    let responseText = "";
+    try {
+      const chat = ai.chats.create({
+        model: "gemini-3.5-flash",
+        config: {
+          systemInstruction: systemInstruction,
+          temperature: 0.7
+        },
+        history: cleanHistory
+      });
 
-    const response = await chat.sendMessage({
-      message: message
-    });
+      const response = await chat.sendMessage({
+        message: message
+      });
+      responseText = response.text;
+    } catch (primaryError: any) {
+      console.warn("Primary model (gemini-3.5-flash) failed in chat, trying gemini-2.5-flash...", primaryError);
+      try {
+        const chatFallback = ai.chats.create({
+          model: "gemini-2.5-flash",
+          config: {
+            systemInstruction: systemInstruction,
+            temperature: 0.7
+          },
+          history: cleanHistory
+        });
 
-    return res.json({ response: response.text });
+        const responseFallback = await chatFallback.sendMessage({
+          message: message
+        });
+        responseText = responseFallback.text;
+      } catch (fallbackError: any) {
+        console.error("Fallback model (gemini-2.5-flash) also failed in chat, running local fallback:", fallbackError);
+        
+        let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
+        
+        const msg = message.toLowerCase();
+        if (msg.includes("청약") || msg.includes("통장")) {
+          fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. 특히 검단 및 송도 신도시 분양 일정을 모니터링하세요. 자가진단 탭의 '청약 가점 계산기'를 활용해서 자신의 정확한 가점을 점검해 보세요!`;
+        } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
+          fallbackText += `<strong>💰 대출/자금 조언:</strong> 주택담보대출 LTV 조건과 함께 현재 스트레스 DSR 3단계 영향으로 내 대출 한도가 축소되었을 확률이 매우 높습니다. 자가진단 탭의 '대출 한도 계산기'를 돌려 안전한 이자 비중을 먼저 시뮬레이션해 보시는 것을 권장합니다!`;
+        } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기")) {
+          fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 반드시 대항력 효력 시점(익일 0시)을 커버할 수 있는 '당일 권리변동 금지 특약'과 '보증보험 가입 거절 시 무조건 환불 특약'을 기재하여 보증금을 끝까지 사수하셔야 안전합니다.`;
+        } else {
+          fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 66선 고품격 카테고리별 전문 주거 아티클들을 꼭 정독해 보세요! 또한, 상단의 '자가진단' 탭에서 청약 가점 시뮬레이션과 대출 이자 및 LTV 한도 계산기를 완전 무료로 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+        }
+        responseText = fallbackText;
+      }
+    }
+
+    return res.json({ response: responseText });
   } catch (error) {
     console.error("Gemini Conversation Action Error:", error);
     return res.status(500).json({ error: "AI Consultation server error." });
@@ -215,26 +259,51 @@ app.post("/api/generate", async (req, res) => {
       - 한글로만 친절하게 응답하세요.
     `;
 
-    const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            title: { type: Type.STRING },
-            content: { type: Type.STRING },
-            excerpt: { type: Type.STRING },
-            hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
-            readTime: { type: Type.STRING }
-          },
-          required: ["title", "content", "excerpt", "hashtags", "readTime"]
+    let responseText = "";
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-3.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              title: { type: Type.STRING },
+              content: { type: Type.STRING },
+              excerpt: { type: Type.STRING },
+              hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
+              readTime: { type: Type.STRING }
+            },
+            required: ["title", "content", "excerpt", "hashtags", "readTime"]
+          }
         }
-      }
-    });
+      });
+      responseText = response.text;
+    } catch (primaryError: any) {
+      console.warn("Primary model (gemini-3.5-flash) failed in generation, trying gemini-2.5-flash...", primaryError);
+      const responseFallback = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              title: { type: Type.STRING },
+              content: { type: Type.STRING },
+              excerpt: { type: Type.STRING },
+              hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
+              readTime: { type: Type.STRING }
+            },
+            required: ["title", "content", "excerpt", "hashtags", "readTime"]
+          }
+        }
+      });
+      responseText = responseFallback.text;
+    }
 
-    const data = JSON.parse(response.text);
+    const data = JSON.parse(responseText);
     return res.json(data);
   } catch (error) {
     console.error("Gemini Live Writing Error:", error);

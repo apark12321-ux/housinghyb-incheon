@@ -1,6 +1,13 @@
 import { GoogleGenAI, Type } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const ai = new GoogleGenAI({
+  apiKey: process.env.GEMINI_API_KEY,
+  httpOptions: {
+    headers: {
+      'User-Agent': 'aistudio-build',
+    }
+  }
+});
 
 export async function generateBlogPost(topic: string, category: string) {
   const prompt = `
@@ -26,30 +33,59 @@ export async function generateBlogPost(topic: string, category: string) {
   `;
 
   try {
-    const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: prompt,
-      config: {
-        responseMimeType: "application/json",
-        responseSchema: {
-          type: Type.OBJECT,
-          properties: {
-            title: { type: Type.STRING, description: "포스팅 제목" },
-            content: { type: Type.STRING, description: "HTML 본문 (공백 제외 2,000자 이상)" },
-            summary: { type: Type.STRING, description: "1~2문장의 짧은 요약" },
-            hashtags: { 
-              type: Type.ARRAY, 
-              items: { type: Type.STRING },
-              description: "해시태그 10개"
+    let responseText = "";
+    try {
+      const response = await ai.models.generateContent({
+        model: "gemini-3.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              title: { type: Type.STRING, description: "포스팅 제목" },
+              content: { type: Type.STRING, description: "HTML 본문 (공백 제외 2,000자 이상)" },
+              summary: { type: Type.STRING, description: "1~2문장의 짧은 요약" },
+              hashtags: { 
+                type: Type.ARRAY, 
+                items: { type: Type.STRING },
+                description: "해시태그 10개"
+              },
+              readTime: { type: Type.STRING, description: "예: '6분'" }
             },
-            readTime: { type: Type.STRING, description: "예: '6분'" }
-          },
-          required: ["title", "content", "summary", "hashtags", "readTime"]
+            required: ["title", "content", "summary", "hashtags", "readTime"]
+          }
         }
-      }
-    });
+      });
+      responseText = response.text;
+    } catch (primaryError: any) {
+      console.warn("Primary model (gemini-3.5-flash) failed in generateBlogPost, trying gemini-2.5-flash...", primaryError);
+      const responseFallback = await ai.models.generateContent({
+        model: "gemini-2.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              title: { type: Type.STRING, description: "포스팅 제목" },
+              content: { type: Type.STRING, description: "HTML 본문 (공백 제외 2,000자 이상)" },
+              summary: { type: Type.STRING, description: "1~2문장의 짧은 요약" },
+              hashtags: { 
+                type: Type.ARRAY, 
+                items: { type: Type.STRING },
+                description: "해시태그 10개"
+              },
+              readTime: { type: Type.STRING, description: "예: '6분'" }
+            },
+            required: ["title", "content", "summary", "hashtags", "readTime"]
+          }
+        }
+      });
+      responseText = responseFallback.text;
+    }
 
-    const result = JSON.parse(response.text);
+    const result = JSON.parse(responseText);
     
     // Validate length (basic check, Gemini usually follows instructions but let's be safe)
     const textOnly = result.content.replace(/<[^>]*>/g, '').replace(/\s/g, '');
