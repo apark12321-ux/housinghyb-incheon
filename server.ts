@@ -123,16 +123,31 @@ app.post("/api/advisor", async (req, res) => {
     }
   }
 
+  // 사용 가능한 하우징허브 내 주요 아티클 링크 목록 구성 (AI가 상황에 맞는 아티클 링크를 정확하게 생성할 수 있도록 제공)
+  const availableArticlesContext = POSTS.slice(0, 15).map(p => {
+    return `- [${p.category}] ${p.title} -> 링크: /post/${slugify(p.title)}`;
+  }).join("\n");
+
   // 인천 전용 청약, 영구/공공 임대주택, 대출 상식 사전 주입
   const systemInstruction = `
-    당신의 이름은 '하우징허브 인천 (HousingHub Incheon) AI 주거 비서'입니다.
+    당신의 이름은 '하우징허브 인천 AI 주거 비서'입니다.
     인천광역시 전역(송도, 청라, 영종, 검단, 계양, 미추홀구, 부평구 등)의 청약, 전월세 대항력, 이사 상식, 대출(디딤돌, 신생아 특례대출, 버팀목 등)에 통달한 최고 전문가입니다.
 
-    [지침 사항]:
-    1. 친절하고, 신뢰성 있으며, 성실하게 답변해 주세요.
-    2. 무리한 영끌을 지양하고 합리적인 자금 계획과 법적 자가 진단의 가용성을 칭찬하고 독려해 주세요.
-    3. 인천 지역 소식(예: 청라 연장선, 송도 신주거 타운, 루원시티, 검단 신공급 등) 특성을 살려 답변해 주세요.
-    4. 친근하게 존댓말('~요', '~입니다')을 사용해 주세요. HTML 또는 Markdown 형식으로 구조화해서 가독성 있게 표현하면 아주 좋습니다.
+    [★ 매우 중요 - 출력 포맷 및 분량 지침 ★]:
+    1. **절대로 마크다운 기호(#, ##, ###, *, **, ---)를 답변에 포함하지 마십시오.** 마크다운 기호는 브라우저상에서 가공되지 않은 채 노출되어 가독성을 심각하게 해칩니다.
+    2. 강조할 핵심 내용은 <strong>강조할 문구</strong> 태그를 활용하고, 단락 간 줄바꿈은 반드시 <br/> 태그를 이용하십시오.
+    3. 목록 표기가 필요한 경우 <ul> 및 <li> 등의 HTML 태그를 사용하십시오.
+    4. **답변은 질문에 대해 핵심 위주로 아주 간단명료하게 2~3문장 이내로 압축하여 작성하십시오.**
+    5. 답변 내용에 깊이가 더 필요하거나 구체적인 가이드가 필요한 경우, 아래의 [인천 하우징허브 가용 아티클 목록] 중 가장 연관성 높은 아티클 링크를 찾아서 **답변 맨 끝에 하이퍼링크 형식**으로 반드시 연결해 주십시오.
+       - 링크 형식: <br/><br/><a href="/post/아티클-슬러그" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '아티클제목' 바로가기</a>
+    6. 대외적 공식 홈페이지나 제도 홈페이지 소개가 수반되는 경우, 대외 링크를 함께 제시하십시오.
+       - 청약홈: <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈</a>
+       - LH청약플러스: <a href="https://apply.lh.or.kr" class="text-blue-600 underline font-bold" target="_blank">LH청약플러스</a>
+       - 주택도시기금: <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금</a>
+
+    [인천 하우징허브 가용 아티클 목록]:
+    ${availableArticlesContext}
+
     ${activePostContext}
   `;
 
@@ -140,17 +155,44 @@ app.post("/api/advisor", async (req, res) => {
   if (!ai) {
     // API 키 부재 시 대체 로컬 상담 엔진 스마트 처리 (모크 응답 대신 영특한 룰 베이스 전문가 가이드)
     console.log("No GEMINI_API_KEY detected. Running local consultation fallback.");
-    let fallbackText = `하우징허브 인천 주거 비서입니다! 안타깝게도 현재 서버의 AI 모델 연동을 위한 자격증명이 주입되지 않아, 탑재된 긴급 전문가 로컬 지식기반 시스템으로 응답해 드립니다. <br/><br/>`;
+    let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 지연으로 인해 로컬 전문가 지식기반 시스템으로 안내해 드립니다. <br/><br/>`;
     
     const msg = message.toLowerCase();
+    
+    // 키워드 기반 동적 포스팅 매칭 헬퍼 함수
+    const findPostByKeyword = (kw: string) => {
+      const found = POSTS.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
+      return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
+    };
+
     if (msg.includes("청약") || msg.includes("통장")) {
-      fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. 특히 검단 및 송도 신도시 분양 일정을 모니터링하세요. 자가진단 탭의 '청약 가점 계산기'를 활용해서 자신의 정확한 가점을 점검해 보세요!`;
+      fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
+      const post = findPostByKeyword("청약") || findPostByKeyword("가점");
+      if (post) {
+        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+      }
+      fallbackText += `추가로 공식 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 꼭 확인하세요!`;
     } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-      fallbackText += `<strong>💰 대출/자금 조언:</strong> 주택담보대출 LTV 조건과 함께 현재 스트레스 DSR 3단계 영향으로 내 대출 한도가 축소되었을 확률이 매우 높습니다. 자가진단 탭의 '대출 한도 계산기'를 돌려 안전한 이자 비중을 먼저 시뮬레이션해 보시는 것을 권장합니다!`;
-    } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기")) {
-      fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 반드시 대항력 효력 시점(익일 0시)을 커버할 수 있는 '당일 권리변동 금지 특약'과 '보증보험 가입 거절 시 무조건 환불 특약'을 기재하여 보증금을 끝까지 사수하셔야 안전합니다.`;
+      fallbackText += `<strong>💰 대출/자금 조언:</strong> 현재 스트레스 DSR 3단계 등의 영향으로 내 대출 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
+      const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
+      if (post) {
+        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+      }
+      fallbackText += `금융 정책의 상세 요건은 <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금 홈페이지</a>에서 실시간으로 대조해 보실 수 있습니다.`;
+    } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기") || msg.includes("특약") || msg.includes("등기")) {
+      fallbackText += `<strong>🛡️ 전월세 계약 조언:</strong> 등기부등본 확인 시 을구의 근저당권 채무액과 갑구의 소유주 권리 관계를 반드시 계약 직전까지 면밀히 검사해야 보증금을 사수할 수 있습니다. <br/><br/>`;
+      const post = findPostByKeyword("특약") || findPostByKeyword("보증금") || findPostByKeyword("전세");
+      if (post) {
+        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+      }
+      fallbackText += `또한 계약 후에는 당일 즉시 전입신고와 확정일자를 처리해 대항력을 반드시 선점해 확보하세요.`;
     } else {
-      fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 66선 고품격 카테고리별 전문 주거 아티클들을 꼭 정독해 보세요! 또한, 상단의 '자가진단' 탭에서 청약 가점 시뮬레이션과 대출 이자 및 LTV 한도 계산기를 완전 무료로 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+      fallbackText += `요청하신 사항 관련하여, 하우징허브가 준비한 안심 주거 가이드 아티클을 추천해 드립니다. <br/><br/>`;
+      const post = POSTS[0];
+      if (post) {
+        fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
+      }
+      fallbackText += `더 세밀한 맞춤형 LTV 및 청약 가점 조율은 상단 '자가진단' 탭의 계산기를 통해 무료로 진단해보실 수 있어요.`;
     }
     return res.json({ response: fallbackText });
   }
@@ -229,24 +271,49 @@ app.post("/api/advisor", async (req, res) => {
         } catch (fallbackError2: any) {
           console.error("Fallback model (gemini-3.1-flash-lite) also failed in chat, running local fallback:", fallbackError2);
           
-          let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
-          
-          const msg = message.toLowerCase();
-          if (msg.includes("청약") || msg.includes("통장")) {
-            fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. 특히 검단 및 송도 신도시 분양 일정을 모니터링하세요. 자가진단 탭의 '청약 가점 계산기'를 활용해서 자신의 정확한 가점을 점검해 보세요!`;
-          } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-            fallbackText += `<strong>💰 대출/자금 조언:</strong> 주택담보대출 LTV 조건과 함께 현재 스트레스 DSR 3단계 영향으로 내 대출 한도가 축소되었을 확률이 매우 높습니다. 자가진단 탭의 '대출 한도 계산기'를 돌려 안전한 이자 비중을 먼저 시뮬레이션해 보시는 것을 권장합니다!`;
-          } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기")) {
-            fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 반드시 대항력 효력 시점(익일 0시)을 커버할 수 있는 '당일 권리변동 금지 특약'과 '보증보험 가입 거절 시 무조건 환불 특약'을 기재하여 보증금을 끝까지 사수하셔야 안전합니다.`;
-          } else {
-            fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 66선 고품격 카테고리별 전문 주거 아티클들을 꼭 정독해 보세요! 또한, 상단의 '자가진단' 탭에서 청약 가점 시뮬레이션과 대출 이자 및 LTV 한도 계산기를 완전 무료로 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+        // 키워드 기반 동적 포스팅 매칭 헬퍼 함수
+        const findPostByKeyword = (kw: string) => {
+          const found = POSTS.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
+          return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
+        };
+
+        let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
+        
+        const msg = message.toLowerCase();
+        if (msg.includes("청약") || msg.includes("통장")) {
+          fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
+          const post = findPostByKeyword("청약") || findPostByKeyword("가점");
+          if (post) {
+            fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
           }
-          responseText = fallbackText;
+          fallbackText += `상세 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 참조하세요!`;
+        } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
+          fallbackText += `<strong>💰 대출/자금 조언:</strong> 현재 스트레스 DSR 적용 강도로 내 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
+          const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
+          if (post) {
+            fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+          }
+          fallbackText += `금리 정보는 <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금 홈페이지</a>를 통해 실시간 조회해보실 수 있습니다.`;
+        } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기") || msg.includes("특약") || msg.includes("등기")) {
+          fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 대항력 효력 시점(익일 0시)을 안전하게 수호할 권리 변동 금지 특약을 명시하고, 등기부등본상의 근저당 설정 여부를 필수적으로 감시하셔야 안전합니다. <br/><br/>`;
+          const post = findPostByKeyword("특약") || findPostByKeyword("보증금") || findPostByKeyword("전세");
+          if (post) {
+            fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+          }
+        } else {
+          fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 안심 가이드 아티클을 추천해 드립니다. <br/><br/>`;
+          const post = POSTS[0];
+          if (post) {
+            fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
+          }
+          fallbackText += `상단의 '자가진단' 탭에서 청약 가점 계산기와 대출 이자 계산기도 무상으로 적극 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+        }
+        responseText = fallbackText;
         }
       }
     }
 
-    return res.json({ response: responseText });
+    return res.json({ response: parseMarkdownToHtml(responseText) });
   } catch (error) {
     console.error("Gemini Conversation Action Error:", error);
     return res.status(500).json({ error: "AI Consultation server error." });
@@ -399,6 +466,59 @@ function slugify(title: string): string {
     .replace(/[^\w\uAC00-\uD7A3\-]/g, "")
     .replace(/-+/g, "-")
     .replace(/^-+|-+$/g, "");
+}
+
+function parseMarkdownToHtml(text: string): string {
+  if (!text) return "";
+  let html = text;
+
+  // 1. 마크다운 헤더 변환 (#, ##, ###, ####)
+  html = html.replace(/^#### (.*?)$/gm, '<h5 class="font-bold text-xs text-slate-800 mt-2">$1</h5>');
+  html = html.replace(/^### (.*?)$/gm, '<h4 class="font-bold text-sm text-slate-900 mt-2.5">$1</h4>');
+  html = html.replace(/^## (.*?)$/gm, '<h3 class="font-bold text-base text-slate-900 mt-3">$1</h3>');
+  html = html.replace(/^# (.*?)$/gm, '<h2 class="font-bold text-lg text-slate-900 mt-4">$1</h2>');
+
+  // 2. 가로선 (---)
+  html = html.replace(/^---$/gm, '<hr class="my-3 border-slate-200" />');
+
+  // 3. 리스트 항목 (* 또는 - 로 시작하는 라인)
+  const lines = html.split("\n");
+  let inList = false;
+  const processedLines = lines.map(line => {
+    const trimmed = line.trim();
+    if (trimmed.startsWith("* ") || trimmed.startsWith("- ")) {
+      const content = trimmed.substring(2);
+      let res = "";
+      if (!inList) {
+        res += '<ul class="list-disc pl-5 my-2 space-y-1">';
+        inList = true;
+      }
+      res += `<li>${content}</li>`;
+      return res;
+    } else {
+      let res = "";
+      if (inList) {
+        res += "</ul>";
+        inList = false;
+      }
+      res += line;
+      return res;
+    }
+  });
+  if (inList) {
+    processedLines.push("</ul>");
+  }
+  html = processedLines.join("\n");
+
+  // 4. 볼드 및 이탤릭 (**text**, *text*)
+  html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\*(.*?)\*/g, '<em>$1</em>');
+
+  // 5. 일반 줄바꿈 문자를 <br/>로 치환하되 중복 방지
+  html = html.replace(/\n/g, "<br/>");
+  html = html.replace(/(<br\s*\/?>){3,}/g, "<br/><br/>");
+
+  return html;
 }
 
 // 통합 SEO 메타 태그 검색-치환 및 주입 헬퍼 함수

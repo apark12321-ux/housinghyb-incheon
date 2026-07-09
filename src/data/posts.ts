@@ -206,6 +206,16 @@ function enrichPostContent(post: Post): Post {
   };
 }
 
+// 오늘 날짜 기준으로 상대적 날짜 문자열 생성 헬퍼 함수
+function getRelativeDateString(daysAgo: number): string {
+  const d = new Date();
+  d.setDate(d.getDate() - daysAgo);
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, '0');
+  const dd = String(d.getDate()).padStart(2, '0');
+  return `${yyyy}-${mm}-${dd}`;
+}
+
 // 원본 포스트 리스트 불러오기 및 본문 이미지 일체 자동 보강 처리 완료
 const RAW_POSTS: Post[] = [
   ...POSTS_SUB,
@@ -216,7 +226,14 @@ const RAW_POSTS: Post[] = [
   ...POSTS_FINANCE
 ];
 
-export const POSTS: Post[] = RAW_POSTS.map(p => enrichPostContent(p));
+// 각 카테고리별로 최신글이 오늘 날짜(0일 전)부터 순차적으로 배치되도록 동적 날짜 주입
+export const POSTS: Post[] = RAW_POSTS.map((p, index) => {
+  const enriched = enrichPostContent(p);
+  // 60여 개의 글을 고르게 분포하여 최신순 정렬 시 오늘 날짜(0일 전)부터 1일 전, 2일 전 순으로 실감나게 배치
+  const daysAgo = Math.floor(index / 2);
+  enriched.date = getRelativeDateString(daysAgo);
+  return enriched;
+});
 
 // 카테고리별 편리한 지름길 리스트 지원
 export const POSTS_BY_CATEGORY = {
