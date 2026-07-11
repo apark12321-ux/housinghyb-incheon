@@ -258,6 +258,7 @@ export default function App() {
   const [bankbookYears, setBankbookYears] = useState<number>(7); // 통장 가입 기간 (0~15년)
 
   // --- AI 챗봇 관련 상태 ---
+  const IS_CHAT_ENABLED = false;
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [chatInput, setChatInput] = useState<string>("");
   const [chatMessages, setChatMessages] = useState<Message[]>(() => {
@@ -563,15 +564,17 @@ export default function App() {
             </button>
           </nav>
 
-          <div className="flex items-center space-x-3">
-            <button 
-              onClick={() => setIsChatOpen(prev => !prev)}
-              className="relative p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all text-slate-700 hover:border-slate-300"
-            >
-              <MessageSquare className="w-5 h-5 text-blue-600 animate-pulse" />
-              <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white" />
-            </button>
-          </div>
+          {IS_CHAT_ENABLED && (
+            <div className="flex items-center space-x-3">
+              <button 
+                onClick={() => setIsChatOpen(prev => !prev)}
+                className="relative p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all text-slate-700 hover:border-slate-300"
+              >
+                <MessageSquare className="w-5 h-5 text-blue-600 animate-pulse" />
+                <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white" />
+              </button>
+            </div>
+          )}
         </div>
       </header>
 
@@ -626,26 +629,28 @@ export default function App() {
             {/* 본문 에어리어 */}
             <div className="p-6 sm:p-10 space-y-8">
               {/* 퀵 챗 연계 배너 */}
-              <div className="bg-blue-50/50 rounded-2xl p-5 border border-blue-100/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
-                <div className="flex items-center space-x-3">
-                  <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
-                  <div>
-                    <h4 className="text-xs font-bold text-slate-800">이 아티클의 맞춤형 실전 조언이 더 필요하신가요?</h4>
-                    <p className="text-[11px] text-slate-500 mt-0.5">하우징허브 AI 주거 비서에게 실시간으로 기사 내용에 대해 더 깊이 물어보세요.</p>
+              {IS_CHAT_ENABLED && (
+                <div className="bg-blue-50/50 rounded-2xl p-5 border border-blue-100/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
+                  <div className="flex items-center space-x-3">
+                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
+                    <div>
+                      <h4 className="text-xs font-bold text-slate-800">이 아티클의 맞춤형 실전 조언이 더 필요하신가요?</h4>
+                      <p className="text-[11px] text-slate-500 mt-0.5">하우징허브 AI 주거 비서에게 실시간으로 기사 내용에 대해 더 깊이 물어보세요.</p>
+                    </div>
                   </div>
+                  <button
+                    onClick={() => {
+                      const askText = `방금 열람한 '${activePost.title}' 관련해서 자격요건이나 꿀팁을 인천 입지에 맞춰 더 깊이 조언해줘!`;
+                      setIsChatOpen(true);
+                      handleQuickQuestion(askText);
+                    }}
+                    className="bg-blue-600 hover:bg-blue-500 transition-colors text-white font-semibold text-xs px-4 py-2.5 rounded-xl flex items-center space-x-2 shadow-sm whitespace-nowrap cursor-pointer"
+                  >
+                    <span>AI 조언 구하기</span>
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
                 </div>
-                <button
-                  onClick={() => {
-                    const askText = `방금 열람한 '${activePost.title}' 관련해서 자격요건이나 꿀팁을 인천 입지에 맞춰 더 깊이 조언해줘!`;
-                    setIsChatOpen(true);
-                    handleQuickQuestion(askText);
-                  }}
-                  className="bg-blue-600 hover:bg-blue-500 transition-colors text-white font-semibold text-xs px-4 py-2.5 rounded-xl flex items-center space-x-2 shadow-sm whitespace-nowrap cursor-pointer"
-                >
-                  <span>AI 조언 구하기</span>
-                  <ChevronRight className="w-4 h-4" />
-                </button>
-              </div>
+              )}
 
               {/* 실제 정밀 본문 */}
               <div 
@@ -1364,13 +1369,15 @@ export default function App() {
                     <Calculator className="w-4.5 h-4.5" />
                     <span>스마트 주거 자가진단 실행</span>
                   </button>
-                  <button 
-                    onClick={() => setIsChatOpen(true)}
-                    className="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium px-5 py-3 rounded-xl transition-all flex items-center space-x-2 text-sm cursor-pointer"
-                  >
-                    <MessageSquare className="w-4.5 h-4.5 text-blue-400" />
-                    <span>AI 컨설턴트 무료 대화</span>
-                  </button>
+                  {IS_CHAT_ENABLED && (
+                    <button 
+                      onClick={() => setIsChatOpen(true)}
+                      className="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium px-5 py-3 rounded-xl transition-all flex items-center space-x-2 text-sm cursor-pointer"
+                    >
+                      <MessageSquare className="w-4.5 h-4.5 text-blue-400" />
+                      <span>AI 컨설턴트 무료 대화</span>
+                    </button>
+                  )}
                 </div>
               </div>
             </section>
@@ -1590,109 +1597,111 @@ export default function App() {
       </main>
 
       {/* 리얼타임 AI 대화 전담 챗봇 모달 사이드 바 (Floating Messenger) */}
-      <div className={`fixed bottom-6 right-6 z-50 flex flex-col items-end`}>
-        {/* 플로팅 트리거 */}
-        {!isChatOpen && (
-          <button 
-            onClick={() => setIsChatOpen(true)}
-            className="w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl hover:shadow-blue-500/30 flex items-center justify-center hover:scale-110 transition-all cursor-pointer"
-          >
-            <MessageSquare className="w-6 h-6" />
-          </button>
-        )}
-
-        {/* 챗봇 메신저 카드 */}
-        {isChatOpen && (
-          <div className="w-[360px] sm:w-[420px] h-[550px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-6">
-            {/* 챗봇 톱바 */}
-            <div className="bg-slate-900 text-white p-4 flex items-center justify-between">
-              <div className="flex items-center space-x-3">
-                <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center">
-                  <Building2 className="w-4.5 h-4.5" />
-                </div>
-                <div>
-                  <h4 className="text-sm font-bold font-display">하우징허브 스마트 AI 안심 비서</h4>
-                  <p className="text-[10px] text-slate-400 font-medium">{selectedRegion === "전체" ? "전국" : selectedRegion} 지역 맞춤형 주거 컨설턴트</p>
-                </div>
-              </div>
-              <button 
-                onClick={() => setIsChatOpen(false)}
-                className="text-slate-400 hover:text-white p-1 rounded-lg"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* 메시지 바디 */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
-              {chatMessages.map((msg, i) => (
-                <div 
-                  key={i} 
-                  className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
-                >
-                  <div className={`max-w-[85%] rounded-2xl p-3.5 text-xs leading-relaxed shadow-sm ${
-                    msg.role === "user" 
-                      ? "bg-blue-600 text-white rounded-br-none" 
-                      : "bg-white text-slate-800 rounded-bl-none border border-slate-100"
-                  }`}>
-                    <p dangerouslySetInnerHTML={{ __html: msg.text }}></p>
-                    <span className="block text-[9px] text-slate-400 mt-1.5 text-right font-mono">
-                      {msg.time}
-                    </span>
-                  </div>
-                </div>
-              ))}
-              
-              {isAiLoading && (
-                <div className="flex justify-start">
-                  <div className="bg-white border border-slate-100 rounded-2xl rounded-bl-none p-3.5 text-xs text-slate-500 shadow-sm flex items-center space-x-1.5">
-                    <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" />
-                    <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.2s]" />
-                    <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.4s]" />
-                  </div>
-                </div>
-              )}
-              <div ref={chatBottomRef} />
-            </div>
-
-            {/* 퀵버튼 추천 */}
-            <div className="p-2 border-t border-slate-100 bg-white grid grid-cols-1 gap-1">
-              <button 
-                onClick={() => handleQuickQuestion(`${selectedRegion === "전체" ? "수도권" : selectedRegion} 신혼 가구인데 신생아 대출이랑 보금자리론 중 무엇이 유리해?`)}
-                className="text-[10px] text-left text-slate-600 hover:text-blue-600 p-1.5 rounded-lg hover:bg-slate-50 transition-colors truncate"
-              >
-                ❓ 신생아 특례 vs 보금자리론 비교해줘
-              </button>
-              <button 
-                onClick={() => handleQuickQuestion("월세 계약할 때 등기부등본 확인법이랑 필수 특약 알려줘!")}
-                className="text-[10px] text-left text-slate-600 hover:text-blue-600 p-1.5 rounded-lg hover:bg-slate-50 transition-colors truncate"
-              >
-                ❓ 월세계약 시 필수 특약과 등기부등본 팁
-              </button>
-            </div>
-
-            {/* 입력 폼 */}
-            <form 
-              onSubmit={(e) => { e.preventDefault(); handleChatSend(); }}
-              className="p-3 border-t border-slate-200 bg-white flex items-center space-x-2"
+      {IS_CHAT_ENABLED && (
+        <div className={`fixed bottom-6 right-6 z-50 flex flex-col items-end`}>
+          {/* 플로팅 트리거 */}
+          {!isChatOpen && (
+            <button 
+              onClick={() => setIsChatOpen(true)}
+              className="w-14 h-14 rounded-full bg-blue-600 text-white shadow-xl hover:shadow-blue-500/30 flex items-center justify-center hover:scale-110 transition-all cursor-pointer"
             >
-              <input 
-                type="text" 
-                value={chatInput}
-                onChange={(e) => setChatInput(e.target.value)}
-                placeholder="질문을 입력해 조언을 구하세요..."
-                className="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-white"
-              />
-              <button 
-                type="submit"
-                className="bg-blue-600 hover:bg-blue-500 text-white p-2.5 rounded-xl cursor-pointer"
+              <MessageSquare className="w-6 h-6" />
+            </button>
+          )}
+
+          {/* 챗봇 메신저 카드 */}
+          {isChatOpen && (
+            <div className="w-[360px] sm:w-[420px] h-[550px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-6">
+              {/* 챗봇 톱바 */}
+              <div className="bg-slate-900 text-white p-4 flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                  <div className="w-9 h-9 rounded-xl bg-blue-600 flex items-center justify-center">
+                    <Building2 className="w-4.5 h-4.5" />
+                  </div>
+                  <div>
+                    <h4 className="text-sm font-bold font-display">하우징허브 스마트 AI 안심 비서</h4>
+                    <p className="text-[10px] text-slate-400 font-medium">{selectedRegion === "전체" ? "전국" : selectedRegion} 지역 맞춤형 주거 컨설턴트</p>
+                  </div>
+                </div>
+                <button 
+                  onClick={() => setIsChatOpen(false)}
+                  className="text-slate-400 hover:text-white p-1 rounded-lg"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              {/* 메시지 바디 */}
+              <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50">
+                {chatMessages.map((msg, i) => (
+                  <div 
+                    key={i} 
+                    className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
+                  >
+                    <div className={`max-w-[85%] rounded-2xl p-3.5 text-xs leading-relaxed shadow-sm ${
+                      msg.role === "user" 
+                        ? "bg-blue-600 text-white rounded-br-none" 
+                        : "bg-white text-slate-800 rounded-bl-none border border-slate-100"
+                    }`}>
+                      <p dangerouslySetInnerHTML={{ __html: msg.text }}></p>
+                      <span className="block text-[9px] text-slate-400 mt-1.5 text-right font-mono">
+                        {msg.time}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+                
+                {isAiLoading && (
+                  <div className="flex justify-start">
+                    <div className="bg-white border border-slate-100 rounded-2xl rounded-bl-none p-3.5 text-xs text-slate-500 shadow-sm flex items-center space-x-1.5">
+                      <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce" />
+                      <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.2s]" />
+                      <span className="w-1.5 h-1.5 bg-slate-400 rounded-full animate-bounce [animation-delay:0.4s]" />
+                    </div>
+                  </div>
+                )}
+                <div ref={chatBottomRef} />
+              </div>
+
+              {/* 퀵버튼 추천 */}
+              <div className="p-2 border-t border-slate-100 bg-white grid grid-cols-1 gap-1">
+                <button 
+                  onClick={() => handleQuickQuestion(`${selectedRegion === "전체" ? "수도권" : selectedRegion} 신혼 가구인데 신생아 대출이랑 보금자리론 중 무엇이 유리해?`)}
+                  className="text-[10px] text-left text-slate-600 hover:text-blue-600 p-1.5 rounded-lg hover:bg-slate-50 transition-colors truncate"
+                >
+                  ❓ 신생아 특례 vs 보금자리론 비교해줘
+                </button>
+                <button 
+                  onClick={() => handleQuickQuestion("월세 계약할 때 등기부등본 확인법이랑 필수 특약 알려줘!")}
+                  className="text-[10px] text-left text-slate-600 hover:text-blue-600 p-1.5 rounded-lg hover:bg-slate-50 transition-colors truncate"
+                >
+                  ❓ 월세계약 시 필수 특약과 등기부등본 팁
+                </button>
+              </div>
+
+              {/* 입력 폼 */}
+              <form 
+                onSubmit={(e) => { e.preventDefault(); handleChatSend(); }}
+                className="p-3 border-t border-slate-200 bg-white flex items-center space-x-2"
               >
-                <Send className="w-4 h-4" />
-              </button>
-            </form>
-          </div>
-        )}
-      </div>
+                <input 
+                  type="text" 
+                  value={chatInput}
+                  onChange={(e) => setChatInput(e.target.value)}
+                  placeholder="질문을 입력해 조언을 구하세요..."
+                  className="flex-1 px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-1 focus:ring-blue-500 focus:bg-white"
+                />
+                <button 
+                  type="submit"
+                  className="bg-blue-600 hover:bg-blue-500 text-white p-2.5 rounded-xl cursor-pointer"
+                >
+                  <Send className="w-4 h-4" />
+                </button>
+              </form>
+            </div>
+          )}
+        </div>
+      )}
 
 
 
