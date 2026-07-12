@@ -36,6 +36,16 @@ interface Message {
   time: string;
 }
 
+function getDeterministicViews(title: string): string {
+  let hash = 0;
+  for (let i = 0; i < title.length; i++) {
+    hash = title.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  const base = Math.abs(hash % 120) + 15; // 15k ~ 135k
+  const decimal = Math.abs(hash % 9);
+  return `${base}.${decimal}K`;
+}
+
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
   const [selectedRegion, setSelectedRegion] = useState<string>("전체");
@@ -256,6 +266,10 @@ export default function App() {
   const [homelessYears, setHomelessYears] = useState<number>(5); // 무주택 기간 요건 (0~15년)
   const [dependents, setDependents] = useState<number>(2); // 부양 가족 수 (0~6명)
   const [bankbookYears, setBankbookYears] = useState<number>(7); // 통장 가입 기간 (0~15년)
+
+  // --- 요즘IT 디자인 대응 가상 로그인 상태 ---
+  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
+  const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
 
   // --- AI 챗봇 관련 상태 ---
   const IS_CHAT_ENABLED = false;
@@ -586,80 +600,150 @@ export default function App() {
             <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
               <button 
                 onClick={() => setActivePost(null)}
-                className="inline-flex items-center space-x-2 text-slate-600 hover:text-blue-600 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+                className="inline-flex items-center space-x-2 text-slate-600 hover:text-purple-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
-                <span>메인 가이드 목록으로 돌아가기</span>
+                <span>목록으로 돌아가기</span>
               </button>
               <div className="text-[11px] font-mono text-slate-400">
-                현재 위치: 하우징허브 &gt; {activePost.category}
+                하우징허브 &gt; {activePost.category}
               </div>
             </div>
 
-            {/* 메인 이미지 헤더 */}
-            <div className="relative h-64 sm:h-96 bg-slate-100 flex-shrink-0">
-              <img 
-                src={activePost.image} 
-                alt={activePost.title} 
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/35 to-transparent" />
-              
-              <div className="absolute bottom-6 left-6 right-6 sm:bottom-8 sm:left-8 sm:right-8 text-white space-y-3">
-                <span className="bg-blue-600 text-white text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-wider">
-                  {activePost.category}
-                </span>
-                <h2 className="text-2xl sm:text-3xl font-bold tracking-tight leading-tight max-w-4xl text-white">
-                  {activePost.title}
-                </h2>
-                <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-slate-300 text-xs font-mono">
-                  <span>작성일자: {activePost.date}</span>
-                  <span className="hidden sm:inline">•</span>
-                  <span>필진: {activePost.author}</span>
-                  <span className="hidden sm:inline">•</span>
+            {/* 요즘IT 테마의 화이트 아티클 타이포그래피 헤더 영역 */}
+            <div className="px-6 pt-8 pb-4 sm:px-10 sm:pt-10 max-w-4xl mx-auto">
+              {/* 카테고리 태그 */}
+              <span className="text-xs sm:text-sm font-bold text-purple-600 tracking-wider block mb-2 font-mono">
+                {activePost.category}
+              </span>
+
+              {/* 굵고 대담한 제목 */}
+              <h1 className="text-2xl sm:text-3.5xl lg:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight mb-6">
+                {activePost.title}
+              </h1>
+
+              {/* 작성자 아바타 프로필 & 메타 정보 카드 */}
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-5 border-y border-slate-100 mb-8">
+                {/* 프로필 좌측 */}
+                <div className="flex items-center space-x-3">
+                  <img 
+                    src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(activePost.author)}`}
+                    alt={activePost.author} 
+                    className="w-10 h-10 rounded-full bg-purple-50 border border-purple-100/50"
+                  />
+                  <div>
+                    <h4 className="text-sm font-bold text-slate-800">{activePost.author}</h4>
+                    <p className="text-[11px] text-slate-400 font-medium">하우징허브 주거정책 수석 전문위원</p>
+                  </div>
+                </div>
+
+                {/* 메타 정보 우측 */}
+                <div className="flex flex-wrap items-center gap-2.5 text-slate-400 text-[11px] sm:text-xs font-medium">
                   <span className="flex items-center">
-                    <Clock className="w-3.5 h-3.5 mr-1" />
+                    <Clock className="w-3.5 h-3.5 mr-1 text-slate-300" />
                     {activePost.readTime}
+                  </span>
+                  <span className="text-slate-200">|</span>
+                  <span>{activePost.date}</span>
+                  <span className="text-slate-200">|</span>
+                  <span className="bg-purple-50 text-purple-600 font-bold px-1.5 py-0.5 rounded text-[10px]">
+                    ✨ 인기
+                  </span>
+                  <span className="text-slate-200">|</span>
+                  <span className="flex items-center text-slate-500">
+                    <span className="mr-1">👁️</span>
+                    {getDeterministicViews(activePost.title)}
                   </span>
                 </div>
               </div>
-            </div>
 
-            {/* 본문 에어리어 */}
-            <div className="p-6 sm:p-10 space-y-8">
-              {/* 퀵 챗 연계 배너 */}
-              {IS_CHAT_ENABLED && (
-                <div className="bg-blue-50/50 rounded-2xl p-5 border border-blue-100/50 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-xs">
-                  <div className="flex items-center space-x-3">
-                    <span className="w-2 h-2 rounded-full bg-blue-500 animate-ping" />
-                    <div>
-                      <h4 className="text-xs font-bold text-slate-800">이 아티클의 맞춤형 실전 조언이 더 필요하신가요?</h4>
-                      <p className="text-[11px] text-slate-500 mt-0.5">하우징허브 AI 주거 비서에게 실시간으로 기사 내용에 대해 더 깊이 물어보세요.</p>
+              {/* "어떤 독자들이 봤을까요?" 요즘IT 시그니처 분석 리포트 카드 목업 */}
+              <div className="bg-slate-50/50 rounded-2xl p-6 border border-slate-200/80 relative overflow-hidden my-6 shadow-xs">
+                {/* 상단 타이틀 배지 */}
+                <div className="flex items-center justify-between mb-4">
+                  <div className="flex items-center space-x-1.5">
+                    <span className="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded-md">
+                      독자 분석 리포트
+                    </span>
+                    <span className="text-[11px] text-slate-400 font-semibold">실시간 집계 결과</span>
+                  </div>
+                  {isLoggedIn && (
+                    <span className="text-[10px] bg-green-50 text-green-600 font-bold px-2 py-0.5 rounded-full flex items-center">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1 animate-ping" />
+                      실시간 대조 완료
+                    </span>
+                  )}
+                </div>
+
+                <h3 className="text-xs sm:text-sm font-bold text-slate-700 mb-4">
+                  <span className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded mr-1">몇</span> 점대 가점, <span className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded mr-1">어떤</span> 이자 조건, <span className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded mr-1">어떤</span> 정책의 독자들이 봤을까요?
+                </h3>
+
+                {/* 차트 리스트 */}
+                <div className="space-y-3.5">
+                  <div>
+                    <div className="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
+                      <span>1. 무주택 5~10년차 예비 청약 대조 독자</span>
+                      <span>42%</span>
+                    </div>
+                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-purple-500 rounded-full transition-all duration-1000" style={{ width: isLoggedIn ? "42%" : "15%" }} />
                     </div>
                   </div>
-                  <button
-                    onClick={() => {
-                      const askText = `방금 열람한 '${activePost.title}' 관련해서 자격요건이나 꿀팁을 인천 입지에 맞춰 더 깊이 조언해줘!`;
-                      setIsChatOpen(true);
-                      handleQuickQuestion(askText);
-                    }}
-                    className="bg-blue-600 hover:bg-blue-500 transition-colors text-white font-semibold text-xs px-4 py-2.5 rounded-xl flex items-center space-x-2 shadow-sm whitespace-nowrap cursor-pointer"
-                  >
-                    <span>AI 조언 구하기</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
+                  <div>
+                    <div className="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
+                      <span>2. 생애 최초 디딤돌·버팀목 최적 금리 타겟층</span>
+                      <span>35%</span>
+                    </div>
+                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-purple-400 rounded-full transition-all duration-1000" style={{ width: isLoggedIn ? "35%" : "25%" }} />
+                    </div>
+                  </div>
+                  <div>
+                    <div className="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
+                      <span>3. 전월세 계약 시 임차 보증금 특약 확인자</span>
+                      <span>23%</span>
+                    </div>
+                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
+                      <div className="h-full bg-purple-300 rounded-full transition-all duration-1000" style={{ width: isLoggedIn ? "23%" : "8%" }} />
+                    </div>
+                  </div>
                 </div>
-              )}
+
+                {/* 로그인 안 되어 있을 때 블러 차단막 및 로그인 유도 모달 트리거 */}
+                {!isLoggedIn && (
+                  <div className="absolute inset-0 backdrop-blur-xs bg-white/75 flex flex-col items-center justify-center p-6 text-center transition-all z-10">
+                    <p className="text-xs font-extrabold text-slate-800 mb-2.5 tracking-tight">
+                      어떤 독자들이 봤을까요?
+                    </p>
+                    <button 
+                      onClick={() => setShowLoginModal(true)}
+                      className="bg-[#5F0080] hover:bg-[#4a0063] text-white font-bold text-xs px-5 py-2 rounded-full shadow-md transition-all active:scale-95 cursor-pointer"
+                    >
+                      로그인
+                    </button>
+                  </div>
+                )}
+              </div>
+
+              {/* 아티클 대표 이미지 (모던한 규격으로 헤더 아래 단정히 안착시킴) */}
+              <div className="rounded-2xl overflow-hidden shadow-xs border border-slate-100/50 my-6 max-h-[420px] bg-slate-50 flex items-center justify-center">
+                <img 
+                  src={activePost.image} 
+                  alt={activePost.title} 
+                  className="w-full h-full object-cover max-h-[420px]"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
 
               {/* 실제 정밀 본문 */}
               <div 
-                className="article-rich-content text-slate-800 text-sm sm:text-base leading-relaxed space-y-6"
+                className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
                 dangerouslySetInnerHTML={{ __html: activePost.content }}
               />
 
               {/* 해시태그 목록 */}
-              <div className="flex flex-wrap gap-1.5 border-t border-slate-100/80 pt-6">
+              <div className="flex flex-wrap gap-1.5 border-t border-slate-100 pt-8 mt-8">
                 {activePost.hashtags?.map(tag => (
                   <span key={tag} className="text-xs bg-slate-100 text-slate-600 px-3.5 py-1.5 rounded-full font-medium">
                     #{tag}
@@ -691,7 +775,7 @@ export default function App() {
                 </button>
                 <button
                   onClick={() => setActivePost(null)}
-                  className="flex-1 sm:flex-initial py-3 px-5 text-xs font-bold transition-all text-slate-700 hover:bg-slate-200 border border-slate-200 bg-white rounded-xl"
+                  className="flex-1 sm:flex-initial py-3 px-5 text-xs font-bold transition-all text-slate-700 hover:bg-slate-200 border border-slate-200 bg-white rounded-xl cursor-pointer"
                 >
                   목록으로 가기
                 </button>
@@ -1805,6 +1889,83 @@ export default function App() {
           
         </div>
       </footer>
+
+      {/* 가상 간편 로그인 모달 */}
+      <AnimatePresence>
+        {showLoginModal && (
+          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+            <motion.div 
+              initial={{ scale: 0.95, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.95, opacity: 0 }}
+              className="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl border border-slate-100 flex flex-col p-6 text-center"
+            >
+              <div className="flex justify-between items-center mb-5">
+                <div className="flex items-center space-x-1.5 text-purple-700">
+                  <Building2 className="w-5 h-5" />
+                  <span className="text-xs font-bold font-display uppercase tracking-wider">HousingHub ID</span>
+                </div>
+                <button 
+                  onClick={() => setShowLoginModal(false)}
+                  className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+
+              <div className="my-3">
+                <h3 className="text-lg font-extrabold text-slate-900 tracking-tight">
+                  하우징허브 시작하기
+                </h3>
+                <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                  3초 간편 소셜 연동으로 실시간 주거 자격 연산과 <br />
+                  독자 맞춤 안심 리포트를 100% 무료로 이용해 보세요.
+                </p>
+              </div>
+
+              {/* 간편 로그인 소셜 버튼 목록 */}
+              <div className="space-y-2.5 mt-6 mb-4">
+                <button 
+                  onClick={() => {
+                    setIsLoggedIn(true);
+                    setShowLoginModal(false);
+                    showToast("카카오로 로그인 성공! 맞춤 독자 분석 리포트가 잠금 해제되었습니다.", "success");
+                  }}
+                  className="w-full bg-[#FEE500] hover:bg-[#F2DA00] text-slate-900 font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 shadow-xs transition-transform active:scale-[0.98] cursor-pointer"
+                >
+                  <span className="w-4 h-4 rounded-full bg-slate-900 text-[#FEE500] text-[8px] font-black flex items-center justify-center">K</span>
+                  <span>카카오톡으로 3초 만에 시작하기</span>
+                </button>
+                <button 
+                  onClick={() => {
+                    setIsLoggedIn(true);
+                    setShowLoginModal(false);
+                    showToast("네이버로 로그인 성공! 맞춤 독자 분석 리포트가 잠금 해제되었습니다.", "success");
+                  }}
+                  className="w-full bg-[#03C75A] hover:bg-[#02b150] text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 shadow-xs transition-transform active:scale-[0.98] cursor-pointer"
+                >
+                  <span className="w-4 h-4 rounded-sm bg-white text-[#03C75A] text-[9px] font-black flex items-center justify-center">N</span>
+                  <span>네이버 아이디로 간편 시작하기</span>
+                </button>
+                <button 
+                  onClick={() => {
+                    setIsLoggedIn(true);
+                    setShowLoginModal(false);
+                    showToast("이메일로 로그인 성공! 맞춤 독자 분석 리포트가 잠금 해제되었습니다.", "success");
+                  }}
+                  className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 transition-transform active:scale-[0.98] cursor-pointer"
+                >
+                  <span>이메일 주소로 로그인</span>
+                </button>
+              </div>
+
+              <span className="text-[10px] text-slate-400 mt-2 block leading-relaxed">
+                가입 시 하우징허브의 <span className="underline cursor-pointer">이용약관</span> 및 <span className="underline cursor-pointer">개인정보처리방침</span>에 동의하게 됩니다.
+              </span>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
 
       {/* 토스트 알림창 */}
       <AnimatePresence>
