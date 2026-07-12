@@ -267,10 +267,6 @@ export default function App() {
   const [dependents, setDependents] = useState<number>(2); // 부양 가족 수 (0~6명)
   const [bankbookYears, setBankbookYears] = useState<number>(7); // 통장 가입 기간 (0~15년)
 
-  // --- 요즘IT 디자인 대응 가상 로그인 상태 ---
-  const [isLoggedIn, setIsLoggedIn] = useState<boolean>(false);
-  const [showLoginModal, setShowLoginModal] = useState<boolean>(false);
-
   // --- AI 챗봇 관련 상태 ---
   const IS_CHAT_ENABLED = false;
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
@@ -667,12 +663,10 @@ export default function App() {
                     </span>
                     <span className="text-[11px] text-slate-400 font-semibold">실시간 집계 결과</span>
                   </div>
-                  {isLoggedIn && (
-                    <span className="text-[10px] bg-green-50 text-green-600 font-bold px-2 py-0.5 rounded-full flex items-center">
-                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1 animate-ping" />
-                      실시간 대조 완료
-                    </span>
-                  )}
+                  <span className="text-[10px] bg-green-50 text-green-600 font-bold px-2 py-0.5 rounded-full flex items-center">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1 animate-ping" />
+                    실시간 통계 집계 완료
+                  </span>
                 </div>
 
                 <h3 className="text-xs sm:text-sm font-bold text-slate-700 mb-4">
@@ -687,7 +681,7 @@ export default function App() {
                       <span>42%</span>
                     </div>
                     <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-500 rounded-full transition-all duration-1000" style={{ width: isLoggedIn ? "42%" : "15%" }} />
+                      <div className="h-full bg-purple-500 rounded-full transition-all duration-1000" style={{ width: "42%" }} />
                     </div>
                   </div>
                   <div>
@@ -696,7 +690,7 @@ export default function App() {
                       <span>35%</span>
                     </div>
                     <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-400 rounded-full transition-all duration-1000" style={{ width: isLoggedIn ? "35%" : "25%" }} />
+                      <div className="h-full bg-purple-400 rounded-full transition-all duration-1000" style={{ width: "35%" }} />
                     </div>
                   </div>
                   <div>
@@ -705,25 +699,10 @@ export default function App() {
                       <span>23%</span>
                     </div>
                     <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-300 rounded-full transition-all duration-1000" style={{ width: isLoggedIn ? "23%" : "8%" }} />
+                      <div className="h-full bg-purple-300 rounded-full transition-all duration-1000" style={{ width: "23%" }} />
                     </div>
                   </div>
                 </div>
-
-                {/* 로그인 안 되어 있을 때 블러 차단막 및 로그인 유도 모달 트리거 */}
-                {!isLoggedIn && (
-                  <div className="absolute inset-0 backdrop-blur-xs bg-white/75 flex flex-col items-center justify-center p-6 text-center transition-all z-10">
-                    <p className="text-xs font-extrabold text-slate-800 mb-2.5 tracking-tight">
-                      어떤 독자들이 봤을까요?
-                    </p>
-                    <button 
-                      onClick={() => setShowLoginModal(true)}
-                      className="bg-[#5F0080] hover:bg-[#4a0063] text-white font-bold text-xs px-5 py-2 rounded-full shadow-md transition-all active:scale-95 cursor-pointer"
-                    >
-                      로그인
-                    </button>
-                  </div>
-                )}
               </div>
 
               {/* 아티클 대표 이미지 (모던한 규격으로 헤더 아래 단정히 안착시킴) */}
@@ -1890,82 +1869,7 @@ export default function App() {
         </div>
       </footer>
 
-      {/* 가상 간편 로그인 모달 */}
-      <AnimatePresence>
-        {showLoginModal && (
-          <div className="fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-center justify-center p-4">
-            <motion.div 
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              className="bg-white rounded-3xl w-full max-w-sm overflow-hidden shadow-2xl border border-slate-100 flex flex-col p-6 text-center"
-            >
-              <div className="flex justify-between items-center mb-5">
-                <div className="flex items-center space-x-1.5 text-purple-700">
-                  <Building2 className="w-5 h-5" />
-                  <span className="text-xs font-bold font-display uppercase tracking-wider">HousingHub ID</span>
-                </div>
-                <button 
-                  onClick={() => setShowLoginModal(false)}
-                  className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-slate-700 transition-colors"
-                >
-                  <X className="w-5 h-5" />
-                </button>
-              </div>
 
-              <div className="my-3">
-                <h3 className="text-lg font-extrabold text-slate-900 tracking-tight">
-                  하우징허브 시작하기
-                </h3>
-                <p className="text-xs text-slate-500 mt-2 leading-relaxed">
-                  3초 간편 소셜 연동으로 실시간 주거 자격 연산과 <br />
-                  독자 맞춤 안심 리포트를 100% 무료로 이용해 보세요.
-                </p>
-              </div>
-
-              {/* 간편 로그인 소셜 버튼 목록 */}
-              <div className="space-y-2.5 mt-6 mb-4">
-                <button 
-                  onClick={() => {
-                    setIsLoggedIn(true);
-                    setShowLoginModal(false);
-                    showToast("카카오로 로그인 성공! 맞춤 독자 분석 리포트가 잠금 해제되었습니다.", "success");
-                  }}
-                  className="w-full bg-[#FEE500] hover:bg-[#F2DA00] text-slate-900 font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 shadow-xs transition-transform active:scale-[0.98] cursor-pointer"
-                >
-                  <span className="w-4 h-4 rounded-full bg-slate-900 text-[#FEE500] text-[8px] font-black flex items-center justify-center">K</span>
-                  <span>카카오톡으로 3초 만에 시작하기</span>
-                </button>
-                <button 
-                  onClick={() => {
-                    setIsLoggedIn(true);
-                    setShowLoginModal(false);
-                    showToast("네이버로 로그인 성공! 맞춤 독자 분석 리포트가 잠금 해제되었습니다.", "success");
-                  }}
-                  className="w-full bg-[#03C75A] hover:bg-[#02b150] text-white font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 shadow-xs transition-transform active:scale-[0.98] cursor-pointer"
-                >
-                  <span className="w-4 h-4 rounded-sm bg-white text-[#03C75A] text-[9px] font-black flex items-center justify-center">N</span>
-                  <span>네이버 아이디로 간편 시작하기</span>
-                </button>
-                <button 
-                  onClick={() => {
-                    setIsLoggedIn(true);
-                    setShowLoginModal(false);
-                    showToast("이메일로 로그인 성공! 맞춤 독자 분석 리포트가 잠금 해제되었습니다.", "success");
-                  }}
-                  className="w-full bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold py-3 px-4 rounded-xl text-xs flex items-center justify-center space-x-2 transition-transform active:scale-[0.98] cursor-pointer"
-                >
-                  <span>이메일 주소로 로그인</span>
-                </button>
-              </div>
-
-              <span className="text-[10px] text-slate-400 mt-2 block leading-relaxed">
-                가입 시 하우징허브의 <span className="underline cursor-pointer">이용약관</span> 및 <span className="underline cursor-pointer">개인정보처리방침</span>에 동의하게 됩니다.
-              </span>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
 
       {/* 토스트 알림창 */}
       <AnimatePresence>
