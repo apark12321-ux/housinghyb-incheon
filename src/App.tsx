@@ -36,15 +36,6 @@ interface Message {
   time: string;
 }
 
-function getDeterministicViews(title: string): string {
-  let hash = 0;
-  for (let i = 0; i < title.length; i++) {
-    hash = title.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  const base = Math.abs(hash % 120) + 15; // 15k ~ 135k
-  const decimal = Math.abs(hash % 9);
-  return `${base}.${decimal}K`;
-}
 
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
@@ -645,63 +636,6 @@ export default function App() {
                   <span className="bg-purple-50 text-purple-600 font-bold px-1.5 py-0.5 rounded text-[10px]">
                     ✨ 인기
                   </span>
-                  <span className="text-slate-200">|</span>
-                  <span className="flex items-center text-slate-500">
-                    <span className="mr-1">👁️</span>
-                    {getDeterministicViews(activePost.title)}
-                  </span>
-                </div>
-              </div>
-
-              {/* "어떤 독자들이 봤을까요?" 요즘IT 시그니처 분석 리포트 카드 목업 */}
-              <div className="bg-slate-50/50 rounded-2xl p-6 border border-slate-200/80 relative overflow-hidden my-6 shadow-xs">
-                {/* 상단 타이틀 배지 */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center space-x-1.5">
-                    <span className="bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded-md">
-                      독자 분석 리포트
-                    </span>
-                    <span className="text-[11px] text-slate-400 font-semibold">실시간 집계 결과</span>
-                  </div>
-                  <span className="text-[10px] bg-green-50 text-green-600 font-bold px-2 py-0.5 rounded-full flex items-center">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 mr-1 animate-ping" />
-                    실시간 통계 집계 완료
-                  </span>
-                </div>
-
-                <h3 className="text-xs sm:text-sm font-bold text-slate-700 mb-4">
-                  <span className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded mr-1">몇</span> 점대 가점, <span className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded mr-1">어떤</span> 이자 조건, <span className="text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded mr-1">어떤</span> 정책의 독자들이 봤을까요?
-                </h3>
-
-                {/* 차트 리스트 */}
-                <div className="space-y-3.5">
-                  <div>
-                    <div className="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
-                      <span>1. 무주택 5~10년차 예비 청약 대조 독자</span>
-                      <span>42%</span>
-                    </div>
-                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-500 rounded-full transition-all duration-1000" style={{ width: "42%" }} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
-                      <span>2. 생애 최초 디딤돌·버팀목 최적 금리 타겟층</span>
-                      <span>35%</span>
-                    </div>
-                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-400 rounded-full transition-all duration-1000" style={{ width: "35%" }} />
-                    </div>
-                  </div>
-                  <div>
-                    <div className="flex justify-between text-[11px] font-bold text-slate-600 mb-1">
-                      <span>3. 전월세 계약 시 임차 보증금 특약 확인자</span>
-                      <span>23%</span>
-                    </div>
-                    <div className="w-full h-2.5 bg-slate-100 rounded-full overflow-hidden">
-                      <div className="h-full bg-purple-300 rounded-full transition-all duration-1000" style={{ width: "23%" }} />
-                    </div>
-                  </div>
                 </div>
               </div>
 
