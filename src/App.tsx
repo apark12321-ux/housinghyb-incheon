@@ -259,7 +259,7 @@ export default function App() {
   const [bankbookYears, setBankbookYears] = useState<number>(7); // 통장 가입 기간 (0~15년)
 
   // --- AI 챗봇 관련 상태 ---
-  const IS_CHAT_ENABLED = false;
+  const IS_CHAT_ENABLED = true;
   const [isChatOpen, setIsChatOpen] = useState<boolean>(false);
   const [chatInput, setChatInput] = useState<string>("");
   const [chatMessages, setChatMessages] = useState<Message[]>(() => {
@@ -740,7 +740,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                🎯 청약 가점(84만점) 판정
+                🎯 청약 가점(84점) 판정
               </button>
             </div>
 
@@ -1214,8 +1214,8 @@ export default function App() {
               {activeLegalTab === "contact" && (
                 <div className="space-y-6 text-left">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base font-bold text-slate-900">1:1 지원 정책 및 소통 센터 (Contact Desktop)</h4>
-                    <p className="text-xs text-slate-400 mt-1">구글 퍼블리셔 정책 조항을 준수하여 활성화된 공식 이용자 건의 채널입니다.</p>
+                    <h4 className="text-base font-bold text-slate-900">1:1 주거 안심 제안 및 공식 문의 소통 센터</h4>
+                    <p className="text-xs text-slate-400 mt-1">이용자 권익 보호와 주거 복지 제안 수렴을 위한 하우징허브 공식 소통 채널입니다.</p>
                   </div>
 
                   {isContactSubmitted ? (
@@ -1796,7 +1796,7 @@ export default function App() {
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 font-medium">
-            <p>© 2026 HousingHub. Adhered to Google AdSense Publisher Policies & Global Privacy Standards.</p>
+            <p>© 2026 HousingHub. All rights reserved. Global Privacy & Information Standards Compliant.</p>
             <p className="mt-2 sm:mt-0">All references are valid in South Korea regulations.</p>
           </div>
           
