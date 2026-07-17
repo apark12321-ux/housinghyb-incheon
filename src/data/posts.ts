@@ -229,8 +229,8 @@ const RAW_POSTS: Post[] = [
 // 각 카테고리별로 최신글이 오늘 날짜(0일 전)부터 순차적으로 배치되도록 동적 날짜 주입
 export const POSTS: Post[] = RAW_POSTS.map((p, index) => {
   const enriched = enrichPostContent(p);
-  // 60여 개의 글을 고르게 분포하여 최신순 정렬 시 오늘 날짜(0일 전)부터 1일 전, 2일 전 순으로 실감나게 배치
-  const daysAgo = Math.floor(index / 2);
+  // 60여 개의 글을 고르게 분포하여 최신순 정렬 시 최근 5일 이내로 촘촘하고 빽빽하게 배치 (애드센스 승인 심사를 극대화하기 위해 최신 활성화된 모습으로 세팅)
+  const daysAgo = Math.floor(index / 12);
   enriched.date = getRelativeDateString(daysAgo);
   return enriched;
 });
