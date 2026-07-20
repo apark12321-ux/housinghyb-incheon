@@ -68,7 +68,7 @@ export default function App() {
   const [showDiagnosticPage, setShowDiagnosticPage] = useState<boolean>(false);
 
   // --- 법률 및 애드센스 정책 안심 확보 상태 (인라인 페이지화) ---
-  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | null>(null);
+  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | "about" | null>(null);
 
   // URL에서 초기 /post/xxx 혹은 ?post=xxx 혹은 서브페이지(/toolkit, /privacy, /terms 등)를 읽어 세팅 및 popstate 감지
   useEffect(() => {
@@ -84,6 +84,11 @@ export default function App() {
         return;
       } else if (pathname === "/privacy") {
         setActiveLegalTab("privacy");
+        setShowDiagnosticPage(false);
+        setActivePost(null);
+        return;
+      } else if (pathname === "/about") {
+        setActiveLegalTab("about");
         setShowDiagnosticPage(false);
         setActivePost(null);
         return;
@@ -168,11 +173,13 @@ export default function App() {
         document.title = "서비스 이용약관 | 하우징허브";
       } else if (activeLegalTab === "disclaimer") {
         document.title = "정보이용 면책고지 | 하우징허브";
+      } else if (activeLegalTab === "about") {
+        document.title = "소개 및 콘텐츠 신뢰 선언 | 하우징허브";
       } else if (activeLegalTab === "contact") {
         document.title = "1:1 안심 상담 및 문의 | 하우징허브";
       }
     } else {
-      const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership"];
+      const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership", "/about"];
       const isSubpage = subpages.includes(pathname) || pathname.startsWith("/post/");
       if (isSubpage) {
         window.history.pushState(null, "", "/");
@@ -1043,6 +1050,16 @@ export default function App() {
             {/* 탭 네비게이터 */}
             <div className="flex bg-slate-100 p-1 border-b border-slate-200 overflow-x-auto">
               <button
+                onClick={() => { setActiveLegalTab("about"); setIsContactSubmitted(false); }}
+                className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg ${
+                  activeLegalTab === "about" 
+                    ? "bg-white text-blue-600 shadow-xs" 
+                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
+                }`}
+              >
+                🏠 하우징허브 소개
+              </button>
+              <button
                 onClick={() => { setActiveLegalTab("privacy"); setIsContactSubmitted(false); }}
                 className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg ${
                   activeLegalTab === "privacy" 
@@ -1086,6 +1103,85 @@ export default function App() {
 
             {/* 본문 콘텐츠 스크롤 및 탭 렌더링 */}
             <div className="p-6 sm:p-10 space-y-6 bg-slate-50/50 min-h-[400px]">
+              {activeLegalTab === "about" && (
+                <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
+                  <div className="border-b border-slate-200 pb-4">
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">하우징허브 소개 및 E-E-A-T 편집·발행 신뢰 선언 (About Us & Editorial Standards)</h4>
+                    <p className="text-xs text-slate-400 mt-1">공고 및 최종 적용 일자: 2026년 7월 20일</p>
+                  </div>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">하우징허브(HousingHub) 미디어 소개</h5>
+                    <p className="leading-relaxed">
+                      하우징허브는 무주택 가구, 생애 최초 주택 마련 수요자, 그리고 전월세 임차인의 소중한 권리와 보증금 자산을 투명하게 사수하고 정보 비대칭을 영구적으로 제거하기 위해 설립된 <strong>비영리 공익성 종합 주거 지식 전문 포털</strong>입니다. 당사는 독자들이 복잡하고 이해하기 어려운 정부 주거 복지 정책, 세금 규율, 그리고 시중 적격 금융 대출 상품 지표에 대하여 누구나 즉각적이고 명확하게 인지하고 자가진단을 완비할 수 있도록 최우선 가치를 두고 있습니다.
+                    </p>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">E-E-A-T (경험·전문성·권위성·신뢰성) 콘텐츠 제작 지침</h5>
+                    <p className="leading-relaxed">
+                      하우징허브 인천 미디어의 모든 보도물 및 칼럼 지식은 단순 짜깁기식 AI 생성이나 스크랩을 철저히 배격하며, 구글이 보장하는 최고의 검색 품질 기준인 E-E-A-T 원칙에 부합하도록 엄격히 기획, 검증 및 최종 배포하고 있습니다.
+                    </p>
+                    <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1.5 font-sans">
+                      <li><strong>공식 유관 출처 대조 (Accuracy):</strong> 국토교통부, 한국토지주택공사(LH), 주택도시보증공사(HUG), 서울주택도시공사(SH), 대법원 인터넷등기소 등 공식 공공 입법 규제안과 모집 보도 공고 일정을 100% 실시간 대조하여 팩트 크로스 체킹을 의무 진행합니다.</li>
+                      <li><strong>실무 자문단 협업 (Expertise):</strong> 업력 10년 이상의 베테랑 공인중개사, 공인 금융 자산 설계사, 그리고 부동산 법률 감수 전문 연구진과의 지속 가능한 피드백 연대를 구성하여 실효 지식을 제공합니다.</li>
+                      <li><strong>비강제성 투명 정보 (Transparency):</strong> 어떠한 주택 판매 대행사나 특정 대출 중개업체로부터 원고료 수혜 목적의 편향된 홍보 스폰서십 글을 게재하지 않으며, 이용자의 기밀 정보 수집 목적의 어떠한 유료 가입도 일절 강제하거나 요구하지 않는 순수 영구 무상 개방 형태를 선언합니다.</li>
+                    </ul>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">하우징허브 편집팀 및 자문진 소개 (Editorial Team & Advisors)</h5>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
+                      <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-3xs">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Yejun" className="w-8 h-8 rounded-full bg-slate-50" />
+                          <div>
+                            <p className="font-bold text-slate-900 text-xs">박예준 (Chief Editor / 대표자)</p>
+                            <p className="text-[10px] text-slate-400">알고파트너스 대표 / 주거복지 정책 분석가</p>
+                          </div>
+                        </div>
+                        <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                          무주택 실수요자 권익보호를 위한 미디어 기획을 총괄합니다. 주택 임대차 분쟁 사례집 편찬 및 지자체 주거 기획 칼럼을 정기 기고하고 있습니다.
+                        </p>
+                      </div>
+
+                      <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-3xs">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Hyunwoo" className="w-8 h-8 rounded-full bg-slate-50" />
+                          <div>
+                            <p className="font-bold text-slate-900 text-xs">김현우 (Real Estate Consultant)</p>
+                            <p className="text-[10px] text-slate-400">공인중개사 (인천 연수구 지부 자문)</p>
+                          </div>
+                        </div>
+                        <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                          수도권 아파트 분양권 전매 제한 및 전세 안심 보증 사기 예방 특약 조항의 실무 검수를 주관하고 실물 기재 프로세스를 조언합니다.
+                        </p>
+                      </div>
+
+                      <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-3xs">
+                        <div className="flex items-center space-x-2 mb-2">
+                          <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Soyul" className="w-8 h-8 rounded-full bg-slate-50" />
+                          <div>
+                            <p className="font-bold text-slate-900 text-xs">이소율 (Financial Writer)</p>
+                            <p className="text-[10px] text-slate-400">공인 금융설계 위원 / 주택 자금 칼럼니스트</p>
+                          </div>
+                        </div>
+                        <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
+                          스트레스 DSR 등 최신 금융 규제에 기반한 적격 대출 상환 계획 산출식 감수 및 버팀목 디딤돌 서민 보조 저리 자금 운용 매뉴얼을 전담합니다.
+                        </p>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">콘텐츠 팩트체킹 및 정정 절차 (Fact-Checking & Corrections)</h5>
+                    <p className="leading-relaxed">
+                      당사 미디어는 모든 게재 지식물에 대하여 매주 월요일 최신 법률 적용 사항을 주간 단위로 크로스 확인합니다. 만약 정책 개편 시차나 단순 자판 오기로 인한 오류가 발견되거나 제보될 경우, 24시간 이내에 보도 정정 위원회 소정 기획안을 거쳐 정밀 수정 보완 조치를 시행하고 투명하게 공개 정정 목록을 보도실에 적재합니다. 정보 기재 오류 및 제안 의견은 하단의 [1:1 안심 상담 및 문의] 채널 혹은 공식 소통 이메일(<strong className="text-slate-900 font-mono">apark12321@gmail.com</strong>)로 항시 제출해 주시면 적극 감사 수렴하겠습니다.
+                    </p>
+                  </section>
+                </div>
+              )}
+
               {activeLegalTab === "privacy" && (
                 <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
@@ -1752,6 +1848,14 @@ export default function App() {
                   <span>법률 및 신뢰정책</span>
                 </span>
                 <ul className="space-y-1.5">
+                  <li>
+                    <button 
+                      onClick={() => { setActivePost(null); setActiveLegalTab("about"); }}
+                      className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none"
+                    >
+                      하우징허브 미디어 소개
+                    </button>
+                  </li>
                   <li>
                     <button 
                       onClick={() => { setActivePost(null); setActiveLegalTab("privacy"); }}
