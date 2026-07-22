@@ -275,25 +275,97 @@ function buildStaticPageBody(title, body) {
 
 function articleJsonLd(post) {
   const slug = slugify(post.title) || post.id;
+  const pageUrl = `${SITE_URL}/post/${encodeURIComponent(slug)}`;
+
+  // 간단한 FAQ 추출기 (본문에서 h3나 h2 및 뒤따르는 p 태그를 파싱하여 FAQPage 스키마로 가공)
+  const faqItems = [];
+  const headingMatches = [...post.content.matchAll(/<h[23][^>]*>(.*?)<\/h[23]>/gi)];
+  const pMatches = [...post.content.matchAll(/<p[^>]*>(.*?)<\/p>/gi)];
+
+  for (let i = 0; i < Math.min(headingMatches.length, 4); i++) {
+    const qText = stripHtml(headingMatches[i][1]);
+    const aText = pMatches[i] ? stripHtml(pMatches[i][1]) : post.excerpt;
+    if (qText && aText && qText.length > 5) {
+      faqItems.push({
+        "@type": "Question",
+        "name": qText,
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": aText
+        }
+      });
+    }
+  }
+
+  const graph = [
+    {
+      "@type": "NewsArticle",
+      "@id": `${pageUrl}#article`,
+      "isPartOf": { "@type": "WebPage", "@id": pageUrl },
+      "headline": post.title,
+      "description": post.excerpt,
+      "image": [post.image],
+      "datePublished": post.date,
+      "dateModified": post.date,
+      "inLanguage": "ko-KR",
+      "isAccessibleForFree": true,
+      "articleSection": post.category,
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": [".direct-answer-box", "h1", ".excerpt"]
+      },
+      "author": {
+        "@type": "Person",
+        "name": post.author,
+        "jobTitle": "주거정책 수석 연구원",
+        "worksFor": { "@type": "Organization", "name": "알고파트너스" }
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "알고파트너스",
+        "alternateName": SITE_NAME,
+        "url": SITE_URL,
+        "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` }
+      },
+      "mainEntityOfPage": { "@type": "WebPage", "@id": pageUrl }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${pageUrl}#breadcrumb`,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "홈",
+          "item": `${SITE_URL}/`
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": post.category,
+          "item": `${SITE_URL}/category/${encodeURIComponent(post.category)}`
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": post.title,
+          "item": pageUrl
+        }
+      ]
+    }
+  ];
+
+  if (faqItems.length > 0) {
+    graph.push({
+      "@type": "FAQPage",
+      "@id": `${pageUrl}#faq`,
+      "mainEntity": faqItems
+    });
+  }
+
   return {
     "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    image: [post.image],
-    datePublished: post.date,
-    dateModified: post.date,
-    author: { "@type": "Organization", name: post.author },
-    publisher: {
-      "@type": "Organization",
-      name: "알고파트너스",
-      alternateName: SITE_NAME,
-      url: SITE_URL,
-      logo: { "@type": "ImageObject", url: `${SITE_URL}/icon.svg` },
-    },
-    mainEntityOfPage: { "@type": "WebPage", "@id": `${SITE_URL}/post/${encodeURIComponent(slug)}` },
-    articleSection: post.category,
-    inLanguage: "ko-KR",
+    "@graph": graph
   };
 }
 

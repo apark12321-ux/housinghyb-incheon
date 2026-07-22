@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Noto Sans KR", "Inter", system-ui, -apple-system, sans-serif;
-  --font-display: "Space Grotesk", sans-serif;
+  --font-sans: "Pretendard Variable", "Pretendard", -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Noto Sans KR", "Apple SD Gothic Neo", "Malgun Gothic", sans-serif;
+  --font-display: "Plus Jakarta Sans", "Pretendard", sans-serif;
   --font-mono: "JetBrains Mono", monospace;
   
   --color-brand-50: #f5f8ff;
@@ -18,7 +19,10 @@ body {
   background-color: #fafbfd;
   color: #1e293b;
   -webkit-font-smoothing: antialiased;
-  letter-spacing: -0.025em; /* Korean looks much tighter and more professional with a subtle negative letter-spacing */
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.03em; /* 프리텐다드 한국어 최적의 가독성을 위한 -0.03em 자간 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* 부드러운 유저 인터랙션 스크롤바 */
@@ -161,4 +165,29 @@ body {
 }
 .toc-numbered a:hover, .toc-compact a:hover, .toc-card a:hover {
   text-decoration: underline;
+}
+
+/* AEO / GEO AI 검색엔진 최적화 다이렉트 앤서 스니펫 박스 */
+.direct-answer-box {
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-left: 4px solid #2563eb;
+  border-radius: 0.875rem;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1.75rem;
+}
+.direct-answer-box h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e3a8a;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+.direct-answer-box p {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: #1e293b;
+  margin-bottom: 0;
 }

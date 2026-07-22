@@ -1,10 +1,10 @@
-import { Post } from "../types";
-import { POSTS_SUB } from "./posts-sub";
-import { POSTS_SUB_HEAVY } from "./posts-sub-heavy";
-import { POSTS_RENT } from "./posts-rent";
-import { POSTS_RENT_HEAVY } from "./posts-rent-heavy";
-import { POSTS_MOVE } from "./posts-move";
-import { POSTS_FINANCE } from "./posts-finance";
+import { Post } from "../types.ts";
+import { POSTS_SUB } from "./posts-sub.ts";
+import { POSTS_SUB_HEAVY } from "./posts-sub-heavy.ts";
+import { POSTS_RENT } from "./posts-rent.ts";
+import { POSTS_RENT_HEAVY } from "./posts-rent-heavy.ts";
+import { POSTS_MOVE } from "./posts-move.ts";
+import { POSTS_FINANCE } from "./posts-finance.ts";
 
 // 카테고리별 고품질 이미지 및 안심 가이드 캡션 풀
 const IMAGE_COLLECTIONS: Record<string, { images: string[]; captions: string[] }> = {
