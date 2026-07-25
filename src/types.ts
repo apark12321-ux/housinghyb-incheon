@@ -8,6 +8,8 @@ export interface Post {
   date: string;
   image: string;
   readTime: string;
+  views?: number;
+  likes?: number;
   hashtags?: string[];
 }
 

@@ -458,11 +458,26 @@ function main() {
     {
       path: "privacy/index.html",
       title: `개인정보 처리방침 | ${SITE_NAME}`,
-      desc: `${SITE_NAME}의 개인정보 수집 및 이용에 관한 안내입니다.`,
+      desc: `${SITE_NAME}의 개인정보 수집, 이용, 구글 애드센스(AdSense) 맞춤 쿠키 수집 및 거부 절차에 관한 표준 보호 방침 안내입니다.`,
       url: `${SITE_URL}/privacy`,
       body: buildStaticPageBody(
-        "개인정보 처리방침",
-        `<p>본 사이트는 이용자의 개인정보를 소중히 다룹니다. 개인정보 보호책임자: 박예준 (apark12321@gmail.com).</p>`
+        "개인정보 처리방침 (Privacy Policy)",
+        `<div class="privacy-container leading-relaxed space-y-4">
+          <p><strong>발행처:</strong> 알고파트너스 (대표자: 박예준) | <strong>개인정보 보호책임자:</strong> 박예준 (apark12321@gmail.com)</p>
+          <h3>제 1 조 (목적 및 수집 범위)</h3>
+          <p>${SITE_NAME}(https://zip9.kr)는 이용자의 개인정보를 매우 소중히 다루며, 대한민국 개인정보보호법 및 구글 애드센스(Google AdSense) 프로그램 정책 기준을 준수합니다. 본 사이트는 회원가입이나 필수 수집 절차 없이 누구나 무상으로 이용 가능한 비회원제 포털입니다.</p>
+          
+          <h3>제 2 조 (Google AdSense 및 제3자 맞춤 광고 쿠키 수집 고지)</h3>
+          <p>본 사이트는 서비스 운영 및 품질 개선 비용 조달을 위하여 Google Inc. 및 제3자 광고 네트워크의 맞춤형 광고(Google AdSense)를 활용합니다.</p>
+          <ul>
+            <li>Google을 포함한 제3자 제공업체는 쿠키(Cookie)를 사용하여 사용자의 이전 웹사이트 방문 기록을 바탕으로 맞춤형 광고를 제공합니다.</li>
+            <li>Google의 광고 쿠키 사용으로 Google 및 파트너는 사용자의 본 사이트 및 인터넷상의 다른 사이트 방문을 바탕으로 적절한 광고를 게재할 수 있습니다.</li>
+            <li>사용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 맞춤형 광고 설정</a>을 방문하여 맞춤형 광고 수집을 거부할 수 있으며, <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>를 통해 제3자 제공업체의 맞춤형 광고용 쿠키 사용을 차단할 수 있습니다.</li>
+          </ul>
+
+          <h3>제 3 조 (개인정보 보호책임자 및 문의)</h3>
+          <p>개인정보 처리와 관련된 문의, 불만 처리, 개인정보 파기 요청은 공식 이메일(apark12321@gmail.com)로 접수해 주시면 24시간 이내에 신속히 수렴 조치합니다.</p>
+        </div>`
       ),
     },
     {
@@ -471,8 +486,18 @@ function main() {
       desc: `${SITE_NAME} 서비스 이용에 관한 약관입니다.`,
       url: `${SITE_URL}/terms`,
       body: buildStaticPageBody(
-        "이용약관",
-        `<p>본 약관은 알고파트너스(대표 박예준)가 운영하는 ${SITE_NAME}(https://zip9.kr)의 서비스 이용에 관한 사항을 규정합니다.</p>`
+        "서비스 이용약관 (Terms of Service)",
+        `<div class="terms-container leading-relaxed space-y-4">
+          <p><strong>운영 주체:</strong> 알고파트너스 (대표자: 박예준)</p>
+          <h3>제 1 조 (목적)</h3>
+          <p>본 약관은 알고파트너스가 운영하는 ${SITE_NAME}(https://zip9.kr)에서 무상으로 제공하는 부동산 정보, 자가진단 계산기, 주거 가이드라인 서비스의 이용 조건 및 절차를 규정합니다.</p>
+
+          <h3>제 2 조 (저작권 및 지적재산권)</h3>
+          <p>${SITE_NAME}가 직접 제작한 기사, 이미지, 수식 계산 모듈 등 모든 콘텐츠의 저작권은 알고파트너스에 귀속됩니다. 비영리 목적으로의 공유는 자유로우나, 무단 전재 및 무단 상업적 재배포는 금지됩니다.</p>
+
+          <h3>제 3 조 (면책조항)</h3>
+          <p>본 사이트의 모든 정보는 참고용 공익 정보이며, 개별 실제 부동산 계약이나 대출 실행 전 반드시 금융기관 및 공인중개사, 법률 전문가를 통해 최종 확인하시기 바랍니다.</p>
+        </div>`
       ),
     },
     {
@@ -493,6 +518,20 @@ function main() {
       body: buildStaticPageBody(
         "공지사항",
         `<p>${SITE_NAME} 운영 관련 공지사항을 안내합니다.</p>`
+      ),
+    },
+    {
+      path: "404.html",
+      title: `페이지를 찾을 수 없습니다 | ${SITE_NAME}`,
+      desc: `요청하신 페이지가 존재하지 않거나 이동되었습니다.`,
+      url: `${SITE_URL}/404.html`,
+      body: buildStaticPageBody(
+        "404 - 페이지를 찾을 수 없습니다",
+        `<div class="text-center py-10 space-y-4">
+          <p class="text-lg font-bold">요청하신 주소가 올바르지 않거나 변경되었습니다.</p>
+          <p>하우징허브 메인 홈으로 이동하여 최신 주거 지식을 확인하세요.</p>
+          <a href="/" style="display:inline-block; margin-top:16px; padding:12px 24px; background:#1e293b; color:#fff; border-radius:12px; font-weight:bold; text-decoration:none;">하우징허브 메인 홈으로 이동</a>
+        </div>`
       ),
     },
   ];

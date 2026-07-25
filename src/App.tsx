@@ -29,6 +29,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
 import { Post, Category, slugify } from "./types";
+import { AdSenseSlot } from "./components/AdSenseSlot";
 
 interface Message {
   role: "user" | "model";
@@ -661,6 +662,9 @@ export default function App() {
                 className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
                 dangerouslySetInnerHTML={{ __html: activePost.content }}
               />
+
+              {/* 구글 애드센스 디스플레이 광고 영역 */}
+              <AdSenseSlot label="본문 맞춤 정보 광고" />
 
               {/* 해시태그 목록 */}
               <div className="flex flex-wrap gap-1.5 border-t border-slate-100 pt-8 mt-8">
@@ -1899,9 +1903,22 @@ export default function App() {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 font-medium">
-            <p>© 2026 HousingHub. All rights reserved. Global Privacy & Information Standards Compliant.</p>
-            <p className="mt-2 sm:mt-0">All references are valid in South Korea regulations.</p>
+          {/* 발행인 및 신뢰성 고지 배너 */}
+          <div className="pt-6 border-t border-slate-800/60 text-[11px] text-slate-400 space-y-2 leading-relaxed">
+            <div className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-slate-300 font-semibold">
+              <span>발행처: 알고파트너스 (Algo Partners)</span>
+              <span>대표자 및 편집책임자: 박예준</span>
+              <span>공식 이메일: apark12321@gmail.com</span>
+              <span>애드센스 파트너: ca-pub-9552509372228899</span>
+            </div>
+            <p className="text-slate-500">
+              하우징허브(zip9.kr)는 무주택자, 임차인, 내 집 마련 수요자를 위해 검증된 공공 주거 정책 및 적격 금융 지식을 무상으로 제공하는 정론 종합 지식 포털입니다. 본 사이트 내 수록된 정보 및 모의 연산 결과는 사용자 이해를 돕기 위한 공익성 참고 자료이며, 어떠한 개별 가입 및 입금 요구도 일절 강제하지 않습니다.
+            </p>
+          </div>
+
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 font-medium pt-2">
+            <p>© 2026 HousingHub (zip9.kr). All rights reserved. Global Privacy & Information Standards Compliant.</p>
+            <p className="mt-2 sm:mt-0">E-E-A-T Verified Housing Knowledge Portal</p>
           </div>
           
         </div>
