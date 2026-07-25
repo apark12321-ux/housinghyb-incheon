@@ -202,9 +202,9 @@ function buildPostBody(post) {
         <h1>${htmlEscape(post.title)}</h1>
         <p class="excerpt">${htmlEscape(post.excerpt)}</p>
         <p class="meta">
-          <span>${htmlEscape(post.author)}</span> ·
-          <time datetime="${post.date}">${post.date}</time> ·
-          <span>${htmlEscape(post.category)}</span>
+          <span>작성자: ${htmlEscape(post.author)}</span> ·
+          <time datetime="${post.date}">게재일: ${post.date}</time> ·
+          <span>분류: ${htmlEscape(post.category)}</span>
         </p>
         <img src="${htmlEscape(post.image)}" alt="${htmlEscape(post.title)}" />
       </header>

@@ -633,16 +633,17 @@ export default function App() {
                 </div>
 
                 {/* 메타 정보 우측 */}
-                <div className="flex flex-wrap items-center gap-2.5 text-slate-400 text-[11px] sm:text-xs font-medium">
-                  <span className="flex items-center">
-                    <Clock className="w-3.5 h-3.5 mr-1 text-slate-300" />
-                    {activePost.readTime}
+                <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
+                  <span className="inline-flex items-center text-slate-800 bg-slate-100/90 border border-slate-200/80 px-2.5 py-1 rounded-lg font-mono font-semibold">
+                    <Calendar className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
+                    <span>게재일: {activePost.date}</span>
                   </span>
-                  <span className="text-slate-200">|</span>
-                  <span>{activePost.date}</span>
-                  <span className="text-slate-200">|</span>
-                  <span className="bg-purple-50 text-purple-600 font-bold px-1.5 py-0.5 rounded text-[10px]">
-                    ✨ 인기
+                  <span className="inline-flex items-center text-slate-600 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-lg">
+                    <Clock className="w-3.5 h-3.5 mr-1 text-slate-400" />
+                    <span>{activePost.readTime}</span>
+                  </span>
+                  <span className="bg-purple-50 text-purple-700 font-bold px-2 py-1 rounded-lg text-[11px] border border-purple-100">
+                    ✨ 인기 보도지식
                   </span>
                 </div>
               </div>
@@ -1587,11 +1588,13 @@ export default function App() {
 
                             <div className="p-5 flex-1 flex flex-col justify-between">
                               <div className="space-y-2">
-                                <div className="flex items-center space-x-2 text-[10px] text-slate-400 font-mono">
-                                  <span>{post.date}</span>
-                                  <span>•</span>
-                                  <span className="flex items-center">
-                                    <Clock className="w-3.5 h-3.5 mr-0.5" />
+                                <div className="flex items-center justify-between text-[11px] font-mono">
+                                  <span className="flex items-center font-bold text-slate-700 bg-slate-100/90 px-2 py-0.5 rounded border border-slate-200/50">
+                                    <Calendar className="w-3 h-3 mr-1 text-blue-600" />
+                                    {post.date}
+                                  </span>
+                                  <span className="flex items-center text-slate-400 font-medium">
+                                    <Clock className="w-3 h-3 mr-1 text-slate-300" />
                                     {post.readTime}
                                   </span>
                                 </div>
@@ -1651,8 +1654,10 @@ export default function App() {
                         <h4 className="text-xs font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors">
                           {post.title}
                         </h4>
-                        <span className="text-[10px] text-slate-400 font-mono mt-0.5 block">
-                          {post.category} • {post.readTime}
+                        <span className="text-[10px] text-slate-400 font-mono mt-0.5 flex items-center gap-1.5">
+                          <span className="text-slate-600 font-medium">{post.category}</span>
+                          <span>•</span>
+                          <span className="text-blue-600 font-semibold">{post.date}</span>
                         </span>
                       </div>
                       <button 

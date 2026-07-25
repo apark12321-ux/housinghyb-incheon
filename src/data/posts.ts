@@ -226,14 +226,15 @@ const RAW_POSTS: Post[] = [
   ...POSTS_FINANCE
 ];
 
-// 각 카테고리별로 최신글이 오늘 날짜(0일 전)부터 순차적으로 배치되도록 동적 날짜 주입
-export const POSTS: Post[] = RAW_POSTS.map((p, index) => {
+// 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용
+export const POSTS: Post[] = RAW_POSTS.map((p) => {
   const enriched = enrichPostContent(p);
-  // 60여 개의 글을 고르게 분포하여 최신순 정렬 시 최근 5일 이내로 촘촘하고 빽빽하게 배치 (애드센스 승인 심사를 극대화하기 위해 최신 활성화된 모습으로 세팅)
-  const daysAgo = Math.floor(index / 12);
-  enriched.date = getRelativeDateString(daysAgo);
+  // 원본에 저장된 고유 발행일(5월~7월에 걸친 누적 포스팅 히스토리)을 온전히 유지
+  if (!enriched.date) {
+    enriched.date = getRelativeDateString(0);
+  }
   return enriched;
-});
+}).sort((a, b) => b.date.localeCompare(a.date));
 
 // 카테고리별 편리한 지름길 리스트 지원
 export const POSTS_BY_CATEGORY = {
