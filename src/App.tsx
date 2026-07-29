@@ -24,7 +24,8 @@ import {
   FileText,
   BadgeAlert,
   Menu,
-  Heart
+  Heart,
+  ShieldCheck
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
@@ -507,6 +508,33 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
+      {/* 2026 AdSense / E-E-A-T 공익성 보도 지침 알림 띠 */}
+      <div className="bg-slate-900 text-slate-300 text-[11px] font-medium py-1.5 px-4 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
+          <div className="flex items-center space-x-2 truncate">
+            <span className="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">검증 필</span>
+            <span className="truncate">하우징허브 (zip9.kr) · 2026년 최신 국토교통부·청약홈 주거 정책 수석검증 미디어</span>
+          </div>
+          <div className="hidden md:flex items-center space-x-3 text-slate-400 text-[10px] font-mono shrink-0">
+            <span>발행처: 알고파트너스</span>
+            <span>편집책임자: 박예준</span>
+            <span>|</span>
+            <button 
+              onClick={() => { setActivePost(null); setActiveLegalTab("about"); }}
+              className="text-blue-400 hover:underline cursor-pointer"
+            >
+              미디어 소개
+            </button>
+            <button 
+              onClick={() => { setActivePost(null); setActiveLegalTab("privacy"); }}
+              className="text-blue-400 hover:underline cursor-pointer"
+            >
+              개인정보방침
+            </button>
+          </div>
+        </div>
+      </div>
+
       {/* 헤더 */}
       <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200/80 shadow-xs">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
@@ -529,7 +557,7 @@ export default function App() {
                   {selectedRegion === "전체" ? "전국" : selectedRegion}
                 </span>
               </h1>
-              <p className="text-[10px] text-slate-500 font-medium">National Housing Encyclopaedia</p>
+              <p className="text-[10px] text-slate-500 font-medium">National Housing Policy Media</p>
             </div>
           </div>
 
@@ -545,7 +573,7 @@ export default function App() {
                   setActiveLegalTab(null);
                   setShowDiagnosticPage(false);
                 }}
-                className={`px-3.5 py-2 text-xs sm:text-sm font-medium rounded-lg transition-all cursor-pointer ${
+                className={`px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all cursor-pointer ${
                   selectedCategory === cat && !showDiagnosticPage && !activeLegalTab && !activePost
                     ? "bg-slate-900 text-white shadow-sm font-semibold"
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -562,14 +590,28 @@ export default function App() {
                 setSelectedCategory("전체");
                 setSelectedTag(null);
               }}
-              className={`px-3.5 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center space-x-1 cursor-pointer border ${
+              className={`px-3 py-1.5 text-xs sm:text-sm font-semibold rounded-lg transition-all flex items-center space-x-1 cursor-pointer border ${
                 showDiagnosticPage
                   ? "bg-blue-600 text-white border-blue-600 shadow-sm"
                   : "text-blue-600 hover:text-white hover:bg-blue-600 hover:border-blue-600 border-blue-200 bg-blue-50/40"
               }`}
             >
               <Calculator className="w-3.5 h-3.5" />
-              <span>📊 안심 자가진단</span>
+              <span>안심 자가진단</span>
+            </button>
+            <button
+              onClick={() => {
+                setActiveLegalTab("about");
+                setActivePost(null);
+                setShowDiagnosticPage(false);
+              }}
+              className={`px-3 py-1.5 text-xs sm:text-sm font-medium rounded-lg transition-all cursor-pointer ${
+                activeLegalTab === "about"
+                  ? "bg-slate-900 text-white shadow-sm font-semibold"
+                  : "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+              }`}
+            >
+              소개
             </button>
           </nav>
 
@@ -577,10 +619,11 @@ export default function App() {
             <div className="flex items-center space-x-3">
               <button 
                 onClick={() => setIsChatOpen(prev => !prev)}
-                className="relative p-2.5 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all text-slate-700 hover:border-slate-300"
+                className="relative p-2 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all text-slate-700 hover:border-slate-300 cursor-pointer"
+                title="AI 안심 비서"
               >
-                <MessageSquare className="w-5 h-5 text-blue-600 animate-pulse" />
-                <span className="absolute top-1 right-1 w-2.5 h-2.5 bg-green-500 rounded-full border-2 border-white" />
+                <MessageSquare className="w-5 h-5 text-blue-600" />
+                <span className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full border-2 border-white" />
               </button>
             </div>
           )}
@@ -1419,82 +1462,120 @@ export default function App() {
           </div>
         ) : (
           <>
-            {/* 히어로 환영 안내 */}
-            <section className="relative overflow-hidden rounded-3xl bg-slate-900 text-white shadow-xl">
-              <div className="absolute inset-0 bg-cover bg-center mix-blend-overlay opacity-25" style={{ backgroundImage: `url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1200')` }}></div>
-              <div className="relative p-8 sm:p-12 max-w-3xl space-y-5">
-                <div className="inline-flex items-center space-x-2 bg-blue-500/20 text-blue-300 px-3 py-1 rounded-full text-xs font-semibold backdrop-blur-xs">
-                  <TrendingUp className="w-3.5 h-3.5" />
-                  <span>실시간 주거 안심 정보 마이크로 포털</span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight font-display leading-tight">
-                  소중한 내 집 계약부터 대출 가치까지,<br/>전국 실생활 주거 안심 해결법.
-                </h2>
-                <p className="text-slate-300 text-sm sm:text-base leading-relaxed max-w-2xl">
-                  하우징허브는 주택 청약 분양 입지 분석, 임대차 계약 등기 안전조항, 스트레스 DSR 대안 한도까지 무주택 실수요자가 반드시 숙지해야 할 지식백과 66선을 제공합니다.
-                </p>
-
-                {/* 지역별 스마트 허브 선택기 */}
-                <div className="py-1">
-                  <span className="text-[11px] text-blue-400 font-bold uppercase tracking-wider block mb-2.5">원하는 지역의 밀착 지식 허브 선택</span>
-                  <div className="flex flex-wrap gap-2">
-                    {[
-                      { key: "전체", label: "🌐 전국 종합", color: "bg-blue-600 border-blue-500" },
-                      { key: "서울", label: "🗼 서울 허브", color: "bg-indigo-600 border-indigo-500" },
-                      { key: "인천", label: "⚓ 인천 허브", color: "bg-teal-600 border-teal-500" },
-                      { key: "경기", label: "🌳 경기 허브", color: "bg-emerald-600 border-emerald-500" }
-                    ].map(reg => (
-                      <button
-                        key={reg.key}
-                        onClick={() => setSelectedRegion(reg.key)}
-                        className={`px-3.5 py-2 rounded-xl border text-xs font-semibold cursor-pointer transition-all ${
-                          selectedRegion === reg.key 
-                            ? `${reg.color} border-white text-white shadow-md scale-102` 
-                            : "bg-slate-800/65 border-slate-700/60 text-slate-300 hover:text-white hover:bg-slate-800"
-                        }`}
-                      >
-                        {reg.label}
-                      </button>
-                    ))}
-                  </div>
+            {/* 2026 에디토리얼 주요 보도 스포트라이트 */}
+            <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-6">
+              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+                <div className="flex items-center space-x-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
+                  <h2 className="text-lg font-bold text-slate-900 font-display">2026 주요 검증 보도 스포트라이트</h2>
                 </div>
 
-                <div className="pt-1 flex flex-wrap gap-3">
-                  <button 
-                    onClick={() => setShowDiagnosticPage(true)}
-                    className="bg-blue-600 hover:bg-blue-500 text-white font-medium px-5 py-3 rounded-xl transition-all shadow-lg hover:shadow-blue-500/20 flex items-center space-x-2 text-sm cursor-pointer"
-                  >
-                    <Calculator className="w-4.5 h-4.5" />
-                    <span>스마트 주거 자가진단 실행</span>
-                  </button>
-                  {IS_CHAT_ENABLED && (
-                    <button 
-                      onClick={() => setIsChatOpen(true)}
-                      className="bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-medium px-5 py-3 rounded-xl transition-all flex items-center space-x-2 text-sm cursor-pointer"
+                {/* 지역별 허브 선택 필 */}
+                <div className="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+                  <span className="text-slate-400 mr-1 text-[11px] font-mono">지역 허브:</span>
+                  {[
+                    { key: "전체", label: "🌐 전국 종합" },
+                    { key: "서울", label: "🗼 서울" },
+                    { key: "인천", label: "⚓ 인천" },
+                    { key: "경기", label: "🌳 경기" }
+                  ].map(reg => (
+                    <button
+                      key={reg.key}
+                      onClick={() => setSelectedRegion(reg.key)}
+                      className={`px-3 py-1.5 rounded-lg border cursor-pointer transition-all ${
+                        selectedRegion === reg.key 
+                          ? "bg-slate-900 border-slate-900 text-white font-bold shadow-xs" 
+                          : "bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100"
+                      }`}
                     >
-                      <MessageSquare className="w-4.5 h-4.5 text-blue-400" />
-                      <span>AI 컨설턴트 무료 대화</span>
+                      {reg.label}
                     </button>
-                  )}
+                  ))}
                 </div>
               </div>
+
+              {/* 스포트라이트 기사 헤드라인 카드 */}
+              {filteredPosts.length > 0 && (
+                <div 
+                  onClick={() => setActivePost(filteredPosts[0])}
+                  className="group bg-slate-900 text-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer grid grid-cols-1 lg:grid-cols-12"
+                >
+                  <div className="lg:col-span-7 relative min-h-[260px] sm:min-h-[320px] overflow-hidden bg-slate-800">
+                    <img 
+                      src={filteredPosts[0].image} 
+                      alt={filteredPosts[0].title} 
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
+                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
+                      <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                        주요 보도
+                      </span>
+                      <span className="bg-black/60 backdrop-blur-xs text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20">
+                        {filteredPosts[0].category}
+                      </span>
+                    </div>
+                  </div>
+
+                  <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+                    <div className="space-y-3">
+                      <div className="flex items-center space-x-2 text-xs font-mono text-blue-300">
+                        <Calendar className="w-3.5 h-3.5" />
+                        <span>{filteredPosts[0].date}</span>
+                        <span>•</span>
+                        <Clock className="w-3.5 h-3.5" />
+                        <span>{filteredPosts[0].readTime}</span>
+                      </div>
+                      <h3 className="text-xl sm:text-2xl font-bold font-display leading-snug text-white group-hover:text-blue-300 transition-colors line-clamp-3">
+                        {filteredPosts[0].title}
+                      </h3>
+                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                        {filteredPosts[0].excerpt}
+                      </p>
+                    </div>
+
+                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                      <div className="flex items-center space-x-2">
+                        <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white">
+                          박
+                        </div>
+                        <div className="text-[11px]">
+                          <p className="font-bold text-slate-200">박예준 수석 에디터</p>
+                          <p className="text-slate-400">알고파트너스 주거정책팀</p>
+                        </div>
+                      </div>
+                      <span className="inline-flex items-center space-x-1 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
+                        <span>전문 읽기</span>
+                        <ChevronRight className="w-4 h-4" />
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* 구글 애드센스 탑 스폰서십 영역 */}
+              <AdSenseSlot label="헤더 주요 보도 맞춤 광고" />
             </section>
 
             {/* 메인 투컬럼 벤트 레이아웃 */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-4">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-2">
               {/* 왼쪽 컬럼: 지식백과 보도실 아티클 라이브러리 목록 */}
               <div className="lg:col-span-8 space-y-6">
                 <section className="space-y-6">
-                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-100 pb-5">
+                  <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center space-x-2">
-                        <span>📚 {selectedRegion === "전체" ? "전국" : selectedRegion} 지식백과 보도실</span>
+                        <span>📚 {selectedRegion === "전체" ? "전국" : selectedRegion} 지식 보도실</span>
+                        <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
+                          총 {filteredPosts.length}건
+                        </span>
                       </h3>
                       <p className="text-xs text-slate-500 mt-1 font-medium">
-                        {selectedRegion === "전체" && "전국 무주택 서민과 실수요자를 위한 하우징 전문가 기고문 66선"}
-                        {selectedRegion === "인천" && "인천 시민과 인천지역 주거 청약 예정자를 위한 하우징 전문가 기고문"}
-                        {selectedRegion === "서울" && "서울 시민과 서울 수도권 주거 청약 예정자를 위한 하우징 전문가 기고문"}
-                        {selectedRegion === "경기" && "경기 도민과 경기 수도권 주거 청약 예정자를 위한 하우징 전문가 기고문"}
+                        {selectedRegion === "전체" && "전국 무주택 서민과 실수요자를 위해 검증된 공공 주거 정책 보도"}
+                        {selectedRegion === "인천" && "인천 시민 및 송도·검단·계양 청약·임대차 검증 가이드"}
+                        {selectedRegion === "서울" && "서울 청약·재개발·정비사업 및 임대차 검증 가이드"}
+                        {selectedRegion === "경기" && "경기 신도시 및 광역 교통 연계 주거 정책 검증 가이드"}
                       </p>
                     </div>
                     
@@ -1504,7 +1585,7 @@ export default function App() {
                         <Search className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4.5 h-4.5 text-slate-400" />
                         <input 
                           type="text" 
-                          placeholder="예: 송도 청약, 전세 사기 방지, DSR..."
+                          placeholder="검색어 입력 (예: 청약, 전세, DSR, 송도...)"
                           value={searchTerm}
                           onChange={(e) => setSearchTerm(e.target.value)}
                           className="w-full pl-10 pr-4 py-2.5 bg-white border border-slate-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 font-medium shadow-2xs"
@@ -1512,7 +1593,7 @@ export default function App() {
                         {searchTerm && (
                           <button 
                             onClick={() => setSearchTerm("")}
-                            className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 text-slate-400 hover:text-slate-600"
+                            className="absolute right-3 top-1/2 -translate-y-1/2 p-0.5 text-slate-400 hover:text-slate-600 cursor-pointer"
                           >
                             <X className="w-3.5 h-3.5" />
                           </button>
@@ -1623,73 +1704,126 @@ export default function App() {
                 </section>
               </div>
 
-          {/* 타임라인 및 트렌드 미니 위젯 (Bento Mini Widgets) */}
+          {/* 오른쪽 사이드바 영역 */}
           <div className="lg:col-span-4 space-y-6">
-            {/* 북마크 리딩 리스트 */}
-            <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs flex flex-col h-[280px]">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+            {/* 인기 보도 TOP 5 */}
+            <div className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-xs space-y-4">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <span className="text-sm font-bold text-slate-900 flex items-center space-x-1.5">
-                  <Bookmark className="w-4.5 h-4.5 text-blue-600" />
-                  <span>나의 주거 보관함</span>
+                  <TrendingUp className="w-4.5 h-4.5 text-blue-600" />
+                  <span>실시간 인기 보도 TOP 5</span>
                 </span>
-                <span className="text-xs font-mono font-bold bg-blue-50 text-blue-600 px-2.5 py-0.5 rounded-full">
+                <span className="text-[10px] font-mono text-slate-400">주간 조회 기준</span>
+              </div>
+
+              <div className="space-y-3">
+                {POSTS.slice(0, 5).map((post, idx) => (
+                  <div
+                    key={post.id}
+                    onClick={() => setActivePost(post)}
+                    className="group flex items-start space-x-3 p-2 rounded-xl hover:bg-slate-50 transition-all cursor-pointer"
+                  >
+                    <span className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${
+                      idx === 0 ? "bg-blue-600 text-white" :
+                      idx === 1 ? "bg-slate-800 text-white" :
+                      idx === 2 ? "bg-slate-700 text-white" :
+                      "bg-slate-100 text-slate-500"
+                    }`}>
+                      {idx + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <h4 className="text-xs font-bold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+                        {post.title}
+                      </h4>
+                      <p className="text-[10px] text-slate-400 font-mono mt-1 flex items-center gap-2">
+                        <span>{post.category}</span>
+                        <span>•</span>
+                        <span>{post.date}</span>
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* 안심 자가진단 툴킷 바로가기 배너 */}
+            <div className="bg-gradient-to-br from-blue-900 to-slate-900 text-white rounded-3xl p-6 shadow-md space-y-4 border border-blue-800/40">
+              <div className="inline-flex items-center space-x-1.5 bg-blue-500/20 text-blue-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-blue-400/30">
+                <Calculator className="w-3.5 h-3.5" />
+                <span>2026 자가진단 툴킷</span>
+              </div>
+              <h4 className="text-base font-bold font-display leading-snug">
+                내 청약 점수 &amp; 적격 대출 한도 계산
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                스트레스 DSR 3단계 및 2026년 청약 가점제를 기반으로 내 집 마련 가능 스코어를 진단해보세요.
+              </p>
+              <button
+                onClick={() => {
+                  setShowDiagnosticPage(true);
+                  setActivePost(null);
+                  setActiveLegalTab(null);
+                }}
+                className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all shadow-md cursor-pointer flex items-center justify-center space-x-1"
+              >
+                <span>자가진단 시작하기</span>
+                <ChevronRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            {/* E-E-A-T 신뢰성 고지 박스 */}
+            <div className="bg-slate-100/80 rounded-3xl p-5 border border-slate-200/80 space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
+              <div className="flex items-center space-x-2 font-bold text-slate-900 text-xs">
+                <ShieldCheck className="w-4 h-4 text-blue-600" />
+                <span>E-E-A-T 공익 보도 가이드</span>
+              </div>
+              <p className="text-[11px] text-slate-500">
+                하우징허브의 모든 기사는 대한민국 국토교통부, 한국부동산원 청약홈, HUG 주택도시보증공사의 공시 자료에 기반하여 박예준 수석 에디터가 수석 검증 후 발행합니다.
+              </p>
+            </div>
+
+            {/* 사이드바 애드센스 슬롯 */}
+            <AdSenseSlot label="사이드바 맞춤 광고" />
+
+            {/* 북마크 리딩 리스트 */}
+            <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs flex flex-col h-[260px]">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
+                <span className="text-xs font-bold text-slate-900 flex items-center space-x-1.5">
+                  <Bookmark className="w-4 h-4 text-blue-600" />
+                  <span>나의 보관 아티클</span>
+                </span>
+                <span className="text-xs font-mono font-bold bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">
                   {bookmarks.length}개
                 </span>
               </div>
               
-              <div className="flex-1 overflow-y-auto space-y-2.5 pr-1">
+              <div className="flex-1 overflow-y-auto space-y-2 pr-1">
                 {bookmarks.length === 0 ? (
-                  <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 space-y-1.5 p-4">
-                    <Heart className="w-6 h-6 text-slate-300 stroke-1" />
-                    <p className="text-xs font-medium">보관 중인 아티클이 없습니다.</p>
+                  <div className="h-full flex flex-col items-center justify-center text-center text-slate-400 space-y-1 p-2">
+                    <Heart className="w-5 h-5 text-slate-300 stroke-1" />
+                    <p className="text-[11px]">보관 중인 아티클이 없습니다.</p>
                   </div>
                 ) : (
                   POSTS.filter(p => bookmarks.includes(p.id)).map(post => (
                     <div 
                       key={post.id}
                       onClick={() => setActivePost(post)}
-                      className="group p-2.5 rounded-xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-all cursor-pointer flex items-center justify-between"
+                      className="group p-2 rounded-xl border border-slate-100 hover:border-blue-100 hover:bg-blue-50/30 transition-all cursor-pointer flex items-center justify-between text-xs"
                     >
-                      <div className="truncate pr-4 flex-1">
-                        <h4 className="text-xs font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors">
+                      <div className="truncate pr-2 flex-1">
+                        <h4 className="font-bold text-slate-800 truncate group-hover:text-blue-600 transition-colors">
                           {post.title}
                         </h4>
-                        <span className="text-[10px] text-slate-400 font-mono mt-0.5 flex items-center gap-1.5">
-                          <span className="text-slate-600 font-medium">{post.category}</span>
-                          <span>•</span>
-                          <span className="text-blue-600 font-semibold">{post.date}</span>
-                        </span>
                       </div>
                       <button 
                         onClick={(e) => toggleBookmark(post.id, e)}
-                        className="text-slate-300 hover:text-red-500 p-1.5"
+                        className="text-slate-300 hover:text-red-500 p-1 cursor-pointer"
                       >
-                        <X className="w-4 h-4 cursor-pointer" />
+                        <X className="w-3.5 h-3.5" />
                       </button>
                     </div>
                   ))
                 )}
-              </div>
-            </div>
-
-            {/* 실시간 2026 트렌드 타임라인 */}
-            <div className="bg-slate-900 text-white rounded-3xl p-6 shadow-xs space-y-4">
-              <span className="text-xs font-bold text-blue-400 uppercase tracking-widest block">2026 부동산 시행 예고</span>
-              <h4 className="text-base font-bold font-display">{selectedRegion === "전체" ? "전국" : selectedRegion} 실수요 세금/공급 달력</h4>
-              
-              <div className="space-y-4 pl-1">
-                <div className="relative pl-4 border-l border-slate-700">
-                  <div className="absolute -left-[4.5px] top-1.5 w-2.5 h-2.5 rounded-full bg-blue-500" />
-                  <span className="text-[10px] font-mono text-slate-400 block font-bold">5월 10일자 시행</span>
-                  <p className="text-xs font-bold mt-0.5">다주택자 양도세 중과 수수료 복원</p>
-                  <p className="text-[10px] text-slate-400 leading-relaxed">계약금 입금 영수증 제출 의무화 연계 작동</p>
-                </div>
-                <div className="relative pl-4 border-l border-slate-700">
-                  <div className="absolute -left-[4.5px] top-1.5 w-2.5 h-2.5 rounded-full bg-indigo-500" />
-                  <span className="text-[10px] font-mono text-slate-400 block font-bold">6월 1일 과세기준</span>
-                  <p className="text-xs font-bold mt-0.5">종부세 세액 전정 등 공시지가 적용일</p>
-                  <p className="text-[10px] text-slate-400 leading-relaxed">단 하루 등기 일자에 따라 1년 치 세액 주체 확정</p>
-                </div>
               </div>
             </div>
           </div>
