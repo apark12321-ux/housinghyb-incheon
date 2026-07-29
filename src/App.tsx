@@ -508,22 +508,21 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-800 antialiased selection:bg-blue-500 selection:text-white">
-      {/* 2026 AdSense / E-E-A-T 공익성 보도 지침 알림 띠 */}
+      {/* 19년 차 부동산 전문가 실전 칼럼 상단 알림 띠 */}
       <div className="bg-slate-900 text-slate-300 text-[11px] font-medium py-1.5 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <div className="flex items-center space-x-2 truncate">
-            <span className="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">검증 필</span>
-            <span className="truncate">하우징허브 (zip9.kr) · 2026년 최신 국토교통부·청약홈 주거 정책 수석검증 미디어</span>
+            <span className="bg-blue-600 text-white text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">전문가 칼럼</span>
+            <span className="truncate">하우징허브 (zip9.kr) · 19년 차 부동산 전문가가 직접 작성한 실전 주거·청약 분석</span>
           </div>
           <div className="hidden md:flex items-center space-x-3 text-slate-400 text-[10px] font-mono shrink-0">
-            <span>발행처: 알고파트너스</span>
-            <span>편집책임자: 박예준</span>
+            <span>집필: 박예준 소장 (19년 차 부동산 전문가)</span>
             <span>|</span>
             <button 
               onClick={() => { setActivePost(null); setActiveLegalTab("about"); }}
               className="text-blue-400 hover:underline cursor-pointer"
             >
-              미디어 소개
+              소개
             </button>
             <button 
               onClick={() => { setActivePost(null); setActiveLegalTab("privacy"); }}
@@ -557,7 +556,7 @@ export default function App() {
                   {selectedRegion === "전체" ? "전국" : selectedRegion}
                 </span>
               </h1>
-              <p className="text-[10px] text-slate-500 font-medium">National Housing Policy Media</p>
+              <p className="text-[10px] text-slate-500 font-medium">19년 차 부동산 전문가의 실전 주거·청약 분석</p>
             </div>
           </div>
 
@@ -597,7 +596,7 @@ export default function App() {
               }`}
             >
               <Calculator className="w-3.5 h-3.5" />
-              <span>안심 자가진단</span>
+              <span>청약·대출 진단</span>
             </button>
             <button
               onClick={() => {
@@ -620,7 +619,7 @@ export default function App() {
               <button 
                 onClick={() => setIsChatOpen(prev => !prev)}
                 className="relative p-2 rounded-xl border border-slate-200 hover:bg-slate-50 transition-all text-slate-700 hover:border-slate-300 cursor-pointer"
-                title="AI 안심 비서"
+                title="19년 차 전문가 Q&A"
               >
                 <MessageSquare className="w-5 h-5 text-blue-600" />
                 <span className="absolute top-1 right-1 w-2 h-2 bg-green-500 rounded-full border-2 border-white" />
@@ -759,12 +758,12 @@ export default function App() {
                   <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white animate-pulse">
                     <Calculator className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest font-mono">HousingHub Diagnostic</span>
+                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest font-mono">HousingHub Calculator</span>
                 </div>
                 <h2 className="text-xl font-bold mt-1 tracking-tight font-display text-white">
-                  하우징 통합 자가진단 스마트 툴킷
+                  청약 가점 &amp; 대출 한도 계산기
                 </h2>
-                <p className="text-xs text-slate-400 mt-0.5">데이터 연산 기반 LTV, DSR 역산 모의 진산기 & 청약 가점(84점) 판정기</p>
+                <p className="text-xs text-slate-400 mt-0.5">최신 DSR/LTV 규제 기준과 청약 가점(84점 만점)을 쉽게 계산해 보세요</p>
               </div>
               <button 
                 onClick={() => setShowDiagnosticPage(false)}
@@ -785,7 +784,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                💰 DSR/LTV 대출 한도기
+                💰 DSR/LTV 대출 한도 계산
               </button>
               <button
                 onClick={() => setToolTab("score")}
@@ -795,7 +794,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                🎯 청약 가점(84점) 판정
+                🎯 청약 가점(84점 만점) 계산
               </button>
             </div>
 
@@ -1049,7 +1048,7 @@ export default function App() {
                       <div className="bg-indigo-50/50 p-4 rounded-xl border border-indigo-100/50">
                         <span className="text-xs font-bold text-indigo-900 flex items-center space-x-1">
                           <CheckCircle2 className="w-4 h-4 text-indigo-600" />
-                          <span>하우징 가이드라인 가점 처방</span>
+                          <span>19년 차 전문가의 가점 진단 및 조언</span>
                         </span>
                         <p className="text-xs text-slate-700 mt-2 leading-relaxed keep-all">
                           {subscriptionScore.advice}
@@ -1067,7 +1066,7 @@ export default function App() {
                 onClick={() => setShowDiagnosticPage(false)}
                 className="bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all cursor-pointer"
               >
-                자가진단 완료 및 메인으로 돌아가기
+                계산 완료 및 메인으로 돌아가기
               </button>
             </div>
           </div>
@@ -1145,7 +1144,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                ✉️ 1:1 안심 상담 및 문의
+                ✉️ 1:1 전문가 문의 &amp; 제안
               </button>
             </div>
 
@@ -1154,42 +1153,42 @@ export default function App() {
               {activeLegalTab === "about" && (
                 <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900">하우징허브 소개 및 E-E-A-T 편집·발행 신뢰 선언 (About Us & Editorial Standards)</h4>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">하우징허브 소개 및 집필 원칙</h4>
                     <p className="text-xs text-slate-400 mt-1">공고 및 최종 적용 일자: 2026년 7월 20일</p>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">하우징허브(HousingHub) 미디어 소개</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">하우징허브(HousingHub) 소개</h5>
                     <p className="leading-relaxed">
-                      하우징허브는 무주택 가구, 생애 최초 주택 마련 수요자, 그리고 전월세 임차인의 소중한 권리와 보증금 자산을 투명하게 사수하고 정보 비대칭을 영구적으로 제거하기 위해 설립된 <strong>비영리 공익성 종합 주거 지식 전문 포털</strong>입니다. 당사는 독자들이 복잡하고 이해하기 어려운 정부 주거 복지 정책, 세금 규율, 그리고 시중 적격 금융 대출 상품 지표에 대하여 누구나 즉각적이고 명확하게 인지하고 자가진단을 완비할 수 있도록 최우선 가치를 두고 있습니다.
+                      하우징허브는 <strong>19년간 부동산 및 청약 현장에서 쌓아온 노하우</strong>를 바탕으로, 내 집 마련을 준비하는 실수요자와 전월세 임차인에게 꼭 필요한 실전 주거 정보를 제공하는 전문 정보 포털입니다. 복잡한 청약 제도, 부동산 세제, 대출 규제 기준을 일반인이 이해하기 쉽게 원칙과 실무 위주로 설명합니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">E-E-A-T (경험·전문성·권위성·신뢰성) 콘텐츠 제작 지침</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">콘텐츠 작성 3대 원칙</h5>
                     <p className="leading-relaxed">
-                      하우징허브 인천 미디어의 모든 보도물 및 칼럼 지식은 단순 짜깁기식 AI 생성이나 스크랩을 철저히 배격하며, 구글이 보장하는 최고의 검색 품질 기준인 E-E-A-T 원칙에 부합하도록 엄격히 기획, 검증 및 최종 배포하고 있습니다.
+                      하우징허브의 모든 칼럼과 가이드는 현장 실무 경험과 공식 자료에 기반하여 작성되며, 아래 3가지 원칙을 준수합니다.
                     </p>
                     <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1.5 font-sans">
-                      <li><strong>공식 유관 출처 대조 (Accuracy):</strong> 국토교통부, 한국토지주택공사(LH), 주택도시보증공사(HUG), 서울주택도시공사(SH), 대법원 인터넷등기소 등 공식 공공 입법 규제안과 모집 보도 공고 일정을 100% 실시간 대조하여 팩트 크로스 체킹을 의무 진행합니다.</li>
-                      <li><strong>실무 자문단 협업 (Expertise):</strong> 업력 10년 이상의 베테랑 공인중개사, 공인 금융 자산 설계사, 그리고 부동산 법률 감수 전문 연구진과의 지속 가능한 피드백 연대를 구성하여 실효 지식을 제공합니다.</li>
-                      <li><strong>비강제성 투명 정보 (Transparency):</strong> 어떠한 주택 판매 대행사나 특정 대출 중개업체로부터 원고료 수혜 목적의 편향된 홍보 스폰서십 글을 게재하지 않으며, 이용자의 기밀 정보 수집 목적의 어떠한 유료 가입도 일절 강제하거나 요구하지 않는 순수 영구 무상 개방 형태를 선언합니다.</li>
+                      <li><strong>공식 기관 교차 검증:</strong> 국토교통부, 청약홈(한국부동산원), LH, HUG 등의 공식 공고문과 관련 법령을 매주 대조해 팩트를 검증합니다.</li>
+                      <li><strong>19년 현장 경험 반영:</strong> 실제 부동산 계약, 청약 가점 계산, 전세 보증금 보호 등 실무에서 발생하는 실제 사례와 유의사항을 직접 다룹니다.</li>
+                      <li><strong>독자 중심의 객관성:</strong> 특정 분양 대행사나 대출 중개업체의 협찬 원고를 배제하며, 사용자에게 유료 결제나 무리한 개인정보 입력을 요구하지 않습니다.</li>
                     </ul>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">하우징허브 편집팀 및 자문진 소개 (Editorial Team & Advisors)</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">필진 및 자문진 소개</h5>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-2">
                       <div className="bg-white border border-slate-200 p-4 rounded-xl shadow-3xs">
                         <div className="flex items-center space-x-2 mb-2">
                           <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Yejun" className="w-8 h-8 rounded-full bg-slate-50" />
                           <div>
-                            <p className="font-bold text-slate-900 text-xs">박예준 (Chief Editor / 대표자)</p>
-                            <p className="text-[10px] text-slate-400">알고파트너스 대표 / 주거복지 정책 분석가</p>
+                            <p className="font-bold text-slate-900 text-xs">박예준 소장 (대표 에디터)</p>
+                            <p className="text-[10px] text-slate-400">19년 차 부동산·청약 현장 전문가</p>
                           </div>
                         </div>
                         <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                          무주택 실수요자 권익보호를 위한 미디어 기획을 총괄합니다. 주택 임대차 분쟁 사례집 편찬 및 지자체 주거 기획 칼럼을 정기 기고하고 있습니다.
+                          수도권 아파트 청약 전략 및 임대차 분쟁 자문을 19년간 전담해왔으며, 실수요자를 위한 칼럼 작성과 기획을 총괄합니다.
                         </p>
                       </div>
 
@@ -1197,12 +1196,12 @@ export default function App() {
                         <div className="flex items-center space-x-2 mb-2">
                           <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Hyunwoo" className="w-8 h-8 rounded-full bg-slate-50" />
                           <div>
-                            <p className="font-bold text-slate-900 text-xs">김현우 (Real Estate Consultant)</p>
-                            <p className="text-[10px] text-slate-400">공인중개사 (인천 연수구 지부 자문)</p>
+                            <p className="font-bold text-slate-900 text-xs">김현우 자문위원</p>
+                            <p className="text-[10px] text-slate-400">15년 차 공인중개사</p>
                           </div>
                         </div>
                         <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                          수도권 아파트 분양권 전매 제한 및 전세 안심 보증 사기 예방 특약 조항의 실무 검수를 주관하고 실물 기재 프로세스를 조언합니다.
+                          수도권 현장 거래 실무, 아파트 분양권 전매, 전월세 특약 조항의 실무 검수를 자문하고 있습니다.
                         </p>
                       </div>
 
@@ -1210,21 +1209,21 @@ export default function App() {
                         <div className="flex items-center space-x-2 mb-2">
                           <img src="https://api.dicebear.com/7.x/adventurer/svg?seed=Soyul" className="w-8 h-8 rounded-full bg-slate-50" />
                           <div>
-                            <p className="font-bold text-slate-900 text-xs">이소율 (Financial Writer)</p>
-                            <p className="text-[10px] text-slate-400">공인 금융설계 위원 / 주택 자금 칼럼니스트</p>
+                            <p className="font-bold text-slate-900 text-xs">이소율 금융 자문</p>
+                            <p className="text-[10px] text-slate-400">주택 금융 및 대출 전문가</p>
                           </div>
                         </div>
                         <p className="text-[11px] text-slate-500 leading-relaxed font-sans">
-                          스트레스 DSR 등 최신 금융 규제에 기반한 적격 대출 상환 계획 산출식 감수 및 버팀목 디딤돌 서민 보조 저리 자금 운용 매뉴얼을 전담합니다.
+                          디딤돌·버팀목 등 주택 정책 대출 및 DSR 상환 비율 관련 매뉴얼 감수를 담당하고 있습니다.
                         </p>
                       </div>
                     </div>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">콘텐츠 팩트체킹 및 정정 절차 (Fact-Checking & Corrections)</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">팩트체크 및 독자 제보 안내</h5>
                     <p className="leading-relaxed">
-                      당사 미디어는 모든 게재 지식물에 대하여 매주 월요일 최신 법률 적용 사항을 주간 단위로 크로스 확인합니다. 만약 정책 개편 시차나 단순 자판 오기로 인한 오류가 발견되거나 제보될 경우, 24시간 이내에 보도 정정 위원회 소정 기획안을 거쳐 정밀 수정 보완 조치를 시행하고 투명하게 공개 정정 목록을 보도실에 적재합니다. 정보 기재 오류 및 제안 의견은 하단의 [1:1 안심 상담 및 문의] 채널 혹은 공식 소통 이메일(<strong className="text-slate-900 font-mono">apark12321@gmail.com</strong>)로 항시 제출해 주시면 적극 감사 수렴하겠습니다.
+                      하우징허브는 주간 단위로 법령 개정 사항과 최신 공고를 확인해 칼럼을 업데이트합니다. 정책 변경으로 인한 오탈자나 오류를 발견하셨다면 메인 페이지 하단의 [1:1 문의] 혹은 공식 이메일(<strong className="text-slate-900 font-mono">apark12321@gmail.com</strong>)로 제보해 주시면 즉시 반영하겠습니다.
                     </p>
                   </section>
                 </div>
@@ -1462,17 +1461,17 @@ export default function App() {
           </div>
         ) : (
           <>
-            {/* 2026 에디토리얼 주요 보도 스포트라이트 */}
+            {/* 19년 차 전문가 추천 주요 주거 칼럼 */}
             <section className="bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-5 shadow-xs space-y-3.5">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div className="flex items-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-                  <h2 className="text-base font-bold text-slate-900 font-display">2026 주요 검증 보도 스포트라이트</h2>
+                  <h2 className="text-base font-bold text-slate-900 font-display">오늘의 핵심 주거 칼럼 &amp; 리포트</h2>
                 </div>
 
                 {/* 지역별 허브 선택 필 */}
                 <div className="flex flex-wrap items-center gap-1 text-xs font-semibold">
-                  <span className="text-slate-400 mr-1 text-[11px] font-mono">지역 허브:</span>
+                  <span className="text-slate-400 mr-1 text-[11px] font-mono">지역 선택:</span>
                   {[
                     { key: "전체", label: "🌐 전국 종합" },
                     { key: "서울", label: "🗼 서울" },
@@ -1510,7 +1509,7 @@ export default function App() {
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-950/40" />
                     <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
                       <span className="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md">
-                        주요 보도
+                        추천 칼럼
                       </span>
                       <span className="bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/20">
                         {filteredPosts[0].category}
@@ -1541,8 +1540,8 @@ export default function App() {
                           박
                         </div>
                         <div className="text-[10px]">
-                          <span className="font-bold text-slate-200">박예준 수석 에디터</span>
-                          <span className="text-slate-400 ml-1.5 hidden sm:inline">알고파트너스 주거정책팀</span>
+                          <span className="font-bold text-slate-200">박예준 소장</span>
+                          <span className="text-slate-400 ml-1.5 hidden sm:inline">19년 차 부동산 전문가</span>
                         </div>
                       </div>
                       <span className="inline-flex items-center space-x-1 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
@@ -1566,16 +1565,16 @@ export default function App() {
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center space-x-2">
-                        <span>📚 {selectedRegion === "전체" ? "전국" : selectedRegion} 지식 보도실</span>
+                        <span>📚 {selectedRegion === "전체" ? "전국" : selectedRegion} 실전 주거 칼럼</span>
                         <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
                           총 {filteredPosts.length}건
                         </span>
                       </h3>
                       <p className="text-xs text-slate-500 mt-1 font-medium">
-                        {selectedRegion === "전체" && "전국 무주택 서민과 실수요자를 위해 검증된 공공 주거 정책 보도"}
-                        {selectedRegion === "인천" && "인천 시민 및 송도·검단·계양 청약·임대차 검증 가이드"}
-                        {selectedRegion === "서울" && "서울 청약·재개발·정비사업 및 임대차 검증 가이드"}
-                        {selectedRegion === "경기" && "경기 신도시 및 광역 교통 연계 주거 정책 검증 가이드"}
+                        {selectedRegion === "전체" && "19년 현장 경험과 최신 정책 데이터를 토대로 작성한 실수요자 맞춤 칼럼"}
+                        {selectedRegion === "인천" && "인천 송도·검단·계양 등 핵심 지역 청약 및 전월세 실전 분석"}
+                        {selectedRegion === "서울" && "서울 주요 재개발·재건축 및 청약·전월세 실전 분석"}
+                        {selectedRegion === "경기" && "경기 3기 신도시 및 수도권 광역 교통망 연계 주거 정보"}
                       </p>
                     </div>
                     
@@ -1711,7 +1710,7 @@ export default function App() {
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <span className="text-sm font-bold text-slate-900 flex items-center space-x-1.5">
                   <TrendingUp className="w-4.5 h-4.5 text-blue-600" />
-                  <span>실시간 인기 보도 TOP 5</span>
+                  <span>가장 많이 읽은 칼럼 TOP 5</span>
                 </span>
                 <span className="text-[10px] font-mono text-slate-400">주간 조회 기준</span>
               </div>
@@ -1746,17 +1745,17 @@ export default function App() {
               </div>
             </div>
 
-            {/* 안심 자가진단 툴킷 바로가기 배너 */}
+            {/* 내 집 마련 진단 툴킷 바로가기 배너 */}
             <div className="bg-gradient-to-br from-blue-900 to-slate-900 text-white rounded-3xl p-6 shadow-md space-y-4 border border-blue-800/40">
               <div className="inline-flex items-center space-x-1.5 bg-blue-500/20 text-blue-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-blue-400/30">
                 <Calculator className="w-3.5 h-3.5" />
-                <span>2026 자가진단 툴킷</span>
+                <span>내 집 마련 진단 툴킷</span>
               </div>
               <h4 className="text-base font-bold font-display leading-snug">
-                내 청약 점수 &amp; 적격 대출 한도 계산
+                청약 가점 &amp; 대출 한도 계산기
               </h4>
               <p className="text-xs text-slate-300 leading-relaxed">
-                스트레스 DSR 3단계 및 2026년 청약 가점제를 기반으로 내 집 마련 가능 스코어를 진단해보세요.
+                최신 DSR/LTV 규제 기준과 청약 가점제(84점 만점)를 적용해 내 집 마련 가능성을 직접 계산해 보세요.
               </p>
               <button
                 onClick={() => {
@@ -1766,23 +1765,23 @@ export default function App() {
                 }}
                 className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all shadow-md cursor-pointer flex items-center justify-center space-x-1"
               >
-                <span>자가진단 시작하기</span>
+                <span>계산기 시작하기</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
 
-            {/* E-E-A-T 신뢰성 고지 박스 */}
+            {/* 19년 차 전문가 집필 원칙 고지 박스 */}
             <div className="bg-slate-100/80 rounded-3xl p-5 border border-slate-200/80 space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
               <div className="flex items-center space-x-2 font-bold text-slate-900 text-xs">
                 <ShieldCheck className="w-4 h-4 text-blue-600" />
-                <span>E-E-A-T 공익 보도 가이드</span>
+                <span>19년 차 전문가 집필 원칙</span>
               </div>
               <p className="text-[11px] text-slate-500">
-                하우징허브의 모든 기사는 대한민국 국토교통부, 한국부동산원 청약홈, HUG 주택도시보증공사의 공시 자료에 기반하여 박예준 수석 에디터가 수석 검증 후 발행합니다.
+                하우징허브의 모든 칼럼은 19년간 쌓아온 현장 실무 노하우와 국토교통부, 한국부동산원 청약홈 등 공식 기관의 공고 자료를 직접 확인해 작성합니다.
               </p>
             </div>
 
-            {/* 사이드바 애드센스 슬롯 */}
+            {/* 사이드바 맞춤 광고 슬롯 */}
             <AdSenseSlot label="사이드바 맞춤 광고" />
 
             {/* 북마크 리딩 리스트 */}
@@ -1790,7 +1789,7 @@ export default function App() {
               <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-3">
                 <span className="text-xs font-bold text-slate-900 flex items-center space-x-1.5">
                   <Bookmark className="w-4 h-4 text-blue-600" />
-                  <span>나의 보관 아티클</span>
+                  <span>내가 저장한 칼럼</span>
                 </span>
                 <span className="text-xs font-mono font-bold bg-blue-50 text-blue-600 px-2 py-0.5 rounded-full">
                   {bookmarks.length}개
@@ -1855,8 +1854,8 @@ export default function App() {
                     <Building2 className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold font-display">하우징허브 스마트 AI 안심 비서</h4>
-                    <p className="text-[10px] text-slate-400 font-medium">{selectedRegion === "전체" ? "전국" : selectedRegion} 지역 맞춤형 주거 컨설턴트</p>
+                    <h4 className="text-sm font-bold font-display">19년 차 전문가 Q&amp;A 상담</h4>
+                    <p className="text-[10px] text-slate-400 font-medium">박예준 소장 (부동산·청약 19년 차 현장 전문가)</p>
                   </div>
                 </div>
                 <button 
@@ -2045,19 +2044,19 @@ export default function App() {
           {/* 발행인 및 신뢰성 고지 배너 */}
           <div className="pt-6 border-t border-slate-800/60 text-[11px] text-slate-400 space-y-2 leading-relaxed">
             <div className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-slate-300 font-semibold">
-              <span>발행처: 알고파트너스 (Algo Partners)</span>
-              <span>대표자 및 편집책임자: 박예준</span>
+              <span>하우징허브 (HousingHub)</span>
+              <span>대표 및 집필: 박예준 소장 (19년 차 부동산·청약 전문가)</span>
               <span>공식 이메일: apark12321@gmail.com</span>
               <span>애드센스 파트너: ca-pub-9552509372228899</span>
             </div>
             <p className="text-slate-500">
-              하우징허브(zip9.kr)는 무주택자, 임차인, 내 집 마련 수요자를 위해 검증된 공공 주거 정책 및 적격 금융 지식을 무상으로 제공하는 정론 종합 지식 포털입니다. 본 사이트 내 수록된 정보 및 모의 연산 결과는 사용자 이해를 돕기 위한 공익성 참고 자료이며, 어떠한 개별 가입 및 입금 요구도 일절 강제하지 않습니다.
+              하우징허브(zip9.kr)는 19년 차 부동산 전문가가 직접 분석한 청약, 임대차, 주택 대출 칼럼을 제공하는 전문 지식 포털입니다. 본 사이트 내 수록된 정보 및 계산기 결과는 참고용 자료이며, 실제 계약이나 청약 신청 시에는 해당 기관의 공식 공고문을 반드시 최종 확인하시기 바랍니다.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 font-medium pt-2">
-            <p>© 2026 HousingHub (zip9.kr). All rights reserved. Global Privacy & Information Standards Compliant.</p>
-            <p className="mt-2 sm:mt-0">E-E-A-T Verified Housing Knowledge Portal</p>
+            <p>© 2026 HousingHub (zip9.kr). All rights reserved.</p>
+            <p className="mt-2 sm:mt-0">19-Year Expert Verified Housing Knowledge Portal</p>
           </div>
           
         </div>
