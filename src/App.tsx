@@ -1463,15 +1463,15 @@ export default function App() {
         ) : (
           <>
             {/* 2026 에디토리얼 주요 보도 스포트라이트 */}
-            <section className="bg-white rounded-3xl border border-slate-200/90 p-6 sm:p-8 shadow-xs space-y-6">
-              <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+            <section className="bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-5 shadow-xs space-y-3.5">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
                 <div className="flex items-center space-x-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
-                  <h2 className="text-lg font-bold text-slate-900 font-display">2026 주요 검증 보도 스포트라이트</h2>
+                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                  <h2 className="text-base font-bold text-slate-900 font-display">2026 주요 검증 보도 스포트라이트</h2>
                 </div>
 
                 {/* 지역별 허브 선택 필 */}
-                <div className="flex flex-wrap items-center gap-1.5 text-xs font-semibold">
+                <div className="flex flex-wrap items-center gap-1 text-xs font-semibold">
                   <span className="text-slate-400 mr-1 text-[11px] font-mono">지역 허브:</span>
                   {[
                     { key: "전체", label: "🌐 전국 종합" },
@@ -1482,7 +1482,7 @@ export default function App() {
                     <button
                       key={reg.key}
                       onClick={() => setSelectedRegion(reg.key)}
-                      className={`px-3 py-1.5 rounded-lg border cursor-pointer transition-all ${
+                      className={`px-2.5 py-1 rounded-md border text-[11px] cursor-pointer transition-all ${
                         selectedRegion === reg.key 
                           ? "bg-slate-900 border-slate-900 text-white font-bold shadow-xs" 
                           : "bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -1494,60 +1494,60 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 스포트라이트 기사 헤드라인 카드 */}
+              {/* 스포트라이트 기사 헤드라인 카드 (컴팩트 슬림 스타일) */}
               {filteredPosts.length > 0 && (
                 <div 
                   onClick={() => setActivePost(filteredPosts[0])}
-                  className="group bg-slate-900 text-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer grid grid-cols-1 lg:grid-cols-12"
+                  className="group bg-slate-900 text-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer grid grid-cols-1 md:grid-cols-12"
                 >
-                  <div className="lg:col-span-7 relative min-h-[260px] sm:min-h-[320px] overflow-hidden bg-slate-800">
+                  <div className="md:col-span-4 lg:col-span-4 relative h-40 md:h-auto overflow-hidden bg-slate-800 shrink-0">
                     <img 
                       src={filteredPosts[0].image} 
                       alt={filteredPosts[0].title} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
                       referrerPolicy="no-referrer"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
-                    <div className="absolute top-4 left-4 flex flex-wrap gap-2">
-                      <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-950/40" />
+                    <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
+                      <span className="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md">
                         주요 보도
                       </span>
-                      <span className="bg-black/60 backdrop-blur-xs text-white text-xs font-semibold px-3 py-1 rounded-full border border-white/20">
+                      <span className="bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/20">
                         {filteredPosts[0].category}
                       </span>
                     </div>
                   </div>
 
-                  <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
-                    <div className="space-y-3">
-                      <div className="flex items-center space-x-2 text-xs font-mono text-blue-300">
-                        <Calendar className="w-3.5 h-3.5" />
+                  <div className="md:col-span-8 lg:col-span-8 p-4 sm:p-5 flex flex-col justify-between space-y-2.5">
+                    <div className="space-y-1.5">
+                      <div className="flex items-center space-x-2 text-[11px] font-mono text-blue-300">
+                        <Calendar className="w-3 h-3" />
                         <span>{filteredPosts[0].date}</span>
                         <span>•</span>
-                        <Clock className="w-3.5 h-3.5" />
+                        <Clock className="w-3 h-3" />
                         <span>{filteredPosts[0].readTime}</span>
                       </div>
-                      <h3 className="text-xl sm:text-2xl font-bold font-display leading-snug text-white group-hover:text-blue-300 transition-colors line-clamp-3">
+                      <h3 className="text-base sm:text-lg font-bold font-display leading-snug text-white group-hover:text-blue-300 transition-colors line-clamp-2">
                         {filteredPosts[0].title}
                       </h3>
-                      <p className="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-3">
+                      <p className="text-slate-300 text-xs leading-relaxed line-clamp-2">
                         {filteredPosts[0].excerpt}
                       </p>
                     </div>
 
-                    <div className="pt-4 border-t border-slate-800 flex items-center justify-between">
+                    <div className="pt-2.5 border-t border-slate-800/80 flex items-center justify-between">
                       <div className="flex items-center space-x-2">
-                        <div className="w-7 h-7 rounded-full bg-blue-600 flex items-center justify-center text-xs font-bold text-white">
+                        <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">
                           박
                         </div>
-                        <div className="text-[11px]">
-                          <p className="font-bold text-slate-200">박예준 수석 에디터</p>
-                          <p className="text-slate-400">알고파트너스 주거정책팀</p>
+                        <div className="text-[10px]">
+                          <span className="font-bold text-slate-200">박예준 수석 에디터</span>
+                          <span className="text-slate-400 ml-1.5 hidden sm:inline">알고파트너스 주거정책팀</span>
                         </div>
                       </div>
                       <span className="inline-flex items-center space-x-1 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
                         <span>전문 읽기</span>
-                        <ChevronRight className="w-4 h-4" />
+                        <ChevronRight className="w-3.5 h-3.5" />
                       </span>
                     </div>
                   </div>
