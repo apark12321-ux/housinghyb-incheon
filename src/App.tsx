@@ -45,6 +45,10 @@ export default function App() {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   
+  // AI 이미지 피로감 방지 및 가독성 향상: 텍스트 중심 리포트 모드 ("text") vs 썸네일 보기 ("image")
+  const [cardViewStyle, setCardViewStyle] = useState<"text" | "image">("text");
+  const [showDetailImage, setShowDetailImage] = useState<boolean>(false);
+  
   // 북마크 관리
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
     const saved = localStorage.getItem("hh_bookmarks");
@@ -690,14 +694,32 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 아티클 대표 이미지 (모던한 규격으로 헤더 아래 단정히 안착시킴) */}
-              <div className="rounded-2xl overflow-hidden shadow-xs border border-slate-100/50 my-6 max-h-[420px] bg-slate-50 flex items-center justify-center">
-                <img 
-                  src={activePost.image} 
-                  alt={activePost.title} 
-                  className="w-full h-full object-cover max-h-[420px]"
-                  referrerPolicy="no-referrer"
-                />
+              {/* 19년 차 전문가 리포트 가독성 헤더 및 이미지 컨트롤 */}
+              <div className="my-6">
+                <div className="flex flex-wrap items-center justify-between gap-2 p-3 bg-slate-100/80 rounded-xl border border-slate-200/80 text-xs text-slate-700">
+                  <span className="font-semibold flex items-center space-x-1.5">
+                    <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />
+                    <span>19년 차 전문가 검증 칼럼 (텍스트·데이터 가독성 우선 모드)</span>
+                  </span>
+                  <button 
+                    onClick={() => setShowDetailImage(prev => !prev)}
+                    className="text-blue-700 hover:text-blue-900 font-bold underline text-[11px] cursor-pointer"
+                  >
+                    {showDetailImage ? "🖼️ 참고 이미지 숨기기" : "🖼️ 참고 이미지 보기"}
+                  </button>
+                </div>
+
+                {showDetailImage && (
+                  <div className="rounded-2xl overflow-hidden shadow-xs border border-slate-200 mt-3 max-h-[380px] bg-slate-50 flex items-center justify-center">
+                    <img 
+                      src={activePost.image} 
+                      alt={activePost.title} 
+                      className="w-full h-full object-cover max-h-[380px]"
+                      onError={(e) => { e.currentTarget.style.display = 'none'; }}
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                )}
               </div>
 
               {/* 실제 정밀 본문 */}
@@ -1630,8 +1652,38 @@ export default function App() {
                     </div>
                   )}
 
+                  {/* 카드 보기 스타일 선택바 (AI 이미지 남발 방지 & 가독성 우대 모드) */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200/70">
+                    <span className="text-[11px] font-bold text-slate-600 pl-2 flex items-center space-x-1">
+                      <FileText className="w-3.5 h-3.5 text-blue-600" />
+                      <span>칼럼 표시 방식:</span>
+                    </span>
+                    <div className="flex items-center space-x-1">
+                      <button
+                        onClick={() => setCardViewStyle("text")}
+                        className={`px-3 py-1 text-xs font-bold rounded-lg transition-all flex items-center space-x-1 cursor-pointer ${
+                          cardViewStyle === "text"
+                            ? "bg-white text-blue-700 shadow-2xs border border-slate-200/80 font-bold"
+                            : "text-slate-500 hover:text-slate-800"
+                        }`}
+                      >
+                        <span>📄 텍스트 리포트 모드 (가독성 우대)</span>
+                      </button>
+                      <button
+                        onClick={() => setCardViewStyle("image")}
+                        className={`px-3 py-1 text-xs font-bold rounded-lg transition-all flex items-center space-x-1 cursor-pointer ${
+                          cardViewStyle === "image"
+                            ? "bg-white text-blue-700 shadow-2xs border border-slate-200/80 font-bold"
+                            : "text-slate-500 hover:text-slate-800"
+                        }`}
+                      >
+                        <span>🖼️ 썸네일 함께 보기</span>
+                      </button>
+                    </div>
+                  </div>
+
                   {/* 아티클 카드 그리드 */}
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {filteredPosts.length === 0 ? (
                       <div className="col-span-full bg-white rounded-3xl border border-slate-200 p-12 text-center text-slate-500">
                         <p className="font-bold">일치하는 지식 아티클이 없습니다.</p>
@@ -1640,6 +1692,59 @@ export default function App() {
                     ) : (
                       filteredPosts.map(post => {
                         const isBookmarked = bookmarks.includes(post.id);
+                        
+                        if (cardViewStyle === "text") {
+                          return (
+                            <article 
+                              key={post.id}
+                              onClick={() => setActivePost(post)}
+                              className="group bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500 p-5 hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between space-y-3 min-h-[200px]"
+                            >
+                              <div className="space-y-2.5">
+                                <div className="flex items-center justify-between text-[11px] font-mono">
+                                  <div className="flex items-center space-x-2">
+                                    <span className="bg-blue-50 text-blue-700 font-bold px-2.5 py-0.5 rounded-full border border-blue-100">
+                                      {post.category}
+                                    </span>
+                                    <span className="text-slate-400 font-medium">{post.date}</span>
+                                  </div>
+                                  <div className="flex items-center space-x-2">
+                                    <span className="text-slate-400 text-[11px]">{post.readTime}</span>
+                                    <button 
+                                      onClick={(e) => { e.stopPropagation(); toggleBookmark(post.id, e); }}
+                                      className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
+                                    >
+                                      <Heart className={`w-4 h-4 ${isBookmarked ? "fill-rose-500 text-rose-500" : ""}`} />
+                                    </button>
+                                  </div>
+                                </div>
+
+                                <h4 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                                  {post.title}
+                                </h4>
+
+                                <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                                  {post.excerpt}
+                                </p>
+                              </div>
+
+                              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                                <div className="flex flex-wrap gap-1">
+                                  {post.hashtags?.slice(0, 3).map(tag => (
+                                    <span key={tag} className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">
+                                      #{tag}
+                                    </span>
+                                  ))}
+                                </div>
+                                <span className="text-blue-600 font-bold flex items-center space-x-0.5 group-hover:translate-x-1 transition-transform">
+                                  <span>칼럼 읽기</span>
+                                  <ChevronRight className="w-3.5 h-3.5" />
+                                </span>
+                              </div>
+                            </article>
+                          );
+                        }
+
                         return (
                           <article 
                             key={post.id}
@@ -1651,6 +1756,7 @@ export default function App() {
                                 src={post.image} 
                                 alt={post.title} 
                                 className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
                                 referrerPolicy="no-referrer"
                               />
                               <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[11px] font-bold text-slate-800 px-2.5 py-1 rounded-full shadow-xs">
@@ -1658,7 +1764,7 @@ export default function App() {
                               </span>
                               <button 
                                 onClick={(e) => { e.stopPropagation(); toggleBookmark(post.id, e); }}
-                                className="absolute top-3 right-3 p-2 rounded-full bg-white/90 hover:bg-white text-slate-700 shadow-xs hover:scale-110 transition-all"
+                                className="absolute top-3 right-3 p-2 rounded-full bg-white/90 hover:bg-white text-slate-700 shadow-xs hover:scale-110 transition-all cursor-pointer"
                               >
                                 <Heart className={`w-4 h-4 transition-colors ${
                                   isBookmarked ? "fill-rose-500 text-rose-500" : "text-slate-400"

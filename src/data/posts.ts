@@ -5,6 +5,7 @@ import { POSTS_RENT } from "./posts-rent";
 import { POSTS_RENT_HEAVY } from "./posts-rent-heavy";
 import { POSTS_MOVE } from "./posts-move";
 import { POSTS_FINANCE } from "./posts-finance";
+import { POSTS_AUGUST } from "./posts-august";
 
 // 카테고리별 고품질 이미지 및 안심 가이드 캡션 풀
 const IMAGE_COLLECTIONS: Record<string, { images: string[]; captions: string[] }> = {
@@ -218,6 +219,7 @@ function getRelativeDateString(daysAgo: number): string {
 
 // 원본 포스트 리스트 불러오기 및 본문 이미지 일체 자동 보강 처리 완료
 const RAW_POSTS: Post[] = [
+  ...POSTS_AUGUST,
   ...POSTS_SUB,
   ...POSTS_SUB_HEAVY,
   ...POSTS_RENT,
