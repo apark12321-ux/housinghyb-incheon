@@ -105,7 +105,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// API 2: 실시간 인천 주거 컨설턴트 챗봇 (Gemini API 기반)
+// API 2: 실시간 주거 컨설턴트 챗봇 (Gemini API 기반)
 app.post("/api/advisor", async (req, res) => {
   const { message, chatHistory = [], activePostId = null } = req.body;
 
@@ -114,7 +114,6 @@ app.post("/api/advisor", async (req, res) => {
   }
 
   // 1. 관련 정보 컨텍스트 제공 준비
-  // 사용자가 보고 있거나 관련된 아티클이 있으면 프롬프트에 주입하여 상황 이해를 도웁니다.
   let activePostContext = "";
   if (activePostId) {
     const post = POSTS.find(p => p.id === activePostId);
@@ -123,57 +122,55 @@ app.post("/api/advisor", async (req, res) => {
     }
   }
 
-  // 사용 가능한 하우징허브 내 주요 아티클 링크 목록 구성 (AI가 상황에 맞는 아티클 링크를 정확하게 생성할 수 있도록 제공)
+  // 사용 가능한 하우징허브 내 주요 아티클 링크 목록 구성
   const availableArticlesContext = POSTS.slice(0, 15).map(p => {
     return `- [${p.category}] ${p.title} -> 링크: /post/${slugify(p.title)}`;
   }).join("\n");
 
-  // 인천 전용 청약, 영구/공공 임대주택, 대출 상식 사전 주입
+  // 전국 청약, 임대주택, 대출 상식 사전 주입
   const systemInstruction = `
-    당신의 이름은 '하우징허브 인천 AI 주거 비서'입니다.
-    인천광역시 전역(송도, 청라, 영종, 검단, 계양, 미추홀구, 부평구 등)의 청약, 전월세 대항력, 이사 상식, 대출(디딤돌, 신생아 특례대출, 버팀목 등)에 통달한 최고 전문가입니다.
+    당신의 이름은 '하우징허브 AI 주거 비서'입니다.
+    전국의 청약 자격, 전월세 대항력, 이사 상식, 대출(디딤돌, 신생아 특례대출, 버팀목, DSR 등)에 통달한 실전 주거 정책 AI 비서입니다.
 
     [★ 매우 중요 - 출력 포맷 및 분량 지침 ★]:
-    1. **절대로 마크다운 기호(#, ##, ###, *, **, ---)를 답변에 포함하지 마십시오.** 마크다운 기호는 브라우저상에서 가공되지 않은 채 노출되어 가독성을 심각하게 해칩니다.
+    1. **절대로 마크다운 기호(#, ##, ###, *, **, ---)를 답변에 포함하지 마십시오.**
     2. 강조할 핵심 내용은 <strong>강조할 문구</strong> 태그를 활용하고, 단락 간 줄바꿈은 반드시 <br/> 태그를 이용하십시오.
     3. 목록 표기가 필요한 경우 <ul> 및 <li> 등의 HTML 태그를 사용하십시오.
     4. **답변은 질문에 대해 핵심 위주로 아주 간단명료하게 2~3문장 이내로 압축하여 작성하십시오.**
-    5. 답변 내용에 깊이가 더 필요하거나 구체적인 가이드가 필요한 경우, 아래의 [인천 하우징허브 가용 아티클 목록] 중 가장 연관성 높은 아티클 링크를 찾아서 **답변 맨 끝에 하이퍼링크 형식**으로 반드시 연결해 주십시오.
+    5. 답변 내용에 깊이가 더 필요하거나 구체적인 가이드가 필요한 경우, 아래의 [하우징허브 가용 아티클 목록] 중 가장 연관성 높은 아티클 링크를 찾아서 **답변 맨 끝에 하이퍼링크 형식**으로 반드시 연결해 주십시오.
        - 링크 형식: <br/><br/><a href="/post/아티클-슬러그" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '아티클제목' 바로가기</a>
     6. 대외적 공식 홈페이지나 제도 홈페이지 소개가 수반되는 경우, 대외 링크를 함께 제시하십시오.
        - 청약홈: <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈</a>
        - LH청약플러스: <a href="https://apply.lh.or.kr" class="text-blue-600 underline font-bold" target="_blank">LH청약플러스</a>
        - 주택도시기금: <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금</a>
 
-    [인천 하우징허브 가용 아티클 목록]:
+    [하우징허브 가용 아티클 목록]:
     ${availableArticlesContext}
 
     ${activePostContext}
   `;
 
+  const findPostByKeyword = (kw: string) => {
+    const found = POSTS.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
+    return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
+  };
+
   // 2. Gemini API 호출
   if (!ai) {
-    // API 키 부재 시 대체 로컬 상담 엔진 스마트 처리 (모크 응답 대신 영특한 룰 베이스 전문가 가이드)
     console.log("No GEMINI_API_KEY detected. Running local consultation fallback.");
-    let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 지연으로 인해 로컬 전문가 지식기반 시스템으로 안내해 드립니다. <br/><br/>`;
+    let fallbackText = `하우징허브 주거 비서입니다! 일시적인 서버 지연으로 인해 로컬 전문가 지식기반 시스템으로 안내해 드립니다. <br/><br/>`;
     
     const msg = message.toLowerCase();
-    
-    // 키워드 기반 동적 포스팅 매칭 헬퍼 함수
-    const findPostByKeyword = (kw: string) => {
-      const found = POSTS.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
-      return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
-    };
 
     if (msg.includes("청약") || msg.includes("통장")) {
-      fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
+      fallbackText += `<strong>💡 청약 전문 조언:</strong> 주택 청약을 노릴 때는 청약통장 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
       const post = findPostByKeyword("청약") || findPostByKeyword("가점");
       if (post) {
         fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
       }
       fallbackText += `추가로 공식 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 꼭 확인하세요!`;
     } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-      fallbackText += `<strong>💰 대출/자금 조언:</strong> 현재 스트레스 DSR 3단계 등의 영향으로 내 대출 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
+      fallbackText += `<strong>💰 대출/자금 조언:</strong> 스트레스 DSR 3단계 등의 영향으로 본인의 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
       const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
       if (post) {
         fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
@@ -203,8 +200,6 @@ app.post("/api/advisor", async (req, res) => {
       parts: [{ text: h.text }]
     }));
 
-    // Gemini API는 무조건 user 메시지로 대화가 시작되고, user-model이 번갈아 나타나야 합니다.
-    // 이를 보장하기 위해 history를 정제합니다.
     const cleanHistory: any[] = [];
     let expectedRole: "user" | "model" = "user";
 
@@ -215,102 +210,52 @@ app.post("/api/advisor", async (req, res) => {
       }
     }
 
-    // 만약 cleanHistory가 user로 끝난다면 (sendMessage에 user 메시지를 보낼 것이므로), 
-    // 중복 방지를 위해 마지막 user 메시지를 제외시킵니다.
-    if (cleanHistory.length > 0 && cleanHistory[cleanHistory.length - 1].role === "user") {
-      cleanHistory.pop();
-    }
-
     let responseText = "";
     try {
       const chat = ai.chats.create({
         model: "gemini-3.5-flash",
         config: {
           systemInstruction: systemInstruction,
-          temperature: 0.7
         },
         history: cleanHistory
       });
 
-      const response = await chat.sendMessage({
-        message: message
-      });
-      responseText = response.text;
-    } catch (primaryError: any) {
-      console.warn("Primary model (gemini-3.5-flash) failed in chat, trying gemini-flash-latest...", primaryError);
-      try {
-        const chatFallback1 = ai.chats.create({
-          model: "gemini-flash-latest",
-          config: {
-            systemInstruction: systemInstruction,
-            temperature: 0.7
-          },
-          history: cleanHistory
-        });
-
-        const responseFallback1 = await chatFallback1.sendMessage({
-          message: message
-        });
-        responseText = responseFallback1.text;
-      } catch (fallbackError1: any) {
-        console.warn("Model (gemini-flash-latest) failed in chat, trying gemini-3.1-flash-lite...", fallbackError1);
-        try {
-          const chatFallback2 = ai.chats.create({
-            model: "gemini-3.1-flash-lite",
-            config: {
-              systemInstruction: systemInstruction,
-              temperature: 0.7
-            },
-            history: cleanHistory
-          });
-
-          const responseFallback2 = await chatFallback2.sendMessage({
-            message: message
-          });
-          responseText = responseFallback2.text;
-        } catch (fallbackError2: any) {
-          console.error("Fallback model (gemini-3.1-flash-lite) also failed in chat, running local fallback:", fallbackError2);
-          
-        // 키워드 기반 동적 포스팅 매칭 헬퍼 함수
-        const findPostByKeyword = (kw: string) => {
-          const found = POSTS.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
-          return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
-        };
-
-        let fallbackText = `하우징허브 인천 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
-        
-        const msg = message.toLowerCase();
-        if (msg.includes("청약") || msg.includes("통장")) {
-          fallbackText += `<strong>💡 청약 전문 조언:</strong> 인천 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
-          const post = findPostByKeyword("청약") || findPostByKeyword("가점");
-          if (post) {
-            fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
-          }
-          fallbackText += `상세 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 참조하세요!`;
-        } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-          fallbackText += `<strong>💰 대출/자금 조언:</strong> 현재 스트레스 DSR 적용 강도로 내 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
-          const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
-          if (post) {
-            fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
-          }
-          fallbackText += `금리 정보는 <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금 홈페이지</a>를 통해 실시간 조회해보실 수 있습니다.`;
-        } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기") || msg.includes("특약") || msg.includes("등기")) {
-          fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 대항력 효력 시점(익일 0시)을 안전하게 수호할 권리 변동 금지 특약을 명시하고, 등기부등본상의 근저당 설정 여부를 필수적으로 감시하셔야 안전합니다. <br/><br/>`;
-          const post = findPostByKeyword("특약") || findPostByKeyword("보증금") || findPostByKeyword("전세");
-          if (post) {
-            fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
-          }
-        } else {
-          fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 안심 가이드 아티클을 추천해 드립니다. <br/><br/>`;
-          const post = POSTS[0];
-          if (post) {
-            fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
-          }
-          fallbackText += `상단의 '자가진단' 탭에서 청약 가점 계산기와 대출 이자 계산기도 무상으로 적극 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
+      const result = await chat.sendMessage({ message });
+      responseText = result.text;
+    } catch (chatErr: any) {
+      console.warn("Primary chat model failed, falling back to local guidance:", chatErr);
+      let fallbackText = `하우징허브 주거 비서입니다! 일시적인 서버 부하로 인해 AI 모델 연결이 잠시 지연되고 있습니다. 대신 탑재된 전문가 로컬 지식기반 시스템으로 조언해 드립니다. <br/><br/>`;
+      
+      const msg = message.toLowerCase();
+      if (msg.includes("청약") || msg.includes("통장")) {
+        fallbackText += `<strong>💡 청약 전문 조언:</strong> 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
+        const post = findPostByKeyword("청약") || findPostByKeyword("가점");
+        if (post) {
+          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
         }
-        responseText = fallbackText;
+        fallbackText += `상세 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 참조하세요!`;
+      } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
+        fallbackText += `<strong>💰 대출/자금 조언:</strong> 현재 스트레스 DSR 적용 강도로 내 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
+        const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
+        if (post) {
+          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
         }
+        fallbackText += `금리 정보는 <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금 홈페이지</a>를 통해 실시간 조회해보실 수 있습니다.`;
+      } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기") || msg.includes("특약") || msg.includes("등기")) {
+        fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 대항력 효력 시점(익일 0시)을 안전하게 수호할 권리 변동 금지 특약을 명시하고, 등기부등본상의 근저당 설정 여부를 필수적으로 감시하셔야 안전합니다. <br/><br/>`;
+        const post = findPostByKeyword("특약") || findPostByKeyword("보증금") || findPostByKeyword("전세");
+        if (post) {
+          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+        }
+      } else {
+        fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 안심 가이드 아티클을 추천해 드립니다. <br/><br/>`;
+        const post = POSTS[0];
+        if (post) {
+          fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
+        }
+        fallbackText += `상단의 '자가진단' 탭에서 청약 가점 계산기와 대출 이자 계산기도 무상으로 적극 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
       }
+      responseText = fallbackText;
     }
 
     return res.json({ response: parseMarkdownToHtml(responseText) });
@@ -333,7 +278,7 @@ app.post("/api/generate", async (req, res) => {
 
   try {
     const prompt = `
-      인천 부동산 시장에 관한 다음 주제에 관해 '가독성이 훌륭한 HTML 포스팅'을 완벽히 작성해 주세요.
+      전국 부동산 시장 및 실전 주거 정보에 관한 다음 주제에 관해 '가독성이 훌륭한 HTML 포스팅'을 완벽히 작성해 주세요.
       주제: ${topic}
       카테고리: ${category}
       
@@ -411,20 +356,20 @@ app.post("/api/generate", async (req, res) => {
         } catch (fallbackError2: any) {
           console.error("All models failed for dynamic post generation, running premium local fallback generation:", fallbackError2);
           const localData = {
-            title: topic.trim() || "인천 부동산 핵심 가이드",
+            title: topic.trim() || "부동산 주거 정책 핵심 가이드",
             content: `
-              <h2>인천 부동산 및 주거 전문가 분석</h2>
-              <p>현재 인천 부동산 시장은 대단지 분양과 대출 금리 조정 국면 속에서 복합적인 변화를 맞이하고 있습니다. 이에 따라 실거주 목적의 청약 대기자와 기존 전월세 세입자들은 보다 신중하고 정교한 자금 설계 전략을 세워야 합니다.</p>
+              <h2>부동산 및 주거 정책 전문가 분석</h2>
+              <p>현재 부동산 시장은 주택 공급 분양과 대출 금리 조정 국면 속에서 복합적인 변화를 맞이하고 있습니다. 이에 따라 실거주 목적의 청약 대기자와 기존 전월세 세입자들은 보다 신중하고 정교한 자금 설계 전략을 세워야 합니다.</p>
               <h3>실거주자를 위한 체크리스트 및 핵심 조언</h3>
               <ul>
                 <li><strong>철저한 자금 계획 수립:</strong> 주택담보대출 실행 시 본인의 스트레스 DSR 적용 비율과 이자 상환 능력을 자가진단 계산기로 정밀 모니터링하세요.</li>
-                <li><strong>지역별 분양 양극화 대비:</strong> 검단신도시, 송도국제도시 등 공공택지 분양 단지는 분양가 상한제가 적용되어 가점이 높거나 신혼부부 특별공급 자격을 갖춘 가구에게 좋은 선택지가 될 수 있습니다.</li>
+                <li><strong>공공택지 분양 단지 활용:</strong> 수도권 및 신신도시 공공택지 분양 단지는 분양가 상한제가 적용되어 가점이 높거나 신혼부부 특별공급 자격을 갖춘 가구에게 좋은 선택지가 될 수 있습니다.</li>
                 <li><strong>전월세 계약 시 대항력 수호:</strong> 보증금을 안전하게 지키기 위해 계약 전 확정일자 부여 현황과 선순위 채권을 반드시 체크하고 계약 즉시 전입신고 및 확정일자를 취득해야 합니다.</li>
               </ul>
-              <p>하우징허브 인천 주거 비서는 사용자의 소중한 주거 행복과 자산을 지키기 위한 최신 정책 변화와 팁을 신속하게 반영해 드립니다. 추가적인 대출 및 청약 가점 시뮬레이션은 상단 탭의 '자가진단' 탭에서 완벽하게 제공되고 있으니 지금 바로 사용해 보세요!</p>
+              <p>하우징허브 주거 비서는 사용자의 소중한 주거 행복과 자산을 지키기 위한 최신 정책 변화와 팁을 신속하게 반영해 드립니다. 추가적인 대출 및 청약 가점 시뮬레이션은 상단 탭의 '자가진단' 탭에서 완벽하게 제공되고 있으니 지금 바로 사용해 보세요!</p>
             `,
             excerpt: `${topic}에 대한 하우징허브만의 명쾌하고 전문적인 분석 정보입니다.`,
-            hashtags: ["인천부동산", "인천주택", "부동산팁", "하우징허브", "안심주거"],
+            hashtags: ["부동산정책", "주택청약", "부동산팁", "하우징허브", "안심주거"],
             readTime: "3분"
           };
           responseText = JSON.stringify(localData);
@@ -447,12 +392,12 @@ app.post("/api/contact", async (req, res) => {
     return res.status(400).json({ error: "이름, 이메일, 그리고 문의내용은 필수 항목입니다." });
   }
 
-  console.log(`[인천 하우징허브 문의 접수] 분류: ${category} | 성함: ${name} | 이메일: ${email}`);
+  console.log(`[하우징허브 문의 접수] 분류: ${category} | 성함: ${name} | 이메일: ${email}`);
   console.log(`[문의내용]: ${message}`);
 
   return res.json({
     status: "success",
-    message: "귀하의 소중한 건의 및 주거 복지 문의사항이 하우징허브 인천 정책 기획 지원팀에 안전하게 접수되었습니다. 담당자 검토 후 최대 24시간 이내에 기재해주신 이메일로 명확한 주거 처방전 회신이 전송됩니다.",
+    message: "귀하의 소중한 건의 및 주거 복지 문의사항이 하우징허브 정책 기획 지원팀에 안전하게 접수되었습니다. 담당자 검토 후 최대 24시간 이내에 기재해주신 이메일로 명확한 주거 처방전 회신이 전송됩니다.",
     referenceId: `HH-2026-${Math.floor(100000 + Math.random() * 900000)}`
   });
 });
@@ -627,8 +572,8 @@ function replaceOrInjectMetaTags(
 // SEO 관련 메타 태그 동적 수립 헬퍼 함수
 function injectMetaTags(html: string, post: any, baseUrl: string): string {
   const canonicalUrl = `${baseUrl}/post/${encodeURIComponent(slugify(post.title))}`;
-  const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 인천, 부동산, 청약, 전세대출";
-  const title = `${post.title} | 하우징허브 인천`;
+  const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 부동산, 주택청약, 전세대출, 부동산전문가";
+  const title = `${post.title} | 하우징허브`;
   const desc = post.excerpt;
   const ogImage = post.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
   
@@ -636,65 +581,65 @@ function injectMetaTags(html: string, post: any, baseUrl: string): string {
 }
 
 function injectDefaultMetaTags(html: string, baseUrl: string): string {
-  const title = "하우징허브 인천 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
-  const desc = "인천 지역 부동산, 청약 가점 계산, 전세대출 한도 시뮬레이션, 이사 가이드 및 등기부 독소조항 무상 방어 지식을 제공하는 임차인 안심 정주 포털입니다.";
+  const title = "하우징허브 | 실전 청약·전월세·주택대출 안심 주거 정보 포털";
+  const desc = "실수요자를 위한 전국 주택 청약 자격, 전월세 사기 방지 특약, 디딤돌·버팀목 대출 가이드 및 자가진단 시뮬레이터를 제공하는 공익 주거 정보 포털입니다.";
   const canonicalUrl = `${baseUrl}/`;
   const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
-  const keywords = "인천 부동산, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 송도 청약, 청라 아파트, 검단 임대주택";
+  const keywords = "주택청약, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 디딤돌 대출, 전세사기 방지, 부동산 전문가 칼럼";
   
   return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", ogImage, keywords);
 }
 
 function injectCategoryMetaTags(html: string, category: string, baseUrl: string): string {
-  const title = `${category} 실시간 알짜 정보 및 가이드 | 하우징허브 인천`;
+  const title = `${category} 실시간 알짜 정보 및 전문가 가이드 | 하우징허브`;
   let desc = "";
   if (category === "청약-분양") {
-    desc = "인천 지역 최신 청약 일정, 분양 정보, 청약가점 계산법, 무순위 줍줍 분석 및 당첨 확률 높이는 꿀팁을 총망라합니다.";
+    desc = "전국 최신 청약 일정, 분양 정보, 청약가점 계산법, 무순위 줍줍 분석 및 당첨 확률 높이는 실전 노하우를 제공합니다.";
   } else if (category === "전월세") {
-    desc = "인천 아파트 및 주택 전월세 사기 방지 대책, 등기부등본 확인법, 전세보증보험 가입 가이드 및 임대차 요령을 제공합니다.";
+    desc = "전월세 사기 방지 대책, 등기부등본 권리 분석, 전세보증보험 가입 가이드 및 임차인 필수 특약 조항을 안내합니다.";
   } else if (category === "이사-인테리어") {
-    desc = "인천 이삿짐 센터 고르는 요령, 입주 청소 체크리스트, 전입신고 및 확정일자 받는 법, 셀프 인테리어 팁을 안내합니다.";
+    desc = "이삿짐 센터 선정 체크리스트, 입주 청소 요령, 전입신고 및 확정일자 부여 절차, 셀프 인테리어 가이드를 안내합니다.";
   } else if (category === "대출-금융") {
-    desc = "디딤돌 대출, 버팀목 전세대출, 인천 임차보증금 이자 지원 및 서민 주거 안정을 위한 정부 지원 금융 혜택 총정리.";
+    desc = "디딤돌 대출, 버팀목 전세대출, 신생아 특례대출, 스트레스 DSR 상환 비율 및 주거 금융 혜택을 총정리해 드립니다.";
   } else {
-    desc = `하우징허브 인천 ${category} 정보 센터. 안심 주거 정주 포털에서 실시간 정보를 확인하세요.`;
+    desc = `하우징허브 ${category} 정보 센터. 검증된 실전 주거 가이드를 확인하세요.`;
   }
 
   const canonicalUrl = `${baseUrl}/category/${encodeURIComponent(category)}`;
   const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
-  const keywords = `인천 ${category}, 하우징허브 ${category}, 인천 부동산, ${category} 가이드`;
+  const keywords = `${category}, 하우징허브 ${category}, 부동산 실무, ${category} 가이드`;
   
   return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", ogImage, keywords);
 }
 
 function injectSubpageMetaTags(html: string, path: string, baseUrl: string): string {
-  let title = "하우징허브 인천";
-  let desc = "인천 지역 부동산, 청약 가점 계산, 전세대출 한도 시뮬레이션, 이사 가이드 및 등기부 독소조항 무상 방어 지식을 제공하는 임차인 안심 정주 포털입니다.";
+  let title = "하우징허브";
+  let desc = "실전 청약, 전월세 대항력, 주택 대출 심층 분석 공익 정보 포털입니다.";
   
   if (path === "/about") {
-    title = "소개 및 가치 | 하우징허브 인천";
-    desc = "하우징허브 인천은 임차인의 정주 안정성과 안심 부동산 거래 환경을 실현하기 위해 설립된 공익 지향 정보 포털입니다.";
+    title = "소개 및 집필 원칙 | 하우징허브";
+    desc = "하우징허브는 현장 실무 경험과 공식 국토부·LH 공고문에 기반한 검증된 주거 지식을 제공합니다.";
   } else if (path === "/toolkit") {
-    title = "스마트 주거 자가진단 툴킷 | 하우징허브 인천";
-    desc = "인천 지역 LTV/DSR 대출한도 모의 계산 및 청약 자가 점수(84점 만점) 진단을 제공하는 스마트 안심 툴킷입니다.";
+    title = "스마트 주거 자가진단 툴킷 | 하우징허브";
+    desc = "LTV/DSR 주택 대출 한도 계산 및 청약 자가 점수(84점 만점) 진단을 제공하는 실전 자가진단 툴킷입니다.";
   } else if (path === "/announcement") {
-    title = "공지사항 및 새소식 | 하우징허브 인천";
-    desc = "하우징허브 인천의 최신 정책 변화 공지, 신규 부동산 정보 가이드 추가 소식 및 공지사항을 확인하세요.";
+    title = "공지사항 및 정책 소식 | 하우징허브";
+    desc = "하우징허브의 최신 주거 정책 변화 공지, 신규 부동산 실무 가이드 추가 소식을 안내해 드립니다.";
   } else if (path === "/partnership") {
-    title = "제휴 및 협업 문의 | 하우징허브 인천";
-    desc = "공인중개사, 이사업체, 법무법인 등 인천 시민 주거 정주 발전에 협력할 파트너사를 상시 모집합니다.";
+    title = "제휴 및 독자 제보 문의 | 하우징허브";
+    desc = "공인중개사, 이사업체, 법무법인 등 국민 주거 복지 향상에 함께할 파트너사 문의 및 제보 창구입니다.";
   } else if (path === "/terms") {
-    title = "서비스 이용약관 | 하우징허브 인천";
-    desc = "하우징허브 인천 서비스 이용 약관 및 사용자 정보 권리 보호 세부 조항 안내.";
+    title = "서비스 이용약관 | 하우징허브";
+    desc = "하우징허브 서비스 이용 약관 및 사용자 권리 보호 세부 조항 안내.";
   } else if (path === "/privacy") {
-    title = "개인정보처리방침 | 하우징허브 인천";
-    desc = "하우징허브 인천은 사용자의 개인정보를 소중히 보호하며, 관련 법령을 엄격히 준수합니다.";
+    title = "개인정보처리방침 | 하우징허브";
+    desc = "하우징허브는 사용자의 개인정보를 소중히 보호하며, 개인정보보호법 및 관련 법령을 엄격히 준수합니다.";
   } else {
     return injectDefaultMetaTags(html, baseUrl);
   }
 
   const canonicalUrl = `${baseUrl}${path}`;
-  const keywords = "인천 부동산, 하우징허브, 안심 포털";
+  const keywords = "부동산 전문가, 주택청약, 전월세 특약, 하우징허브";
   
   return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", "", keywords);
 }

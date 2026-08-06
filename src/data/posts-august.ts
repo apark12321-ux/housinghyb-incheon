@@ -14,7 +14,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 198,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>주택도시기금 <strong>디딤돌 대출</strong> 승인 후 차주는 대출 실행일로부터 <strong>1개월 이내에 해당 주택에 전입</strong>을 완료해야 하며, 전입일로부터 <strong>최소 1년 이상 실거주</strong>를 유지해야 합니다. 전입 미이행 시 대출금 전액이 기한이익상실(EBL) 처리되어 즉시 회수되므로 사전에 실거주 입주 일정을 철저히 점검해야 합니다.</p>
       </div>
 
@@ -93,7 +93,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 312,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>인천 계양, 하남 교산, 남양주 왕숙 등 <strong>수도권 3기 신도시 사전청약 당첨자</strong>는 본청약 입주자모집공고일까지 <strong>무주택 세대 구성원 자격</strong>과 <strong>해당 지역 거주 기간 요건</strong>을 계속 유지해야 당첨 지위가 유지됩니다. 분양가상한제가 적용되는 본청약 분양가는 추정 분양가 대비 변동될 수 있으므로 잔금 DSR 대출 계획을 사전 점검하십시오.</p>
       </div>
 
@@ -140,7 +140,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 265,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>임차인은 임대차 기간 만료 <strong>6개월 전부터 2개월 전까지</strong> 임대인에게 <strong>계약갱신청구권</strong>을 행사할 수 있으며, 이 경우 임대료 인상률은 <strong>최대 5% 이내</strong>로 제한됩니다. 임대인이 본인 또는 직계존비속의 실거주를 이유로 거절한 후 제3자에게 임대하면 손해배상 청구가 가능합니다.</p>
       </div>
 
@@ -187,7 +187,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 274,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>2026년 <strong>스트레스 DSR 3단계</strong>가 본격 도입됨에 따라 금융권 주택담보대출 시 차주의 금리에 위험 가산금리가 100% 반영됩니다. 연 소득 7,000만원 가구 기준 대출 가능 한도가 약 5,000만원~8,000만원 가량 축소되므로 잔금 지급 전 대출한도 사전 역산이 필수적입니다.</p>
       </div>
 
@@ -253,7 +253,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 231,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>2026년 신혼부부 및 생애최초 특별공급은 <strong>맞벌이 가구 소득 기준이 도시근로자 월평균 소득의 최대 160%~200%까지 완화</strong>되었으며, 신생아 가구 대상 <strong>우선배정(20%~30%)</strong> 제도가 신설되어 혜택 대상이 넓어졌습니다.</p>
       </div>
 
@@ -290,7 +290,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 210,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>아파트 입주 사전방문 시 <strong>누수, 창호 단열 및 수평 상태, 전기 배선 누전, 타일 들뜸</strong>을 집중 점검해야 합니다. 발견된 하자는 지적 사항 사진과 함께 <strong>사전점검 조치요청서</strong>에 기재하여 시공사에 서면 제출해야 입주 전 보수가 이행됩니다.</p>
       </div>
 
@@ -328,7 +328,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 289,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>매매가 대비 전세 보증금 비율(전세가율)이 <strong>80%를 초과</strong>하거나, <strong>선순위 근저당+전세보증금 합계가 시세의 70%</strong>를 넘어서는 주택은 경매 진행 시 보증금 미반환 위험이 큽니다. 계약 전 HUG 또는 SGI 전세보증보험 가입 가능 여부를 선제 검증하십시오.</p>
       </div>
 
@@ -358,7 +358,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 242,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>2026년 하반기부터 <strong>신혼부부 버팀목 전세대출 소득 요건이 부부 합산 7,500만원에서 1억원으로 상향</strong> 조정되었으며, 대출 한도 또한 보완 적용됩니다. 기금e든든 사전 자격 심사를 통해 금리 우대(연 1.5%~2.7%대) 혜택을 사전에 확보할 수 있습니다.</p>
       </div>
 
@@ -388,7 +388,7 @@ export const POSTS_AUGUST: Post[] = [
     likes: 305,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & 19년 차 전문가 검수)</h4>
+        <h4>📌 핵심 요약 (Direct Answer & 주거 전문가 검수)</h4>
         <p>2026년 8월 전국 분양 예정 아파트는 총 32개 단지, 약 2만 4,000가구 규모입니다. 수도권 선호 단지(서울 재개발·재건축, 인천 3기 신도시 및 청라 등)는 당첨 가점 컷이 <strong>60~68점 이상</strong> 형성될 전망이므로 본인 통장 가점을 재검증하십시오.</p>
       </div>
 
