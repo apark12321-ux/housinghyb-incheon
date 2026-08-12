@@ -29,6 +29,256 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// ==========================================
+// [자동 포스팅 시스템 & 1일 1포스팅+ 스케줄러]
+// ==========================================
+const AUTO_POST_TOPICS = [
+  { topic: "2026년 신생아 특례대출 금리 우대 요건 및 실질 이자 절감 전략", category: "대출-금융" },
+  { topic: "전월세 계약 전 필수 체크: 등기부등본 을구 근저당과 확정일자 당일 효력", category: "전월세" },
+  { topic: "주택청약 무주택 기간 산정 기준 및 부적격 당첨 원천 방지법", category: "청약-분양" },
+  { topic: "디딤돌·버팀목 전세대출 소득 요건 상향 및 LTV DSR 한도 비교", category: "대출-금융" },
+  { topic: "이사 당일 필수 행정 절차: 전입신고 및 임대차 계약서 수기 보완 팁", category: "이사-인테리어" },
+  { topic: "청약통장 월 납입 인정액 25만원 상향 후 공공분양 저축 총액 인정 가이드", category: "청약-분양" },
+  { topic: "아파트 무순위 줍줍 청약 자격 조건과 당첨 확률 극대화 전략", category: "청약-분양" },
+  { topic: "전세보증금 반환보증 보험 HUG HFG 가입 요건 및 임대인 체납 검증", category: "전월세" },
+  { topic: "스트레스 DSR 3단계 시행에 따른 주택담보대출 한도 영향 및 자금 대책", category: "대출-금융" },
+  { topic: "셀프 입주 청소 및 이삿짐 센터 손해 배상 특약 작성 체크리스트", category: "이사-인테리어" },
+  { topic: "생애최초 주택구입자 취득세 감면 요건 및 정부 주거 금융 혜택", category: "대출-금융" },
+  { topic: "소액임차인 우선변제권 최우선 변제금 상한액 및 권리 보장 가이드", category: "전월세" },
+  { topic: "신혼부부 특별공급 소득 요건 완화 및 청약 통장 맞춤형 자금 플랜", category: "청약-분양" },
+  { topic: "임대차 3법 핵심 특약 및 만기 전 보증금 반환 계약서 작성 실무", category: "전월세" }
+];
+
+const autoPostsFilePath = path.join(process.cwd(), "src", "data", "auto-posts.json");
+
+function loadAutoPosts(): any[] {
+  try {
+    if (fs.existsSync(autoPostsFilePath)) {
+      const data = fs.readFileSync(autoPostsFilePath, "utf-8");
+      return JSON.parse(data) || [];
+    }
+  } catch (err) {
+    console.error("Auto posts load error:", err);
+  }
+  return [];
+}
+
+function saveAutoPosts(posts: any[]) {
+  try {
+    const dir = path.dirname(autoPostsFilePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(autoPostsFilePath, JSON.stringify(posts, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Auto posts save error:", err);
+  }
+}
+
+let autoPostsList: any[] = loadAutoPosts();
+
+function getActivePostsList(): any[] {
+  const merged = [...autoPostsList, ...POSTS];
+  return merged.sort((a, b) => {
+    const dateA = `${a.date || ""} ${a.time || "00:00"}`;
+    const dateB = `${b.date || ""} ${b.time || "00:00"}`;
+    return dateB.localeCompare(dateA);
+  });
+}
+
+async function generateAndPublishAutoPost(overrideTimeStr?: string) {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  let timeStr = overrideTimeStr;
+  if (!timeStr) {
+    const hh = String(now.getHours()).padStart(2, '0');
+    const min = String(now.getMinutes()).padStart(2, '0');
+    timeStr = `${hh}:${min}`;
+  }
+
+  const existingTitles = getActivePostsList().map(p => p.title);
+  const availableTopics = AUTO_POST_TOPICS.filter(t => !existingTitles.includes(t.topic));
+  const selectedTheme = availableTopics.length > 0
+    ? availableTopics[Math.floor(Math.random() * availableTopics.length)]
+    : AUTO_POST_TOPICS[Math.floor(Math.random() * AUTO_POST_TOPICS.length)];
+
+  console.log(`[AutoPost System] Triggering daily auto-post for ${todayStr} ${timeStr} - Topic: "${selectedTheme.topic}"`);
+
+  let postTitle = selectedTheme.topic;
+  let postContent = "";
+  let postExcerpt = "";
+  let postHashtags: string[] = ["하우징허브", "부동산정책", "주거안심", selectedTheme.category.replace("-", "")];
+  let postReadTime = "3분";
+
+  if (ai) {
+    try {
+      const prompt = `
+        부동산 및 주거 정책 전문가로서 다음 주제에 관해 완벽한 HTML 블로그 포스팅을 작성해 주세요.
+        주제: ${selectedTheme.topic}
+        카테고리: ${selectedTheme.category}
+
+        지침:
+        - <h2>, <h3>, <p>, <ul>, <li> 태그만을 사용하여 전문적이고 가독성 높은 한국어 문장으로 구성하세요.
+        - 실무 체크리스트 및 주거 안심 가이드 팁을 명확히 포함하세요.
+      `;
+
+      const response = await ai.models.generateContent({
+        model: "gemini-3.5-flash",
+        contents: prompt,
+        config: {
+          responseMimeType: "application/json",
+          responseSchema: {
+            type: Type.OBJECT,
+            properties: {
+              title: { type: Type.STRING },
+              content: { type: Type.STRING },
+              excerpt: { type: Type.STRING },
+              hashtags: { type: Type.ARRAY, items: { type: Type.STRING } },
+              readTime: { type: Type.STRING }
+            },
+            required: ["title", "content", "excerpt", "hashtags", "readTime"]
+          }
+        }
+      });
+
+      const resObj = JSON.parse(response.text);
+      if (resObj.title) postTitle = resObj.title;
+      if (resObj.content) postContent = resObj.content;
+      if (resObj.excerpt) postExcerpt = resObj.excerpt;
+      if (resObj.hashtags && resObj.hashtags.length > 0) postHashtags = resObj.hashtags;
+      if (resObj.readTime) postReadTime = resObj.readTime;
+    } catch (err) {
+      console.warn("[AutoPost System] Gemini generation failed, executing robust template fallback:", err);
+    }
+  }
+
+  if (!postContent) {
+    postContent = `
+      <h2>${postTitle} 전문가 실전 분석</h2>
+      <p>최근 주택 시장 및 금융 정책의 직·간접적인 변화 속에서 실거주 목적의 청약 대기자와 전월세 임차인은 정교한 실무 지식과 정확한 자금 계획을 기반으로 자산과 주거 안정을 도모해야 합니다. 본 칼럼에서는 필수 점검 사항을 세세히 안내합니다.</p>
+      <h3>1. 핵심 요건 검증 및 대출 한도 자가진단</h3>
+      <ul>
+        <li><strong>스트레스 DSR 및 LTV 모니터링:</strong> 주택담보대출 실행 시 본인의 실효 DSR 비율과 상환 능력을 사전 자가진단 계산기로 검증해야 승인 지연 및 금리 손실을 막을 수 있습니다.</li>
+        <li><strong>정부 저금리 정책 자금 배정:</strong> 디딤돌, 버팀목, 신생아 특례대출 등 주택도시기금 정책 금융 혜택 요건을 대조해 최우선 신청 전략을 수립하십시오.</li>
+      </ul>
+      <h3>2. 전월세 대항력 수호 및 계약서 작성 필수 특약</h3>
+      <ul>
+        <li><strong>권리 변동 및 선순위 채권 검사:</strong> 등기부등본 을구의 근저당권 설정 금액과 소유권 가압류 여부를 잔금 당일까지 집중 감시하십시오.</li>
+        <li><strong>전입신고와 확정일자 당일 처리:</strong> 계약 잔금일에 전입신고 및 확정일자를 부여받고 '잔금 이체 익일까지 담보권 설정 금지' 특약을 반드시 계약서에 명시하세요.</li>
+      </ul>
+      <p>하우징허브 주거 정책 기획팀은 실수요자의 권익 보호와 안전한 주거 환경을 위해 매일 검증된 리포트와 칼럼을 제공해 드립니다.</p>
+    `;
+    postExcerpt = `${selectedTheme.topic}에 관한 하우징허브 주거 정책 기획팀의 최신 실전 분석 리포트입니다.`;
+  }
+
+  const categoryImages: Record<string, string> = {
+    "대출-금융": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
+    "전월세": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800",
+    "이사-인테리어": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+    "청약-분양": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
+  };
+
+  const newPost = {
+    id: `auto-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
+    title: postTitle,
+    category: selectedTheme.category,
+    date: todayStr,
+    time: timeStr,
+    readTime: postReadTime,
+    image: categoryImages[selectedTheme.category] || categoryImages["청약-분양"],
+    excerpt: postExcerpt,
+    content: postContent,
+    hashtags: postHashtags,
+    isAutoGenerated: true
+  };
+
+  autoPostsList.unshift(newPost);
+  saveAutoPosts(autoPostsList);
+  console.log(`[AutoPost System] Published new post: "${newPost.title}" (${todayStr} ${timeStr})`);
+  return newPost;
+}
+
+interface ScheduleSlot {
+  timeStr: string;
+  executed: boolean;
+}
+
+let activeScheduleDate = "";
+let activeScheduleSlots: ScheduleSlot[] = [];
+
+function initRandomDailySchedule() {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  if (activeScheduleDate === todayStr && activeScheduleSlots.length > 0) {
+    return;
+  }
+
+  activeScheduleDate = todayStr;
+
+  const dailyPostCount = Math.floor(Math.random() * 2) + 1; // 1~2개 스케줄 생성
+  activeScheduleSlots = [];
+
+  for (let i = 0; i < dailyPostCount; i++) {
+    const randomHour = Math.floor(Math.random() * 15) + 8; // 08:00 ~ 22:59
+    const randomMin = Math.floor(Math.random() * 60);
+    const timeStr = `${String(randomHour).padStart(2, '0')}:${String(randomMin).padStart(2, '0')}`;
+    activeScheduleSlots.push({ timeStr, executed: false });
+  }
+
+  activeScheduleSlots.sort((a, b) => a.timeStr.localeCompare(b.timeStr));
+  console.log(`[AutoPost Scheduler] Daily random schedule initialized for ${todayStr}:`, activeScheduleSlots.map(s => s.timeStr).join(", "));
+}
+
+function runAutoPostSchedulerCheck() {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+  const currentHHMM = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+
+  if (activeScheduleDate !== todayStr) {
+    initRandomDailySchedule();
+  }
+
+  const allPosts = getActivePostsList();
+  const todayPosts = allPosts.filter(p => p.date === todayStr);
+
+  // 1일 1포스팅 이상 준수: 오늘성 포스팅이 0개라면 무조건 1개 즉시 생성
+  if (todayPosts.length === 0) {
+    console.log(`[AutoPost Scheduler] No post found for today (${todayStr}). Generating guaranteed daily post now...`);
+    generateAndPublishAutoPost(currentHHMM);
+    if (activeScheduleSlots.length > 0) {
+      activeScheduleSlots[0].executed = true;
+    }
+    return;
+  }
+
+  // 스케줄 시간 도래 시 포스팅
+  for (const slot of activeScheduleSlots) {
+    if (!slot.executed && currentHHMM >= slot.timeStr) {
+      slot.executed = true;
+      const alreadyCreated = todayPosts.some(p => p.time === slot.timeStr);
+      if (!alreadyCreated) {
+        console.log(`[AutoPost Scheduler] Reached scheduled time slot (${slot.timeStr}). Executing auto-post...`);
+        generateAndPublishAutoPost(slot.timeStr);
+      }
+    }
+  }
+}
+
+// 서버 구동 즉시 스케줄링 가동 및 1분마다 타이머 모니터링
+runAutoPostSchedulerCheck();
+setInterval(runAutoPostSchedulerCheck, 60000);
+
 // WWW -> non-WWW 301 Redirect (SEO 최적화: 도메인 파편화 방지 및 검색엔진 노출 통일)
 app.use((req, res, next) => {
   const host = req.headers.host || "";
@@ -98,16 +348,47 @@ app.get("/7065c4d36d9ee7471f10e55dd6f4a4bd.txt", (req, res) => {
 
 // API 1: 헬스체크 및 환경정보 제공
 app.get("/api/health", (req, res) => {
+  const activePosts = getActivePostsList();
   res.json({
     status: "ok",
     aiConfigured: !!aiApiKey,
-    postCount: POSTS.length
+    postCount: activePosts.length
   });
+});
+
+// API 1.5: 최신 실시간 포스팅 목록 및 스케줄 상태 조회
+app.get("/api/posts", (req, res) => {
+  const posts = getActivePostsList();
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+  const todayPosts = posts.filter(p => p.date === todayStr);
+
+  res.json({
+    posts,
+    totalCount: posts.length,
+    todayCount: todayPosts.length,
+    scheduleDate: activeScheduleDate,
+    scheduledSlots: activeScheduleSlots
+  });
+});
+
+// API 1.6: 어드민/테스트용 포스팅 수동 즉시 생성 트리거
+app.post("/api/admin/trigger-autopost", async (req, res) => {
+  try {
+    const newPost = await generateAndPublishAutoPost();
+    res.json({ status: "success", post: newPost });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || "Failed to trigger auto post" });
+  }
 });
 
 // API 2: 실시간 주거 컨설턴트 챗봇 (Gemini API 기반)
 app.post("/api/advisor", async (req, res) => {
   const { message, chatHistory = [], activePostId = null } = req.body;
+  const activePosts = getActivePostsList();
 
   if (!message) {
     return res.status(400).json({ error: "Message is required." });
@@ -116,21 +397,21 @@ app.post("/api/advisor", async (req, res) => {
   // 1. 관련 정보 컨텍스트 제공 준비
   let activePostContext = "";
   if (activePostId) {
-    const post = POSTS.find(p => p.id === activePostId);
+    const post = activePosts.find(p => p.id === activePostId);
     if (post) {
       activePostContext = `\n[사용자 열람 중인 아티클 정보]:\n제목: ${post.title}\n요약: ${post.excerpt}`;
     }
   }
 
   // 사용 가능한 하우징허브 내 주요 아티클 링크 목록 구성
-  const availableArticlesContext = POSTS.slice(0, 15).map(p => {
+  const availableArticlesContext = activePosts.slice(0, 15).map(p => {
     return `- [${p.category}] ${p.title} -> 링크: /post/${slugify(p.title)}`;
   }).join("\n");
 
-  // 전국 청약, 임대주택, 대출 상식 사전 주입
+  // 청약, 임대주택, 대출 상식 사전 주입
   const systemInstruction = `
     당신의 이름은 '하우징허브 AI 주거 비서'입니다.
-    전국의 청약 자격, 전월세 대항력, 이사 상식, 대출(디딤돌, 신생아 특례대출, 버팀목, DSR 등)에 통달한 실전 주거 정책 AI 비서입니다.
+    청약 자격, 전월세 대항력, 이사 상식, 대출(디딤돌, 신생아 특례대출, 버팀목, DSR 등)에 통달한 실전 주거 정책 AI 비서입니다.
 
     [★ 매우 중요 - 출력 포맷 및 분량 지침 ★]:
     1. **절대로 마크다운 기호(#, ##, ###, *, **, ---)를 답변에 포함하지 마십시오.**
@@ -151,7 +432,7 @@ app.post("/api/advisor", async (req, res) => {
   `;
 
   const findPostByKeyword = (kw: string) => {
-    const found = POSTS.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
+    const found = activePosts.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
     return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
   };
 
@@ -185,7 +466,7 @@ app.post("/api/advisor", async (req, res) => {
       fallbackText += `또한 계약 후에는 당일 즉시 전입신고와 확정일자를 처리해 대항력을 반드시 선점해 확보하세요.`;
     } else {
       fallbackText += `요청하신 사항 관련하여, 하우징허브가 준비한 안심 주거 가이드 아티클을 추천해 드립니다. <br/><br/>`;
-      const post = POSTS[0];
+      const post = activePosts[0];
       if (post) {
         fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
       }
@@ -249,7 +530,7 @@ app.post("/api/advisor", async (req, res) => {
         }
       } else {
         fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 안심 가이드 아티클을 추천해 드립니다. <br/><br/>`;
-        const post = POSTS[0];
+        const post = activePosts[0];
         if (post) {
           fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
         }
@@ -278,7 +559,7 @@ app.post("/api/generate", async (req, res) => {
 
   try {
     const prompt = `
-      전국 부동산 시장 및 실전 주거 정보에 관한 다음 주제에 관해 '가독성이 훌륭한 HTML 포스팅'을 완벽히 작성해 주세요.
+      부동산 시장 및 실전 주거 정보에 관한 다음 주제에 관해 '가독성이 훌륭한 HTML 포스팅'을 완벽히 작성해 주세요.
       주제: ${topic}
       카테고리: ${category}
       
@@ -582,7 +863,7 @@ function injectMetaTags(html: string, post: any, baseUrl: string): string {
 
 function injectDefaultMetaTags(html: string, baseUrl: string): string {
   const title = "하우징허브 | 실전 청약·전월세·주택대출 안심 주거 정보 포털";
-  const desc = "실수요자를 위한 전국 주택 청약 자격, 전월세 사기 방지 특약, 디딤돌·버팀목 대출 가이드 및 자가진단 시뮬레이터를 제공하는 공익 주거 정보 포털입니다.";
+  const desc = "실수요자를 위한 주택 청약 자격, 전월세 사기 방지 특약, 디딤돌·버팀목 대출 가이드 및 자가진단 시뮬레이터를 제공하는 공익 주거 정보 포털입니다.";
   const canonicalUrl = `${baseUrl}/`;
   const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
   const keywords = "주택청약, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 디딤돌 대출, 전세사기 방지, 부동산 전문가 칼럼";
@@ -594,7 +875,7 @@ function injectCategoryMetaTags(html: string, category: string, baseUrl: string)
   const title = `${category} 실시간 알짜 정보 및 전문가 가이드 | 하우징허브`;
   let desc = "";
   if (category === "청약-분양") {
-    desc = "전국 최신 청약 일정, 분양 정보, 청약가점 계산법, 무순위 줍줍 분석 및 당첨 확률 높이는 실전 노하우를 제공합니다.";
+    desc = "최신 청약 일정, 분양 정보, 청약가점 계산법, 무순위 줍줍 분석 및 당첨 확률 높이는 실전 노하우를 제공합니다.";
   } else if (category === "전월세") {
     desc = "전월세 사기 방지 대책, 등기부등본 권리 분석, 전세보증보험 가입 가이드 및 임차인 필수 특약 조항을 안내합니다.";
   } else if (category === "이사-인테리어") {
@@ -681,7 +962,7 @@ async function startServer() {
       const rawPostId = req.params.id || (req.query.post as string);
       if (rawPostId) {
         const decodedPostId = decodeURIComponent(rawPostId);
-        const post = POSTS.find(p => p.title === decodedPostId || p.id === decodedPostId || slugify(p.title) === decodedPostId);
+        const post = getActivePostsList().find(p => p.title === decodedPostId || p.id === decodedPostId || slugify(p.title) === decodedPostId);
         if (post) {
           if (isProd) {
             const slug = slugify(post.title);

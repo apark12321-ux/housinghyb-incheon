@@ -40,20 +40,37 @@ interface Message {
 
 
 export default function App() {
+  const [posts, setPosts] = useState<Post[]>(POSTS);
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
-  const [selectedRegion, setSelectedRegion] = useState<string>("전체");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
-  
-  // AI 이미지 피로감 방지 및 가독성 향상: 텍스트 중심 리포트 모드 ("text") vs 썸네일 보기 ("image")
-  const [cardViewStyle, setCardViewStyle] = useState<"text" | "image">("text");
-  const [showDetailImage, setShowDetailImage] = useState<boolean>(false);
   
   // 북마크 관리
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
     const saved = localStorage.getItem("hh_bookmarks");
     return saved ? JSON.parse(saved) : ["sub-1", "rent-1", "finance-1"];
   });
+
+  // 백엔드 자동 발행 포스팅 실시간 수신 및 동기화 (1일 1포스팅+ 스케줄 반영)
+  useEffect(() => {
+    const syncPosts = async () => {
+      try {
+        const res = await fetch("/api/posts");
+        if (res.ok) {
+          const data = await res.json();
+          if (data.posts && Array.isArray(data.posts) && data.posts.length > 0) {
+            setPosts(data.posts);
+          }
+        }
+      } catch (err) {
+        console.log("Post sync status:", err);
+      }
+    };
+
+    syncPosts();
+    const timer = setInterval(syncPosts, 30000);
+    return () => clearInterval(timer);
+  }, []);
 
   // 검색어를 초기 "Incheon" -> "" 로 편안히 리셋하거나, 전체 글이 잘 드러나도록 기본은 빈값으로 세팅 후 편리한 기둥 제작
   useEffect(() => {
@@ -131,7 +148,7 @@ export default function App() {
       }
 
       if (postIdentifier) {
-        const found = POSTS.find(
+        const found = posts.find(
           p => p.title === postIdentifier || p.id === postIdentifier || slugify(p.title) === postIdentifier
         );
         if (found) {
@@ -151,7 +168,7 @@ export default function App() {
     return () => {
       window.removeEventListener("popstate", handleLocationChange);
     };
-  }, []);
+  }, [posts]);
 
   // 상태 변화에 따른 브라우저 주소 및 문서 타이틀 동기화 (Path-based Routing 통합 처리)
   useEffect(() => {
@@ -190,7 +207,7 @@ export default function App() {
       if (isSubpage) {
         window.history.pushState(null, "", "/");
       }
-      document.title = "하우징허브 | 전국 실생활 청약, 임대, 전세대출 안심 정보 포털";
+      document.title = "하우징허브 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
     }
   }, [activePost, showDiagnosticPage, activeLegalTab]);
 
@@ -280,7 +297,7 @@ export default function App() {
     return saved ? JSON.parse(saved) : [
       { 
         role: "model", 
-        text: "반갑습니다! <strong>하우징허브 AI 주거 안심 비서</strong>입니다. <br/>전국의 청약 자격요건, 전월세 사기 차단 특약 조항, 스트레스 DSR 한도 분석부터 관심 지역의 맞춤 주거 정책 분석까지 무엇이든 편하게 물어보세요! 😊", 
+        text: "반갑습니다! <strong>하우징허브 AI 주거 안심 비서</strong>입니다. <br/>청약 자격요건, 전월세 사기 차단 특약 조항, 스트레스 DSR 한도 분석부터 맞춤 주거 정책 분석까지 무엇이든 편하게 물어보세요! 😊", 
         time: new Date().toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" }) 
       }
     ];
@@ -306,7 +323,7 @@ export default function App() {
   // 모든 사용가능한 유니크 해시태그 목록 추출 (가장 많이 나오는 우수 인디안 8선)
   const popularHashtags = useMemo(() => {
     const tagsMap: Record<string, number> = {};
-    POSTS.forEach(p => {
+    posts.forEach(p => {
       p.hashtags?.forEach(tag => {
         tagsMap[tag] = (tagsMap[tag] || 0) + 1;
       });
@@ -315,11 +332,11 @@ export default function App() {
       .sort((a, b) => b[1] - a[1])
       .slice(0, 10)
       .map(entry => entry[0]);
-  }, []);
+  }, [posts]);
 
   // 피드 필터링 로직
   const filteredPosts = useMemo(() => {
-    const list = POSTS.filter(post => {
+    const list = posts.filter(post => {
       if (!post) return false;
       const matchCategory = selectedCategory === "전체" || post.category === selectedCategory;
       const matchTag = !selectedTag || (post.hashtags && post.hashtags.includes(selectedTag));
@@ -328,30 +345,15 @@ export default function App() {
         (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (post.hashtags && post.hashtags.some(tag => tag && tag.toLowerCase().includes(searchTerm.toLowerCase())));
       
-      let matchRegion = true;
-      if (selectedRegion !== "전체") {
-        const titleLower = (post.title || "").toLowerCase();
-        const excerptLower = (post.excerpt || "").toLowerCase();
-        const tagsLower = (post.hashtags || []).map(t => t.toLowerCase());
-
-        const isIncheon = titleLower.includes("인천") || titleLower.includes("송도") || titleLower.includes("청라") || titleLower.includes("검단") || titleLower.includes("계양") || excerptLower.includes("인천") || excerptLower.includes("송도") || excerptLower.includes("청라") || tagsLower.includes("인천") || tagsLower.includes("송도") || tagsLower.includes("청라") || tagsLower.includes("검단") || tagsLower.includes("계양");
-        const isSeoul = titleLower.includes("서울") || titleLower.includes("강남") || titleLower.includes("여의도") || titleLower.includes("용산") || titleLower.includes("마포") || excerptLower.includes("서울") || excerptLower.includes("강남") || excerptLower.includes("여의도") || tagsLower.includes("서울") || tagsLower.includes("강남") || tagsLower.includes("여의도") || tagsLower.includes("용산") || tagsLower.includes("마포");
-        const isGyeonggi = titleLower.includes("경기") || titleLower.includes("분당") || titleLower.includes("판교") || titleLower.includes("일산") || titleLower.includes("수원") || titleLower.includes("광교") || excerptLower.includes("경기") || excerptLower.includes("분당") || tagsLower.includes("경기") || tagsLower.includes("분당") || tagsLower.includes("판교") || tagsLower.includes("일산") || tagsLower.includes("수원");
-
-        if (selectedRegion === "인천") {
-          matchRegion = isIncheon || (!isSeoul && !isGyeonggi);
-        } else if (selectedRegion === "서울") {
-          matchRegion = isSeoul || (!isIncheon && !isGyeonggi);
-        } else if (selectedRegion === "경기") {
-          matchRegion = isGyeonggi || (!isIncheon && !isSeoul);
-        }
-      }
-
-      return matchCategory && matchTag && matchSearch && matchRegion;
+      return matchCategory && matchTag && matchSearch;
     });
     // 최신 날짜 역순 기사 배치 (최신글 선두 배치 및 시각성 보장)
-    return [...list].sort((a, b) => b.date.localeCompare(a.date));
-  }, [selectedCategory, selectedTag, searchTerm, selectedRegion]);
+    return [...list].sort((a, b) => {
+      const dateA = `${a.date || ""} ${a.time || "00:00"}`;
+      const dateB = `${b.date || ""} ${b.time || "00:00"}`;
+      return dateB.localeCompare(dateA);
+    });
+  }, [posts, selectedCategory, selectedTag, searchTerm]);
 
   // 대출 계산 결과 산식 (실시간 정밀 모의 분석)
   const loanAnalysisResult = useMemo(() => {
@@ -543,7 +545,6 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 flex items-center justify-between">
           <div className="flex items-center space-x-3 cursor-pointer select-none" onClick={() => {
             setSelectedCategory("전체");
-            setSelectedRegion("전체");
             setSelectedTag(null);
             setSearchTerm("");
             setActivePost(null);
@@ -557,7 +558,7 @@ export default function App() {
               <h1 className="text-xl font-bold tracking-tight text-slate-900 font-display flex items-center space-x-1">
                 <span>HousingHub</span>
                 <span className="text-blue-600 text-[11px] font-semibold bg-blue-50 px-2 py-0.5 rounded-md ml-1.5 shadow-3xs">
-                  {selectedRegion === "전체" ? "전국" : selectedRegion}
+                  전문가 칼럼
                 </span>
               </h1>
               <p className="text-[10px] text-slate-500 font-medium">실수요자를 위한 실전 주거·청약 분석</p>
@@ -693,19 +694,6 @@ export default function App() {
                   </span>
                 </div>
               </div>
-
-              {/* 포스트 메인 이미지 */}
-              {activePost.image && (
-                <div className="my-6 rounded-2xl overflow-hidden shadow-xs border border-slate-200/90 max-h-[380px] bg-slate-50 flex items-center justify-center">
-                  <img 
-                    src={activePost.image} 
-                    alt={activePost.title} 
-                    className="w-full h-full object-cover max-h-[380px]"
-                    onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                    referrerPolicy="no-referrer"
-                  />
-                </div>
-              )}
 
               {/* 실제 정밀 본문 */}
               <div 
@@ -1086,10 +1074,10 @@ export default function App() {
                   <div className="w-7 h-7 rounded-lg bg-blue-600 flex items-center justify-center text-white">
                     <FileText className="w-4 h-4" />
                   </div>
-                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest font-mono">HousingHub Trust Center</span>
+                  <span className="text-xs font-semibold text-blue-400 uppercase tracking-widest font-mono">HousingHub Center</span>
                 </div>
                 <h2 className="text-xl font-bold mt-1 tracking-tight font-display text-white">
-                  법률 및 보도 안심 지원 서비스 센터
+                  하우징허브 안내 &amp; 정책 센터
                 </h2>
               </div>
               <button 
@@ -1111,7 +1099,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                🏠 하우징허브 소개
+                🏠 서비스 소개
               </button>
               <button
                 onClick={() => { setActiveLegalTab("privacy"); setIsContactSubmitted(false); }}
@@ -1131,7 +1119,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                📄 이용약관 (Terms)
+                📄 이용약관
               </button>
               <button
                 onClick={() => { setActiveLegalTab("disclaimer"); setIsContactSubmitted(false); }}
@@ -1141,7 +1129,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                ⚖️ 정보이용 면책고지
+                ⚖️ 면책고지
               </button>
               <button
                 onClick={() => { setActiveLegalTab("contact"); setIsContactSubmitted(false); }}
@@ -1151,7 +1139,7 @@ export default function App() {
                     : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
                 }`}
               >
-                ✉️ 1:1 전문가 문의 &amp; 제안
+                ✉️ 1:1 문의
               </button>
             </div>
 
@@ -1312,8 +1300,8 @@ export default function App() {
               {activeLegalTab === "contact" && (
                 <div className="space-y-6 text-left">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base font-bold text-slate-900">1:1 주거 안심 제안 및 공식 문의 소통 센터</h4>
-                    <p className="text-xs text-slate-400 mt-1">이용자 권익 보호와 주거 복지 제안 수렴을 위한 하우징허브 공식 소통 채널입니다.</p>
+                    <h4 className="text-base font-bold text-slate-900">1:1 문의 및 제안 센터</h4>
+                    <p className="text-xs text-slate-500 mt-1">서비스 관련 개선 제안이나 정보 오류 제보, 문의사항을 남겨주시면 신속히 답변해 드립니다.</p>
                   </div>
 
                   {isContactSubmitted ? (
@@ -1321,13 +1309,13 @@ export default function App() {
                       <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-700">
                         <CheckCircle2 className="w-6 h-6 animate-bounce" />
                       </div>
-                      <h5 className="text-base font-bold text-slate-900">문의 접수 완수</h5>
+                      <h5 className="text-base font-bold text-slate-900">문의 접수 완료</h5>
                       <div className="text-xs text-slate-600 leading-relaxed space-y-2 mx-auto max-w-xs">
-                        <p>당신의 소중한 개선 정보가 지원팀에 안전하게 접수 완료되었습니다.</p>
+                        <p>문의사항이 정상적으로 접수되었습니다.</p>
                         <div className="bg-white border border-green-100 px-3 py-1.5 rounded-lg font-mono font-bold text-green-700">
-                          접수 ID: {contactResultId}
+                          접수 번호: {contactResultId}
                         </div>
-                        <p>최대 24시간 이내 입력 이메일로 명쾌한 가치를 회신 전송하겠습니다.</p>
+                        <p>입력해주신 이메일로 신속히 회신드리겠습니다.</p>
                       </div>
                       <button 
                         onClick={() => { setIsContactSubmitted(false); }}
@@ -1340,52 +1328,52 @@ export default function App() {
                     <form onSubmit={handleContactSubmit} className="space-y-4 max-w-2xl mx-auto">
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div className="space-y-1">
-                          <label className="text-xs font-bold text-slate-700 block">회신받으실 성함</label>
+                          <label className="text-xs font-bold text-slate-700 block">이름</label>
                           <input 
                             type="text" 
                             required
                             value={contactName}
                             onChange={(e) => setContactName(e.target.value)}
                             placeholder="예: 홍길동"
-                            className="w-full px-3.5 py-2g bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                            className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
                           />
                         </div>
 
                         <div className="space-y-1">
-                          <label className="text-xs font-bold text-slate-700 block">회신받으실 이메일 주소</label>
+                          <label className="text-xs font-bold text-slate-700 block">이메일 주소</label>
                           <input 
                             type="email" 
                             required
                             value={contactEmail}
                             onChange={(e) => setContactEmail(e.target.value)}
                             placeholder="example@mail.com"
-                            className="w-full px-3.5 py-2g bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
+                            className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
                           />
                         </div>
                       </div>
 
                       <div className="space-y-1">
-                        <label className="text-xs font-bold text-slate-700 block">문의 성격 대분류</label>
+                        <label className="text-xs font-bold text-slate-700 block">문의 유형</label>
                         <select
                           value={contactCategory}
                           onChange={(e) => setContactCategory(e.target.value)}
-                          className="w-full px-3.5 py-2g bg-white border border-slate-200 rounded-xl text-xs focus:outline-none font-medium text-slate-700"
+                          className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none font-medium text-slate-700"
                         >
-                          <option value="general">포털 개선 건의 / 데이터 보도 오류 제보</option>
-                          <option value="financial">계산기 가산 정보 오류 가치 정정 피드백</option>
-                          <option value="alli">포털 광고 및 공식 업무 제휴안 제안</option>
+                          <option value="general">서비스 제안 및 오류 제보</option>
+                          <option value="financial">계산기 및 수치 관련 문의</option>
+                          <option value="alli">광고 및 제휴 문의</option>
                         </select>
                       </div>
 
                       <div className="space-y-1">
-                        <label className="text-xs font-bold text-slate-700 block">상세 문의 사유 및 의견 전달</label>
+                        <label className="text-xs font-bold text-slate-700 block">문의 내용</label>
                         <textarea 
                           required
                           rows={4}
                           value={contactMessage}
                           onChange={(e) => setContactMessage(e.target.value)}
-                          placeholder="이곳에 문의하실 자가 판단 규정 의견이나 질문 사항을 자유롭게 적어주시면 안심 지원 조치하겠습니다..."
-                          className="w-full px-3.5 py-2g bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none leading-relaxed"
+                          placeholder="문의하실 내용을 입력해 주세요."
+                          className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none leading-relaxed"
                         />
                       </div>
 
@@ -1398,12 +1386,12 @@ export default function App() {
                           {isContactLoading ? (
                             <>
                               <RefreshCcw className="w-3.5 h-3.5 animate-spin" />
-                              <span>정리안 전송 중...</span>
+                              <span>제출 중...</span>
                             </>
                           ) : (
                             <>
                               <Send className="w-3.5 h-3.5" />
-                              <span>소통 문의사항 무료 제출</span>
+                              <span>문의하기</span>
                             </>
                           )}
                         </button>
@@ -1418,92 +1406,55 @@ export default function App() {
           <>
             {/* 추천 주요 주거 칼럼 */}
             <section className="bg-white rounded-2xl border border-slate-200/90 p-4 sm:p-5 shadow-xs space-y-3.5">
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <div className="flex items-center space-x-2">
                   <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
                   <h2 className="text-base font-bold text-slate-900 font-display">오늘의 핵심 주거 칼럼 &amp; 리포트</h2>
                 </div>
-
-                {/* 지역별 허브 선택 필 */}
-                <div className="flex flex-wrap items-center gap-1 text-xs font-semibold">
-                  <span className="text-slate-400 mr-1 text-[11px] font-mono">지역 선택:</span>
-                  {[
-                    { key: "전체", label: "🌐 전국 종합" },
-                    { key: "서울", label: "🗼 서울" },
-                    { key: "인천", label: "⚓ 인천" },
-                    { key: "경기", label: "🌳 경기" }
-                  ].map(reg => (
-                    <button
-                      key={reg.key}
-                      onClick={() => setSelectedRegion(reg.key)}
-                      className={`px-2.5 py-1 rounded-md border text-[11px] cursor-pointer transition-all ${
-                        selectedRegion === reg.key 
-                          ? "bg-slate-900 border-slate-900 text-white font-bold shadow-xs" 
-                          : "bg-slate-50 border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-100"
-                      }`}
-                    >
-                      {reg.label}
-                    </button>
-                  ))}
-                </div>
               </div>
 
-              {/* 스포트라이트 기사 헤드라인 카드 (컴팩트 슬림 스타일) */}
+              {/* 스포트라이트 기사 헤드라인 카드 (컴팩트 텍스트 중심 스타일) */}
               {filteredPosts.length > 0 && (
                 <div 
                   onClick={() => setActivePost(filteredPosts[0])}
-                  className="group bg-slate-900 text-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer grid grid-cols-1 md:grid-cols-12"
+                  className="group bg-slate-900 text-white rounded-xl p-5 shadow-md hover:shadow-lg transition-all duration-300 cursor-pointer space-y-3"
                 >
-                  <div className="md:col-span-4 lg:col-span-4 relative h-40 md:h-auto overflow-hidden bg-slate-800 shrink-0">
-                    <img 
-                      src={filteredPosts[0].image} 
-                      alt={filteredPosts[0].title} 
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90"
-                      referrerPolicy="no-referrer"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-950/40" />
-                    <div className="absolute top-3 left-3 flex flex-wrap gap-1.5">
-                      <span className="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-md">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <span className="bg-blue-600 text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow-xs">
                         추천 칼럼
                       </span>
-                      <span className="bg-black/60 backdrop-blur-xs text-white text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-white/20">
+                      <span className="bg-slate-800 text-slate-300 text-[10px] font-semibold px-2.5 py-0.5 rounded-full border border-slate-700">
                         {filteredPosts[0].category}
                       </span>
                     </div>
+                    <div className="flex items-center space-x-2 text-[11px] font-mono text-slate-400">
+                      <Calendar className="w-3 h-3 text-blue-400" />
+                      <span>{filteredPosts[0].date}</span>
+                      <span>•</span>
+                      <Clock className="w-3 h-3 text-slate-400" />
+                      <span>{filteredPosts[0].readTime}</span>
+                    </div>
                   </div>
 
-                  <div className="md:col-span-8 lg:col-span-8 p-4 sm:p-5 flex flex-col justify-between space-y-2.5">
-                    <div className="space-y-1.5">
-                      <div className="flex items-center space-x-2 text-[11px] font-mono text-blue-300">
-                        <Calendar className="w-3 h-3" />
-                        <span>{filteredPosts[0].date}</span>
-                        <span>•</span>
-                        <Clock className="w-3 h-3" />
-                        <span>{filteredPosts[0].readTime}</span>
-                      </div>
-                      <h3 className="text-base sm:text-lg font-bold font-display leading-snug text-white group-hover:text-blue-300 transition-colors line-clamp-2">
-                        {filteredPosts[0].title}
-                      </h3>
-                      <p className="text-slate-300 text-xs leading-relaxed line-clamp-2">
-                        {filteredPosts[0].excerpt}
-                      </p>
-                    </div>
+                  <div className="space-y-1.5">
+                    <h3 className="text-base sm:text-lg font-bold font-display leading-snug text-white group-hover:text-blue-300 transition-colors">
+                      {filteredPosts[0].title}
+                    </h3>
+                    <p className="text-slate-300 text-xs leading-relaxed line-clamp-2">
+                      {filteredPosts[0].excerpt}
+                    </p>
+                  </div>
 
-                    <div className="pt-2.5 border-t border-slate-800/80 flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center text-[10px] font-bold text-white shrink-0">
-                          박
-                        </div>
-                        <div className="text-[10px]">
-                          <span className="font-bold text-slate-200">하우징허브</span>
-                          <span className="text-slate-400 ml-1.5 hidden sm:inline">실전 주거 칼럼</span>
-                        </div>
-                      </div>
-                      <span className="inline-flex items-center space-x-1 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
-                        <span>전문 읽기</span>
-                        <ChevronRight className="w-3.5 h-3.5" />
-                      </span>
+                  <div className="pt-2.5 border-t border-slate-800 flex items-center justify-between">
+                    <div className="text-[10px]">
+                      <span className="font-bold text-slate-200">하우징허브</span>
+                      <span className="text-slate-400 ml-1.5">실전 주거 칼럼</span>
                     </div>
+                    <span className="inline-flex items-center space-x-1 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
+                      <span>전문 읽기</span>
+                      <ChevronRight className="w-3.5 h-3.5" />
+                    </span>
                   </div>
                 </div>
               )}
@@ -1520,16 +1471,13 @@ export default function App() {
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
                     <div>
                       <h3 className="text-2xl font-bold text-slate-900 tracking-tight flex items-center space-x-2">
-                        <span>📚 {selectedRegion === "전체" ? "전국" : selectedRegion} 실전 주거 칼럼</span>
+                        <span>📚 실전 주거 칼럼</span>
                         <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100">
                           총 {filteredPosts.length}건
                         </span>
                       </h3>
                       <p className="text-xs text-slate-500 mt-1 font-medium">
-                        {selectedRegion === "전체" && "최신 정책 데이터를 토대로 작성한 실수요자 맞춤 칼럼"}
-                        {selectedRegion === "인천" && "인천 송도·검단·계양 등 핵심 지역 청약 및 전월세 실전 분석"}
-                        {selectedRegion === "서울" && "서울 주요 재개발·재건축 및 청약·전월세 실전 분석"}
-                        {selectedRegion === "경기" && "경기 3기 신도시 및 수도권 광역 교통망 연계 주거 정보"}
+                        최신 정책 데이터를 토대로 작성한 실수요자 맞춤 칼럼
                       </p>
                     </div>
                     
@@ -1585,154 +1533,63 @@ export default function App() {
                     </div>
                   )}
 
-                  {/* 카드 보기 스타일 선택바 (AI 이미지 남발 방지 & 가독성 우대 모드) */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 bg-slate-100/80 p-1.5 rounded-xl border border-slate-200/70">
-                    <span className="text-[11px] font-bold text-slate-600 pl-2 flex items-center space-x-1">
-                      <FileText className="w-3.5 h-3.5 text-blue-600" />
-                      <span>칼럼 표시 방식:</span>
-                    </span>
-                    <div className="flex items-center space-x-1">
-                      <button
-                        onClick={() => setCardViewStyle("text")}
-                        className={`px-3 py-1 text-xs font-bold rounded-lg transition-all flex items-center space-x-1 cursor-pointer ${
-                          cardViewStyle === "text"
-                            ? "bg-white text-blue-700 shadow-2xs border border-slate-200/80 font-bold"
-                            : "text-slate-500 hover:text-slate-800"
-                        }`}
-                      >
-                        <span>📄 텍스트 리포트 모드 (가독성 우대)</span>
-                      </button>
-                      <button
-                        onClick={() => setCardViewStyle("image")}
-                        className={`px-3 py-1 text-xs font-bold rounded-lg transition-all flex items-center space-x-1 cursor-pointer ${
-                          cardViewStyle === "image"
-                            ? "bg-white text-blue-700 shadow-2xs border border-slate-200/80 font-bold"
-                            : "text-slate-500 hover:text-slate-800"
-                        }`}
-                      >
-                        <span>🖼️ 썸네일 함께 보기</span>
-                      </button>
-                    </div>
-                  </div>
-
                   {/* 아티클 카드 그리드 */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     {filteredPosts.length === 0 ? (
                       <div className="col-span-full bg-white rounded-3xl border border-slate-200 p-12 text-center text-slate-500">
                         <p className="font-bold">일치하는 지식 아티클이 없습니다.</p>
-                        <p className="text-xs text-slate-400 mt-1">검색어를 지우거나 카테고리 기둥에서 찾아보세요.</p>
+                        <p className="text-xs text-slate-400 mt-1">검색어를 다시 확인하거나 다른 카테고리를 선택해 보세요.</p>
                       </div>
                     ) : (
                       filteredPosts.map(post => {
                         const isBookmarked = bookmarks.includes(post.id);
                         
-                        if (cardViewStyle === "text") {
-                          return (
-                            <article 
-                              key={post.id}
-                              onClick={() => setActivePost(post)}
-                              className="group bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500 p-5 hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between space-y-3 min-h-[200px]"
-                            >
-                              <div className="space-y-2.5">
-                                <div className="flex items-center justify-between text-[11px] font-mono">
-                                  <div className="flex items-center space-x-2">
-                                    <span className="bg-blue-50 text-blue-700 font-bold px-2.5 py-0.5 rounded-full border border-blue-100">
-                                      {post.category}
-                                    </span>
-                                    <span className="text-slate-400 font-medium">{post.date}</span>
-                                  </div>
-                                  <div className="flex items-center space-x-2">
-                                    <span className="text-slate-400 text-[11px]">{post.readTime}</span>
-                                    <button 
-                                      onClick={(e) => { e.stopPropagation(); toggleBookmark(post.id, e); }}
-                                      className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
-                                    >
-                                      <Heart className={`w-4 h-4 ${isBookmarked ? "fill-rose-500 text-rose-500" : ""}`} />
-                                    </button>
-                                  </div>
-                                </div>
-
-                                <h4 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
-                                  {post.title}
-                                </h4>
-
-                                <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
-                                  {post.excerpt}
-                                </p>
-                              </div>
-
-                              <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
-                                <div className="flex flex-wrap gap-1">
-                                  {post.hashtags?.slice(0, 3).map(tag => (
-                                    <span key={tag} className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">
-                                      #{tag}
-                                    </span>
-                                  ))}
-                                </div>
-                                <span className="text-blue-600 font-bold flex items-center space-x-0.5 group-hover:translate-x-1 transition-transform">
-                                  <span>칼럼 읽기</span>
-                                  <ChevronRight className="w-3.5 h-3.5" />
-                                </span>
-                              </div>
-                            </article>
-                          );
-                        }
-
                         return (
                           <article 
                             key={post.id}
                             onClick={() => setActivePost(post)}
-                            className="group bg-white rounded-2xl border border-slate-200/85 hover:border-blue-500/30 overflow-hidden hover:shadow-lg transition-all duration-300 cursor-pointer flex flex-col h-[380px]"
+                            className="group bg-white rounded-2xl border border-slate-200/90 hover:border-blue-500 p-5 hover:shadow-md transition-all duration-200 cursor-pointer flex flex-col justify-between space-y-3 min-h-[200px]"
                           >
-                            <div className="relative h-44 overflow-hidden bg-slate-100">
-                              <img 
-                                src={post.image} 
-                                alt={post.title} 
-                                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                                referrerPolicy="no-referrer"
-                              />
-                              <span className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[11px] font-bold text-slate-800 px-2.5 py-1 rounded-full shadow-xs">
-                                {post.category}
-                              </span>
-                              <button 
-                                onClick={(e) => { e.stopPropagation(); toggleBookmark(post.id, e); }}
-                                className="absolute top-3 right-3 p-2 rounded-full bg-white/90 hover:bg-white text-slate-700 shadow-xs hover:scale-110 transition-all cursor-pointer"
-                              >
-                                <Heart className={`w-4 h-4 transition-colors ${
-                                  isBookmarked ? "fill-rose-500 text-rose-500" : "text-slate-400"
-                                }`} />
-                              </button>
-                            </div>
-
-                            <div className="p-5 flex-1 flex flex-col justify-between">
-                              <div className="space-y-2">
-                                <div className="flex items-center justify-between text-[11px] font-mono">
-                                  <span className="flex items-center font-bold text-slate-700 bg-slate-100/90 px-2 py-0.5 rounded border border-slate-200/50">
-                                    <Calendar className="w-3 h-3 mr-1 text-blue-600" />
-                                    {post.date}
+                            <div className="space-y-2.5">
+                              <div className="flex items-center justify-between text-[11px] font-mono">
+                                <div className="flex items-center space-x-2">
+                                  <span className="bg-blue-50 text-blue-700 font-bold px-2.5 py-0.5 rounded-full border border-blue-100">
+                                    {post.category}
                                   </span>
-                                  <span className="flex items-center text-slate-400 font-medium">
-                                    <Clock className="w-3 h-3 mr-1 text-slate-300" />
-                                    {post.readTime}
-                                  </span>
+                                  <span className="text-slate-400 font-medium">{post.date}</span>
                                 </div>
-                                <h4 className="text-sm font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
-                                  {post.title}
-                                </h4>
-                                <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                                  {post.excerpt}
-                                </p>
+                                <div className="flex items-center space-x-2">
+                                  <span className="text-slate-400 text-[11px]">{post.readTime}</span>
+                                  <button 
+                                    onClick={(e) => { e.stopPropagation(); toggleBookmark(post.id, e); }}
+                                    className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
+                                  >
+                                    <Heart className={`w-4 h-4 ${isBookmarked ? "fill-rose-500 text-rose-500" : ""}`} />
+                                  </button>
+                                </div>
                               </div>
 
-                              {/* 해시태그 프롬프트 */}
-                              <div className="flex flex-wrap gap-1 mt-3">
+                              <h4 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors leading-snug">
+                                {post.title}
+                              </h4>
+
+                              <p className="text-xs text-slate-600 leading-relaxed line-clamp-3">
+                                {post.excerpt}
+                              </p>
+                            </div>
+
+                            <div className="pt-3 border-t border-slate-100 flex items-center justify-between text-[11px]">
+                              <div className="flex flex-wrap gap-1">
                                 {post.hashtags?.slice(0, 3).map(tag => (
-                                  <span key={tag} className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded-md">
+                                  <span key={tag} className="text-[10px] bg-slate-100 text-slate-500 px-1.5 py-0.5 rounded">
                                     #{tag}
                                   </span>
                                 ))}
                               </div>
+                              <span className="text-blue-600 font-bold flex items-center space-x-0.5 group-hover:translate-x-1 transition-transform">
+                                <span>칼럼 읽기</span>
+                                <ChevronRight className="w-3.5 h-3.5" />
+                              </span>
                             </div>
                           </article>
                         );
@@ -1755,7 +1612,7 @@ export default function App() {
               </div>
 
               <div className="space-y-3">
-                {POSTS.slice(0, 5).map((post, idx) => (
+                {posts.slice(0, 5).map((post, idx) => (
                   <div
                     key={post.id}
                     onClick={() => setActivePost(post)}
@@ -1842,7 +1699,7 @@ export default function App() {
                     <p className="text-[11px]">보관 중인 아티클이 없습니다.</p>
                   </div>
                 ) : (
-                  POSTS.filter(p => bookmarks.includes(p.id)).map(post => (
+                  posts.filter(p => bookmarks.includes(p.id)).map(post => (
                     <div 
                       key={post.id}
                       onClick={() => setActivePost(post)}
@@ -1940,7 +1797,7 @@ export default function App() {
               {/* 퀵버튼 추천 */}
               <div className="p-2 border-t border-slate-100 bg-white grid grid-cols-1 gap-1">
                 <button 
-                  onClick={() => handleQuickQuestion(`${selectedRegion === "전체" ? "수도권" : selectedRegion} 신혼 가구인데 신생아 대출이랑 보금자리론 중 무엇이 유리해?`)}
+                  onClick={() => handleQuickQuestion("신혼 가구인데 신생아 대출이랑 보금자리론 중 무엇이 유리해?")}
                   className="text-[10px] text-left text-slate-600 hover:text-blue-600 p-1.5 rounded-lg hover:bg-slate-50 transition-colors truncate"
                 >
                   ❓ 신생아 특례 vs 보금자리론 비교해줘
@@ -1991,7 +1848,7 @@ export default function App() {
                 <h3 className="text-lg font-bold font-display tracking-tight">HousingHub</h3>
               </div>
               <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-                하우징허브는 실수요자의 권리보호와 주거복지 증진을 목적으로 하는 무상의 공익 정보 포털입니다. 전국 주택 청약, 전월세 대항력, 주택 대출 심층 분석 지식을 세세히 전달합니다.
+                하우징허브는 실수요자의 권리보호와 주거복지 증진을 목적으로 하는 무상의 공익 정보 포털입니다. 주택 청약, 전월세 대항력, 주택 대출 심층 분석 지식을 세세히 전달합니다.
               </p>
             </div>
 
@@ -2086,7 +1943,6 @@ export default function App() {
               <span>하우징허브 (HousingHub)</span>
               <span>집필 및 편집: 하우징허브 주거 정책 기획팀</span>
               <span>공식 이메일: apark12321@gmail.com</span>
-              <span>애드센스 파트너: ca-pub-9552509372228899</span>
             </div>
             <p className="text-slate-500">
               하우징허브(zip9.kr)는 부동산 청약, 임대차, 주택 대출 칼럼을 제공하는 전문 지식 포털입니다. 본 사이트 내 수록된 정보 및 계산기 결과는 참고용 자료이며, 실제 계약이나 청약 신청 시에는 해당 기관의 공식 공고문을 반드시 최종 확인하시기 바랍니다.

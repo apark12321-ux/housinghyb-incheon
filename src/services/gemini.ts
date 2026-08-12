@@ -114,10 +114,10 @@ export async function generateBlogPost(topic: string, category: string) {
           console.error("All models failed in generateBlogPost, running local static generation fallback:", fallbackError2);
           
           const localData = {
-            title: topic.trim() || "전국 주거 정책 분석 및 로컬 마스터 플랜",
+            title: topic.trim() || "주거 정책 분석 및 로컬 마스터 플랜",
             content: `
-              <h2>전국 주거 경제 및 부동산 전문가 분석 가이드</h2>
-              <p>전국 주요 공공 분양 단지 정보 및 전월세 안심 대책은 단순한 뉴스 보도가 아닌, 개별 거주 가구의 재정적 생존 전략과 연결되어 있습니다. 본 고에서는 그 구체적인 실무 대책과 전략을 심도 있게 분석해 드립니다.</p>
+              <h2>주거 경제 및 부동산 전문가 분석 가이드</h2>
+              <p>주요 공공 분양 단지 정보 및 전월세 안심 대책은 단순한 뉴스 보도가 아닌, 개별 거주 가구의 재정적 생존 전략과 연결되어 있습니다. 본 고에서는 그 구체적인 실무 대책과 전략을 심도 있게 분석해 드립니다.</p>
               <h3>1. 철저한 예산 산정과 LTV 기준 분석</h3>
               <p>아파트 청약 및 주택 매입을 준비하기 전, 나의 정확한 주택담보대출 LTV 비율과 실효 DSR(총부채원리금상환비율) 한도를 명확히 파악하는 것이 최선순위입니다. 자격 제한이나 추가 대출 연동 이력 등을 필히 체크해야 합니다.</p>
               <h3>2. 공공택지 특별공급 우선 순위 공략</h3>
