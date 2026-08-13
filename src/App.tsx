@@ -32,6 +32,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
 import { Post, Category, slugify } from "./types";
 import { AdSenseSlot } from "./components/AdSenseSlot";
+import { SubscriptionCalendar } from "./components/SubscriptionCalendar";
 
 interface Message {
   role: "user" | "model";
@@ -92,6 +93,36 @@ export default function App() {
 
   // 상세 보기 모달 관련
   const [activePost, setActivePost] = useState<Post | null>(null);
+
+  // 아티클 독서 진행률 (Scroll-based Reading Progress Bar) 계산
+  const [readingProgress, setReadingProgress] = useState<number>(0);
+
+  useEffect(() => {
+    if (!activePost) {
+      setReadingProgress(0);
+      return;
+    }
+
+    const calculateReadingProgress = () => {
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (scrollHeight <= 0) {
+        setReadingProgress(100);
+        return;
+      }
+      const currentScroll = window.scrollY;
+      const progress = Math.min(100, Math.max(0, (currentScroll / scrollHeight) * 100));
+      setReadingProgress(progress);
+    };
+
+    window.addEventListener("scroll", calculateReadingProgress, { passive: true });
+    window.addEventListener("resize", calculateReadingProgress, { passive: true });
+    calculateReadingProgress();
+
+    return () => {
+      window.removeEventListener("scroll", calculateReadingProgress);
+      window.removeEventListener("resize", calculateReadingProgress);
+    };
+  }, [activePost]);
 
   // 자가진단 계산기 탭: 'loan' (대출한도) | 'score' (청약가점)
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
@@ -532,7 +563,17 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white relative">
+      {/* 아티클 독서 진행률 프로그레스 바 (상단 고정) */}
+      {activePost && (
+        <div className="fixed top-0 left-0 right-0 z-50 h-1 sm:h-1.5 bg-slate-200/80 w-full backdrop-blur-xs pointer-events-none">
+          <div 
+            className="h-full bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500 transition-all duration-150 ease-out shadow-xs"
+            style={{ width: `${readingProgress}%` }}
+          />
+        </div>
+      )}
+
       {/* 공식 미디어 상단 가이드 띠 */}
       <div className="bg-slate-900 text-slate-300 text-xs font-medium py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -700,17 +741,21 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {activePost ? (
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
-            {/* 상단 브레드크럼 / 뒤로가기 버튼 */}
-            <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
+            {/* 상단 브레드크럼 / 뒤로가기 버튼 & 독서 진행률 배지 */}
+            <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/90 backdrop-blur-xs sticky top-20 z-30 shadow-2xs">
               <button 
                 onClick={() => setActivePost(null)}
-                className="inline-flex items-center space-x-2 text-slate-600 hover:text-purple-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+                className="inline-flex items-center space-x-2 text-slate-600 hover:text-blue-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
                 <span>목록으로 돌아가기</span>
               </button>
-              <div className="text-[11px] font-mono text-slate-400">
-                하우징허브 &gt; {activePost.category}
+              <div className="flex items-center space-x-3 text-xs font-mono">
+                <span className="hidden sm:inline text-slate-400">하우징허브 &gt; {activePost.category}</span>
+                <span className="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-full border border-blue-100/80 flex items-center gap-1.5 shadow-2xs">
+                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
+                  <span>독서 진행률 {Math.round(readingProgress)}%</span>
+                </span>
               </div>
             </div>
 
@@ -1503,6 +1548,12 @@ export default function App() {
                 </div>
               </div>
             </section>
+
+            {/* 실시간 주요 청약 일정 캘린더 */}
+            <SubscriptionCalendar 
+              onSelectPost={(post) => setActivePost(post)} 
+              posts={POSTS} 
+            />
 
             {/* 오늘의 추천 주거 리포트 헤드라인 */}
             {filteredPosts.length > 0 && (

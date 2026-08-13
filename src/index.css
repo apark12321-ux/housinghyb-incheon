@@ -20,7 +20,7 @@ body {
   color: #0f172a;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  letter-spacing: -0.025em; /* 프리텐다드 모바일/데스크톱 가독성 최적화 자간 */
+  letter-spacing: -0.01em; /* 모바일/데스크톱 최적 자간 -0.01em */
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -51,7 +51,7 @@ body {
   border-left: 5px solid #2563eb;
   padding-left: 1rem;
   line-height: 1.4;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 
 @media (max-width: 640px) {
@@ -68,7 +68,7 @@ body {
   color: #1e293b;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.01em;
   line-height: 1.45;
 }
 
@@ -79,8 +79,9 @@ body {
 }
 
 .article-rich-content p {
-  font-size: 1.125rem; /* 18px로 대폭 증대하여 시원시원한 가독성 확보 */
-  line-height: 1.85; /* 여유로운 줄 간격 */
+  font-size: 1.15rem; /* 18.4px로 본문 폰트 상향 조정 */
+  line-height: 1.9; /* 쾌적한 1.9 행간 적용 */
+  letter-spacing: -0.01em; /* 자간 -0.01em 적용 */
   color: #334155; /* 선명한 고대비 슬레이트 */
   margin-bottom: 1.5rem;
   word-break: keep-all;
@@ -88,8 +89,9 @@ body {
 
 @media (max-width: 640px) {
   .article-rich-content p {
-    font-size: 1.03125rem; /* 모바일에서도 16.5px 이상으로 눈 편한 가독성 제공 */
-    line-height: 1.75;
+    font-size: 1.15rem; /* 모바일 환경에서도 동일하게 1.15rem 적용 */
+    line-height: 1.9;
+    letter-spacing: -0.01em;
   }
 }
 
@@ -108,15 +110,17 @@ body {
 }
 
 .article-rich-content li {
-  font-size: 1.125rem;
+  font-size: 1.15rem;
+  line-height: 1.9;
+  letter-spacing: -0.01em;
   margin-bottom: 0.75rem;
-  line-height: 1.8;
 }
 
 @media (max-width: 640px) {
   .article-rich-content li {
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.15rem;
+    line-height: 1.9;
+    letter-spacing: -0.01em;
   }
 }
 
