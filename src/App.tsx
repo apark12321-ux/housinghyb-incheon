@@ -494,9 +494,9 @@ export default function App() {
     );
   };
 
-  // 선택된 카테고리별 유니크 해시태그 목록 추출 (전체인 경우 전체 기반)
+  // 선택된 카테고리별 유니크 해시태그 목록 추출 (전체 또는 청약일정인 경우 전체 기반)
   const popularHashtags = useMemo(() => {
-    const targetPosts = selectedCategory === "전체" 
+    const targetPosts = (selectedCategory === "전체" || selectedCategory === "청약일정")
       ? posts 
       : posts.filter(p => p.category === selectedCategory);
 
@@ -518,7 +518,11 @@ export default function App() {
   const filteredPosts = useMemo(() => {
     const list = posts.filter(post => {
       if (!post) return false;
-      const matchCategory = selectedCategory === "전체" || post.category === selectedCategory;
+      const matchCategory = selectedCategory === "전체" 
+        ? true 
+        : selectedCategory === "청약일정" 
+        ? post.category === "청약-분양" 
+        : post.category === selectedCategory;
       
       let matchSubCategory = true;
       if (selectedSubCategory && selectedSubCategory !== "전체 보기") {
@@ -791,6 +795,7 @@ export default function App() {
             {[
               { id: "전체", label: "🏠 전체 리포트" },
               { id: "청약-분양", label: "🏢 청약·분양" },
+              { id: "청약일정", label: "📅 청약일정" },
               { id: "전월세", label: "🔑 전월세 안심" },
               { id: "대출-금융", label: "💰 대출·금융" },
               { id: "이사-인테리어", label: "🚚 이사·주거" }
@@ -854,6 +859,7 @@ export default function App() {
           {[
             { id: "전체", label: "🏠 전체" },
             { id: "청약-분양", label: "🏢 청약·분양" },
+            { id: "청약일정", label: "📅 청약일정" },
             { id: "전월세", label: "🔑 전월세" },
             { id: "대출-금융", label: "💰 대출·금융" },
             { id: "이사-인테리어", label: "🚚 이사·주거" }
@@ -1646,6 +1652,78 @@ export default function App() {
               )}
             </div>
           </div>
+        ) : selectedCategory === "청약일정" ? (
+          /* 청약일정 전용 카테고리 페이지 */
+          <div className="space-y-8">
+            {/* 청약일정 전용 카테고리 헤더 배너 */}
+            <section className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-blue-900/40 relative overflow-hidden space-y-4">
+              <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
+              <div className="relative z-10 space-y-3">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-xs flex items-center gap-1.5">
+                    <Calendar className="w-3.5 h-3.5" />
+                    <span>2026 전국 청약일정 캘린더</span>
+                  </span>
+                  <span className="bg-slate-800/90 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">
+                    한국부동산원 청약홈 기준 실시간 검증
+                  </span>
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight font-display text-white">
+                  전국 아파트 분양·청약 일정 캘린더
+                </h2>
+                <p className="text-sm sm:text-base text-slate-300 max-w-3xl leading-relaxed">
+                  특별공급, 1·2순위 청약 접수일부터 당첨자 발표, 계약 진행 일정까지 스마트하게 모아보세요. 
+                  단지별 규제 사항(분양가상한제, 실거주의무, 전매제한) 및 예상 분양가를 한눈에 비교할 수 있습니다.
+                </p>
+              </div>
+            </section>
+
+            {/* 청약일정 캘린더 전용 컴포넌트 */}
+            <SubscriptionCalendar 
+              onSelectPost={(post) => setActivePost(post)} 
+              posts={POSTS} 
+            />
+
+            {/* 청약관련 추천 칼럼 목록 */}
+            <section className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-xs space-y-6">
+              <div className="border-b border-slate-100 pb-4">
+                <h3 className="text-xl font-bold text-slate-900 flex items-center space-x-2 font-display">
+                  <Building2 className="w-5 h-5 text-blue-600" />
+                  <span>🏢 청약 가점 &amp; 신청 전 필독 가이드</span>
+                </h3>
+                <p className="text-xs text-slate-500 mt-1">청약홈 신청 전 반드시 알아야 할 2026년 최신 개정 가이드라인</p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {posts.filter(p => p.category === "청약-분양").slice(0, 3).map(post => (
+                  <article 
+                    key={post.id}
+                    onClick={() => setActivePost(post)}
+                    className="group bg-slate-50 rounded-2xl border border-slate-200 hover:border-blue-500 p-5 hover:shadow-md transition-all cursor-pointer flex flex-col justify-between space-y-3"
+                  >
+                    <div className="space-y-2">
+                      <span className="text-[11px] font-bold text-blue-600 bg-blue-100/70 px-2.5 py-0.5 rounded-md">
+                        {post.category}
+                      </span>
+                      <h4 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors line-clamp-2 leading-snug">
+                        {post.title}
+                      </h4>
+                      <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                        {post.excerpt}
+                      </p>
+                    </div>
+                    <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-400">
+                      <span>{post.date}</span>
+                      <span className="text-blue-600 font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
+                        <span>리포트 보기</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </span>
+                    </div>
+                  </article>
+                ))}
+              </div>
+            </section>
+          </div>
         ) : (
           <>
             {/* 하우징허브 사이트 목적 및 미디어 히어로 배너 */}
@@ -1675,11 +1753,23 @@ export default function App() {
                 <div className="pt-2 flex flex-wrap gap-3">
                   <button 
                     onClick={() => {
+                      setSelectedCategory("청약일정");
+                      setActivePost(null);
+                      setActiveLegalTab(null);
+                      setShowDiagnosticPage(false);
+                    }}
+                    className="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-md cursor-pointer flex items-center space-x-2"
+                  >
+                    <Calendar className="w-4 h-4" />
+                    <span>실시간 청약 캘린더</span>
+                  </button>
+                  <button 
+                    onClick={() => {
                       setShowDiagnosticPage(true);
                       setActivePost(null);
                       setActiveLegalTab(null);
                     }}
-                    className="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-md cursor-pointer flex items-center space-x-2"
+                    className="px-5 py-3 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold rounded-xl transition-all border border-slate-700 cursor-pointer flex items-center space-x-2"
                   >
                     <Calculator className="w-4 h-4" />
                     <span>청약가점 &amp; 대출한도 계산기</span>
@@ -1698,12 +1788,6 @@ export default function App() {
                 </div>
               </div>
             </section>
-
-            {/* 실시간 주요 청약 일정 캘린더 */}
-            <SubscriptionCalendar 
-              onSelectPost={(post) => setActivePost(post)} 
-              posts={POSTS} 
-            />
 
             {/* 오늘의 추천 주거 리포트 헤드라인 */}
             {filteredPosts.length > 0 && (
@@ -1974,6 +2058,31 @@ export default function App() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* 청약일정 캘린더 바로가기 사이드바 배너 */}
+            <div 
+              onClick={() => {
+                setSelectedCategory("청약일정");
+                setActivePost(null);
+                setActiveLegalTab(null);
+                setShowDiagnosticPage(false);
+              }}
+              className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 shadow-md space-y-3 border border-indigo-900/50 cursor-pointer hover:border-blue-400 transition-all group"
+            >
+              <div className="flex items-center justify-between">
+                <div className="inline-flex items-center space-x-1.5 bg-blue-500/20 text-blue-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-blue-400/30">
+                  <Calendar className="w-3.5 h-3.5" />
+                  <span>2026 청약 일정</span>
+                </div>
+                <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
+              </div>
+              <h4 className="text-base font-bold font-display leading-snug">
+                전국 아파트 분양·청약 캘린더 &rarr;
+              </h4>
+              <p className="text-xs text-slate-300 leading-relaxed">
+                특별공급, 1순위 접수, 당첨자 발표일을 한눈에 대조할 수 있는 전용 캘린더를 확인해 보세요.
+              </p>
             </div>
 
             {/* 내 집 마련 진단 툴킷 바로가기 배너 */}
