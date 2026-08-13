@@ -48,6 +48,29 @@ const SUBCATEGORY_MAP: Record<string, string[]> = {
   "이사-인테리어": ["전체 보기", "이사준비·체크리스트", "리모델링·공간배치", "입주청소·손해배상"]
 };
 
+// 각 세부 주제(중분류)별 고도화 키워드 매핑 (리포트 유실 방지 및 정밀 검색)
+const SUBCATEGORY_KEYWORDS: Record<string, string[]> = {
+  // 청약-분양
+  "공공·민간 특별공급": ["특별공급", "특공", "공공분양", "민간분양", "신생아", "생애최초", "신혼부부", "다자녀", "노부모", "공공", "분양"],
+  "무순위·줍줍": ["무순위", "줍줍", "잔여세대", "계약취소", "무순위청약", "잔여", "임대주택"],
+  "청약통장·가점": ["청약통장", "가점", "무주택", "저축", "납입", "부양가족", "점수", "1순위", "통장", "인정금액"],
+
+  // 전월세
+  "계약·등기부 실무": ["계약", "등기부", "등기", "특약", "갑구", "을구", "근저당", "가압류", "신탁", "임대차", "전세", "월세", "임차인", "임대인", "등기부등본"],
+  "반환보증·대항력": ["반환보증", "보증", "보증보험", "대항력", "확정일자", "전입신고", "전세사기", "깡통전세", "HUG", "HF", "SGI", "우선변제", "최우선변제"],
+  "임대차3법·갱신": ["임대차", "계약갱신", "갱신청구권", "전월세상한제", "전월세신고제", "임대차3법", "묵시적", "임대인", "임차인", "갱신", "상한제"],
+
+  // 대출-금융
+  "정책금융 (디딤돌/버팀목)": ["디딤돌", "버팀목", "신생아", "특례", "정책", "기금", "주택도시기금", "보금자리론", "안심전세", "정책대출"],
+  "시중은행 주담대·DSR": ["주담대", "주택담보대출", "DSR", "LTV", "스트레스", "은행", "금리", "변동금리", "고정금리", "한도", "대출"],
+  "취득세·양도세 자금플랜": ["취득세", "양도세", "세금", "자금조달", "증여", "공제", "절세", "비과세", "보유세", "종부세", "자금플랜"],
+
+  // 이사-인테리어
+  "이사준비·체크리스트": ["이사", "체크리스트", "손없는날", "포장이사", "공과금", "전출", "입주", "이삿날", "관리비"],
+  "리모델링·공간배치": ["리모델링", "인테리어", "공간", "배치", "시공", "셀프", "디자인", "가구", "홈", "구축"],
+  "입주청소·손해배상": ["입주청소", "청소", "손해배상", "하자", "보수", "원상복구", "체크", "점검", "폐기물", "방문수거"]
+};
+
 export default function App() {
   const [posts, setPosts] = useState<Post[]>(POSTS);
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
@@ -87,6 +110,12 @@ export default function App() {
     setSearchTerm("");
   }, []);
 
+  // 카테고리 변경 시 세부주제 및 태그 선택 상태 초기화
+  useEffect(() => {
+    setSelectedSubCategory("전체 보기");
+    setSelectedTag(null);
+  }, [selectedCategory]);
+
   useEffect(() => {
     localStorage.setItem("hh_bookmarks", JSON.stringify(bookmarks));
   }, [bookmarks]);
@@ -123,6 +152,111 @@ export default function App() {
       window.removeEventListener("resize", calculateReadingProgress);
     };
   }, [activePost]);
+
+  // 본문 H2 태그 직후 자동 광고(Auto Ads) 전략적 분할 렌더러
+  const renderArticleContentWithAds = (htmlContent: string) => {
+    if (!htmlContent) return null;
+
+    // 1. <h2> 태그 닫힘 기준 (</h2>)으로 분할
+    const h2Parts = htmlContent.split(/(<\/h2>)/i);
+
+    // <h2> 태그가 존재하지 않는 경우 <h3> 태그 기준 분할 고려
+    if (h2Parts.length <= 1) {
+      const h3Parts = htmlContent.split(/(<\/h3>)/i);
+      if (h3Parts.length > 3) {
+        const segments: React.ReactNode[] = [];
+        let currentChunk = "";
+        let adIndex = 1;
+
+        for (let i = 0; i < h3Parts.length; i++) {
+          currentChunk += h3Parts[i];
+          if (h3Parts[i].toLowerCase() === "</h3>" && (i === 1 || i === 5)) {
+            segments.push(
+              <div key={`chunk-h3-${i}`} dangerouslySetInnerHTML={{ __html: currentChunk }} />
+            );
+            segments.push(
+              <AdSenseSlot 
+                key={`in-article-ad-h3-${adIndex}`}
+                slot={`345678901${adIndex}`}
+                format="fluid"
+                label={`본문 중간 맞춤 정보 광고 (${adIndex}번 H3 단원 직후)`}
+                className="my-8"
+              />
+            );
+            currentChunk = "";
+            adIndex++;
+          }
+        }
+        if (currentChunk) {
+          segments.push(
+            <div key="chunk-h3-last" dangerouslySetInnerHTML={{ __html: currentChunk }} />
+          );
+        }
+        return (
+          <div className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal">
+            {segments}
+          </div>
+        );
+      }
+
+      return (
+        <div 
+          className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
+          dangerouslySetInnerHTML={{ __html: htmlContent }}
+        />
+      );
+    }
+
+    // <h2> 태그가 존재할 때: <h2> 직후 전략적 자동 광고(Auto Ad) 배치
+    const segments: React.ReactNode[] = [];
+    let accumulatedHtml = "";
+    let h2Count = 0;
+    let adInsertedCount = 0;
+
+    for (let i = 0; i < h2Parts.length; i++) {
+      const part = h2Parts[i];
+      accumulatedHtml += part;
+
+      if (part.toLowerCase() === "</h2>") {
+        h2Count++;
+
+        // 광고 삽입 전략 (CTR 극대화 & UX 보호):
+        // - 첫 번째 H2 직후 무조건 1개 자동 삽입 (독자의 이목이 집중되는 주요 지점)
+        // - H2 단원이 3개 이상일 때 3번째 H2 직후에 추가 1개 배치 (적절한 거리 유지로 피로감 유발 방지)
+        const shouldInsertAd = (h2Count === 1) || (h2Count === 3 && adInsertedCount < 2);
+
+        if (shouldInsertAd) {
+          segments.push(
+            <div key={`chunk-h2-${i}`} dangerouslySetInnerHTML={{ __html: accumulatedHtml }} />
+          );
+          accumulatedHtml = "";
+          adInsertedCount++;
+
+          segments.push(
+            <AdSenseSlot
+              key={`in-article-h2-ad-${h2Count}`}
+              slot={`109876543${h2Count}`}
+              format="fluid"
+              label={`본문 중간 맞춤 정보 광고 (${h2Count}번 H2 단원 직후)`}
+              className="my-8"
+            />
+          );
+        }
+      }
+    }
+
+    if (accumulatedHtml) {
+      segments.push(
+        <div key="chunk-h2-final" dangerouslySetInnerHTML={{ __html: accumulatedHtml }} />
+      );
+    }
+
+    return (
+      <div className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal">
+        {segments}
+      </div>
+    );
+  };
 
   // 자가진단 계산기 탭: 'loan' (대출한도) | 'score' (청약가점)
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
@@ -360,19 +494,25 @@ export default function App() {
     );
   };
 
-  // 모든 사용가능한 유니크 해시태그 목록 추출 (가장 많이 나오는 우수 인디안 8선)
+  // 선택된 카테고리별 유니크 해시태그 목록 추출 (전체인 경우 전체 기반)
   const popularHashtags = useMemo(() => {
+    const targetPosts = selectedCategory === "전체" 
+      ? posts 
+      : posts.filter(p => p.category === selectedCategory);
+
     const tagsMap: Record<string, number> = {};
-    posts.forEach(p => {
+    targetPosts.forEach(p => {
       p.hashtags?.forEach(tag => {
-        tagsMap[tag] = (tagsMap[tag] || 0) + 1;
+        if (tag) {
+          tagsMap[tag] = (tagsMap[tag] || 0) + 1;
+        }
       });
     });
     return Object.entries(tagsMap)
       .sort((a, b) => b[1] - a[1])
       .slice(0, 10)
       .map(entry => entry[0]);
-  }, [posts]);
+  }, [posts, selectedCategory]);
 
   // 피드 필터링 로직
   const filteredPosts = useMemo(() => {
@@ -382,11 +522,24 @@ export default function App() {
       
       let matchSubCategory = true;
       if (selectedSubCategory && selectedSubCategory !== "전체 보기") {
-        const subKw = selectedSubCategory.replace(/[\(\)\/]/g, " ").split(" ")[0];
-        matchSubCategory = (post.title && post.title.includes(subKw)) ||
-          (post.excerpt && post.excerpt.includes(subKw)) ||
-          (post.content && post.content.includes(subKw)) ||
-          (post.hashtags && post.hashtags.some(t => t.includes(subKw)));
+        const keywords = SUBCATEGORY_KEYWORDS[selectedSubCategory];
+        if (keywords && keywords.length > 0) {
+          matchSubCategory = keywords.some(kw => 
+            (post.title && post.title.includes(kw)) ||
+            (post.excerpt && post.excerpt.includes(kw)) ||
+            (post.content && post.content.includes(kw)) ||
+            (post.hashtags && post.hashtags.some(t => t.includes(kw)))
+          );
+        } else {
+          // 예외 상황 시 세부주제 명칭 단어 분할 매칭
+          const subKwList = selectedSubCategory.replace(/[\(\)\/·]/g, " ").split(/\s+/).filter(Boolean);
+          matchSubCategory = subKwList.some(kw => 
+            (post.title && post.title.includes(kw)) ||
+            (post.excerpt && post.excerpt.includes(kw)) ||
+            (post.content && post.content.includes(kw)) ||
+            (post.hashtags && post.hashtags.some(t => t.includes(kw)))
+          );
+        }
       }
 
       const matchTag = !selectedTag || (post.hashtags && post.hashtags.includes(selectedTag));
@@ -802,14 +955,11 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 실제 정밀 본문 */}
-              <div 
-                className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
-                dangerouslySetInnerHTML={{ __html: activePost.content }}
-              />
+              {/* 실제 정밀 본문 (H2 태그 직후 자동 광고 전략적 삽입) */}
+              {renderArticleContentWithAds(activePost.content)}
 
-              {/* 구글 애드센스 디스플레이 광고 영역 */}
-              <AdSenseSlot label="본문 맞춤 정보 광고" />
+              {/* 본문 하단 구글 애드센스 디스플레이 광고 영역 */}
+              <AdSenseSlot label="본문 하단 맞춤 정보 광고" slot="8765432109" />
 
               {/* 해시태그 목록 */}
               <div className="flex flex-wrap gap-1.5 border-t border-slate-100 pt-8 mt-8">
