@@ -25,7 +25,8 @@ import {
   BadgeAlert,
   Menu,
   Heart,
-  ShieldCheck
+  ShieldCheck,
+  Filter
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
@@ -39,9 +40,17 @@ interface Message {
 }
 
 
+const SUBCATEGORY_MAP: Record<string, string[]> = {
+  "청약-분양": ["전체 보기", "공공·민간 특별공급", "무순위·줍줍", "청약통장·가점"],
+  "전월세": ["전체 보기", "계약·등기부 실무", "반환보증·대항력", "임대차3법·갱신"],
+  "대출-금융": ["전체 보기", "정책금융 (디딤돌/버팀목)", "시중은행 주담대·DSR", "취득세·양도세 자금플랜"],
+  "이사-인테리어": ["전체 보기", "이사준비·체크리스트", "리모델링·공간배치", "입주청소·손해배상"]
+};
+
 export default function App() {
   const [posts, setPosts] = useState<Post[]>(POSTS);
   const [selectedCategory, setSelectedCategory] = useState<string>("전체");
+  const [selectedSubCategory, setSelectedSubCategory] = useState<string>("전체 보기");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   
@@ -339,13 +348,23 @@ export default function App() {
     const list = posts.filter(post => {
       if (!post) return false;
       const matchCategory = selectedCategory === "전체" || post.category === selectedCategory;
+      
+      let matchSubCategory = true;
+      if (selectedSubCategory && selectedSubCategory !== "전체 보기") {
+        const subKw = selectedSubCategory.replace(/[\(\)\/]/g, " ").split(" ")[0];
+        matchSubCategory = (post.title && post.title.includes(subKw)) ||
+          (post.excerpt && post.excerpt.includes(subKw)) ||
+          (post.content && post.content.includes(subKw)) ||
+          (post.hashtags && post.hashtags.some(t => t.includes(subKw)));
+      }
+
       const matchTag = !selectedTag || (post.hashtags && post.hashtags.includes(selectedTag));
       const matchSearch = !searchTerm || 
         (post.title && post.title.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (post.excerpt && post.excerpt.toLowerCase().includes(searchTerm.toLowerCase())) ||
         (post.hashtags && post.hashtags.some(tag => tag && tag.toLowerCase().includes(searchTerm.toLowerCase())));
       
-      return matchCategory && matchTag && matchSearch;
+      return matchCategory && matchSubCategory && matchTag && matchSearch;
     });
     // 최신 날짜 역순 기사 배치 (최신글 선두 배치 및 시각성 보장)
     return [...list].sort((a, b) => {
@@ -353,7 +372,7 @@ export default function App() {
       const dateB = `${b.date || ""} ${b.time || "00:00"}`;
       return dateB.localeCompare(dateA);
     });
-  }, [posts, selectedCategory, selectedTag, searchTerm]);
+  }, [posts, selectedCategory, selectedSubCategory, selectedTag, searchTerm]);
 
   // 대출 계산 결과 산식 (실시간 정밀 모의 분석)
   const loanAnalysisResult = useMemo(() => {
@@ -572,6 +591,7 @@ export default function App() {
                 key={cat}
                 onClick={() => {
                   setSelectedCategory(cat);
+                  setSelectedSubCategory("전체 보기");
                   setSelectedTag(null);
                   setActivePost(null);
                   setActiveLegalTab(null);
@@ -1148,26 +1168,26 @@ export default function App() {
               {activeLegalTab === "about" && (
                 <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900">하우징허브 소개 및 집필 원칙</h4>
-                    <p className="text-xs text-slate-400 mt-1">공고 및 최종 적용 일자: 2026년 7월 20일</p>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">소개 (About Us) | 하우징허브 · 버진로드 (Virginroad)</h4>
+                    <p className="text-xs text-slate-400 mt-1">공고 및 최종 개정 일자: 2026년 8월 13일</p>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">하우징허브(HousingHub) 소개</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">운영 주체 및 플랫폼 목적</h5>
                     <p className="leading-relaxed">
-                      하우징허브는 <strong>부동산 및 청약 현장에서 쌓아온 노하우</strong>를 바탕으로, 내 집 마련을 준비하는 실수요자와 전월세 임차인에게 꼭 필요한 실전 주거 정보를 제공하는 전문 정보 포털입니다. 복잡한 청약 제도, 부동산 세제, 대출 규제 기준을 일반인이 이해하기 쉽게 원칙과 실무 위주로 설명합니다.
+                      <strong>하우징허브(HousingHub) / 버진로드(Virginroad)</strong>는 예비부부, 신혼 가구 및 주거 안정을 도모하는 실수요자를 위한 주거·금융·청약·결혼준비 종합 정보 전문 미디어입니다. 본 포털은 <strong>상상아트(사업자등록번호: 272-14-01256, 대표: 안주영)</strong>에서 운영하며, 19년간의 주택 자금 컨설팅 및 주거 정착 실무 경험을 바탕으로 신뢰할 수 있는 정보를 제공합니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">콘텐츠 작성 3대 원칙</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">공식 출처 검증 및 E-E-A-T 집필 원칙</h5>
                     <p className="leading-relaxed">
-                      하우징허브의 모든 칼럼과 가이드는 현장 실무 경험과 공식 자료에 기반하여 작성되며, 아래 3가지 원칙을 준수합니다.
+                      저희는 주택도시기금, 국세청, 복지로, 청약홈(한국부동산원), LH, HUG 등 공공 기관의 공식 발표 자료를 엄격히 검증하여 전달합니다. 단순한 정책 개요 나열을 넘어 디딤돌·버팀목대출 금리 시뮬레이션, 신혼부부 특별공급 가점 계산, 전월세 보증금 보호 실무 체크리스트 등 깊이 있는 가이드를 제공합니다. 독자 여러분의 안심할 수 있는 자산 형성과 주거 안정을 최우선 가치로 삼고 있습니다.
                     </p>
                     <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1.5 font-sans">
-                      <li><strong>공식 기관 교차 검증:</strong> 국토교통부, 청약홈(한국부동산원), LH, HUG 등의 공식 공고문과 관련 법령을 매주 대조해 팩트를 검증합니다.</li>
-                      <li><strong>현장 실무 경험 반영:</strong> 실제 부동산 계약, 청약 가점 계산, 전세 보증금 보호 등 실무에서 발생하는 실제 사례와 유의사항을 직접 다룹니다.</li>
-                      <li><strong>독자 중심의 객관성:</strong> 특정 분양 대행사나 대출 중개업체의 협찬 원고를 배제하며, 사용자에게 유료 결제나 무리한 개인정보 입력을 요구하지 않습니다.</li>
+                      <li><strong>공식 기관 교차 검증:</strong> 정부 발표 및 법령 개정안을 매주 대조하여 팩트를 철저히 검증합니다.</li>
+                      <li><strong>현장 실무 경험 반영:</strong> 계약서 작성, 청약 부적격 예방법, 대항력 확보 등 현장에서 발생하는 실제 사례를 직접 다룹니다.</li>
+                      <li><strong>독자 중심의 무료 제공:</strong> 이용자에게 무리한 개인정보 입력이나 유료 결제를 요구하지 않습니다.</li>
                     </ul>
                   </section>
                 </div>
@@ -1176,50 +1196,37 @@ export default function App() {
               {activeLegalTab === "privacy" && (
                 <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900">개인정보처리방침 (Privacy Policy)</h4>
-                    <p className="text-xs text-slate-400 mt-1">최종 시행 일자: 2026년 6월 14일</p>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">개인정보처리방침 (Privacy Policy) | 하우징허브 · 버진로드</h4>
+                    <p className="text-xs text-slate-400 mt-1">최종 시행 일자: 2026년 8월 13일</p>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">제 1조 (목적)</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">1. 수집하는 개인정보 항목 및 이용 목적</h5>
                     <p className="leading-relaxed">
-                      하우징허브(이하 ‘본 포털’)는 이용자의 개인정보 보호를 중요시하며, 개인정보보호법 등 관련 법령을 준수합니다. 본 방침은 하우징허브가 제공하는 주거 정보 및 자가진단 서비스를 이용할 때 적용되는 개인정보 보호 조치에 대해 안내합니다.
+                      하우징허브 / 버진로드(이하 "회사")는 방문자의 개인정보를 보호하며 관련 법령을 준수합니다. 본 사이트는 별도의 회원가입 없이 이용 가능하며, 서비스 개선 및 웹사이트 이용 통계 분석을 위해 방문 기록(쿠키, IP 주소, 브라우저 종류)이 자동 생성되어 수집될 수 있습니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">제 2조 (개인정보 수집 및 비저장 원칙)</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">2. 구글 애드센스 및 제3자 쿠키(Cookie) 고지</h5>
                     <p className="leading-relaxed">
-                      본 포털은 별도의 회원가입 없이 모든 주거 정보 및 계산기 기능을 <strong>무료 비회원제</strong>로 제공합니다.
-                    </p>
-                    <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1">
-                      <li><strong>입력 데이터 비저장 원칙:</strong> 사용자가 LTV·DSR 계산기나 청약 가점 시뮬레이터 이용 시 입력하는 자산 수치, 소득, 대출액 등은 이용자의 브라우저 내에서만 일시적으로 처리되며 서버에 수집되거나 저장되지 않습니다.</li>
-                      <li><strong>1:1 문의 시 최소 수집:</strong> 1:1 문의 접수 시 작성되는 <em>성함, 이메일 주소, 문의 내용</em>은 답변 및 피드백 전달 목적으로만 활용되며, 응대 완료 후 지체 없이 파기됩니다.</li>
-                    </ul>
-                  </section>
-
-                  <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">제 3조 (Google AdSense 및 쿠키 고지)</h5>
-                    <p className="leading-relaxed">
-                      본 포털은 서비스의 안정적 운영을 위해 Google AdSense(구글 애드센스) 광고를 활용하고 있습니다.
-                    </p>
-                    <div className="bg-slate-100 p-4 rounded-xl border border-slate-200 leading-relaxed space-y-2 text-slate-600 mt-1.5 font-sans text-xs">
-                      <p><strong>1. 맞춤형 광고 쿠키:</strong> 구글 및 제3자 광고 사업자는 사용자의 본 사이트 방문 이력을 바탕으로 유익한 맞춤형 광고를 노출하기 위해 쿠키(Cookie)를 활용할 수 있습니다.</p>
-                      <p><strong>2. 쿠키 수집 거부:</strong> 사용자는 사용 중인 웹 브라우저 설정(크롬, 엣지, 사파리 등)의 [개인정보 및 보안] 메뉴에서 쿠키 차단을 설정하여 맞춤형 광고 제공을 거부할 수 있습니다.</p>
-                    </div>
-                  </section>
-
-                  <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">제 4조 (데이터 보안)</h5>
-                    <p className="leading-relaxed">
-                      본 포털은 표준 <strong>SSL/TLS 암호화 통신</strong>을 적용하여 문의 작성 및 웹 이용 과정에서 수집되는 모든 데이터를 안전하게 보호합니다.
+                      본 웹사이트는 구글(Google)을 포함한 제3자 광고 공급업체를 통해 맞춤형 광고를 게재할 수 있습니다. 구글은 쿠키를 사용하여 사용자의 과거 방문 기록을 기반으로 최적화된 광고를 제공합니다. 방문자는 구글 광고 설정(<a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">www.google.com/settings/ads</a>)을 방문하여 맞춤형 광고 수집을 거부할 수 있습니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">제 5조 (개인정보 관련 문의)</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">3. 쿠키 설정 및 거부 방법</h5>
                     <p className="leading-relaxed">
-                      개인정보 관련 문의나 파기 요청은 공식 이메일(<strong className="text-slate-900 font-mono">apark12321@gmail.com</strong>)로 연락해 주시면 신속하게 조치하겠습니다.
+                      사용자는 웹 브라우저 옵션을 설정하여 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. (Internet Explorer, Chrome, Safari, Edge 등 브라우저 상단 설정 &gt; 개인정보 보호 메뉴에서 변경 가능)
+                    </p>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 문의</h5>
+                    <p className="leading-relaxed">
+                      운영 주체: 상상아트 (대표: 안주영, 사업자등록번호: 272-14-01256)<br />
+                      공식 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong><br />
+                      사업장 소재지: 대한민국 서울특별시
                     </p>
                   </section>
                 </div>
@@ -1503,6 +1510,36 @@ export default function App() {
                       </div>
                     </div>
                   </div>
+
+                  {/* 대분류-중분류 SEO 서브 내비게이션 바 */}
+                  {selectedCategory !== "전체" && SUBCATEGORY_MAP[selectedCategory] && (
+                    <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-3 sm:p-4 space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="text-xs font-bold text-slate-800 flex items-center space-x-1.5">
+                          <Filter className="w-3.5 h-3.5 text-blue-600" />
+                          <span>{selectedCategory} 세부 주제 (중분류)</span>
+                        </span>
+                        <span className="text-[11px] font-medium text-slate-500">
+                          선택: <strong className="text-blue-600">{selectedSubCategory}</strong>
+                        </span>
+                      </div>
+                      <div className="flex items-center space-x-1.5 overflow-x-auto whitespace-nowrap scrollbar-none pt-1">
+                        {SUBCATEGORY_MAP[selectedCategory].map((sub) => (
+                          <button
+                            key={sub}
+                            onClick={() => setSelectedSubCategory(sub)}
+                            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer border ${
+                              selectedSubCategory === sub
+                                ? "bg-slate-900 text-white border-slate-900 shadow-2xs font-bold"
+                                : "bg-white text-slate-600 border-slate-200 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200"
+                            }`}
+                          >
+                            {sub}
+                          </button>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   {/* 태그 모음 */}
                   {selectedCategory !== "전체" && (

@@ -117,13 +117,19 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
   if (ai) {
     try {
       const prompt = `
-        부동산 및 주거 정책 전문가로서 다음 주제에 관해 완벽한 HTML 블로그 포스팅을 작성해 주세요.
+        너는 2026년 구글 검색 엔진 최적화(SEO) 및 애드센스 승인 로직(E-E-A-T 및 YMYL 규정)을 완벽히 이해하고 있는 최고 수준의 부동산·주거 정책 전문 콘텐츠 작가이다.
+        다음 주제에 관한 고품질 전문 정보글(HTML)을 작성해 주세요.
         주제: ${selectedTheme.topic}
         카테고리: ${selectedTheme.category}
 
-        지침:
-        - <h2>, <h3>, <p>, <ul>, <li> 태그만을 사용하여 전문적이고 가독성 높은 한국어 문장으로 구성하세요.
-        - 실무 체크리스트 및 주거 안심 가이드 팁을 명확히 포함하세요.
+        작성 조건 (2026 애드센스 승인 심사 가이드):
+        1. 독창성 및 고유 시각: 뻔한 개요 나열을 배제하고, '타임라인', '장단점 심층 비교', '사람들이 잘 모르는 실무 핵심 비공개 사실'을 포함하세요.
+        2. 경험 및 전문성(E-E-A-T) 주입: 이 분야를 직접 경험해 본 전문가만 알 수 있는 '구체적인 주의사항', '흔히 겪는 실패 사례', '실무자의 극복 팁'을 명확히 제시하세요.
+        3. 구조화 및 분량: <h2> 및 <h3> 태그를 사용하여 목차와 문단을 명확히 나누고, 전체 분량은 공백 제외 최소 2,000자 이상(800~1,500 단어)으로 깊이 있게 작성하세요.
+        4. 표(Table) 필수: 핵심 정리 또는 요율 비교 테이블(<table class="w-full border-collapse my-4 text-xs sm:text-sm">...</table>)을 최소 1개 이상 포함하세요.
+        5. 명확한 문제 해결 및 FAQ: 글 하단에 방문자들이 가장 궁금해할 '자주 묻는 질문(FAQ)' 3가지를 <h2>자주 묻는 질문 (FAQ)</h2> 섹션으로 만들어 질문과 상세 답변을 함께 작성하세요.
+        6. 문체: 정중하고 신뢰감을 주는 '-입니다/합니다' 체를 사용하세요.
+        7. HTML 태그: <h2>, <h3>, <p>, <ul>, <li>, <table>, <thead>, tbody, tr, th, td, <strong>, <span> 만 사용하세요.
       `;
 
       const response = await ai.models.generateContent({
@@ -151,6 +157,60 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
       if (resObj.excerpt) postExcerpt = resObj.excerpt;
       if (resObj.hashtags && resObj.hashtags.length > 0) postHashtags = resObj.hashtags;
       if (resObj.readTime) postReadTime = resObj.readTime;
+
+      if (postContent && !postContent.includes("<table")) {
+        const tableHtml = `
+          <h2>핵심 점검 요율 및 실무 비교 가이드 (E-E-A-T)</h2>
+          <div class="overflow-x-auto my-4">
+            <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+              <thead>
+                <tr class="bg-slate-100 text-slate-800">
+                  <th class="border border-slate-200 p-2.5 font-bold">점검 항목</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">기준 요건 및 내용</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">실수요자 주의사항</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">전문가 권장 대응책</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="border border-slate-200 p-2.5 font-semibold">자격 요건 검증</td>
+                  <td class="border border-slate-200 p-2.5">소득, 자산, 무주택 기간 요건 대조</td>
+                  <td class="border border-slate-200 p-2.5">단순 단어 오해로 인한 부적격 판정 위험</td>
+                  <td class="border border-slate-200 p-2.5">주택도시기금 자가진단 사전 제출</td>
+                </tr>
+                <tr class="bg-slate-50">
+                  <td class="border border-slate-200 p-2.5 font-semibold">권리 보장 및 법적 효력</td>
+                  <td class="border border-slate-200 p-2.5">등기부등본 을구 근저당 및 전입신고</td>
+                  <td class="border border-slate-200 p-2.5">잔금 지급 당일 담보권 설정으로 후순위 전락</td>
+                  <td class="border border-slate-200 p-2.5">익일 담보권 설정 금지 특약 작성 및 실시간 검증</td>
+                </tr>
+                <tr>
+                  <td class="border border-slate-200 p-2.5 font-semibold">자금 상환 안정성</td>
+                  <td class="border border-slate-200 p-2.5">스트레스 DSR 2·3단계 가산 금리 적용</td>
+                  <td class="border border-slate-200 p-2.5">대출 한도 축소에 따른 잔금 부족 위험</td>
+                  <td class="border border-slate-200 p-2.5">보수적 DSR 계산기 및 예비비 10% 확보</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+        postContent += tableHtml;
+      }
+
+      if (postContent && !postContent.includes("자주 묻는 질문") && !postContent.includes("FAQ")) {
+        const faqHtml = `
+          <h2>자주 묻는 질문 (FAQ)</h2>
+          <h3>Q1. 조건 미충족 시 어떤 불이익이나 페널티가 발생하나요?</h3>
+          <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 지방세 및 세액의 100% 추징뿐만 아니라 가산세가 추가 적용됩니다. 또한 정책 대출의 경우 계약 해지 및 시중 금리로 전환되므로 사전 검증이 필수적입니다.</p>
+
+          <h3>Q2. 서류 신청 전 반드시 사전 확인해야 할 사항은 무엇인가요?</h3>
+          <p>A. 본인 및 세대원 전체의 등기부등본상 과거 주택 소유 및 처분 이력, 세대주 등재 기간, 국세·지방세 체납 여부를 사전에 조회해야 부적격 통보를 방지할 수 있습니다.</p>
+
+          <h3>Q3. 계약 진행 과정에서 전문가의 도움을 받는 방법은 무엇인가요?</h3>
+          <p>A. 정부 주택도시기금 공식 시뮬레이터 및 하우징허브 내 자가진단 계산기를 활용하거나, 계약서 작성 전 전문 변호사/세무사의 특약사항 검수를 받으시는 것을 권장합니다.</p>
+        `;
+        postContent += faqHtml;
+      }
     } catch (err) {
       console.warn("[AutoPost System] Gemini generation failed, executing robust template fallback:", err);
     }
@@ -158,21 +218,75 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
 
   if (!postContent) {
     postContent = `
-      <h2>${postTitle} 전문가 실전 분석</h2>
-      <p>최근 주택 시장 및 금융 정책의 직·간접적인 변화 속에서 실거주 목적의 청약 대기자와 전월세 임차인은 정교한 실무 지식과 정확한 자금 계획을 기반으로 자산과 주거 안정을 도모해야 합니다. 본 칼럼에서는 필수 점검 사항을 세세히 안내합니다.</p>
-      <h3>1. 핵심 요건 검증 및 대출 한도 자가진단</h3>
+      <h2>${postTitle}: 핵심 개념과 시장 영향 분석</h2>
+      <p>최근 부동산 주택 시장과 정부 주거 금융 정책의 신속한 변화 속에서, 실수요자와 임차인, 예비 청약자는 정확한 실무 법률 기준과 정교한 자금 계획을 수립해야 합니다. 단순히 매스컴의 요약 보도만을 믿고 계약을 진행할 경우 예상치 못한 부적격 처리나 이자 부담 급증, 보증금 손실 위험에 직면할 수 있습니다. 본 리포트에서는 ${selectedTheme.topic}에 관한 핵심 체크포인트와 실전 극복 전략을 명확히 제시해 드립니다.</p>
+      
+      <h2>요건 비교 및 가이드 세부 요약표</h2>
+      <p>아래 표는 실수요자가 계약 및 대출 신청 전 반드시 체크해야 하는 주요 비교 항목과 자격 가이드라인입니다.</p>
+      <div class="overflow-x-auto my-4">
+        <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+          <thead>
+            <tr class="bg-slate-100 text-slate-800">
+              <th class="border border-slate-200 p-2.5 font-bold">점검 구분</th>
+              <th class="border border-slate-200 p-2.5 font-bold">주요 대상 및 요건</th>
+              <th class="border border-slate-200 p-2.5 font-bold">실질적 주거 혜택 / 리스크</th>
+              <th class="border border-slate-200 p-2.5 font-bold">실무 대응 전략</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">금융 자금 배정</td>
+              <td class="border border-slate-200 p-2.5">정부 저금리 정책 대출 (디딤돌/버팀목/신생아)</td>
+              <td class="border border-slate-200 p-2.5">시중은행 대비 연 1.5%~2.5%p 이자 절감 효과</td>
+              <td class="border border-slate-200 p-2.5">소득 및 자산 한도 자가진단 사전 진행 필수</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">권리 보장 및 대항력</td>
+              <td class="border border-slate-200 p-2.5">전입신고, 확정일자 및 전세보증금 반환보증</td>
+              <td class="border border-slate-200 p-2.5">경매·체납 발생 시 우선변제권 및 보증금 전액 수호</td>
+              <td class="border border-slate-200 p-2.5">잔금 당일 등기부등본 을구 실시간 재발급 검증</td>
+            </tr>
+            <tr>
+              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">청약·분양 적격성</td>
+              <td class="border border-slate-200 p-2.5">무주택 세대 구성원 자격 및 저축 총액</td>
+              <td class="border border-slate-200 p-2.5">공공·민간 무순위 및 특별공급 당첨 기회 확충</td>
+              <td class="border border-slate-200 p-2.5">세대원 전체 무주택 기간 및 부적격 이력 사전 조회</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h2>초보자가 자주 겪는 3가지 실수와 주의점 (E-E-A-T)</h2>
+      <h3>1. 잔금 당일 등기부 권리 변동 확인 누락</h3>
+      <p>계약서 작성 당일에 등기부등본을 확인했더라도 잔금 지급 당일 아침에 등기부를 재발급받지 않으면, 임대인이 계약 직전 설정한 근저당권에 밀려 후순위 임차인으로 전락할 수 있습니다. 반드시 잔금 지급 직전 등기부등본을 다시 발급하여 을구의 권리 변동 여부를 확인하셔야 합니다.</p>
+      
+      <h3>2. 스트레스 DSR 적용에 따른 대출한도 착오</h3>
+      <p>과거 기준으로 본인의 대출 가능 금액을 예상했다가 금리 가산(스트레스 금리)이 적용되는 2·3단계 DSR 규제로 인해 예상 대출금이 2,000만~5,000만원 이상 차감되어 잔금 마련에 차질을 빚는 경우가 빈번합니다. 사전 자가진단 툴을 사용하여 실효 한도를 보수적으로 측정하셔야 합니다.</p>
+
+      <h3>3. 청약 통장 인정 금액과 자격 요건 오해</h3>
+      <p>청약통장 월 인정 한도가 25만원으로 인상된 점을 인지하지 못하고 기존 10만원으로만 저축을 유지할 경우, 공공분양 당첨 커트라인 형성 시 총 인정 금액에서 열세에 놓일 수 있습니다. 본인의 자금 사정에 맞춰 월 납입액을 최적화하는 전략이 요구됩니다.</p>
+
+      <h2>하우징허브 전문가 실무 체크리스트</h2>
       <ul>
-        <li><strong>스트레스 DSR 및 LTV 모니터링:</strong> 주택담보대출 실행 시 본인의 실효 DSR 비율과 상환 능력을 사전 자가진단 계산기로 검증해야 승인 지연 및 금리 손실을 막을 수 있습니다.</li>
-        <li><strong>정부 저금리 정책 자금 배정:</strong> 디딤돌, 버팀목, 신생아 특례대출 등 주택도시기금 정책 금융 혜택 요건을 대조해 최우선 신청 전략을 수립하십시오.</li>
+        <li><strong>계약 전:</strong> 국세·지방세 완납 증명서 요구 및 등기부등본 가압류·근저당 금액 확인</li>
+        <li><strong>계약 시:</strong> 임대인 잔금 익일까지 담보권 설정 금지 특약 작성 및 신분증 대조</li>
+        <li><strong>잔금 및 입주:</strong> 잔금 이체 당일 주민센터/인터넷 등기소 전입신고 및 확정일자 부여 받기</li>
+        <li><strong>사후 관리:</strong> HUG 전세보증금 반환보증 가입 조건 대조 및 보증서 수령</li>
       </ul>
-      <h3>2. 전월세 대항력 수호 및 계약서 작성 필수 특약</h3>
-      <ul>
-        <li><strong>권리 변동 및 선순위 채권 검사:</strong> 등기부등본 을구의 근저당권 설정 금액과 소유권 가압류 여부를 잔금 당일까지 집중 감시하십시오.</li>
-        <li><strong>전입신고와 확정일자 당일 처리:</strong> 계약 잔금일에 전입신고 및 확정일자를 부여받고 '잔금 이체 익일까지 담보권 설정 금지' 특약을 반드시 계약서에 명시하세요.</li>
-      </ul>
-      <p>하우징허브 주거 정책 기획팀은 실수요자의 권익 보호와 안전한 주거 환경을 위해 매일 검증된 리포트와 칼럼을 제공해 드립니다.</p>
+
+      <h2>자주 묻는 질문 (FAQ)</h2>
+      <h3>Q1. 조건 미충족 시 어떤 불이익이나 페널티가 발생하나요?</h3>
+      <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 지방세 및 세액의 100% 추징뿐만 아니라 가산세가 추가 적용됩니다. 또한 정책 대출의 경우 계약 해지 및 시중 금리로 전환되므로 사전 검증이 필수적입니다.</p>
+
+      <h3>Q2. 서류 신청 전 반드시 사전 확인해야 할 사항은 무엇인가요?</h3>
+      <p>A. 본인 및 세대원 전체의 등기부등본상 과거 주택 소유 및 처분 이력, 세대주 등재 기간, 국세·지방세 체납 여부를 사전에 조회해야 부적격 통보를 방지할 수 있습니다.</p>
+
+      <h3>Q3. 계약 진행 과정에서 전문가의 도움을 받는 방법은 무엇인가요?</h3>
+      <p>A. 정부 주택도시기금 공식 시뮬레이터 및 하우징허브 내 자가진단 계산기를 활용하거나, 계약서 작성 전 전문 변호사/세무사의 특약사항 검수를 받으시는 것을 권장합니다.</p>
+
+      <p>하우징허브 주거 정책 기획팀은 모든 방문객과 임차인, 예비 청약자의 소중한 주거 권리를 수호하기 위해 지속적으로 최신 공고문과 정책 가이드를 검증하여 안내해 드립니다.</p>
     `;
-    postExcerpt = `${selectedTheme.topic}에 관한 하우징허브 주거 정책 기획팀의 최신 실전 분석 리포트입니다.`;
+    postExcerpt = `${selectedTheme.topic}에 관한 하우징허브 주거 정책 기획팀의 최신 실전 분석 및 체크리스트 리포트입니다.`;
   }
 
   const categoryImages: Record<string, string> = {
