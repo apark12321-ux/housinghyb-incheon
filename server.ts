@@ -195,7 +195,7 @@ function createRandomDailySchedule(todayStr: string): DailyScheduleState {
   // 4개 카테고리 순서를 매일 무작위 셔플
   const shuffledCategories = [...CATEGORIES].sort(() => Math.random() - 0.5);
 
-  // 4개 시간 슬롯을 최소 240분(4시간) 간격으로 생성
+  // 4개 시간 슬롯을 최소 240분(4시간) 간격으로 생성 (시, 분, 초 단위 정밀 배정)
   // T0: 00:30 ~ 03:30 (30 ~ 210분)
   const t0 = Math.floor(Math.random() * (210 - 30 + 1)) + 30;
 
@@ -218,9 +218,10 @@ function createRandomDailySchedule(todayStr: string): DailyScheduleState {
   const slots: ScheduleSlot[] = minutesList.map((mins, idx) => {
     const hh = String(Math.floor(mins / 60)).padStart(2, "0");
     const mm = String(mins % 60).padStart(2, "0");
+    const ss = String(Math.floor(Math.random() * 60)).padStart(2, "0");
     return {
       category: shuffledCategories[idx],
-      timeStr: `${hh}:${mm}`,
+      timeStr: `${hh}:${mm}:${ss}`,
       executed: false
     };
   });
@@ -264,7 +265,8 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
   if (!timeStr) {
     const hh = String(now.getHours()).padStart(2, '0');
     const min = String(now.getMinutes()).padStart(2, '0');
-    timeStr = `${hh}:${min}`;
+    const ss = String(now.getSeconds()).padStart(2, '0');
+    timeStr = `${hh}:${min}:${ss}`;
   }
 
   const category = targetCategory && CATEGORIES.includes(targetCategory)
@@ -516,7 +518,7 @@ function runAutoPostSchedulerCheck() {
   const mm = String(now.getMonth() + 1).padStart(2, '0');
   const dd = String(now.getDate()).padStart(2, '0');
   const todayStr = `${yyyy}-${mm}-${dd}`;
-  const currentHHMM = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
+  const currentHHMMSS = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}:${String(now.getSeconds()).padStart(2, '0')}`;
 
   const schedule = ensureDailySchedule();
   const allPosts = getActivePostsList();
@@ -539,10 +541,10 @@ function runAutoPostSchedulerCheck() {
     }
 
     // 2. 해당 슬롯의 예정 시간이 도래했거나 경과한 경우 자동 포스팅 실행
-    if (!slot.executed && currentHHMM >= slot.timeStr) {
+    if (!slot.executed && currentHHMMSS >= slot.timeStr) {
       slot.executed = true;
       updated = true;
-      console.log(`[AutoPost Scheduler] Triggering scheduled post for [${slot.category}] at ${slot.timeStr} (Current: ${currentHHMM})`);
+      console.log(`[AutoPost Scheduler] Triggering scheduled post for [${slot.category}] at ${slot.timeStr} (Current: ${currentHHMMSS})`);
       generateAndPublishAutoPost(slot.category, slot.timeStr).then(createdPost => {
         slot.postId = createdPost.id;
         slot.title = createdPost.title;

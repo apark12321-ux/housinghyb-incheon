@@ -283,6 +283,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 </div>
 `,
     category: "전월세",
+    time: "08:52:28",
     author: "김현우 (공인중개사)",
     date: "2026-07-05",
     image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=800",
@@ -576,6 +577,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 </div>
 `,
     category: "전월세",
+    time: "09:26:14",
     author: "김현우 (공인중개사)",
     date: "2026-06-27",
     image: "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&fit=crop&q=80&w=800",
@@ -863,6 +865,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
 </div>
 `,
     category: "전월세",
+    time: "09:50:50",
     author: "김현우 (공인중개사)",
     date: "2026-06-29",
     image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&q=80&w=800",
@@ -1084,6 +1087,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-07-01</p>
     `,
     category: "전월세",
+    time: "08:10:10",
     author: "김현우 (공인중개사)",
     date: "2026-07-01",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",

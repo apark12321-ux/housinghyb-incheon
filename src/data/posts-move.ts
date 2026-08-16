@@ -165,6 +165,7 @@ export const POSTS_MOVE: Post[] = [
 </div>
 `,
     category: "이사-인테리어",
+    time: "15:32:08",
     author: "박예준 (주거 칼럼니스트)",
     date: "2026-06-25",
     image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=800",
@@ -325,6 +326,7 @@ export const POSTS_MOVE: Post[] = [
 </div>
 `,
     category: "이사-인테리어",
+    time: "13:42:18",
     author: "박예준 (주거 칼럼니스트)",
     date: "2026-06-20",
     image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
@@ -485,6 +487,7 @@ export const POSTS_MOVE: Post[] = [
 </div>
 `,
     category: "이사-인테리어",
+    time: "13:00:00",
     author: "박예준 (주거 칼럼니스트)",
     date: "2026-06-22",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
@@ -645,6 +648,7 @@ export const POSTS_MOVE: Post[] = [
 </div>
 `,
     category: "이사-인테리어",
+    time: "14:22:58",
     author: "박예준 (주거 칼럼니스트)",
     date: "2026-06-15",
     image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=800",
@@ -902,6 +906,7 @@ export const POSTS_MOVE: Post[] = [
 </div>
 `,
     category: "이사-인테리어",
+    time: "15:11:29",
     author: "박예준 (주거 칼럼니스트)",
     date: "2026-06-17",
     image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",

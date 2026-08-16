@@ -321,12 +321,28 @@ function sanitizePostAuthor(p: Post): Post {
 export const POSTS: Post[] = RAW_POSTS.map((p) => {
   const sanitized = sanitizePostAuthor(p);
   const enriched = enrichPostContent(sanitized);
-  // 원본에 저장된 고유 발행일(5월~7월에 걸친 누적 포스팅 히스토리)을 온전히 유지
+  // 원본에 저장된 고유 발행일(5월~8월에 걸친 누적 포스팅 히스토리)을 온전히 유지
   if (!enriched.date) {
     enriched.date = getRelativeDateString(0);
   }
+  if (!enriched.time) {
+    // 고유 시, 분, 초 생성
+    let hash = 0;
+    const str = `${enriched.id}-${enriched.category}-${enriched.date}`;
+    for (let i = 0; i < str.length; i++) {
+      hash = (hash * 31 + str.charCodeAt(i)) % 1000000007;
+    }
+    const hh = String(Math.floor((hash % 16) + 7)).padStart(2, "0"); // 07~22시
+    const mm = String((hash * 7) % 60).padStart(2, "0");
+    const ss = String((hash * 13) % 60).padStart(2, "0");
+    enriched.time = `${hh}:${mm}:${ss}`;
+  }
   return enriched;
-}).sort((a, b) => b.date.localeCompare(a.date));
+}).sort((a, b) => {
+  const dateA = `${a.date || ""} ${a.time || "00:00:00"}`;
+  const dateB = `${b.date || ""} ${b.time || "00:00:00"}`;
+  return dateB.localeCompare(dateA);
+});
 
 // 카테고리별 편리한 지름길 리스트 지원
 export const POSTS_BY_CATEGORY = {

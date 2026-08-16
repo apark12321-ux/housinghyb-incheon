@@ -6,6 +6,7 @@ export interface Post {
   category: "청약-분양" | "전월세" | "이사-인테리어" | "대출-금융";
   author: string;
   date: string;
+  time?: string;
   image: string;
   readTime: string;
   views?: number;

@@ -8,6 +8,7 @@ export const POSTS_FINANCE: Post[] = [
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-12",
     category: "대출-금융",
+    time: "19:06:54",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     readTime: "7분 읽기",
     views: 2120,
@@ -375,6 +376,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "20:31:49",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-14",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
@@ -676,6 +678,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "19:57:03",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-07",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
@@ -967,6 +970,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "21:08:32",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-09",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
@@ -1178,6 +1182,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
     `,
     category: "대출-금융",
+    time: "21:17:23",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-11",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
@@ -1482,6 +1487,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "21:50:50",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-01",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
@@ -1761,6 +1767,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "20:40:40",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-03",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
@@ -1987,6 +1994,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "20:22:58",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-05",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
@@ -2272,6 +2280,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
+    time: "19:48:12",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-28",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800",
@@ -2477,6 +2486,7 @@ export const POSTS_FINANCE: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-30</p>
     `,
     category: "대출-금융",
+    time: "21:59:41",
     author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-30",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",

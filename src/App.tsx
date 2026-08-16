@@ -843,14 +843,7 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
                   <span className="inline-flex items-center text-slate-800 bg-slate-100/90 border border-slate-200/80 px-2.5 py-1 rounded-lg font-mono font-semibold">
                     <Calendar className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
-                    <span>게재일: {activePost.date}</span>
-                  </span>
-                  <span className="inline-flex items-center text-slate-600 bg-slate-50 border border-slate-100 px-2.5 py-1 rounded-lg">
-                    <Clock className="w-3.5 h-3.5 mr-1 text-slate-400" />
-                    <span>{activePost.readTime}</span>
-                  </span>
-                  <span className="bg-blue-50 text-blue-700 font-bold px-2 py-1 rounded-lg text-[11px] border border-blue-100">
-                    ✨ 추천 칼럼
+                    <span>게재일: {activePost.date}{activePost.time ? ` ${activePost.time}` : ""}</span>
                   </span>
                 </div>
               </div>
@@ -1607,7 +1600,7 @@ export default function App() {
                       </p>
                     </div>
                     <div className="pt-2 border-t border-slate-200/60 flex items-center justify-between text-xs text-slate-400">
-                      <span>{post.date}</span>
+                      <span>{post.date}{post.time ? ` ${post.time}` : ""}</span>
                       <span className="text-blue-600 font-bold flex items-center space-x-1 group-hover:translate-x-1 transition-transform">
                         <span>리포트 보기</span>
                         <ChevronRight className="w-3.5 h-3.5" />
@@ -1710,12 +1703,7 @@ export default function App() {
                     <div className="flex items-center space-x-3 text-xs font-mono text-slate-400">
                       <div className="flex items-center space-x-1">
                         <Calendar className="w-3.5 h-3.5 text-blue-400" />
-                        <span>{filteredPosts[0].date}</span>
-                      </div>
-                      <span>•</span>
-                      <div className="flex items-center space-x-1">
-                        <Clock className="w-3.5 h-3.5 text-slate-400" />
-                        <span>{filteredPosts[0].readTime}</span>
+                        <span>{filteredPosts[0].date}{filteredPosts[0].time ? ` ${filteredPosts[0].time}` : ""}</span>
                       </div>
                     </div>
                   </div>
@@ -1731,8 +1719,7 @@ export default function App() {
 
                   <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
                     <div className="text-xs">
-                      <span className="font-bold text-slate-200">하우징허브 (HousingHub)</span>
-                      <span className="text-slate-400 ml-2">에디터 칼럼</span>
+                      <span className="font-bold text-slate-200">{filteredPosts[0].author || "하우징허브 칼럼니스트"}</span>
                     </div>
                     <span className="inline-flex items-center space-x-1 text-sm font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
                       <span>전문 읽기</span>
@@ -1866,10 +1853,9 @@ export default function App() {
                                   <span className="bg-blue-50 text-blue-700 font-bold px-2.5 py-1 rounded-md border border-blue-100">
                                     {post.category}
                                   </span>
-                                  <span className="text-slate-500 font-medium">{post.date}</span>
+                                  <span className="text-slate-500 font-medium">{post.date}{post.time ? ` ${post.time}` : ""}</span>
                                 </div>
                                 <div className="flex items-center space-x-2">
-                                  <span className="text-slate-400 text-xs">{post.readTime}</span>
                                   <button 
                                     onClick={(e) => { e.stopPropagation(); toggleBookmark(post.id, e); }}
                                     className="p-1 rounded-full hover:bg-slate-100 text-slate-400 hover:text-rose-500 transition-colors cursor-pointer"
@@ -1943,7 +1929,7 @@ export default function App() {
                       <p className="text-[10px] text-slate-400 font-mono mt-1 flex items-center gap-2">
                         <span>{post.category}</span>
                         <span>•</span>
-                        <span>{post.date}</span>
+                        <span>{post.date}{post.time ? ` ${post.time}` : ""}</span>
                       </p>
                     </div>
                   </div>

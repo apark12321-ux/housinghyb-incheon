@@ -256,6 +256,7 @@ export const POSTS_RENT: Post[] = [
 </div>
 `,
     category: "전월세",
+    time: "09:02:38",
     author: "김현우 (공인중개사)",
     date: "2026-07-07",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
@@ -483,6 +484,7 @@ export const POSTS_RENT: Post[] = [
 </div>
 `,
     category: "전월세",
+    time: "09:26:14",
     author: "김현우 (공인중개사)",
     date: "2026-07-09",
     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800",
@@ -757,6 +759,7 @@ export const POSTS_RENT: Post[] = [
 </div>
 `,
     category: "전월세",
+    time: "08:46:34",
     author: "김현우 (공인중개사)",
     date: "2026-07-02",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",

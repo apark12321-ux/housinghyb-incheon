@@ -8,6 +8,7 @@ export const POSTS_SUB: Post[] = [
     author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-22",
     category: "청약-분양",
+    time: "03:41:59",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
     readTime: "6분 읽기",
     views: 1890,
@@ -219,6 +220,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-19</p>
     `,
     category: "청약-분양",
+    time: "01:24:36",
     author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-19",
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800",
@@ -393,6 +395,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-23</p>
     `,
     category: "청약-분양",
+    time: "02:40:40",
     author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-23",
     image: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800",
@@ -532,6 +535,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-25</p>
     `,
     category: "청약-분양",
+    time: "02:58:22",
     author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-25",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
@@ -661,6 +665,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-27</p>
     `,
     category: "청약-분양",
+    time: "02:40:40",
     author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-27",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
