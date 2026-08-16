@@ -31,7 +31,6 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
 import { Post, Category, slugify } from "./types";
-import { AdSenseSlot } from "./components/AdSenseSlot";
 import { SubscriptionCalendar } from "./components/SubscriptionCalendar";
 
 interface Message {
@@ -152,111 +151,6 @@ export default function App() {
       window.removeEventListener("resize", calculateReadingProgress);
     };
   }, [activePost]);
-
-  // 본문 H2 태그 직후 자동 광고(Auto Ads) 전략적 분할 렌더러
-  const renderArticleContentWithAds = (htmlContent: string) => {
-    if (!htmlContent) return null;
-
-    // 1. <h2> 태그 닫힘 기준 (</h2>)으로 분할
-    const h2Parts = htmlContent.split(/(<\/h2>)/i);
-
-    // <h2> 태그가 존재하지 않는 경우 <h3> 태그 기준 분할 고려
-    if (h2Parts.length <= 1) {
-      const h3Parts = htmlContent.split(/(<\/h3>)/i);
-      if (h3Parts.length > 3) {
-        const segments: React.ReactNode[] = [];
-        let currentChunk = "";
-        let adIndex = 1;
-
-        for (let i = 0; i < h3Parts.length; i++) {
-          currentChunk += h3Parts[i];
-          if (h3Parts[i].toLowerCase() === "</h3>" && (i === 1 || i === 5)) {
-            segments.push(
-              <div key={`chunk-h3-${i}`} dangerouslySetInnerHTML={{ __html: currentChunk }} />
-            );
-            segments.push(
-              <AdSenseSlot 
-                key={`in-article-ad-h3-${adIndex}`}
-                slot={`345678901${adIndex}`}
-                format="fluid"
-                label={`본문 중간 맞춤 정보 광고 (${adIndex}번 H3 단원 직후)`}
-                className="my-8"
-              />
-            );
-            currentChunk = "";
-            adIndex++;
-          }
-        }
-        if (currentChunk) {
-          segments.push(
-            <div key="chunk-h3-last" dangerouslySetInnerHTML={{ __html: currentChunk }} />
-          );
-        }
-        return (
-          <div className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal">
-            {segments}
-          </div>
-        );
-      }
-
-      return (
-        <div 
-          className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
-          dangerouslySetInnerHTML={{ __html: htmlContent }}
-        />
-      );
-    }
-
-    // <h2> 태그가 존재할 때: <h2> 직후 전략적 자동 광고(Auto Ad) 배치
-    const segments: React.ReactNode[] = [];
-    let accumulatedHtml = "";
-    let h2Count = 0;
-    let adInsertedCount = 0;
-
-    for (let i = 0; i < h2Parts.length; i++) {
-      const part = h2Parts[i];
-      accumulatedHtml += part;
-
-      if (part.toLowerCase() === "</h2>") {
-        h2Count++;
-
-        // 광고 삽입 전략 (CTR 극대화 & UX 보호):
-        // - 첫 번째 H2 직후 무조건 1개 자동 삽입 (독자의 이목이 집중되는 주요 지점)
-        // - H2 단원이 3개 이상일 때 3번째 H2 직후에 추가 1개 배치 (적절한 거리 유지로 피로감 유발 방지)
-        const shouldInsertAd = (h2Count === 1) || (h2Count === 3 && adInsertedCount < 2);
-
-        if (shouldInsertAd) {
-          segments.push(
-            <div key={`chunk-h2-${i}`} dangerouslySetInnerHTML={{ __html: accumulatedHtml }} />
-          );
-          accumulatedHtml = "";
-          adInsertedCount++;
-
-          segments.push(
-            <AdSenseSlot
-              key={`in-article-h2-ad-${h2Count}`}
-              slot={`109876543${h2Count}`}
-              format="fluid"
-              label={`본문 중간 맞춤 정보 광고 (${h2Count}번 H2 단원 직후)`}
-              className="my-8"
-            />
-          );
-        }
-      }
-    }
-
-    if (accumulatedHtml) {
-      segments.push(
-        <div key="chunk-h2-final" dangerouslySetInnerHTML={{ __html: accumulatedHtml }} />
-      );
-    }
-
-    return (
-      <div className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal">
-        {segments}
-      </div>
-    );
-  };
 
   // 자가진단 계산기 탭: 'loan' (대출한도) | 'score' (청약가점)
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
@@ -961,11 +855,11 @@ export default function App() {
                 </div>
               </div>
 
-              {/* 실제 정밀 본문 (H2 태그 직후 자동 광고 전략적 삽입) */}
-              {renderArticleContentWithAds(activePost.content)}
-
-              {/* 본문 하단 구글 애드센스 디스플레이 광고 영역 */}
-              <AdSenseSlot label="본문 하단 맞춤 정보 광고" slot="8765432109" />
+              {/* 실제 정밀 본문 */}
+              <div 
+                className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
+                dangerouslySetInnerHTML={{ __html: activePost.content }}
+              />
 
               {/* 해시태그 목록 */}
               <div className="flex flex-wrap gap-1.5 border-t border-slate-100 pt-8 mt-8">
@@ -1846,9 +1740,6 @@ export default function App() {
                     </span>
                   </div>
                 </div>
-
-                {/* 구글 애드센스 맞춤 광고 영역 */}
-                <AdSenseSlot label="주요 보도 맞춤 광고" />
               </section>
             )}
 
@@ -2120,9 +2011,6 @@ export default function App() {
                 하우징허브의 모든 칼럼은 현장 실무 노하우와 국토교통부, 한국부동산원 청약홈 등 공식 기관의 공고 자료를 직접 확인해 작성합니다.
               </p>
             </div>
-
-            {/* 사이드바 맞춤 광고 슬롯 */}
-            <AdSenseSlot label="사이드바 맞춤 광고" />
 
             {/* 북마크 리딩 리스트 */}
             <div className="bg-white rounded-3xl border border-slate-200 p-6 shadow-xs flex flex-col h-[260px]">
