@@ -30,26 +30,83 @@ app.use(cors());
 app.use(express.json());
 
 // ==========================================
-// [자동 포스팅 시스템 & 1일 1포스팅+ 스케줄러]
+// [자동 포스팅 시스템 & 카테고리별 1일 1포스팅 4시간 간격 스케줄러]
 // ==========================================
-const AUTO_POST_TOPICS = [
-  { topic: "2026년 신생아 특례대출 금리 우대 요건 및 실질 이자 절감 전략", category: "대출-금융" },
-  { topic: "전월세 계약 전 필수 체크: 등기부등본 을구 근저당과 확정일자 당일 효력", category: "전월세" },
-  { topic: "주택청약 무주택 기간 산정 기준 및 부적격 당첨 원천 방지법", category: "청약-분양" },
-  { topic: "디딤돌·버팀목 전세대출 소득 요건 상향 및 LTV DSR 한도 비교", category: "대출-금융" },
-  { topic: "이사 당일 필수 행정 절차: 전입신고 및 임대차 계약서 수기 보완 팁", category: "이사-인테리어" },
-  { topic: "청약통장 월 납입 인정액 25만원 상향 후 공공분양 저축 총액 인정 가이드", category: "청약-분양" },
-  { topic: "아파트 무순위 줍줍 청약 자격 조건과 당첨 확률 극대화 전략", category: "청약-분양" },
-  { topic: "전세보증금 반환보증 보험 HUG HFG 가입 요건 및 임대인 체납 검증", category: "전월세" },
-  { topic: "스트레스 DSR 3단계 시행에 따른 주택담보대출 한도 영향 및 자금 대책", category: "대출-금융" },
-  { topic: "셀프 입주 청소 및 이삿짐 센터 손해 배상 특약 작성 체크리스트", category: "이사-인테리어" },
-  { topic: "생애최초 주택구입자 취득세 감면 요건 및 정부 주거 금융 혜택", category: "대출-금융" },
-  { topic: "소액임차인 우선변제권 최우선 변제금 상한액 및 권리 보장 가이드", category: "전월세" },
-  { topic: "신혼부부 특별공급 소득 요건 완화 및 청약 통장 맞춤형 자금 플랜", category: "청약-분양" },
-  { topic: "임대차 3법 핵심 특약 및 만기 전 보증금 반환 계약서 작성 실무", category: "전월세" }
-];
+const CATEGORIES = ["청약-분양", "전월세", "대출-금융", "이사-인테리어"];
+
+const CATEGORY_TOPIC_BANKS: Record<string, string[]> = {
+  "청약-분양": [
+    "2026년 주택청약 제도 개편 총정리: 무주택 기간 산정 및 부적격 당첨 예방 실무",
+    "신혼부부·신생아 특별공급 소득 요건 완화와 자격 판정 가이드",
+    "청약통장 월 납입 인정액 25만원 상향 후 공공분양 저축 총액 인정 전략",
+    "수도권 아파트 무순위 줍줍 청약 자격 조건과 당첨 확률 극대화 비법",
+    "분양가 상한제 적용 단지 실거주 의무 유예 기간 및 전매제한 해제 기준",
+    "청약 가점 84점 만점 구조 분석 및 부양가족 수 오류 방지 체크포인트",
+    "공공분양 나눔형·선택형·일반형 유형별 자금 조달 및 시세 차익 비교",
+    "생애최초 특별공급 추첨제 물량 배분과 1인 가구 청약 당첨 가이드",
+    "재당첨 제한 규정 및 과거 당첨 이력 세대원 전원 조회 방법",
+    "청약홈 청약 신청 당일 필수 준비물 및 인증서 오류 대처법",
+    "오피스텔·도시형생활주택 청약 시 주택 수 산정 제외 요건",
+    "다자녀 가구 특별공급 2자녀 완화 기준과 배점표 계산 실무",
+    "공공택지 사전청약 취소 단지 본청약 전환 시 기존 당첨자 지위 보장",
+    "지역 우선 공급 배정 비율(당해 지역)과 수도권 거주 요건 충족 팁",
+    "아파트 옵션 계약 시 필수 선택 품목과 마이너스 옵션 활용 가이드"
+  ],
+  "전월세": [
+    "전월세 계약 전 필수 체크: 등기부등본 을구 근저당과 확정일자 당일 효력",
+    "전세보증금 반환보증 보험 HUG·HF·SGI 가입 요건 및 임대인 체납 검증",
+    "임대차 3법 핵심 특약 및 계약갱신청구권 행사 시 주의사항",
+    "소액임차인 최우선변제금 지역별 상한액 및 권리 보장 요건",
+    "깡통전세 예방을 위한 매매가 대비 전세가율(갭) 위험 분석 가이드",
+    "전세계약 만기 전 이사 시 중개수수료 부담 주체 및 보증금 반환 합의서",
+    "신탁 부동산 전세계약 사기 방지: 신탁원부 열람 및 동의서 필수 체크",
+    "묵시적 갱신 후 계약 해지 통보 효력 발생 시점(3개월) 및 월세 정산법",
+    "임차권등기명령 신청 요건 및 이사 후에도 대항력과 우선변제권 유지하는 법",
+    "월세 세액공제 및 소득공제 자격 요건, 공제율 및 환급금 극대화 팁",
+    "전세사기 특별법 피해자 지원 요건 및 저리 대환대출 신청 가이드",
+    "다가구 주택 전세계약 시 선순위 보증금 총액 확인 및 확인설명서 검증",
+    "임대인 변경 시 전세계약 승계 거부 및 보증금 즉시 반환 청구 요령",
+    "전월세 전환율 계산 공식과 법정 상한선 초과 월세 인상 대응법",
+    "전입세대확인서(열람내역) 발급 방법과 위장 전입 세대 확인 노하우"
+  ],
+  "대출-금융": [
+    "2026년 신생아 특례대출 금리 우대 요건 및 실질 이자 절감 전략",
+    "디딤돌·버팀목 전세대출 소득 요건 상향 및 LTV·DSR 한도 비교",
+    "스트레스 DSR 3단계 시행에 따른 주택담보대출 한도 영향 및 자금 대책",
+    "생애최초 주택구입자 취득세 감면 요건(최대 200만원) 및 환급 신청법",
+    "변동금리 vs 고정금리(주기형·혼합형) 대출 상품 선택 기준과 금리 주기",
+    "주택도시기금 청년전용 버팀목 전세자금대출 대환 및 연장 가이드",
+    "아파트 중도금 집단대출과 잔금대출 전환 시 DSR 계산 및 자금 조달 계획",
+    "1주택자 갈아타기 주택담보대출 처분조건부 승인 요건 및 기한",
+    "부동산 자금조달계획서 작성 대상 및 증빙 서류 준비 요령",
+    "주택담보대출 갈아타기(대환) 플랫폼 활용법과 중도상환수수료 계산",
+    "신용점수 관리와 1금융권 최저 우대금리 취득을 위한 5가지 금융 습관",
+    "보금자리론 안심 전환 대출 자격 및 거치 기간 설정 유의점",
+    "부동산 취득세·양도소득세 비과세 요건 및 1세대 1주택 비과세 특례",
+    "전세대출 질권설정과 채권양도 통지 방식의 차이점 및 임대인 동의",
+    "마이너스 통장 및 신용대출이 주담대 DSR 한도에 미치는 영향 분석"
+  ],
+  "이사-인테리어": [
+    "이사 당일 필수 행정 절차: 전입신고, 확정일자 및 공과금 정산 체크리스트",
+    "포장이사 견적 비교 노하우 및 이삿짐 파손 시 손해배상 특약 작성법",
+    "입주 전 셀프 하자 점검(체크리스트) 요령 및 시공사 하자보수 청구권",
+    "아파트 인테리어 공사 전 입주민 동의서 수령 및 행위허가 신청 절차",
+    "좁은 원룸·오피스텔 공간 활용 인테리어 가구 배치 및 수납 솔루션",
+    "입주청소 vs 거주청소 체크포인트와 바가지 요금 방지 계약 팁",
+    "전월세 원상복구 의무 범위: 자연 마모 vs 세입자 과실 법적 판례 기준",
+    "손 없는 날 의미와 이사 비용 절약을 위한 날짜 선정 꿀팁",
+    "친환경 베이크아웃(Bake-Out) 새집증후군 유해물질 완벽 제거법",
+    "누수·결로·곰팡이 하자 발생 시 임대인 수선 의무 및 손해배상 청구",
+    "셀프 도배·장판 시공 주의사항과 자재 선정 가이드",
+    "대형 폐기물 스티커 인터넷 발급 및 무상 방문수거 서비스 이용법",
+    "아파트 층간소음 방지 매트 시공 효과 및 층간소음 분쟁 조정 절차",
+    "이사 전 도시가스 해지·연결 예약 및 자동이체 계좌 해지 요령",
+    "스마트홈 IoT 구축: 조명·도어락·스마트 플러그 입문 추천 가이드"
+  ]
+};
 
 const autoPostsFilePath = path.join(process.cwd(), "src", "data", "auto-posts.json");
+const autoScheduleFilePath = path.join(process.cwd(), "src", "data", "auto-schedule.json");
 
 function loadAutoPosts(): any[] {
   try {
@@ -86,7 +143,117 @@ function getActivePostsList(): any[] {
   });
 }
 
-async function generateAndPublishAutoPost(overrideTimeStr?: string) {
+export interface ScheduleSlot {
+  category: string;
+  timeStr: string;
+  executed: boolean;
+  postId?: string;
+  title?: string;
+}
+
+export interface DailyScheduleState {
+  date: string;
+  minimumIntervalHours: number;
+  slots: ScheduleSlot[];
+}
+
+function loadDailySchedule(): DailyScheduleState | null {
+  try {
+    if (fs.existsSync(autoScheduleFilePath)) {
+      const data = fs.readFileSync(autoScheduleFilePath, "utf-8");
+      return JSON.parse(data);
+    }
+  } catch (err) {
+    console.error("Schedule state load error:", err);
+  }
+  return null;
+}
+
+function saveDailySchedule(schedule: DailyScheduleState) {
+  try {
+    const dir = path.dirname(autoScheduleFilePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(autoScheduleFilePath, JSON.stringify(schedule, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Schedule state save error:", err);
+  }
+}
+
+let currentSchedule: DailyScheduleState = loadDailySchedule() || {
+  date: "",
+  minimumIntervalHours: 4,
+  slots: []
+};
+
+/**
+ * 하루 4개 카테고리별 1일 1포스팅 스케줄 생성
+ * 최소 4시간 (>= 240분) 간격 엄격 준수 + 매일 랜덤 시간 배정
+ */
+function createRandomDailySchedule(todayStr: string): DailyScheduleState {
+  // 4개 카테고리 순서를 매일 무작위 셔플
+  const shuffledCategories = [...CATEGORIES].sort(() => Math.random() - 0.5);
+
+  // 4개 시간 슬롯을 최소 240분(4시간) 간격으로 생성
+  // T0: 00:30 ~ 03:30 (30 ~ 210분)
+  const t0 = Math.floor(Math.random() * (210 - 30 + 1)) + 30;
+
+  // T1: T0 + 240분 ~ Min(T0 + 330분, 570분) -> 최소 4시간 간격 보장 (04:30 ~ 09:30)
+  const minT1 = t0 + 240;
+  const maxT1 = Math.min(t0 + 330, 570);
+  const t1 = Math.floor(Math.random() * (maxT1 - minT1 + 1)) + minT1;
+
+  // T2: T1 + 240분 ~ Min(T1 + 330분, 960분) -> 최소 4시간 간격 보장 (10:30 ~ 16:00)
+  const minT2 = t1 + 240;
+  const maxT2 = Math.min(t1 + 330, 960);
+  const t2 = Math.floor(Math.random() * (maxT2 - minT2 + 1)) + minT2;
+
+  // T3: T2 + 240분 ~ Min(T2 + 330분, 1380분) -> 최소 4시간 간격 보장 (16:30 ~ 23:00)
+  const minT3 = t2 + 240;
+  const maxT3 = Math.min(t2 + 330, 1380);
+  const t3 = Math.floor(Math.random() * (maxT3 - minT3 + 1)) + minT3;
+
+  const minutesList = [t0, t1, t2, t3];
+  const slots: ScheduleSlot[] = minutesList.map((mins, idx) => {
+    const hh = String(Math.floor(mins / 60)).padStart(2, "0");
+    const mm = String(mins % 60).padStart(2, "0");
+    return {
+      category: shuffledCategories[idx],
+      timeStr: `${hh}:${mm}`,
+      executed: false
+    };
+  });
+
+  const newSchedule: DailyScheduleState = {
+    date: todayStr,
+    minimumIntervalHours: 4,
+    slots
+  };
+
+  saveDailySchedule(newSchedule);
+  console.log(`[AutoPost Scheduler] Generated fresh schedule for ${todayStr} (Categories: 1/day each, >=4h gap):`);
+  slots.forEach((s, i) => console.log(`  Slot ${i + 1} [${s.category}] at ${s.timeStr}`));
+
+  return newSchedule;
+}
+
+function ensureDailySchedule(): DailyScheduleState {
+  const now = new Date();
+  const yyyy = now.getFullYear();
+  const mm = String(now.getMonth() + 1).padStart(2, '0');
+  const dd = String(now.getDate()).padStart(2, '0');
+  const todayStr = `${yyyy}-${mm}-${dd}`;
+
+  if (currentSchedule.date === todayStr && currentSchedule.slots.length === 4) {
+    return currentSchedule;
+  }
+
+  currentSchedule = createRandomDailySchedule(todayStr);
+  return currentSchedule;
+}
+
+async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeStr?: string) {
   const now = new Date();
   const yyyy = now.getFullYear();
   const mm = String(now.getMonth() + 1).padStart(2, '0');
@@ -100,40 +267,52 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
     timeStr = `${hh}:${min}`;
   }
 
+  const category = targetCategory && CATEGORIES.includes(targetCategory)
+    ? targetCategory
+    : CATEGORIES[Math.floor(Math.random() * CATEGORIES.length)];
+
+  const topicPool = CATEGORY_TOPIC_BANKS[category] || CATEGORY_TOPIC_BANKS["청약-분양"];
   const existingTitles = getActivePostsList().map(p => p.title);
-  const availableTopics = AUTO_POST_TOPICS.filter(t => !existingTitles.includes(t.topic));
-  const selectedTheme = availableTopics.length > 0
+  const availableTopics = topicPool.filter(t => !existingTitles.includes(t));
+  const selectedTopic = availableTopics.length > 0
     ? availableTopics[Math.floor(Math.random() * availableTopics.length)]
-    : AUTO_POST_TOPICS[Math.floor(Math.random() * AUTO_POST_TOPICS.length)];
+    : topicPool[Math.floor(Math.random() * topicPool.length)];
 
-  console.log(`[AutoPost System] Triggering daily auto-post for ${todayStr} ${timeStr} - Topic: "${selectedTheme.topic}"`);
+  console.log(`[AutoPost System] Publishing auto-post for [${category}] on ${todayStr} ${timeStr}: "${selectedTopic}"`);
 
-  let postTitle = selectedTheme.topic;
+  let postTitle = selectedTopic;
   let postContent = "";
   let postExcerpt = "";
-  let postHashtags: string[] = ["하우징허브", "부동산정책", "주거안심", selectedTheme.category.replace("-", "")];
-  let postReadTime = "3분";
+  let postHashtags: string[] = ["하우징허브", "부동산정책", "주거안심", category.replace("-", "")];
+  let postReadTime = "8분";
 
   if (ai) {
     try {
       const prompt = `
-        너는 2026년 구글 검색 엔진 최적화(SEO) 및 애드센스 승인 로직(E-E-A-T 및 YMYL 규정)을 완벽히 이해하고 있는 최고 수준의 부동산·주거 정책 전문 콘텐츠 작가이다.
-        다음 주제에 관한 고품질 전문 정보글(HTML)을 작성해 주세요.
-        주제: ${selectedTheme.topic}
-        카테고리: ${selectedTheme.category}
+        당신은 10년 차 IT/테크 및 부동산·주거 정책 전문 테크니컬 블로그 에디터이자 구글 SEO/E-E-A-T 최고 전문가입니다.
+        주어진 주제와 키워드를 바탕으로 독자에게 실질적인 가치를 제공하고 구글 검색 상위 노출(E-E-A-T 및 YMYL) 기준을 충족하는 고품질 전문 포스팅(HTML 형식)을 작성합니다.
 
-        작성 조건 (2026 애드센스 승인 심사 가이드):
-        1. 독창성 및 고유 시각: 뻔한 개요 나열을 배제하고, '타임라인', '장단점 심층 비교', '사람들이 잘 모르는 실무 핵심 비공개 사실'을 포함하세요.
-        2. 경험 및 전문성(E-E-A-T) 주입: 이 분야를 직접 경험해 본 전문가만 알 수 있는 '구체적인 주의사항', '흔히 겪는 실패 사례', '실무자의 극복 팁'을 명확히 제시하세요.
-        3. 구조화 및 분량: <h2> 및 <h3> 태그를 사용하여 목차와 문단을 명확히 나누고, 전체 분량은 공백 제외 최소 2,000자 이상(800~1,500 단어)으로 깊이 있게 작성하세요.
-        4. 표(Table) 필수: 핵심 정리 또는 요율 비교 테이블(<table class="w-full border-collapse my-4 text-xs sm:text-sm">...</table>)을 최소 1개 이상 포함하세요.
-        5. 명확한 문제 해결 및 FAQ: 글 하단에 방문자들이 가장 궁금해할 '자주 묻는 질문(FAQ)' 3가지를 <h2>자주 묻는 질문 (FAQ)</h2> 섹션으로 만들어 질문과 상세 답변을 함께 작성하세요.
-        6. 문체: 정중하고 신뢰감을 주는 '-입니다/합니다' 체를 사용하세요.
-        7. HTML 태그: <h2>, <h3>, <p>, <ul>, <li>, <table>, <thead>, tbody, tr, th, td, <strong>, <span> 만 사용하세요.
+        [주제]: ${selectedTopic}
+        [카테고리]: ${category}
+
+        [작성 원칙]:
+        1. 가독성 & 체류시간 최적화:
+           - 두괄식 구성: 서론에서 핵심 결론과 해결책을 먼저 명쾌하게 제시합니다.
+           - 문단 분절: 2~3문장마다 줄바꿈을 적용하고, 핵심 문장은 <strong>굵게</strong> 강조합니다.
+           - 리스트 및 표: 핵심 정보 요약 비교 테이블(<table class="w-full border-collapse my-4 text-xs sm:text-sm">...</table>)을 최소 1개 이상 필수 포함합니다.
+        2. 구조화 및 전문성(E-E-A-T):
+           - <h2> 및 <h3> 태그를 활용한 논리적 계층 구조를 만듭니다.
+           - '실무자 핵심 비공개 팁', '초보자가 자주 겪는 3가지 실패 사례와 극복법'을 구체적으로 서술합니다.
+           - 전체 분량은 공백 제외 최소 2,000자 이상(800~1,500 단어)의 깊이 있는 실전 가이드로 작성합니다.
+        3. 자주 묻는 질문 (FAQ):
+           - 글 하단에 <h2>자주 묻는 질문 (FAQ)</h2> 섹션을 만들고 독자들이 가장 궁금해할 실무 질문 3개(Q1, Q2, Q3)와 명쾌한 해결책 답변을 포함합니다.
+        4. 문체 및 HTML:
+           - 정중하고 신뢰감을 주는 '-입니다/합니다' 체를 사용합니다.
+           - 허용 태그: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <table>, <thead>, <tbody>, <tr>, <th>, <td>, <strong>, <span>
       `;
 
       const response = await ai.models.generateContent({
-        model: "gemini-3.5-flash",
+        model: "gemini-2.5-flash",
         contents: prompt,
         config: {
           responseMimeType: "application/json",
@@ -160,35 +339,35 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
 
       if (postContent && !postContent.includes("<table")) {
         const tableHtml = `
-          <h2>핵심 점검 요율 및 실무 비교 가이드 (E-E-A-T)</h2>
+          <h2>${category} 핵심 요건 및 실무 비교 점검표</h2>
           <div class="overflow-x-auto my-4">
             <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
               <thead>
                 <tr class="bg-slate-100 text-slate-800">
-                  <th class="border border-slate-200 p-2.5 font-bold">점검 항목</th>
-                  <th class="border border-slate-200 p-2.5 font-bold">기준 요건 및 내용</th>
-                  <th class="border border-slate-200 p-2.5 font-bold">실수요자 주의사항</th>
-                  <th class="border border-slate-200 p-2.5 font-bold">전문가 권장 대응책</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">점검 구분</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">법적 기준 및 요건</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">실수요자 유의사항</th>
+                  <th class="border border-slate-200 p-2.5 font-bold">전문가 권장 해결책</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
-                  <td class="border border-slate-200 p-2.5 font-semibold">자격 요건 검증</td>
-                  <td class="border border-slate-200 p-2.5">소득, 자산, 무주택 기간 요건 대조</td>
-                  <td class="border border-slate-200 p-2.5">단순 단어 오해로 인한 부적격 판정 위험</td>
-                  <td class="border border-slate-200 p-2.5">주택도시기금 자가진단 사전 제출</td>
+                  <td class="border border-slate-200 p-2.5 font-semibold">1단계: 사전 검증</td>
+                  <td class="border border-slate-200 p-2.5">소득, 자산 및 무주택 기간 요건</td>
+                  <td class="border border-slate-200 p-2.5">기준 오해로 인한 부적격 처리 위험</td>
+                  <td class="border border-slate-200 p-2.5">주택도시기금 자가진단 사전 시뮬레이션</td>
                 </tr>
                 <tr class="bg-slate-50">
-                  <td class="border border-slate-200 p-2.5 font-semibold">권리 보장 및 법적 효력</td>
-                  <td class="border border-slate-200 p-2.5">등기부등본 을구 근저당 및 전입신고</td>
-                  <td class="border border-slate-200 p-2.5">잔금 지급 당일 담보권 설정으로 후순위 전락</td>
-                  <td class="border border-slate-200 p-2.5">익일 담보권 설정 금지 특약 작성 및 실시간 검증</td>
+                  <td class="border border-slate-200 p-2.5 font-semibold">2단계: 권리 확보</td>
+                  <td class="border border-slate-200 p-2.5">등기부등본 을구 근저당 및 대항력</td>
+                  <td class="border border-slate-200 p-2.5">잔금 당일 권리 변동으로 후순위 전락</td>
+                  <td class="border border-slate-200 p-2.5">잔금 당일 등기부 재열람 및 익일 담보 금지 특약</td>
                 </tr>
                 <tr>
-                  <td class="border border-slate-200 p-2.5 font-semibold">자금 상환 안정성</td>
-                  <td class="border border-slate-200 p-2.5">스트레스 DSR 2·3단계 가산 금리 적용</td>
-                  <td class="border border-slate-200 p-2.5">대출 한도 축소에 따른 잔금 부족 위험</td>
-                  <td class="border border-slate-200 p-2.5">보수적 DSR 계산기 및 예비비 10% 확보</td>
+                  <td class="border border-slate-200 p-2.5 font-semibold">3단계: 자금 계획</td>
+                  <td class="border border-slate-200 p-2.5">스트레스 DSR 및 금리 주기 선택</td>
+                  <td class="border border-slate-200 p-2.5">대출 한도 축소로 인한 잔금 부족</td>
+                  <td class="border border-slate-200 p-2.5">보수적 상환비율 계산 및 10% 이상 예비비 확보</td>
                 </tr>
               </tbody>
             </table>
@@ -201,92 +380,90 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
         const faqHtml = `
           <h2>자주 묻는 질문 (FAQ)</h2>
           <h3>Q1. 조건 미충족 시 어떤 불이익이나 페널티가 발생하나요?</h3>
-          <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 지방세 및 세액의 100% 추징뿐만 아니라 가산세가 추가 적용됩니다. 또한 정책 대출의 경우 계약 해지 및 시중 금리로 전환되므로 사전 검증이 필수적입니다.</p>
+          <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 세액의 100% 추징뿐만 아니라 가산세가 부과됩니다. 또한 정책 금융의 경우 대출 약정이 해지되고 시중 금리로 전환되므로 사전 자격 검증이 필수적입니다.</p>
 
-          <h3>Q2. 서류 신청 전 반드시 사전 확인해야 할 사항은 무엇인가요?</h3>
-          <p>A. 본인 및 세대원 전체의 등기부등본상 과거 주택 소유 및 처분 이력, 세대주 등재 기간, 국세·지방세 체납 여부를 사전에 조회해야 부적격 통보를 방지할 수 있습니다.</p>
+          <h3>Q2. 신청 전 반드시 사전 확인해야 할 필수 서류는 무엇인가요?</h3>
+          <p>A. 본인 및 세대원 전체의 주민등록등본, 등기부등본상 과거 주택 소유 및 처분 이력, 소득금액증명원, 국세·지방세 완납 증명서를 사전에 발급받아 대조하셔야 부적격 처리를 방지할 수 있습니다.</p>
 
-          <h3>Q3. 계약 진행 과정에서 전문가의 도움을 받는 방법은 무엇인가요?</h3>
-          <p>A. 정부 주택도시기금 공식 시뮬레이터 및 하우징허브 내 자가진단 계산기를 활용하거나, 계약서 작성 전 전문 변호사/세무사의 특약사항 검수를 받으시는 것을 권장합니다.</p>
+          <h3>Q3. 계약 진행 과정에서 전문가의 검증을 받는 가장 안전한 방법은 무엇인가요?</h3>
+          <p>A. 정부 공식 주거 포털 및 하우징허브 내 계산기를 활용하시거나, 계약서 날인 전 전문 행정사 또는 부동산 전문 법무사에게 특약 조항의 법적 유효성을 사전 검토받으시는 것을 적극 권장합니다.</p>
         `;
         postContent += faqHtml;
       }
     } catch (err) {
-      console.warn("[AutoPost System] Gemini generation failed, executing robust template fallback:", err);
+      console.warn("[AutoPost System] Gemini API error, applying high quality structured template:", err);
     }
   }
 
   if (!postContent) {
     postContent = `
-      <h2>${postTitle}: 핵심 개념과 시장 영향 분석</h2>
-      <p>최근 부동산 주택 시장과 정부 주거 금융 정책의 신속한 변화 속에서, 실수요자와 임차인, 예비 청약자는 정확한 실무 법률 기준과 정교한 자금 계획을 수립해야 합니다. 단순히 매스컴의 요약 보도만을 믿고 계약을 진행할 경우 예상치 못한 부적격 처리나 이자 부담 급증, 보증금 손실 위험에 직면할 수 있습니다. 본 리포트에서는 ${selectedTheme.topic}에 관한 핵심 체크포인트와 실전 극복 전략을 명확히 제시해 드립니다.</p>
+      <h2>${postTitle}: 핵심 결론 및 시장 영향 분석</h2>
+      <p>2026년 주택 정책과 금융 환경의 급격한 개편 속에서 <strong>${category}</strong> 분야의 핵심 요건을 정확히 숙지하는 것은 실수요자의 자산과 주거 안정을 지키는 결정적 열쇠입니다. 본 리포트에서는 ${selectedTopic}에 관한 명쾌한 해법과 실전 체크포인트를 두괄식으로 안내해 드립니다.</p>
       
-      <h2>요건 비교 및 가이드 세부 요약표</h2>
-      <p>아래 표는 실수요자가 계약 및 대출 신청 전 반드시 체크해야 하는 주요 비교 항목과 자격 가이드라인입니다.</p>
+      <h2>핵심 요건 및 실무 비교 점검표</h2>
+      <p>아래 표는 실수요자가 계약 및 신청 전 반드시 숙지해야 할 핵심 비교 가이드라인입니다.</p>
       <div class="overflow-x-auto my-4">
         <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
           <thead>
             <tr class="bg-slate-100 text-slate-800">
               <th class="border border-slate-200 p-2.5 font-bold">점검 구분</th>
-              <th class="border border-slate-200 p-2.5 font-bold">주요 대상 및 요건</th>
-              <th class="border border-slate-200 p-2.5 font-bold">실질적 주거 혜택 / 리스크</th>
-              <th class="border border-slate-200 p-2.5 font-bold">실무 대응 전략</th>
+              <th class="border border-slate-200 p-2.5 font-bold">주요 기준 및 자격 요건</th>
+              <th class="border border-slate-200 p-2.5 font-bold">실수요자 혜택 및 리스크</th>
+              <th class="border border-slate-200 p-2.5 font-bold">전문가 권장 실행 전략</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">금융 자금 배정</td>
-              <td class="border border-slate-200 p-2.5">정부 저금리 정책 대출 (디딤돌/버팀목/신생아)</td>
-              <td class="border border-slate-200 p-2.5">시중은행 대비 연 1.5%~2.5%p 이자 절감 효과</td>
-              <td class="border border-slate-200 p-2.5">소득 및 자산 한도 자가진단 사전 진행 필수</td>
+              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">1단계: 자격 진단</td>
+              <td class="border border-slate-200 p-2.5">소득, 자산 및 세대원 무주택 요건</td>
+              <td class="border border-slate-200 p-2.5">정부 저금리 정책 우대 지원 대상 확정</td>
+              <td class="border border-slate-200 p-2.5">공식 포털 자가진단 사전 시뮬레이션</td>
             </tr>
             <tr class="bg-slate-50">
-              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">권리 보장 및 대항력</td>
-              <td class="border border-slate-200 p-2.5">전입신고, 확정일자 및 전세보증금 반환보증</td>
-              <td class="border border-slate-200 p-2.5">경매·체납 발생 시 우선변제권 및 보증금 전액 수호</td>
-              <td class="border border-slate-200 p-2.5">잔금 당일 등기부등본 을구 실시간 재발급 검증</td>
+              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">2단계: 권리 보전</td>
+              <td class="border border-slate-200 p-2.5">전입신고, 확정일자 및 등기부 을구 검증</td>
+              <td class="border border-slate-200 p-2.5">경매 및 권리 충돌 시 우선변제권 수호</td>
+              <td class="border border-slate-200 p-2.5">잔금 당일 등기부등본 재열람 및 필수 특약</td>
             </tr>
             <tr>
-              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">청약·분양 적격성</td>
-              <td class="border border-slate-200 p-2.5">무주택 세대 구성원 자격 및 저축 총액</td>
-              <td class="border border-slate-200 p-2.5">공공·민간 무순위 및 특별공급 당첨 기회 확충</td>
-              <td class="border border-slate-200 p-2.5">세대원 전체 무주택 기간 및 부적격 이력 사전 조회</td>
+              <td class="border border-slate-200 p-2.5 font-semibold text-slate-900">3단계: 자금 설계</td>
+              <td class="border border-slate-200 p-2.5">스트레스 DSR 3단계 및 금리 주기 선택</td>
+              <td class="border border-slate-200 p-2.5">월 상환 원리금 부담 최소화</td>
+              <td class="border border-slate-200 p-2.5">원금 균등 상환 및 10% 이상 예비비 완충</td>
             </tr>
           </tbody>
         </table>
       </div>
 
-      <h2>초보자가 자주 겪는 3가지 실수와 주의점 (E-E-A-T)</h2>
-      <h3>1. 잔금 당일 등기부 권리 변동 확인 누락</h3>
-      <p>계약서 작성 당일에 등기부등본을 확인했더라도 잔금 지급 당일 아침에 등기부를 재발급받지 않으면, 임대인이 계약 직전 설정한 근저당권에 밀려 후순위 임차인으로 전락할 수 있습니다. 반드시 잔금 지급 직전 등기부등본을 다시 발급하여 을구의 권리 변동 여부를 확인하셔야 합니다.</p>
-      
-      <h3>2. 스트레스 DSR 적용에 따른 대출한도 착오</h3>
-      <p>과거 기준으로 본인의 대출 가능 금액을 예상했다가 금리 가산(스트레스 금리)이 적용되는 2·3단계 DSR 규제로 인해 예상 대출금이 2,000만~5,000만원 이상 차감되어 잔금 마련에 차질을 빚는 경우가 빈번합니다. 사전 자가진단 툴을 사용하여 실효 한도를 보수적으로 측정하셔야 합니다.</p>
+      <h2>초보자가 자주 겪는 3가지 실패 사례와 실무자 극복 팁 (E-E-A-T)</h2>
+      <h3>1. 계약 당일 권리 변동 확인 누락</h3>
+      <p>계약서 작성 시점에 등기부등본을 확인했더라도 잔금 당일 아침에 재발급하지 않으면, 임대인이 계약 직전 설정한 근저당에 밀려 후순위 임차인으로 전락할 수 있습니다. <strong>반드시 잔금 이체 직전 등기부등본을 다시 발급하여 을구 권리 변동을 검증</strong>해야 합니다.</p>
 
-      <h3>3. 청약 통장 인정 금액과 자격 요건 오해</h3>
-      <p>청약통장 월 인정 한도가 25만원으로 인상된 점을 인지하지 못하고 기존 10만원으로만 저축을 유지할 경우, 공공분양 당첨 커트라인 형성 시 총 인정 금액에서 열세에 놓일 수 있습니다. 본인의 자금 사정에 맞춰 월 납입액을 최적화하는 전략이 요구됩니다.</p>
+      <h3>2. 스트레스 DSR 한도 축소로 인한 잔금 차질</h3>
+      <p>과거 기준으로 대출 가능 한도를 산정했다가 가산 금리가 반영되는 최신 DSR 규제로 인해 예상 대출금이 수천만 원 차감되는 사례가 발생합니다. <strong>사전 은행 상담을 통해 실효 한도를 보수적으로 산출</strong>하셔야 합니다.</p>
 
-      <h2>하우징허브 전문가 실무 체크리스트</h2>
+      <h3>3. 공공분양 및 청약 인정 금액 착오</h3>
+      <p>청약통장 월 납입 인정액이 25만원으로 상향 조정된 점을 간과하고 기존 10만원 납입을 고수할 경우, 공공분양 당첨 커트라인 형성 시 총 인정액에서 열세에 놓이게 됩니다. <strong>본인의 가용 자금 범위 내에서 월 납입액을 최적화</strong>하십시오.</p>
+
+      <h2>하우징허브 전문가 실천 체크리스트</h2>
       <ul>
-        <li><strong>계약 전:</strong> 국세·지방세 완납 증명서 요구 및 등기부등본 가압류·근저당 금액 확인</li>
-        <li><strong>계약 시:</strong> 임대인 잔금 익일까지 담보권 설정 금지 특약 작성 및 신분증 대조</li>
-        <li><strong>잔금 및 입주:</strong> 잔금 이체 당일 주민센터/인터넷 등기소 전입신고 및 확정일자 부여 받기</li>
-        <li><strong>사후 관리:</strong> HUG 전세보증금 반환보증 가입 조건 대조 및 보증서 수령</li>
+        <li><strong>사전 준비:</strong> 세대원 전체 주택 소유 이력 조회 및 국세·지방세 완납 증명서 확인</li>
+        <li><strong>계약 시점:</strong> 임대인 잔금 익일까지 추가 담보권 설정 금지 특약 작성 및 신분증 대조</li>
+        <li><strong>입주 당일:</strong> 잔금 이체 즉시 주민센터/정부24 전입신고 및 확정일자 부여 완료</li>
+        <li><strong>사후 관리:</strong> 보증보험 가입 요건 검증 및 정기 등기부 변동 모니터링</li>
       </ul>
 
       <h2>자주 묻는 질문 (FAQ)</h2>
       <h3>Q1. 조건 미충족 시 어떤 불이익이나 페널티가 발생하나요?</h3>
-      <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 지방세 및 세액의 100% 추징뿐만 아니라 가산세가 추가 적용됩니다. 또한 정책 대출의 경우 계약 해지 및 시중 금리로 전환되므로 사전 검증이 필수적입니다.</p>
+      <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 세액의 100% 추징뿐만 아니라 가산세가 부과됩니다. 또한 정책 대출의 경우 계약 해지 및 시중 금리로 전환되므로 사전 검증이 필수적입니다.</p>
 
-      <h3>Q2. 서류 신청 전 반드시 사전 확인해야 할 사항은 무엇인가요?</h3>
+      <h3>Q2. 신청 전 반드시 사전 확인해야 할 필수 서류는 무엇인가요?</h3>
       <p>A. 본인 및 세대원 전체의 등기부등본상 과거 주택 소유 및 처분 이력, 세대주 등재 기간, 국세·지방세 체납 여부를 사전에 조회해야 부적격 통보를 방지할 수 있습니다.</p>
 
       <h3>Q3. 계약 진행 과정에서 전문가의 도움을 받는 방법은 무엇인가요?</h3>
-      <p>A. 정부 주택도시기금 공식 시뮬레이터 및 하우징허브 내 자가진단 계산기를 활용하거나, 계약서 작성 전 전문 변호사/세무사의 특약사항 검수를 받으시는 것을 권장합니다.</p>
-
-      <p>하우징허브 주거 정책 기획팀은 모든 방문객과 임차인, 예비 청약자의 소중한 주거 권리를 수호하기 위해 지속적으로 최신 공고문과 정책 가이드를 검증하여 안내해 드립니다.</p>
+      <p>A. 정부 주택도시기금 공식 시뮬레이터 및 하우징허브 내 계산기를 활용하거나, 계약서 작성 전 전문 변호사/세무사의 특약사항 검수를 받으시는 것을 권장합니다.</p>
     `;
-    postExcerpt = `${selectedTheme.topic}에 관한 하우징허브 주거 정책 기획팀의 최신 실전 분석 및 체크리스트 리포트입니다.`;
+    postExcerpt = `${selectedTopic}에 관한 하우징허브 주거 정책 기획팀의 2026 최신 실전 분석 및 전문가 체크리스트 가이드입니다.`;
   }
 
   const categoryImages: Record<string, string> = {
@@ -299,11 +476,11 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
   const newPost = {
     id: `auto-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
     title: postTitle,
-    category: selectedTheme.category,
+    category,
     date: todayStr,
     time: timeStr,
     readTime: postReadTime,
-    image: categoryImages[selectedTheme.category] || categoryImages["청약-분양"],
+    image: categoryImages[category] || categoryImages["청약-분양"],
     excerpt: postExcerpt,
     content: postContent,
     hashtags: postHashtags,
@@ -312,45 +489,16 @@ async function generateAndPublishAutoPost(overrideTimeStr?: string) {
 
   autoPostsList.unshift(newPost);
   saveAutoPosts(autoPostsList);
-  console.log(`[AutoPost System] Published new post: "${newPost.title}" (${todayStr} ${timeStr})`);
+  console.log(`[AutoPost System] Successfully published [${category}] post: "${newPost.title}" (${todayStr} ${timeStr})`);
   return newPost;
 }
 
-interface ScheduleSlot {
-  timeStr: string;
-  executed: boolean;
-}
-
-let activeScheduleDate = "";
-let activeScheduleSlots: ScheduleSlot[] = [];
-
-function initRandomDailySchedule() {
-  const now = new Date();
-  const yyyy = now.getFullYear();
-  const mm = String(now.getMonth() + 1).padStart(2, '0');
-  const dd = String(now.getDate()).padStart(2, '0');
-  const todayStr = `${yyyy}-${mm}-${dd}`;
-
-  if (activeScheduleDate === todayStr && activeScheduleSlots.length > 0) {
-    return;
-  }
-
-  activeScheduleDate = todayStr;
-
-  const dailyPostCount = Math.floor(Math.random() * 2) + 1; // 1~2개 스케줄 생성
-  activeScheduleSlots = [];
-
-  for (let i = 0; i < dailyPostCount; i++) {
-    const randomHour = Math.floor(Math.random() * 15) + 8; // 08:00 ~ 22:59
-    const randomMin = Math.floor(Math.random() * 60);
-    const timeStr = `${String(randomHour).padStart(2, '0')}:${String(randomMin).padStart(2, '0')}`;
-    activeScheduleSlots.push({ timeStr, executed: false });
-  }
-
-  activeScheduleSlots.sort((a, b) => a.timeStr.localeCompare(b.timeStr));
-  console.log(`[AutoPost Scheduler] Daily random schedule initialized for ${todayStr}:`, activeScheduleSlots.map(s => s.timeStr).join(", "));
-}
-
+/**
+ * 포스팅 자동화 백그라운드 주기 실행기
+ * - 매일 4개 카테고리별 1일 1포스팅
+ * - 각 포스팅 간 최소 4시간 이상 간격 엄격 유지
+ * - 스케줄 시간 도래 시 즉시 자동 생성
+ */
 function runAutoPostSchedulerCheck() {
   const now = new Date();
   const yyyy = now.getFullYear();
@@ -359,39 +507,49 @@ function runAutoPostSchedulerCheck() {
   const todayStr = `${yyyy}-${mm}-${dd}`;
   const currentHHMM = `${String(now.getHours()).padStart(2, '0')}:${String(now.getMinutes()).padStart(2, '0')}`;
 
-  if (activeScheduleDate !== todayStr) {
-    initRandomDailySchedule();
-  }
-
+  const schedule = ensureDailySchedule();
   const allPosts = getActivePostsList();
   const todayPosts = allPosts.filter(p => p.date === todayStr);
 
-  // 1일 1포스팅 이상 준수: 오늘성 포스팅이 0개라면 무조건 1개 즉시 생성
-  if (todayPosts.length === 0) {
-    console.log(`[AutoPost Scheduler] No post found for today (${todayStr}). Generating guaranteed daily post now...`);
-    generateAndPublishAutoPost(currentHHMM);
-    if (activeScheduleSlots.length > 0) {
-      activeScheduleSlots[0].executed = true;
-    }
-    return;
-  }
+  let updated = false;
 
-  // 스케줄 시간 도래 시 포스팅
-  for (const slot of activeScheduleSlots) {
+  for (const slot of schedule.slots) {
+    // 1. 이미 오늘 해당 카테고리의 포스팅이 존재하는지 검증
+    const existingPostForCategory = todayPosts.find(p => p.category === slot.category);
+
+    if (existingPostForCategory) {
+      if (!slot.executed) {
+        slot.executed = true;
+        slot.postId = existingPostForCategory.id;
+        slot.title = existingPostForCategory.title;
+        updated = true;
+      }
+      continue;
+    }
+
+    // 2. 해당 슬롯의 예정 시간이 도래했거나 경과한 경우 자동 포스팅 실행
     if (!slot.executed && currentHHMM >= slot.timeStr) {
       slot.executed = true;
-      const alreadyCreated = todayPosts.some(p => p.time === slot.timeStr);
-      if (!alreadyCreated) {
-        console.log(`[AutoPost Scheduler] Reached scheduled time slot (${slot.timeStr}). Executing auto-post...`);
-        generateAndPublishAutoPost(slot.timeStr);
-      }
+      updated = true;
+      console.log(`[AutoPost Scheduler] Triggering scheduled post for [${slot.category}] at ${slot.timeStr} (Current: ${currentHHMM})`);
+      generateAndPublishAutoPost(slot.category, slot.timeStr).then(createdPost => {
+        slot.postId = createdPost.id;
+        slot.title = createdPost.title;
+        saveDailySchedule(schedule);
+      }).catch(err => {
+        console.error(`[AutoPost Scheduler] Error generating post for ${slot.category}:`, err);
+      });
     }
+  }
+
+  if (updated) {
+    saveDailySchedule(schedule);
   }
 }
 
-// 서버 구동 즉시 스케줄링 가동 및 1분마다 타이머 모니터링
+// 서버 구동 즉시 스케줄링 가동 및 30초마다 타이머 모니터링
 runAutoPostSchedulerCheck();
-setInterval(runAutoPostSchedulerCheck, 60000);
+setInterval(runAutoPostSchedulerCheck, 30000);
 
 // WWW -> non-WWW 301 Redirect (SEO 최적화: 도메인 파편화 방지 및 검색엔진 노출 통일)
 app.use((req, res, next) => {
@@ -470,7 +628,7 @@ app.get("/api/health", (req, res) => {
   });
 });
 
-// API 1.5: 최신 실시간 포스팅 목록 및 스케줄 상태 조회
+// API 1.5: 최신 실시간 포스팅 목록 및 카테고리별 1일 1포스팅 스케줄 상태 조회
 app.get("/api/posts", (req, res) => {
   const posts = getActivePostsList();
   const now = new Date();
@@ -479,20 +637,52 @@ app.get("/api/posts", (req, res) => {
   const dd = String(now.getDate()).padStart(2, '0');
   const todayStr = `${yyyy}-${mm}-${dd}`;
   const todayPosts = posts.filter(p => p.date === todayStr);
+  const schedule = ensureDailySchedule();
 
   res.json({
     posts,
     totalCount: posts.length,
     todayCount: todayPosts.length,
-    scheduleDate: activeScheduleDate,
-    scheduledSlots: activeScheduleSlots
+    scheduleDate: schedule.date,
+    minimumIntervalHours: schedule.minimumIntervalHours,
+    scheduledSlots: schedule.slots,
+    todayCategoriesCovered: CATEGORIES.filter(c => todayPosts.some(p => p.category === c))
   });
 });
 
-// API 1.6: 어드민/테스트용 포스팅 수동 즉시 생성 트리거
+// API 1.55: 포스팅 자동화 스케줄 전용 상세 조회 API
+app.get("/api/schedule", (req, res) => {
+  const schedule = ensureDailySchedule();
+  const posts = getActivePostsList();
+  const todayPosts = posts.filter(p => p.date === schedule.date);
+
+  const statusByCategories = CATEGORIES.map(category => {
+    const post = todayPosts.find(p => p.category === category);
+    const slot = schedule.slots.find(s => s.category === category);
+    return {
+      category,
+      scheduledTime: slot ? slot.timeStr : null,
+      executed: !!post || (slot ? slot.executed : false),
+      postId: post ? post.id : (slot ? slot.postId : null),
+      postTitle: post ? post.title : (slot ? slot.title : null)
+    };
+  });
+
+  res.json({
+    date: schedule.date,
+    minimumIntervalHours: 4,
+    categoriesCount: CATEGORIES.length,
+    slots: schedule.slots,
+    statusByCategories,
+    allCompletedToday: statusByCategories.every(s => s.executed)
+  });
+});
+
+// API 1.6: 어드민/테스트용 포스팅 수동 즉시 생성 트리거 (특정 카테고리 지정 가능)
 app.post("/api/admin/trigger-autopost", async (req, res) => {
   try {
-    const newPost = await generateAndPublishAutoPost();
+    const { category } = req.body || {};
+    const newPost = await generateAndPublishAutoPost(category);
     res.json({ status: "success", post: newPost });
   } catch (err: any) {
     res.status(500).json({ error: err.message || "Failed to trigger auto post" });

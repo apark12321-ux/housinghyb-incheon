@@ -81,9 +81,21 @@ function htmlEscape(s) {
 }
 
 /**
- * POSTS를 반환합니다.
+ * POSTS를 반환합니다. (기본 POSTS + auto-posts.json 병합)
  */
 function loadPosts() {
+  try {
+    const autoPath = resolve(ROOT, "src", "data", "auto-posts.json");
+    if (existsSync(autoPath)) {
+      const raw = readFileSync(autoPath, "utf-8");
+      const autoPosts = JSON.parse(raw);
+      if (Array.isArray(autoPosts) && autoPosts.length > 0) {
+        return [...autoPosts, ...POSTS];
+      }
+    }
+  } catch (e) {
+    console.warn("Failed to load auto-posts for prerender:", e);
+  }
   return POSTS;
 }
 
