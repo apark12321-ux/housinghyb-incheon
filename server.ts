@@ -289,24 +289,27 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
   if (ai) {
     try {
       const prompt = `
-        당신은 10년 차 IT/테크 및 부동산·주거 정책 전문 테크니컬 블로그 에디터이자 구글 SEO/E-E-A-T 최고 전문가입니다.
-        주어진 주제와 키워드를 바탕으로 독자에게 실질적인 가치를 제공하고 구글 검색 상위 노출(E-E-A-T 및 YMYL) 기준을 충족하는 고품질 전문 포스팅(HTML 형식)을 작성합니다.
+        당신은 10년 차 IT/테크 및 부동산·주거 분야 전문 칼럼니스트이자 구글 SEO/E-E-A-T 최고 전문가(개인 작가 박예준)입니다.
+        개인 전문 작가의 시각에서 독자에게 실질적인 가치를 제공하고 구글 검색 상위 노출(E-E-A-T 및 YMYL) 기준을 충족하는 고품질 전문 포스팅(HTML 형식)을 작성합니다.
 
         [주제]: ${selectedTopic}
         [카테고리]: ${category}
 
         [작성 원칙]:
-        1. 가독성 & 체류시간 최적화:
+        1. 개인 전문 칼럼니스트 시점:
+           - '편집팀', '기획팀', '연구팀', '에디터팀', '저희 팀' 등 팀/단체 표현을 일절 사용하지 마십시오.
+           - 개인 작가/칼럼니스트로서 풍부한 현장 실무 경험과 전문 지식을 바탕으로 친절하고 명확하게 독자에게 직접 조언하는 어조로 작성합니다.
+        2. 가독성 & 체류시간 최적화:
            - 두괄식 구성: 서론에서 핵심 결론과 해결책을 먼저 명쾌하게 제시합니다.
            - 문단 분절: 2~3문장마다 줄바꿈을 적용하고, 핵심 문장은 <strong>굵게</strong> 강조합니다.
            - 리스트 및 표: 핵심 정보 요약 비교 테이블(<table class="w-full border-collapse my-4 text-xs sm:text-sm">...</table>)을 최소 1개 이상 필수 포함합니다.
-        2. 구조화 및 전문성(E-E-A-T):
+        3. 구조화 및 전문성(E-E-A-T):
            - <h2> 및 <h3> 태그를 활용한 논리적 계층 구조를 만듭니다.
            - '실무자 핵심 비공개 팁', '초보자가 자주 겪는 3가지 실패 사례와 극복법'을 구체적으로 서술합니다.
            - 전체 분량은 공백 제외 최소 2,000자 이상(800~1,500 단어)의 깊이 있는 실전 가이드로 작성합니다.
-        3. 자주 묻는 질문 (FAQ):
+        4. 자주 묻는 질문 (FAQ):
            - 글 하단에 <h2>자주 묻는 질문 (FAQ)</h2> 섹션을 만들고 독자들이 가장 궁금해할 실무 질문 3개(Q1, Q2, Q3)와 명쾌한 해결책 답변을 포함합니다.
-        4. 문체 및 HTML:
+        5. 문체 및 HTML:
            - 정중하고 신뢰감을 주는 '-입니다/합니다' 체를 사용합니다.
            - 허용 태그: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <table>, <thead>, <tbody>, <tr>, <th>, <td>, <strong>, <span>
       `;
@@ -463,7 +466,7 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
       <h3>Q3. 계약 진행 과정에서 전문가의 도움을 받는 방법은 무엇인가요?</h3>
       <p>A. 정부 주택도시기금 공식 시뮬레이터 및 하우징허브 내 계산기를 활용하거나, 계약서 작성 전 전문 변호사/세무사의 특약사항 검수를 받으시는 것을 권장합니다.</p>
     `;
-    postExcerpt = `${selectedTopic}에 관한 하우징허브 주거 정책 기획팀의 2026 최신 실전 분석 및 전문가 체크리스트 가이드입니다.`;
+    postExcerpt = `${selectedTopic}에 관한 2026 최신 실전 분석 및 전문가 체크리스트 가이드입니다.`;
   }
 
   const categoryImages: Record<string, string> = {
@@ -473,10 +476,18 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
     "청약-분양": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
   };
 
+  const authorByCategory: Record<string, string> = {
+    "대출-금융": "이소율 (금융 칼럼니스트)",
+    "전월세": "김현우 (공인중개사)",
+    "이사-인테리어": "박예준 (주거 인테리어 칼럼니스트)",
+    "청약-분양": "박예준 (청약 칼럼니스트)"
+  };
+
   const newPost = {
     id: `auto-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
     title: postTitle,
     category,
+    author: authorByCategory[category] || "박예준 (주거 칼럼니스트)",
     date: todayStr,
     time: timeStr,
     readTime: postReadTime,
@@ -982,7 +993,7 @@ app.post("/api/contact", async (req, res) => {
 
   return res.json({
     status: "success",
-    message: "귀하의 소중한 건의 및 주거 복지 문의사항이 하우징허브 정책 기획 지원팀에 안전하게 접수되었습니다. 담당자 검토 후 최대 24시간 이내에 기재해주신 이메일로 명확한 주거 처방전 회신이 전송됩니다.",
+    message: "귀하의 소중한 건의 및 문의사항이 안전하게 접수되었습니다. 확인 후 기재해주신 이메일로 성실히 답변을 전송해 드리겠습니다.",
     referenceId: `HH-2026-${Math.floor(100000 + Math.random() * 900000)}`
   });
 });

@@ -835,7 +835,7 @@ export default function App() {
                   />
                   <div>
                     <h4 className="text-sm font-bold text-slate-800">{activePost.author}</h4>
-                    <p className="text-[11px] text-slate-400 font-medium">하우징허브 주거정책 수석 전문위원</p>
+                    <p className="text-[11px] text-slate-400 font-medium">부동산·주거 전문 칼럼니스트</p>
                   </div>
                 </div>
 
@@ -1732,7 +1732,7 @@ export default function App() {
                   <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
                     <div className="text-xs">
                       <span className="font-bold text-slate-200">하우징허브 (HousingHub)</span>
-                      <span className="text-slate-400 ml-2">주거 정책 기획팀</span>
+                      <span className="text-slate-400 ml-2">에디터 칼럼</span>
                     </div>
                     <span className="inline-flex items-center space-x-1 text-sm font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
                       <span>전문 읽기</span>
@@ -2273,7 +2273,7 @@ export default function App() {
           <div className="pt-6 border-t border-slate-800/60 text-[11px] text-slate-400 space-y-2 leading-relaxed">
             <div className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-slate-300 font-semibold">
               <span>하우징허브 (HousingHub)</span>
-              <span>집필 및 편집: 하우징허브 주거 정책 기획팀</span>
+              <span>작성 및 운영: 박예준 (부동산·주거 칼럼니스트)</span>
               <span>공식 이메일: apark12321@gmail.com</span>
             </div>
             <p className="text-slate-500">

@@ -64,7 +64,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 청약·분양 정보 안내다. 본인 케이스의 정확한 가점·자격은 청약홈에서 직접 조회하기 바란다.</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-29",
     image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -157,7 +157,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-20</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-20",
     image: "https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -297,7 +297,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 </div>
 `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-11",
     image: "https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -448,7 +448,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 </div>
 `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-12",
     image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -535,7 +535,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 정보 안내예요. 세제 혜택 요건은 본인 상황에 따라 다르니 꼭 매매 전 국세청이나 세무사와 확인하세요.</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-13",
     image: "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -658,7 +658,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-14</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-14",
     image: "https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -767,7 +767,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 </div>
 `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-15",
     image: "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -879,7 +879,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 </div>
 `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-16",
     image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -1028,7 +1028,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
 </div>
 `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-17",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",

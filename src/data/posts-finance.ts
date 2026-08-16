@@ -5,7 +5,7 @@ export const POSTS_FINANCE: Post[] = [
     id: "fin-2026-july",
     title: "2026년 7월 하반기 주택담보·전세대출 규제 지표 및 버팀목 디딤돌 서민 우대금리 총정리",
     excerpt: "2026년 7월 22일 최신 개정 금융 규제 가이드! 스트레스 DSR 3단계 금리 가산 체계 시뮬레이션, 청년 및 신혼부부 버팀목 전세자금대출 소득 요건 완화안, 디딤돌 구입자금 우대 금리 적용법을 명확하게 안내합니다.",
-    author: "이소율 위원 / 주택금융 정책팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-12",
     category: "대출-금융",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
@@ -224,13 +224,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-13",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     readTime: "21분",
@@ -369,13 +369,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-14",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
     readTime: "19분",
@@ -518,13 +518,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-06",
     image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -670,13 +670,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-07",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -818,13 +818,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-08",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -961,13 +961,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-09",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1095,13 +1095,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-10",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1178,7 +1178,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
     `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-11",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1325,13 +1325,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-31",
     image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1476,13 +1476,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-01",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1619,13 +1619,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-02",
     image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1755,13 +1755,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-03",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1842,7 +1842,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
     `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-04",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1981,13 +1981,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-06-05",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2121,13 +2121,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-27",
     image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2266,13 +2266,13 @@ export const POSTS_FINANCE: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 특급 재설 정보는 하우징허브 금융 가이드 주관 에디터팀이 관할 1금융 및 전속 자산가 교감 하에 안전 실무 대조 검증을 완료한 사실입니다.
+      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-28",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -2365,7 +2365,7 @@ export const POSTS_FINANCE: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-29</p>
     `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-29",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2477,7 +2477,7 @@ export const POSTS_FINANCE: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-30</p>
     `,
     category: "대출-금융",
-    author: "편집팀",
+    author: "이소율 (금융 칼럼니스트)",
     date: "2026-05-30",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
     readTime: "9분",

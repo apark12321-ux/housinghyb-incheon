@@ -133,13 +133,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-04",
     image: "https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -277,13 +277,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-05",
     image: "https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -421,13 +421,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-06-26",
     image: "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -570,13 +570,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-06-27",
     image: "https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -719,13 +719,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-06-28",
     image: "https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -857,13 +857,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-06-29",
     image: "https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -992,13 +992,13 @@ export const POSTS_RENT_HEAVY: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-06-30",
     image: "https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -1084,7 +1084,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-07-01</p>
     `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-01",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",

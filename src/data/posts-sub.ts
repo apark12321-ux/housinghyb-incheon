@@ -5,7 +5,7 @@ export const POSTS_SUB: Post[] = [
     id: "sub-2026-july",
     title: "2026년 7월 최신 개정: 무주택 청약 가점 개편안과 신혼·다자녀 공공분양 안심 전략",
     excerpt: "2026년 7월 22일 최신 개정 청약제도 완벽 가이드! 청약저축 통장 연령 및 보유 기간 가점 인정 폭 확대, 배우자 청약 통장 보유 기간 합산(최대 3점) 규율, 3자녀 이상 다자녀 우대배점 산정 기준을 실무적으로 대조 안내합니다.",
-    author: "박예준 대표 / 주거정책 연구팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-22",
     category: "청약-분양",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
@@ -148,7 +148,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-4">최종 업데이트: 2026-07-18</p>
     `,
     category: "전월세",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-18",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -200,7 +200,7 @@ export const POSTS_SUB: Post[] = [
       <p>이를 방지하기 위해 반드시 추천드리는 것이 '선납' 제도입니다. 주택청약종합저축은 최대 24회차(2년분)까지 미리 납입할 수 있습니다. 여유 자금이 있을 때 25만 원씩 24개월분인 600만 원을 미리 넣어두면, 향후 2년간은 입금을 신경 쓰지 않아도 매달 정해진 날짜에 자동으로 납입 인정이 됩니다. 반대로 이미 연체가 발생했다면, 은행 창구를 방문하거나 앱의 '회차 정제' 기능을 통해 가장 오래된 연체 회차부터 차례대로 메워나가는 디테일한 관리가 필요합니다. 청약 통장은 관리한 만큼 당첨으로 보답하는 정직한 금융 상품임을 명심하십시오.</p>
 
       <h3 id="section6">6. 전문가가 제안하는 가구별/세대별 최적 납입 금액 가이드</h3>
-      <p>하우징허브 편집팀은 각자의 상황에 따른 맞춤형 납입 전략을 다음과 같이 제안합니다.</p>
+      <p>자금 사정에 맞춘 현실적인 납입 최적화 전략을 다음과 같이 제안합니다.</p>
       <ul>
         <li><strong>공공분양 당첨이 최우선인 무주택 가구:</strong> 주저하지 말고 <strong>월 25만 원</strong>을 납입하십시오. 인정 한도를 꽉 채우지 않으면 동점자들과의 경쟁에서 밀릴 수밖에 없습니다.</li>
         <li><strong>절세 혜택이 중요한 고소득 직장인:</strong> 소득공제 최대 한도인 연 300만 원에 맞춰 <strong>월 25만 원</strong>을 추천합니다. 연봉이 높을수록 절세되는 절대 금액이 커집니다.</li>
@@ -219,7 +219,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-19</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-19",
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800",
     readTime: "15분",
@@ -275,7 +275,7 @@ export const POSTS_SUB: Post[] = [
       <p>자금 조달 측면에서도 사전 청약 시점의 예상 분양가와 본 청약 시점의 확정 분양가가 다소 차이 날 수 있음을 인지하고, 약 10~15% 정도의 예비 자금을 확보해두는 것이 현명합니다. 본인이나 가족의 거주 계획이 변경될 가능성까지 염두에 두고, 착공 지연 등 만일의 사태에 대비한 주거 대안을 마련해두어야 합니다. 사전 청약 당첨 후 포기 시에는 일정 기간 다른 사전 청약 신청이 제한되는 패널티가 있으므로, 신중한 결정이 필요합니다.</p>
 
       <h3 id="section7">7. 전문가가 뽑은 뉴:홈 최고의 입지 Top 3 분석</h3>
-      <p>하우징허브 편집팀은 향후 공급될 뉴:홈 부지 중 미래 가치가 높은 입지를 다음과 같이 선별했습니다.</p>
+      <p>향후 공급될 공공분양 부지 중 미래 가치가 높은 입지를 다음과 같이 분석했습니다.</p>
       <ul>
         <li><strong>서울 동작구 수방사 부지:</strong> 한강 조망이 가능하고 강남 접근성이 뛰어난 역대급 입지로, 높은 경쟁률이 예상되지만 당첨 시 확실한 시세 차익이 보장됩니다.</li>
         <li><strong>동작구 대방동 군부지:</strong> 여의도와 노량진 배후 수요를 흡수할 수 있는 중심지로, 직주근접을 중시하는 직장인들에게 최고의 선택지입니다.</li>
@@ -290,7 +290,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-21</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-21",
     image: "https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -393,7 +393,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-23</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-23",
     image: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -463,7 +463,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-24</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-24",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -532,7 +532,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-2">최종 업데이트: 2026-07-25</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-25",
     image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -600,7 +600,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-sm text-gray-500 mt-8">※ 본 글은 일반적인 청약·분양 정보 안내다. 본인 케이스의 정확한 가점·자격은 청약홈에서 직접 조회하기 바란다.</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-26",
     image: "https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -661,7 +661,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-27</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-27",
     image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -731,7 +731,7 @@ export const POSTS_SUB: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-28</p>
     `,
     category: "청약-분양",
-    author: "편집팀",
+    author: "박예준 (청약 칼럼니스트)",
     date: "2026-07-28",
     image: "https://images.unsplash.com/photo-1467533003447-e295ff1b0435?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",

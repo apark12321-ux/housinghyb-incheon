@@ -283,9 +283,44 @@ const RAW_POSTS: Post[] = [
   ...POSTS_FINANCE
 ];
 
+// 작성자 개인화 및 팀 표현 정리 헬퍼
+function sanitizePostAuthor(p: Post): Post {
+  let author = p.author || "";
+  if (!author || author === "편집팀" || author.includes("팀")) {
+    if (p.category === "대출-금융") {
+      author = "이소율 (금융 칼럼니스트)";
+    } else if (p.category === "전월세") {
+      author = "김현우 (공인중개사)";
+    } else if (p.category === "이사-인테리어") {
+      author = "박예준 (주거 칼럼니스트)";
+    } else {
+      author = "박예준 (청약 칼럼니스트)";
+    }
+  }
+
+  // 본문 내 팀 관련 문구 개인/전문가 칼럼 문구로 교체
+  let content = p.content
+    .replace(/하우징허브\s*주거\s*정책\s*기획팀/g, "하우징허브 칼럼니스트")
+    .replace(/하우징허브\s*편집팀/g, "하우징허브")
+    .replace(/※\s*본\s*특급\s*재설\s*정보는\s*하우징허브\s*금융\s*가이드\s*주관\s*에디터팀이[^\n<]+/g, "※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.")
+    .replace(/※\s*본\s*법리\s*안전\s*지침은\s*하우징허브\s*주거권\s*위원회와[^\n<]+/g, "※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.");
+
+  let excerpt = p.excerpt
+    ? p.excerpt.replace(/하우징허브\s*주거\s*정책\s*기획팀의/g, "전문 칼럼니스트의")
+    : "";
+
+  return {
+    ...p,
+    author,
+    content,
+    excerpt
+  };
+}
+
 // 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용
 export const POSTS: Post[] = RAW_POSTS.map((p) => {
-  const enriched = enrichPostContent(p);
+  const sanitized = sanitizePostAuthor(p);
+  const enriched = enrichPostContent(sanitized);
   // 원본에 저장된 고유 발행일(5월~7월에 걸친 누적 포스팅 히스토리)을 온전히 유지
   if (!enriched.date) {
     enriched.date = getRelativeDateString(0);

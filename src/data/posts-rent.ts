@@ -106,13 +106,13 @@ export const POSTS_RENT: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-06",
     image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
     readTime: "18분",
@@ -250,13 +250,13 @@ export const POSTS_RENT: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-07",
     image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
     readTime: "20분",
@@ -342,7 +342,7 @@ export const POSTS_RENT: Post[] = [
 </div>
     `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-08",
     image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800",
     readTime: "16분",
@@ -477,13 +477,13 @@ export const POSTS_RENT: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-09",
     image: "https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -614,13 +614,13 @@ export const POSTS_RENT: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-10",
     image: "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -751,13 +751,13 @@ export const POSTS_RENT: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-02",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -900,13 +900,13 @@ export const POSTS_RENT: Post[] = [
     </p>
 
     <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 법리 안전 지침은 하우징허브 주거권 위원회와 협조 합동 법률 사무 에디터팀이 기획 제작한 공식 사실 대조 안내판입니다.
+      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
     </p>
   </div>
 </div>
 `,
     category: "전월세",
-    author: "편집팀",
+    author: "김현우 (공인중개사)",
     date: "2026-07-03",
     image: "https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
