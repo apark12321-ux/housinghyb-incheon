@@ -283,30 +283,27 @@ const RAW_POSTS: Post[] = [
   ...POSTS_FINANCE
 ];
 
-// 작성자 개인화 및 팀 표현 정리 헬퍼
+// 작성자 정리 및 팀 표현 정리 헬퍼
 function sanitizePostAuthor(p: Post): Post {
-  let author = p.author || "";
-  if (!author || author === "편집팀" || author.includes("팀")) {
-    if (p.category === "대출-금융") {
-      author = "이소율 (금융 칼럼니스트)";
-    } else if (p.category === "전월세") {
-      author = "김현우 (공인중개사)";
-    } else if (p.category === "이사-인테리어") {
-      author = "박예준 (주거 칼럼니스트)";
-    } else {
-      author = "박예준 (청약 칼럼니스트)";
-    }
-  }
+  const author = "하우징허브";
 
-  // 본문 내 팀 관련 문구 개인/전문가 칼럼 문구로 교체
+  // 본문 내 불필요한 작성자/팀 관련 문구 정리
   let content = p.content
-    .replace(/하우징허브\s*주거\s*정책\s*기획팀/g, "하우징허브 칼럼니스트")
+    .replace(/하우징허브\s*주거\s*정책\s*기획팀/g, "하우징허브")
     .replace(/하우징허브\s*편집팀/g, "하우징허브")
+    .replace(/이소율|박예준|김현우/g, "하우징허브")
+    .replace(/부동산·주거 전문 칼럼니스트/g, "")
+    .replace(/금융 칼럼니스트/g, "")
+    .replace(/청약 칼럼니스트/g, "")
+    .replace(/주거 칼럼니스트/g, "")
     .replace(/※\s*본\s*특급\s*재설\s*정보는\s*하우징허브\s*금융\s*가이드\s*주관\s*에디터팀이[^\n<]+/g, "※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.")
     .replace(/※\s*본\s*법리\s*안전\s*지침은\s*하우징허브\s*주거권\s*위원회와[^\n<]+/g, "※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.");
 
   let excerpt = p.excerpt
-    ? p.excerpt.replace(/하우징허브\s*주거\s*정책\s*기획팀의/g, "전문 칼럼니스트의")
+    ? p.excerpt
+        .replace(/하우징허브\s*주거\s*정책\s*기획팀의/g, "")
+        .replace(/전문 칼럼니스트의/g, "")
+        .replace(/이소율|박예준|김현우/g, "하우징허브")
     : "";
 
   return {

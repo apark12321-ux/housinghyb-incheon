@@ -17,8 +17,8 @@ const ROOT = resolve(__dirname, "..");
 const DIST = resolve(ROOT, "dist");
 const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
-const DEFAULT_TITLE = "하우징허브 - 대한민국 최고의 부동산 & 주거 정보 가이드";
-const DEFAULT_DESCRIPTION = "청약 정보, 전월세 계약 팁, 담보대출 가이드 등 실용적인 주거 정보를 제공하는 하우징허브입니다.";
+const DEFAULT_TITLE = "하우징허브 (HousingHub) | 주택청약·전월세안심·주택금융 가이드";
+const DEFAULT_DESCRIPTION = "하우징허브는 무주택 실수요자를 위한 실전 주택청약 가점 계산, 전월세 대항력 및 전세사기 예방 특약, 디딤돌·버팀목·DSR 주택금융 계산 툴킷과 신뢰도 높은 주거 정책 분석 리포트를 제공하는 전문 주거 정보 포털입니다.";
 const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"];
 
 function slugify(title) {
@@ -80,6 +80,102 @@ function htmlEscape(s) {
     .replace(/'/g, "&#39;");
 }
 
+const STOP_WORDS = new Set([
+  "그리고", "하지만", "그러나", "따라서", "때문에", "통해", "위해", "대한",
+  "있습니다", "합니다", "됩니다", "보는", "하는", "있는", "없는", "것을",
+  "경우", "관련", "대해", "가장", "매우", "모든", "어떤", "이러한", "저러한",
+  "방법", "기준", "내용", "정보", "확인", "필수", "주의", "포털", "제공",
+  "가이드", "정리", "핵심", "분석", "리포트", "이유", "원인", "결과",
+  "이것", "저것", "그것", "여기", "저기", "어디", "누구", "무엇", "어떻게",
+  "이번", "오늘", "내일", "지금", "바로", "다시", "항상", "자주", "직접",
+  "수", "등", "및", "더", "또", "잘", "못", "안", "점", "곳", "중", "후", "전"
+]);
+
+const DOMAIN_WEIGHT_MAP = {
+  "청약": 5, "가점": 4, "특별공급": 4, "일반공급": 4, "무순위": 4, "줍줍": 4,
+  "전세": 5, "월세": 4, "임대차": 4, "확정일자": 4, "전입신고": 4, "대항력": 5,
+  "우선변제권": 5, "근저당": 4, "보증금": 4, "반환보증": 4, "HUG": 4, "HF": 4,
+  "전세사기": 5, "깡통전세": 5, "등기부등본": 4, "특약": 4, "표준계약서": 3,
+  "디딤돌대출": 5, "버팀목대출": 5, "신생아특례": 5, "보금자리론": 4, "주택담보대출": 5,
+  "DSR": 5, "LTV": 4, "DTI": 4, "스트레스DSR": 5, "금리": 4, "중도상환수수료": 3,
+  "이사": 4, "손없는날": 3, "인테리어": 4, "도배": 3, "장판": 3, "하자보수": 4,
+  "양도소득세": 4, "취득세": 4, "종부세": 4, "재산세": 3, "비과세": 4,
+  "분양가상한제": 4, "전매제한": 4, "실거주의무": 4, "재당첨제한": 4,
+  "무주택자": 4, "생애최초": 4, "신혼부부": 4, "다자녀": 4, "노부모부양": 3
+};
+
+function extractTopKeywords({ title = "", excerpt = "", content = "", category = "", hashtags = [], maxCount = 10 }) {
+  const scoreMap = new Map();
+
+  if (Array.isArray(hashtags)) {
+    hashtags.forEach((tag) => {
+      const cleanTag = tag.replace(/^#/, "").trim();
+      if (cleanTag.length >= 2 && !STOP_WORDS.has(cleanTag)) {
+        scoreMap.set(cleanTag, (scoreMap.get(cleanTag) || 0) + 12);
+      }
+    });
+  }
+
+  if (category) {
+    const catWords = category.split(/[-\s,]+/);
+    catWords.forEach((cw) => {
+      if (cw.length >= 2 && !STOP_WORDS.has(cw)) {
+        scoreMap.set(cw, (scoreMap.get(cw) || 0) + 8);
+      }
+    });
+  }
+
+  const cleanTitle = stripHtml(title);
+  cleanTitle.split(/\s+/).forEach((w) => {
+    if (w.length >= 2 && !STOP_WORDS.has(w)) {
+      scoreMap.set(w, (scoreMap.get(w) || 0) + 6);
+    }
+  });
+
+  const fullBody = stripHtml(`${excerpt} ${content}`);
+  for (const [dictWord, weight] of Object.entries(DOMAIN_WEIGHT_MAP)) {
+    const regex = new RegExp(dictWord, "gi");
+    const matches = fullBody.match(regex);
+    if (matches && matches.length > 0) {
+      const freqScore = Math.min(matches.length, 10) * 1.5;
+      scoreMap.set(dictWord, (scoreMap.get(dictWord) || 0) + weight * 2 + freqScore);
+    }
+  }
+
+  const words = fullBody.split(/\s+/);
+  for (const w of words) {
+    if (w.length < 2 || w.length > 12) continue;
+    if (STOP_WORDS.has(w)) continue;
+    if (/^\d+$/.test(w)) continue;
+    scoreMap.set(w, (scoreMap.get(w) || 0) + 1);
+  }
+
+  const sorted = Array.from(scoreMap.entries())
+    .sort((a, b) => b[1] - a[1])
+    .map(([keyword]) => keyword);
+
+  const uniqueKeywords = [];
+  for (const kw of sorted) {
+    if (!uniqueKeywords.includes(kw)) {
+      uniqueKeywords.push(kw);
+    }
+    if (uniqueKeywords.length >= maxCount) break;
+  }
+
+  const defaultFallback = [
+    "하우징허브", "주택청약", "전월세계약", "전세보증금", "디딤돌대출",
+    "버팀목대출", "DSR계산", "확정일자", "주거정책", "내집마련"
+  ];
+  for (const fb of defaultFallback) {
+    if (uniqueKeywords.length >= maxCount) break;
+    if (!uniqueKeywords.includes(fb)) {
+      uniqueKeywords.push(fb);
+    }
+  }
+
+  return uniqueKeywords.slice(0, maxCount);
+}
+
 /**
  * POSTS를 반환합니다. (기본 POSTS + auto-posts.json 병합)
  */
@@ -120,6 +216,22 @@ function renderPage(template, meta, bodyContent, jsonLd) {
     /<meta name="description" content="[^"]*"\s*\/?>/,
     `<meta name="description" content="${htmlEscape(meta.description)}" />`
   );
+
+  // <meta name="keywords">
+  if (meta.keywords && meta.keywords.length > 0) {
+    const kwString = Array.isArray(meta.keywords) ? meta.keywords.join(", ") : meta.keywords;
+    if (html.includes('name="keywords"')) {
+      html = html.replace(
+        /<meta name="keywords" content="[^"]*"\s*\/?>/,
+        `<meta name="keywords" content="${htmlEscape(kwString)}" />`
+      );
+    } else {
+      html = html.replace(
+        /<meta name="description"[^>]*\/?>/,
+        (match) => `${match}\n    <meta name="keywords" content="${htmlEscape(kwString)}" />`
+      );
+    }
+  }
 
   // <link rel="canonical">
   html = html.replace(
@@ -214,7 +326,6 @@ function buildPostBody(post) {
         <h1>${htmlEscape(post.title)}</h1>
         <p class="excerpt">${htmlEscape(post.excerpt)}</p>
         <p class="meta">
-          <span>작성자: ${htmlEscape(post.author)}</span> ·
           <time datetime="${post.date}">게재일: ${post.date}</time> ·
           <span>분류: ${htmlEscape(post.category)}</span>
         </p>
@@ -222,7 +333,7 @@ function buildPostBody(post) {
       </header>
       <main>${plainContent}</main>
       <footer>
-        <p>© 알고파트너스 · 작성 및 운영: 박예준 (${SITE_NAME}) · 문의: apark12321@gmail.com</p>
+        <p>© 알고파트너스 · 하우징허브 (${SITE_NAME}) · 문의: apark12321@gmail.com</p>
       </footer>
     </article>
   `;
@@ -327,10 +438,9 @@ function articleJsonLd(post) {
         "cssSelector": [".direct-answer-box", "h1", ".excerpt"]
       },
       "author": {
-        "@type": "Person",
-        "name": post.author,
-        "jobTitle": "주거정책 수석 연구원",
-        "worksFor": { "@type": "Organization", "name": "알고파트너스" }
+        "@type": "Organization",
+        "name": SITE_NAME,
+        "url": SITE_URL
       },
       "publisher": {
         "@type": "Organization",
@@ -443,25 +553,6 @@ function main() {
             <li><strong>비강제성 투명 정보 (Transparency):</strong> 어떠한 주택 판매 대행사나 특정 대출 중개업체로부터 원고료 수혜 목적의 편향된 홍보 스폰서십 글을 게재하지 않으며, 이용자의 기밀 정보 수집 목적의 어떠한 유료 가입도 일절 강제하거나 요구하지 않는 순수 영구 무상 개방 형태를 선언합니다.</li>
           </ul>
 
-          <h2>작성자 및 칼럼니스트 소개 (Author Profile)</h2>
-          <div class="team-grid">
-            <div class="team-card">
-              <h3>박예준 (부동산·주거 전문 칼럼니스트)</h3>
-              <p class="role">알고파트너스 대표 / 주거복지 정책 분석가</p>
-              <p>무주택 실수요자 권익보호를 위한 정보 분석 및 칼럼을 집필합니다. 주택 임대차 분쟁 사례 분석 및 주거 정책 칼럼을 정기 기고하고 있습니다. (연락처: apark12321@gmail.com)</p>
-            </div>
-            <div class="team-card">
-              <h3>김현우 (공인중개사)</h3>
-              <p class="role">공인중개사 (임대차·전월세 실무 전문)</p>
-              <p>수도권 아파트 분양권 전매 제한 및 전세 안심 보증 사기 예방 특약 조항의 실무 검수를 주관하고 실물 기재 프로세스를 조언합니다.</p>
-            </div>
-            <div class="team-card">
-              <h3>이소율 (금융 전문 칼럼니스트)</h3>
-              <p class="role">공인 금융설계사 / 주택 자금 칼럼니스트</p>
-              <p>스트레스 DSR 등 최신 금융 규제에 기반한 적격 대출 상환 계획 산출식 감수 및 버팀목 디딤돌 서민 보조 저리 자금 운용 매뉴얼을 전담합니다.</p>
-            </div>
-          </div>
-
           <h2>콘텐츠 팩트체킹 및 정정 절차 (Fact-Checking & Corrections)</h2>
           <p>모든 게재 지식물에 대하여 매주 월요일 최신 법률 적용 사항을 주간 단위로 교차 확인합니다. 만약 정책 개편 시차나 단순 오기가 발견되거나 제보될 경우, 24시간 이내에 정밀 수정 보완 조치를 시행하고 투명하게 공개 정정 목록을 보도실에 적재합니다. 정보 기재 오류 및 제안 의견은 공식 소통 이메일(apark12321@gmail.com)로 항시 제출해 주시면 적극 감사 수렴하겠습니다.</p>
         </div>`
@@ -475,7 +566,7 @@ function main() {
       body: buildStaticPageBody(
         "개인정보 처리방침 (Privacy Policy)",
         `<div class="privacy-container leading-relaxed space-y-4">
-          <p><strong>발행처:</strong> 알고파트너스 (대표자: 박예준) | <strong>개인정보 보호책임자:</strong> 박예준 (apark12321@gmail.com)</p>
+          <p><strong>발행처:</strong> 하우징허브 (HousingHub) | <strong>개인정보 보호책임자:</strong> 하우징허브 운영팀 (apark12321@gmail.com)</p>
           <h3>제 1 조 (목적 및 수집 범위)</h3>
           <p>${SITE_NAME}(https://zip9.kr)는 이용자의 개인정보를 매우 소중히 다루며, 대한민국 개인정보보호법 및 구글 애드센스(Google AdSense) 프로그램 정책 기준을 준수합니다. 본 사이트는 회원가입이나 필수 수집 절차 없이 누구나 무상으로 이용 가능한 비회원제 포털입니다.</p>
           
@@ -500,7 +591,7 @@ function main() {
       body: buildStaticPageBody(
         "서비스 이용약관 (Terms of Service)",
         `<div class="terms-container leading-relaxed space-y-4">
-          <p><strong>운영 주체:</strong> 알고파트너스 (대표자: 박예준)</p>
+          <p><strong>운영 주체:</strong> 하우징허브 (HousingHub)</p>
           <h3>제 1 조 (목적)</h3>
           <p>본 약관은 알고파트너스가 운영하는 ${SITE_NAME}(https://zip9.kr)에서 무상으로 제공하는 부동산 정보, 자가진단 계산기, 주거 가이드라인 서비스의 이용 조건 및 절차를 규정합니다.</p>
 
@@ -562,6 +653,11 @@ function main() {
   // 3) 카테고리 페이지
   for (const cat of CATEGORIES) {
     const path = `category/${encodeURIComponent(cat)}/index.html`;
+    const catKeywords = extractTopKeywords({
+      title: `${cat} 정보`,
+      category: cat,
+      maxCount: 10
+    });
     const html = renderPage(
       template,
       {
@@ -569,6 +665,7 @@ function main() {
         description: `${cat} 관련 주거 정보와 가이드를 모았습니다.`,
         canonical: `${SITE_URL}/category/${encodeURIComponent(cat)}`,
         ogType: "website",
+        keywords: catKeywords,
       },
       buildCategoryBody(cat, posts),
       null
@@ -581,6 +678,14 @@ function main() {
   for (const post of posts) {
     const slug = slugify(post.title) || post.id;
     const path = `post/${slug}/index.html`;
+    const postKeywords = extractTopKeywords({
+      title: post.title,
+      excerpt: post.excerpt,
+      content: post.content,
+      category: post.category,
+      hashtags: post.hashtags,
+      maxCount: 10
+    });
     const html = renderPage(
       template,
       {
@@ -589,6 +694,7 @@ function main() {
         canonical: `${SITE_URL}/post/${encodeURIComponent(slug)}`,
         ogType: "article",
         ogImage: post.image,
+        keywords: postKeywords,
       },
       buildPostBody(post),
       articleJsonLd(post)

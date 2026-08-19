@@ -291,23 +291,24 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
   if (ai) {
     try {
       const prompt = `
-        당신은 10년 차 IT/테크 및 부동산·주거 분야 전문 칼럼니스트이자 구글 SEO/E-E-A-T 최고 전문가(개인 작가 박예준)입니다.
-        개인 전문 작가의 시각에서 독자에게 실질적인 가치를 제공하고 구글 검색 상위 노출(E-E-A-T 및 YMYL) 기준을 충족하는 고품질 전문 포스팅(HTML 형식)을 작성합니다.
+        당신은 주택·부동산 및 주거 정책 분야 구글 SEO/E-E-A-T 최고 전문 에디터입니다.
+        독자에게 실질적인 가치를 제공하고 구글 검색 상위 노출(E-E-A-T 및 YMYL) 기준을 충족하는 고품질 전문 주거 포스팅(HTML 형식)을 작성합니다.
+        사람 이름(예: 특정 인물 이름, 칼럼니스트 실명 등)은 절대 본문, 제목, 요약에 넣지 마십시오.
 
         [주제]: ${selectedTopic}
         [카테고리]: ${category}
 
         [작성 원칙]:
-        1. 개인 전문 칼럼니스트 시점:
-           - '편집팀', '기획팀', '연구팀', '에디터팀', '저희 팀' 등 팀/단체 표현을 일절 사용하지 마십시오.
-           - 개인 작가/칼럼니스트로서 풍부한 현장 실무 경험과 전문 지식을 바탕으로 친절하고 명확하게 독자에게 직접 조언하는 어조로 작성합니다.
+        1. 객관적 전문 지식 가이드:
+           - 특정 개인의 이름이나 저자 실명을 절대 언급하지 마십시오.
+           - 관계 법령, 공식 고시 기준, 주택도시기금/국토교통부 표준 가이드에 기반하여 신뢰성 있고 명확하게 작성합니다.
         2. 가독성 & 체류시간 최적화:
            - 두괄식 구성: 서론에서 핵심 결론과 해결책을 먼저 명쾌하게 제시합니다.
            - 문단 분절: 2~3문장마다 줄바꿈을 적용하고, 핵심 문장은 <strong>굵게</strong> 강조합니다.
            - 리스트 및 표: 핵심 정보 요약 비교 테이블(<table class="w-full border-collapse my-4 text-xs sm:text-sm">...</table>)을 최소 1개 이상 필수 포함합니다.
         3. 구조화 및 전문성(E-E-A-T):
            - <h2> 및 <h3> 태그를 활용한 논리적 계층 구조를 만듭니다.
-           - '실무자 핵심 비공개 팁', '초보자가 자주 겪는 3가지 실패 사례와 극복법'을 구체적으로 서술합니다.
+           - '실무 핵심 비공개 팁', '초보자가 자주 겪는 3가지 실패 사례와 극복법'을 구체적으로 서술합니다.
            - 전체 분량은 공백 제외 최소 2,000자 이상(800~1,500 단어)의 깊이 있는 실전 가이드로 작성합니다.
         4. 자주 묻는 질문 (FAQ):
            - 글 하단에 <h2>자주 묻는 질문 (FAQ)</h2> 섹션을 만들고 독자들이 가장 궁금해할 실무 질문 3개(Q1, Q2, Q3)와 명쾌한 해결책 답변을 포함합니다.
@@ -478,18 +479,11 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
     "청약-분양": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800"
   };
 
-  const authorByCategory: Record<string, string> = {
-    "대출-금융": "이소율 (금융 칼럼니스트)",
-    "전월세": "김현우 (공인중개사)",
-    "이사-인테리어": "박예준 (주거 인테리어 칼럼니스트)",
-    "청약-분양": "박예준 (청약 칼럼니스트)"
-  };
-
   const newPost = {
     id: `auto-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
     title: postTitle,
     category,
-    author: authorByCategory[category] || "박예준 (주거 칼럼니스트)",
+    author: "하우징허브",
     date: todayStr,
     time: timeStr,
     readTime: postReadTime,

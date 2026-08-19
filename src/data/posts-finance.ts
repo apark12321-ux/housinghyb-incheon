@@ -5,7 +5,7 @@ export const POSTS_FINANCE: Post[] = [
     id: "fin-2026-july",
     title: "2026년 7월 하반기 주택담보·전세대출 규제 지표 및 버팀목 디딤돌 서민 우대금리 총정리",
     excerpt: "2026년 7월 22일 최신 개정 금융 규제 가이드! 스트레스 DSR 3단계 금리 가산 체계 시뮬레이션, 청년 및 신혼부부 버팀목 전세자금대출 소득 요건 완화안, 디딤돌 구입자금 우대 금리 적용법을 명확하게 안내합니다.",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-12",
     category: "대출-금융",
     time: "19:06:54",
@@ -162,7 +162,7 @@ export const POSTS_FINANCE: Post[] = [
   </ul>
   <p>결론적으로, 수도권에서 집을 구할 때는 반드시 <strong>은행 대출 상담사(대주단)나 주택금융공사 상담센터를 통해 매수 전 '사전 대출 한도 조회'</strong>를 반드시 진행하십시오. 소중한 자산을 지키는 가장 확실한 첫걸음입니다.</p>
 
-  <p style="color:#777; font-size:0.9em; margin-top:30px;">최종 업데이트: 2026-06-13 | 작성자: 부동산·금융 전문 에디터</p>
+  <p style="color:#777; font-size:0.9em; margin-top:30px;"></p>
 </div>
     
 
@@ -231,7 +231,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-13",
     image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=800",
     readTime: "21분",
@@ -377,7 +377,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "20:31:49",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-14",
     image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
     readTime: "19분",
@@ -526,7 +526,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-06",
     image: "https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -679,7 +679,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "19:57:03",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-07",
     image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -827,7 +827,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-08",
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -971,7 +971,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "21:08:32",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-09",
     image: "https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1105,7 +1105,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-10",
     image: "https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1183,7 +1183,7 @@ export const POSTS_FINANCE: Post[] = [
     `,
     category: "대출-금융",
     time: "21:17:23",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-11",
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1336,7 +1336,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-05-31",
     image: "https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1488,7 +1488,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "21:50:50",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-01",
     image: "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&q=80&w=800",
     readTime: "14분",
@@ -1631,7 +1631,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-02",
     image: "https://images.unsplash.com/photo-1559589689-577aabd1db4f?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1768,7 +1768,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "20:40:40",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-03",
     image: "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&q=80&w=800",
     readTime: "13분",
@@ -1849,7 +1849,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
     `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-04",
     image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -1925,7 +1925,7 @@ export const POSTS_FINANCE: Post[] = [
     </ol>
     <p>결론적으로, 지금의 풍선효과는 단순히 서울을 떠나는 현상이 아니라, <strong>'수도권 거주 벨트가 확대되는 과정'</strong>입니다. 수도권과 경기권의 가치가 서울과 동등한 수준으로 재평가받고 있는 시점에서, 본인의 소득 흐름에 맞춘 가장 안전하고 스마트한 진입 전략을 세우시길 바랍니다. 부동산 시장은 늘 변하지만, 준비된 사람에게는 언제나 기회의 창이 열려 있습니다.</p>
 
-    <p style="margin-top: 50px; font-size: 0.8em; color: #888;">최종 업데이트: 2026-06-05 | 작성자: 부동산·금융 전문 에디터</p>
+    <p style="margin-top: 50px; font-size: 0.8em; color: #888;"></p>
 </div>
     
 
@@ -1995,7 +1995,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "20:22:58",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-06-05",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2056,7 +2056,7 @@ export const POSTS_FINANCE: Post[] = [
             <td>증여받은 자에게 세금 납부 의무 이전</td>
         </tr>
     </table>
-    <p>특히 주의할 점은 <strong>'잔금 지급일'과 '등기 접수일' 중 빠른 날</strong>이 기준이 된다는 것입니다. 잔금을 5월 31일에 치렀더라도 등기 접수가 6월 1일 이후로 미뤄진다면 매도자가 세금을 부담해야 할 상황이 발생할 수 있습니다. 따라서 수도권 지역 내 공인중개사와 협의하여 반드시 5월 중순까지는 잔금 스케줄을 확정 짓는 것이 현명합니다.</p>
+    <p>특히 주의할 점은 <strong>'잔금 지급일'과 '등기 접수일' 중 빠른 날</strong>이 기준이 된다는 것입니다. 잔금을 5월 31일에 치렀더라도 등기 접수가 6월 1일 이후로 미뤄진다면 매도자가 세금을 부담해야 할 상황이 발생할 수 있습니다. 따라서 수도권 지역 내 전문가와 협의하여 반드시 5월 중순까지는 잔금 스케줄을 확정 짓는 것이 현명합니다.</p>
 
     <h3 id="section4">4. 재산세와 종합부동산세 계산의 이해 및 주의사항</h3>
     <p>재산세는 주택 가격에 공정시장가액비율을 곱해 산출하며, 종합부동산세는 인별 합산 과세가 원칙입니다. <strong>수도권에 2채, 서울에 1채</strong>를 보유한 경우, 전체 주택의 공시가격을 합산하여 종부세 기초 공제액(일반 9억 원, 1세대 1주택자 12억 원)을 초과하는 부분에 대해 과세가 진행됩니다.</p>
@@ -2066,7 +2066,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결론적으로 6월 1일은 단순히 세금을 내는 날이 아니라, 자산 운용의 효율성을 재점검하는 날이 되어야 합니다. 수도권 지역의 부동산 가치가 상승함에 따라 공시가격 또한 매년 상향 조정되고 있으므로, 막연하게 '세금을 내야지'라고 생각하기보다는 국토교통부 부동산 공시가격 알리미 사이트를 통해 본인 소유 자산의 가치를 미리 파악해야 합니다.</p>
     <p>만약 올해 6월 1일을 앞두고 매도나 증여를 고민하고 계신다면, 반드시 <strong>관할 세무서나 세무 대리인과 상담</strong>하시기 바랍니다. 특히 수도권 및 주요 거점의 경우 지역별 개발 호재에 따른 공시가 상승률이 상이하므로, 본인이 보유한 물건의 가치 상승분과 예상되는 보유세액을 비교하여 매도 결정을 내리는 것이 최선의 자산 방어 전략입니다. 여러분의 성공적인 부동산 관리를 응원합니다.</p>
     
-    <p style="text-align: right; color: #888; font-size: 0.9em;">최종 업데이트: 2026-05-27 | 작성자: 금융전문 에디터</p>
+    <p style="text-align: right; color: #888; font-size: 0.9em;"></p>
 </div>
     
 
@@ -2135,7 +2135,7 @@ export const POSTS_FINANCE: Post[] = [
 </div>
 `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-05-27",
     image: "https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2281,7 +2281,7 @@ export const POSTS_FINANCE: Post[] = [
 `,
     category: "대출-금융",
     time: "19:48:12",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-05-28",
     image: "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&q=80&w=800",
     readTime: "12분",
@@ -2374,7 +2374,7 @@ export const POSTS_FINANCE: Post[] = [
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-05-29</p>
     `,
     category: "대출-금융",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-05-29",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
     readTime: "11분",
@@ -2487,7 +2487,7 @@ export const POSTS_FINANCE: Post[] = [
     `,
     category: "대출-금융",
     time: "21:59:41",
-    author: "이소율 (금융 칼럼니스트)",
+    author: "하우징허브",
     date: "2026-05-30",
     image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=800",
     readTime: "9분",

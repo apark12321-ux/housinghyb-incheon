@@ -14,7 +14,7 @@
   --color-brand-700: #1e40af;
 }
 
-body {
+html, body {
   font-family: var(--font-sans);
   background-color: #f8fafc;
   color: #0f172a;
@@ -23,6 +23,8 @@ body {
   letter-spacing: -0.01em; /* 모바일/데스크톱 최적 자간 -0.01em */
   word-break: keep-all;
   overflow-wrap: break-word;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 /* 부드러운 스크롤바 */
@@ -129,17 +131,43 @@ body {
   color: #0f172a;
 }
 
+.article-rich-content {
+  overflow-wrap: break-word;
+  word-break: keep-all;
+  max-width: 100%;
+}
+
+.article-rich-content img,
+.article-rich-content iframe,
+.article-rich-content video {
+  max-width: 100% !important;
+  height: auto;
+  box-sizing: border-box;
+}
+
+.article-rich-content pre,
+.article-rich-content code {
+  max-width: 100%;
+  overflow-x: auto;
+  word-break: break-all;
+}
+
 .article-rich-content table {
   width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
-  margin: 2rem 0;
-  font-size: 1rem;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .article-rich-content th, .article-rich-content td {
   border: 1px solid #e2e8f0;
-  padding: 0.875rem 1rem;
+  padding: 0.75rem 0.875rem;
   text-align: left;
+  min-width: 120px;
 }
 
 .article-rich-content th {

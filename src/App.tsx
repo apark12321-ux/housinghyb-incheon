@@ -31,6 +31,7 @@ import {
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
 import { Post, Category, slugify } from "./types";
+import { extractTopSeoKeywords, updateMetaKeywords } from "./utils/seoKeywords";
 import { SubscriptionCalendar } from "./components/SubscriptionCalendar";
 
 interface Message {
@@ -122,36 +123,6 @@ export default function App() {
   // 상세 보기 모달 관련
   const [activePost, setActivePost] = useState<Post | null>(null);
 
-  // 아티클 독서 진행률 (Scroll-based Reading Progress Bar) 계산
-  const [readingProgress, setReadingProgress] = useState<number>(0);
-
-  useEffect(() => {
-    if (!activePost) {
-      setReadingProgress(0);
-      return;
-    }
-
-    const calculateReadingProgress = () => {
-      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollHeight <= 0) {
-        setReadingProgress(100);
-        return;
-      }
-      const currentScroll = window.scrollY;
-      const progress = Math.min(100, Math.max(0, (currentScroll / scrollHeight) * 100));
-      setReadingProgress(progress);
-    };
-
-    window.addEventListener("scroll", calculateReadingProgress, { passive: true });
-    window.addEventListener("resize", calculateReadingProgress, { passive: true });
-    calculateReadingProgress();
-
-    return () => {
-      window.removeEventListener("scroll", calculateReadingProgress);
-      window.removeEventListener("resize", calculateReadingProgress);
-    };
-  }, [activePost]);
-
   // 자가진단 계산기 탭: 'loan' (대출한도) | 'score' (청약가점)
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
 
@@ -238,7 +209,7 @@ export default function App() {
     };
   }, [posts]);
 
-  // 상태 변화에 따른 브라우저 주소 및 문서 타이틀 동기화 (Path-based Routing 통합 처리)
+  // 상태 변화에 따른 브라우저 주소, 문서 타이틀 및 메타 키워드 동기화 (SEO / AEO 최적화)
   useEffect(() => {
     const pathname = window.location.pathname;
 
@@ -248,11 +219,26 @@ export default function App() {
         window.history.pushState({ postTitle: activePost.title }, "", `/post/${targetSlug}`);
       }
       document.title = `${activePost.title} | 하우징허브`;
+
+      // 본문 콘텐츠를 심층 분석하여 구글 SEO에 최적화된 고가치 메타 키워드 10개 자동 추출 및 메타태그 갱신
+      const autoKeywords = extractTopSeoKeywords({
+        title: activePost.title,
+        excerpt: activePost.excerpt,
+        content: activePost.content,
+        category: activePost.category,
+        hashtags: activePost.hashtags,
+        maxCount: 10
+      });
+      updateMetaKeywords(autoKeywords);
     } else if (showDiagnosticPage) {
       if (pathname !== "/toolkit") {
         window.history.pushState(null, "", "/toolkit");
       }
       document.title = "스마트 주거 자가진단 툴킷 | 하우징허브";
+      updateMetaKeywords([
+        "하우징허브", "주택청약가점계산기", "DSR대출한도계산", "LTV계산", "스트레스DSR",
+        "신혼부부청약가점", "무주택기간계산", "부양가족가점", "디딤돌대출한도", "버팀목대출자가진단"
+      ]);
     } else if (activeLegalTab) {
       const targetPath = `/${activeLegalTab}`;
       if (pathname !== targetPath) {
@@ -269,13 +255,21 @@ export default function App() {
       } else if (activeLegalTab === "contact") {
         document.title = "1:1 안심 상담 및 문의 | 하우징허브";
       }
+      updateMetaKeywords([
+        "하우징허브", "개인정보처리방침", "이용약관", "면책고지", "콘텐츠운영원칙",
+        "주거정책리포트", "무주택실수요자", "안심주거포털", "주택정보검증", "고객문의"
+      ]);
     } else {
       const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership", "/about"];
       const isSubpage = subpages.includes(pathname) || pathname.startsWith("/post/");
       if (isSubpage) {
         window.history.pushState(null, "", "/");
       }
-      document.title = "하우징허브 | 실생활 청약, 임대, 전세대출 안심 정보 포털";
+      document.title = "하우징허브 (HousingHub) | 주택청약·전월세안심·주택금융 가이드";
+      updateMetaKeywords([
+        "하우징허브", "HousingHub", "주택청약", "청약가점계산기", "전세대출",
+        "디딤돌대출", "버팀목대출", "DSR계산기", "전월세계약특약", "주거정책리포트"
+      ]);
     }
   }, [activePost, showDiagnosticPage, activeLegalTab]);
 
@@ -614,17 +608,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white relative">
-      {/* 아티클 독서 진행률 프로그레스 바 (상단 고정) */}
-      {activePost && (
-        <div className="fixed top-0 left-0 right-0 z-50 h-1 sm:h-1.5 bg-slate-200/80 w-full backdrop-blur-xs pointer-events-none">
-          <div 
-            className="h-full bg-gradient-to-r from-blue-600 via-indigo-600 to-emerald-500 transition-all duration-150 ease-out shadow-xs"
-            style={{ width: `${readingProgress}%` }}
-          />
-        </div>
-      )}
-
+    <div className="min-h-screen bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white relative overflow-x-hidden">
       {/* 공식 미디어 상단 가이드 띠 */}
       <div className="bg-slate-900 text-slate-300 text-xs font-medium py-2 px-4 border-b border-slate-800">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -794,8 +778,8 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {activePost ? (
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
-            {/* 상단 브레드크럼 / 뒤로가기 버튼 & 독서 진행률 배지 */}
-            <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/90 backdrop-blur-xs sticky top-20 z-30 shadow-2xs">
+            {/* 상단 브레드크럼 / 뒤로가기 버튼 */}
+            <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/90 backdrop-blur-xs sticky top-0 sm:top-16 z-30 shadow-2xs">
               <button 
                 onClick={() => setActivePost(null)}
                 className="inline-flex items-center space-x-2 text-slate-600 hover:text-blue-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
@@ -804,11 +788,7 @@ export default function App() {
                 <span>목록으로 돌아가기</span>
               </button>
               <div className="flex items-center space-x-3 text-xs font-mono">
-                <span className="hidden sm:inline text-slate-400">하우징허브 &gt; {activePost.category}</span>
-                <span className="bg-blue-50 text-blue-700 font-bold px-3 py-1 rounded-full border border-blue-100/80 flex items-center gap-1.5 shadow-2xs">
-                  <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
-                  <span>독서 진행률 {Math.round(readingProgress)}%</span>
-                </span>
+                <span className="text-slate-500 font-semibold">하우징허브 &gt; {activePost.category}</span>
               </div>
             </div>
 
@@ -824,28 +804,13 @@ export default function App() {
                 {activePost.title}
               </h1>
 
-              {/* 작성자 아바타 프로필 & 메타 정보 카드 */}
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 py-5 border-y border-slate-100 mb-8">
-                {/* 프로필 좌측 */}
-                <div className="flex items-center space-x-3">
-                  <img 
-                    src={`https://api.dicebear.com/7.x/adventurer/svg?seed=${encodeURIComponent(activePost.author)}`}
-                    alt={activePost.author} 
-                    className="w-10 h-10 rounded-full bg-purple-50 border border-purple-100/50"
-                  />
-                  <div>
-                    <h4 className="text-sm font-bold text-slate-800">{activePost.author}</h4>
-                    <p className="text-[11px] text-slate-400 font-medium">부동산·주거 전문 칼럼니스트</p>
-                  </div>
-                </div>
-
-                {/* 메타 정보 우측 */}
-                <div className="flex flex-wrap items-center gap-2 text-xs font-medium">
-                  <span className="inline-flex items-center text-slate-800 bg-slate-100/90 border border-slate-200/80 px-2.5 py-1 rounded-lg font-mono font-semibold">
-                    <Calendar className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
-                    <span>게재일: {activePost.date}{activePost.time ? ` ${activePost.time}` : ""}</span>
-                  </span>
-                </div>
+              {/* 메타 정보 카드 */}
+              <div className="flex items-center justify-between gap-4 py-4 border-y border-slate-100 mb-8">
+                <span className="inline-flex items-center text-slate-800 bg-slate-100/90 border border-slate-200/80 px-3 py-1.5 rounded-lg font-mono font-semibold text-xs">
+                  <Calendar className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
+                  <span>게재일: {activePost.date}{activePost.time ? ` ${activePost.time}` : ""}</span>
+                </span>
+                <span className="text-xs text-slate-400 font-medium">하우징허브 주거 리포트</span>
               </div>
 
               {/* 실제 정밀 본문 */}
@@ -1719,7 +1684,7 @@ export default function App() {
 
                   <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
                     <div className="text-xs">
-                      <span className="font-bold text-slate-200">{filteredPosts[0].author || "하우징허브 칼럼니스트"}</span>
+                      <span className="font-bold text-slate-200">하우징허브 (HousingHub)</span>
                     </div>
                     <span className="inline-flex items-center space-x-1 text-sm font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
                       <span>전문 읽기</span>
@@ -2060,7 +2025,7 @@ export default function App() {
 
           {/* 챗봇 메신저 카드 */}
           {isChatOpen && (
-            <div className="w-[360px] sm:w-[420px] h-[550px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-6">
+            <div className="w-[calc(100vw-32px)] sm:w-[420px] max-h-[85vh] h-[550px] bg-white rounded-3xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden animate-in fade-in slide-in-from-bottom-6">
               {/* 챗봇 톱바 */}
               <div className="bg-slate-900 text-white p-4 flex items-center justify-between">
                 <div className="flex items-center space-x-3">
@@ -2259,7 +2224,7 @@ export default function App() {
           <div className="pt-6 border-t border-slate-800/60 text-[11px] text-slate-400 space-y-2 leading-relaxed">
             <div className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-slate-300 font-semibold">
               <span>하우징허브 (HousingHub)</span>
-              <span>작성 및 운영: 박예준 (부동산·주거 칼럼니스트)</span>
+              <span>운영: 하우징허브 (HousingHub)</span>
               <span>공식 이메일: apark12321@gmail.com</span>
             </div>
             <p className="text-slate-500">
