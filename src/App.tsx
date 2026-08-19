@@ -26,12 +26,14 @@ import {
   Menu,
   Heart,
   ShieldCheck,
-  Filter
+  Filter,
+  ExternalLink,
+  Sparkles
 } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
 import { Post, Category, slugify } from "./types";
-import { extractTopSeoKeywords, updateMetaKeywords } from "./utils/seoKeywords";
+import { extractTopSeoKeywords, updateMetaKeywords, buildRefinedGoogleSearchUrl } from "./utils/seoKeywords";
 import { SubscriptionCalendar } from "./components/SubscriptionCalendar";
 
 interface Message {
@@ -1798,9 +1800,93 @@ export default function App() {
                   {/* 아티클 카드 그리드 */}
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                     {filteredPosts.length === 0 ? (
-                      <div className="col-span-full bg-white rounded-3xl border border-slate-200 p-12 text-center text-slate-500">
-                        <p className="font-bold text-base">일치하는 주거 리포트가 없습니다.</p>
-                        <p className="text-xs text-slate-400 mt-1">검색어를 다시 확인하거나 다른 카테고리를 선택해 보세요.</p>
+                      <div className="col-span-full bg-white rounded-3xl border border-slate-200 p-8 sm:p-12 text-center text-slate-600 space-y-6 shadow-xs">
+                        <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto">
+                          <Search className="w-8 h-8 text-blue-600" />
+                        </div>
+
+                        <div className="space-y-1.5 max-w-md mx-auto">
+                          <p className="font-bold text-lg text-slate-900">
+                            {searchTerm ? `"${searchTerm}"에 대한 검색 결과를 찾지 못했습니다.` : "일치하는 주거 리포트가 없습니다."}
+                          </p>
+                          <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
+                            {searchTerm 
+                              ? "하우징허브 내 등록된 칼럼 외에 정부 정책·공문·법령 원문까지 탐색할 수 있는 구글 정밀 검색을 활용해 보세요."
+                              : "검색어를 다시 확인하거나 다른 카테고리를 선택해 보세요."}
+                          </p>
+                        </div>
+
+                        {/* 구글 정교 매칭 외부 검색 추천 카드 */}
+                        {(() => {
+                          const refined = buildRefinedGoogleSearchUrl(searchTerm, selectedCategory);
+                          return (
+                            <div className="max-w-xl mx-auto bg-gradient-to-br from-slate-900 via-slate-900 to-indigo-950 text-white rounded-2xl p-5 sm:p-6 text-left space-y-4 border border-slate-800 shadow-lg">
+                              <div className="flex items-center justify-between">
+                                <div className="inline-flex items-center space-x-1.5 bg-blue-500/20 text-blue-300 text-xs font-bold px-3 py-1 rounded-full border border-blue-400/30">
+                                  <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+                                  <span>구글 정밀 외부 검색 추천</span>
+                                </div>
+                                <span className="text-[11px] text-slate-400 font-mono">Google Web Search</span>
+                              </div>
+
+                              <div>
+                                <h4 className="text-sm sm:text-base font-bold text-slate-100 flex items-center gap-1.5">
+                                  <span>'{refined.displayQuery}' 관련 공식 법령 &amp; 정부 공문 검색</span>
+                                </h4>
+                                <p className="text-xs text-slate-300 mt-1 leading-relaxed">
+                                  국토교통부, 한국부동산원, 주택도시기금의 최신 지침과 공식 해석을 직접 조회할 수 있도록 최적화된 검색어를 구성했습니다.
+                                </p>
+                              </div>
+
+                              {/* 추천 연관 쿼리 칩 */}
+                              {refined.suggestions.length > 0 && (
+                                <div className="space-y-1.5 pt-1">
+                                  <div className="text-[11px] text-slate-400 font-semibold">정교 추천 검색어:</div>
+                                  <div className="flex flex-wrap gap-1.5">
+                                    {refined.suggestions.map((sug, idx) => (
+                                      <a
+                                        key={idx}
+                                        href={`https://www.google.com/search?q=${encodeURIComponent(sug.query)}`}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-xs bg-slate-800/90 hover:bg-blue-600 text-slate-200 hover:text-white px-2.5 py-1 rounded-lg border border-slate-700 transition-colors inline-flex items-center space-x-1"
+                                      >
+                                        <span>{sug.label}</span>
+                                        <ExternalLink className="w-3 h-3 text-slate-400 group-hover:text-white" />
+                                      </a>
+                                    ))}
+                                  </div>
+                                </div>
+                              )}
+
+                              <div className="pt-2 flex flex-col sm:flex-row items-center gap-2">
+                                <a
+                                  href={refined.url}
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                                  className="w-full sm:w-auto flex-1 inline-flex items-center justify-center space-x-2 bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs sm:text-sm py-2.5 px-4 rounded-xl transition-all shadow-md cursor-pointer"
+                                >
+                                  <span>구글에서 '{refined.displayQuery}' 정밀 검색하기</span>
+                                  <ExternalLink className="w-4 h-4" />
+                                </a>
+
+                                {searchTerm && (
+                                  <button
+                                    onClick={() => {
+                                      setSearchTerm("");
+                                      setSelectedCategory("전체");
+                                      setSelectedSubCategory("전체 보기");
+                                      setSelectedTag("");
+                                    }}
+                                    className="w-full sm:w-auto inline-flex items-center justify-center bg-slate-800 hover:bg-slate-700 text-slate-300 text-xs font-semibold py-2.5 px-4 rounded-xl transition-colors cursor-pointer"
+                                  >
+                                    검색 필터 초기화
+                                  </button>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })()}
                       </div>
                     ) : (
                       filteredPosts.map(post => {

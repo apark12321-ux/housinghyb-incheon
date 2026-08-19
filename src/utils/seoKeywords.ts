@@ -157,3 +157,91 @@ export function updateMetaKeywords(keywords: string[]): void {
 
   metaTag.setAttribute("content", keywordString);
 }
+
+/**
+ * 사용자가 입력한 검색어와 현재 선택된 카테고리를 분석하여
+ * 구글 검색 결과에서 가장 관련도 높은 정부 공문, 법령 및 고신뢰 주거 정보를 얻을 수 있도록
+ * 검색 쿼리를 정교하게 조합 및 확장합니다.
+ */
+export function buildRefinedGoogleSearchUrl(rawQuery: string, category?: string): {
+  url: string;
+  displayQuery: string;
+  suggestions: { label: string; query: string }[];
+} {
+  const trimmed = (rawQuery || "").trim();
+  
+  // 검색어가 없을 경우 기본 카테고리 기반 쿼리
+  if (!trimmed) {
+    const baseCat = category && category !== "전체" ? category : "주택청약 및 전월세대출";
+    const displayQuery = `${baseCat} 최신 주거 가이드`;
+    const url = `https://www.google.com/search?q=${encodeURIComponent(displayQuery + " site:kr OR 국토교통부 OR 청약홈")}`;
+    return {
+      url,
+      displayQuery,
+      suggestions: [
+        { label: "청약 가점 계산법", query: "주택 청약 가점 계산 기준 국토교통부" },
+        { label: "전세보증금 반환보증", query: "전세보증보험 가입조건 HUG HF" },
+        { label: "디딤돌·버팀목 대출", query: "2026 주택도시기금 디딤돌 버팀목 대출 금리 한도" },
+      ]
+    };
+  }
+
+  // 1. 특정 핵심 주제별 타깃 키워드 매칭
+  const lower = trimmed.toLowerCase();
+  let intentKeyword = "";
+  const extraSuggestions: { label: string; query: string }[] = [];
+
+  if (/디딤돌|버팀목|신생아|대출|금리|한도|dsr|ltv|스트레스/i.test(lower)) {
+    intentKeyword = "주택도시기금 대출 자격 한도 금리 조건";
+    extraSuggestions.push(
+      { label: `"${trimmed}" 최신 금리·한도`, query: `${trimmed} 대출 금리 한도 계산` },
+      { label: `"${trimmed}" 신청 자격 및 서류`, query: `${trimmed} 신청 자격 서류 주택도시기금` },
+      { label: `"${trimmed}" DSR 규제 적용 여부`, query: `${trimmed} 스트레스 DSR 적용 기준` }
+    );
+  } else if (/청약|가점|특공|특별공급|무순위|줍줍|분양|청약통장|1순위/i.test(lower)) {
+    intentKeyword = "한국부동산원 청약홈 청약 자격 가점 계산";
+    extraSuggestions.push(
+      { label: `"${trimmed}" 청약 자격 및 1순위 조건`, query: `${trimmed} 청약 1순위 자격 조건` },
+      { label: `"${trimmed}" 무순위 줍줍 분양가`, query: `${trimmed} 무순위 줍줍 청약 일정 분양가` },
+      { label: `"${trimmed}" 특별공급 소득 자산 기준`, query: `${trimmed} 특별공급 소득 자산 기준` }
+    );
+  } else if (/전세|월세|임대차|보증금|대항력|확정일자|전입신고|깡통|사기|특약|등기부/i.test(lower)) {
+    intentKeyword = "주택임대차보호법 대항력 전세보증금 반환보증";
+    extraSuggestions.push(
+      { label: `"${trimmed}" 안전 계약 특약 문구`, query: `${trimmed} 부동산 표준계약서 안전 특약` },
+      { label: `"${trimmed}" 대항력 및 확정일자 효력`, query: `${trimmed} 확정일자 대항력 전입신고 효력` },
+      { label: `"${trimmed}" HUG 반환보증 가입 기준`, query: `${trimmed} HUG 전세보증보험 가입 요건` }
+    );
+  } else if (/이사|손없는날|폐기물|입주청소|도배|인테리어|하자보수/i.test(lower)) {
+    intentKeyword = "이사 체크리스트 지자체 대형폐기물 하자보수";
+    extraSuggestions.push(
+      { label: `"${trimmed}" 온라인 신청 방법`, query: `${trimmed} 인터넷 신청 발급 방법` },
+      { label: `"${trimmed}" 비용 및 체크리스트`, query: `${trimmed} 비용 견적 체크리스트` },
+      { label: `"${trimmed}" 주의사항 및 피해 예방`, query: `${trimmed} 소비자 주의사항 분쟁 예방` }
+    );
+  } else {
+    // 일반 키워드: 카테고리 맥락을 결합
+    const catPrefix = category && category !== "전체" ? category : "부동산 주거 정책";
+    intentKeyword = `${catPrefix} 실무 가이드`;
+    extraSuggestions.push(
+      { label: `"${trimmed}" 관련 공식 정책 및 공고`, query: `${trimmed} 국토교통부 보도자료 공고` },
+      { label: `"${trimmed}" 질문과 답변(Q&A)`, query: `${trimmed} 자주 묻는 질문 실무 FAQ` },
+      { label: `"${trimmed}" 2026 최신 개정 기준`, query: `${trimmed} 2026년 최신 개정 변경사항` }
+    );
+  }
+
+  // 검색어 정제 (특수기호 과다 정리)
+  const cleanQ = trimmed.replace(/[+&|!(){}[\]^"~*?:\\/]/g, " ").replace(/\s+/g, " ").trim();
+  
+  // 구글 검색창에 최종 전달되는 정밀 쿼리
+  const refinedQuery = `${cleanQ} ${intentKeyword}`;
+  const encoded = encodeURIComponent(refinedQuery);
+  const url = `https://www.google.com/search?q=${encoded}`;
+
+  return {
+    url,
+    displayQuery: cleanQ,
+    suggestions: extraSuggestions.slice(0, 3)
+  };
+}
+
