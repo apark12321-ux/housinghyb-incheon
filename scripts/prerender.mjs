@@ -17,8 +17,8 @@ const ROOT = resolve(__dirname, "..");
 const DIST = resolve(ROOT, "dist");
 const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
-const DEFAULT_TITLE = "하우징허브 (HousingHub) | 주택청약·전월세안심·주택금융 가이드";
-const DEFAULT_DESCRIPTION = "하우징허브는 무주택 실수요자를 위한 실전 주택청약 가점 계산, 전월세 대항력 및 전세사기 예방 특약, 디딤돌·버팀목·DSR 주택금융 계산 툴킷과 신뢰도 높은 주거 정책 분석 리포트를 제공하는 전문 주거 정보 포털입니다.";
+const DEFAULT_TITLE = "하우징허브 (HousingHub) | 2026 주거·청약·대출 실무 가이드";
+const DEFAULT_DESCRIPTION = "신혼부부와 무주택자를 위한 청약 공고문 팩트체크, 전월세 대항력 및 안전 계약 가이드, 디딤돌·버팀목 대출 분석 실무 지식 포털입니다.";
 const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"];
 
 function slugify(title) {
@@ -439,12 +439,12 @@ function articleJsonLd(post) {
       },
       "author": {
         "@type": "Organization",
-        "name": SITE_NAME,
-        "url": SITE_URL
+        "name": "하우징허브 편집부",
+        "url": `${SITE_URL}/about`
       },
       "publisher": {
         "@type": "Organization",
-        "name": "알고파트너스",
+        "name": "상상아트",
         "alternateName": SITE_NAME,
         "url": SITE_URL,
         "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` }
@@ -537,49 +537,44 @@ function main() {
     },
     {
       path: "about/index.html",
-      title: `하우징허브 소개 및 E-E-A-T 편집·발행 신뢰 선언 | ${SITE_NAME}`,
-      desc: `${SITE_NAME}는 무주택자, 생애 최초 청약자, 전월세 임차인의 보증금 보호와 내 집 마련을 위한 공익성 주거 지식 전문 포털입니다.`,
+      title: `하우징허브 소개 | ${SITE_NAME}`,
+      desc: `${SITE_NAME}는 무주택자, 신혼부부, 전월세 임차인을 위한 주거·청약 실무 가이드 포털입니다.`,
       url: `${SITE_URL}/about`,
       body: buildStaticPageBody(
-        `${SITE_NAME} 소개 및 E-E-A-T 신뢰 정책`,
+        `${SITE_NAME} 소개`,
         `<div class="about-us-container">
-          <p><strong>하우징허브(HousingHub)</strong>는 무주택 가구, 생애 최초 주택 마련 수요자, 그리고 전월세 임차인의 소중한 권리와 보증금 자산을 투명하게 사수하고 정보 비대칭을 영구적으로 제거하기 위해 설립된 <strong>비영리 공익성 종합 주거 지식 전문 포털</strong>입니다. 당사는 독자들이 복잡하고 이해하기 어려운 정부 주거 복지 정책, 세금 규율, 그리고 시중 적격 금융 대출 상품 지표에 대하여 누구나 즉각적이고 명확하게 인지하고 자가진단을 완비할 수 있도록 최우선 가치를 두고 있습니다.</p>
+          <p><strong>하우징허브(HousingHub)</strong>는 신혼부부, 청년, 무주택 실수요자를 위한 주거·청약·대출 정보 가이드 포털입니다. 복잡하고 어려운 정부 주거 복지 정책, 세금, 금융 대출 상품 지표를 누구나 쉽게 이해하고 활용할 수 있도록 돕습니다.</p>
           
-          <h2>E-E-A-T (경험·전문성·권위성·신뢰성) 콘텐츠 제작 지침</h2>
-          <p>하우징허브 인천 미디어의 모든 보도물 및 칼럼 지식은 단순 짜깁기식 AI 생성이나 스크랩을 철저히 배격하며, 구글이 보장하는 최고의 검색 품질 기준인 E-E-A-T 원칙에 부합하도록 엄격히 기획, 검증 및 최종 배포하고 있습니다.</p>
+          <h2>정보 출처 및 전달 방식</h2>
+          <p>하우징허브의 모든 글은 국토교통부, 한국부동산원 청약홈, 주택도시기금, LH 등 공공 기관의 공식 발표 자료와 공고문을 확인하여 알기 쉽게 정리합니다.</p>
           <ul>
-            <li><strong>공식 유관 출처 대조 (Accuracy):</strong> 국토교통부, 한국토지주택공사(LH), 주택도시보증공사(HUG), 서울주택도시공사(SH), 대법원 인터넷등기소 등 공식 공공 입법 규제안과 모집 보도 공고 일정을 100% 실시간 대조하여 팩트 크로스 체킹을 의무 진행합니다.</li>
-            <li><strong>실무 자문단 협업 (Expertise):</strong> 업력 10년 이상의 베테랑 공인중개사, 공인 금융 자산 설계사, 그리고 부동산 법률 감수 전문 연구진과의 지속 가능한 피드백 연대를 구성하여 실효 지식을 제공합니다.</li>
-            <li><strong>비강제성 투명 정보 (Transparency):</strong> 어떠한 주택 판매 대행사나 특정 대출 중개업체로부터 원고료 수혜 목적의 편향된 홍보 스폰서십 글을 게재하지 않으며, 이용자의 기밀 정보 수집 목적의 어떠한 유료 가입도 일절 강제하거나 요구하지 않는 순수 영구 무상 개방 형태를 선언합니다.</li>
+            <li><strong>공식 공고문 대조:</strong> 매주 발표되는 정부 정책 및 공고 일정을 꼼꼼하게 확인하여 핵심을 정리합니다.</li>
+            <li><strong>실무 중심 가이드:</strong> 전월세 계약 특약, 청약 가점 계산, 디딤돌·버팀목 대출 요건 등 실전에 유용한 정보를 제공합니다.</li>
+            <li><strong>객관적인 정보 전달:</strong> 특정 분양 대행사나 대출 중개업체의 광고성 글을 배제하고 필요한 사실 위주로 전달합니다.</li>
           </ul>
 
-          <h2>콘텐츠 팩트체킹 및 정정 절차 (Fact-Checking & Corrections)</h2>
-          <p>모든 게재 지식물에 대하여 매주 월요일 최신 법률 적용 사항을 주간 단위로 교차 확인합니다. 만약 정책 개편 시차나 단순 오기가 발견되거나 제보될 경우, 24시간 이내에 정밀 수정 보완 조치를 시행하고 투명하게 공개 정정 목록을 보도실에 적재합니다. 정보 기재 오류 및 제안 의견은 공식 소통 이메일(apark12321@gmail.com)로 항시 제출해 주시면 적극 감사 수렴하겠습니다.</p>
+          <h2>문의 및 제안</h2>
+          <p>정보에 관한 질문이나 수정 요청, 제보는 공식 이메일(apark12321@gmail.com)로 보내주시면 신속하게 검토 후 반영하겠습니다.</p>
         </div>`
       ),
     },
     {
       path: "privacy/index.html",
-      title: `개인정보 처리방침 | ${SITE_NAME}`,
-      desc: `${SITE_NAME}의 개인정보 수집, 이용, 구글 애드센스(AdSense) 맞춤 쿠키 수집 및 거부 절차에 관한 표준 보호 방침 안내입니다.`,
+      title: `개인정보 안내 | ${SITE_NAME}`,
+      desc: `${SITE_NAME}의 접속 통계 및 쿠키 이용 안내입니다.`,
       url: `${SITE_URL}/privacy`,
       body: buildStaticPageBody(
-        "개인정보 처리방침 (Privacy Policy)",
+        "개인정보 안내 (Privacy)",
         `<div class="privacy-container leading-relaxed space-y-4">
-          <p><strong>발행처:</strong> 하우징허브 (HousingHub) | <strong>개인정보 보호책임자:</strong> 하우징허브 운영팀 (apark12321@gmail.com)</p>
-          <h3>제 1 조 (목적 및 수집 범위)</h3>
-          <p>${SITE_NAME}(https://zip9.kr)는 이용자의 개인정보를 매우 소중히 다루며, 대한민국 개인정보보호법 및 구글 애드센스(Google AdSense) 프로그램 정책 기준을 준수합니다. 본 사이트는 회원가입이나 필수 수집 절차 없이 누구나 무상으로 이용 가능한 비회원제 포털입니다.</p>
+          <p><strong>발행처:</strong> 하우징허브 (HousingHub) | <strong>문의:</strong> apark12321@gmail.com</p>
+          <h3>1. 수집하는 항목 및 목적</h3>
+          <p>${SITE_NAME}(https://zip9.kr)는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 열린 포털입니다. 서비스 개선 및 사이트 이용 통계 확인을 위해 브라우저 접속 기록(쿠키 등)이 생성될 수 있습니다.</p>
           
-          <h3>제 2 조 (Google AdSense 및 제3자 맞춤 광고 쿠키 수집 고지)</h3>
-          <p>본 사이트는 서비스 운영 및 품질 개선 비용 조달을 위하여 Google Inc. 및 제3자 광고 네트워크의 맞춤형 광고(Google AdSense)를 활용합니다.</p>
-          <ul>
-            <li>Google을 포함한 제3자 제공업체는 쿠키(Cookie)를 사용하여 사용자의 이전 웹사이트 방문 기록을 바탕으로 맞춤형 광고를 제공합니다.</li>
-            <li>Google의 광고 쿠키 사용으로 Google 및 파트너는 사용자의 본 사이트 및 인터넷상의 다른 사이트 방문을 바탕으로 적절한 광고를 게재할 수 있습니다.</li>
-            <li>사용자는 <a href="https://adssettings.google.com" target="_blank" rel="noopener">Google 맞춤형 광고 설정</a>을 방문하여 맞춤형 광고 수집을 거부할 수 있으며, <a href="https://www.aboutads.info" target="_blank" rel="noopener">aboutads.info</a>를 통해 제3자 제공업체의 맞춤형 광고용 쿠키 사용을 차단할 수 있습니다.</li>
-          </ul>
+          <h3>2. 쿠키(Cookie) 안내</h3>
+          <p>본 사이트는 서비스 편의 및 방문 통계 분석을 위해 쿠키를 사용할 수 있습니다. 사용자는 브라우저 설정을 통해 언제든지 쿠키 저장을 거부하거나 삭제할 수 있습니다.</p>
 
-          <h3>제 3 조 (개인정보 보호책임자 및 문의)</h3>
-          <p>개인정보 처리와 관련된 문의, 불만 처리, 개인정보 파기 요청은 공식 이메일(apark12321@gmail.com)로 접수해 주시면 24시간 이내에 신속히 수렴 조치합니다.</p>
+          <h3>3. 문의 창구</h3>
+          <p>사이트 이용과 관련된 문의나 제안은 공식 이메일(apark12321@gmail.com)로 접수해 주시면 신속히 확인하여 답변드리겠습니다.</p>
         </div>`
       ),
     },

@@ -35,6 +35,7 @@ import { POSTS, POSTS_BY_CATEGORY } from "./data/posts";
 import { Post, Category, slugify } from "./types";
 import { extractTopSeoKeywords, updateMetaKeywords, buildRefinedGoogleSearchUrl } from "./utils/seoKeywords";
 import { SubscriptionCalendar } from "./components/SubscriptionCalendar";
+import { GuideReader } from "./components/GuideReader";
 
 interface Message {
   role: "user" | "model";
@@ -611,33 +612,37 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white relative overflow-x-hidden">
-      {/* 공식 미디어 상단 가이드 띠 */}
-      <div className="bg-slate-900 text-slate-300 text-xs font-medium py-2 px-4 border-b border-slate-800">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2.5 truncate">
-            <span className="bg-blue-600 text-white text-[11px] font-bold px-2 py-0.5 rounded shrink-0">공식 미디어</span>
-            <span className="truncate text-slate-200 font-medium">하우징허브 (HousingHub) · 신혼부부 및 무주택자 안심 주거·청약·대출 정보 포털</span>
+      {/* 상단 안내 바 */}
+      <div className="bg-slate-900 text-slate-300 text-xs py-2 px-4 border-b border-slate-800">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+          <div className="flex items-center space-x-2">
+            <span className="bg-blue-600 text-white font-bold text-[10px] px-2 py-0.5 rounded-full">
+              주거 실무 가이드
+            </span>
+            <span className="text-slate-300 text-xs font-medium">
+              신혼부부 &amp; 무주택자를 위한 실전 청약·전월세·주택금융 정보
+            </span>
           </div>
-          <div className="hidden md:flex items-center space-x-4 text-slate-400 text-xs shrink-0 font-sans">
+          <div className="flex items-center space-x-4 text-xs font-sans">
             <button 
               onClick={() => { setActivePost(null); setActiveLegalTab("about"); }}
-              className="text-slate-300 hover:text-blue-400 transition-colors cursor-pointer"
+              className="text-slate-300 hover:text-white transition-colors cursor-pointer"
             >
-              미디어 소개
+              서비스 소개
             </button>
-            <span>|</span>
+            <span className="text-slate-600">|</span>
             <button 
               onClick={() => { setActivePost(null); setActiveLegalTab("privacy"); }}
-              className="text-slate-300 hover:text-blue-400 transition-colors cursor-pointer"
+              className="text-slate-300 hover:text-white transition-colors cursor-pointer"
             >
               개인정보처리방침
             </button>
-            <span>|</span>
+            <span className="text-slate-600">|</span>
             <button 
               onClick={() => { setActivePost(null); setActiveLegalTab("contact"); setIsContactSubmitted(false); }}
-              className="text-slate-300 hover:text-blue-400 transition-colors cursor-pointer"
+              className="text-slate-300 hover:text-white transition-colors cursor-pointer"
             >
-              제휴·문의
+              1:1 문의·제보
             </button>
           </div>
         </div>
@@ -661,11 +666,11 @@ export default function App() {
             <div>
               <div className="flex items-center space-x-2">
                 <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 font-display">
-                  하우징허브 <span className="text-blue-600 text-lg sm:text-xl font-bold font-sans">HousingHub</span>
+                  하우징허브 <span className="text-blue-600 text-sm sm:text-base font-bold font-sans">HousingHub</span>
                 </h1>
               </div>
-              <p className="text-xs text-slate-600 font-semibold mt-0.5">
-                신혼부부 · 무주택자를 위한 안심 주거·청약·대출 정보 포털
+              <p className="text-xs text-slate-500 font-medium mt-0.5">
+                신혼부부 &amp; 무주택자를 위한 안심 주거·청약·대출 가이드
               </p>
             </div>
           </div>
@@ -673,7 +678,7 @@ export default function App() {
           {/* 주요 카테고리 메뉴 내비게이션 */}
           <nav className="hidden lg:flex items-center space-x-1">
             {[
-              { id: "전체", label: "🏠 전체 리포트" },
+              { id: "전체", label: "📝 전체 칼럼" },
               { id: "청약-분양", label: "🏢 청약·분양" },
               { id: "청약일정", label: "📅 청약일정" },
               { id: "전월세", label: "🔑 전월세 안심" },
@@ -692,7 +697,7 @@ export default function App() {
                 }}
                 className={`px-3.5 py-2 text-sm font-bold rounded-xl transition-all cursor-pointer ${
                   selectedCategory === item.id && !showDiagnosticPage && !activeLegalTab && !activePost
-                    ? "bg-blue-600 text-white shadow-sm"
+                    ? "bg-slate-900 text-white shadow-sm"
                     : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
                 }`}
               >
@@ -701,7 +706,7 @@ export default function App() {
             ))}
           </nav>
 
-          {/* 우측 툴킷 / AI상담 액션 버튼 */}
+          {/* 우측 툴킷 액션 버튼 */}
           <div className="flex items-center space-x-2">
             <button
               onClick={() => {
@@ -714,11 +719,11 @@ export default function App() {
               className={`px-3.5 py-2 text-xs sm:text-sm font-bold rounded-xl transition-all flex items-center space-x-1.5 cursor-pointer border ${
                 showDiagnosticPage
                   ? "bg-slate-900 text-white border-slate-900 shadow-sm"
-                  : "text-blue-700 hover:text-white hover:bg-blue-600 hover:border-blue-600 border-blue-200 bg-blue-50/70"
+                  : "text-slate-800 hover:text-slate-900 hover:bg-slate-100 border-slate-200 bg-white"
               }`}
             >
-              <Calculator className="w-4 h-4" />
-              <span>청약·대출 진단</span>
+              <Calculator className="w-4 h-4 text-blue-600" />
+              <span>자가진단 계산기</span>
             </button>
 
             {IS_CHAT_ENABLED && (
@@ -779,88 +784,18 @@ export default function App() {
       {/* 메인 허브 레이아웃 */}
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
         {activePost ? (
-          <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
-            {/* 상단 브레드크럼 / 뒤로가기 버튼 */}
-            <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/90 backdrop-blur-xs sticky top-0 sm:top-16 z-30 shadow-2xs">
-              <button 
-                onClick={() => setActivePost(null)}
-                className="inline-flex items-center space-x-2 text-slate-600 hover:text-blue-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
-              >
-                <ChevronLeft className="w-4 h-4" />
-                <span>목록으로 돌아가기</span>
-              </button>
-              <div className="flex items-center space-x-3 text-xs font-mono">
-                <span className="text-slate-500 font-semibold">하우징허브 &gt; {activePost.category}</span>
-              </div>
-            </div>
-
-            {/* 요즘IT 테마의 화이트 아티클 타이포그래피 헤더 영역 */}
-            <div className="px-6 pt-8 pb-4 sm:px-10 sm:pt-10 max-w-4xl mx-auto">
-              {/* 카테고리 태그 */}
-              <span className="text-xs sm:text-sm font-bold text-purple-600 tracking-wider block mb-2 font-mono">
-                {activePost.category}
-              </span>
-
-              {/* 굵고 대담한 제목 */}
-              <h1 className="text-2xl sm:text-3.5xl lg:text-4xl font-extrabold text-slate-900 leading-snug tracking-tight mb-6">
-                {activePost.title}
-              </h1>
-
-              {/* 메타 정보 카드 */}
-              <div className="flex items-center justify-between gap-4 py-4 border-y border-slate-100 mb-8">
-                <span className="inline-flex items-center text-slate-800 bg-slate-100/90 border border-slate-200/80 px-3 py-1.5 rounded-lg font-mono font-semibold text-xs">
-                  <Calendar className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
-                  <span>게재일: {activePost.date}{activePost.time ? ` ${activePost.time}` : ""}</span>
-                </span>
-                <span className="text-xs text-slate-400 font-medium">하우징허브 주거 리포트</span>
-              </div>
-
-              {/* 실제 정밀 본문 */}
-              <div 
-                className="article-rich-content text-slate-800 text-[15px] sm:text-[16.5px] leading-8 space-y-6 pt-4 font-normal"
-                dangerouslySetInnerHTML={{ __html: activePost.content }}
-              />
-
-              {/* 해시태그 목록 */}
-              <div className="flex flex-wrap gap-1.5 border-t border-slate-100 pt-8 mt-8">
-                {activePost.hashtags?.map(tag => (
-                  <span key={tag} className="text-xs bg-slate-100 text-slate-600 px-3.5 py-1.5 rounded-full font-medium">
-                    #{tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* 하단 제어 리브 */}
-            <div className="p-6 border-t border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-slate-50">
-              <button
-                onClick={(e) => toggleBookmark(activePost.id, e)}
-                className="flex items-center justify-center space-x-2 text-xs font-semibold px-5 py-3 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer w-full sm:w-auto"
-              >
-                <Bookmark className={`w-4 h-4 ${bookmarks.includes(activePost.id) ? "fill-red-500 text-red-500" : ""}`} />
-                <span>{bookmarks.includes(activePost.id) ? "보관 해제" : "내 보관함 스크랩"}</span>
-              </button>
-
-              <div className="flex gap-3 w-full sm:w-auto">
-                <button 
-                  onClick={() => {
-                    navigator.clipboard.writeText(window.location.href);
-                    showToast("하우징허브 주소지가 클립보드에 복사되었습니다! 소중한 분들에게 안심 정보를 나누어 보세요.", "success");
-                  }}
-                  className="flex-1 sm:flex-initial flex items-center justify-center space-x-2 text-xs font-semibold px-5 py-3 rounded-xl bg-slate-900 text-white hover:bg-slate-800 transition-colors cursor-pointer"
-                >
-                  <Share2 className="w-4 h-4" />
-                  <span>안심 가이드 공유</span>
-                </button>
-                <button
-                  onClick={() => setActivePost(null)}
-                  className="flex-1 sm:flex-initial py-3 px-5 text-xs font-bold transition-all text-slate-700 hover:bg-slate-200 border border-slate-200 bg-white rounded-xl cursor-pointer"
-                >
-                  목록으로 가기
-                </button>
-              </div>
-            </div>
-          </div>
+          <GuideReader
+            post={activePost}
+            onBack={() => setActivePost(null)}
+            bookmarks={bookmarks}
+            onToggleBookmark={toggleBookmark}
+            onContactClick={() => {
+              setActivePost(null);
+              setActiveLegalTab("contact");
+              setIsContactSubmitted(false);
+            }}
+            showToast={showToast}
+          />
         ) : showDiagnosticPage ? (
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
             {/* 상단 헤더 */}
@@ -1265,27 +1200,37 @@ export default function App() {
               {activeLegalTab === "about" && (
                 <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900">소개 (About Us) | 하우징허브 · 버진로드 (Virginroad)</h4>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">서비스 소개 (About Us) | 하우징허브 (HousingHub)</h4>
                     <p className="text-xs text-slate-400 mt-1">공고 및 최종 개정 일자: 2026년 8월 13일</p>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">운영 주체 및 플랫폼 목적</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">플랫폼 소개 및 목적</h5>
                     <p className="leading-relaxed">
-                      <strong>하우징허브(HousingHub) / 버진로드(Virginroad)</strong>는 예비부부, 신혼 가구 및 주거 안정을 도모하는 실수요자를 위한 주거·금융·청약·결혼준비 종합 정보 전문 미디어입니다. 본 포털은 <strong>상상아트(사업자등록번호: 272-14-01256, 대표: 안주영)</strong>에서 운영하며, 19년간의 주택 자금 컨설팅 및 주거 정착 실무 경험을 바탕으로 신뢰할 수 있는 정보를 제공합니다.
+                      <strong>하우징허브(HousingHub)</strong>는 신혼부부, 예비 청약자, 청년 및 무주택 실수요자를 위한 주거·청약·대출 정보 전문 미디어입니다. 본 포털은 <strong>상상아트(사업자등록번호: 272-14-01256)</strong>에서 운영하며, 주택 자금 계획 및 주거 안정을 위한 실무형 가이드를 제공합니다.
+                    </p>
+                    <p className="leading-relaxed">
+                      복잡하고 어려운 정부 주택 정책과 청약 공고문, 금융 대출 규제를 누구나 쉽게 이해하고 활용할 수 있도록 명확한 기준과 도구를 전달하는 것을 목표로 합니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">공식 출처 검증 및 E-E-A-T 집필 원칙</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">정보 출처 및 전달 방식</h5>
                     <p className="leading-relaxed">
-                      저희는 주택도시기금, 국세청, 복지로, 청약홈(한국부동산원), LH, HUG 등 공공 기관의 공식 발표 자료를 엄격히 검증하여 전달합니다. 단순한 정책 개요 나열을 넘어 디딤돌·버팀목대출 금리 시뮬레이션, 신혼부부 특별공급 가점 계산, 전월세 보증금 보호 실무 체크리스트 등 깊이 있는 가이드를 제공합니다. 독자 여러분의 안심할 수 있는 자산 형성과 주거 안정을 최우선 가치로 삼고 있습니다.
+                      하우징허브의 모든 글은 국토교통부, 한국부동산원 청약홈, 주택도시기금, LH 등 공공 기관의 공식 발표 자료와 공고문을 확인하여 알기 쉽게 정리합니다.
                     </p>
                     <ul className="list-disc pl-5 text-slate-600 space-y-1 mt-1.5 font-sans">
-                      <li><strong>공식 기관 교차 검증:</strong> 정부 발표 및 법령 개정안을 매주 대조하여 팩트를 철저히 검증합니다.</li>
-                      <li><strong>현장 실무 경험 반영:</strong> 계약서 작성, 청약 부적격 예방법, 대항력 확보 등 현장에서 발생하는 실제 사례를 직접 다룹니다.</li>
-                      <li><strong>독자 중심의 무료 제공:</strong> 이용자에게 무리한 개인정보 입력이나 유료 결제를 요구하지 않습니다.</li>
+                      <li><strong>공식 공고문 대조:</strong> 매주 발표되는 정부 정책 및 공고 일정을 꼼꼼하게 확인하여 핵심을 정리합니다.</li>
+                      <li><strong>실무 중심 가이드:</strong> 전월세 계약 특약, 청약 가점 계산, 디딤돌·버팀목 대출 요건 등 실전에 유용한 정보를 제공합니다.</li>
+                      <li><strong>객관적인 정보 전달:</strong> 특정 분양 대행사나 대출 중개업체의 광고성 글을 배제하고 필요한 사실 위주로 전달합니다.</li>
                     </ul>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">문의 및 피드백</h5>
+                    <p className="leading-relaxed">
+                      콘텐츠에 관한 질문이나 수정 요청, 제보는 <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong> 또는 1:1 문의 창구를 통해 접수해 주시면 신속하게 검토 후 반영하겠습니다.
+                    </p>
                   </section>
                 </div>
               )}
@@ -1298,16 +1243,16 @@ export default function App() {
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">1. 수집하는 개인정보 항목 및 이용 목적</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">1. 수집하는 항목 및 목적</h5>
                     <p className="leading-relaxed">
-                      하우징허브 / 버진로드(이하 "회사")는 방문자의 개인정보를 보호하며 관련 법령을 준수합니다. 본 사이트는 별도의 회원가입 없이 이용 가능하며, 서비스 개선 및 웹사이트 이용 통계 분석을 위해 방문 기록(쿠키, IP 주소, 브라우저 종류)이 자동 생성되어 수집될 수 있습니다.
+                      하우징허브는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 열린 블로그입니다. 사이트 이용 통계 및 방문자 편의 개선을 위해 일반적인 접속 기록(쿠키, 브라우저 정보 등)이 생성될 수 있습니다.
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">2. 구글 애드센스 및 제3자 쿠키(Cookie) 고지</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">2. 쿠키(Cookie) 안내</h5>
                     <p className="leading-relaxed">
-                      본 웹사이트는 구글(Google)을 포함한 제3자 광고 공급업체를 통해 맞춤형 광고를 게재할 수 있습니다. 구글은 쿠키를 사용하여 사용자의 과거 방문 기록을 기반으로 최적화된 광고를 제공합니다. 방문자는 구글 광고 설정(<a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">www.google.com/settings/ads</a>)을 방문하여 맞춤형 광고 수집을 거부할 수 있습니다.
+                      본 사이트는 원활한 서비스 제공 및 방문 통계 확인을 위해 쿠키를 활용할 수 있습니다. 방문자는 브라우저 설정을 통해 언제든지 쿠키 저장을 거부하거나 삭제할 수 있습니다.
                     </p>
                   </section>
 
@@ -1321,7 +1266,7 @@ export default function App() {
                   <section className="space-y-2.5">
                     <h5 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 문의</h5>
                     <p className="leading-relaxed">
-                      운영 주체: 상상아트 (대표: 안주영, 사업자등록번호: 272-14-01256)<br />
+                      운영 주체: 상상아트 (사업자등록번호: 272-14-01256)<br />
                       공식 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong><br />
                       사업장 소재지: 대한민국 서울특별시
                     </p>
@@ -1580,31 +1525,30 @@ export default function App() {
           </div>
         ) : (
           <>
-            {/* 하우징허브 사이트 목적 및 미디어 히어로 배너 */}
-            <section className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-blue-900/40 relative overflow-hidden space-y-6">
-              <div className="absolute -right-10 -bottom-10 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl pointer-events-none" />
-              <div className="relative z-10 space-y-4 max-w-3xl">
+            {/* 하우징허브 안내 히어로 배너 */}
+            <section className="bg-slate-900 text-white rounded-3xl p-6 sm:p-8 md:p-9 shadow-sm border border-slate-800 relative overflow-hidden space-y-5">
+              <div className="space-y-3 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm flex items-center gap-1.5">
+                  <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-xs">
                     <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>2026 주거·청약·대출 미디어</span>
+                    <span>2026 주거·청약·금융 가이드</span>
                   </span>
-                  <span className="bg-slate-800/90 text-slate-300 text-xs font-medium px-3 py-1 rounded-full border border-slate-700">
-                    신혼부부 &amp; 무주택 실수요자 안심 포털
+                  <span className="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700">
+                    신혼부부 &amp; 무주택 실수요자 안심 정보
                   </span>
                 </div>
                 
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight leading-snug font-display">
-                  내 집 마련, 청약 당첨, 대출 한도 자가진단까지<br className="hidden sm:block"/>
-                  <span className="text-blue-400">하우징허브</span>에서 한번에 확인하세요
+                <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug font-display">
+                  청약 공고문 팩트체크부터 전월세 대출 규제까지,<br className="hidden sm:block"/>
+                  <span className="text-blue-400">하우징허브</span>에서 알기 쉽게 확인하세요.
                 </h2>
                 
-                <p className="text-sm sm:text-base text-slate-300 leading-relaxed">
-                  국토교통부, 한국부동산원 청약홈, 복지로의 공식 개정 기준을 대조하여 
-                  청약 가점 정밀 계산, 전월세 대항력 보호, DSR/LTV 대출 한도 분석 및 실수요자 맞춤 정책 리포트를 전해 드립니다.
+                <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed font-sans">
+                  국토교통부, 한국부동산원 청약홈, 주택도시기금의 공식 개정 기준을 대조하여 
+                  청약 가점 계산, 전월세 대항력 보호, 디딤돌·버팀목 대출 분석 리포트를 제공합니다.
                 </p>
 
-                <div className="pt-2 flex flex-wrap gap-3">
+                <div className="pt-2 flex flex-wrap gap-2.5 text-xs font-bold">
                   <button 
                     onClick={() => {
                       setSelectedCategory("청약일정");
@@ -1612,10 +1556,10 @@ export default function App() {
                       setActiveLegalTab(null);
                       setShowDiagnosticPage(false);
                     }}
-                    className="px-5 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold rounded-xl transition-all shadow-md cursor-pointer flex items-center space-x-2"
+                    className="px-4 py-2.5 bg-blue-600 hover:bg-blue-500 text-white rounded-xl transition-all shadow-xs cursor-pointer flex items-center space-x-1.5"
                   >
                     <Calendar className="w-4 h-4" />
-                    <span>실시간 청약 캘린더</span>
+                    <span>청약 캘린더 보기</span>
                   </button>
                   <button 
                     onClick={() => {
@@ -1623,10 +1567,10 @@ export default function App() {
                       setActivePost(null);
                       setActiveLegalTab(null);
                     }}
-                    className="px-5 py-3 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold rounded-xl transition-all border border-slate-700 cursor-pointer flex items-center space-x-2"
+                    className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-white rounded-xl transition-all border border-slate-700 cursor-pointer flex items-center space-x-1.5"
                   >
-                    <Calculator className="w-4 h-4" />
-                    <span>청약가점 &amp; 대출한도 계산기</span>
+                    <Calculator className="w-4 h-4 text-blue-400" />
+                    <span>가점 &amp; 대출 자가진단</span>
                   </button>
                   <button 
                     onClick={() => {
@@ -1634,36 +1578,36 @@ export default function App() {
                       setActivePost(null);
                       setShowDiagnosticPage(false);
                     }}
-                    className="px-5 py-3 bg-slate-800/90 hover:bg-slate-700 text-slate-200 text-xs sm:text-sm font-bold rounded-xl transition-all border border-slate-700 cursor-pointer flex items-center space-x-2"
+                    className="px-4 py-2.5 bg-slate-800 hover:bg-slate-700 text-slate-300 rounded-xl transition-all border border-slate-700 cursor-pointer flex items-center space-x-1"
                   >
-                    <span>하우징허브 소개</span>
+                    <span>서비스 소개</span>
                     <ChevronRight className="w-4 h-4 text-slate-400" />
                   </button>
                 </div>
               </div>
             </section>
 
-            {/* 오늘의 추천 주거 리포트 헤드라인 */}
+            {/* 추천 칼럼 배너 */}
             {filteredPosts.length > 0 && (
-              <section className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs space-y-4">
-                <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <section className="bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs space-y-3">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
                   <div className="flex items-center space-x-2">
                     <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
-                    <h3 className="text-lg sm:text-xl font-bold text-slate-900 font-display">오늘의 추천 주거 리포트</h3>
+                    <h3 className="text-base sm:text-lg font-bold text-slate-900">오늘의 추천 칼럼</h3>
                   </div>
-                  <span className="text-xs font-mono text-slate-500">2026 최신 검증 기사</span>
+                  <span className="text-xs text-slate-400 font-mono">직접 작성한 최신 가이드</span>
                 </div>
 
                 <div 
                   onClick={() => setActivePost(filteredPosts[0])}
-                  className="group bg-slate-900 text-white rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer space-y-4 border border-slate-800"
+                  className="group bg-slate-900 text-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all cursor-pointer space-y-3.5 border border-slate-800"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-2">
-                      <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-xs">
-                        추천 리포트
+                      <span className="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+                        추천 칼럼
                       </span>
-                      <span className="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700">
+                      <span className="bg-slate-800 text-slate-300 text-[11px] font-semibold px-2.5 py-0.5 rounded-full border border-slate-700">
                         {filteredPosts[0].category}
                       </span>
                     </div>
@@ -1675,20 +1619,21 @@ export default function App() {
                     </div>
                   </div>
 
-                  <div className="space-y-2">
-                    <h3 className="text-xl sm:text-2xl font-extrabold font-display leading-snug text-white group-hover:text-blue-300 transition-colors">
+                  <div className="space-y-1.5">
+                    <h3 className="text-lg sm:text-xl font-bold font-display leading-snug text-white group-hover:text-blue-300 transition-colors">
                       {filteredPosts[0].title}
                     </h3>
-                    <p className="text-slate-300 text-sm sm:text-base leading-relaxed line-clamp-2">
+                    <p className="text-slate-300 text-xs sm:text-sm leading-relaxed line-clamp-2">
                       {filteredPosts[0].excerpt}
                     </p>
                   </div>
 
                   <div className="pt-3 border-t border-slate-800 flex items-center justify-between">
-                    <div className="text-xs">
-                      <span className="font-bold text-slate-200">하우징허브 (HousingHub)</span>
+                    <div className="text-xs flex items-center space-x-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400" />
+                      <span className="font-medium text-slate-300">하우징허브 주거 리포트</span>
                     </div>
-                    <span className="inline-flex items-center space-x-1 text-sm font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
+                    <span className="inline-flex items-center space-x-1 text-xs font-bold text-blue-400 group-hover:translate-x-1 transition-transform">
                       <span>전문 읽기</span>
                       <ChevronRight className="w-4 h-4" />
                     </span>
@@ -1699,19 +1644,19 @@ export default function App() {
 
             {/* 메인 2컬럼 레이아웃 */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-2">
-              {/* 왼쪽 컬럼: 전체 주거 리포트 목록 */}
+              {/* 왼쪽 컬럼: 전체 블로그 칼럼 목록 */}
               <div className="lg:col-span-8 space-y-6">
                 <section className="space-y-6">
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-slate-200 pb-5">
                     <div>
                       <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight flex items-center space-x-2.5">
-                        <span>📚 전체 주거 리포트</span>
+                        <span>📝 전체 주거 리포트</span>
                         <span className="text-xs font-mono font-bold text-blue-600 bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
-                          총 {filteredPosts.length}건
+                          총 {filteredPosts.length}편
                         </span>
                       </h3>
-                      <p className="text-xs sm:text-sm text-slate-600 mt-1 font-medium">
-                        최신 법률 및 정책 데이터를 토대로 검증된 실수요자 맞춤 칼럼
+                      <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
+                        국토교통부·청약홈·주택도시기금 최신 공식 발표 기준 팩트체크 리포트입니다.
                       </p>
                     </div>
                     
@@ -1948,14 +1893,14 @@ export default function App() {
 
           {/* 오른쪽 사이드바 영역 */}
           <div className="lg:col-span-4 space-y-6">
-            {/* 인기 보도 TOP 5 */}
+            {/* 인기 칼럼 TOP 5 */}
             <div className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-xs space-y-4">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <span className="text-sm font-bold text-slate-900 flex items-center space-x-1.5">
                   <TrendingUp className="w-4.5 h-4.5 text-blue-600" />
-                  <span>가장 많이 읽은 칼럼 TOP 5</span>
+                  <span>많이 읽은 추천 칼럼 TOP 5</span>
                 </span>
-                <span className="text-[10px] font-mono text-slate-400">주간 조회 기준</span>
+                <span className="text-[10px] font-mono text-slate-400">주간 인기</span>
               </div>
 
               <div className="space-y-3">
@@ -1966,9 +1911,9 @@ export default function App() {
                     className="group flex items-start space-x-3 p-2 rounded-xl hover:bg-slate-50 transition-all cursor-pointer"
                   >
                     <span className={`w-6 h-6 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 mt-0.5 ${
-                      idx === 0 ? "bg-blue-600 text-white" :
-                      idx === 1 ? "bg-slate-800 text-white" :
-                      idx === 2 ? "bg-slate-700 text-white" :
+                      idx === 0 ? "bg-slate-900 text-white" :
+                      idx === 1 ? "bg-slate-700 text-white" :
+                      idx === 2 ? "bg-slate-600 text-white" :
                       "bg-slate-100 text-slate-500"
                     }`}>
                       {idx + 1}
@@ -1988,7 +1933,7 @@ export default function App() {
               </div>
             </div>
 
-            {/* 청약일정 캘린더 바로가기 사이드바 배너 */}
+            {/* 청약일정 캘린더 사이드바 배너 */}
             <div 
               onClick={() => {
                 setSelectedCategory("청약일정");
@@ -1996,34 +1941,34 @@ export default function App() {
                 setActiveLegalTab(null);
                 setShowDiagnosticPage(false);
               }}
-              className="bg-gradient-to-br from-slate-900 to-indigo-950 text-white rounded-3xl p-6 shadow-md space-y-3 border border-indigo-900/50 cursor-pointer hover:border-blue-400 transition-all group"
+              className="bg-white rounded-3xl p-6 shadow-xs space-y-3 border border-slate-200 cursor-pointer hover:border-slate-400 transition-all group"
             >
               <div className="flex items-center justify-between">
-                <div className="inline-flex items-center space-x-1.5 bg-blue-500/20 text-blue-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-blue-400/30">
-                  <Calendar className="w-3.5 h-3.5" />
+                <div className="inline-flex items-center space-x-1.5 bg-blue-50 text-blue-700 text-[11px] font-bold px-2.5 py-1 rounded-full border border-blue-100">
+                  <Calendar className="w-3.5 h-3.5 text-blue-600" />
                   <span>2026 청약 일정</span>
                 </div>
                 <ChevronRight className="w-4 h-4 text-slate-400 group-hover:translate-x-1 transition-transform" />
               </div>
-              <h4 className="text-base font-bold font-display leading-snug">
-                전국 아파트 분양·청약 캘린더 &rarr;
+              <h4 className="text-sm sm:text-base font-bold text-slate-900 leading-snug">
+                전국 아파트 분양·청약 캘린더 확인하기
               </h4>
-              <p className="text-xs text-slate-300 leading-relaxed">
-                특별공급, 1순위 접수, 당첨자 발표일을 한눈에 대조할 수 있는 전용 캘린더를 확인해 보세요.
+              <p className="text-xs text-slate-500 leading-relaxed">
+                특별공급, 1순위 접수, 당첨자 발표일을 날짜별로 꼼꼼하게 정리한 청약 일정표입니다.
               </p>
             </div>
 
-            {/* 내 집 마련 진단 툴킷 바로가기 배너 */}
-            <div className="bg-gradient-to-br from-blue-900 to-slate-900 text-white rounded-3xl p-6 shadow-md space-y-4 border border-blue-800/40">
-              <div className="inline-flex items-center space-x-1.5 bg-blue-500/20 text-blue-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-blue-400/30">
-                <Calculator className="w-3.5 h-3.5" />
-                <span>내 집 마련 진단 툴킷</span>
+            {/* 내 집 마련 계산기 배너 */}
+            <div className="bg-slate-900 text-white rounded-3xl p-6 shadow-xs space-y-3 border border-slate-800">
+              <div className="inline-flex items-center space-x-1.5 bg-slate-800 text-blue-300 text-[11px] font-bold px-2.5 py-1 rounded-full border border-slate-700">
+                <Calculator className="w-3.5 h-3.5 text-blue-400" />
+                <span>실무 자가진단</span>
               </div>
-              <h4 className="text-base font-bold font-display leading-snug">
+              <h4 className="text-sm sm:text-base font-bold leading-snug">
                 청약 가점 &amp; 대출 한도 계산기
               </h4>
               <p className="text-xs text-slate-300 leading-relaxed">
-                최신 DSR/LTV 규제 기준과 청약 가점제(84점 만점)를 적용해 내 집 마련 가능성을 직접 계산해 보세요.
+                실제 적용되는 DSR/LTV 기준과 청약 가점(84점 만점)을 직접 확인해 보세요.
               </p>
               <button
                 onClick={() => {
@@ -2031,21 +1976,21 @@ export default function App() {
                   setActivePost(null);
                   setActiveLegalTab(null);
                 }}
-                className="w-full py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all shadow-md cursor-pointer flex items-center justify-center space-x-1"
+                className="w-full py-2 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all cursor-pointer flex items-center justify-center space-x-1"
               >
-                <span>계산기 시작하기</span>
+                <span>자가진단 계산기 열기</span>
                 <ChevronRight className="w-4 h-4" />
               </button>
             </div>
 
-            {/* 전문가 집필 원칙 고지 박스 */}
-            <div className="bg-slate-100/80 rounded-3xl p-5 border border-slate-200/80 space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
+            {/* 정보 출처 안내 */}
+            <div className="bg-slate-100/70 rounded-3xl p-5 border border-slate-200/80 space-y-2 text-xs text-slate-600 leading-relaxed font-sans">
               <div className="flex items-center space-x-2 font-bold text-slate-900 text-xs">
                 <ShieldCheck className="w-4 h-4 text-blue-600" />
-                <span>주거 칼럼 집필 원칙</span>
+                <span>공식 자료 안내</span>
               </div>
-              <p className="text-[11px] text-slate-500">
-                하우징허브의 모든 칼럼은 현장 실무 노하우와 국토교통부, 한국부동산원 청약홈 등 공식 기관의 공고 자료를 직접 확인해 작성합니다.
+              <p className="text-[11px] text-slate-500 leading-relaxed">
+                국토교통부, 한국부동산원 청약홈, 주택도시기금의 최신 발표 공고를 바탕으로 알기 쉽게 정리한 가이드입니다.
               </p>
             </div>
 
@@ -2252,7 +2197,7 @@ export default function App() {
               <div className="space-y-2">
                 <span className="text-white font-semibold flex items-center space-x-1">
                   <BadgeAlert className="w-3.5 h-3.5 text-blue-400" />
-                  <span>법률 및 신뢰정책</span>
+                  <span>블로그 정책 및 소개</span>
                 </span>
                 <ul className="space-y-1.5">
                   <li>
@@ -2260,7 +2205,7 @@ export default function App() {
                       onClick={() => { setActivePost(null); setActiveLegalTab("about"); }}
                       className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none"
                     >
-                      하우징허브 미디어 소개
+                      서비스 소개 (About Us)
                     </button>
                   </li>
                   <li>
@@ -2290,15 +2235,15 @@ export default function App() {
                 </ul>
               </div>
               <div className="space-y-2">
-                <span className="text-white font-semibold">포털 소통 창구</span>
+                <span className="text-white font-semibold">블로거 소통 창구</span>
                 <ul className="space-y-1.5">
                   <li>
                     <button 
                       onClick={() => { setActivePost(null); setActiveLegalTab("contact"); setIsContactSubmitted(false); }}
                       className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none flex items-center space-x-1"
                     >
-                      <span>1:1 문의 제안 접수</span>
-                      <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-ping" />
+                      <span>1:1 문의·수정 제보</span>
+                      <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" />
                     </button>
                   </li>
                 </ul>
@@ -2309,18 +2254,18 @@ export default function App() {
           {/* 발행인 및 신뢰성 고지 배너 */}
           <div className="pt-6 border-t border-slate-800/60 text-[11px] text-slate-400 space-y-2 leading-relaxed">
             <div className="flex flex-wrap gap-x-6 gap-y-1 font-mono text-slate-300 font-semibold">
-              <span>하우징허브 (HousingHub)</span>
-              <span>운영: 하우징허브 (HousingHub)</span>
+              <span>서비스명: 하우징허브 (HousingHub)</span>
+              <span>운영: 상상아트 (사업자등록번호: 272-14-01256)</span>
               <span>공식 이메일: apark12321@gmail.com</span>
             </div>
             <p className="text-slate-500">
-              하우징허브(zip9.kr)는 부동산 청약, 임대차, 주택 대출 칼럼을 제공하는 전문 지식 포털입니다. 본 사이트 내 수록된 정보 및 계산기 결과는 참고용 자료이며, 실제 계약이나 청약 신청 시에는 해당 기관의 공식 공고문을 반드시 최종 확인하시기 바랍니다.
+              하우징허브(zip9.kr)는 신혼부부 및 무주택자를 위한 주거·청약·대출 실무 지식 포털입니다. 본 사이트에 수록된 분석 칼럼 및 계산기 결과는 참고용 자료이며, 실제 청약 신청이나 대출 실행 시에는 해당 금융기관 및 지자체/LH/청약홈의 공식 공고문을 반드시 최종 확인하시기 바랍니다.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row sm:items-center justify-between text-[11px] text-slate-500 font-medium pt-2">
             <p>© 2026 HousingHub (zip9.kr). All rights reserved.</p>
-            <p className="mt-2 sm:mt-0">Housing Knowledge Portal</p>
+            <p className="mt-2 sm:mt-0">Housing &amp; Finance Information Portal</p>
           </div>
           
         </div>

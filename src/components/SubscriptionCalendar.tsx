@@ -251,19 +251,19 @@ export const SubscriptionCalendar: React.FC<SubscriptionCalendarProps> = ({
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-slate-100 pb-5">
         <div className="space-y-1">
           <div className="flex items-center space-x-2.5">
-            <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full shadow-2xs flex items-center gap-1.5">
-              <CalendarIcon className="w-3.5 h-3.5" />
-              <span>실시간 청약홈 연동</span>
+            <span className="bg-slate-900 text-white text-xs font-bold px-3 py-1 rounded-full shadow-2xs flex items-center gap-1.5">
+              <CalendarIcon className="w-3.5 h-3.5 text-blue-400" />
+              <span>실무자 직접 정리</span>
             </span>
-            <span className="text-xs font-mono font-bold text-slate-500 bg-slate-100 px-2.5 py-0.5 rounded-md">
+            <span className="text-xs font-mono font-bold text-slate-600 bg-slate-100 px-2.5 py-0.5 rounded-md">
               {currentMonth.year}년 {currentMonth.month}월
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display flex items-center gap-2">
-            <span>🗓️ 당월 주요 청약 일정 캘린더</span>
+            <span>🗓️ 이달의 주요 청약 일정 정리</span>
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 font-medium">
-            전국 주요 아파트 및 공공분양·무순위(줍줍) 단지의 접수일, 1순위, 당첨자 발표 일정을 한눈에 확인하세요.
+          <p className="text-xs sm:text-sm text-slate-500 font-medium">
+            전국 주요 아파트 및 공공분양·무순위(줍줍) 단지의 접수일, 1순위, 당첨자 발표일을 날짜별로 꼼꼼히 정리했습니다.
           </p>
         </div>
 
