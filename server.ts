@@ -291,30 +291,35 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
   if (ai) {
     try {
       const prompt = `
-        당신은 주택·부동산 및 주거 정책 분야 구글 SEO/E-E-A-T 최고 전문 에디터입니다.
-        독자에게 실질적인 가치를 제공하고 구글 검색 상위 노출(E-E-A-T 및 YMYL) 기준을 충족하는 고품질 전문 주거 포스팅(HTML 형식)을 작성합니다.
-        사람 이름(예: 특정 인물 이름, 칼럼니스트 실명 등)은 절대 본문, 제목, 요약에 넣지 마십시오.
+        [System Role]:
+        당신은 AI 검색 엔진(네이버 AI 브리핑, 구글 AI 오버뷰, ChatGPT 검색 등)에 최적화된 고가치 실무 콘텐츠를 작성하는 주거·부동산 정책 분야 '수석 테크니컬 라이터'입니다.
+        당신의 목표는 작성한 글이 검색 엔진 및 AI 브리핑에서 '가장 신뢰할 수 있는 공인 출처'로 1순위 인용되도록 글의 계층 구조와 형식을 정밀 설계하는 것입니다.
+        사람 이름(예: 특정 인물 이름, 칼럼니스트 실명, 가공의 필자 이름 등)은 절대 본문, 제목, 요약에 기재하지 마십시오.
 
         [주제]: ${selectedTopic}
         [카테고리]: ${category}
 
-        [작성 원칙]:
-        1. 객관적 전문 지식 가이드:
-           - 특정 개인의 이름이나 저자 실명을 절대 언급하지 마십시오.
-           - 관계 법령, 공식 고시 기준, 주택도시기금/국토교통부 표준 가이드에 기반하여 신뢰성 있고 명확하게 작성합니다.
-        2. 가독성 & 체류시간 최적화:
-           - 두괄식 구성: 서론에서 핵심 결론과 해결책을 먼저 명쾌하게 제시합니다.
-           - 문단 분절: 2~3문장마다 줄바꿈을 적용하고, 핵심 문장은 <strong>굵게</strong> 강조합니다.
-           - 리스트 및 표: 핵심 정보 요약 비교 테이블(<table class="w-full border-collapse my-4 text-xs sm:text-sm">...</table>)을 최소 1개 이상 필수 포함합니다.
-        3. 구조화 및 전문성(E-E-A-T):
-           - <h2> 및 <h3> 태그를 활용한 논리적 계층 구조를 만듭니다.
-           - '실무 핵심 비공개 팁', '초보자가 자주 겪는 3가지 실패 사례와 극복법'을 구체적으로 서술합니다.
-           - 전체 분량은 공백 제외 최소 2,000자 이상(800~1,500 단어)의 깊이 있는 실전 가이드로 작성합니다.
-        4. 자주 묻는 질문 (FAQ):
-           - 글 하단에 <h2>자주 묻는 질문 (FAQ)</h2> 섹션을 만들고 독자들이 가장 궁금해할 실무 질문 3개(Q1, Q2, Q3)와 명쾌한 해결책 답변을 포함합니다.
-        5. 문체 및 HTML:
-           - 정중하고 신뢰감을 주는 '-입니다/합니다' 체를 사용합니다.
-           - 허용 태그: <h2>, <h3>, <p>, <ul>, <ol>, <li>, <table>, <thead>, <tbody>, <tr>, <th>, <td>, <strong>, <span>
+        [Writing Rules - 반드시 준수]:
+        1. 두괄식 원칙 (Bottom-line First):
+           - 글의 첫 단락에서 사용자가 가장 궁금해하는 핵심 질문에 대한 결론과 최적의 해결책을 2~3문장 이내로 명쾌하게 먼저 제시합니다.
+        2. 구조화된 데이터 (Structured Data):
+           - 긴 줄글을 지양하고, 비교·조건·단계별 체크포인트는 반드시 HTML 비교 점검표(<table class="w-full border-collapse border border-slate-200 my-4 text-xs sm:text-sm">...</table>)와 목록형 불렛포인트(<ul><li><strong>항목:</strong> 설명</li></ul>)로 정리합니다.
+        3. 명확한 수치와 사실 기반 (Fact & Numbers):
+           - 모호한 표현을 배제하고, 2026년 최신 기준 금액, 금리(%), 소득 상한액, 면적(㎡), LTV/DSR 비율, 가점 산정표 등 구체적 수치와 근거를 명확히 제시합니다.
+        4. 객관적 신뢰도 구축 (Citation Format):
+           - 특정 개인의 주관적 의견이 아닌 국토교통부, 한국부동산원 청약홈, 주택도시기금, 법원 인터넷등기소 등 공신력 있는 기관의 규정과 통계를 인용하는 객관적 3인칭 톤앤매너('-입니다/합니다')를 일관되게 유지합니다.
+        5. 가독성 최적화:
+           - 문단은 3~4문장 단위로 짧게 분절하고, 중요 키워드는 <strong> 태그로 강조합니다.
+           - 계층 구조는 <h2> 및 <h3> 태그를 논리적으로 배치합니다.
+        6. 자주 묻는 질문 (FAQ):
+           - 글 하단에 <h2>자주 묻는 질문 (FAQ)</h2>을 두고 실수요자가 가장 궁금해할 실무 질문 3개(Q1, Q2, Q3)와 명쾌한 해결책(A)을 배치합니다.
+
+        [출력 JSON 포맷]:
+        - title: 검색엔진 및 독자 유입을 극대화하는 명확하고 전문적인 제목 (예: "주제명: 핵심 요약 및 2026 실전 체크리스트")
+        - excerpt: 글의 핵심 결론과 타깃 독자 혜택을 요약한 1~2문장 (120자 내외)
+        - content: 위 지침을 100% 충족하는 완성된 고품질 전문 HTML 본문 (2,000자 이상)
+        - hashtags: 관련 핵심 검색 키워드 해시태그 4~6개 배열
+        - readTime: "8분" 등의 예상 읽기 시간
       `;
 
       const response = await ai.models.generateContent({
@@ -496,6 +501,17 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
 
   autoPostsList.unshift(newPost);
   saveAutoPosts(autoPostsList);
+
+  // 현재 스케줄의 해당 카테고리 슬롯 상태 업데이트
+  const currentScheduleRef = ensureDailySchedule();
+  const targetSlot = currentScheduleRef.slots.find(s => s.category === category);
+  if (targetSlot) {
+    targetSlot.executed = true;
+    targetSlot.postId = newPost.id;
+    targetSlot.title = newPost.title;
+    saveDailySchedule(currentScheduleRef);
+  }
+
   console.log(`[AutoPost System] Successfully published [${category}] post: "${newPost.title}" (${todayStr} ${timeStr})`);
   return newPost;
 }
@@ -693,6 +709,22 @@ app.post("/api/admin/trigger-autopost", async (req, res) => {
     res.json({ status: "success", post: newPost });
   } catch (err: any) {
     res.status(500).json({ error: err.message || "Failed to trigger auto post" });
+  }
+});
+
+// API 1.7: 당일 스케줄 무작위 재추첨 (랜덤 시분초 & 4시간 텀 재생성)
+app.post("/api/admin/regenerate-schedule", (req, res) => {
+  try {
+    const now = new Date();
+    const yyyy = now.getFullYear();
+    const mm = String(now.getMonth() + 1).padStart(2, '0');
+    const dd = String(now.getDate()).padStart(2, '0');
+    const todayStr = `${yyyy}-${mm}-${dd}`;
+    
+    currentSchedule = createRandomDailySchedule(todayStr);
+    res.json({ status: "success", schedule: currentSchedule });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || "Failed to regenerate schedule" });
   }
 });
 
