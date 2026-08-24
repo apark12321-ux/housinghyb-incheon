@@ -1539,7 +1539,7 @@ export default function App() {
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug font-display">
-                  내가 직접 겪고 발로 뛰며 체득한 주거 가이드,<br className="hidden sm:block"/>
+                  직접 겪고 발로 뛰며 체득한 주거 가이드,<br className="hidden sm:block"/>
                   <span className="text-blue-400">하우징허브</span>에서 생생한 팩트로 확인하세요.
                 </h2>
                 
