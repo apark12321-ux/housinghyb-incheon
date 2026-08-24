@@ -1531,21 +1531,20 @@ export default function App() {
                 <div className="flex flex-wrap items-center gap-2">
                   <span className="bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full flex items-center gap-1.5 shadow-xs">
                     <ShieldCheck className="w-3.5 h-3.5" />
-                    <span>2026 주거·청약·금융 가이드</span>
+                    <span>2026 주거·청약·금융 실전 기록</span>
                   </span>
                   <span className="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700">
-                    신혼부부 &amp; 무주택 실수요자 안심 정보
+                    직접 겪은 경험담 &amp; 100% 공인 팩트체크
                   </span>
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug font-display">
-                  청약 공고문 팩트체크부터 전월세 대출 규제까지,<br className="hidden sm:block"/>
-                  <span className="text-blue-400">하우징허브</span>에서 알기 쉽게 확인하세요.
+                  내가 직접 겪고 발로 뛰며 체득한 주거 가이드,<br className="hidden sm:block"/>
+                  <span className="text-blue-400">하우징허브</span>에서 생생한 팩트로 확인하세요.
                 </h2>
                 
                 <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed font-sans">
-                  국토교통부, 한국부동산원 청약홈, 주택도시기금의 공식 개정 기준을 대조하여 
-                  청약 가점 계산, 전월세 대항력 보호, 디딤돌·버팀목 대출 분석 리포트를 제공합니다.
+                  청약 당첨과 특공 신청, 전월세 보증금 사수, 디딤돌·버팀목 대출 승인부터 이사까지 제가 직접 겪은 생생한 과정과 국토교통부·청약홈·주택도시기금의 최신 팩트를 하나로 담았습니다.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-2.5 text-xs font-bold">
