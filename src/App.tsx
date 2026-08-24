@@ -730,7 +730,7 @@ export default function App() {
               <button 
                 onClick={() => setIsChatOpen(prev => !prev)}
                 className="p-2.5 rounded-xl border border-slate-200 hover:bg-slate-100 transition-all text-slate-700 cursor-pointer relative"
-                title="AI 주거 상담 비서"
+                title="실시간 주거 상담실"
               >
                 <MessageSquare className="w-5 h-5 text-blue-600" />
                 <span className="absolute top-1.5 right-1.5 w-2 h-2 bg-green-500 rounded-full border-2 border-white" />
@@ -1338,9 +1338,9 @@ export default function App() {
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">제 2조 (AI 주거 비서 답변의 참고성)</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">제 2조 (실시간 주거 상담 답변의 참고성)</h5>
                     <p className="leading-relaxed">
-                      AI 주거 비서가 제공하는 답변은 일반적인 제도 및 절차 안내 목적이며, 복잡한 사안의 경우 최종 판단 전 전문 금융 창구나 법률 전문가와의 상담을 추천합니다.
+                      실시간 주거 상담에서 제공하는 답변은 일반적인 제도 및 공고 요건 안내 목적이며, 개별적인 특수 상황이나 복잡한 사안의 경우 최종 판단 전 전문 금융 창구나 법률 전문가와의 대면 상담을 권장합니다.
                     </p>
                   </section>
                 </div>
@@ -2063,8 +2063,8 @@ export default function App() {
                     <Building2 className="w-4.5 h-4.5" />
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold font-display">주거 전문가 Q&amp;A 상담</h4>
-                    <p className="text-[10px] text-slate-400 font-medium">하우징허브 AI 주거 비서</p>
+                    <h4 className="text-sm font-bold font-display">주거 실무 Q&amp;A 상담</h4>
+                    <p className="text-[10px] text-slate-400 font-medium">하우징허브 실시간 주거 상담실</p>
                   </div>
                 </div>
                 <button 
