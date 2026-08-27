@@ -110,7 +110,12 @@ ${items}
 `;
 }
 
+if (!existsSync(DIST)) mkdirSync(DIST, { recursive: true });
+const PUBLIC = resolve(ROOT, "public");
+if (!existsSync(PUBLIC)) mkdirSync(PUBLIC, { recursive: true });
+
 const posts = loadPosts();
 const rss = buildRss(posts);
 writeFileSync(resolve(DIST, "rss.xml"), rss, "utf8");
-console.log(`[rss] generated for ${Math.min(posts.length, 30)} of ${posts.length} posts → dist/rss.xml`);
+writeFileSync(resolve(PUBLIC, "rss.xml"), rss, "utf8");
+console.log(`[rss] generated for ${Math.min(posts.length, 30)} of ${posts.length} posts → dist/ & public/ (rss.xml)`);

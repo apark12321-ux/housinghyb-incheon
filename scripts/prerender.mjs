@@ -609,6 +609,29 @@ function main() {
       ),
     },
     {
+      path: "contact/index.html",
+      title: `문의 및 독자 제보 | ${SITE_NAME}`,
+      desc: `${SITE_NAME}에 전하는 주거 관련 문의 및 독자 의견 수렴 창구입니다.`,
+      url: `${SITE_URL}/contact`,
+      body: buildStaticPageBody(
+        "독자 제보 및 문의하기",
+        `<p>주거 관련 질문, 정정 요청, 제휴 제보는 공식 이메일 apark12321@gmail.com 또는 온라인 접수 창구를 이용해 주시기 바랍니다.</p>`
+      ),
+    },
+    {
+      path: "disclaimer/index.html",
+      title: `면책 조항 및 법적 고지 | ${SITE_NAME}`,
+      desc: `${SITE_NAME}가 제공하는 모든 콘텐츠는 법적·공식 공고 기준을 토대로 한 정보 제공용 자료입니다.`,
+      url: `${SITE_URL}/disclaimer`,
+      body: buildStaticPageBody(
+        "면책 조항 (Disclaimer)",
+        `<div class="disclaimer-container leading-relaxed space-y-4">
+          <p>하우징허브가 제공하는 모든 주거·청약·대출 가이드는 국토교통부, 한국부동산원, 주택도시기금의 공식 발표 자료와 법령을 기초로 작성된 공익 정보입니다.</p>
+          <p>개별 금융 대출 및 부동산 계약 실행 시에는 반드시 해당 시점의 최신 공고문과 금융기관 공식 심사 기준을 확인하시기 바랍니다.</p>
+        </div>`
+      ),
+    },
+    {
       path: "announcement/index.html",
       title: `공지사항 | ${SITE_NAME}`,
       desc: `${SITE_NAME}의 서비스 운영 관련 공지사항을 안내합니다.`,

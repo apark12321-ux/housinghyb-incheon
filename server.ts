@@ -608,30 +608,84 @@ app.get("/robots.txt", (req, res) => {
   return res.send("User-agent: *\nAllow: /\nDisallow: /api/\nSitemap: https://zip9.kr/sitemap.xml\n");
 });
 
+function generateDynamicSitemapXml(): string {
+  const activePosts = getActivePostsList();
+  const todayStr = new Date().toISOString().split("T")[0];
+
+  let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
+  
+  // 1. 메인 홈페이지
+  xml += `  <url>\n    <loc>https://zip9.kr/</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
+
+  // 2. 카테고리 페이지
+  const categories = ["청약-분양", "전월세", "대출-금융", "이사-인테리어"];
+  for (const cat of categories) {
+    xml += `  <url>\n    <loc>https://zip9.kr/category/${encodeURIComponent(cat)}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
+  }
+
+  // 3. 서브 페이지
+  const subpages = ["toolkit", "about", "terms", "privacy", "disclaimer", "contact", "announcement"];
+  for (const page of subpages) {
+    xml += `  <url>\n    <loc>https://zip9.kr/${page}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+  }
+
+  // 4. 전체 포스트 상세 페이지
+  for (const post of activePosts) {
+    const slug = slugify(post.title);
+    const postDate = post.date || todayStr;
+    xml += `  <url>\n    <loc>https://zip9.kr/post/${encodeURIComponent(slug)}</loc>\n    <lastmod>${postDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.85</priority>\n  </url>\n`;
+  }
+
+  xml += `</urlset>`;
+  return xml;
+}
+
+function generateDynamicRssXml(): string {
+  const activePosts = getActivePostsList();
+  const todayDate = new Date().toUTCString();
+
+  let rss = `<?xml version="1.0" encoding="UTF-8"?>\n`;
+  rss += `<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n`;
+  rss += `  <channel>\n`;
+  rss += `    <title>하우징허브 (HousingHub)</title>\n`;
+  rss += `    <link>https://zip9.kr/</link>\n`;
+  rss += `    <description>신혼부부와 무주택자를 위한 2026 주거·청약·대출 실무 가이드</description>\n`;
+  rss += `    <language>ko-KR</language>\n`;
+  rss += `    <lastBuildDate>${todayDate}</lastBuildDate>\n`;
+  rss += `    <atom:link href="https://zip9.kr/rss.xml" rel="self" type="application/rss+xml"/>\n`;
+
+  // 최신 50개 포스트 피드 생성
+  const recentPosts = activePosts.slice(0, 50);
+  for (const post of recentPosts) {
+    const slug = slugify(post.title);
+    const pubDate = post.date ? new Date(post.date).toUTCString() : todayDate;
+    const cleanDesc = (post.excerpt || post.title).replace(/<[^>]*>/g, "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const cleanTitle = (post.title || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+    rss += `    <item>\n`;
+    rss += `      <title>${cleanTitle}</title>\n`;
+    rss += `      <link>https://zip9.kr/post/${encodeURIComponent(slug)}</link>\n`;
+    rss += `      <guid>https://zip9.kr/post/${encodeURIComponent(slug)}</guid>\n`;
+    rss += `      <pubDate>${pubDate}</pubDate>\n`;
+    rss += `      <category>${post.category || "주거"}</category>\n`;
+    rss += `      <description>${cleanDesc}</description>\n`;
+    rss += `    </item>\n`;
+  }
+
+  rss += `  </channel>\n`;
+  rss += `</rss>`;
+  return rss;
+}
+
 app.get("/sitemap.xml", (req, res) => {
   res.setHeader("Content-Type", "application/xml; charset=utf-8");
-  const distSitemap = path.join(process.cwd(), "dist", "sitemap.xml");
-  if (fs.existsSync(distSitemap)) {
-    return res.send(fs.readFileSync(distSitemap, "utf-8"));
-  }
-  const publicSitemap = path.join(process.cwd(), "public", "sitemap.xml");
-  if (fs.existsSync(publicSitemap)) {
-    return res.send(fs.readFileSync(publicSitemap, "utf-8"));
-  }
-  return res.status(404).send("Sitemap not found");
+  return res.send(generateDynamicSitemapXml());
 });
 
 app.get("/rss.xml", (req, res) => {
   res.setHeader("Content-Type", "application/xml; charset=utf-8");
-  const distRss = path.join(process.cwd(), "dist", "rss.xml");
-  if (fs.existsSync(distRss)) {
-    return res.send(fs.readFileSync(distRss, "utf-8"));
-  }
-  const publicRss = path.join(process.cwd(), "public", "rss.xml");
-  if (fs.existsSync(publicRss)) {
-    return res.send(fs.readFileSync(publicRss, "utf-8"));
-  }
-  return res.status(404).send("RSS not found");
+  return res.send(generateDynamicRssXml());
 });
 
 app.get("/7065c4d36d9ee7471f10e55dd6f4a4bd.txt", (req, res) => {
@@ -1248,7 +1302,7 @@ function injectSubpageMetaTags(html: string, path: string, baseUrl: string): str
   } else if (path === "/announcement") {
     title = "공지사항 및 정책 소식 | 하우징허브";
     desc = "하우징허브의 최신 주거 정책 변화 공지, 신규 부동산 실무 가이드 추가 소식을 안내해 드립니다.";
-  } else if (path === "/partnership") {
+  } else if (path === "/partnership" || path === "/contact") {
     title = "제휴 및 독자 제보 문의 | 하우징허브";
     desc = "공인중개사, 이사업체, 법무법인 등 국민 주거 복지 향상에 함께할 파트너사 문의 및 제보 창구입니다.";
   } else if (path === "/terms") {
@@ -1257,6 +1311,9 @@ function injectSubpageMetaTags(html: string, path: string, baseUrl: string): str
   } else if (path === "/privacy") {
     title = "개인정보처리방침 | 하우징허브";
     desc = "하우징허브는 사용자의 개인정보를 소중히 보호하며, 개인정보보호법 및 관련 법령을 엄격히 준수합니다.";
+  } else if (path === "/disclaimer") {
+    title = "면책 조항 및 법적 고지 | 하우징허브";
+    desc = "하우징허브가 제공하는 모든 콘텐츠는 법적·공식 공고 기준을 토대로 한 정보 제공용 자료입니다.";
   } else {
     return injectDefaultMetaTags(html, baseUrl);
   }
@@ -1334,8 +1391,8 @@ async function startServer() {
         return res.send(html);
       }
 
-      // 3) 특정 서브페이지 경로 파싱 (예: /about, /announcement, /partnership, /terms, /privacy, /toolkit)
-      const subpages = ["/about", "/announcement", "/partnership", "/terms", "/privacy", "/toolkit"];
+      // 3) 특정 서브페이지 경로 파싱 (예: /about, /announcement, /partnership, /contact, /terms, /privacy, /disclaimer, /toolkit)
+      const subpages = ["/about", "/announcement", "/partnership", "/contact", "/terms", "/privacy", "/disclaimer", "/toolkit"];
       const matchedPage = subpages.find(page => req.path === page);
       if (matchedPage) {
         if (isProd) {

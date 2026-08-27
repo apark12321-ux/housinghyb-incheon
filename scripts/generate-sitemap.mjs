@@ -61,8 +61,10 @@ function buildSitemap(posts) {
   urls.push({ loc: `${SITE_URL}/about`, lastmod: today, changefreq: "monthly", priority: "0.6" });
   urls.push({ loc: `${SITE_URL}/announcement`, lastmod: today, changefreq: "weekly", priority: "0.5" });
   urls.push({ loc: `${SITE_URL}/partnership`, lastmod: today, changefreq: "monthly", priority: "0.4" });
+  urls.push({ loc: `${SITE_URL}/contact`, lastmod: today, changefreq: "monthly", priority: "0.4" });
   urls.push({ loc: `${SITE_URL}/terms`, lastmod: today, changefreq: "yearly", priority: "0.3" });
   urls.push({ loc: `${SITE_URL}/privacy`, lastmod: today, changefreq: "yearly", priority: "0.3" });
+  urls.push({ loc: `${SITE_URL}/disclaimer`, lastmod: today, changefreq: "yearly", priority: "0.3" });
 
   for (const cat of CATEGORIES) {
     urls.push({
@@ -129,10 +131,19 @@ Sitemap: ${SITE_URL}/rss.xml
 
 function main() {
   if (!existsSync(DIST)) mkdirSync(DIST, { recursive: true });
+  const PUBLIC = resolve(ROOT, "public");
+  if (!existsSync(PUBLIC)) mkdirSync(PUBLIC, { recursive: true });
+
   const posts = loadPosts();
-  writeFileSync(resolve(DIST, "sitemap.xml"), buildSitemap(posts), "utf8");
-  writeFileSync(resolve(DIST, "robots.txt"), buildRobots(), "utf8");
-  console.log(`[sitemap] generated for ${posts.length} posts → dist/sitemap.xml, dist/robots.txt`);
+  const sitemapXml = buildSitemap(posts);
+  const robotsTxt = buildRobots();
+
+  writeFileSync(resolve(DIST, "sitemap.xml"), sitemapXml, "utf8");
+  writeFileSync(resolve(DIST, "robots.txt"), robotsTxt, "utf8");
+  writeFileSync(resolve(PUBLIC, "sitemap.xml"), sitemapXml, "utf8");
+  writeFileSync(resolve(PUBLIC, "robots.txt"), robotsTxt, "utf8");
+
+  console.log(`[sitemap] generated for ${posts.length} posts → dist/ & public/ (sitemap.xml, robots.txt)`);
 }
 
 main();
