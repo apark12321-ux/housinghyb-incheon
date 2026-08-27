@@ -5,8 +5,6 @@ import {
   ShieldCheck, 
   Bookmark, 
   Share2, 
-  Clock, 
-  Eye, 
   Heart, 
   CheckCircle2, 
   ExternalLink 
@@ -185,12 +183,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               <span className="text-xs sm:text-sm font-bold text-blue-600 tracking-wider font-mono bg-blue-50 px-3 py-1 rounded-full border border-blue-100">
                 {post.category}
               </span>
-              {post.readTime && (
-                <span className="text-xs text-slate-500 font-mono flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-slate-400" />
-                  <span>{post.readTime}</span>
-                </span>
-              )}
             </div>
 
             {/* 굵고 대담한 제목 */}
@@ -205,12 +197,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
                   <Calendar className="w-3.5 h-3.5 mr-1.5 text-blue-600" />
                   <span>게재일: {post.date}{post.time ? ` ${post.time}` : ""}</span>
                 </span>
-                {post.views && (
-                  <span className="inline-flex items-center text-slate-500 font-mono">
-                    <Eye className="w-3.5 h-3.5 mr-1 text-slate-400" />
-                    <span>조회 {post.views.toLocaleString()}</span>
-                  </span>
-                )}
               </div>
               <span className="text-slate-400 font-medium">하우징허브 가이드</span>
             </div>

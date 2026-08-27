@@ -1892,14 +1892,14 @@ export default function App() {
 
           {/* 오른쪽 사이드바 영역 */}
           <div className="lg:col-span-4 space-y-6">
-            {/* 인기 칼럼 TOP 5 */}
+            {/* 추천 주거 가이드 TOP 5 */}
             <div className="bg-white rounded-3xl border border-slate-200/90 p-6 shadow-xs space-y-4">
               <div className="flex items-center justify-between border-b border-slate-100 pb-3">
                 <span className="text-sm font-bold text-slate-900 flex items-center space-x-1.5">
                   <TrendingUp className="w-4.5 h-4.5 text-blue-600" />
-                  <span>많이 읽은 추천 칼럼 TOP 5</span>
+                  <span>추천 주거 가이드 TOP 5</span>
                 </span>
-                <span className="text-[10px] font-mono text-slate-400">주간 인기</span>
+                <span className="text-[10px] font-mono text-slate-400">필독 추천</span>
               </div>
 
               <div className="space-y-3">
