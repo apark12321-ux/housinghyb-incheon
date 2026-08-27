@@ -5,9 +5,7 @@ import {
   ShieldCheck, 
   Bookmark, 
   Share2, 
-  Heart, 
-  CheckCircle2, 
-  ExternalLink 
+  CheckCircle2
 } from "lucide-react";
 import { Post } from "../types";
 import { TableOfContents, TocItem } from "./TableOfContents";
@@ -36,7 +34,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
   const isSmoothScrollingRef = useRef<boolean>(false);
   const scrollTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // 1. 본문의 H2, H3 태그를 파싱하고 ID를 부여하여 목차 생성
+  // 1. 본문의 H2, H3 태그를 파싱하고 안정적인 고유 ID 부여 및 목차 생성
   useEffect(() => {
     if (!contentRef.current) return;
 
@@ -45,16 +43,9 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
 
     headings.forEach((heading, idx) => {
       const el = heading as HTMLElement;
-      let id = el.id;
-
-      if (!id || id.trim() === "") {
-        // 기존 ID가 없는 경우 고유 ID 생성 부여
-        id = `guide-heading-${idx + 1}`;
-        el.id = id;
-      }
-
-      // 스크롤 시 상단 고정 헤더(약 80px)에 가려지지 않도록 CSS scroll-margin-top 적용
-      el.style.scrollMarginTop = "100px";
+      const id = `toc-sec-${idx + 1}`;
+      el.id = id;
+      el.style.scrollMarginTop = "110px";
 
       items.push({
         id: id,
@@ -76,10 +67,12 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
 
       const container = contentRef.current;
       const windowHeight = window.innerHeight;
+      const scrollY = window.scrollY || window.pageYOffset;
 
       // 전체 아티클 기준 읽기 진행률 계산
       const totalHeight = container.offsetHeight;
-      const scrolled = window.scrollY - (container.offsetTop - 120);
+      const containerTop = container.offsetTop;
+      const scrolled = scrollY - (containerTop - 120);
       const progress = Math.min(100, Math.max(0, (scrolled / Math.max(1, totalHeight - windowHeight / 2)) * 100));
       setReadingProgress(isNaN(progress) ? 0 : progress);
 
@@ -90,17 +83,16 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
       const headings = container.querySelectorAll("h2, h3");
       let currentActiveId = "";
 
-      // 상단 헤더 기준(120px)에서 가장 가까운 활성 헤딩 결정
       headings.forEach((heading) => {
         const top = heading.getBoundingClientRect().top;
-        if (top <= 140) {
+        if (top <= 150) {
           currentActiveId = heading.id;
         }
       });
 
       if (currentActiveId) {
         setActiveHeadingId(currentActiveId);
-      } else if (headings.length > 0 && window.scrollY < 200) {
+      } else if (headings.length > 0 && scrollY < 200) {
         setActiveHeadingId(headings[0].id);
       }
     };
@@ -123,13 +115,9 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
       isSmoothScrollingRef.current = true;
       setActiveHeadingId(id);
 
-      const topOffset = 95;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - topOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
       });
 
       if (scrollTimeoutRef.current) {
@@ -137,7 +125,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
       }
       scrollTimeoutRef.current = setTimeout(() => {
         isSmoothScrollingRef.current = false;
-      }, 700);
+      }, 750);
     }
   };
 
@@ -152,7 +140,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
     }
     scrollTimeoutRef.current = setTimeout(() => {
       isSmoothScrollingRef.current = false;
-    }, 700);
+    }, 750);
   };
 
   const isBookmarked = bookmarks.includes(post.id);
@@ -160,10 +148,10 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
   return (
     <article className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
       {/* 상단 브레드크럼 / 뒤로가기 바 */}
-      <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/95 backdrop-blur-xs sticky top-0 sm:top-16 z-30 shadow-2xs">
+      <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
         <button 
           onClick={onBack}
-          className="inline-flex items-center space-x-2 text-slate-600 hover:text-blue-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
+          className="inline-flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-semibold text-xs sm:text-sm transition-colors cursor-pointer"
         >
           <ChevronLeft className="w-4 h-4" />
           <span>목록으로 돌아가기</span>
@@ -176,7 +164,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
       {/* 본문 + 우측 고정 목차 2컬럼 레이아웃 */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-10 pt-8 pb-12">
         <div className="grid grid-cols-1 xl:grid-cols-12 gap-8 lg:gap-10 items-start">
-          {/* 좌측 메인 아티클 영역 (xl:col-span-8 또는 9) */}
+          {/* 좌측 메인 아티클 영역 */}
           <div className="xl:col-span-8 2xl:col-span-8 min-w-0">
             {/* 카테고리 태그 */}
             <div className="flex flex-wrap items-center gap-2 mb-3">
@@ -247,7 +235,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
           </div>
 
           {/* 우측 고정 목차 (Table of Contents Sidebar) */}
-          <div className="hidden xl:block xl:col-span-4 2xl:col-span-4 sticky top-24 space-y-4">
+          <div className="xl:col-span-4 2xl:col-span-4 xl:sticky xl:top-24 space-y-4">
             <TableOfContents
               items={tocItems}
               activeId={activeHeadingId}
@@ -256,8 +244,8 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               onScrollToTop={scrollToTop}
             />
 
-            {/* 우측 사이드바 보조 팁 카드 */}
-            <div className="bg-slate-50 rounded-2xl border border-slate-200/80 p-4 space-y-2 text-xs text-slate-600">
+            {/* 우측 사이드바 보조 팁 카드 (데스크톱 전용) */}
+            <div className="hidden xl:block bg-slate-50 rounded-2xl border border-slate-200/80 p-4 space-y-2 text-xs text-slate-600">
               <div className="flex items-center space-x-1.5 font-bold text-slate-900">
                 <CheckCircle2 className="w-4 h-4 text-blue-600" />
                 <span>스마트 목차 탐색 팁</span>
@@ -268,17 +256,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
             </div>
           </div>
         </div>
-      </div>
-
-      {/* 모바일 화면용 플로팅 목차 (TOC) 연동 */}
-      <div className="xl:hidden">
-        <TableOfContents
-          items={tocItems}
-          activeId={activeHeadingId}
-          progress={readingProgress}
-          onItemClick={scrollToHeading}
-          onScrollToTop={scrollToTop}
-        />
       </div>
 
       {/* 하단 제어 리브 */}
