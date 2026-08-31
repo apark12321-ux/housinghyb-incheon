@@ -6,6 +6,7 @@ import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI, Type } from "@google/genai";
 import { POSTS } from "./src/data/posts";
+import { getServerSideProps } from "./src/server/getServerSideProps";
 
 dotenv.config();
 
@@ -309,13 +310,13 @@ async function generateAndPublishAutoPost(targetCategory?: string, overrideTimeS
            - 글을 시작할 때 사전적 정의를 내리지 마십시오. 해당 주제와 관련해 독자들이 겪고 있을 구체적인 '답답함'이나 '실패 경험(부적격 탈락, 대출 한도 축소, 보증금 미반환 불안 등)'에 공감하며, 마치 친한 지인에게 팁을 알려주듯 자연스럽게 1인칭 대화체('나/저')로 시작하십시오.
 
         4. 정보의 구조화와 주관적 평가 혼합:
-           - HTML 표(<table class="w-full border-collapse border border-slate-200 my-4 text-xs sm:text-sm">...</table>)나 불렛포인트(<ul><li>...</li></ul>)를 사용하여 2026년 최신 팩트와 수치를 깔끔하게 정리하되, 그 정보 아래에 반드시 "개인적으로 이 부분은 아쉬웠다", "실제로 창구에 서류를 제출해 보니 이 방법이 가장 승인율이 높았다", "제가 계약해 보니 이 특약 한 줄이 결국 3천만 원을 지켜주었습니다"라는 식의 주관적인 평가를 한 줄씩 덧붙이십시오.
+           - HTML 표(<table class="w-full border-collapse border border-slate-200 my-4 text-xs sm:text-sm">...</table>)나 불렛포인트(<ul><li>...</li></ul>)를 사용하여 2026년 최신 공식 기준과 수치를 깔끔하게 정리하되, 그 정보 아래에 반드시 "개인적으로 이 부분은 아쉬웠다", "실제로 창구에 서류를 제출해 보니 이 방법이 가장 승인율이 높았다", "제가 계약해 보니 이 특약 한 줄이 결국 3천만 원을 지켜주었습니다"라는 식의 주관적인 평가를 한 줄씩 덧붙이십시오.
 
         5. 독자와의 상호작용 및 액션 아이템 유도 (Action Item):
            - 글의 마무리에는 뻔한 요약 대신, 독자가 오늘 퇴근 후 당장 실행해 볼 수 있는 아주 작은 행동 지침(Action Item) 하나를 제안하고, 댓글이나 생각을 유도하는 가벼운 질문으로 끝맺으십시오.
 
         [출력 JSON 포맷]:
-        - title: 독자의 공감을 이끌어내는 1인칭 실전 제목 (예: "제가 직접 겪어보고 정리한 [주제]: 2026년 팩트체크 및 실수요자 생존기")
+        - title: 독자의 공감을 이끌어내는 1인칭 실전 제목 (예: "제가 직접 겪어보고 정리한 [주제]: 2026년 실무 분석 및 실수요자 생존기")
         - excerpt: 내가 직접 겪은 핵심 경험과 이 글을 통해 얻을 수 있는 실질적 해결책 요약 (120자 내외)
         - content: 위 지침을 100% 충족하는 완성된 고품질 1인칭 스토리텔링 전문 HTML 본문 (2,000자 이상)
         - hashtags: 관련 핵심 검색 키워드 해시태그 4~6개 배열
@@ -1248,84 +1249,6 @@ function replaceOrInjectMetaTags(
   return updatedHtml;
 }
 
-// SEO 관련 메타 태그 동적 수립 헬퍼 함수
-function injectMetaTags(html: string, post: any, baseUrl: string): string {
-  const canonicalUrl = `${baseUrl}/post/${encodeURIComponent(slugify(post.title))}`;
-  const keywords = post.hashtags && post.hashtags.length > 0 ? post.hashtags.join(", ") : "하우징허브, 부동산, 주택청약, 전세대출, 부동산전문가";
-  const title = `${post.title} | 하우징허브`;
-  const desc = post.excerpt;
-  const ogImage = post.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
-  
-  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "article", ogImage, keywords);
-}
-
-function injectDefaultMetaTags(html: string, baseUrl: string): string {
-  const title = "하우징허브 | 실전 청약·전월세·주택대출 안심 주거 정보 포털";
-  const desc = "실수요자를 위한 주택 청약 자격, 전월세 사기 방지 특약, 디딤돌·버팀목 대출 가이드 및 자가진단 시뮬레이터를 제공하는 공익 주거 정보 포털입니다.";
-  const canonicalUrl = `${baseUrl}/`;
-  const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
-  const keywords = "주택청약, 청약가점 계산기, 전세대출 한도, 하우징허브, 버팀목 대출, 디딤돌 대출, 전세사기 방지, 부동산 전문가 칼럼";
-  
-  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", ogImage, keywords);
-}
-
-function injectCategoryMetaTags(html: string, category: string, baseUrl: string): string {
-  const title = `${category} 실시간 알짜 정보 및 전문가 가이드 | 하우징허브`;
-  let desc = "";
-  if (category === "청약-분양") {
-    desc = "최신 청약 일정, 분양 정보, 청약가점 계산법, 무순위 줍줍 분석 및 당첨 확률 높이는 실전 노하우를 제공합니다.";
-  } else if (category === "전월세") {
-    desc = "전월세 사기 방지 대책, 등기부등본 권리 분석, 전세보증보험 가입 가이드 및 임차인 필수 특약 조항을 안내합니다.";
-  } else if (category === "이사-인테리어") {
-    desc = "이삿짐 센터 선정 체크리스트, 입주 청소 요령, 전입신고 및 확정일자 부여 절차, 셀프 인테리어 가이드를 안내합니다.";
-  } else if (category === "대출-금융") {
-    desc = "디딤돌 대출, 버팀목 전세대출, 신생아 특례대출, 스트레스 DSR 상환 비율 및 주거 금융 혜택을 총정리해 드립니다.";
-  } else {
-    desc = `하우징허브 ${category} 정보 센터. 검증된 실전 주거 가이드를 확인하세요.`;
-  }
-
-  const canonicalUrl = `${baseUrl}/category/${encodeURIComponent(category)}`;
-  const ogImage = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
-  const keywords = `${category}, 하우징허브 ${category}, 부동산 실무, ${category} 가이드`;
-  
-  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", ogImage, keywords);
-}
-
-function injectSubpageMetaTags(html: string, path: string, baseUrl: string): string {
-  let title = "하우징허브";
-  let desc = "실전 청약, 전월세 대항력, 주택 대출 심층 분석 공익 정보 포털입니다.";
-  
-  if (path === "/about") {
-    title = "소개 및 집필 원칙 | 하우징허브";
-    desc = "하우징허브는 현장 실무 경험과 공식 국토부·LH 공고문에 기반한 검증된 주거 지식을 제공합니다.";
-  } else if (path === "/toolkit") {
-    title = "스마트 주거 자가진단 툴킷 | 하우징허브";
-    desc = "LTV/DSR 주택 대출 한도 계산 및 청약 자가 점수(84점 만점) 진단을 제공하는 실전 자가진단 툴킷입니다.";
-  } else if (path === "/announcement") {
-    title = "공지사항 및 정책 소식 | 하우징허브";
-    desc = "하우징허브의 최신 주거 정책 변화 공지, 신규 부동산 실무 가이드 추가 소식을 안내해 드립니다.";
-  } else if (path === "/partnership" || path === "/contact") {
-    title = "제휴 및 독자 제보 문의 | 하우징허브";
-    desc = "공인중개사, 이사업체, 법무법인 등 국민 주거 복지 향상에 함께할 파트너사 문의 및 제보 창구입니다.";
-  } else if (path === "/terms") {
-    title = "서비스 이용약관 | 하우징허브";
-    desc = "하우징허브 서비스 이용 약관 및 사용자 권리 보호 세부 조항 안내.";
-  } else if (path === "/privacy") {
-    title = "개인정보처리방침 | 하우징허브";
-    desc = "하우징허브는 사용자의 개인정보를 소중히 보호하며, 개인정보보호법 및 관련 법령을 엄격히 준수합니다.";
-  } else if (path === "/disclaimer") {
-    title = "면책 조항 및 법적 고지 | 하우징허브";
-    desc = "하우징허브가 제공하는 모든 콘텐츠는 법적·공식 공고 기준을 토대로 한 정보 제공용 자료입니다.";
-  } else {
-    return injectDefaultMetaTags(html, baseUrl);
-  }
-
-  const canonicalUrl = `${baseUrl}${path}`;
-  const keywords = "부동산 전문가, 주택청약, 전월세 특약, 하우징허브";
-  
-  return replaceOrInjectMetaTags(html, title, desc, canonicalUrl, "website", "", keywords);
-}
-
 // Vite Middleware & Static Assets 서빙
 async function startServer() {
   let viteInstance: any = null;
@@ -1358,58 +1281,62 @@ async function startServer() {
       }
 
       const baseUrl = getBaseUrl(req);
+      const activePosts = getActivePostsList();
 
-      // 1) 게시글 고유값 파싱 (경로 /post/:id 혹은 쿼리스트링 ?post=)
-      const rawPostId = req.params.id || (req.query.post as string);
-      if (rawPostId) {
-        const decodedPostId = decodeURIComponent(rawPostId);
-        const post = getActivePostsList().find(p => p.title === decodedPostId || p.id === decodedPostId || slugify(p.title) === decodedPostId);
-        if (post) {
-          if (isProd) {
-            const slug = slugify(post.title);
-            const prerenderedPostPath = path.join(process.cwd(), "dist", "post", slug, "index.html");
-            if (fs.existsSync(prerenderedPostPath)) {
-              return res.send(fs.readFileSync(prerenderedPostPath, "utf-8"));
-            }
+      // [getServerSideProps] 동적 데이터 페칭 및 시맨틱 HTML/메타/스키마/초기 상태 생성
+      const ssrProps = getServerSideProps(req.path, req.query, activePosts, baseUrl);
+
+      // 운영 환경에서 이미 빌드된 정적 HTML 파일이 존재하는 경우 해당 파일 서빙
+      if (isProd) {
+        if (ssrProps.pageType === "post" && ssrProps.post) {
+          const slug = slugify(ssrProps.post.title);
+          const prerenderedPostPath = path.join(process.cwd(), "dist", "post", slug, "index.html");
+          if (fs.existsSync(prerenderedPostPath)) {
+            return res.send(fs.readFileSync(prerenderedPostPath, "utf-8"));
           }
-          html = injectMetaTags(html, post, baseUrl);
-          return res.send(html);
-        }
-      }
-
-      // 2) 카테고리 경로 파싱 (예: /category/:categoryName)
-      const pathParts = req.path.split("/");
-      const categoryIndex = pathParts.indexOf("category");
-      if (categoryIndex !== -1 && pathParts[categoryIndex + 1]) {
-        const rawCat = pathParts[categoryIndex + 1];
-        const decodedCat = decodeURIComponent(rawCat);
-        if (isProd) {
-          const prerenderedCatPath = path.join(process.cwd(), "dist", "category", decodedCat, "index.html");
+        } else if (ssrProps.pageType === "category" && ssrProps.category) {
+          const prerenderedCatPath = path.join(process.cwd(), "dist", "category", ssrProps.category, "index.html");
           if (fs.existsSync(prerenderedCatPath)) {
             return res.send(fs.readFileSync(prerenderedCatPath, "utf-8"));
           }
-        }
-        html = injectCategoryMetaTags(html, decodedCat, baseUrl);
-        return res.send(html);
-      }
-
-      // 3) 특정 서브페이지 경로 파싱 (예: /about, /announcement, /partnership, /contact, /terms, /privacy, /disclaimer, /toolkit)
-      const subpages = ["/about", "/announcement", "/partnership", "/contact", "/terms", "/privacy", "/disclaimer", "/toolkit"];
-      const matchedPage = subpages.find(page => req.path === page);
-      if (matchedPage) {
-        if (isProd) {
-          const cleanPageName = matchedPage.replace(/^\//, "");
-          const prerenderedPagePath = path.join(process.cwd(), "dist", cleanPageName, "index.html");
+        } else if (ssrProps.pageType === "subpage" && ssrProps.subpage) {
+          const prerenderedPagePath = path.join(process.cwd(), "dist", ssrProps.subpage, "index.html");
           if (fs.existsSync(prerenderedPagePath)) {
             return res.send(fs.readFileSync(prerenderedPagePath, "utf-8"));
           }
         }
-        html = injectSubpageMetaTags(html, matchedPage, baseUrl);
-        return res.send(html);
       }
 
-      // 기본 메타 기입
-      html = injectDefaultMetaTags(html, baseUrl);
+      // 1. Title 및 Meta 태그 통합 주입
+      html = replaceOrInjectMetaTags(
+        html,
+        ssrProps.meta.title,
+        ssrProps.meta.description,
+        ssrProps.meta.canonical,
+        ssrProps.meta.ogType,
+        ssrProps.meta.ogImage,
+        ssrProps.meta.keywords.join(", ")
+      );
+
+      // 2. JSON-LD 스키마 주입
+      if (ssrProps.jsonLd) {
+        const jsonLdTag = `<script type="application/ld+json">${JSON.stringify(ssrProps.jsonLd)}</script>`;
+        html = html.replace("</head>", `  ${jsonLdTag}\n</head>`);
+      }
+
+      // 3. __INITIAL_DATA__ 스크립트 주입 (클라이언트 컴포넌트 0ms 즉시 Hydration용)
+      const initialDataTag = `<script id="__INITIAL_DATA__" type="application/json">${JSON.stringify(ssrProps)}</script>`;
+      html = html.replace("</head>", `  ${initialDataTag}\n</head>`);
+
+      // 4. 구글 봇 및 검색엔진 크롤러를 위한 완전한 시맨틱 HTML 본문 주입 (#root 내부)
+      if (html.includes('<div id="root"></div>')) {
+        html = html.replace(
+          '<div id="root"></div>',
+          `<div id="root"><div id="ssr-container">${ssrProps.htmlBody}</div></div>`
+        );
+      }
+
+      res.setHeader("Content-Type", "text/html; charset=utf-8");
       return res.send(html);
     } catch (err) {
       console.error("HTML 렌더링 서빙 오류:", err);

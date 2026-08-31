@@ -1,34 +1,30 @@
 {
-  "date": "2026-08-16",
+  "date": "2026-08-31",
   "minimumIntervalHours": 4,
   "slots": [
     {
-      "category": "대출-금융",
-      "timeStr": "03:08:44",
-      "executed": true,
-      "postId": "auto-1786899799784-388",
-      "title": "변동금리 vs 고정금리(주기형·혼합형) 대출, 현명한 선택 기준과 금리 주기 예측"
-    },
-    {
       "category": "이사-인테리어",
-      "timeStr": "07:23:12",
+      "timeStr": "02:24:26",
       "executed": true,
-      "postId": "auto-1786899780690-32",
-      "title": "대형 폐기물 스티커 인터넷 발급 및 무상 방문수거 서비스 이용법: 똑똑한 폐기물 처리 실전 가이드"
+      "postId": "auto-1788160941661-516",
+      "title": "제가 직접 겪어보고 정리한 이사 당일 필수 행정 절차: 2026년 실무 분석 및 실수요자 생존기"
     },
     {
-      "category": "청약-분양",
-      "timeStr": "11:59:04",
+      "category": "대출-금융",
+      "timeStr": "06:30:46",
       "executed": true,
-      "postId": "auto-1786899774797-633",
-      "title": "청약 재당첨 제한 완벽 해부: 세대원 전체 과거 당첨 이력 조회부터 실무 팁까지 "
+      "postId": "auto-1788160942449-291",
+      "title": "자금조달계획서? 제가 직접 '빠꾸' 먹고 깨달은 2026년 실전 증빙 가이드"
     },
     {
       "category": "전월세",
-      "timeStr": "16:55:41",
-      "executed": true,
-      "postId": "auto-1786899801081-146",
-      "title": "전월세 계약 전 필수 체크: 등기부등본 을구 근저당과 확정일자 당일 효력"
+      "timeStr": "11:13:08",
+      "executed": false
+    },
+    {
+      "category": "청약-분양",
+      "timeStr": "15:53:38",
+      "executed": false
     }
   ]
 }

@@ -74,9 +74,29 @@ const SUBCATEGORY_KEYWORDS: Record<string, string[]> = {
   "입주청소·손해배상": ["입주청소", "청소", "손해배상", "하자", "보수", "원상복구", "체크", "점검", "폐기물", "방문수거"]
 };
 
+function getInitialServerData(): any {
+  if (typeof window !== "undefined") {
+    const el = document.getElementById("__INITIAL_DATA__");
+    if (el && el.textContent) {
+      try {
+        return JSON.parse(el.textContent);
+      } catch (e) {
+        console.error("Failed to parse __INITIAL_DATA__", e);
+      }
+    }
+  }
+  return null;
+}
+
 export default function App() {
-  const [posts, setPosts] = useState<Post[]>(POSTS);
-  const [selectedCategory, setSelectedCategory] = useState<string>("전체");
+  const initialData = useMemo(() => getInitialServerData(), []);
+
+  const [posts, setPosts] = useState<Post[]>(() => {
+    return initialData?.initialPosts || POSTS;
+  });
+  const [selectedCategory, setSelectedCategory] = useState<string>(() => {
+    return initialData?.initialState?.selectedCategory || "전체";
+  });
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>("전체 보기");
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
@@ -123,17 +143,23 @@ export default function App() {
     localStorage.setItem("hh_bookmarks", JSON.stringify(bookmarks));
   }, [bookmarks]);
 
-  // 상세 보기 모달 관련
-  const [activePost, setActivePost] = useState<Post | null>(null);
+  // 상세 보기 모달 관련 (초기 서버 전달 게시글 즉시 반영)
+  const [activePost, setActivePost] = useState<Post | null>(() => {
+    return initialData?.post || null;
+  });
 
   // 자가진단 계산기 탭: 'loan' (대출한도) | 'score' (청약가점)
   const [toolTab, setToolTab] = useState<"loan" | "score">("loan");
 
   // 별도 페이지용 스마트 자가진단 툴킷 페이지 상태 활성화
-  const [showDiagnosticPage, setShowDiagnosticPage] = useState<boolean>(false);
+  const [showDiagnosticPage, setShowDiagnosticPage] = useState<boolean>(() => {
+    return initialData?.initialState?.showDiagnosticPage || false;
+  });
 
   // --- 법률 및 애드센스 정책 안심 확보 상태 (인라인 페이지화) ---
-  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | "about" | null>(null);
+  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | "about" | null>(() => {
+    return initialData?.initialState?.activeLegalTab || null;
+  });
 
   // URL에서 초기 /post/xxx 혹은 ?post=xxx 혹은 서브페이지(/toolkit, /privacy, /terms 등)를 읽어 세팅 및 popstate 감지
   useEffect(() => {
@@ -385,9 +411,9 @@ export default function App() {
     );
   };
 
-  // 선택된 카테고리별 유니크 해시태그 목록 추출 (전체 또는 청약일정인 경우 전체 기반)
+  // 선택된 카테고리별 유니크 해시태그 목록 추출
   const popularHashtags = useMemo(() => {
-    const targetPosts = (selectedCategory === "전체" || selectedCategory === "청약일정")
+    const targetPosts = selectedCategory === "전체"
       ? posts 
       : posts.filter(p => p.category === selectedCategory);
 
@@ -411,8 +437,6 @@ export default function App() {
       if (!post) return false;
       const matchCategory = selectedCategory === "전체" 
         ? true 
-        : selectedCategory === "청약일정" 
-        ? post.category === "청약-분양" 
         : post.category === selectedCategory;
       
       let matchSubCategory = true;
@@ -680,7 +704,6 @@ export default function App() {
             {[
               { id: "전체", label: "📝 전체 칼럼" },
               { id: "청약-분양", label: "🏢 청약·분양" },
-              { id: "청약일정", label: "📅 청약일정" },
               { id: "전월세", label: "🔑 전월세 안심" },
               { id: "대출-금융", label: "💰 대출·금융" },
               { id: "이사-인테리어", label: "🚚 이사·주거" }
@@ -744,7 +767,6 @@ export default function App() {
           {[
             { id: "전체", label: "🏠 전체" },
             { id: "청약-분양", label: "🏢 청약·분양" },
-            { id: "청약일정", label: "📅 청약일정" },
             { id: "전월세", label: "🔑 전월세" },
             { id: "대출-금융", label: "💰 대출·금융" },
             { id: "이사-인테리어", label: "🚚 이사·주거" }
@@ -1253,7 +1275,7 @@ export default function App() {
                         <div className="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 font-bold flex items-center justify-center text-sm">
                           1
                         </div>
-                        <h6 className="font-bold text-slate-900 text-sm">경험 기반 팩트체크</h6>
+                        <h6 className="font-bold text-slate-900 text-sm">실무 검증 및 분석</h6>
                         <p className="text-xs text-slate-600 leading-relaxed">
                           단순 법조문 나열이 아닙니다. 실제 계약 현장과 은행 창구에서 발생하는 변수와 부적격 사례를 직접 검증하여 전달합니다.
                         </p>
@@ -1615,17 +1637,17 @@ export default function App() {
                     <span>2026 주거·청약·금융 실전 기록</span>
                   </span>
                   <span className="bg-slate-800 text-slate-300 text-xs font-semibold px-3 py-1 rounded-full border border-slate-700">
-                    직접 겪은 경험담 &amp; 100% 공인 팩트체크
+                    실무 경험담 및 최신 주거 정책 분석
                   </span>
                 </div>
                 
                 <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight leading-snug font-display">
                   직접 겪고 발로 뛰며 체득한 주거 가이드,<br className="hidden sm:block"/>
-                  <span className="text-blue-400">하우징허브</span>에서 생생한 팩트로 확인하세요.
+                  <span className="text-blue-400">하우징허브</span>에서 검증된 실전 가이드로 확인하세요.
                 </h2>
                 
                 <p className="text-sm sm:text-[15px] text-slate-300 leading-relaxed font-sans">
-                  청약 당첨과 특공 신청, 전월세 보증금 사수, 디딤돌·버팀목 대출 승인부터 이사까지 제가 직접 겪은 생생한 과정과 국토교통부·청약홈·주택도시기금의 최신 팩트를 하나로 담았습니다.
+                  청약 당첨과 특공 신청, 전월세 보증금 사수, 디딤돌·버팀목 대출 승인부터 이사까지 직접 겪은 실무 경험과 국토교통부·청약홈·주택도시기금의 최신 공식 기준을 하나로 담았습니다.
                 </p>
 
                 <div className="pt-2 flex flex-wrap gap-2.5 text-xs font-bold">
@@ -1736,7 +1758,7 @@ export default function App() {
                         </span>
                       </h3>
                       <p className="text-xs sm:text-sm text-slate-500 mt-1 font-medium">
-                        국토교통부·청약홈·주택도시기금 최신 공식 발표 기준 팩트체크 리포트입니다.
+                        국토교통부·청약홈·주택도시기금 최신 공식 발표 기준 실무 분석 리포트입니다.
                       </p>
                     </div>
                     

@@ -18,7 +18,7 @@ const DIST = resolve(ROOT, "dist");
 const SITE_URL = "https://zip9.kr";
 const SITE_NAME = "하우징허브";
 const DEFAULT_TITLE = "하우징허브 (HousingHub) | 2026 주거·청약·대출 실무 가이드";
-const DEFAULT_DESCRIPTION = "신혼부부와 무주택자를 위한 청약 공고문 팩트체크, 전월세 대항력 및 안전 계약 가이드, 디딤돌·버팀목 대출 분석 실무 지식 포털입니다.";
+const DEFAULT_DESCRIPTION = "신혼부부와 무주택자를 위한 청약 공고문 실무 분석, 전월세 대항력 및 안전 계약 가이드, 디딤돌·버팀목 대출 분석 실무 지식 포털입니다.";
 const CATEGORIES = ["청약-분양", "전월세", "이사-인테리어", "대출-금융"];
 
 function slugify(title) {
@@ -202,7 +202,7 @@ function loadPosts() {
  * - bodyContent: <noscript>안에 들어갈 본문(크롤러용)
  * - jsonLd: 추가 JSON-LD 객체 또는 null
  */
-function renderPage(template, meta, bodyContent, jsonLd) {
+function renderPage(template, meta, bodyContent, jsonLd, initialData = null) {
   let html = template;
 
   // <title>
@@ -289,6 +289,12 @@ function renderPage(template, meta, bodyContent, jsonLd) {
     html = html.replace("</head>", `${ld}\n  </head>`);
   }
 
+  // __INITIAL_DATA__ 추가 (head 끝에)
+  if (initialData) {
+    const initScript = `<script id="__INITIAL_DATA__" type="application/json">${JSON.stringify(initialData)}</script>`;
+    html = html.replace("</head>", `${initScript}\n  </head>`);
+  }
+
   // Google Site Verification
   const siteVerificationToken = process.env.GOOGLE_SITE_VERIFICATION || "U1U64IvSTSjySxIRO1Sr598xGZz85FYPdKSSvo3B_BQ";
   if (siteVerificationToken) {
@@ -297,12 +303,12 @@ function renderPage(template, meta, bodyContent, jsonLd) {
   }
 
   // <div id="root"></div>에 정적 본문 prerendered 콘텐츠 주입.
-  // React가 hydration할 때 이 내용은 root.innerHTML로 대체되므로 사용자 화면은 동일.
-  // 크롤러는 JS 실행 없이 이 내용을 본다.
+  // 검색엔진 크롤러(Googlebot, AdSense bot)가 즉시 읽을 수 있도록 온전한 시맨틱 구조로 주입.
+  // React createRoot 실행 시 클라이언트 컴포넌트로 완벽하게 Hydration 교체됨.
   if (bodyContent) {
     html = html.replace(
       /<div id="root"><\/div>/,
-      `<div id="root"><div id="prerendered-content" style="position:absolute;left:-9999px;top:-9999px;width:1px;height:1px;overflow:hidden;">${bodyContent}</div></div>`
+      `<div id="root"><div id="ssr-container">${bodyContent}</div></div>`
     );
   }
 
@@ -520,7 +526,20 @@ function main() {
       ogType: "website",
     },
     buildHomeBody(posts),
-    null
+    null,
+    {
+      pageType: "home",
+      post: null,
+      category: "전체",
+      subpage: null,
+      initialPosts: posts,
+      initialState: {
+        selectedCategory: "전체",
+        activePostId: null,
+        activeLegalTab: null,
+        showDiagnosticPage: false,
+      }
+    }
   );
   writeFile(indexPath, homeHtml);
   count++;
@@ -552,7 +571,7 @@ function main() {
 
           <h2>하우징허브 3대 운영 원칙</h2>
           <ul>
-            <li><strong>1. 경험 기반 팩트체크:</strong> 법조문 단순 나열이 아닌, 실제 계약 현장과 은행 창구에서 발생하는 변수와 부적격 사례를 직접 검증하여 전달합니다.</li>
+            <li><strong>1. 실무 기준 심층 분석:</strong> 법조문 단순 나열이 아닌, 실제 계약 현장과 은행 창구에서 발생하는 변수와 부적격 사례를 직접 검증하여 전달합니다.</li>
             <li><strong>2. AI 상투적 어구 배제:</strong> 기계적인 서론과 뻔한 결론을 거부하고, 독자가 오늘 당장 실천할 수 있는 명확한 1개의 행동 지침(Action Item)을 제시합니다.</li>
             <li><strong>3. 상업적 독립성:</strong> 특정 분양 대행사나 대출 중개사의 청탁을 배제하고 오직 무주택 실수요자의 권익을 위해 운영됩니다.</li>
           </ul>
@@ -674,11 +693,25 @@ function main() {
   ];
 
   for (const p of staticPages) {
+    const cleanPage = p.path.replace(/\/index\.html$/, "").replace(/\.html$/, "");
     const html = renderPage(
       template,
       { title: p.title, description: p.desc, canonical: p.url, ogType: "website" },
       p.body,
-      null
+      null,
+      {
+        pageType: cleanPage === "toolkit" ? "toolkit" : "subpage",
+        post: null,
+        category: null,
+        subpage: cleanPage,
+        initialPosts: posts,
+        initialState: {
+          selectedCategory: "전체",
+          activePostId: null,
+          activeLegalTab: cleanPage === "toolkit" ? null : cleanPage,
+          showDiagnosticPage: cleanPage === "toolkit",
+        }
+      }
     );
     writeFile(join(DIST, p.path), html);
     count++;
@@ -702,7 +735,20 @@ function main() {
         keywords: catKeywords,
       },
       buildCategoryBody(cat, posts),
-      null
+      null,
+      {
+        pageType: "category",
+        post: null,
+        category: cat,
+        subpage: null,
+        initialPosts: posts,
+        initialState: {
+          selectedCategory: cat,
+          activePostId: null,
+          activeLegalTab: null,
+          showDiagnosticPage: false,
+        }
+      }
     );
     writeFile(join(DIST, path), html);
     count++;
@@ -731,7 +777,20 @@ function main() {
         keywords: postKeywords,
       },
       buildPostBody(post),
-      articleJsonLd(post)
+      articleJsonLd(post),
+      {
+        pageType: "post",
+        post,
+        category: post.category,
+        subpage: null,
+        initialPosts: posts,
+        initialState: {
+          selectedCategory: post.category,
+          activePostId: post.id,
+          activeLegalTab: null,
+          showDiagnosticPage: false,
+        }
+      }
     );
     writeFile(join(DIST, path), html);
     count++;

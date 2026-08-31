@@ -111,7 +111,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>
@@ -255,7 +255,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>
@@ -400,7 +400,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>
@@ -549,7 +549,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>
@@ -699,7 +699,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>
@@ -837,7 +837,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>
@@ -973,7 +973,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
       <div class="grid grid-cols-4 bg-slate-50 p-2.5 font-bold text-slate-705 border-b border-slate-200">
         <div>법리 구제 장치</div>
-        <div class="col-span-3">세부 팩트 기준 및 안심 긴급 방어 작동 원리</div>
+        <div class="col-span-3">세부 핵심 기준 및 안심 긴급 방어 작동 원리</div>
       </div>
       <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">최우선 변제 수치</div>

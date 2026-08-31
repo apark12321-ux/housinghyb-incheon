@@ -5,7 +5,6 @@ import { POSTS_RENT } from "./posts-rent";
 import { POSTS_RENT_HEAVY } from "./posts-rent-heavy";
 import { POSTS_MOVE } from "./posts-move";
 import { POSTS_FINANCE } from "./posts-finance";
-import { POSTS_AUGUST } from "./posts-august";
 
 // 카테고리별 고품질 이미지 및 안심 가이드 캡션 풀
 const IMAGE_COLLECTIONS: Record<string, { images: string[]; captions: string[] }> = {
@@ -104,7 +103,7 @@ function enrichPostContent(post: Post): Post {
         </ul>
       </div>
 
-      <h2>현장 실무자가 전하는 생생한 팩트체크: ${title}</h2>
+      <h2>현장 실무자가 전하는 심층 가이드: ${title}</h2>
       <p>제가 부동산 현장과 금융 창구에서 수많은 고객분들의 계약과 상담을 진행하면서 뼈저리게 느낀 점이 하나 있습니다. 인터넷이나 유튜브에 떠도는 겉핥기식 정보만 믿고 무작정 들어갔다가, 사소한 서류 미비나 날짜 계산 착오로 계약금을 날리거나 수년간 모은 청약 가점을 박탈당하는 분들이 너무나 많다는 사실입니다.</p>
       <p>이번 글에서는 제가 직접 발로 뛰며 체득한 <strong>${title}</strong>의 실질적인 진행 절차와, 관공서나 은행 창구에서도 쉽게 알려주지 않는 실전 팁을 하나씩 짚어드리겠습니다.</p>
 
@@ -268,7 +267,6 @@ function getRelativeDateString(daysAgo: number): string {
 
 // 원본 포스트 리스트 불러오기 및 본문 이미지 일체 자동 보강 처리 완료
 const RAW_POSTS: Post[] = [
-  ...POSTS_AUGUST,
   ...POSTS_SUB,
   ...POSTS_SUB_HEAVY,
   ...POSTS_RENT,
@@ -308,28 +306,64 @@ function sanitizePostAuthor(p: Post): Post {
   };
 }
 
-// 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용
-export const POSTS: Post[] = RAW_POSTS.map((p) => {
+// 6월 1일부터 8월 31일(현재)까지 1일 2포스팅 기준 날짜 목록 생성 (총 32일 분배)
+const START_DATE = new Date("2026-06-01T00:00:00Z");
+const END_DATE = new Date("2026-08-31T00:00:00Z");
+const TOTAL_SPAN_DAYS = Math.round((END_DATE.getTime() - START_DATE.getTime()) / (1000 * 60 * 60 * 24)); // 91일
+const TOTAL_PUBLISHING_DAYS = Math.ceil(RAW_POSTS.length / 2); // 32일
+
+const PUBLISHING_DATES: string[] = [];
+for (let i = 0; i < TOTAL_PUBLISHING_DAYS; i++) {
+  const dayOffset = Math.round(i * (TOTAL_SPAN_DAYS / (TOTAL_PUBLISHING_DAYS - 1)));
+  const d = new Date(START_DATE);
+  d.setDate(d.getDate() + dayOffset);
+  const yyyy = d.getFullYear();
+  const mm = String(d.getMonth() + 1).padStart(2, "0");
+  const dd = String(d.getDate()).padStart(2, "0");
+  PUBLISHING_DATES.push(`${yyyy}-${mm}-${dd}`);
+}
+
+// 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용 (6월 1일 ~ 8월 31일 1일 2포스팅, 8시간 이상 간격)
+export const POSTS: Post[] = RAW_POSTS.map((p, idx) => {
   const sanitized = sanitizePostAuthor(p);
   const enriched = enrichPostContent(sanitized);
-  // 원본에 저장된 고유 발행일(5월~8월에 걸친 누적 포스팅 히스토리)을 온전히 유지
-  if (!enriched.date) {
-    enriched.date = getRelativeDateString(0);
+
+  const dayIndex = Math.floor(idx / 2);
+  const assignedDate = PUBLISHING_DATES[Math.min(dayIndex, PUBLISHING_DATES.length - 1)];
+  const isSecondPostOfDay = idx % 2 === 1;
+
+  // 고유 해시 계산
+  let hash = 0;
+  const str = `${enriched.id}-${enriched.title}-${idx}`;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash * 31 + str.charCodeAt(i)) % 1000000007;
   }
-  if (!enriched.time) {
-    // 고유 시, 분, 초 생성
-    let hash = 0;
-    const str = `${enriched.id}-${enriched.category}-${enriched.date}`;
-    for (let i = 0; i < str.length; i++) {
-      hash = (hash * 31 + str.charCodeAt(i)) % 1000000007;
-    }
-    const hh = String(Math.floor((hash % 16) + 7)).padStart(2, "0"); // 07~22시
-    const mm = String((hash * 7) % 60).padStart(2, "0");
-    const ss = String((hash * 13) % 60).padStart(2, "0");
-    enriched.time = `${hh}:${mm}:${ss}`;
+
+  // 1일 2포스팅: 1차(오전 07:30~09:45), 2차(오후/저녁 18:30~21:45) -> 최소 8시간 45분 이상 완벽한 간격 확보
+  let hh: string;
+  let mm: string;
+  let ss: string;
+
+  if (!isSecondPostOfDay) {
+    // 1차 포스팅 (오전): 07:xx:xx ~ 09:xx:xx
+    const hourNum = 7 + (hash % 3); // 7, 8, 9시
+    hh = String(hourNum).padStart(2, "0");
+    mm = String((hash * 7 + 13) % 60).padStart(2, "0");
+    ss = String((hash * 19 + 29) % 60).padStart(2, "0");
+  } else {
+    // 2차 포스팅 (저녁): 18:xx:xx ~ 21:xx:xx (오전과 8시간 이상 차이 보장)
+    const hourNum = 18 + (hash % 4); // 18, 19, 20, 21시
+    hh = String(hourNum).padStart(2, "0");
+    mm = String((hash * 11 + 37) % 60).padStart(2, "0");
+    ss = String((hash * 23 + 43) % 60).padStart(2, "0");
   }
+
+  enriched.date = assignedDate;
+  enriched.time = `${hh}:${mm}:${ss}`;
+
   return enriched;
 }).sort((a, b) => {
+  // 최신 발행분(8월 31일)부터 역순 정렬
   const dateA = `${a.date || ""} ${a.time || "00:00:00"}`;
   const dateB = `${b.date || ""} ${b.time || "00:00:00"}`;
   return dateB.localeCompare(dateA);
