@@ -567,20 +567,29 @@ function main() {
     },
     {
       path: "privacy/index.html",
-      title: `개인정보 안내 | ${SITE_NAME}`,
-      desc: `${SITE_NAME}의 접속 통계 및 쿠키 이용 안내입니다.`,
+      title: `개인정보처리방침 (Privacy Policy) | ${SITE_NAME}`,
+      desc: `${SITE_NAME}의 개인정보 보호 및 구글 애드센스 쿠키 운용 방침 안내입니다.`,
       url: `${SITE_URL}/privacy`,
       body: buildStaticPageBody(
-        "개인정보 안내 (Privacy)",
+        "개인정보처리방침 (Privacy Policy)",
         `<div class="privacy-container leading-relaxed space-y-4">
-          <p><strong>발행처:</strong> 하우징허브 (HousingHub) | <strong>문의:</strong> apark12321@gmail.com</p>
-          <h3>1. 수집하는 항목 및 목적</h3>
+          <p><strong>발행처:</strong> 상상아트 (하우징허브 HousingHub) | <strong>책임 관리자:</strong> 박 실장 | <strong>문의:</strong> apark12321@gmail.com</p>
+          
+          <h3>1. 수집하는 개인정보 항목 및 이용 목적</h3>
           <p>${SITE_NAME}(https://zip9.kr)는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 열린 포털입니다. 서비스 개선 및 사이트 이용 통계 확인을 위해 브라우저 접속 기록(쿠키 등)이 생성될 수 있습니다.</p>
           
-          <h3>2. 쿠키(Cookie) 안내</h3>
-          <p>본 사이트는 서비스 편의 및 방문 통계 분석을 위해 쿠키를 사용할 수 있습니다. 사용자는 브라우저 설정을 통해 언제든지 쿠키 저장을 거부하거나 삭제할 수 있습니다.</p>
+          <h3>2. 구글 애드센스(Google AdSense) 및 제3자 광고 쿠키 안내</h3>
+          <p>본 사이트는 Google 등의 제3자 광고 사업자를 통해 웹사이트에 광고를 게재합니다.</p>
+          <ul>
+            <li>Google을 포함한 제3자 공급업체는 쿠키를 사용하여 사용자의 이전 방문 기록(본 웹사이트 또는 타 웹사이트)을 기반으로 맞춤형 광고를 게재합니다.</li>
+            <li>Google의 광고 쿠키 사용으로 인해 Google 및 파트너는 사용자의 본 사이트 및 기타 인터넷 사이트 방문 기록을 바탕으로 적절한 광고를 게재할 수 있습니다.</li>
+            <li>사용자는 <a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer">Google 광고 설정</a>에서 개인 맞춤 광고를 언제든지 사용 중지할 수 있습니다.</li>
+          </ul>
 
-          <h3>3. 문의 창구</h3>
+          <h3>3. 쿠키 설정 및 거부 방법</h3>
+          <p>사용자는 웹 브라우저 설정을 통해 쿠키 허용 여부를 지정하거나 저장을 거부할 수 있습니다.</p>
+
+          <h3>4. 문의 창구</h3>
           <p>사이트 이용과 관련된 문의나 제안은 공식 이메일(apark12321@gmail.com)로 접수해 주시면 신속히 확인하여 답변드리겠습니다.</p>
         </div>`
       ),

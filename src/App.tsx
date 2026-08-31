@@ -1310,37 +1310,46 @@ export default function App() {
               {activeLegalTab === "privacy" && (
                 <div className="space-y-6 text-xs sm:text-sm text-slate-700 leading-relaxed text-left font-sans">
                   <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base sm:text-lg font-bold text-slate-900">개인정보처리방침 (Privacy Policy) | 하우징허브 · 버진로드</h4>
-                    <p className="text-xs text-slate-400 mt-1">최종 시행 일자: 2026년 8월 13일</p>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">개인정보처리방침 (Privacy Policy) | 하우징허브 (HousingHub)</h4>
+                    <p className="text-xs text-slate-400 mt-1">최종 시행 일자: 2026년 8월 30일</p>
                   </div>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">1. 수집하는 항목 및 목적</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">1. 수집하는 개인정보 항목 및 이용 목적</h5>
                     <p className="leading-relaxed">
-                      하우징허브는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 열린 블로그입니다. 사이트 이용 통계 및 방문자 편의 개선을 위해 일반적인 접속 기록(쿠키, 브라우저 정보 등)이 생성될 수 있습니다.
+                      하우징허브(https://zip9.kr)는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 개방형 전문 정보 포털입니다. 본 사이트는 이용자의 직접적인 식별 정보(이름, 주민번호 등)를 임의 수집하지 않으며, 사이트 이용 통계 분석 및 맞춤형 서비스 제공을 위해 브라우저 접속 기록(IP 주소, 쿠키, 접속 일시 등)이 자동 생성될 수 있습니다.
+                    </p>
+                  </section>
+
+                  <section className="space-y-2.5 bg-blue-50/60 p-4 rounded-xl border border-blue-100">
+                    <h5 className="font-bold text-slate-900 text-sm text-blue-950">2. 구글 애드센스(Google AdSense) 및 제3자 광고 쿠키 안내</h5>
+                    <p className="leading-relaxed text-slate-800">
+                      하우징허브는 Google 등의 제3자 광고 사업자를 통해 웹사이트에 광고를 게재합니다.
+                    </p>
+                    <ul className="list-disc pl-5 text-slate-700 space-y-1.5 font-sans mt-1">
+                      <li>Google을 포함한 제3자 공급업체는 쿠키를 사용하여 사용자의 이전 방문 기록(본 웹사이트 또는 타 웹사이트)을 기반으로 맞춤형 광고를 게재합니다.</li>
+                      <li>Google의 광고 쿠키 사용으로 인해 Google 및 파트너는 사용자의 본 사이트 및 기타 인터넷 사이트 방문 기록을 바탕으로 적절한 광고를 게재할 수 있습니다.</li>
+                      <li>사용자는 <strong><a href="https://adssettings.google.com/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline font-semibold">Google 광고 설정</a></strong>에서 개인 맞춤 광고를 언제든지 사용 중지(Opt-out)할 수 있습니다.</li>
+                    </ul>
+                  </section>
+
+                  <section className="space-y-2.5">
+                    <h5 className="font-bold text-slate-900 text-sm">3. 쿠키(Cookie) 운용 및 거부 방법</h5>
+                    <p className="leading-relaxed">
+                      사용자는 웹 브라우저의 옵션을 조정하여 모든 쿠키의 저장을 허용하거나, 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다.
+                    </p>
+                    <p className="text-xs text-slate-500">
+                      * 설정 방법: 웹 브라우저 상단 도구 &gt; 설정 &gt; 개인정보 및 보안 &gt; 쿠키 및 기타 사이트 데이터에서 차단 또는 삭제 가능 (단, 쿠키 저장을 거부할 경우 일부 서비스 기능 이용에 제한이 따를 수 있습니다.)
                     </p>
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">2. 쿠키(Cookie) 안내</h5>
-                    <p className="leading-relaxed">
-                      본 사이트는 원활한 서비스 제공 및 방문 통계 확인을 위해 쿠키를 활용할 수 있습니다. 방문자는 브라우저 설정을 통해 언제든지 쿠키 저장을 거부하거나 삭제할 수 있습니다.
-                    </p>
-                  </section>
-
-                  <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">3. 쿠키 설정 및 거부 방법</h5>
-                    <p className="leading-relaxed">
-                      사용자는 웹 브라우저 옵션을 설정하여 모든 쿠키를 허용하거나, 쿠키가 저장될 때마다 확인을 거치거나, 모든 쿠키의 저장을 거부할 수 있습니다. (Internet Explorer, Chrome, Safari, Edge 등 브라우저 상단 설정 &gt; 개인정보 보호 메뉴에서 변경 가능)
-                    </p>
-                  </section>
-
-                  <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 문의</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 문의처</h5>
                     <p className="leading-relaxed">
                       운영 주체: 상상아트 (사업자등록번호: 272-14-01256)<br />
-                      공식 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong><br />
-                      사업장 소재지: 대한민국 서울특별시
+                      책임 관리자: 박 실장 (Lead Editor)<br />
+                      공식 문의 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong><br />
+                      소재지: 대한민국 서울특별시
                     </p>
                   </section>
                 </div>
