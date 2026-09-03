@@ -783,6 +783,88 @@ app.post("/api/admin/regenerate-schedule", (req, res) => {
   }
 });
 
+// API 1.8: 구글 서치콘솔 및 검색엔진 색인 자동 삭제(De-indexing) 백단 자동 처리
+// 삭제되거나 만료된 포스트 URL 요청 시 백엔드에서 HTTP 410 Gone + X-Robots-Tag: noindex를 자동 반환하며
+// IndexNow에 즉시 전송하여 구글 서치콘솔 및 검색엔진에서 색인이 자동으로 삭제되도록 처리합니다.
+const deletedPostsFilePath = path.join(process.cwd(), "src", "data", "deleted-posts.json");
+
+function loadDeletedPosts(): any[] {
+  try {
+    if (fs.existsSync(deletedPostsFilePath)) {
+      const data = fs.readFileSync(deletedPostsFilePath, "utf-8");
+      return JSON.parse(data) || [];
+    }
+  } catch (err) {
+    console.error("Deleted posts load error:", err);
+  }
+  return [];
+}
+
+function saveDeletedPosts(list: any[]) {
+  try {
+    const dir = path.dirname(deletedPostsFilePath);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+    fs.writeFileSync(deletedPostsFilePath, JSON.stringify(list, null, 2), "utf-8");
+  } catch (err) {
+    console.error("Deleted posts save error:", err);
+  }
+}
+
+app.get("/api/deindex", (req, res) => {
+  const list = loadDeletedPosts();
+  res.json({
+    status: "ok",
+    deletedCount: list.length,
+    deletedPosts: list,
+    policy: "HTTP 410 Gone + X-Robots-Tag: noindex, nofollow, noarchive (백단 자동 색인 삭제)"
+  });
+});
+
+app.post("/api/deindex", async (req, res) => {
+  try {
+    const { slug, reason } = req.body || {};
+    if (!slug) {
+      return res.status(400).json({ error: "slug is required" });
+    }
+    const cleanSlug = String(slug).trim().toLowerCase().replace(/^\/post\//, "").replace(/\/$/, "");
+    const list = loadDeletedPosts();
+    const existing = list.find((item: any) => item.slug === cleanSlug);
+    if (!existing) {
+      list.push({
+        slug: cleanSlug,
+        deletedAt: new Date().toISOString(),
+        reason: reason || "Auto de-indexed by user or admin request"
+      });
+      saveDeletedPosts(list);
+    }
+
+    // IndexNow를 통해 검색엔진에 즉시 삭제 및 변경 신호 자동 발송
+    const targetUrl = `https://zip9.kr/post/${encodeURIComponent(cleanSlug)}`;
+    fetch("https://api.indexnow.org/indexnow", {
+      method: "POST",
+      headers: { "Content-Type": "application/json; charset=utf-8" },
+      body: JSON.stringify({
+        host: "zip9.kr",
+        key: "7065c4d36d9ee7471f10e55dd6f4a4bd",
+        keyLocation: "https://zip9.kr/7065c4d36d9ee7471f10e55dd6f4a4bd.txt",
+        urlList: [targetUrl]
+      })
+    }).catch(() => {});
+
+    res.json({
+      status: "success",
+      statusCode: 410,
+      slug: cleanSlug,
+      url: targetUrl,
+      message: "구글 서치콘솔 및 크롤러 대상 HTTP 410 Gone + noindex 자동 설정 완료"
+    });
+  } catch (err: any) {
+    res.status(500).json({ error: err.message || "Failed to process de-indexing" });
+  }
+});
+
 // API 2: 실시간 주거 컨설턴트 챗봇 (Gemini API 기반)
 app.post("/api/advisor", async (req, res) => {
   const { message, chatHistory = [], activePostId = null } = req.body;
@@ -1154,7 +1236,8 @@ function replaceOrInjectMetaTags(
   canonicalUrl: string,
   ogType = "website",
   ogImage = "",
-  keywords = ""
+  keywords = "",
+  robots = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1"
 ): string {
   let updatedHtml = html;
 
@@ -1163,6 +1246,13 @@ function replaceOrInjectMetaTags(
     updatedHtml = updatedHtml.replace(/<title>[\s\S]*?<\/title>/i, `<title>${title}</title>`);
   } else {
     updatedHtml = updatedHtml.replace("</head>", `  <title>${title}</title>\n</head>`);
+  }
+
+  // Robots 태그 치환 또는 삽입 (410/404 시 noindex, nofollow, noarchive)
+  if (updatedHtml.match(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i)) {
+    updatedHtml = updatedHtml.replace(/<meta\s+name="robots"\s+content="[^"]*"\s*\/?>/i, `<meta name="robots" content="${robots}" />`);
+  } else {
+    updatedHtml = updatedHtml.replace("</head>", `  <meta name="robots" content="${robots}" />\n</head>`);
   }
 
   // Description 치환
@@ -1315,7 +1405,8 @@ async function startServer() {
         ssrProps.meta.canonical,
         ssrProps.meta.ogType,
         ssrProps.meta.ogImage,
-        ssrProps.meta.keywords.join(", ")
+        ssrProps.meta.keywords.join(", "),
+        ssrProps.meta.robots
       );
 
       // 2. JSON-LD 스키마 주입
@@ -1337,7 +1428,15 @@ async function startServer() {
       }
 
       res.setHeader("Content-Type", "text/html; charset=utf-8");
-      return res.send(html);
+      if (ssrProps.statusCode === 410 || ssrProps.pageType === "410") {
+        res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
+        return res.status(410).send(html);
+      }
+      if (ssrProps.statusCode === 404 || ssrProps.pageType === "404") {
+        res.setHeader("X-Robots-Tag", "noindex, nofollow, noarchive");
+        return res.status(404).send(html);
+      }
+      return res.status(ssrProps.statusCode || 200).send(html);
     } catch (err) {
       console.error("HTML 렌더링 서빙 오류:", err);
       return res.status(500).send("서버 서빙 오류가 발생했습니다.");

@@ -306,10 +306,18 @@ function sanitizePostAuthor(p: Post): Post {
   };
 }
 
-// 6월 1일부터 8월 31일(현재)까지 1일 2포스팅 기준 날짜 목록 생성 (총 32일 분배)
+// 6월 1일부터 현재 날짜(오늘, KST 기준)까지 1일 2포스팅 기준 날짜 목록 동적 생성 (총 32일 분배)
 const START_DATE = new Date("2026-06-01T00:00:00Z");
-const END_DATE = new Date("2026-08-31T00:00:00Z");
-const TOTAL_SPAN_DAYS = Math.round((END_DATE.getTime() - START_DATE.getTime()) / (1000 * 60 * 60 * 24)); // 91일
+
+// 현재 한국 시간(KST, UTC+9) 기준 당일 날짜 동적 산출
+const nowKst = new Date(Date.now() + 9 * 60 * 60 * 1000);
+const todayYyyy = nowKst.getUTCFullYear();
+const todayMm = String(nowKst.getUTCMonth() + 1).padStart(2, "0");
+const todayDd = String(nowKst.getUTCDate()).padStart(2, "0");
+const TODAY_KST_STR = `${todayYyyy}-${todayMm}-${todayDd}`;
+const END_DATE = new Date(`${TODAY_KST_STR}T00:00:00Z`);
+
+const TOTAL_SPAN_DAYS = Math.max(1, Math.round((END_DATE.getTime() - START_DATE.getTime()) / (1000 * 60 * 60 * 24)));
 const TOTAL_PUBLISHING_DAYS = Math.ceil(RAW_POSTS.length / 2); // 32일
 
 const PUBLISHING_DATES: string[] = [];
@@ -323,7 +331,7 @@ for (let i = 0; i < TOTAL_PUBLISHING_DAYS; i++) {
   PUBLISHING_DATES.push(`${yyyy}-${mm}-${dd}`);
 }
 
-// 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용 (6월 1일 ~ 8월 31일 1일 2포스팅, 8시간 이상 간격)
+// 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용 (6월 1일 ~ 현재날짜 1일 2포스팅, 8시간 이상 간격)
 export const POSTS: Post[] = RAW_POSTS.map((p, idx) => {
   const sanitized = sanitizePostAuthor(p);
   const enriched = enrichPostContent(sanitized);
@@ -361,9 +369,16 @@ export const POSTS: Post[] = RAW_POSTS.map((p, idx) => {
   enriched.date = assignedDate;
   enriched.time = `${hh}:${mm}:${ss}`;
 
+  // 본문 내 하드코딩된 업데이트/발행일 정합성 동기화 (검증 스크립트 및 SEO 날짜 일치)
+  if (enriched.content) {
+    enriched.content = enriched.content
+      .replace(/최종 업데이트:\s*\d{4}-\d{2}-\d{2}/g, `최종 업데이트: ${assignedDate}`)
+      .replace(/발행일:\s*\d{4}-\d{2}-\d{2}/g, `발행일: ${assignedDate}`);
+  }
+
   return enriched;
 }).sort((a, b) => {
-  // 최신 발행분(8월 31일)부터 역순 정렬
+  // 최신 발행분(현재날짜)부터 역순 정렬
   const dateA = `${a.date || ""} ${a.time || "00:00:00"}`;
   const dateB = `${b.date || ""} ${b.time || "00:00:00"}`;
   return dateB.localeCompare(dateA);

@@ -9,6 +9,7 @@ export interface ServerSideMeta {
   ogType: string;
   ogImage: string;
   keywords: string[];
+  robots?: string;
 }
 
 export interface BreadcrumbItem {
@@ -17,7 +18,8 @@ export interface BreadcrumbItem {
 }
 
 export interface ServerSideProps {
-  pageType: "home" | "post" | "category" | "subpage" | "toolkit" | "404";
+  pageType: "home" | "post" | "category" | "subpage" | "toolkit" | "404" | "410";
+  statusCode?: number;
   post: Post | null;
   category: string | null;
   subpage: string | null;
@@ -237,6 +239,63 @@ export function getServerSideProps(
       initialState: {
         selectedCategory: targetPost.category,
         activePostId: targetPost.id,
+        activeLegalTab: null,
+        showDiagnosticPage: false
+      }
+    };
+  }
+
+  // 1.5. Deleted or Non-existent Post Handling (/post/:slug 요청 중 게시글이 없는 경우)
+  // 구글 서치콘솔 및 크롤러 색인 자동 삭제(De-indexing) 지원: HTTP 410 Gone / 404 Not Found 및 noindex 반환
+  if (cleanPath.startsWith("/post/")) {
+    const rawSlug = decodeURIComponent(cleanPath.replace(/^\/post\//, "").replace(/\/$/, ""));
+    const pageUrl = `${baseUrl}/post/${encodeURIComponent(rawSlug)}`;
+    const htmlBody = `
+      <section class="max-w-3xl mx-auto py-16 px-4 text-center font-sans">
+        <div class="w-16 h-16 mx-auto mb-6 rounded-2xl bg-amber-50 text-amber-600 flex items-center justify-center font-extrabold text-2xl">
+          !
+        </div>
+        <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mb-3">삭제되었거나 변경된 주거 가이드입니다</h1>
+        <p class="text-sm sm:text-base text-slate-600 mb-6 leading-relaxed">
+          요청하신 게시글은 주거 정책 개정 및 최신 실무 가이드 통합으로 인해 영구 삭제(410 Gone)되었거나 주소가 변경되었습니다.<br/>
+          하우징허브 메인 홈에서 2026년 최신 주택청약·전월세안심·주택금융 가이드를 확인해보세요.
+        </p>
+        <div class="flex justify-center gap-3">
+          <a href="/" class="px-5 py-2.5 bg-blue-600 text-white text-sm font-bold rounded-xl shadow hover:bg-blue-700 transition-colors">
+            하우징허브 홈 바로가기
+          </a>
+          <a href="/category/청약-분양" class="px-5 py-2.5 bg-slate-100 text-slate-800 text-sm font-semibold rounded-xl hover:bg-slate-200 transition-colors">
+            최신 청약 가이드 보기
+          </a>
+        </div>
+      </section>
+    `;
+
+    return {
+      pageType: "410",
+      statusCode: 410,
+      post: null,
+      category: null,
+      subpage: null,
+      meta: {
+        title: `삭제된 게시글 안내 (410 Gone) | ${SITE_NAME}`,
+        description: "요청하신 게시글은 주거 정책 개정 및 최신 실무 가이드 통합으로 인해 영구 삭제되었습니다.",
+        canonical: pageUrl,
+        ogType: "website",
+        ogImage: DEFAULT_OG_IMAGE,
+        keywords: ["삭제된페이지", "하우징허브"],
+        robots: "noindex, nofollow, noarchive"
+      },
+      breadcrumbs: [
+        { name: "홈", url: `${baseUrl}/` },
+        { name: "삭제된 안내", url: pageUrl }
+      ],
+      jsonLd: null,
+      htmlBody,
+      initialPosts: posts,
+      initialState: {
+        selectedCategory: "전체",
+        activePostId: null,
         activeLegalTab: null,
         showDiagnosticPage: false
       }
