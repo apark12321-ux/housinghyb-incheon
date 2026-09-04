@@ -15,7 +15,7 @@ interface GuideReaderProps {
   onBack: () => void;
   bookmarks: string[];
   onToggleBookmark: (id: string, e?: React.MouseEvent) => void;
-  onContactClick: () => void;
+  onContactClick?: () => void;
   showToast: (msg: string, type?: "success" | "info" | "error") => void;
 }
 
@@ -24,7 +24,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
   onBack,
   bookmarks,
   onToggleBookmark,
-  onContactClick,
   showToast
 }) => {
   const contentRef = useRef<HTMLDivElement>(null);
@@ -231,12 +230,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
                       </p>
                     </div>
                   </div>
-                  <button
-                    onClick={onContactClick}
-                    className="px-4 py-2 bg-white hover:bg-slate-100 text-slate-800 text-xs font-bold rounded-xl border border-slate-200 transition-all cursor-pointer shrink-0 shadow-2xs"
-                  >
-                    1:1 문의 및 의견 제안
-                  </button>
                 </div>
                 <div className="pt-3 border-t border-slate-200/70 text-xs text-slate-600 flex items-center gap-2">
                   <ShieldCheck className="w-4 h-4 text-blue-600 shrink-0" />

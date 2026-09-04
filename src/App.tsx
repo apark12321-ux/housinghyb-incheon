@@ -157,8 +157,10 @@ export default function App() {
   });
 
   // --- 법률 및 애드센스 정책 안심 확보 상태 (인라인 페이지화) ---
-  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "contact" | "about" | null>(() => {
-    return initialData?.initialState?.activeLegalTab || null;
+  const [activeLegalTab, setActiveLegalTab] = useState<"privacy" | "terms" | "disclaimer" | "about" | null>(() => {
+    const tab = initialData?.initialState?.activeLegalTab;
+    if (tab === "contact") return null;
+    return tab || null;
   });
 
   // URL에서 초기 /post/xxx 혹은 ?post=xxx 혹은 서브페이지(/toolkit, /privacy, /terms 등)를 읽어 세팅 및 popstate 감지
@@ -194,9 +196,10 @@ export default function App() {
         setActivePost(null);
         return;
       } else if (pathname === "/contact" || pathname === "/partnership") {
-        setActiveLegalTab("contact");
+        setActiveLegalTab(null);
         setShowDiagnosticPage(false);
         setActivePost(null);
+        window.history.replaceState(null, "", "/");
         return;
       } else {
         // Reset subpages states if navigating back to home
@@ -281,15 +284,13 @@ export default function App() {
         document.title = "정보이용 면책고지 | 하우징허브";
       } else if (activeLegalTab === "about") {
         document.title = "소개 및 콘텐츠 신뢰 선언 | 하우징허브";
-      } else if (activeLegalTab === "contact") {
-        document.title = "1:1 안심 상담 및 문의 | 하우징허브";
       }
       updateMetaKeywords([
         "하우징허브", "개인정보처리방침", "이용약관", "면책고지", "콘텐츠운영원칙",
-        "주거정책리포트", "무주택실수요자", "안심주거포털", "주택정보검증", "고객문의"
+        "주거정책리포트", "무주택실수요자", "안심주거포털", "주택정보검증"
       ]);
     } else {
-      const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/contact", "/partnership", "/about"];
+      const subpages = ["/toolkit", "/privacy", "/terms", "/disclaimer", "/about"];
       const isSubpage = subpages.includes(pathname) || pathname.startsWith("/post/");
       if (isSubpage) {
         window.history.pushState(null, "", "/");
@@ -320,50 +321,6 @@ export default function App() {
       setToast(null);
       toastTimeoutRef.current = null;
     }, 4500);
-  };
-
-  const [contactName, setContactName] = useState<string>("");
-  const [contactEmail, setContactEmail] = useState<string>("");
-  const [contactCategory, setContactCategory] = useState<string>("general");
-  const [contactMessage, setContactMessage] = useState<string>("");
-  const [isContactLoading, setIsContactLoading] = useState<boolean>(false);
-  const [isContactSubmitted, setIsContactSubmitted] = useState<boolean>(false);
-  const [contactResultId, setContactResultId] = useState<string | null>(null);
-
-  const handleContactSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!contactName.trim() || !contactEmail.trim() || !contactMessage.trim()) {
-      showToast("이름, 이메일, 그리고 상세 의견 기재는 필수 항목입니다.", "error");
-      return;
-    }
-    setIsContactLoading(true);
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: contactName,
-          email: contactEmail,
-          category: contactCategory,
-          message: contactMessage
-        })
-      });
-      if (!response.ok) throw new Error("서버 접수 에러");
-      const data = await response.json();
-      if (data.status === "success") {
-        setIsContactSubmitted(true);
-        setContactResultId(data.referenceId);
-        // 입력값 리셋
-        setContactName("");
-        setContactEmail("");
-        setContactMessage("");
-      }
-    } catch (err) {
-      console.error(err);
-      showToast("전송 중 네트워크 일시 혼선이 발생했습니다. 다시 접수해 주세요.", "error");
-    } finally {
-      setIsContactLoading(false);
-    }
   };
 
   // --- 대출 계산기 상태 변수 ---
@@ -661,13 +618,6 @@ export default function App() {
             >
               개인정보처리방침
             </button>
-            <span className="text-slate-600">|</span>
-            <button 
-              onClick={() => { setActivePost(null); setActiveLegalTab("contact"); setIsContactSubmitted(false); }}
-              className="text-slate-300 hover:text-white transition-colors cursor-pointer"
-            >
-              1:1 문의·제보
-            </button>
           </div>
         </div>
       </div>
@@ -811,11 +761,6 @@ export default function App() {
             onBack={() => setActivePost(null)}
             bookmarks={bookmarks}
             onToggleBookmark={toggleBookmark}
-            onContactClick={() => {
-              setActivePost(null);
-              setActiveLegalTab("contact");
-              setIsContactSubmitted(false);
-            }}
             showToast={showToast}
           />
         ) : showDiagnosticPage ? (
@@ -1166,7 +1111,7 @@ export default function App() {
             {/* 탭 네비게이터 */}
             <div className="flex bg-slate-100 p-1 border-b border-slate-200 overflow-x-auto">
               <button
-                onClick={() => { setActiveLegalTab("about"); setIsContactSubmitted(false); }}
+                onClick={() => { setActiveLegalTab("about"); }}
                 className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg ${
                   activeLegalTab === "about" 
                     ? "bg-white text-blue-600 shadow-xs" 
@@ -1176,7 +1121,7 @@ export default function App() {
                 🏠 서비스 소개
               </button>
               <button
-                onClick={() => { setActiveLegalTab("privacy"); setIsContactSubmitted(false); }}
+                onClick={() => { setActiveLegalTab("privacy"); }}
                 className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg ${
                   activeLegalTab === "privacy" 
                     ? "bg-white text-blue-600 shadow-xs" 
@@ -1186,7 +1131,7 @@ export default function App() {
                 🛡️ 개인정보처리방침
               </button>
               <button
-                onClick={() => { setActiveLegalTab("terms"); setIsContactSubmitted(false); }}
+                onClick={() => { setActiveLegalTab("terms"); }}
                 className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg ${
                   activeLegalTab === "terms" 
                     ? "bg-white text-blue-600 shadow-xs" 
@@ -1196,7 +1141,7 @@ export default function App() {
                 📄 이용약관
               </button>
               <button
-                onClick={() => { setActiveLegalTab("disclaimer"); setIsContactSubmitted(false); }}
+                onClick={() => { setActiveLegalTab("disclaimer"); }}
                 className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg ${
                   activeLegalTab === "disclaimer" 
                     ? "bg-white text-blue-600 shadow-xs" 
@@ -1204,16 +1149,6 @@ export default function App() {
                 }`}
               >
                 ⚖️ 면책고지
-              </button>
-              <button
-                onClick={() => { setActiveLegalTab("contact"); setIsContactSubmitted(false); }}
-                className={`flex-1 min-w-[120px] py-3 text-center text-xs font-bold transition-all rounded-lg flex items-center justify-center space-x-1.5 ${
-                  activeLegalTab === "contact" 
-                    ? "bg-white text-blue-600 shadow-xs" 
-                    : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
-                }`}
-              >
-                ✉️ 1:1 문의
               </button>
             </div>
 
@@ -1316,14 +1251,14 @@ export default function App() {
                     </div>
                   </section>
 
-                  {/* 문의 및 피드백 */}
+                  {/* 운영 안내 */}
                   <section className="space-y-2 border-t border-slate-200 pt-5">
-                    <h5 className="font-bold text-slate-900 text-sm">운영 정보 및 문의처</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">운영 정보 안내</h5>
                     <p className="leading-relaxed text-xs text-slate-600">
-                      하우징허브는 <strong>상상아트 (사업자등록번호: 272-14-01256)</strong>에서 책임 운영합니다. 콘텐츠에 대한 오류 제보, 주거 현장 질문, 제휴 문의는 언제든지 열려 있습니다.
+                      하우징허브는 <strong>상상아트 (사업자등록번호: 272-14-01256)</strong>에서 책임 운영합니다. 콘텐츠에 대한 오류 제보, 주거 정책 관련 안내는 공식 채널을 통해 확인하실 수 있습니다.
                     </p>
                     <p className="text-xs text-slate-600">
-                      공식 문의 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong> (영업일 기준 24시간 이내 회신)
+                      공식 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong>
                     </p>
                   </section>
                 </div>
@@ -1366,11 +1301,11 @@ export default function App() {
                   </section>
 
                   <section className="space-y-2.5">
-                    <h5 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 문의처</h5>
+                    <h5 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 안내</h5>
                     <p className="leading-relaxed">
                       운영 주체: 상상아트 (사업자등록번호: 272-14-01256)<br />
                       책임 관리자: 박 실장 (Lead Editor)<br />
-                      공식 문의 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong><br />
+                      공식 이메일: <strong className="text-slate-900 font-mono">apark12321@gmail.com</strong><br />
                       소재지: 대한민국 서울특별시
                     </p>
                   </section>
@@ -1446,110 +1381,6 @@ export default function App() {
                       실시간 주거 상담에서 제공하는 답변은 일반적인 제도 및 공고 요건 안내 목적이며, 개별적인 특수 상황이나 복잡한 사안의 경우 최종 판단 전 전문 금융 창구나 법률 전문가와의 대면 상담을 권장합니다.
                     </p>
                   </section>
-                </div>
-              )}
-
-              {activeLegalTab === "contact" && (
-                <div className="space-y-6 text-left">
-                  <div className="border-b border-slate-200 pb-4">
-                    <h4 className="text-base font-bold text-slate-900">1:1 문의 및 제안 센터</h4>
-                    <p className="text-xs text-slate-500 mt-1">서비스 관련 개선 제안이나 정보 오류 제보, 문의사항을 남겨주시면 신속히 답변해 드립니다.</p>
-                  </div>
-
-                  {isContactSubmitted ? (
-                    <div className="bg-green-50 rounded-2xl p-6 border border-green-200 text-center space-y-4 max-w-lg mx-auto">
-                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto text-green-700">
-                        <CheckCircle2 className="w-6 h-6 animate-bounce" />
-                      </div>
-                      <h5 className="text-base font-bold text-slate-900">문의 접수 완료</h5>
-                      <div className="text-xs text-slate-600 leading-relaxed space-y-2 mx-auto max-w-xs">
-                        <p>문의사항이 정상적으로 접수되었습니다.</p>
-                        <div className="bg-white border border-green-100 px-3 py-1.5 rounded-lg font-mono font-bold text-green-700">
-                          접수 번호: {contactResultId}
-                        </div>
-                        <p>입력해주신 이메일로 신속히 회신드리겠습니다.</p>
-                      </div>
-                      <button 
-                        onClick={() => { setIsContactSubmitted(false); }}
-                        className="bg-slate-900 text-white font-medium px-4 py-2 rounded-xl text-xs hover:bg-slate-800 transition-all cursor-pointer"
-                      >
-                        새 문의 작성하기
-                      </button>
-                    </div>
-                  ) : (
-                    <form onSubmit={handleContactSubmit} className="space-y-4 max-w-2xl mx-auto">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-1">
-                          <label className="text-xs font-bold text-slate-700 block">이름</label>
-                          <input 
-                            type="text" 
-                            required
-                            value={contactName}
-                            onChange={(e) => setContactName(e.target.value)}
-                            placeholder="예: 홍길동"
-                            className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
-                          />
-                        </div>
-
-                        <div className="space-y-1">
-                          <label className="text-xs font-bold text-slate-700 block">이메일 주소</label>
-                          <input 
-                            type="email" 
-                            required
-                            value={contactEmail}
-                            onChange={(e) => setContactEmail(e.target.value)}
-                            placeholder="example@mail.com"
-                            className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none"
-                          />
-                        </div>
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="text-xs font-bold text-slate-700 block">문의 유형</label>
-                        <select
-                          value={contactCategory}
-                          onChange={(e) => setContactCategory(e.target.value)}
-                          className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:outline-none font-medium text-slate-700"
-                        >
-                          <option value="general">서비스 제안 및 오류 제보</option>
-                          <option value="financial">계산기 및 수치 관련 문의</option>
-                          <option value="alli">광고 및 제휴 문의</option>
-                        </select>
-                      </div>
-
-                      <div className="space-y-1">
-                        <label className="text-xs font-bold text-slate-700 block">문의 내용</label>
-                        <textarea 
-                          required
-                          rows={4}
-                          value={contactMessage}
-                          onChange={(e) => setContactMessage(e.target.value)}
-                          placeholder="문의하실 내용을 입력해 주세요."
-                          className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs focus:ring-1 focus:ring-blue-500 focus:outline-none leading-relaxed"
-                        />
-                      </div>
-
-                      <div className="pt-2">
-                        <button 
-                          type="submit"
-                          disabled={isContactLoading}
-                          className="bg-blue-600 hover:bg-blue-500 text-white font-bold text-xs px-5 py-3 rounded-xl transition-all shadow-md focus:outline-none flex items-center space-x-2 cursor-pointer"
-                        >
-                          {isContactLoading ? (
-                            <>
-                              <RefreshCcw className="w-3.5 h-3.5 animate-spin" />
-                              <span>제출 중...</span>
-                            </>
-                          ) : (
-                            <>
-                              <Send className="w-3.5 h-3.5" />
-                              <span>문의하기</span>
-                            </>
-                          )}
-                        </button>
-                      </div>
-                    </form>
-                  )}
                 </div>
               )}
             </div>
@@ -2268,7 +2099,7 @@ export default function App() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 text-xs text-slate-400 font-medium">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 text-xs text-slate-400 font-medium">
               <div className="space-y-2">
                 <span className="text-white font-semibold flex items-center space-x-1">
                   <span>공식 권장 링크</span>
@@ -2332,20 +2163,6 @@ export default function App() {
                       className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none"
                     >
                       정보이용 면책고지
-                    </button>
-                  </li>
-                </ul>
-              </div>
-              <div className="space-y-2">
-                <span className="text-white font-semibold">블로거 소통 창구</span>
-                <ul className="space-y-1.5">
-                  <li>
-                    <button 
-                      onClick={() => { setActivePost(null); setActiveLegalTab("contact"); setIsContactSubmitted(false); }}
-                      className="hover:text-blue-400 transition-colors cursor-pointer text-left focus:outline-none flex items-center space-x-1"
-                    >
-                      <span>1:1 문의·수정 제보</span>
-                      <span className="w-1.5 h-1.5 bg-emerald-400 rounded-full animate-ping" />
                     </button>
                   </li>
                 </ul>

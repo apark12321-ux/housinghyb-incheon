@@ -1147,23 +1147,6 @@ app.post("/api/generate", async (req, res) => {
   }
 });
 
-// API 4: 사용자의 주거 복지 및 건의 사항 1:1 접수 처리 (구글 애드센스 규정 충족용 실제 검증 API)
-app.post("/api/contact", async (req, res) => {
-  const { name, email, category, message } = req.body;
-  if (!name || !email || !message) {
-    return res.status(400).json({ error: "이름, 이메일, 그리고 문의내용은 필수 항목입니다." });
-  }
-
-  console.log(`[하우징허브 문의 접수] 분류: ${category} | 성함: ${name} | 이메일: ${email}`);
-  console.log(`[문의내용]: ${message}`);
-
-  return res.json({
-    status: "success",
-    message: "귀하의 소중한 건의 및 문의사항이 안전하게 접수되었습니다. 확인 후 기재해주신 이메일로 성실히 답변을 전송해 드리겠습니다.",
-    referenceId: `HH-2026-${Math.floor(100000 + Math.random() * 900000)}`
-  });
-});
-
 function slugify(title: string): string {
   if (!title) return "";
   return title

@@ -579,8 +579,8 @@ function main() {
           <h2>데이터 출처 및 검증 체계</h2>
           <p>국토교통부, 한국부동산원 청약홈, 주택도시기금(HUG), 한국주택금융공사(HF), LH 등 공공 기관의 공식 배포 공고문 및 개정 시행령을 교차 대조하여 작성됩니다.</p>
 
-          <h2>문의 및 제안</h2>
-          <p>콘텐츠 문의 및 제보는 공식 이메일(apark12321@gmail.com)로 접수해 주시면 신속하게 검토 후 반영하겠습니다.</p>
+          <h2>운영 안내</h2>
+          <p>콘텐츠에 관한 정보는 공식 이메일(apark12321@gmail.com)을 통해 확인하실 수 있습니다.</p>
         </div>`
       ),
     },
@@ -592,7 +592,7 @@ function main() {
       body: buildStaticPageBody(
         "개인정보처리방침 (Privacy Policy)",
         `<div class="privacy-container leading-relaxed space-y-4">
-          <p><strong>발행처:</strong> 상상아트 (하우징허브 HousingHub) | <strong>책임 관리자:</strong> 박 실장 | <strong>문의:</strong> apark12321@gmail.com</p>
+          <p><strong>발행처:</strong> 상상아트 (하우징허브 HousingHub) | <strong>책임 관리자:</strong> 박 실장 | <strong>공식 이메일:</strong> apark12321@gmail.com</p>
           
           <h3>1. 수집하는 개인정보 항목 및 이용 목적</h3>
           <p>${SITE_NAME}(https://zip9.kr)는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 열린 포털입니다. 서비스 개선 및 사이트 이용 통계 확인을 위해 브라우저 접속 기록(쿠키 등)이 생성될 수 있습니다.</p>
@@ -608,8 +608,8 @@ function main() {
           <h3>3. 쿠키 설정 및 거부 방법</h3>
           <p>사용자는 웹 브라우저 설정을 통해 쿠키 허용 여부를 지정하거나 저장을 거부할 수 있습니다.</p>
 
-          <h3>4. 문의 창구</h3>
-          <p>사이트 이용과 관련된 문의나 제안은 공식 이메일(apark12321@gmail.com)로 접수해 주시면 신속히 확인하여 답변드리겠습니다.</p>
+          <h3>4. 개인정보 보호책임자 및 안내</h3>
+          <p>개인정보 처리 및 보호와 관련한 안내 사항은 공식 이메일(apark12321@gmail.com)을 통해 확인하실 수 있습니다.</p>
         </div>`
       ),
     },
@@ -631,26 +631,6 @@ function main() {
           <h3>제 3 조 (면책조항)</h3>
           <p>본 사이트의 모든 정보는 참고용 공익 정보이며, 개별 실제 부동산 계약이나 대출 실행 전 반드시 금융기관 및 공인중개사, 법률 전문가를 통해 최종 확인하시기 바랍니다.</p>
         </div>`
-      ),
-    },
-    {
-      path: "partnership/index.html",
-      title: `제휴 및 비즈니스 문의 | ${SITE_NAME}`,
-      desc: `${SITE_NAME}와 광고, 콘텐츠 협업, 파트너십 문의를 위한 안내 페이지입니다.`,
-      url: `${SITE_URL}/partnership`,
-      body: buildStaticPageBody(
-        "제휴 및 비즈니스 문의",
-        `<p>제휴, 광고, 콘텐츠 협업 문의는 apark12321@gmail.com으로 보내주시면 영업일 3일 이내 회신드립니다.</p>`
-      ),
-    },
-    {
-      path: "contact/index.html",
-      title: `문의 및 독자 제보 | ${SITE_NAME}`,
-      desc: `${SITE_NAME}에 전하는 주거 관련 문의 및 독자 의견 수렴 창구입니다.`,
-      url: `${SITE_URL}/contact`,
-      body: buildStaticPageBody(
-        "독자 제보 및 문의하기",
-        `<p>주거 관련 질문, 정정 요청, 제휴 제보는 공식 이메일 apark12321@gmail.com 또는 온라인 접수 창구를 이용해 주시기 바랍니다.</p>`
       ),
     },
     {

@@ -442,8 +442,8 @@ export function getServerSideProps(
     };
   }
 
-  // 4. Subpages (/about, /privacy, /terms, /disclaimer, /contact, /partnership, /announcement)
-  const legalSubpages: Record<string, { title: string; desc: string; legalTab: "about" | "privacy" | "terms" | "disclaimer" | "contact" }> = {
+  // 4. Subpages (/about, /privacy, /terms, /disclaimer, /announcement)
+  const legalSubpages: Record<string, { title: string; desc: string; legalTab: "about" | "privacy" | "terms" | "disclaimer" }> = {
     "/about": {
       title: `하우징허브 이야기와 운영 철학 (About Us) | ${SITE_NAME}`,
       desc: "부동산 금융 10년 차 기획자 박 실장의 1인칭 실전 경험과 공식 공고문 기준 심층 분석 원칙 소개입니다.",
@@ -463,16 +463,6 @@ export function getServerSideProps(
       title: `면책 조항 및 법적 고지 (Disclaimer) | ${SITE_NAME}`,
       desc: "하우징허브가 제공하는 콘텐츠의 정보 제공 목적 및 금융·계약 시 면책 사항 고지입니다.",
       legalTab: "disclaimer"
-    },
-    "/contact": {
-      title: `1:1 문의 및 독자 제보 (Contact Us) | ${SITE_NAME}`,
-      desc: "오류 수정 요청, 주거 실무 질문 및 공식 제휴 문의 창구입니다.",
-      legalTab: "contact"
-    },
-    "/partnership": {
-      title: `제휴 및 파트너십 문의 | ${SITE_NAME}`,
-      desc: "공인중개사, 금융사, 이사업체 등 안심 주거 생태계를 함께할 파트너십 문의입니다.",
-      legalTab: "contact"
     }
   };
 
@@ -509,7 +499,7 @@ export function getServerSideProps(
         canonical: pageUrl,
         ogType: "website",
         ogImage: DEFAULT_OG_IMAGE,
-        keywords: ["하우징허브", "운영원칙", "개인정보처리방침", "이용약관", "문의하기"]
+        keywords: ["하우징허브", "운영원칙", "개인정보처리방침", "이용약관"]
       },
       breadcrumbs: [
         { name: "홈", url: `${baseUrl}/` },
@@ -580,7 +570,6 @@ export function getServerSideProps(
           <a href="/privacy" class="hover:underline">개인정보처리방침</a>
           <a href="/terms" class="hover:underline">이용약관</a>
           <a href="/disclaimer" class="hover:underline">면책고지</a>
-          <a href="/contact" class="hover:underline">문의하기</a>
         </div>
       </footer>
     </div>

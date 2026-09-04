@@ -60,8 +60,6 @@ function buildSitemap(posts) {
   urls.push({ loc: `${SITE_URL}/toolkit`, lastmod: today, changefreq: "weekly", priority: "0.9" });
   urls.push({ loc: `${SITE_URL}/about`, lastmod: today, changefreq: "monthly", priority: "0.6" });
   urls.push({ loc: `${SITE_URL}/announcement`, lastmod: today, changefreq: "weekly", priority: "0.5" });
-  urls.push({ loc: `${SITE_URL}/partnership`, lastmod: today, changefreq: "monthly", priority: "0.4" });
-  urls.push({ loc: `${SITE_URL}/contact`, lastmod: today, changefreq: "monthly", priority: "0.4" });
   urls.push({ loc: `${SITE_URL}/terms`, lastmod: today, changefreq: "yearly", priority: "0.3" });
   urls.push({ loc: `${SITE_URL}/privacy`, lastmod: today, changefreq: "yearly", priority: "0.3" });
   urls.push({ loc: `${SITE_URL}/disclaimer`, lastmod: today, changefreq: "yearly", priority: "0.3" });
