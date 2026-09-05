@@ -544,6 +544,16 @@ function main() {
   writeFile(indexPath, homeHtml);
   count++;
 
+  // ads.txt 및 robots.txt dist 복사 보장
+  const adsSrc = join(ROOT, "public", "ads.txt");
+  if (existsSync(adsSrc)) {
+    writeFile(join(DIST, "ads.txt"), readFileSync(adsSrc, "utf8"));
+  }
+  const robotsSrc = join(ROOT, "public", "robots.txt");
+  if (existsSync(robotsSrc)) {
+    writeFile(join(DIST, "robots.txt"), readFileSync(robotsSrc, "utf8"));
+  }
+
   // 2) 정적 페이지들
   const staticPages = [
     {
