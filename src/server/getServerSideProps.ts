@@ -37,9 +37,9 @@ export interface ServerSideProps {
 }
 
 const SITE_URL = "https://zip9.kr";
-const SITE_NAME = "하우징허브";
-const DEFAULT_TITLE = "하우징허브 (HousingHub) | 2026 실전 주택청약·전월세안심·주택금융 가이드";
-const DEFAULT_DESCRIPTION = "신혼부부와 무주택자를 위한 청약 공고문 실무 분석, 전월세 대항력 및 안전 계약 가이드, 디딤돌·버팀목 대출 분석 실무 지식 포털입니다.";
+const SITE_NAME = "하우징허브 블로그";
+const DEFAULT_TITLE = "하우징허브 블로그 | 2026 주택청약·전월세·부동산금융 실무 가이드";
+const DEFAULT_DESCRIPTION = "신혼부부와 무주택자를 위한 2026년 주택청약 공고문 실무 분석, 전월세 대항력 및 안전 계약 가이드, 디딤돌·버팀목 대출 분석 실무 블로그입니다.";
 const DEFAULT_OG_IMAGE = "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
 const CATEGORIES: Category[] = ["청약-분양", "전월세", "대출-금융", "이사-인테리어"];
 
@@ -161,7 +161,7 @@ export function getServerSideProps(
         },
         "publisher": {
           "@type": "Organization",
-          "name": "상상아트",
+          "name": "하우징허브 (HousingHub)",
           "alternateName": SITE_NAME,
           "url": baseUrl,
           "logo": { "@type": "ImageObject", "url": `${baseUrl}/icon.svg` }
@@ -210,7 +210,8 @@ export function getServerSideProps(
           ${sanitizeContent(targetPost.content)}
         </main>
         <footer class="mt-12 pt-6 border-t border-slate-200 text-xs text-slate-500">
-          <p>© 2026 하우징허브 (HousingHub) · 발행처: 상상아트 · 문의: apark12321@gmail.com</p>
+          <p>© 2026 하우징허브 블로그 (HousingHub) · 운영: 하우징허브 편집팀 · 문의: apark12321@gmail.com · 호스팅: Google Cloud</p>
+          <p class="mt-1 text-slate-400">본 블로그의 정보는 참고용 가이드이며, 실제 계약 및 대출 전 관계 기관의 공식 공고를 확인하시기 바랍니다.</p>
         </footer>
       </article>
     `;
@@ -479,10 +480,11 @@ export function getServerSideProps(
         </header>
         <main class="prose max-w-none text-slate-800 leading-relaxed text-sm sm:text-base">
           <p>${htmlEscape(pageInfo.desc)}</p>
-          <div class="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-xl">
-            <p><strong>운영 주체:</strong> 상상아트 (사업자등록번호: 272-14-01256)</p>
-            <p><strong>책임 관리자:</strong> 박 실장 (Lead Editor)</p>
+          <div class="mt-6 p-4 bg-slate-50 border border-slate-200 rounded-xl text-xs sm:text-sm">
+            <p><strong>블로그명:</strong> 하우징허브 (HousingHub)</p>
+            <p><strong>운영 주체:</strong> 하우징허브 편집팀</p>
             <p><strong>공식 이메일:</strong> apark12321@gmail.com</p>
+            <p><strong>호스팅:</strong> Google Cloud Platform</p>
           </div>
         </main>
       </section>
@@ -562,14 +564,14 @@ export function getServerSideProps(
       </main>
       <footer class="mt-16 pt-8 border-t border-slate-200 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div>
-          <p><strong>상상아트</strong> · 사업자등록번호: 272-14-01256 · 책임관리자: 박 실장</p>
-          <p>공식 이메일: apark12321@gmail.com · 소재지: 대한민국 서울특별시</p>
+          <p><strong>하우징허브 블로그</strong> · 운영: 하우징허브 편집팀 · 문의: apark12321@gmail.com · 호스팅: Google Cloud Platform</p>
+          <p class="mt-1 text-slate-400">본 블로그에서 제공하는 모든 주택청약 및 부동산 금융 정보는 참고용 가이드이며, 실제 신청 전 공식 공고를 확인하시기 바랍니다.</p>
         </div>
         <div class="flex gap-4">
-          <a href="/about" class="hover:underline">소개</a>
+          <a href="/about" class="hover:underline">블로그 소개</a>
           <a href="/privacy" class="hover:underline">개인정보처리방침</a>
           <a href="/terms" class="hover:underline">이용약관</a>
-          <a href="/disclaimer" class="hover:underline">면책고지</a>
+          <a href="/disclaimer" class="hover:underline">책임한계 및 법적고지</a>
         </div>
       </footer>
     </div>
@@ -603,7 +605,7 @@ export function getServerSideProps(
         {
           "@type": "Organization",
           "@id": `${baseUrl}/#organization`,
-          "name": "상상아트",
+          "name": "하우징허브 (HousingHub)",
           "alternateName": SITE_NAME,
           "url": baseUrl,
           "logo": `${baseUrl}/icon.svg`

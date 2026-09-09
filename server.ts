@@ -1435,12 +1435,23 @@ async function startServer() {
     // 라우터 처리 우선순위
     app.get("/", handleHtmlServing);
     app.get("/post/:id", handleHtmlServing);
+    app.get("/toolkit", handleHtmlServing);
+    app.get("/about", handleHtmlServing);
+    app.get("/privacy", handleHtmlServing);
+    app.get("/terms", handleHtmlServing);
+    app.get("/disclaimer", handleHtmlServing);
 
     app.use(viteInstance.middlewares);
+    app.get("*", handleHtmlServing);
   } else {
     // 운영용 라우터 처리 우선순위
     app.get("/", handleHtmlServing);
     app.get("/post/:id", handleHtmlServing);
+    app.get("/toolkit", handleHtmlServing);
+    app.get("/about", handleHtmlServing);
+    app.get("/privacy", handleHtmlServing);
+    app.get("/terms", handleHtmlServing);
+    app.get("/disclaimer", handleHtmlServing);
 
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath, { index: false })); // 자동 index.html 방지하여 메타 인젝터 오버라이드 유도

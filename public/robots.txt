@@ -1,11 +1,30 @@
-User-agent: Mediapartners-Google
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-Disallow: /api/
+# 하우징허브 (HousingHub) robots.txt
+# Site: https://zip9.kr
 
 User-agent: *
 Allow: /
 Disallow: /api/
+
+# Google AdSense 크롤러 명시 허용
+User-agent: Mediapartners-Google
+Allow: /
+
+# Google AdsBot
+User-agent: AdsBot-Google
+Allow: /
+
+# 일반 검색 봇
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yeti
+Allow: /
+
+User-agent: Daum
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://zip9.kr/sitemap.xml
+Sitemap: https://zip9.kr/rss.xml

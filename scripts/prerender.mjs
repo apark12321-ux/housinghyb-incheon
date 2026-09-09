@@ -452,7 +452,7 @@ function articleJsonLd(post) {
       },
       "publisher": {
         "@type": "Organization",
-        "name": "상상아트",
+        "name": "하우징허브 (HousingHub)",
         "alternateName": SITE_NAME,
         "url": SITE_URL,
         "logo": { "@type": "ImageObject", "url": `${SITE_URL}/icon.svg` }
@@ -559,11 +559,11 @@ function main() {
     {
       path: "toolkit/index.html",
       title: `스마트 주거 자가진단 툴킷 | ${SITE_NAME}`,
-      desc: `인천 임차인 및 내집마련 수요자를 위한 실시간 LTV/DSR 대출한도 모의계산 및 청약 가점(84점 만점) 판정 통합 진단기.`,
+      desc: `전국 무주택자 및 내집마련 수요자를 위한 실시간 LTV/DSR 대출한도 모의계산 및 청약 가점(84점 만점) 판정 통합 진단기.`,
       url: `${SITE_URL}/toolkit`,
       body: buildStaticPageBody(
         "하우징 통합 자가진단 툴킷",
-        `<p>하우징허브 인천 안심 자가진단 툴킷 페이지입니다. 본 진단기는 LTV, DSR 역산 공식을 결합한 대출 한도 모의 연산과 청약 가점(84점 만점)의 세부 지표 판정을 동시 실행하여 사용자의 안심 주거 계획 수립을 입체적으로 돕습니다.</p>`
+        `<p>하우징허브 스마트 주거 자가진단 툴킷 페이지입니다. 본 진단기는 LTV, DSR 역산 공식을 결합한 대출 한도 모의 연산과 청약 가점(84점 만점)의 세부 지표 판정을 동시 실행하여 사용자의 안심 주거 계획 수립을 입체적으로 돕습니다.</p>`
       ),
     },
     {
@@ -574,7 +574,7 @@ function main() {
       body: buildStaticPageBody(
         `하우징허브 이야기와 운영 철학 (E-E-A-T)`,
         `<div class="about-us-container">
-          <p><strong>하우징허브(HousingHub)</strong>는 신혼부부, 예비 청약자, 청년 및 무주택 실수요자를 위한 주거·청약·대출 정보 전문 미디어입니다. 본 포털은 <strong>상상아트(사업자등록번호: 272-14-01256)</strong>에서 운영합니다.</p>
+          <p><strong>하우징허브(HousingHub)</strong>는 신혼부부, 예비 청약자, 청년 및 무주택 실수요자를 위한 주거·청약·대출 정보 전문 블로그입니다. 본 블로그는 <strong>하우징허브 편집팀</strong>에서 운영합니다.</p>
           
           <h2>운영자 페르소나: 기획 총괄 박 실장</h2>
           <p>부동산 금융 데이터 분석 10년, 전월세 계약 및 청약·정책대출 현장 실무 800여 건을 직접 수행한 현장 실무자입니다. 복잡한 공고문 뒤에 숨은 함정과 현장 실패를 방지하기 위해 10년의 실무 경험과 피눈물 나는 시행착오를 있는 그대로 공유합니다.</p>
@@ -602,7 +602,7 @@ function main() {
       body: buildStaticPageBody(
         "개인정보처리방침 (Privacy Policy)",
         `<div class="privacy-container leading-relaxed space-y-4">
-          <p><strong>발행처:</strong> 상상아트 (하우징허브 HousingHub) | <strong>책임 관리자:</strong> 박 실장 | <strong>공식 이메일:</strong> apark12321@gmail.com</p>
+          <p><strong>블로그명:</strong> 하우징허브 (HousingHub) | <strong>운영:</strong> 하우징허브 편집팀 | <strong>공식 이메일:</strong> apark12321@gmail.com</p>
           
           <h3>1. 수집하는 개인정보 항목 및 이용 목적</h3>
           <p>${SITE_NAME}(https://zip9.kr)는 별도의 회원가입 없이 누구나 자유롭게 이용할 수 있는 열린 포털입니다. 서비스 개선 및 사이트 이용 통계 확인을 위해 브라우저 접속 기록(쿠키 등)이 생성될 수 있습니다.</p>

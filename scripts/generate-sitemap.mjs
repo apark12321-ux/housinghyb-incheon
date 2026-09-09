@@ -94,7 +94,7 @@ function buildSitemap(posts) {
 }
 
 function buildRobots() {
-  return `# 하우징허브 인천 robots.txt
+  return `# 하우징허브 (HousingHub) robots.txt
 # Site: ${SITE_URL}
 
 User-agent: *
