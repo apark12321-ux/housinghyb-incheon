@@ -20,7 +20,10 @@ import {
   Tag,
   CheckCircle2,
   Clock,
-  ArrowRight
+  ArrowRight,
+  Star,
+  Trophy,
+  HelpCircle
 } from "lucide-react";
 import { POSTS } from "./data/posts";
 import { Post, Category, slugify } from "./types";
@@ -321,9 +324,14 @@ export default function App() {
     return filteredPosts.slice(start, start + POSTS_PER_PAGE);
   }, [filteredPosts, currentPage]);
 
-  // 인기글 TOP 5
+  // ko.phongnhaexplorer.com 스타일 "가장 추천하는 핵심 가이드 (Favourite Guides)"
+  const favouritePosts = useMemo(() => {
+    return posts.filter(p => p.isEssential || p.isHot).slice(0, 6);
+  }, [posts]);
+
+  // ko.phongnhaexplorer.com 스타일 "가장 많이 본 글 TOP 6 (Most Viewed)"
   const topPopularPosts = useMemo(() => {
-    return [...posts].sort((a, b) => (b.views || 1200) - (a.views || 1200)).slice(0, 5);
+    return [...posts].sort((a, b) => (b.views || 1200) - (a.views || 1200)).slice(0, 6);
   }, [posts]);
 
   // 최신글 TOP 5
@@ -623,78 +631,89 @@ export default function App() {
                     </button>
                   </div>
                 ) : (
-                  <div className="space-y-4">
+                  <div className="space-y-3.5">
                     {currentPagedPosts.map(post => (
                       <article
                         key={post.id}
                         onClick={() => handleSelectPost(post)}
-                        className="p-5 sm:p-6 bg-white rounded-lg border border-slate-200 hover:border-emerald-600 hover:shadow-xs transition-all cursor-pointer flex flex-col sm:flex-row gap-5 items-start justify-between group"
+                        className="p-5 sm:p-6 bg-white rounded-lg border border-slate-200 hover:border-emerald-600 hover:shadow-xs transition-all cursor-pointer space-y-2.5 group"
                       >
-                        <div className="flex-1 min-w-0 space-y-2">
-                          {/* 카테고리 및 최신 정책 뱃지 */}
-                          <div className="flex items-center space-x-2">
-                            <span className="text-xs font-bold text-emerald-800 bg-emerald-50 px-2.5 py-0.5 rounded border border-emerald-200">
-                              {post.category}
-                            </span>
-                            <span className="text-[11px] text-slate-400 font-mono">2026 주거가이드</span>
-                          </div>
-
-                          {/* 글 제목 */}
-                          <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
-                            {post.title}
-                          </h3>
-
-                          {/* 2~3줄 요약문 */}
-                          <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
-                            {post.excerpt}
-                          </p>
-
-                          {/* 메타 정보 (작성자, 날짜, 조회수, 읽는 시간) */}
-                          <div className="pt-2 flex flex-wrap items-center gap-3 text-xs text-slate-400 font-mono">
-                            <span className="text-slate-600 font-semibold">{post.author || "박 실장"}</span>
-                            <span>·</span>
-                            <span>{post.date}</span>
-                            <span>·</span>
-                            <span>읽는 시간 {post.readTime || "5분"}</span>
-                            <span>·</span>
-                            <span>조회수 {post.views || 1420}</span>
-                          </div>
-
-                          {/* 태그 목록 */}
-                          {post.hashtags && post.hashtags.length > 0 && (
-                            <div className="flex flex-wrap gap-1.5 pt-1">
-                              {post.hashtags.slice(0, 3).map(tag => (
-                                <span
-                                  key={tag}
-                                  onClick={(e) => {
-                                    e.stopPropagation();
-                                    setSelectedTag(tag);
-                                    setCurrentPage(1);
-                                  }}
-                                  className="text-[11px] text-slate-500 hover:text-emerald-700 bg-slate-100 hover:bg-slate-200 px-2 py-0.5 rounded transition-colors"
-                                >
-                                  #{tag}
-                                </span>
-                              ))}
-                            </div>
-                          )}
+                        {/* 상단 메타 바 (ko.phongnhaexplorer.com dwqa-question-meta 벤치마킹) */}
+                        <div className="flex flex-wrap items-center gap-2 text-xs">
+                          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-700 text-white shadow-2xs">
+                            답변완료
+                          </span>
+                          <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
+                            {post.category}
+                          </span>
+                          <span className="text-slate-400 font-mono text-[11px]">{post.date}</span>
+                          <span className="text-slate-300">·</span>
+                          <span className="text-slate-500 font-mono text-[11px]">
+                            조회 {post.views || 1420}회
+                          </span>
+                          <span className="text-slate-300">·</span>
+                          <span className="text-slate-500 font-mono text-[11px]">
+                            {post.readTime || "5분"} 읽기
+                          </span>
                         </div>
 
-                        {/* 썸네일 이미지 (오른쪽 배치) */}
-                        {post.image && (
-                          <div className="w-full sm:w-44 h-32 rounded-md overflow-hidden bg-slate-100 shrink-0 border border-slate-100">
-                            <img
-                              src={post.image}
-                              alt={post.title}
-                              className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-300"
-                              referrerPolicy="no-referrer"
-                            />
+                        {/* 제목 (dwqa-question-title) */}
+                        <h2 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-emerald-700 group-hover:underline transition-colors leading-snug">
+                          {post.title}
+                        </h2>
+
+                        {/* 요약 발췌문 (excerpt) */}
+                        <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
+                          {post.excerpt}
+                        </p>
+
+                        {/* 하단 태그 */}
+                        {post.hashtags && post.hashtags.length > 0 && (
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            {post.hashtags.slice(0, 3).map(tag => (
+                              <span
+                                key={tag}
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  setSelectedTag(tag);
+                                  setCurrentPage(1);
+                                }}
+                                className="text-[11px] text-slate-500 hover:text-emerald-700 bg-slate-100 hover:bg-slate-200 px-2 py-0.5 rounded transition-colors"
+                              >
+                                #{tag}
+                              </span>
+                            ))}
                           </div>
                         )}
                       </article>
                     ))}
                   </div>
                 )}
+
+                {/* ko.phongnhaexplorer.com 스타일 블로그 안내 & 전문성 정보 블록 (category_info) */}
+                <div className="p-6 bg-slate-50 border border-slate-200 rounded-lg space-y-3 mt-8">
+                  <div className="flex items-center gap-2 text-slate-900 font-bold text-base">
+                    <BookOpen className="w-5 h-5 text-emerald-700" />
+                    <h2>하우징허브 2026 주택청약 & 부동산 금융 지식 허브</h2>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    신혼부부, 청년, 무주택 실수요자를 위해 2026년 정부 주거 정책 및 공고문, 전월세 대항력 확보, 스트레스 DSR 대출 심사 기준을 정확하고 투명하게 제공하는 독립 아카이브입니다. 복잡한 부동산 법령과 금융 심사 기준을 알기 쉽게 정리하여 안전한 내 집 마련을 돕습니다.
+                  </p>
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-600">
+                    <div className="bg-white p-3 rounded border border-slate-200 space-y-1">
+                      <strong className="text-slate-900 font-bold block">✓ 다양성 (Comprehensive)</strong>
+                      <p className="text-slate-500">청약 가점 계산부터 전세사기 예방, DSR 대출 한도까지 A to Z 망라</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-slate-200 space-y-1">
+                      <strong className="text-slate-900 font-bold block">✓ 최신성 (2026 Updated)</strong>
+                      <p className="text-slate-500">2026년 최신 개정 청약 시행령 및 정책 대출 요건 실시간 반영</p>
+                    </div>
+                    <div className="bg-white p-3 rounded border border-slate-200 space-y-1">
+                      <strong className="text-slate-900 font-bold block">✓ 신뢰성 (Cross-Verified)</strong>
+                      <p className="text-slate-500">한국부동산원 청약홈, 주택도시기금 등 공식 공고문 교차 검증</p>
+                    </div>
+                  </div>
+                </div>
 
                 {/* 클래식 블로그 페이지네이션 (Pagination) */}
                 {totalPages > 1 && (
@@ -742,48 +761,71 @@ export default function App() {
           {/* ==================================================== */}
           <aside className="w-full lg:w-72 xl:w-80 shrink-0 space-y-6">
 
-            {/* 1. 블로그 프로필 위젯 (Blogger Profile Card) */}
-            <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs text-center space-y-3">
-              <div className="w-20 h-20 mx-auto rounded-full bg-slate-800 text-white font-extrabold flex items-center justify-center text-2xl shadow-xs border-2 border-emerald-500">
-                집
-              </div>
-              <div>
-                <h3 className="text-base font-bold text-slate-900">하우징허브 (HousingHub)</h3>
-                <p className="text-xs text-emerald-800 font-semibold mt-0.5">주거·청약 실무 연구팀</p>
-              </div>
-              <p className="text-xs text-slate-600 leading-relaxed text-left bg-slate-50 p-3 rounded border border-slate-100">
-                신혼부부와 청년, 무주택 실수요자를 위해 2026년 개정 청약 공고문 해설, 전세사기 예방 대항력 보존, 스트레스 DSR 대출 실무를 연재합니다.
-              </p>
-              <div className="pt-1">
-                <button
-                  onClick={() => handleOpenLegal("about")}
-                  className="w-full py-2 px-3 bg-slate-800 hover:bg-slate-900 text-white text-xs font-bold rounded transition-colors cursor-pointer flex items-center justify-center gap-1.5"
-                >
-                  <span>블로그 소개 및 운영원칙</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-              <div className="pt-2 border-t border-slate-100 flex items-center justify-around text-xs text-slate-500 font-mono">
-                <div>
-                  <span className="block text-slate-400 text-[10px]">총 게시글</span>
-                  <span className="font-bold text-slate-800">{posts.length}편</span>
-                </div>
-                <div className="w-px h-6 bg-slate-200"></div>
-                <div>
-                  <span className="block text-slate-400 text-[10px]">발행 주기</span>
-                  <span className="font-bold text-slate-800">매일 연재</span>
-                </div>
-              </div>
-            </div>
-
-            {/* 2. 카테고리 트리 위젯 (Categories) */}
+            {/* 1. ko.phongnhaexplorer.com 벤치마킹: 가장 추천하는 핵심 가이드 (favourite) */}
             <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
               <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
-                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Star className="w-4 h-4 text-amber-500 fill-amber-500" />
+                  <span>가장 추천하는 핵심 가이드</span>
+                </h3>
+              </div>
+              <ul className="space-y-2.5 text-xs sm:text-sm">
+                {favouritePosts.map((fp) => (
+                  <li 
+                    key={fp.id}
+                    onClick={() => handleSelectPost(fp)}
+                    className="hover:bg-slate-50 p-1.5 rounded cursor-pointer transition-colors group"
+                  >
+                    <p className="text-slate-800 group-hover:text-emerald-700 group-hover:underline font-medium line-clamp-2 leading-snug text-xs">
+                      · {fp.title}
+                    </p>
+                    <span className="text-[10px] text-slate-400 font-mono ml-2">
+                      {fp.category} · {fp.date}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* 2. ko.phongnhaexplorer.com 벤치마킹: 가장 많이 본 글 TOP 6 (most-viewed) */}
+            <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
+                  <Trophy className="w-4 h-4 text-emerald-700" />
+                  <span>가장 많이 본 글 TOP 6</span>
+                </h3>
+              </div>
+              <ol className="space-y-2.5 text-xs sm:text-sm">
+                {topPopularPosts.map((pp, idx) => (
+                  <li 
+                    key={pp.id}
+                    onClick={() => handleSelectPost(pp)}
+                    className="flex items-start gap-2.5 hover:bg-slate-50 p-1.5 rounded cursor-pointer transition-colors group"
+                  >
+                    <span className="w-4 h-4 rounded bg-slate-100 text-slate-700 font-extrabold text-[11px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
+                      {idx + 1}
+                    </span>
+                    <div className="flex-1 min-w-0">
+                      <p className="text-slate-800 group-hover:text-emerald-700 group-hover:underline font-medium line-clamp-2 leading-snug text-xs">
+                        {pp.title}
+                      </p>
+                      <span className="text-[10px] text-slate-400 font-mono">
+                        조회 {pp.views || 1420} · {pp.date}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+            </div>
+
+            {/* 3. 카테고리 트리 위젯 (Categories) */}
+            <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
+              <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
+                <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
                   <List className="w-4 h-4 text-emerald-700" />
-                  <span>카테고리 분류</span>
-                </h4>
-                <span className="text-xs text-slate-400 font-mono">총 {posts.length}개</span>
+                  <span>카테고리별 분류</span>
+                </h3>
+                <span className="text-xs text-slate-400 font-mono">총 {posts.length}편</span>
               </div>
               <ul className="space-y-1 text-xs sm:text-sm">
                 <li>
@@ -820,7 +862,7 @@ export default function App() {
               </ul>
             </div>
 
-            {/* 3. 자가진단 계산기 바로가기 배너 */}
+            {/* 4. 자가진단 계산기 바로가기 배너 */}
             <div 
               onClick={handleOpenToolkit}
               className="bg-gradient-to-br from-emerald-800 to-slate-900 text-white rounded-lg p-5 shadow-xs cursor-pointer hover:opacity-95 transition-opacity space-y-2"
@@ -831,9 +873,9 @@ export default function App() {
                 </span>
                 <Calculator className="w-5 h-5 text-emerald-400" />
               </div>
-              <h4 className="text-base font-bold leading-snug">
+              <h3 className="text-base font-bold leading-snug">
                 주택 대출한도 DSR 및 청약 가점 계산기
-              </h4>
+              </h3>
               <p className="text-xs text-slate-300 leading-relaxed">
                 수도권 스트레스 DSR 3단계 대출 한도와 청약 가점 84점 만점 산정을 즉시 모의 시뮬레이션하세요.
               </p>
@@ -843,96 +885,12 @@ export default function App() {
               </div>
             </div>
 
-            {/* 4. 인기글 위젯 TOP 5 (Popular Posts) */}
-            <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
-                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <TrendingUp className="w-4 h-4 text-red-500" />
-                  <span>이 블로그 인기글 TOP 5</span>
-                </h4>
-              </div>
-              <ol className="space-y-2.5 text-xs sm:text-sm">
-                {topPopularPosts.map((pp, idx) => (
-                  <li 
-                    key={pp.id}
-                    onClick={() => handleSelectPost(pp)}
-                    className="flex items-start gap-2.5 hover:bg-slate-50 p-1.5 rounded cursor-pointer transition-colors group"
-                  >
-                    <span className="w-4 h-4 rounded bg-slate-100 text-slate-700 font-extrabold text-[11px] flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-emerald-700 group-hover:text-white transition-colors">
-                      {idx + 1}
-                    </span>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-slate-800 group-hover:text-emerald-700 font-medium line-clamp-2 leading-snug text-xs">
-                        {pp.title}
-                      </p>
-                      <span className="text-[10px] text-slate-400 font-mono">{pp.date} · 조회 {pp.views || 1420}</span>
-                    </div>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            {/* 5. 최신글 위젯 TOP 5 (Recent Posts) */}
-            <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
-                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <Clock className="w-4 h-4 text-emerald-700" />
-                  <span>최근 올라온 글</span>
-                </h4>
-              </div>
-              <ul className="space-y-2.5 text-xs">
-                {topRecentPosts.map(rp => (
-                  <li
-                    key={rp.id}
-                    onClick={() => handleSelectPost(rp)}
-                    className="hover:bg-slate-50 p-1.5 rounded cursor-pointer transition-colors group"
-                  >
-                    <p className="text-slate-800 group-hover:text-emerald-700 font-medium line-clamp-1 leading-snug">
-                      · {rp.title}
-                    </p>
-                    <span className="text-[10px] text-slate-400 font-mono ml-2">{rp.date}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            {/* 6. 태그 클라우드 위젯 (Tags) */}
-            <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
-                <h4 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <Tag className="w-4 h-4 text-emerald-700" />
-                  <span>태그 클라우드</span>
-                </h4>
-              </div>
-              <div className="flex flex-wrap gap-1.5">
-                {popularTags.map(tag => (
-                  <button
-                    key={tag}
-                    onClick={() => {
-                      setSelectedTag(tag);
-                      setActivePostId(null);
-                      setShowDiagnosticPage(false);
-                      setActiveLegalTab(null);
-                      setCurrentPage(1);
-                    }}
-                    className={`text-[11px] px-2.5 py-1 rounded transition-colors cursor-pointer ${
-                      selectedTag === tag 
-                        ? "bg-emerald-700 text-white font-bold" 
-                        : "bg-slate-100 text-slate-600 hover:bg-slate-200"
-                    }`}
-                  >
-                    #{tag}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            {/* 7. 공지사항 및 운영정책 위젯 */}
+            {/* 5. 블로그 안내 & 운영원칙 위젯 */}
             <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-2.5 text-xs text-slate-600">
-              <h4 className="font-bold text-slate-900 text-xs flex items-center gap-1.5 border-b border-slate-100 pb-2">
+              <h3 className="font-bold text-slate-900 text-xs flex items-center gap-1.5 border-b border-slate-100 pb-2">
                 <ShieldCheck className="w-4 h-4 text-emerald-700" />
-                <span>블로그 안내 & 운영원칙</span>
-              </h4>
+                <span>하우징허브 블로그 소개 & 운영원칙</span>
+              </h3>
               <p className="text-[11px] text-slate-500 leading-relaxed">
                 하우징허브의 모든 콘텐츠는 정부 고시 공고문 및 법원 판례를 바탕으로 공인 자격 연구진이 작성하며, 무단 복제 및 불법 배포를 엄격히 금합니다.
               </p>
@@ -940,6 +898,8 @@ export default function App() {
                 <button onClick={() => handleOpenLegal("about")} className="hover:text-emerald-700 underline cursor-pointer">블로그 소개</button>
                 <span>·</span>
                 <button onClick={() => handleOpenLegal("privacy")} className="hover:text-emerald-700 underline cursor-pointer">개인정보처리방침</button>
+                <span>·</span>
+                <button onClick={() => handleOpenLegal("terms")} className="hover:text-emerald-700 underline cursor-pointer">이용약관</button>
                 <span>·</span>
                 <button onClick={() => handleOpenLegal("disclaimer")} className="hover:text-emerald-700 underline cursor-pointer">법적고지</button>
               </div>

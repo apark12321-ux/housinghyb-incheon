@@ -16,7 +16,8 @@ import {
   List,
   Eye,
   ChevronRight,
-  Send
+  Send,
+  HelpCircle
 } from "lucide-react";
 import { Post, slugify } from "../types";
 import { getAuthorForCategory } from "../data/editorialTeam";
@@ -292,16 +293,22 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
 
       {/* 포스트 메인 본문 컨테이너 */}
       <div className="p-6 sm:p-8 space-y-6">
-        {/* 30초 핵심 요약 박스 (Executive Summary) */}
-        <div className="p-5 bg-[#f8f9fa] border-l-4 border-emerald-600 rounded-r-md space-y-2">
-          <div className="flex items-center gap-2 text-slate-900 font-bold text-sm">
-            <BookOpen className="w-4 h-4 text-emerald-700" />
-            <span>핵심 요약 (Executive Summary)</span>
+        {/* 핵심 정답 및 30초 실무 요약 (ko.phongnhaexplorer.com #best-answer 벤치마킹) */}
+        <div id="best-answer" className="p-5 sm:p-6 bg-emerald-50/70 border border-emerald-200 rounded-lg space-y-3">
+          <div className="flex items-center justify-between">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-700 text-white rounded text-xs font-bold shadow-2xs">
+              <CheckCircle2 className="w-3.5 h-3.5" />
+              <span>핵심 답변 & 요약 (Best Answer)</span>
+            </span>
+            <span className="text-[11px] text-emerald-800 font-mono">2026 공고 기준 검증</span>
           </div>
-          <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 leading-relaxed pl-1">
+          <p className="text-xs sm:text-sm font-semibold text-slate-800 leading-relaxed">
+            {post.excerpt}
+          </p>
+          <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-emerald-200/60 pt-3">
             {summaryPoints.map((point, idx) => (
               <li key={idx} className="flex items-start gap-2">
-                <span className="text-emerald-700 font-bold shrink-0">✓</span>
+                <span className="text-emerald-700 font-bold shrink-0">✔</span>
                 <span>{point}</span>
               </li>
             ))}
@@ -514,33 +521,35 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
           )}
         </div>
 
-        {/* 티스토리 스타일 "이 카테고리의 다른 글" (Category Other Posts Table) */}
+        {/* ko.phongnhaexplorer.com 스타일 "이런 질문·가이드도 함께 확인해보세요" (Related Question Guides) */}
         {categoryPosts.length > 0 && (
-          <div className="my-8 space-y-3">
-            <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-              <h3 className="font-bold text-sm text-slate-900 flex items-center gap-1.5">
-                <span>📁</span>
-                <span>'{post.category}' 카테고리의 다른 글</span>
+          <div className="my-8 p-5 bg-slate-50 border border-slate-200 rounded-lg space-y-3">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-2.5">
+              <h3 className="font-bold text-sm text-slate-900 flex items-center gap-2">
+                <HelpCircle className="w-4 h-4 text-emerald-700" />
+                <span>이런 질문·가이드도 함께 확인해보세요 ({post.category})</span>
               </h3>
               <button 
                 onClick={onBack}
-                className="text-xs text-slate-500 hover:text-emerald-700 hover:underline cursor-pointer"
+                className="text-xs text-emerald-700 hover:underline font-bold cursor-pointer"
               >
                 전체보기 &gt;
               </button>
             </div>
-            <div className="border border-slate-200 rounded-md divide-y divide-slate-100 text-xs sm:text-sm">
-              {categoryPosts.map((cp, idx) => (
+            <div className="divide-y divide-slate-200/60 text-xs sm:text-sm">
+              {categoryPosts.map((cp) => (
                 <div
                   key={cp.id}
                   onClick={() => onSelectPost?.(cp)}
-                  className="p-3 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors"
+                  className="py-2.5 flex items-center justify-between hover:text-emerald-700 cursor-pointer transition-colors group"
                 >
                   <div className="flex items-center space-x-2 truncate">
-                    <span className="text-emerald-700 font-bold shrink-0">·</span>
-                    <span className="text-slate-800 hover:text-emerald-700 hover:underline truncate">{cp.title}</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0"></span>
+                    <span className="text-slate-800 group-hover:text-emerald-700 group-hover:underline truncate font-medium">
+                      {cp.title}
+                    </span>
                   </div>
-                  <span className="text-[11px] text-slate-400 font-mono shrink-0 ml-2">{cp.date}</span>
+                  <span className="text-[11px] text-slate-400 font-mono shrink-0 ml-3">{cp.date}</span>
                 </div>
               ))}
             </div>
