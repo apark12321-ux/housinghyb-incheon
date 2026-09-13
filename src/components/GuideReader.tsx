@@ -12,11 +12,9 @@ import {
   Clock,
   Printer,
   Heart,
-  MessageSquare,
   List,
   Eye,
   ChevronRight,
-  Send,
   HelpCircle
 } from "lucide-react";
 import { Post, slugify } from "../types";
@@ -54,18 +52,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
     return (post.likes && post.likes > 0) ? post.likes : Math.floor(Math.random() * 30) + 15;
   });
   const [hasLiked, setHasLiked] = useState<boolean>(false);
-  const [commentText, setCommentText] = useState<string>("");
-  const [comments, setComments] = useState<Array<{ name: string; date: string; content: string }>>(() => {
-    if (typeof window !== "undefined") {
-      try {
-        const saved = localStorage.getItem(`comments_${post.id}`);
-        return saved ? JSON.parse(saved) : [];
-      } catch {
-        return [];
-      }
-    }
-    return [];
-  });
 
   // 카테고리별 공인 편집위원 정보 조회
   const author = useMemo(() => {
@@ -172,32 +158,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
       navigator.clipboard.writeText(window.location.href);
       showToast("포스트 주소가 클립보드에 복사되었습니다. 소중한 분들에게 공유해보세요!", "success");
     }
-  };
-
-  const handleCommentSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!commentText.trim()) {
-      showToast("댓글 내용을 입력해 주세요.", "info");
-      return;
-    }
-    const today = new Date();
-    const dateStr = `${today.getFullYear()}.${String(today.getMonth() + 1).padStart(2, '0')}.${String(today.getDate()).padStart(2, '0')}`;
-    const newComment = {
-      name: "독자 (방문자)",
-      date: dateStr,
-      content: commentText.trim()
-    };
-    const updated = [...comments, newComment];
-    setComments(updated);
-    if (typeof window !== "undefined") {
-      try {
-        localStorage.setItem(`comments_${post.id}`, JSON.stringify(updated));
-      } catch {
-        // ignore
-      }
-    }
-    setCommentText("");
-    showToast("소중한 댓글이 성공적으로 등록되었습니다.", "success");
   };
 
   return (
@@ -431,16 +391,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               <span>공감</span>
               <span className="font-mono ml-1">{likesCount}</span>
             </button>
-
-            {/* 댓글 바로가기 */}
-            <a
-              href="#comments-section"
-              className="flex items-center space-x-1.5 px-4 py-2.5 rounded-full border border-slate-300 bg-white text-slate-700 hover:bg-slate-50 text-sm font-medium transition-colors"
-            >
-              <MessageSquare className="w-4 h-4 text-slate-500" />
-              <span>댓글</span>
-              <span className="font-mono text-emerald-700 font-bold">{comments.length}</span>
-            </a>
           </div>
 
           <div className="flex items-center space-x-2">
@@ -536,6 +486,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
                 전체보기 &gt;
               </button>
             </div>
+
             <div className="divide-y divide-slate-200/60 text-xs sm:text-sm">
               {categoryPosts.map((cp) => (
                 <div
@@ -555,57 +506,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
             </div>
           </div>
         )}
-
-        {/* 티스토리/네이버 스타일 댓글 섹션 (Comments) */}
-        <section id="comments-section" className="pt-8 border-t border-slate-200 space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <MessageSquare className="w-4 h-4 text-emerald-700" />
-              <span>댓글 ({comments.length})</span>
-            </h3>
-            <span className="text-xs text-slate-400">건전한 인터넷 문화를 함께 만들어가요</span>
-          </div>
-
-          {/* 기존 댓글 목록 */}
-          {comments.length === 0 ? (
-            <div className="p-4 bg-slate-50 rounded-md border border-slate-100 text-center text-xs text-slate-500">
-              아직 등록된 댓글이 없습니다. 첫 번째 의견을 남겨보세요!
-            </div>
-          ) : (
-            <div className="space-y-3">
-              {comments.map((c, i) => (
-                <div key={i} className="p-3.5 bg-slate-50 rounded-md border border-slate-100 space-y-1 text-xs sm:text-sm">
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="font-bold text-slate-800">{c.name}</span>
-                    <span className="text-slate-400 font-mono">{c.date}</span>
-                  </div>
-                  <p className="text-slate-700 leading-relaxed">{c.content}</p>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {/* 댓글 작성 폼 */}
-          <form onSubmit={handleCommentSubmit} className="space-y-2.5 pt-2">
-            <textarea
-              rows={3}
-              value={commentText}
-              onChange={(e) => setCommentText(e.target.value)}
-              placeholder="상호 존중과 배려를 바탕으로 의견을 남겨주세요. 비방이나 욕설은 삭제될 수 있습니다."
-              className="w-full p-3 text-xs sm:text-sm border border-slate-300 rounded-md focus:outline-none focus:ring-1 focus:ring-emerald-600 focus:border-emerald-600 text-slate-800 placeholder:text-slate-400 resize-none"
-            />
-            <div className="flex justify-between items-center text-xs">
-              <span className="text-slate-400">하우징허브 독자 커뮤니티</span>
-              <button
-                type="submit"
-                className="px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white font-bold rounded-md flex items-center gap-1 transition-colors cursor-pointer"
-              >
-                <Send className="w-3 h-3" />
-                <span>댓글 등록</span>
-              </button>
-            </div>
-          </form>
-        </section>
       </div>
     </article>
   );
