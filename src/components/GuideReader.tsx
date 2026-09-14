@@ -258,7 +258,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
           <div className="flex items-center justify-between">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-700 text-white rounded text-xs font-bold shadow-2xs">
               <CheckCircle2 className="w-3.5 h-3.5" />
-              <span>핵심 답변 & 요약 (Best Answer)</span>
+              <span>핵심 실무 요약</span>
             </span>
             <span className="text-[11px] text-emerald-800 font-mono">2026 공고 기준 검증</span>
           </div>

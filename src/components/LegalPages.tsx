@@ -172,7 +172,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
                 <div>공식 문의 이메일: <strong>apark12321@gmail.com</strong></div>
                 <div>웹사이트 주소: <strong>https://zip9.kr</strong></div>
                 <div className="sm:col-span-2 text-slate-500 pt-1">
-                  호스팅 서비스: Google Cloud Platform · 목적: 무주택자 및 청년을 위한 주거·청약·대출 정보 제공
+                  운영 목적: 무주택자 및 청년, 신혼부부를 위한 공공 주거·청약·대출 실무 정보 제공
                 </div>
               </div>
             </section>

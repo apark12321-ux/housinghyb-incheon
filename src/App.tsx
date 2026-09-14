@@ -368,13 +368,17 @@ export default function App() {
             <span>하우징허브 (HousingHub) 공식 블로그 · 2026 주택청약·전월세·부동산금융 실무</span>
           </div>
           <div className="flex items-center space-x-3 text-[11px]">
-            <a href="/sitemap.xml" target="_blank" className="hover:text-white transition-colors">사이트맵</a>
-            <span>|</span>
-            <a href="/rss.xml" target="_blank" className="hover:text-white transition-colors">RSS Feed</a>
-            <span>|</span>
             <button onClick={() => handleOpenLegal("about")} className="hover:text-white transition-colors cursor-pointer">
+              블로그 소개
+            </button>
+            <span>|</span>
+            <button onClick={() => handleOpenLegal("disclaimer")} className="hover:text-white transition-colors cursor-pointer">
               운영원칙
             </button>
+            <span>|</span>
+            <a href="mailto:apark12321@gmail.com" className="hover:text-white transition-colors">
+              문의하기
+            </a>
           </div>
         </div>
       </div>
@@ -638,11 +642,8 @@ export default function App() {
                         onClick={() => handleSelectPost(post)}
                         className="p-5 sm:p-6 bg-white rounded-lg border border-slate-200 hover:border-emerald-600 hover:shadow-xs transition-all cursor-pointer space-y-2.5 group"
                       >
-                        {/* 상단 메타 바 (ko.phongnhaexplorer.com dwqa-question-meta 벤치마킹) */}
+                        {/* 상단 메타 바 */}
                         <div className="flex flex-wrap items-center gap-2 text-xs">
-                          <span className="px-2 py-0.5 rounded text-[11px] font-bold bg-emerald-700 text-white shadow-2xs">
-                            답변완료
-                          </span>
                           <span className="px-2 py-0.5 rounded text-[11px] font-semibold bg-emerald-50 text-emerald-800 border border-emerald-200">
                             {post.category}
                           </span>
@@ -922,17 +923,16 @@ export default function App() {
               <button onClick={() => handleOpenLegal("terms")} className="hover:text-emerald-700 cursor-pointer">이용약관</button>
               <span>|</span>
               <button onClick={() => handleOpenLegal("disclaimer")} className="hover:text-emerald-700 cursor-pointer">책임한계 및 법적고지</button>
-              <span>|</span>
-              <a href="/sitemap.xml" target="_blank" className="hover:text-emerald-700">사이트맵</a>
-              <span>|</span>
-              <a href="/ads.txt" target="_blank" className="hover:text-emerald-700">ads.txt</a>
+            </div>
+            <div className="text-slate-400 text-[11px]">
+              문의: <a href="mailto:apark12321@gmail.com" className="hover:text-emerald-700 underline">apark12321@gmail.com</a>
             </div>
           </div>
 
           {/* 블로그 안내 및 법적 면책 고지 */}
           <div className="space-y-1.5 text-[11px] text-slate-500 leading-relaxed">
             <p className="text-slate-600">
-              <strong>블로그명</strong>: 하우징허브 (HousingHub) · <strong>운영</strong>: 하우징허브 편집팀 · <strong>문의 이메일</strong>: <a href="mailto:apark12321@gmail.com" className="underline hover:text-emerald-700">apark12321@gmail.com</a> · <strong>호스팅 서비스</strong>: Google Cloud Platform
+              <strong>블로그명</strong>: 하우징허브 (HousingHub) · <strong>운영</strong>: 하우징허브 편집팀 · <strong>문의 이메일</strong>: <a href="mailto:apark12321@gmail.com" className="underline hover:text-emerald-700">apark12321@gmail.com</a>
             </p>
             <p className="pt-1 text-slate-400">
               본 블로그에서 제공하는 모든 주택청약 및 부동산 금융 정보는 단순 참고용 가이드이며, 개별 계약 및 대출 심사에 대한 법적 보증 효력을 갖지 않습니다. 실제 청약 신청 및 대출 실행 전 반드시 관계 기관(한국부동산원 청약홈, 주택도시기금, 취급 은행)의 최신 공식 공고를 확인하시기 바랍니다.
@@ -941,7 +941,6 @@ export default function App() {
 
           <div className="pt-4 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-[11px] text-slate-400">
             <p>Copyright © 2026 하우징허브 (HousingHub). All Rights Reserved.</p>
-            <p className="mt-1 sm:mt-0 font-mono">Google AdSense Publisher ID: ca-pub-9552509372228899</p>
           </div>
         </div>
       </footer>

@@ -484,7 +484,6 @@ export function getServerSideProps(
             <p><strong>블로그명:</strong> 하우징허브 (HousingHub)</p>
             <p><strong>운영 주체:</strong> 하우징허브 편집팀</p>
             <p><strong>공식 이메일:</strong> apark12321@gmail.com</p>
-            <p><strong>호스팅:</strong> Google Cloud Platform</p>
           </div>
         </main>
       </section>
@@ -564,7 +563,7 @@ export function getServerSideProps(
       </main>
       <footer class="mt-16 pt-8 border-t border-slate-200 text-xs text-slate-500 flex flex-col sm:flex-row justify-between items-center gap-4">
         <div>
-          <p><strong>하우징허브 블로그</strong> · 운영: 하우징허브 편집팀 · 문의: apark12321@gmail.com · 호스팅: Google Cloud Platform</p>
+          <p><strong>하우징허브 블로그</strong> · 운영: 하우징허브 편집팀 · 문의: apark12321@gmail.com</p>
           <p class="mt-1 text-slate-400">본 블로그에서 제공하는 모든 주택청약 및 부동산 금융 정보는 참고용 가이드이며, 실제 신청 전 공식 공고를 확인하시기 바랍니다.</p>
         </div>
         <div class="flex gap-4">
