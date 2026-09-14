@@ -360,30 +360,7 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#f8f9fa] text-slate-800 font-sans antialiased flex flex-col selection:bg-emerald-100 selection:text-emerald-900">
       
-      {/* 1. 최상단 블로그 정보 미니바 */}
-      <div className="bg-[#24292e] text-slate-300 text-xs py-1.5 px-4 border-b border-slate-700">
-        <div className="max-w-6xl mx-auto flex items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
-            <span>하우징허브 (HousingHub) 공식 블로그 · 2026 주택청약·전월세·부동산금융 실무</span>
-          </div>
-          <div className="flex items-center space-x-3 text-[11px]">
-            <button onClick={() => handleOpenLegal("about")} className="hover:text-white transition-colors cursor-pointer">
-              블로그 소개
-            </button>
-            <span>|</span>
-            <button onClick={() => handleOpenLegal("disclaimer")} className="hover:text-white transition-colors cursor-pointer">
-              운영원칙
-            </button>
-            <span>|</span>
-            <a href="mailto:apark12321@gmail.com" className="hover:text-white transition-colors">
-              문의하기
-            </a>
-          </div>
-        </div>
-      </div>
-
-      {/* 2. 메인 블로그 헤더 (티스토리/네이버 블로그 스타일) */}
+      {/* 메인 블로그 헤더 (티스토리/네이버 블로그 스타일) */}
       <header className="bg-white border-b border-slate-200 shadow-2xs">
         <div className="max-w-6xl mx-auto px-4 pt-8 pb-6">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
