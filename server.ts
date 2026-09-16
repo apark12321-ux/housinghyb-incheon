@@ -1359,6 +1359,15 @@ async function startServer() {
       // [getServerSideProps] 동적 데이터 페칭 및 시맨틱 HTML/메타/스키마/초기 상태 생성
       const ssrProps = getServerSideProps(req.path, req.query, activePosts, baseUrl);
 
+      // 구글 검색엔진 색인 표준화: ID 형태나 비표준 슬러그로 진입 시 표준 URL로 301 영구 리디렉션
+      if (ssrProps.pageType === "post" && ssrProps.post) {
+        const canonicalSlug = slugify(ssrProps.post.title);
+        const currentSlug = decodeURIComponent(req.path.replace(/^\/post\//, "").replace(/\/$/, ""));
+        if (currentSlug && currentSlug !== canonicalSlug) {
+          return res.redirect(301, `/post/${encodeURIComponent(canonicalSlug)}`);
+        }
+      }
+
       // 운영 환경에서 이미 빌드된 정적 HTML 파일이 존재하는 경우 해당 파일 서빙
       if (isProd) {
         if (ssrProps.pageType === "post" && ssrProps.post) {

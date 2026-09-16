@@ -180,19 +180,29 @@ function extractTopKeywords({ title = "", excerpt = "", content = "", category =
  * POSTS를 반환합니다. (기본 POSTS + auto-posts.json 병합)
  */
 function loadPosts() {
+  const map = new Map();
+  for (const p of POSTS) {
+    map.set(p.id, p);
+  }
   try {
     const autoPath = resolve(ROOT, "src", "data", "auto-posts.json");
     if (existsSync(autoPath)) {
       const raw = readFileSync(autoPath, "utf-8");
       const autoPosts = JSON.parse(raw);
-      if (Array.isArray(autoPosts) && autoPosts.length > 0) {
-        return [...autoPosts, ...POSTS];
+      if (Array.isArray(autoPosts)) {
+        for (const p of autoPosts) {
+          map.set(p.id, p);
+        }
       }
     }
   } catch (e) {
     console.warn("Failed to load auto-posts for prerender:", e);
   }
-  return POSTS;
+  return Array.from(map.values()).sort((a, b) => {
+    const dateA = `${a.date || ""} ${a.time || "00:00:00"}`;
+    const dateB = `${b.date || ""} ${b.time || "00:00:00"}`;
+    return dateB.localeCompare(dateA);
+  });
 }
 
 /**
@@ -784,6 +794,26 @@ function main() {
     );
     writeFile(join(DIST, path), html);
     count++;
+
+    // ID 형태(/post/:id) 접근 시 표준 슬러그로 즉시 리디렉션하는 정적 HTML 생성 (기존 색인 보존 및 404 방지)
+    if (post.id && post.id !== slug) {
+      const idRedirectPath = `post/${post.id}/index.html`;
+      const redirectHtml = `<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <title>${htmlEscape(post.title)}</title>
+  <link rel="canonical" href="${SITE_URL}/post/${encodeURIComponent(slug)}">
+  <meta http-equiv="refresh" content="0; url=/post/${encodeURIComponent(slug)}">
+  <meta name="robots" content="noindex, follow">
+  <script>window.location.replace("/post/" + encodeURIComponent(${JSON.stringify(slug)}));</script>
+</head>
+<body>
+  <p>이동 중입니다: <a href="/post/${encodeURIComponent(slug)}">${htmlEscape(post.title)}</a></p>
+</body>
+</html>`;
+      writeFile(join(DIST, idRedirectPath), redirectHtml);
+    }
   }
 
   console.log(`[prerender] generated ${count} static HTML files (home + ${staticPages.length} static + ${CATEGORIES.length} categories + ${posts.length} posts)`);

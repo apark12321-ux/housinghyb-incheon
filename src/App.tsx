@@ -113,7 +113,8 @@ export default function App() {
       const pathname = window.location.pathname;
       if (pathname.startsWith("/post/")) {
         const rawSlug = decodeURIComponent(pathname.replace(/^\/post\//, "").replace(/\/$/, ""));
-        const matched = POSTS.find(p => p.id === rawSlug || slugify(p.title) === rawSlug);
+        const pool = initialData?.initialPosts || POSTS;
+        const matched = pool.find((p: Post) => p.id === rawSlug || slugify(p.title) === rawSlug);
         if (matched) return matched.id;
       }
     }
@@ -282,6 +283,87 @@ export default function App() {
     if (!activePostId) return null;
     return posts.find(p => p.id === activePostId) || null;
   }, [activePostId, posts]);
+
+  // 클라이언트 사이드 SEO 메타데이터 동적 동기화 및 URL 정규화
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const baseUrl = "https://zip9.kr";
+    let title = "하우징허브 (HousingHub) | 2026 주거·청약·대출 실무 가이드";
+    let desc = "신혼부부와 무주택자를 위한 청약 공고문 실무 분석, 전월세 대항력 및 안전 계약 가이드, 디딤돌·버팀목 대출 분석 실무 지식 포털입니다.";
+    let canonical = `${baseUrl}/`;
+
+    if (activePost) {
+      const slug = slugify(activePost.title);
+      title = `${activePost.title} | 하우징허브`;
+      desc = activePost.excerpt || desc;
+      canonical = `${baseUrl}/post/${encodeURIComponent(slug)}`;
+
+      // URL 정규화: ID 형태로 진입 시 주소창을 표준 슬러그로 즉시 치환 (검색엔진 정규화)
+      const currentPath = window.location.pathname;
+      const targetPath = `/post/${encodeURIComponent(slug)}`;
+      if (currentPath !== targetPath && currentPath.startsWith("/post/")) {
+        window.history.replaceState(null, "", targetPath);
+      }
+    } else if (showDiagnosticPage) {
+      title = "스마트 주거 자가진단 툴킷 (청약 가점·DSR 계산기) | 하우징허브";
+      desc = "LTV/DSR 역산 공식과 청약 가점(84점 만점) 모의 계산기를 통해 내 집 마련 대출 한도와 당첨 가능성을 즉시 진단하세요.";
+      canonical = `${baseUrl}/toolkit`;
+    } else if (activeLegalTab === "about") {
+      title = "하우징허브 소개 (About Us) & 기획자 박 실장 스토리 | 하우징허브";
+      desc = "부동산 금융 10년 차 실무자 박 실장과 리서치팀이 전하는 하우징허브(HousingHub)의 경험 기반 주거·청약·대출 운영 철학입니다.";
+      canonical = `${baseUrl}/about`;
+    } else if (activeLegalTab === "privacy") {
+      title = "개인정보처리방침 (Privacy Policy) | 하우징허브";
+      desc = "하우징허브의 개인정보 보호 및 구글 애드센스 쿠키 운용 방침 안내입니다.";
+      canonical = `${baseUrl}/privacy`;
+    } else if (activeLegalTab === "terms") {
+      title = "서비스 이용약관 (Terms of Service) | 하우징허브";
+      desc = "하우징허브 서비스 이용에 관한 약관입니다.";
+      canonical = `${baseUrl}/terms`;
+    } else if (activeLegalTab === "disclaimer") {
+      title = "면책 조항 및 법적 고지 (Disclaimer) | 하우징허브";
+      desc = "하우징허브가 제공하는 모든 콘텐츠는 법적·공식 공고 기준을 토대로 한 공익 정보 제공용 자료입니다.";
+      canonical = `${baseUrl}/disclaimer`;
+    } else if (selectedCategory && selectedCategory !== "전체") {
+      title = `${selectedCategory} 실무 가이드 및 분석 리포트 | 하우징허브`;
+      desc = `${selectedCategory} 관련 최신 정책과 공고문 실무 분석 정보를 확인하세요.`;
+      canonical = `${baseUrl}/category/${encodeURIComponent(selectedCategory)}`;
+    }
+
+    document.title = title;
+
+    // description 메타태그
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) {
+      metaDesc.setAttribute("content", desc);
+    }
+
+    // canonical 태그
+    let linkCanonical = document.querySelector('link[rel="canonical"]');
+    if (linkCanonical) {
+      linkCanonical.setAttribute("href", canonical);
+    } else {
+      linkCanonical = document.createElement("link");
+      linkCanonical.setAttribute("rel", "canonical");
+      linkCanonical.setAttribute("href", canonical);
+      document.head.appendChild(linkCanonical);
+    }
+
+    // OG 태그
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    if (ogTitle) ogTitle.setAttribute("content", title);
+    const ogDesc = document.querySelector('meta[property="og:description"]');
+    if (ogDesc) ogDesc.setAttribute("content", desc);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute("content", canonical);
+
+    // Twitter 태그
+    const twTitle = document.querySelector('meta[name="twitter:title"]');
+    if (twTitle) twTitle.setAttribute("content", title);
+    const twDesc = document.querySelector('meta[name="twitter:description"]');
+    if (twDesc) twDesc.setAttribute("content", desc);
+  }, [activePost, showDiagnosticPage, activeLegalTab, selectedCategory]);
 
   // 필터링된 포스트 목록
   const filteredPosts = useMemo(() => {

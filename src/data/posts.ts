@@ -5,6 +5,7 @@ import { POSTS_RENT } from "./posts-rent";
 import { POSTS_RENT_HEAVY } from "./posts-rent-heavy";
 import { POSTS_MOVE } from "./posts-move";
 import { POSTS_FINANCE } from "./posts-finance";
+import autoPostsData from "./auto-posts.json";
 
 // 카테고리별 고품질 이미지 및 안심 가이드 캡션 풀
 const IMAGE_COLLECTIONS: Record<string, { images: string[]; captions: string[] }> = {
@@ -98,8 +99,9 @@ function getRelativeDateString(daysAgo: number): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-// 원본 포스트 리스트 불러오기 및 본문 이미지 일체 자동 보강 처리 완료
+// 원본 포스트 리스트 불러오기 (기존 정적 64편 + 최신 작성 16편 = 총 80편 통합 관리)
 const RAW_POSTS: Post[] = [
+  ...(Array.isArray(autoPostsData) ? (autoPostsData as Post[]) : []),
   ...POSTS_SUB,
   ...POSTS_SUB_HEAVY,
   ...POSTS_RENT,
@@ -139,79 +141,37 @@ function sanitizePostAuthor(p: Post): Post {
   };
 }
 
-// 6월 1일부터 현재 날짜(오늘, KST 기준)까지 1일 2포스팅 기준 날짜 목록 동적 생성 (총 32일 분배)
-const START_DATE = new Date("2026-06-01T00:00:00Z");
-
-// 현재 한국 시간(KST, UTC+9) 기준 당일 날짜 동적 산출
-const nowKst = new Date(Date.now() + 9 * 60 * 60 * 1000);
-const todayYyyy = nowKst.getUTCFullYear();
-const todayMm = String(nowKst.getUTCMonth() + 1).padStart(2, "0");
-const todayDd = String(nowKst.getUTCDate()).padStart(2, "0");
-const TODAY_KST_STR = `${todayYyyy}-${todayMm}-${todayDd}`;
-const END_DATE = new Date(`${TODAY_KST_STR}T00:00:00Z`);
-
-const TOTAL_SPAN_DAYS = Math.max(1, Math.round((END_DATE.getTime() - START_DATE.getTime()) / (1000 * 60 * 60 * 24)));
-const TOTAL_PUBLISHING_DAYS = Math.ceil(RAW_POSTS.length / 2); // 32일
-
-const PUBLISHING_DATES: string[] = [];
-for (let i = 0; i < TOTAL_PUBLISHING_DAYS; i++) {
-  const dayOffset = Math.round(i * (TOTAL_SPAN_DAYS / (TOTAL_PUBLISHING_DAYS - 1)));
-  const d = new Date(START_DATE);
-  d.setDate(d.getDate() + dayOffset);
-  const yyyy = d.getFullYear();
-  const mm = String(d.getMonth() + 1).padStart(2, "0");
-  const dd = String(d.getDate()).padStart(2, "0");
-  PUBLISHING_DATES.push(`${yyyy}-${mm}-${dd}`);
-}
-
-// 각 포스트의 고유 발행 일자와 이미지 보강 보완 적용 (6월 1일 ~ 현재날짜 1일 2포스팅, 8시간 이상 간격)
+// 각 포스트의 영구 고정 발행 일자와 시간 보존 (구글 검색엔진 날짜 변조 방지 및 색인 안정화)
 export const POSTS: Post[] = RAW_POSTS.map((p, idx) => {
   const sanitized = sanitizePostAuthor(p);
   const enriched = enrichPostContent(sanitized);
 
-  const dayIndex = Math.floor(idx / 2);
-  const assignedDate = PUBLISHING_DATES[Math.min(dayIndex, PUBLISHING_DATES.length - 1)];
-  const isSecondPostOfDay = idx % 2 === 1;
-
-  // 고유 해시 계산
+  // 고유 해시 기반 일관된 시간 보장
   let hash = 0;
   const str = `${enriched.id}-${enriched.title}-${idx}`;
   for (let i = 0; i < str.length; i++) {
     hash = (hash * 31 + str.charCodeAt(i)) % 1000000007;
   }
+  const defaultHour = String(8 + (hash % 12)).padStart(2, "0");
+  const defaultMin = String((hash * 7) % 60).padStart(2, "0");
+  const defaultSec = String((hash * 13) % 60).padStart(2, "0");
 
-  // 1일 2포스팅: 1차(오전 07:30~09:45), 2차(오후/저녁 18:30~21:45) -> 최소 8시간 45분 이상 완벽한 간격 확보
-  let hh: string;
-  let mm: string;
-  let ss: string;
+  const fixedDate = p.date || "2026-06-01";
+  const fixedTime = p.time || `${defaultHour}:${defaultMin}:${defaultSec}`;
 
-  if (!isSecondPostOfDay) {
-    // 1차 포스팅 (오전): 07:xx:xx ~ 09:xx:xx
-    const hourNum = 7 + (hash % 3); // 7, 8, 9시
-    hh = String(hourNum).padStart(2, "0");
-    mm = String((hash * 7 + 13) % 60).padStart(2, "0");
-    ss = String((hash * 19 + 29) % 60).padStart(2, "0");
-  } else {
-    // 2차 포스팅 (저녁): 18:xx:xx ~ 21:xx:xx (오전과 8시간 이상 차이 보장)
-    const hourNum = 18 + (hash % 4); // 18, 19, 20, 21시
-    hh = String(hourNum).padStart(2, "0");
-    mm = String((hash * 11 + 37) % 60).padStart(2, "0");
-    ss = String((hash * 23 + 43) % 60).padStart(2, "0");
-  }
+  enriched.date = fixedDate;
+  enriched.time = fixedTime;
 
-  enriched.date = assignedDate;
-  enriched.time = `${hh}:${mm}:${ss}`;
-
-  // 본문 내 하드코딩된 업데이트/발행일 정합성 동기화 (검증 스크립트 및 SEO 날짜 일치)
+  // 본문 내 하드코딩된 업데이트/발행일 정합성 동기화
   if (enriched.content) {
     enriched.content = enriched.content
-      .replace(/최종 업데이트:\s*\d{4}-\d{2}-\d{2}/g, `최종 업데이트: ${assignedDate}`)
-      .replace(/발행일:\s*\d{4}-\d{2}-\d{2}/g, `발행일: ${assignedDate}`);
+      .replace(/최종 업데이트:\s*\d{4}-\d{2}-\d{2}/g, `최종 업데이트: ${fixedDate}`)
+      .replace(/발행일:\s*\d{4}-\d{2}-\d{2}/g, `발행일: ${fixedDate}`);
   }
 
   return enriched;
 }).sort((a, b) => {
-  // 최신 발행분(현재날짜)부터 역순 정렬
+  // 최신 발행분부터 역순 정렬 (영구 고정 타임스탬프)
   const dateA = `${a.date || ""} ${a.time || "00:00:00"}`;
   const dateB = `${b.date || ""} ${b.time || "00:00:00"}`;
   return dateB.localeCompare(dateA);
