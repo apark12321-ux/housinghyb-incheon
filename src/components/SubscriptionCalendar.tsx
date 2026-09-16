@@ -260,7 +260,7 @@ export const SubscriptionCalendar: React.FC<SubscriptionCalendarProps> = ({
             </span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight font-display flex items-center gap-2">
-            <span>🗓️ 이달의 주요 청약 일정 정리</span>
+            <span>이달의 주요 청약 일정 정리</span>
           </h2>
           <p className="text-xs sm:text-sm text-slate-500 font-medium">
             전국 주요 아파트 및 공공분양·무순위(줍줍) 단지의 접수일, 1순위, 당첨자 발표일을 날짜별로 꼼꼼히 정리했습니다.
@@ -493,7 +493,7 @@ export const SubscriptionCalendar: React.FC<SubscriptionCalendarProps> = ({
                 </p>
 
                 <p className="text-xs font-bold text-blue-700 bg-slate-50 p-2 rounded-xl border border-slate-200/80">
-                  💰 분양가: {sub.priceRange}
+                  분양가: {sub.priceRange}
                 </p>
               </div>
 
@@ -626,7 +626,7 @@ export const SubscriptionCalendar: React.FC<SubscriptionCalendarProps> = ({
               <div className="flex flex-wrap gap-1.5">
                 {activeItem.highlights.map((h, hIdx) => (
                   <span key={hIdx} className="bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-lg border border-slate-200/80">
-                    ✓ {h}
+                    · {h}
                   </span>
                 ))}
               </div>

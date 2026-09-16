@@ -9,8 +9,8 @@ export interface Post {
   time?: string;
   image: string;
   readTime: string;
-  views?: number;
-  likes?: number;
+  isEssential?: boolean;
+  isHot?: boolean;
   hashtags?: string[];
 }
 

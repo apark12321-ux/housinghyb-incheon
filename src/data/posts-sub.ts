@@ -10,12 +10,11 @@ export const POSTS_SUB: Post[] = [
     category: "청약-분양",
     time: "03:41:59",
     image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
-    readTime: "6분 읽기",
-    views: 1890,
-    likes: 245,
+    readTime: "6분",
+    isEssential: true,
     content: `
       <div class="direct-answer-box">
-        <h4>📌 핵심 요약 (Direct Answer & E-E-A-T 검수)</h4>
+        <h4>핵심 요약 (Direct Answer & E-E-A-T 검수)</h4>
         <p>2026년 7월부터 공공 및 민간 분양 청약 가점 산정 시 <strong>배우자 청약통장 보유 기간의 50%(최대 3점)가 본인 점수에 합산</strong>됩니다. 또한 청약저축 납입 인정 한도가 월 10만원에서 25만원으로 상향 적용되어 저축 총액 경쟁이 심화되므로, 미성년자 인정 기간 확장(2년→5년) 및 다자녀(2자녀 이상) 특별공급 가점 산정표를 사전 대조하는 전략이 필수적입니다.</p>
       </div>
 
@@ -132,7 +131,7 @@ export const POSTS_SUB: Post[] = [
       <p>계약 시 집주인의 세금 납부 증명서 원본을 강력히 요청하여 대면 검토해야 하며, 단 한 건의 고액 세금 체납이라도 발견될 시 계약 체결을 즉각 전면 유보해야 합니다. 또한, 다가구 주택의 경우 먼저 입주해 있는 선순위 다른 임차인들의 보증금 총액이 건물 시세 대비 지나치게 비대하지 않은지 주민센터 전입세대확인서를 통해 세밀하게 파악해야 합니다.</p>
 
       <div class="my-6">
-        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="안늑하고 안전한 가옥 내부" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
+        <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800" alt="아늑하고 안전한 가옥 내부" class="rounded-xl overflow-hidden shadow-xs border border-slate-200 w-full max-h-[380px] object-cover" />
         <p class="text-xs text-center text-slate-500 mt-2 font-medium">안전한 주택 권리 확보는 따뜻하고 평화로운 주거 환경을 보장하는 기초 공사입니다.</p>
       </div>
 

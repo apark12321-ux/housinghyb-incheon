@@ -48,9 +48,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
   const contentRef = useRef<HTMLDivElement>(null);
   const [tocItems, setTocItems] = useState<TocItem[]>([]);
   const [readingProgress, setReadingProgress] = useState<number>(0);
-  const [likesCount, setLikesCount] = useState<number>(() => {
-    return (post.likes && post.likes > 0) ? post.likes : Math.floor(Math.random() * 30) + 15;
-  });
   const [hasLiked, setHasLiked] = useState<boolean>(false);
 
   // 카테고리별 공인 편집위원 정보 조회
@@ -143,11 +140,9 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
 
   const handleLike = () => {
     if (!hasLiked) {
-      setLikesCount(prev => prev + 1);
       setHasLiked(true);
-      showToast("이 글에 공감(좋아요)을 남겼습니다. 감사합니다!", "success");
+      showToast("이 글에 공감했습니다. 감사합니다!", "success");
     } else {
-      setLikesCount(prev => Math.max(0, prev - 1));
       setHasLiked(false);
       showToast("공감이 취소되었습니다.", "info");
     }
@@ -210,10 +205,6 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               <span className="text-slate-400 ml-1.5">({author.role})</span>
               <div className="flex items-center space-x-2 text-[11px] text-slate-400 mt-0.5">
                 <span>{post.date}</span>
-                <span>·</span>
-                <span>조회수 {post.views || 1420}</span>
-                <span>·</span>
-                <span>공감 {likesCount}</span>
               </div>
             </div>
           </div>
@@ -268,7 +259,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
           <ul className="space-y-1.5 text-xs sm:text-sm text-slate-700 leading-relaxed border-t border-emerald-200/60 pt-3">
             {summaryPoints.map((point, idx) => (
               <li key={idx} className="flex items-start gap-2">
-                <span className="text-emerald-700 font-bold shrink-0">✔</span>
+                <span className="text-emerald-700 font-bold shrink-0">·</span>
                 <span>{point}</span>
               </li>
             ))}
@@ -330,7 +321,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
         <div className="my-8 p-5 bg-amber-50/80 border border-amber-200 rounded-md space-y-2 text-slate-800">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2 text-amber-950 font-bold text-sm">
-              <span>💡</span>
+              <span className="text-amber-800 font-bold">[전문가 소견]</span>
               <span>{author.name} 자문위원의 실무 코멘트</span>
             </div>
             <span className="text-[11px] bg-amber-200/80 text-amber-900 px-2 py-0.5 rounded font-bold font-mono">
@@ -383,13 +374,12 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               onClick={handleLike}
               className={`flex items-center space-x-2 px-6 py-2.5 rounded-full border text-sm font-bold transition-all cursor-pointer ${
                 hasLiked
-                  ? "bg-red-50 border-red-300 text-red-600"
+                  ? "bg-red-50 border-red-300 text-red-600 shadow-2xs"
                   : "bg-white border-slate-300 text-slate-700 hover:border-red-300 hover:text-red-600"
               }`}
             >
               <Heart className={`w-4 h-4 ${hasLiked ? "fill-red-500 text-red-500" : ""}`} />
-              <span>공감</span>
-              <span className="font-mono ml-1">{likesCount}</span>
+              <span>{hasLiked ? "공감 완료" : "공감"}</span>
             </button>
           </div>
 
@@ -451,7 +441,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               className="p-3.5 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors"
             >
               <div className="flex items-center space-x-2 truncate">
-                <span className="text-slate-400 font-bold shrink-0">◀ 이전글:</span>
+                <span className="text-slate-400 font-bold shrink-0">이전글:</span>
                 <span className="text-slate-800 hover:text-emerald-700 truncate font-medium">{prevPost.title}</span>
               </div>
               <span className="text-[11px] text-slate-400 font-mono shrink-0 ml-2">{prevPost.date}</span>
@@ -463,7 +453,7 @@ export const GuideReader: React.FC<GuideReaderProps> = ({
               className="p-3.5 flex items-center justify-between hover:bg-slate-50 cursor-pointer transition-colors"
             >
               <div className="flex items-center space-x-2 truncate">
-                <span className="text-slate-400 font-bold shrink-0">▶ 다음글:</span>
+                <span className="text-slate-400 font-bold shrink-0">다음글:</span>
                 <span className="text-slate-800 hover:text-emerald-700 truncate font-medium">{nextPost.title}</span>
               </div>
               <span className="text-[11px] text-slate-400 font-mono shrink-0 ml-2">{nextPost.date}</span>

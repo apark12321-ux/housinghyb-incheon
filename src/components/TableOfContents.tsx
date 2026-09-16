@@ -58,7 +58,7 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
         id="guide-reader-toc-sidebar"
         className={`w-full bg-white rounded-2xl border border-slate-200/90 p-5 shadow-xs transition-all ${className}`}
       >
-        {/* 헤더 & 읽기 진행률 바 */}
+        {/* 헤더 & 진행률 바 */}
         <div className="space-y-3 pb-3.5 border-b border-slate-100">
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-2">
@@ -72,12 +72,12 @@ export const TableOfContents: React.FC<TableOfContentsProps> = ({
             </span>
           </div>
 
-          {/* 읽기 진척도 게이지 */}
+          {/* 진행률 게이지 */}
           <div className="space-y-1">
             <div className="flex items-center justify-between text-[11px] font-mono text-slate-500">
               <span className="flex items-center gap-1">
                 <BookOpen className="w-3 h-3 text-blue-500" />
-                <span>읽기 진행률</span>
+                <span>진행률</span>
               </span>
               <span className="font-bold text-blue-600">{Math.round(progress)}%</span>
             </div>

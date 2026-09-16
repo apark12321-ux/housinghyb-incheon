@@ -4,993 +4,616 @@ export const POSTS_MOVE: Post[] = [
   {
     id: "move-2",
     title: "구축 아파트 셀프 인테리어: 가성비로 분위기 바꾸는 5단계",
-    excerpt: "수도권 및 주요 거점의 오래된 아파트에 사는 분들을 위해 큰돈 들이지 않고 분위기를 바꾸는 셀프 인테리어 5단계를 정리했습니다.",
-    content: `
-      <h2>구축 아파트 셀프 인테리어 도전기: 가성비 있게 분위기 바꾸는 5단계</h2>
-      <div class="toc-compact">
-        <p><strong>글의 구성</strong></p>
-        <ul>
-          <li><a href="#section1">1. 첫 단추는 조명: 분위기의 8할을 결정합니다</a></li>
-          <li><a href="#section2">2. 벽지와 페인트의 힘: 시각적 면적의 마술</a></li>
-          <li><a href="#section3">3. 손잡이와 스위치: 디테일이 완성도를 좌우합니다</a></li>
-          <li><a href="#section4">4. 타일 시트지와 줄눈 보수: 주방과 욕실의 환골탈태</a></li>
-          <li><a href="#section5">5. 가구 재배치와 소품 인테리어의 마무리</a></li>
-        </ul>
-      </div>
-      <p>조명 교체, 따뜻한 톤 온 톤 페인트 질감 보강, 매트 손잡이 전자기 커버 교체, 시트 타일 부착 등 가벼운 투자로 분위기를 환골탈태시키는 홈 스타일링 가이드입니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-24</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "수도권 구축 아파트나 빌라에 입주할 때 큰 비용을 들이지 않고도 집안 분위기를 완전히 바꿀 수 있는 가성비 셀프 인테리어 5단계 실전 노하우를 소개합니다.",
     category: "이사-인테리어",
     author: "하우징허브",
     date: "2026-06-24",
     image: "https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&fit=crop&q=80&w=800",
-    readTime: "25분",
-    hashtags: ["셀프인테리어", "홈스타일링", "가성비인테리어"]
+    readTime: "8분",
+    hashtags: ["셀프인테리어","홈스타일링","가성비인테리어","구축아파트"],
+    content: `
+      <h2>큰돈 들이지 않고 구축 아파트 환골탈태시키는 5가지 핵심 포인트</h2>
+      <p>오래된 구축 아파트나 빌라로 이사할 때 가장 큰 고민은 역시 <strong>인테리어 비용</strong>입니다. 전체 턴키 리모델링을 맡기면 평당 150만~200만 원은 훌쩍 넘어가다 보니 전세나 월세 세입자는 물론, 영끌로 매수한 1주택자에게도 큰 부담이 됩니다.</p>
+      <p>하지만 집 전체를 다 뜯어고치지 않아도 시각적인 면적과 조명, 손에 닿는 하드웨어만 교체해도 집의 인상이 180도 달라집니다. 제가 직접 20년 된 복도식 구축 아파트를 고치며 검증한 <strong>가장 가성비 좋은 셀프 인테리어 5단계</strong>를 공유합니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#section1">1. 첫 단추는 조명: 주광색(형광등색)에서 주백색·전구색으로 교체</a></li>
+          <li><a href="#section2">2. 벽지와 페인트: 톤 온 톤 화이트와 걸레받이 마감</a></li>
+          <li><a href="#section3">3. 손잡이와 스위치 커버: 5만 원으로 올리는 디테일의 완성도</a></li>
+          <li><a href="#section4">4. 주방·욕실 타일 시트지와 줄눈 마카: 찌든 때 지우기</a></li>
+          <li><a href="#section5">5. 가구 재배치와 패브릭 커튼으로 아늑한 공간 완성</a></li>
+        </ul>
+      </div>
+
+      <h3 id="section1">1. 첫 단추는 조명: 분위기의 8할은 색온도가 결정합니다</h3>
+      <p>구축 아파트에 들어섰을 때 유독 차갑고 낡아 보이는 가장 큰 이유는 천장에 달린 쨍한 푸른빛의 <strong>주광색(6500K) 형광등</strong> 때문입니다. 조명만 따뜻하고 자연스러운 색감으로 바꿔도 공간의 온도가 완전히 달라집니다.</p>
+      <ul>
+        <li><strong>거실 및 방:</strong> 은은하고 눈이 편안한 <strong>주백색(4000K~4500K)</strong> LED 기판이나 일체형 슬림 방등으로 교체하십시오. 개당 1만~2만 원대면 충분히 구매할 수 있습니다.</li>
+        <li><strong>식탁 및 침실 코너:</strong> 노란빛이 감도는 <strong>전구색(3000K)</strong> 장스탠드나 펜던트 조명을 배치하면 카페 같은 아늑한 분위기가 살아납니다.</li>
+        <li><strong>팁:</strong> 전등 교체 시에는 반드시 두꺼비집(분전반 전등 차단기)을 내리고 작업하셔야 안전합니다.</li>
+      </ul>
+
+      <h3 id="section2">2. 벽지와 페인트: 시각적 면적의 마술</h3>
+      <p>누렇게 뜬 벽지와 촌스러운 꽃무늬 벽지는 셀프 도배나 페인팅으로 해결할 수 있습니다.</p>
+      <ul>
+        <li><strong>풀바른 벽지 활용:</strong> 물에 적시거나 풀이 미리 발라져 나오는 친환경 합지 벽지를 주문하면 혼자서도 주말 하루 만에 방 한 칸을 도배할 수 있습니다. (비용: 방 1개 기준 약 4만~6만 원)</li>
+        <li><strong>문틀과 몰딩 페인팅:</strong> 짙은 체리색 몰딩이나 걸레받이가 거슬린다면 젯소(프라이머)를 1회 얇게 바른 뒤 친환경 수성 페인트(크림화이트/웜그레이)를 2회 덧칠해 주면 집이 훨씬 넓어 보입니다.</li>
+      </ul>
+
+      <h3 id="section3">3. 손잡이와 스위치: 5만 원으로 올리는 디테일의 완성도</h3>
+      <p>방문 손잡이와 벽면 스위치·콘센트 커버는 매일 손으로 만지는 곳이라 낡은 티가 가장 잘 나는 부분입니다. 드라이버 하나만 있으면 누구나 5분 만에 교체할 수 있습니다.</p>
+      <ul>
+        <li><strong>매트 블랙 또는 니켈 레버형 손잡이:</strong> 개당 8,000원~15,000원 선으로, 문에 달아주기만 해도 모던한 느낌이 듭니다.</li>
+        <li><strong>나노 슬림 스위치 플레이트:</strong> 누렇게 변색된 구형 스위치를 화이트 무광 플레이트로 교체하면 벽면 전체가 깔끔하게 정돈됩니다.</li>
+      </ul>
+
+      <h3 id="section4">4. 타일 시트지와 줄눈 보수: 주방과 욕실의 환골탈태</h3>
+      <p>기름때가 찌든 싱크대 앞 타일과 누런 욕실 줄눈은 소액 투자로 가장 큰 시각적 효과를 볼 수 있는 영역입니다.</p>
+      <ul>
+        <li><strong>알루미늄 방수 타일 시트지:</strong> 주방 싱크대 벽면에는 열과 기름에 강한 입체 모자이크 타일 시트지를 붙이면 철거 없이도 새 주방처럼 변신합니다.</li>
+        <li><strong>줄눈 코팅제 및 줄눈 마카:</strong> 욕실 바닥 타일 틈새의 곰팡이를 락스로 제거한 뒤, 다이소나 철물점에서 파는 타일 줄눈 보수제(3,000원~8,000원)를 발라주면 호텔 욕실처럼 하얗게 복원됩니다.</li>
+      </ul>
+
+      <h3 id="section5">5. 가구 재배치와 소품 인테리어의 마무리</h3>
+      <p>마지막 단계는 집의 채광과 동선을 고려한 가구 배치입니다.</p>
+      <p>창문을 가로막는 높은 수납장은 벽면 코너로 옮겨 자연 채광을 극대화하고, 시선을 차단하지 않는 낮은 수납장 위주로 동선을 확보하세요. 여기에 린넨 소재의 차르르 커튼과 실내 공기정화 식물(몬스테라, 아레카야자) 한두 개만 곁들이면 적은 비용으로도 감성 넘치는 나만의 보금자리가 완성됩니다.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-24 | 감수: 하우징허브 인테리어팀</p>
+    `
   },
   {
     id: "move-4",
     title: "서울·경기 포장이사 견적 비교: 사다리차·보관이사·추가 비용 정리",
-    excerpt: "수도권에서 이사를 준비하는 분들을 위해 포장이사 견적 비교법과 숨은 추가 비용을 정리했습니다.",
-    content: `
-      <h2>포장이사 견적 비교 완벽 가이드</h2>
-      <p>사다리차 비용 정산, 폐기물 대형 전용 영수처리, 초과 인건비 방지 특약 등 계약 당시 확정해야 하는 이사 추가비 방어 공식을 기록했습니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-25</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "이사 당일 예상치 못한 추가 요금 시비를 방지하고, 합리적인 견적으로 안전하게 포장이사를 마치는 5가지 실무 꿀팁을 정리했습니다.",
     category: "이사-인테리어",
-    time: "15:32:08",
     author: "하우징허브",
     date: "2026-06-25",
-    image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&q=80&w=800",
-    readTime: "12분",
-    hashtags: ["포장이사", "이사견적", "이사비용"]
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+    readTime: "9분",
+    hashtags: ["포장이사","이사견적","사다리차","이사비용절약"],
+    content: `
+      <h2>이사 당일 '추가 요금 폭탄' 피하는 포장이사 실전 가이드</h2>
+      <p>포장이사를 준비할 때 가장 당황스러운 순간은 계약할 때 들었던 금액과 당일 청구된 금액이 다를 때입니다. "짐이 생각보다 많다", "사다리차가 안 닿아 엘리베이터를 써야 한다", "점심 식대를 따로 달라"는 식의 분쟁은 여전히 이사 현장에서 빈번하게 일어납니다.</p>
+      <p>수도권에서 수차례 이사를 경험하며 정리한 <strong>포장이사 견적 비교 원칙과 계약서 필수 특약</strong>을 공유합니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#sec1">1. 비대면 견적의 함정: 반드시 '방문 견적' 최소 3곳 받아야 하는 이유</a></li>
+          <li><a href="#sec2">2. 이사 날짜 선택에 따른 비용 차이 (손 없는 날 vs 평일)</a></li>
+          <li><a href="#sec3">3. 사다리차 vs 엘리베이터 사용료 비교와 관리사무소 사전 조율</a></li>
+          <li><a href="#sec4">4. 보관이사(컨테이너) 진행 시 필수 점검 사항</a></li>
+          <li><a href="#sec5">5. 계약서에 꼭 넣어야 할 3대 추가 비용 방어 특약</a></li>
+        </ul>
+      </div>
+
+      <h3 id="sec1">1. 비대면 견적의 함정: 반드시 '방문 견적' 최소 3곳을 받으세요</h3>
+      <p>전화나 사진으로만 견적을 받는 비대면 견적은 당일 분쟁의 주원인입니다. 이사 업체 직원마다 짐의 부피(톤수)를 계산하는 기준이 다르기 때문입니다.</p>
+      <ul>
+        <li><strong>방문 견적은 무료입니다:</strong> 대다수 정식 허가업체는 무료 방문 견적을 원칙으로 합니다. 최소 3개 업체를 불러 직접 집안의 장롱, 베란다 잔짐, 창고까지 보여주고 산출받으십시오.</li>
+        <li><strong>투입 인원 및 차량 톤수 확인:</strong> 5톤 트럭 기준 남자 기사 3명, 주방 이모 1명이 표준 구성입니다. 인원이 부족하면 이사 시간이 늘어나고 파손 위험이 커집니다.</li>
+      </ul>
+
+      <h3 id="sec2">2. 이사 날짜 선택에 따른 비용 차이</h3>
+      <p>이사 비용은 수요와 공급에 따라 극명하게 갈립니다. 일정을 유연하게 조율할 수 있다면 비용을 크게 아낄 수 있습니다.</p>
+      <div class="overflow-x-auto my-4">
+        <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+          <thead>
+            <tr class="bg-slate-100 text-slate-800">
+              <th class="border border-slate-200 p-2.5 font-bold">날짜 구분</th>
+              <th class="border border-slate-200 p-2.5 font-bold">비용 수준</th>
+              <th class="border border-slate-200 p-2.5 font-bold">특징 및 권고사항</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="border border-slate-200 p-2.5 font-semibold">손 없는 날 + 주말</td>
+              <td class="border border-slate-200 p-2.5 text-red-600 font-bold">기준가 대비 +20~30% 할증</td>
+              <td class="border border-slate-200 p-2.5">예약이 가장 먼저 마감되며 당일 교통 혼잡 심함</td>
+            </tr>
+            <tr class="bg-slate-50">
+              <td class="border border-slate-200 p-2.5 font-semibold">월말 (25~31일)</td>
+              <td class="border border-slate-200 p-2.5">+10~15% 할증</td>
+              <td class="border border-slate-200 p-2.5">전월세 만기 집중 시기로 견적 경쟁 치열</td>
+            </tr>
+            <tr>
+              <td class="border border-slate-200 p-2.5 font-semibold">월초·월중 평일(화·수·목)</td>
+              <td class="border border-slate-200 p-2.5 text-emerald-700 font-bold">가장 저렴 (최대 20~40만 원 절약)</td>
+              <td class="border border-slate-200 p-2.5">숙련된 고정 에이스 팀 배정 확률이 높음</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3 id="sec3">3. 사다리차 vs 엘리베이터 사용료 비교</h3>
+      <p>이사 갈 집과 나갈 집 양쪽의 진입 환경을 미리 체크해야 합니다.</p>
+      <ul>
+        <li><strong>사다리차:</strong> 층수와 톤수에 따라 편도 12만~25만 원 수준입니다. 진입로에 나무나 가로등, 지상 주차 차량이 많으면 사다리차 설치가 불가능할 수 있습니다.</li>
+        <li><strong>엘리베이터 이사:</strong> 아파트 관리사무소에 사전 예약하고 '엘리베이터 사용료(보통 5만~15만 원)'를 납부해야 합니다. 이삿날 다른 세대 이사와 겹치지 않도록 최소 2~3주 전에 관리사무소에 일정을 선점해 두셔야 합니다.</li>
+      </ul>
+
+      <h3 id="sec4">4. 보관이사(컨테이너) 진행 시 필수 점검 사항</h3>
+      <p>인테리어 공사나 입주일 불일치로 짐을 며칠에서 한 달간 보관해야 하는 경우, 이사를 두 번 하는 것과 같아 비용이 2배 가까이 발생합니다.</p>
+      <p>컨테이너 야외 보관 시 여름철 고온다습으로 인한 가구 곰팡이나 겨울철 결로 피해가 생길 수 있으므로, <strong>온·습도 조절이 가능한 실내 전용 물류창고</strong>를 이용하는 업체를 선택하시는 것이 안전합니다.</p>
+
+      <h3 id="sec5">5. 계약서에 꼭 넣어야 할 3대 추가 비용 방어 특약</h3>
+      <p>구두 약속은 법적 효력을 다투기 어렵습니다. 관인 계약서 서명 전 아래 특약이 명시되어 있는지 확인하세요.</p>
+      <ul>
+        <li><em>"식대, 수고비 등 일체의 추가 현금 요구를 하지 않으며, 계약서에 명시된 총액 외 추가 비용은 없다."</em></li>
+        <li><em>"이삿짐 파손 및 분실 발생 시 소비자분쟁해결기준 및 적재물배상책임보험에 따라 즉각 보상 처리한다."</em></li>
+        <li><em>"당일 투입 차량(예: 5톤 1대)과 작업 인원(남성 3명, 여성 1명)을 계약대로 전원 투입한다."</em></li>
+      </ul>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-25 | 감수: 하우징허브 주거실무팀</p>
+    `
   },
   {
     id: "move-5",
-    title: "에서 보증금 묶인 채 이사하는 법: 임차권등기명령 활용",
-    excerpt: "임차인이 보증금을 못 받은 상태에서 안전하게 이사하는 방법을 임차권등기명령 중심으로 정리했습니다.",
-    content: `
-      <h2>보증금 묶인 상태에서 안전하게 이사하는 법</h2>
-      <p>이사를 서둘러야 하는데 대항력을 잃지 않도록 등기사항 전부증명서에 임차권을 보존하는 법원 신청 및 전자소송 코치서입니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-19</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    title: "전세 만기 후 보증금 묶인 채 이사하는 법: 임차권등기명령 활용",
+    excerpt: "전세 계약 만기가 지났는데도 집주인이 보증금을 돌려주지 않을 때, 대항력을 잃지 않고 안전하게 새집으로 이사하는 임차권등기명령 절차를 상세히 안내합니다.",
     category: "이사-인테리어",
     author: "하우징허브",
     date: "2026-06-19",
-    image: "https://images.unsplash.com/photo-1567016432779-094069958ea5?auto=format&fit=crop&q=80&w=800",
-    readTime: "13분",
-    hashtags: ["임차권등기명령", "보증금미반환", "안전한이사"]
+    image: "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=800",
+    readTime: "10분",
+    hashtags: ["임차권등기명령","보증금반환","전세만기","전자소송"],
+    content: `
+      <h2>집주인이 보증금을 안 줄 때, 짐 빼기 전 반드시 해야 할 일</h2>
+      <p>"다음 세입자가 들어와야 돈을 줄 수 있다"며 만기일이 지나도 보증금 반환을 미루는 집주인 때문에 피가 마르는 세입자분들이 많습니다. 새집 잔금 날짜는 다가오는데 기존 보증금을 못 받은 상태에서 <strong>그냥 짐을 빼고 전입신고를 옮기면 기존 집의 '대항력과 우선변제권'이 즉시 소멸</strong>되어 영영 돈을 떼일 수 있습니다.</p>
+      <p>이 절체절명의 위기에서 세입자의 보증금 순위를 법적으로 묶어두고 안전하게 이사 갈 수 있게 해주는 유일한 무기가 바로 <strong>'임차권등기명령'</strong>입니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#sec1">1. 임차권등기명령이란? 이사 가도 대항력을 지키는 안전장치</a></li>
+          <li><a href="#sec2">2. 신청 요건 2가지와 사전 계약 해지 통보 증거 확보</a></li>
+          <li><a href="#sec3">3. 대법원 전자소송으로 나홀로 30분 만에 신청하는 방법</a></li>
+          <li><a href="#sec4">4. 가장 치명적인 실수: '등기 완료 전 전출' 절대 금지</a></li>
+          <li><a href="#sec5">5. 신청 비용(인지대·송달료)을 집주인에게 청구하는 법</a></li>
+        </ul>
+      </div>
+
+      <h3 id="sec1">1. 임차권등기명령이란?</h3>
+      <p>주택임대차보호법 제3조의3에 규정된 제도로, 임차인이 법원의 명령을 받아 해당 주택 등기부등본 '을구'에 <strong>"이 세입자에게 돌려줄 보증금 OO원이 남아있다"</strong>는 사실을 공식 기재하는 제도입니다.</p>
+      <p>등기부에 임차권등기가 기입되면 세입자가 다른 곳으로 주소지를 옮기고 짐을 완전히 빼더라도, 기존에 취득했던 대항력과 우선변제권 효력이 그대로 유지됩니다. 또한 다음 세입자에게도 이 집이 보증금 미반환 사고 주택이라는 경고가 되므로 집주인에게 엄청난 심리적·금융적 압박이 됩니다.</p>
+
+      <h3 id="sec2">2. 신청 요건과 사전 증거 확보</h3>
+      <ul>
+        <li><strong>요건 1:</strong> 임대차 계약 기간이 만료되었거나 적법하게 해지되었을 것 (계약 만료 2개월 전까지 갱신 거절 의사 통보 필수)</li>
+        <li><strong>요건 2:</strong> 보증금의 전액 또는 일부를 돌려받지 못했을 것</li>
+        <li><strong>필수 증거:</strong> 계약 해지 통보 문자/카카오톡(임대인의 확인 답변 포함) 캡처본 또는 우체국 내용증명 도달 확인서</li>
+      </ul>
+
+      <h3 id="sec3">3. 대법원 전자소송 나홀로 신청 절차</h3>
+      <p>변호사나 법무사를 쓰지 않아도 <strong>대한민국 법원 전자소송(ecfs.scourt.go.kr)</strong> 사이트에서 본인이 직접 신청할 수 있으며, 비용도 3만~5만 원 수준으로 매우 저렴합니다.</p>
+      <ol class="space-y-2 text-sm text-slate-700">
+        <li><strong>1단계:</strong> 전자소송 로그인 후 [서류제출] &gt; [민사서류] &gt; [주택임차권등기명령신청서] 선택</li>
+        <li><strong>2단계:</strong> 당사자 기본 정보 입력 (신청인: 본인, 피신청인: 등기부등본상 집주인)</li>
+        <li><strong>3단계:</strong> 신청 취지 및 신청 이유 작성 (계약일, 보증금액, 점유일, 전입신고일, 확정일자 부여일, 만료일 기재)</li>
+        <li><strong>4단계:</strong> 첨부 서류 제출 (임대차계약서 사본, 주민등록초본(주소변동포함), 등기부등본, 계약해지 증빙 자료, 부동산 도면)</li>
+      </ol>
+
+      <h3 id="sec4">4. 가장 치명적인 실수: '등기 완료' 확인 전 절대 전출 금지!</h3>
+      <p>많은 세입자가 법원에 서류를 접수했거나 '결정 정본'을 받자마자 바로 주민센터에 가서 새집으로 전입신고를 해버리는 실수를 범합니다.</p>
+      <p>법원의 결정이 내려진 뒤 등기소에서 해당 건물의 등기부등본에 실제로 <strong>'주택임차권'이라는 글자가 찍히기까지는 보통 1~2주일의 시간이 소요</strong>됩니다. 반드시 대법원 인터넷등기소에서 등본을 열람하여 을구에 내 이름과 보증금이 등재된 것을 눈으로 확인한 뒤에 전출신고를 하셔야 합니다.</p>
+
+      <h3 id="sec5">5. 신청 비용 집주인 청구</h3>
+      <p>주택임대차보호법 제3조의3 제8항에 따라 임차권등기명령 신청에 소요된 <strong>인지대, 송달료, 등록면허세, 등기신청수수료 일체는 임대인에게 전액 청구</strong>할 수 있습니다. 영수증을 챙겨두었다가 보증금 반환 정산 시 함께 청구하십시오.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-19 | 감수: 하우징허브 법률실무팀</p>
+    `
   },
   {
     id: "move-6",
     title: "원룸·오피스텔 가성비 인테리어 5계명: 100만원으로 변신",
-    excerpt: "수도권 및 주요 거점의 원룸·오피스텔 거주자를 위해 적은 예산으로 분위기를 바꾸는 인테리어 노하우를 정리했습니다.",
-    content: `
-      <h2>원룸·오피스텔 가성비 인테리어 완벽 가이드</h2>
-      <p>닫힌 수납 8: 열린 수납 2 정렬, 간접 전등 결합, 무점착 이탈 시트지 등 1주택 자들의 가벼운 원룸 인테리어 플랜을 제시합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-20</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "좁은 원룸과 오피스텔 공간을 200% 넓어 보이게 만들고, 퇴거 시 원상복구 걱정 없는 100만 원 예산 맞춤형 홈스타일링 노하우를 공개합니다.",
     category: "이사-인테리어",
-    time: "13:42:18",
     author: "하우징허브",
     date: "2026-06-20",
-    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&q=80&w=800",
-    readTime: "12분",
-    hashtags: ["원룸인테리어", "오피스텔인테리어", "가성비꾸미기"]
+    image: "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&q=80&w=800",
+    readTime: "7분",
+    hashtags: ["원룸인테리어","오피스텔꾸미기","가성비가구","자취방인테리어"],
+    content: `
+      <h2>작은 원룸을 호텔 스위트룸처럼 만드는 공간 마술</h2>
+      <p>5평에서 8평 남짓한 원룸이나 오피스텔에 처음 자취를 시작하면 막막합니다. 침대 하나, 책상 하나 놓았을 뿐인데 발 디딜 틈이 없어지고 온갖 짐이 뒤엉키기 십상입니다. 게다가 임대차 계약상 못 하나 마음대로 박을 수 없는 세입자의 현실도 인테리어를 가로막는 큰 장벽입니다.</p>
+      <p>하지만 <strong>공간 분리와 수직 수납, 조명</strong>만 잘 활용하면 100만 원 안팎의 합리적인 예산으로도 퇴거 시 원상복구 부담 없이 세련된 나만의 아지트를 만들 수 있습니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#rule1">1계명: 침대 밑과 벽면 수직 공간을 쥐어짜라 (수납 침대 & 행거)</a></li>
+          <li><a href="#rule2">2계명: 가벽 대신 '파티션 책장'과 '커튼'으로 공간을 분리하라</a></li>
+          <li><a href="#rule3">3계명: 형광등을 끄고 '간접조명 3포인트'를 세워라</a></li>
+          <li><a href="#rule4">4계명: 못 자국 없이 액자와 선반 거는 완벽 노하우</a></li>
+          <li><a href="#rule5">5계명: 컬러는 3가지로 제한하라 (화이트·우드·베이지)</a></li>
+        </ul>
+      </div>
+
+      <h3 id="rule1">1계명: 침대 밑과 벽면 수직 공간을 쥐어짜라</h3>
+      <p>원룸 바닥 면적의 절반을 차지하는 침대는 무조건 <strong>수납형 프레임</strong>(서랍 + 벙커 수납)을 선택해야 합니다. 계절 지난 이불과 옷, 여행용 캐리어를 침대 밑에 모두 숨기면 옷장 하나를 덜 들여놓을 수 있어 방이 훨씬 넓어집니다.</p>
+
+      <h3 id="rule2">2계명: 가벽 대신 '파티션 책장'으로 수면과 생활 분리</h3>
+      <p>원룸에서 침대와 생활 공간이 훤히 드러나면 심리적으로 안정감을 느끼기 어렵습니다. 등판이 뚫린 낮은 2~3단 오픈형 책장을 침대 옆에 두면, 방을 어둡게 가로막지 않으면서도 자연스러운 파티션 역할을 해줍니다. 책장에 책과 화분, 디퓨저를 올려두면 훌륭한 인테리어 오브제가 됩니다.</p>
+
+      <h3 id="rule3">3계명: 형광등을 끄고 간접조명 3포인트를 세워라</h3>
+      <p>원룸 인테리어의 분위기를 결정짓는 가장 저렴하고 확실한 투자는 <strong>조명</strong>입니다.</p>
+      <ul>
+        <li><strong>침대 헤드:</strong> 독서와 수면을 위한 따뜻한 전구색 무드등 (2만~3만 원)</li>
+        <li><strong>코너 구석:</strong> 천장을 향해 빛을 쏘아 올려 공간감을 확장하는 롱 스탠드 (3만~5만 원)</li>
+        <li><strong>작업 책상:</strong> 눈의 피로를 줄여주는 주백색 모니터 라이트바 (2만~4만 원)</li>
+      </ul>
+
+      <h3 id="rule4">4계명: 못 자국 없이 액자와 거울 거는 완벽 노하우</h3>
+      <p>벽에 못을 박을 수 없는 전월세 원룸에서는 <strong>'꼭꼬핀(벽지 핀)'</strong>과 <strong>'벨크로 부착 테이프'</strong>가 필수 아이템입니다. 꼭꼬핀은 벽지와 석고보드 사이에 핀을 비스듬히 꽂아 최대 2kg까지 지탱할 수 있으며, 이사 갈 때 빼내고 손톱으로 벽지를 쓱쓱 문지르면 자국이 전혀 남지 않습니다.</p>
+
+      <h3 id="rule5">5계명: 컬러는 최대 3가지로 제한하라</h3>
+      <p>좁은 방일수록 여러 가지 원색이 들어가면 산만하고 좁아 보입니다. 베이스 컬러는 <strong>화이트(60%)</strong>, 서브 컬러는 <strong>밝은 내추럴 우드나 라이트 그레이(30%)</strong>, 포인트 컬러는 <strong>그린 식물이나 네이비 쿠션(10%)</strong> 정도로 단정하게 통일해야 시각적으로 정돈된 느낌을 줍니다.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-20 | 감수: 하우징허브 리빙디자인팀</p>
+    `
   },
   {
     id: "move-7",
-    title: "임차인 필수: 전입신고와 확정일자 받는 순서",
-    excerpt: "수도권에서 이사한 임차인을 위해 보증금을 지키는 전입신고·확정일자의 순서와 핵심을 정리했습니다.",
-    content: `
-      <h2>전입신고와 확정일자, 단 하루도 놓치면 안 되는 이유</h2>
-      <p>잔금일 이사 직후 정부24를 이용해 다음날 대항력 발생의 빈틈을 메우는 전월세 실거래 동시 처리 요령을 알기 쉽게 알려 드립니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-21</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    title: "임차인 필수: 전입신고와 확정일자 받는 순서와 대항력 완성법",
+    excerpt: "보증금을 안전하게 지키는 주택임대차보호법 대항력의 발생 시점과 잔금 당일 전입신고 및 확정일자를 처리하는 가장 안전한 프로세스를 정리합니다.",
     category: "이사-인테리어",
     author: "하우징허브",
     date: "2026-06-21",
-    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=800",
-    readTime: "12분",
-    hashtags: ["전입신고", "확정일자", "보증금보호"]
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    readTime: "8분",
+    hashtags: ["전입신고","확정일자","대항력","우선변제권","임대차계약"],
+    content: `
+      <h2>내 보증금의 철통 방패: 대항력과 우선변제권의 모든 것</h2>
+      <p>임대차 계약을 맺고 이사를 갈 때 반드시 해야 하는 두 가지 행정이 있습니다. 바로 <strong>'전입신고'</strong>와 <strong>'확정일자'</strong>입니다. 대부분의 임차인이 이 두 가지를 해야 한다는 것은 알지만, 법적 효력이 언제 발생하는지, 왜 순서와 날짜가 중요한지 정확히 아는 분은 많지 않습니다.</p>
+      <p>단 하루의 시차나 오기입 하나로 경매 시 수억 원의 보증금을 통째로 날릴 수 있는 <strong>대항력 완성의 실전 골든타임</strong>을 명쾌하게 해설합니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#point1">1. 전입신고와 확정일자의 차이: 대항력 vs 우선변제권</a></li>
+          <li><a href="#point2">2. 대항력의 치명적 함정: '이사 당일'이 아닌 '다음 날 0시'</a></li>
+          <li><a href="#point3">3. 잔금 당일 완벽한 대처 프로세스 타임라인</a></li>
+          <li><a href="#point4">4. 계약서 필수 방어 특약: 당일 권리변동 금지</a></li>
+          <li><a href="#point5">5. 등기부등본 열람 시점 3단계</a></li>
+        </ul>
+      </div>
+
+      <h3 id="point1">1. 대항력 vs 우선변제권: 무엇이 다른가?</h3>
+      <ul>
+        <li><strong>대항력 (주택의 인도 + 전입신고):</strong> 집주인이 바뀌거나 집이 경매에 넘어가도 새로운 소유자에게 "내 계약 기간 동안 계속 살겠으며, 보증금을 다 돌려줄 때까지 방을 빼지 않겠다"고 주장할 수 있는 권리입니다.</li>
+        <li><strong>우선변제권 (대항력 + 확정일자):</strong> 집이 경매나 공매로 넘어갔을 때, 매각 대금에서 후순위 권리자나 기타 채권자보다 먼저 내 보증금을 우선 배당받을 수 있는 권리입니다.</li>
+      </ul>
+
+      <h3 id="point2">2. 대항력의 치명적 맹점: '다음 날 0시'의 법적 공백</h3>
+      <p>주택임대차보호법 제3조 제1항에 따르면, 대항력은 전입신고를 마친 당일이 아니라 <strong>'다음 날 오전 0시(자정)'</strong>부터 효력이 발생합니다.</p>
+      <p>반면, 은행의 근저당권 설정 등기는 등기소에 서류가 접수된 <strong>'당일 주간'</strong>에 즉시 효력이 발생합니다. 이 하루의 시차 때문에 잔금 날 임차인이 짐을 풀고 전입신고를 하는 사이에 집주인이 은행으로 달려가 고액 담보대출을 받으면, 은행이 1순위 근저당권자가 되고 임차인은 2순위 후순위로 밀려나는 끔찍한 전세사기가 발생합니다.</p>
+
+      <h3 id="point3">3. 잔금 당일 완벽한 대처 프로세스 타임라인</h3>
+      <ol class="space-y-2 text-sm text-slate-700">
+        <li><strong>오전 9시:</strong> 인터넷등기소에서 잔금 당일 최신 등기부등본을 열람하여 계약일 이후 새로운 근저당이나 가압류가 없는지 확인</li>
+        <li><strong>오전 10시~12시:</strong> 이삿짐 센터 작업 시작 및 잔금 송금, 영수증 수령</li>
+        <li><strong>오후 1시:</strong> 관할 행정복지센터(주민센터)에 직접 방문하거나 정부24 모바일 앱으로 <strong>전입신고와 확정일자 부여 신청 즉각 완료</strong></li>
+        <li><strong>다음 날 오전 9시:</strong> 등기부등본을 한 번 더 열람하여 전날 집주인의 추가 대출 설정 여부 최종 확인</li>
+      </ol>
+
+      <h3 id="point4">4. 계약서 필수 방어 특약 문구</h3>
+      <p>이러한 법적 공백을 메우기 위해 계약서 특약란에 다음 문구를 반드시 자필 또는 활자로 기재해야 합니다.</p>
+      <div class="p-4 bg-amber-50/70 border border-amber-200 rounded-lg text-xs sm:text-sm text-amber-950 font-medium">
+        "임대인은 계약 체결일로부터 임차인의 전입신고 및 확정일자 효력이 발생하는 익일 0시까지 본건 부동산에 근저당권, 가등기, 신탁 등 일체의 권리변동 행위를 하지 않기로 하며, 위반 시 본 계약은 즉각 무효로 하고 계약금 및 잔금 전액을 즉시 반환함과 동시에 위약금을 지급한다."
+      </div>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-21 | 감수: 하우징허브 법률실무팀</p>
+    `
   },
   {
     id: "move-8",
     title: "아파트 관리비 줄이는 6가지 방법: 월 5만원 절약하기",
-    excerpt: "수도권 거주자를 위해 공용·전기·난방·수도 관리비를 줄이는 실전 절약법을 정리했습니다.",
-    content: `
-      <h2>관리비 월 5만 원 절약하는 6가지 실전 방법</h2>
-      <p>보일러 외출 모드 전용 세팅, 3단계 누진세 방지 대기 전력 멀티탭 분할, 지자체 수도계량기 절수형 장착 등 고정 소비세 정산법을 안내합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-22</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "매달 고지서에 찍히는 아파트 관리비의 숨은 거품을 걷어내고, 이사 시 집주인에게 환급받아야 할 필수 환급금까지 실속 있게 챙기는 방법을 정리했습니다.",
     category: "이사-인테리어",
-    time: "13:00:00",
     author: "하우징허브",
     date: "2026-06-22",
-    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
-    readTime: "13분",
-    hashtags: ["관리비절감", "전기요금절약", "난방비절감"]
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+    readTime: "8분",
+    hashtags: ["아파트관리비","관리비절약","장기수선충당금","생활비절약"],
+    content: `
+      <h2>아는 사람만 챙기는 아파트 관리비 다이어트 비법</h2>
+      <p>전기료와 가스비가 잇따라 인상되면서 30평대 아파트의 한겨울·한여름 관리비가 30만~50만 원에 육박하고 있습니다. 대부분의 세입자나 입주민이 관리비 고지서를 받으면 총액만 대충 확인하고 자동이체로 넘기지만, 고지서 세부 항목을 자세히 들여다보면 <strong>매달 몇만 원씩 줄일 수 있는 항목들</strong>이 숨어 있습니다.</p>
+      <p>불필요한 지출을 막고 이사 갈 때 목돈으로 돌려받는 <strong>관리비 절약 6가지 실전 팁</strong>을 소개합니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#tip1">1. 세입자 필독: 이사 갈 때 '장기수선충당금' 전액 환급받기</a></li>
+          <li><a href="#tip2">2. TV 미보유 세대: 수신료(월 2,500원) 분리 및 해지 신청</a></li>
+          <li><a href="#tip3">3. 한전 전기요금 복지할인 (출산가구·다자녀·대가족)</a></li>
+          <li><a href="#tip4">4. 겨울철 난방비 폭탄 방지: 외출 모드의 함정</a></li>
+          <li><a href="#tip5">5. 관리비 자동이체 제휴 신용카드 캐시백 (월 1~2만 원)</a></li>
+        </ul>
+      </div>
+
+      <h3 id="tip1">1. 이사 갈 때 집주인에게 '장기수선충당금' 전액 환급받기</h3>
+      <p>공동주택관리법상 아파트의 배관 교체, 엘리베이터 수리, 외벽 도색 등 노후 시설 보수를 위해 적립하는 <strong>장기수선충당금은 본래 집주인(소유자)이 부담해야 하는 비용</strong>입니다. 하지만 편의상 관리비 고지서에 합산 청구되어 거주 중인 세입자가 대신 납부해 온 것입니다.</p>
+      <p>따라서 세입자는 이사 당일 아파트 관리사무소에 방문하여 <strong>'장기수선충당금 납부 확인서'</strong>를 발급받은 뒤, 임대인(집주인)에게 제시하여 거주 기간 동안 납부한 총액(2년 거주 기준 보통 30만~60만 원 상당)을 전액 돌려받아야 합니다.</p>
+
+      <h3 id="tip2">2. TV가 없다면 TV 수신료 해지 신청</h3>
+      <p>집에 TV 수상기가 없고 모니터나 태블릿, 스마트폰으로만 OTT를 시청하는 1인 가구라면 관리비에 매달 2,500원씩 부과되는 TV 수신료를 면제받을 수 있습니다. 관리사무소나 KBS 수신료 콜센터(1588-1801)에 신고하여 현장 점검 후 수신료 부과를 중단할 수 있습니다.</p>
+
+      <h3 id="tip3">3. 출산가구·다자녀 전기요금 복지할인 혜택</h3>
+      <p>만 3세 미만 영아가 있는 가구는 출생일로부터 3년이 되는 날까지 매월 전기요금의 30%(월 최대 16,000원 한도)를 감면받을 수 있습니다. 3자녀 이상 다자녀 가구, 5인 이상 대가족도 동일한 혜택을 받으므로 한국전력(국번 없이 123)이나 아파트 관리사무소에 즉시 신청하십시오.</p>
+
+      <h3 id="tip4">4. 보일러 올바른 운용: 외출 모드의 함정</h3>
+      <p>겨울철 하루 이틀 집을 비울 때 보일러를 '외출'로 돌려놓으면 실내 온도가 지나치게 낮아져, 귀가 후 다시 적정 온도로 올리는 데 엄청난 가스가 소모됩니다. 단열이 잘되는 아파트라면 외출 모드 대신 평소 설정 온도보다 <strong>2~3도만 낮춰 유지</strong>하는 것이 가스비를 20% 이상 아끼는 방법입니다.</p>
+
+      <h3 id="tip5">5. 관리비 결제 제휴 카드 활용</h3>
+      <p>관리비를 단순 계좌이체하지 않고 관리비 할인 전용 신용카드를 사용하면 전월 실적에 따라 매월 5,000원에서 15,000원까지 청구 할인을 받을 수 있어 연간 10만~15만 원의 고정비를 아낄 수 있습니다.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-22 | 감수: 하우징허브 생활금융팀</p>
+    `
   },
   {
     id: "move-9",
     title: "우리 집 등기부등본 셀프 점검 5가지 포인트",
-    excerpt: "수도권 거주자를 위해 1년에 한 번 등기부등본을 직접 확인하는 점검 포인트를 정리했습니다.",
-    content: `
-      <h2>등기부등본, 일년에 한 번은 떼보자고요</h2>
-      <p>인터넷등기소 700원 즉시 열람: 근저당 추가 변동, 임대 소유주 양도 사실, 압류 가압류 전조 체크 포인트를 전달합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-23</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "공인중개사 말만 믿지 않고 내 손으로 직접 등기부등본 표제부·갑구·을구를 5분 만에 완벽하게 분석하는 실전 권리분석 가이드입니다.",
     category: "이사-인테리어",
     author: "하우징허브",
     date: "2026-06-23",
-    image: "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800",
-    readTime: "11분",
-    hashtags: ["등기부등본", "셀프점검", "부동산안전"]
+    image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80&w=800",
+    readTime: "9분",
+    hashtags: ["등기부등본","권리분석","근저당권","갑구을구","부동산계약"],
+    content: `
+      <h2>공인중개사도 놀라는 세입자의 5분 등기부등본 셀프 판독법</h2>
+      <p>부동산 계약 시 중개사가 "융자 조금 있지만 집주인이 탄탄해서 문제없다"고 안심시키는 말을 그대로 믿고 도장을 찍었다가 깡통전세에 걸려 피눈물을 흘리는 피해자가 부지기수입니다. 등기부등본(등기사항전부증명서)은 <strong>인터넷등기소에서 단돈 700원이면 누구나 1분 만에 열람</strong>할 수 있는 법적 공문서입니다.</p>
+      <p>어려운 법률 용어에 겁먹지 않고, 내 보증금의 안전 여부를 즉시 판별할 수 있는 <strong>등기부등본 5대 핵심 체크 포인트</strong>를 정리해 드립니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#chk1">1. 표제부: 계약서 주소와 호수가 토씨 하나 안 틀리고 일치하는가?</a></li>
+          <li><a href="#chk2">2. 갑구: 진짜 집주인 확인과 가압류·경매 위험 신호</a></li>
+          <li><a href="#chk3">3. 을구: 채권최고액 계산법과 깡통전세 판별 공식</a></li>
+          <li><a href="#chk4">4. 위험 등기 3대장: 신탁등기, 가등기, 임차권설정등기</a></li>
+          <li><a href="#chk5">5. 등기부등본 발급 날짜와 시간 확인의 중요성</a></li>
+        </ul>
+      </div>
+
+      <h3 id="chk1">1. 표제부(건물의 표시): 동·호수 주소 일치 검증</h3>
+      <p>다세대주택(빌라)이나 집합건물에서 가장 잦은 실수가 바로 '공부상 호수'와 '실제 현관문 호수'의 불일치입니다.</p>
+      <ul>
+        <li>현관문에 201호라고 적혀 있어도 건축물대장과 등기부등본상에는 B01호로 기재된 경우가 있습니다.</li>
+        <li>이 경우 등기부등본 표제부의 정확한 주소로 전입신고를 하지 않으면 <strong>대항력이 발생하지 않아</strong> 경매 시 보증금을 한 푼도 못 건집니다.</li>
+      </ul>
+
+      <h3 id="chk2">2. 갑구(소유권에 관한 사항): 진짜 소유자 판별</h3>
+      <p>갑구에서는 현재 소유자의 이름과 주민등록번호 앞자리를 확인하여 신분증과 대조해야 합니다. 또한 다음과 같은 단어가 하나라도 적혀 있다면 즉시 계약을 중단하십시오.</p>
+      <ul>
+        <li><strong>가압류·압류:</strong> 집주인의 채무로 인해 법원에서 재산을 동결한 상태입니다.</li>
+        <li><strong>경매개시결정:</strong> 이미 빚을 갚지 못해 법원 경매 절차에 돌입한 물건입니다.</li>
+        <li><strong>가처분·가등기:</strong> 소유권을 둘러싼 법적 다툼이 진행 중인 상태입니다.</li>
+      </ul>
+
+      <h3 id="chk3">3. 을구(소유권 이외의 권리): 채권최고액과 안전 마진</h3>
+      <p>을구에 적힌 <strong>'근저당권설정'</strong>은 집주인이 집을 담보로 은행에서 돈을 빌렸다는 뜻입니다.</p>
+      <ul>
+        <li>등기부에 적힌 <strong>'채권최고액'</strong>은 실제 대출 원금의 120~130% 수준으로 설정됩니다.</li>
+        <li><strong>깡통전세 안전성 계산 공식:</strong><br/>
+        <code>(선순위 채권최고액 + 내 전세보증금) ÷ 해당 주택의 최근 매매 실거래가 ≤ 70%</code></li>
+        <li>이 비율이 70~80%를 넘어가면 집이 경매에 넘어갔을 때 보증금을 떼일 위험이 극도로 높아집니다.</li>
+      </ul>
+
+      <h3 id="chk4">4. 가장 주의해야 할 '신탁등기'</h3>
+      <p>갑구에 소유자가 'OO자산신탁'으로 등기되어 있는 신탁 주택은 집주인(위탁자)에게 임대 권한이 없습니다. 반드시 신탁회사의 '사전 임대차 계약 동의서' 원본과 신탁원부를 확인해야 하며, 이를 누락하고 집주인 개인과 맺은 계약은 무효가 됩니다.</p>
+
+      <h3 id="chk5">5. 출력 시각 확인</h3>
+      <p>등기부등본 맨 아랫줄에 출력된 <strong>'발행 일시(연월일 시·분·초)'</strong>를 반드시 확인하십시오. 며칠 전 뽑아둔 오래된 등본은 의미가 없으며, 계약 당일과 잔금 당일 오전에 새로 열람한 실시간 등본이어야 합니다.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-23 | 감수: 하우징허브 부동산권리분석팀</p>
+    `
   },
   {
     id: "move-10",
     title: "이사 한 달 전 체크리스트: 성수기 막판 견적·예약 노하우",
-    excerpt: "수도권에서 이사를 앞둔 분들을 위해 한 달 전부터 챙겨야 할 체크리스트와 견적 노하우를 정리했습니다.",
-    content: `
-      <h2>5월 이사, 한 달 전부터 챙겨야 해요</h2>
-      <p>성수기 전출입일 이삿짐 차량 및 평일 예약 우대 유도법, D-30부터 단계별 버리는 물품 분리 요령 등 성수기 회피 팁을 제시합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-15</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "이사 한 달 전부터 D-Day까지 날짜별로 빠짐없이 챙겨야 할 필수 행정 절차와 공과금 정산, 이사업체 선정 타임라인을 한눈에 정리합니다.",
     category: "이사-인테리어",
-    time: "14:22:58",
     author: "하우징허브",
     date: "2026-06-15",
-    image: "https://images.unsplash.com/photo-1604014237800-1c9102c219da?auto=format&fit=crop&q=80&w=800",
-    readTime: "10분",
-    hashtags: ["이사성수기", "이사체크리스트", "이사업체비교"]
+    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+    readTime: "9분",
+    hashtags: ["이사체크리스트","이사준비","공과금정산","이사D-day"],
+    content: `
+      <h2>실수 없이 끝내는 이사 한 달 전 완벽 실전 타임라인</h2>
+      <p>이삿날이 닥쳐서 허둥지둥 준비하다 보면 엘리베이터 사용 예약을 놓쳐 이삿짐을 길바닥에 쌓아두거나, 인터넷 이전 설치가 밀려 재택근무를 망치고, 도시가스 철거를 안 해 가스 누출 위험을 겪는 일이 흔합니다.</p>
+      <p>이사 D-30일부터 당일까지 날짜별로 해야 할 일을 완벽하게 정리한 <strong>실전 이사 체크리스트</strong>입니다. 핸드폰에 저장해 두고 하나씩 체크하며 준비해 보세요.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#d30">1. D-30: 이사업체 견적 계약 및 아파트 엘리베이터 예약</a></li>
+          <li><a href="#d14">2. D-14: 버릴 가전·가구 정리 및 폐기물 스티커 예약</a></li>
+          <li><a href="#d7">3. D-7: 도시가스 철거 예약, 인터넷·정수기 이전 신청</a></li>
+          <li><a href="#d1">4. D-1: 귀중품 및 중요 서류 별도 보관, 냉장고 비우기</a></li>
+          <li><a href="#dday">5. D-Day: 이사 당일 공과금 정산과 전입신고</a></li>
+        </ul>
+      </div>
+
+      <h3 id="d30">1. D-30: 이사업체 계약과 아파트 엘리베이터 선점</h3>
+      <ul>
+        <li><strong>방문 견적 3곳 진행:</strong> 최소 한 달 전에 방문 견적을 받고 계약서에 추가 비용 없음을 명시한 뒤 계약금(보통 10%)을 송금합니다.</li>
+        <li><strong>양쪽 아파트 엘리베이터 사용 예약:</strong> 사다리차 진입 불가 아파트는 엘리베이터를 하루에 2가구 이상 쓰기 어렵습니다. 지금 살고 있는 집과 이사 갈 집 양쪽 관리사무소에 전화를 걸어 이삿날 시간대를 선점하십시오.</li>
+      </ul>
+
+      <h3 id="d14">2. D-14: 대형 폐기물 정리 및 무료 나눔</h3>
+      <ul>
+        <li>새집에 가져가지 않을 낡은 가구와 가전은 <strong>'폐가전 무상수거(1599-0903)'</strong>나 당근마켓 무료 나눔으로 미리미리 비워내야 이사 톤수가 줄어 견적 비용이 절감됩니다.</li>
+        <li>주민센터나 구청 홈페이지에서 대형 폐기물 스티커를 미리 발급받아 두십시오.</li>
+      </ul>
+
+      <h3 id="d7">3. D-7: 도시가스 및 통신선 이전 예약</h3>
+      <ul>
+        <li><strong>도시가스 예약:</strong> 이삿날 당일 오전에 가스레인지 호스를 분리하고 가스 계량기를 잠가줄 기사님 방문을 관할 도시가스 업체에 사전 예약합니다.</li>
+        <li><strong>인터넷 및 IPTV 이전 설치:</strong> 통신사 고객센터에 연락해 새집 주소지로 이전 설치를 예약해 두어야 이사 당일 밤부터 와이파이를 쓸 수 있습니다.</li>
+        <li><strong>우편물 주소 이전:</strong> 우체국 '주거이전 우편물 전송 서비스'를 신청하면 기존 주소로 오던 우편물이 3개월간 새 주소로 무료 전송됩니다.</li>
+      </ul>
+
+      <h3 id="d1">4. D-1: 귀중품 챙기기와 냉장고 비우기</h3>
+      <ul>
+        <li><strong>귀중품 가방 준비:</strong> 현금, 귀금속, 여권, 계약서 원본, 노트북 등 파손·분실 위험이 있는 물품은 트럭에 싣지 말고 개인 차량이나 백팩에 직접 챙깁니다.</li>
+        <li><strong>냉장고 음식물 정리:</strong> 아이스박스를 지원받더라도 상하기 쉬운 음식은 미리 먹거나 폐기하고, 세탁기 물빼기(배수)를 완료합니다.</li>
+      </ul>
+
+      <h3 id="dday">5. D-Day: 공과금 정산과 전입신고</h3>
+      <ul>
+        <li><strong>계량기 촬영:</strong> 짐을 다 뺀 뒤 전기, 수도, 가스 계량기 수치를 핸드폰 카메라로 찍어 한전(123), 수도사업소, 도시가스에 전화해 당일까지의 요금을 즉시 정산합니다.</li>
+        <li><strong>장기수선충당금 수령:</strong> 세입자는 관리사무소에서 납부확인서를 받아 집주인에게 환급받습니다.</li>
+        <li><strong>전입신고·확정일자:</strong> 새집 잔금을 치르는 즉시 주민센터나 정부24 모바일 앱으로 전입신고를 마칩니다.</li>
+      </ul>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-15 | 감수: 하우징허브 이사실무팀</p>
+    `
   },
   {
     id: "move-11",
-    title: "정부24 온라인 전입신고 3분 완성: 확정일자까지 한 번에 끝내는 2026 실전 가이드",
-    excerpt: "이사 후 14일 안에 반드시 해야 하는 전입신고, 이제 주민센터 안 가도 돼요. 정부24 앱으로 이사 당일 3분이면 전입신고와 확정일자까지 한 번에 끝낼 수 있거든요.",
-    content: `
-      <div class="space-y-6 text-slate-800 leading-relaxed">
-        <p class="text-base text-slate-600 leading-relaxed">
-          새로운 집으로 기분 좋게 이사를 마쳤다면, 가장 먼저 해야 할 법적 조치는 무엇일까요? 바로 <strong>전입신고</strong>와 <strong>확정일자</strong> 취득입니다. 주택임대차보호법상 세입자로서 내 보증금을 안전하게 보호받고 대항력을 확보하기 위한 절대적인 첫 단추입니다. 수백, 수천만 원에서 수억 원에 이르는 소중한 보증금을 순간의 방심으로 잃지 않기 위해서는 계약 체결 후 등기부상 순위를 신속히 점해야 합니다.
-        </p>
-        <p class="text-base text-slate-600 leading-relaxed">
-          과거에는 평일에 소중한 반차나 연차를 내고 거주지 관할 주민센터를 직접 찾아가 번호표를 뽑고 오랫동안 대기해야만 했습니다. 하지만 2026년 현재, 대한민국 정부의 뛰어난 행정 디지털 인프라 덕분에 이제는 <strong>스마트폰 정부24 앱 하나로 단 3분 만에</strong> 전입신고는 물론 최신 임대차 계약서 첨부를 통한 확정일자 부여까지 단 한 번에 비대면 결합 신청으로 해결할 수 있습니다.
-        </p>
-
-        <div class="my-8 p-6 bg-blue-50/70 border border-blue-100 rounded-2xl text-left">
-          <h3 class="text-lg font-bold text-blue-900 mb-2">💡 꼭 알아두세요: 전입신고 14일 의무 규정</h3>
-          <p class="text-sm text-blue-800 leading-relaxed">
-            주민등록법 제16조에 따라 신규 거주지에 실제로 전입한 날부터 <strong>14일 이내</strong>에 반드시 전입신고를 행해야 합니다. 정당한 사유 없이 14일을 초과하여 신고할 경우 5만 원 이하의 과태료 처분을 받거나 불이익을 당할 수 있을 뿐만 아니라, 임대차 보증금 수호의 핵심인 '대항력(전입+인도)'의 효력 발생 시점이 불필요하게 지연되어 각종 거주 법적 위험에 노출될 확률이 커지므로 가급적 이사 당일 마치는 것을 철칙으로 삼으셔야 합니다.
-          </p>
-        </div>
-
-        <h2 class="text-xl font-bold text-slate-900 pt-4 border-t border-slate-100 text-left">1. 스마트폰 정부24 온라인 전입신고의 3대 혁신적 이점</h2>
-        <p class="text-sm text-slate-600 text-left">
-          모바일로 처리하는 비대면 행정 서비스는 단순한 행동의 편의를 넘어 영구 자산과 다름없는 보증금 임차 대항력을 가장 안전하고 빠른 경로로 획득하도록 돕습니다.
-        </p>
-        
-        <ul class="space-y-4 my-4 text-left">
-          <li class="flex items-start space-x-3">
-            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-sm font-bold font-mono">1</span>
-            <div>
-              <strong class="text-slate-950 block text-sm">시간 부담 제로, 완벽한 시공간적 자유</strong>
-              <span class="text-xs text-slate-600">직장에서 눈치 보며 점심시간에 뛰어가거나 연가를 낭비할 필요가 없습니다. 모바일 데이터 통신만 주어지면 휴일이나 심야를 불문하고 이삿짐을 정리하는 도중에서도 손가락 끝 움직임만으로 접수를 무상 진행할 수 있습니다.</span>
-            </div>
-          </li>
-          <li class="flex items-start space-x-3">
-            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-sm font-bold font-mono">2</span>
-            <div>
-              <strong class="text-slate-950 block text-sm">대항력 승리를 완성하는 '확정일자 원스톱 결합 신청'</strong>
-              <span class="text-xs text-slate-600">더 이상 인터넷등기소를 찾거나 복잡한 인증 경로를 따라 개별로 신고할 필요가 전혀 없습니다. 정부24 전입신고 과정 마감에 있는 "대항력을 강화하기 위해 주거 계약 연계 확정일자를 동시 처리하겠습니까?" 하는 질의에 체크하고 계약서 사진 한 장을 업로드하면, 대법원 및 국토교통부 전자등기 전산망을 경유해 단 3분 만에 일관 처리됩니다.</span>
-            </div>
-          </li>
-          <li class="flex items-start space-x-3">
-            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-800 flex items-center justify-center text-sm font-bold font-mono">3</span>
-            <div>
-              <strong class="text-slate-950 block text-sm">기재 오번역 최소화 및 법적 정확성 증대</strong>
-              <span class="text-xs text-slate-600">주민센터 수기 신청 당시 담당 공무원이나 세입자가 실수하기 쉬운 지번 단독 기재나 공용면적 오기입, 전세 동ㆍ호수 기재 미비 등을 예방합니다. 원본 주택 임대차 약정서를 직접 디지털 고해상으로 첨부하므로 주소 불일치 사고를 원천 방어합니다.</span>
-            </div>
-          </li>
-        </ul>
-
-        <h2 class="text-xl font-bold text-slate-900 pt-6 border-t border-slate-100 text-left">2. 온라인 이동 전 필수 탑재 준비물 5인방</h2>
-        <p class="text-sm text-slate-600 text-left">
-          정부24 세션 만료로 도중에 신청 절차가 종료되는 불상사를 막기 위해 앱을 동작하기 전 다음의 필수 제재들을 지근거리에 챙겨두시기 바랍니다.
-        </p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4 font-sans text-sm text-left">
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-            <h4 class="font-bold text-slate-900 text-xs mb-1">🔑 1. 개인 디지털 전자서명 수단</h4>
-            <p class="text-xs text-slate-500 font-sans">카카오톡, 네이버, PASS, 간편 토스 및 금융인증서, 세이프 플러그인용 공동인증서 중 1개 이상의 인증 장치 탑재.</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-            <h4 class="font-bold text-slate-900 text-xs mb-1">📄 2. 정상 대조 주택 전ㆍ월세 임대차계약서 원본</h4>
-            <p class="text-xs text-slate-500 font-sans">계약서 조항, 임대인 서명 및 도장, 계약 주소지가 왜곡이나 음영 반사 없이 아주 맑고 또렷하게 촬영된 JPG/PNG 사진 또는 PDF 스캔본 파일.</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-            <h4 class="font-bold text-slate-900 text-xs mb-1">🏠 3. 이전 살던 주소지 정보 및 세대주 인적 정보</h4>
-            <p class="text-xs text-slate-500 font-sans">기존 타 지역 세대주 명칭과 이사 구성원 명의의 법적 생년월일, 관계를 미리 수집해두면 연동 조회 누락 방지.</p>
-          </div>
-          <div class="bg-slate-50 p-4 rounded-xl border border-slate-100">
-            <h4 class="font-bold text-slate-900 text-xs mb-1">📱 4. 최신 업데이트가 완결된 정부24 모바일 어플리케이션</h4>
-            <p class="text-xs text-slate-500 font-mono">가끔 구형 보안 프로토콜을 가진 구버전 앱 이용 시 파일 처리 오류가 날 수 있으므로 사전 스토어 검증 체크.</p>
-          </div>
-        </div>
-
-        <h2 class="text-xl font-bold text-slate-900 pt-6 border-t border-slate-100 text-left">3. 모바일 스마트폰 전입신고 및 확정일자 동시 수여 5단계 실무 가이드</h2>
-        <p class="text-sm text-slate-600 text-left">
-          차근히 화면 시각 안내에 조응하며 하나하나 데이터를 기입해 넣는 원거리 진행 경로를 쉽게 일목요연 정리했습니다.
-        </p>
-
-        <ol class="relative border-l border-slate-200 my-6 ml-4 space-y-6 text-left">
-          <li class="mb-6 ml-6">
-            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-4 ring-white text-white text-[10px] font-bold">1</span>
-            <span class="font-bold text-slate-900 text-sm mb-1 block">정부24 실행 및 전입 패스 검색</span>
-            <p class="text-xs text-slate-500 leading-relaxed font-sans">
-              최상의 안전 보완 로그인을 거친 후 검색 팝업창에 <strong>'전입신고'</strong> 관련 키워드를 써넣습니다. 신청 분류로 진출하여 전입 절차 시작 지점을 터치하고 내재화된 이용약관 및 신청 동의 지침 전반을 가볍게 인준 승인합니다.
-            </p>
-          </li>
-          <li class="mb-6 ml-6">
-            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-4 ring-white text-white text-[10px] font-bold">2</span>
-            <span class="font-bold text-slate-900 text-sm mb-1 block">사용자 본인 정보 확인 및 신청 카테고리 기재</span>
-            <p class="text-xs text-slate-500 leading-relaxed font-sans">
-              등록된 휴대전화 번호, 이메일 주소 정보가 정확하게 연동되었는지 눈으로 스크리닝 합니다. 이사 사유(주택 가치, 직장 전근, 가계 이송, 학교 입학 등) 중 내 가구 지표에 알막은 원인을 직시해 선택해 줍니다.
-            </p>
-          </li>
-          <li class="mb-6 ml-6">
-            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-4 ring-white text-white text-[10px] font-bold">3</span>
-            <span class="font-bold text-slate-900 text-sm mb-1 block">전 주소지 조회와 연대 구성원 지목 매핑</span>
-            <p class="text-xs text-slate-500 leading-relaxed font-sans">
-              <strong>'전에 살던 하우스 주소 조회'</strong> 버튼을 가동하여 이전 주거지 기본 거점과 구성원 현황을 원클릭으로 통과시킵니다. 해당 탭 내에서 현 가구 중 신규 보금자리인 수도권 등으로 같이 안심 이동을 추진하는 구성원 명의를 하나씩 지목해 지정해 줍니다.
-            </p>
-          </li>
-          <li class="mb-6 ml-6">
-            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-4 ring-white text-white text-[10px] font-bold">4</span>
-            <span class="font-bold text-slate-900 text-sm mb-1 block">새로 보금자리 주소 배치와 임대차 계약서 전송</span>
-            <p class="text-xs text-slate-500 leading-relaxed font-sans">
-              새 계약을 이행한 보금자리의 주차 동, 세부 주택 호실 주소, 전용면적 숫자를 오차 없이 매핑해 준 뒤, 하단에 탑재된 <strong>'온라인 우편물 수령지 통합 전입 이전 신청'</strong> 및 <strong>'대법원 국토부 결합 확정일자 부여 동의'</strong> 확인 창을 필히 채택 승인합니다. 미리 정사 격 구도로 촬영 수집해둔 정상 대조용 전세 계약서 고해상 파일을 원거리 드롭 전송하면 서류 접수가 무결점으로 연계 이식됩니다.
-            </p>
-          </li>
-          <li class="mb-6 ml-6">
-            <span class="absolute flex items-center justify-center w-6 h-6 bg-blue-600 rounded-full -left-3 ring-4 ring-white text-white text-[10px] font-bold">5</span>
-            <span class="font-bold text-slate-900 text-sm mb-1 block">원거리 최종 검토 및 인증 제출 접수</span>
-            <p class="text-xs text-slate-500 leading-relaxed font-sans">
-              작성된 계약 대조표를 최종 상단부터 스펙 검수하듯 확인한 다음, 서명 보안 플러그인 동의 하에 간편 인증서 등을 가동해 마침표 서명을 발주합니다. 관할 행정 거점 담당자가 수기 검증 후, 대개 수십 분에서 수 시간 내에 전입신고 수리 및 확정일자 인가 확인 단문 메시지(sms) 송신을 완료시킵니다.
-            </p>
-          </li>
-        </ol>
-
-        <h2 class="text-xl font-bold text-slate-900 pt-6 border-t border-slate-100 text-left">4. 소중한 재산 보증금의 수호를 위해 반드시 알아야 할 안심 안전 체크 포인트</h2>
-        <p class="text-sm text-slate-600 text-left">
-          행정 절차가 온당히 모바일 상태로 접수되었다고 해서 임대 보증금 대항 전쟁에서 무조건적인 세권 보장이 즉시 성사되는 것은 아닙니다. 아래 명기되는 보증금 대항 발생 매커니즘을 명백히 기억하고 사후 무기 특약 조항을 필수 대비하셔야 합니다.
-        </p>
-
-        <div class="bg-amber-50 rounded-2xl border border-amber-200 p-6 my-4 space-y-3 text-left">
-          <h4 class="text-amber-950 font-bold text-sm">⛔ 핵심 경고: 주택 대항력 발생 시차를 절대 조심할 것</h4>
-          <p class="text-xs text-amber-800 leading-relaxed">
-            전입신고를 오전 10시에 정상 인가받았다 하더라도, 대한민국 주택임대차보호법상 세입자의 원천적 <strong>보증금 대항력은 전입을 끝마치고 확정일자를 가진 당일이 아닌, '다음 날 오전 0시(자정 영시)'를 기점으로 비로소 법적 기동을 선언</strong>하게 됩니다. 
-          </p>
-          <p class="text-xs text-amber-800 leading-relaxed">
-            반면, 악의를 지닌 임대인이 세입자가 대항력이 없는 이사 당일 잔금 수취 및 전입신고 인가일 대기 시간대에 시중의 제1금융 대부 업체를 밀착 방문하여 본 가옥을 무기로 잡은 고액 근저당권 담보를 일사천리로 집행하는 극단 도용 행위를 진행할 경우, 근저당 담보권의 채권 지위는 등기 당일에 즉각 적용되므로 세입자의 아침 0시 대항 조건보다 무조건 우선 선점 지위를 갖습니다. 이럴 경우 전세 보증금이 후순위의 한계로 밀려 경매 상황 시 일절 돌려받지 못하게 되는 전세 사기 대재앙에 가치 구릅니다.
-          </p>
-          <p class="text-xs text-amber-800 leading-relaxed font-bold">
-            🛡️ 최강 안심 무기 대처 조항: 반드시 임대차 약정 협약서 특약 조항 란에 "임대인은 잔금 수령 및 임대 자산의 본 세입자 실거주 인도 시점 다음날 24시 자정 시점까지 추가적인 제3자 선순위 담보 가등기, 주택 근저당 설정, 채무 보증 등의 여신 실행 및 소유권 지분 이동 조치 일체를 엄금하며, 위 권리 변동 행동을 위반 시 본 임대차 계약은 전면 즉시 무효 귀속 해지되며 임대인은 임차인의 대출 연체 상환 등 피해 일절과 보증 계약 총액을 그 즉시 전액 긴급 무상 배상 환급 책임을 지기로 완전 결의 확약 공인한다" 라 적어 상대방 도장을 직시해 명시받아 두는 것이 보증금 주거 수호의 확실한 안심 무기입니다.
-          </p>
-        </div>
-
-        <div class="bg-rose-50 rounded-2xl border border-rose-100 p-5 space-y-2 text-left text-rose-950 my-4">
-          <h4 class="font-bold text-xs">❌ 주의: 비대면 모바일 전입신고 승인이 거부되는 특수 예외</h4>
-          <ul class="list-disc pl-5 text-xs text-rose-900 space-y-1.5 font-sans">
-            <li><strong>신청 주체가 미성년 단독 세대주인 경우:</strong> 행정상 보증 권리의 대항 지위 수립 복잡 성격과 아동 안전 규칙상 인터넷 접수가 불가 처리되며 전속 친권자의 수기 증명이 가치 첨부되어야 하므로 관할 현장 지점 거점 방문이 타당합니다.</li>
-            <li><strong>이전 살던 공간에서 이사 당사자로 체크된 자들 중 일부만이 세대주를 이탈해 혼자 따로 나갈 경우:</strong> 이전 살던 가택 세대주가 실물 간편 인증이나 어플리케이션 안심 동의 시스템을 경유해 '내가 내 가구원을 안전 탈퇴 반출시키는 것을 동의한다'는 전용 터치 승인을 가동해주어야 진척되며, 만약 일주일 동안 세대주의 동의 가동 입력이 지체되면 접수는 정식 자동 반려 휴짓조각이 되고 맙니다.</li>
-            <li><strong>다세대 가옥 중 임시 임대용 가건물 상태 및 특정 구분 등기 미부여 주소:</strong> 소유주 지표와 토지 건물 매핑 번호가 서로 도일하지 않는 특전 구역 주택은 공무원이 등본 확인 후 유선 연락하여 오프라인 처리를 수여 요청하게 됩니다.</li>
-          </ul>
-        </div>
-
-        <h2 class="text-xl font-bold text-slate-900 pt-6 border-t border-slate-100 text-left">5. 2026 하우징 허브 스마트 주거 안전 점검 대조 일람표</h2>
-        <div class="border border-slate-200 rounded-xl overflow-hidden font-sans text-xs text-left my-4">
-          <div class="grid grid-cols-3 bg-slate-100 p-3 font-bold border-b border-slate-200 text-slate-800">
-            <div>주요 점검 지표</div>
-            <div class="col-span-2">안심 대처 핵심 수칙 및 가치 대응 액션</div>
-          </div>
-          <div class="grid grid-cols-3 p-3 border-b border-slate-100 bg-white">
-            <div class="font-semibold text-slate-900">최적 처리 타이밍 진입 시간</div>
-            <div class="col-span-2 text-slate-600 font-sans">반드시 주중(평일) 영업 일과 시간대인 오전 9시부터 오후 6시 안에 모바일 원거리 송신을 가동하는 것을 권고합니다. 만일 불필요하게 늦은 야간이나 관공서가 휴업 수립한 금요일 야밤 주말 전용 시간대에 송출하시면, 담당 관공 공직자가 월요일에야 접수 및 인가를 진행하게 되므로 최대 3일간 내 대항력 확보 고지가 붕 떠 지체 되는 심각 위험이 전착됩니다.</div>
-          </div>
-          <div class="grid grid-cols-3 p-3 border-b border-slate-100 bg-slate-50/50">
-            <div class="font-semibold text-slate-900">확정일자 등기 교부 완료 체크</div>
-            <div class="col-span-2 text-slate-600 font-sans">신청 다음 날 정부24 앱 '마이 서류 신청 내역' 탭에 이식된 처리 상태창을 교차 정밀 열독하셔야 합니다. 담당 센터에서 최종적으로 법리 규정한 디지털 일자 및 인장 승인이 성공적으로 발송되었는지 수시로 스냅샷을 캡처 떠 저장해 두시기 바랍니다.</div>
-          </div>
-          <div class="grid grid-cols-3 p-3 bg-white">
-            <div class="font-semibold text-slate-900">대항 개시 당일 가상 등기 재출력</div>
-            <div class="col-span-2 text-slate-600 font-sans">모든 이관이 수락 완료 선언된 다음 날 대항권 시작 기점으로 인터넷 등기소 전용 프로그램을 활용하여 '주택 등기부등본 원본' 서류를 필수 교환 재발급하셔야 합니다. 혹시 계약 잔금 당일 기습적으로 매수인 저당 채무 전용 계약이 몰래 기입되어 내 순위권을 해치고 돌파하여 앞당겨 들어온 치명적 가해 조짐이 없었는지 밀전 확인하셔야 합니다.</div>
-          </div>
-        </div>
-
-        <h2 class="text-xl font-bold text-slate-900 pt-6 border-t border-slate-100 text-left">6. 마무리하며</h2>
-        <p class="text-sm text-slate-600 leading-relaxed text-left">
-          내가 힘겹게 이룩한 소중한 근로의 가치물, 생애 첫 지위의 귀막강한 보금자리를 수호하고 이사 후 무탈하게 꿀잠 자며 임차인의 안락함을 누릴 수 있는 방안은 지치지 않는 사소한 행정 수칙 이행력에서 갈립니다. 등기소나 주민센터 방문 비용 0원, 반차 소비 zero인 3분의 스마트폰 행정 투자는 영구 보증 자산을 지키는 유일무이한 황금 지름길입니다. 이사 예정일이 닥쳤다면 이번 실전 절차 로드맵을 머리에 선험 입력해두고 망설임 없이 정부24 안심 원 패스 신고를 실행해 보시기 바랍니다.
-        </p>
-        <p class="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-100 text-right">최종 업데이트 및 완정한 법리 교환 보도: 2026-06-12 | 하우징허브수도권 안심 세입 센터</p>
-      </div>
-    `,
+    title: "정부24 모바일 전입신고 방법: 동사무소 안 가고 스마트폰으로 3분 만에 끝내는 법",
+    excerpt: "이사 후 14일 안에 반드시 해야 하는 전입신고, 이제 주민센터 안 가도 됩니다. 정부24 스마트폰 앱으로 이사 당일 3분이면 전입신고와 확정일자까지 한 번에 끝내는 실전 가이드입니다.",
     category: "이사-인테리어",
     author: "하우징허브",
     date: "2026-06-16",
     image: "https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&q=80&w=800",
-    readTime: "10분",
-    hashtags: ["전입신고", "정부24", "확정일자"]
+    readTime: "8분",
+    hashtags: ["전입신고", "정부24", "확정일자", "모바일전입신고", "이사행정"],
+    content: `
+      <h2>동사무소 갈 시간 없는 직장인을 위한 스마트폰 전입신고 완벽 가이드</h2>
+      <p>새집으로 이사하고 짐 정리하느라 정신없는 와중에, 평일 낮에 반차를 내고 주민센터(동사무소)까지 찾아가 번호표 뽑고 기다리는 일은 여간 번거로운 게 아닙니다.</p>
+      <p>하지만 대한민국 세입자라면 누구나 <strong>스마트폰의 '정부24' 앱을 이용해 3분 만에 전입신고와 확정일자 부여 신청까지</strong> 비대면으로 한 번에 끝낼 수 있습니다. 이사 당일 꼭 알아두어야 할 실전 순서와 주의점을 꼼꼼히 정리해 드립니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#m1">1. 전입신고 14일 의무 규정과 놓치면 안 되는 이유</a></li>
+          <li><a href="#m2">2. 신청 전 딱 3가지 준비물: 신분증(간편인증), 계약서 사진, 이전 주소</a></li>
+          <li><a href="#m3">3. 스마트폰 정부24 앱 전입신고 5단계 실전 따라하기</a></li>
+          <li><a href="#m4">4. 확정일자 동시 신청 시 유의점과 수수료 안내</a></li>
+          <li><a href="#m5">5. 온라인 전입신고가 불가능한 예외 케이스 3가지</a></li>
+        </ul>
+      </div>
+
+      <h3 id="m1">1. 전입신고 14일 의무 규정과 골든타임</h3>
+      <p>주민등록법 제16조에 따라 새로 이사한 날부터 <strong>14일 이내</strong>에 새로운 거주지 관할 관청에 전입신고를 마쳐야 합니다. 정당한 사유 없이 14일을 넘기면 5만 원 이하의 과태료가 부과됩니다.</p>
+      <p>하지만 과태료보다 훨씬 중요한 이유는 <strong>내 보증금을 지키는 '대항력'</strong> 때문입니다. 전입신고를 마쳐야만 주택임대차보호법상 대항력이 생기므로, 14일을 채우지 말고 가급적 <strong>'이사 당일 낮'</strong>에 마치는 것이 안전합니다.</p>
+
+      <h3 id="m2">2. 신청 전 딱 3가지 준비물</h3>
+      <ul>
+        <li><strong>간편인증 수단:</strong> 카카오톡, 네이버, 토스, PASS, 금융인증서 등 본인 명의 스마트폰 인증</li>
+        <li><strong>임대차계약서 원본 사진:</strong> 집주인과 세입자의 도장 또는 서명이 선명하게 찍히고, 주소와 보증금이 또렷하게 보이는 스마트폰 촬영본(JPG, PNG) 또는 PDF 파일</li>
+        <li><strong>이전 살던 주소지 정보:</strong> 세대주 성명과 주민등록번호 앞자리</li>
+      </ul>
+
+      <h3 id="m3">3. 스마트폰 정부24 앱 전입신고 5단계</h3>
+      <ol class="space-y-3 text-sm text-slate-700">
+        <li><strong>1단계: 정부24 앱 로그인 및 검색</strong><br/>앱 실행 후 간편인증으로 로그인하고, 메인 검색창에 <code>전입신고</code>를 검색하여 [신청] 버튼을 누릅니다.</li>
+        <li><strong>2단계: 신청인 본인 연락처 확인</strong><br/>신청인의 이름과 주민등록번호, 연락처(휴대폰 번호)가 맞는지 확인하고 전입 사유(직장, 주거환경, 가족합가 등)를 선택합니다.</li>
+        <li><strong>3단계: 이전에 살던 곳(전출지) 조회</strong><br/>[이전 살던 곳 조회] 버튼을 누르면 기존 세대주 정보와 세대원 목록이 자동으로 뜹니다. 함께 이사하는 세대원을 체크해 줍니다.</li>
+        <li><strong>4단계: 새로 이사 온 곳(전입지) 주소 입력</strong><br/>새집의 도로명 주소와 상세주소(동·호수)를 정확하게 입력합니다. 다가구주택은 지번, 아파트·다세대주택은 동·호수를 반드시 건축물대장과 일치하게 적어야 합니다.</li>
+        <li><strong>5단계: 확정일자 부여 동의 및 계약서 파일 첨부</strong><br/>화면 하단의 [우편물 주소 이전 서비스]와 <strong>[임대차계약서 첨부 및 확정일자 신청]</strong>에 체크하고, 미리 찍어둔 계약서 사진을 업로드한 뒤 최종 제출합니다.</li>
+      </ol>
+
+      <h3 id="m4">4. 확정일자 동시 신청 시 필수 체크</h3>
+      <p>정부24에서 전입신고 시 계약서를 첨부하면 관할 행정복지센터 담당 공무원이 내용을 확인한 뒤 확정일자를 함께 부여해 줍니다.</p>
+      <ul>
+        <li><strong>수수료:</strong> 온라인 확정일자 신청 수수료는 건당 500원(부가수수료 포함 약 600원)입니다.</li>
+        <li><strong>처리 시간:</strong> 평일 업무시간(09:00~18:00) 내에 신청하면 보통 1~3시간 이내에 처리가 완료되며, 완료 문자(SMS)가 발송됩니다.</li>
+        <li><strong>신청 다음 날 등본 확인:</strong> 처리 완료 문자를 받으면 정부24 앱에서 '주민등록표 등본'을 모바일로 열람하여 주소가 올바르게 전입되었는지 최종 확인하십시오.</li>
+      </ul>
+
+      <h3 id="m5">5. 온라인 전입신고가 안 되는 예외 상황</h3>
+      <p>다음의 경우에는 정부24 비대면 접수가 제한되므로 관할 주민센터를 직접 방문하셔야 합니다.</p>
+      <ul>
+        <li><strong>미성년자가 단독으로 세대주가 되어 전입하는 경우</strong></li>
+        <li><strong>기존 세대주를 두고 세대원 일부만 전출하여 다른 세대에 합가할 때, 전/후 세대주의 온라인 동의를 7일 이내에 받기 어려운 경우</strong></li>
+        <li><strong>건축물대장상 주택이 아닌 상가·근린생활시설 등 용도 변경 건물인 경우</strong></li>
+      </ul>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-16 | 감수: 하우징허브 주거행정팀</p>
+    `
   },
   {
     id: "move-12",
     title: "2026 인테리어 트렌드 4가지: 수도권 우리 집 적용법",
-    excerpt: "워밍 뉴트럴부터 플랜테리어까지, 2026 인테리어 트렌드를 수도권 가정에 적용하는 법을 정리했습니다.",
-    content: `
-      <h2>2026년, 집은 따뜻하게 비워내는 방향으로</h2>
-      <p>모래색 샌드 톤, 포근함을 선사하는 곡선 라운드 소가구 활용, 수직 플랜테리어 배치 등 모던 가성비 포인트 연출법을 다룹니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-17</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "차갑고 단조로운 화이트 인테리어에서 벗어나 자연스러운 따스함과 기능성을 더하는 2026 주거 인테리어 트렌드와 현실적인 홈스타일링 적용법을 소개합니다.",
     category: "이사-인테리어",
-    time: "15:11:29",
     author: "하우징허브",
     date: "2026-06-17",
-    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
-    readTime: "10분",
-    hashtags: ["인테리어트렌드", "워밍뉴트럴", "플랜테리어"]
+    image: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&q=80&w=800",
+    readTime: "7분",
+    hashtags: ["인테리어트렌드","2026인테리어","플랜테리어","웜미니멀리즘"],
+    content: `
+      <h2>2026년 주거 트렌드: 집은 '비워내고 치유하는' 공간으로</h2>
+      <p>몇 년간 대한민국 아파트를 지배했던 것은 군더더기 없는 올 화이트 무몰딩 인테리어였습니다. 하지만 지나치게 병원처럼 차갑고 관리하기 어렵다는 피로감이 쌓이면서, 2026년 인테리어 시장은 <strong>'따뜻함(Warmth)'과 '자연(Nature)', 그리고 '휴식(Wellness)'</strong>을 중심으로 빠르게 재편되고 있습니다.</p>
+      <p>큰돈을 들여 대공사를 하지 않고도 우리 집에 바로 적용해 볼 수 있는 <strong>2026 핵심 인테리어 트렌드 4가지</strong>를 짚어드립니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#tr1">1. 웜 미니멀리즘(Warm Minimalism): 차가운 화이트에서 크림·샌드 베이지로</a></li>
+          <li><a href="#tr2">2. 바이오필릭(Biophilic) 디자인: 플랜테리어와 자연 채광의 극대화</a></li>
+          <li><a href="#tr3">3. 둥근 곡선 가구의 귀환: 유기적 실루엣으로 아늑함 더하기</a></li>
+          <li><a href="#tr4">4. 가변형 멀티태스킹 공간: 재택과 휴식을 넘나드는 다이닝룸</a></li>
+        </ul>
+      </div>
+
+      <h3 id="tr1">1. 웜 미니멀리즘: 따뜻한 베이지와 우드의 조화</h3>
+      <p>새하얀 쿨톤 화이트 대신 아이보리, 크림, 샌드(모래색), 웜그레이 등 자연스러운 흙과 돌의 색감이 대세로 떠올랐습니다. 벽지나 커튼을 은은한 미색으로 선택하고 내추럴 오크나 월넛 톤의 원목 가구를 매치하면 오랜 시간 머물러도 눈이 편안하고 질리지 않는 고급스러운 공간이 연출됩니다.</p>
+
+      <h3 id="tr2">2. 바이오필릭 디자인: 식물과 빛으로 채우는 생기</h3>
+      <p>도시의 삭막함을 달래기 위해 실내에 자연 요소를 들이는 바이오필릭 인테리어가 주목받고 있습니다. 거실 창가 쪽에 키 큰 극락조나 아레카야자를 배치하거나, 주방 선반에 덩굴 식물(아이비, 스킨답서스)을 늘어뜨려 생기를 불어넣어 보세요. 식물은 실내 습도 조절과 공기 정화에도 탁월합니다.</p>
+
+      <h3 id="tr3">3. 둥근 곡선(Curved) 가구의 유행</h3>
+      <p>딱딱하고 날카로운 각진 가구 대신 모서리가 둥글게 굴려진 라운드 식탁, 둥근 소파, 아치형 거울이 공간에 부드러운 리듬감을 선사합니다. 특히 좁은 집일수록 동선에 부딪히지 않는 타원형 식탁이나 둥근 커피 테이블을 배치하면 공간이 훨씬 유연하고 넓어 보입니다.</p>
+
+      <h3 id="tr4">4. 가변형 다이닝룸: 식탁에서 서재, 홈카페까지</h3>
+      <p>거실에 거대한 소파와 TV를 두는 전형적인 구조에서 벗어나, 거실 중앙에 커다란 원목 다이닝 테이블을 두고 낮에는 재택근무와 독서 공간으로, 저녁에는 가족이 모여 식사하고 와인을 즐기는 복합 문화 공간으로 활용하는 가구가 크게 늘고 있습니다.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-17 | 감수: 하우징허브 인테리어리서치팀</p>
+    `
   },
   {
     id: "move-13",
     title: "이사 가전·가구 처분법: 폐기물 스티커부터 무상수거까지",
-    excerpt: "수도권에서 이사할 때 가전·가구를 처분하는 절차를 폐기물 스티커·무상수거 중심으로 정리했습니다.",
-    content: `
-      <h2>이사 며칠 전에야 알아보면 늦어요</h2>
-      <p>대형 주방 가전 무상 수거 연계신청(1599-0903), 지자체 대형 가구 스티커 온라인 출수 등 비용을 최소화하는 방출 공식을 제공합니다.</p>
-      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-18</p>
-    
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-slate-50 p-6 sm:p-8 rounded-2xl border border-slate-1/50 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-slate-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-slate-900 text-white text-[10px] uppercase font-mono">이사 완전백서</span>
-      하우징허브 주거 케어: 이사·행정 수칙 및 아파트 관리비 절감 실무 백과
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 서구 검단, 청라 신도시 아파트와 부평구 복합 오피스텔 등 다양한 지형으로의 이사는 생활권 변경 이상의 중대한 <strong>물리 자산 이동 공정</strong>입니다. 가전·가구의 효율적 처분과 안전 인테리어 시공은 물론, 전입 당일 벌어지는 일분일초를 다투는 임차 권리 소유 등기 방어전까지 빈틈없는 실천 로드맵을 확립해야만 평생 소중히 일군 전세금 혹은 보증 자산을 온전히 수호할 수 있습니다. 수도권 이삿날을 앞둔 세입자와 매수 가구가 즉시 기동 적용해야 할 원 포인트 핵심 전술들을 일목요연 정리해 고시합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 대형 폐기물 무상 수거 연계 및 인터넷 스티커 인가 조치</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      폐기하려는 냉장고, 세탁기 등 대형 주반 가전이 있다면 직접 스티커 비용을 지불하고 지자체 수거를 받기보다 먼저 국토부 공식 연계 환경 자원 재순환망인 <strong>'폐가전 무상방문수거 서비스' (통합 콜센터 1599-0903)</strong> 채널을 통해 무상 방문 수령을 인준 결합 신청하십시오. 
-      방문 수거 불인정 구역이거나 수거 규격에 도일하지 않는 폐가구(장롱, 침대 매트리스, 소파 등)는 수도권 부평구, 연수구, 남동구 등 거주지 구청 인터넷 공식 포털에 진입하여 모의 대용량 스티커 발부 번호를 승인 발급 완료 후 부착해야 무단 투기 과태료 처분을 원천 회피합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 대항력 수립 전쟁: 이삿날 오전 잔금 회수부터 오후 등본 최종 검진까지의 3스텝</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      모바일 이관 및 전입신고가 정부24 앱 상에서 완료된 시점이라도 법률적 보증금 대항 개시는 <strong>이사 당일이 아닌 '다음 날 영시(00:00)'</strong>에 발흥하므로, 잔금 송금 당일 소유 임대인이 기습적 담보 설정을 할 위험을 방어해야 절대 안전합니다. 
-      1) 계약 잔금을 입금하기 직전 집주인에게 모바일 등기부등본(오픈 즉시 1분 대조용 인터넷 등기소 열람 추천)을 재차 확인하여 숨겨진 가등기 조짐이 없는지 대조하십시오. 
-      2) 잔금 치른 즉시 전입신고와 결합 확정일자를 즉각 모바일 완료하고, 3) 반드시 '잔금일 다음날 오전 9시'가 되는 즉시 법원 등기부등본 수수료 700원을 들여 원본을 재발행 함으로써, 내가 이사한 당일 집주인이 고액 근저당권 설정 내역이 없는지 최종 확인해야 전세 사기 피해를 예방할 수 있습니다.
-    </p>
-
-    <div class="my-5 p-5 bg-blue-50/60 rounded-xl border border-blue-100">
-      <h5 class="text-blue-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 아파트 관리비 현명한 절감 및 영구 이사용 정산 확인 공식
-      </h5>
-      <p class="text-xs text-blue-900 leading-relaxed font-sans">
-        이삿날 당일 관리사무소를 내방하여 <strong>'중간관리비 정산 시스템'</strong>을 가동해 전차 관리비를 완전 수납한 뒤, 임차 기간 동안 매월 관리비 납부 명세서에 자동으로 더해져 납출되던 <strong>'장기수선충당금' 총 수치 내역서</strong>를 필히 요청하십시오. 본 납부액은 원래 자산 소유주가 부담하는 것이 법리 원칙이므로, 공인 영수증을 집주인이나 부대 전문가에게 드롭 제시하여 이삿날 현금으로 고스란히 이탈 없이 전액 환급 인수받아야 가치를 회복할 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 정주 여건 안심 이사 점검 동선 매뉴얼</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>이사 일지 순서</div>
-        <div class="col-span-2">현장 필수 실천 전속 행동 수칙 내용</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 한 달 전 점검</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 성수기(봄, 가을) 포장이사 업체의 피해보상보험 유무 점검 및 추가 사다리차 옵션 부과 총액 서면 특약 사인.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">이사 일주일 전 기획</div>
-        <div class="col-span-2 text-slate-600 font-sans">도시가스 공급사(수도권도시가스 또는 삼천리 계열) 이삿날 가스 렌지 철거 및 연결 예약 신청 완료. 우편물 모바일 대항 통합 이전.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">이사 당일 밤 체크</div>
-        <div class="col-span-2 text-slate-600 font-sans">인근 빌라/아파트 거주 여건을 살펴 수도 배관 수압 완강 검사, 보일러 정상 급탕 가동 및 LED 조명 소모 상태 눈 대조 점검.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 인테리어 시공 하자 수렴 검수 및 실거주 안전</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      수도권 지역의 입주 전 가구가 구축 주거를 매수해 인테리어 시공을 추진한다면 소속 시공사의 민간 사업 면허증 보유 현황과 하자이행증권 수여 조건을 먼저 계약서 조항에 명시하십시오. 도배 가려짐 지점 아래 곰팡이 유무, 베란다 크랙 단열 단밀 하자 여부 등 실효 측정을 거쳐 대금을 안심 분할 완료 지급하는 것이 혹여나 발생 가능한 2차 건물 하자 분쟁 수렁을 우회하고 예방하는 핵심 가이드라인이 될 것입니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 실천 매뉴얼은 하우징허브 이사 협조단 및 자문 전문가의 실무 노하우를 바탕으로 작성된 법적 교환 가이드입니다.
-    </p>
-  </div>
-</div>
-`,
+    excerpt: "이사 갈 때 처치 곤란인 대형 가전과 낡은 가구를 돈 들이지 않고 무료로 처분하거나, 모바일로 폐기물 스티커를 간편 발급받는 실전 노하우를 정리했습니다.",
     category: "이사-인테리어",
     author: "하우징허브",
     date: "2026-06-18",
-    image: "https://images.unsplash.com/photo-1591129841117-3adfd313e34f?auto=format&fit=crop&q=80&w=800",
-    readTime: "10분",
-    hashtags: ["이사폐기물", "대형가구스티커", "무상수거"]
-  }
+    image: "https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&fit=crop&q=80&w=800",
+    readTime: "8분",
+    hashtags: ["폐가전무상수거","폐기물스티커","대형폐기물","이사짐정리"],
+    content: `
+      <h2>이사 전 짐 줄이기: 돈 내고 버리지 말고 똑똑하게 처분하세요</h2>
+      <p>이사를 앞두고 집안을 정리하다 보면 10년 넘은 낡은 세탁기, 삐걱거리는 침대 매트리스, 묵은 서랍장 등 버려야 할 짐이 산더미처럼 쏟아집니다. 이것들을 이삿짐 트럭에 그대로 실으면 이사 비용만 20만~30만 원 더 올라가고, 그렇다고 다 스티커를 붙여 버리자니 폐기물 비용도 만만치 않습니다.</p>
+      <p>정부 공식 무료 방문 수거 서비스부터 중고 보상 판매, 모바일 폐기물 배출까지 <strong>가장 비용을 아끼며 대형 짐을 정리하는 4가지 방법</strong>을 알려드립니다.</p>
+
+      <div class="toc-compact">
+        <p><strong>글의 구성</strong></p>
+        <ul>
+          <li><a href="#dis1">1. 폐가전제품 무상방문수거(1599-0903): 돈 한 푼 안 들이고 버리기</a></li>
+          <li><a href="#dis2">2. 대형 가구 폐기: 주민센터 안 가고 모바일(빼기 앱)로 1분 배출</a></li>
+          <li><a href="#dis3">3. 쓸 만한 가전·가구: 당근마켓 '드림(무료나눔)'과 중고매입 활용</a></li>
+          <li><a href="#dis4">4. 의류와 잡화: 아름다운가게·굿윌스토어 기부로 연말정산 공제받기</a></li>
+        </ul>
+      </div>
+
+      <h3 id="dis1">1. 폐가전 무상방문수거 서비스: 수수료 0원</h3>
+      <p>환경부와 한국전자제품자원순환공제조합이 운영하는 <strong>'폐가전 무상방문수거 서비스'</strong>를 이용하면 기사님이 직접 집 안까지 들어와 무거운 가전을 무상으로 수거해 갑니다.</p>
+      <ul>
+        <li><strong>신청 방법:</strong> 인터넷 웹사이트(15990903.or.kr) 또는 콜센터(1599-0903) 예약</li>
+        <li><strong>단일 수거 가능 품목:</strong> 냉장고, 세탁기, 에어컨, TV, 전자레인지, 식기세척기 등 대형 가전</li>
+        <li><strong>소형 가전(다리미, 드라이어, 선풍기 등):</strong> 대형 가전 예약 시 함께 배출하거나, 5개 이상 묶어서 신청 시 무료 수거</li>
+        <li><strong>주의:</strong> 원형이 심하게 훼손(모터 임의 분해 등)된 가전은 수거가 거절될 수 있습니다.</li>
+      </ul>
+
+      <h3 id="dis2">2. 대형 가구: '빼기' 앱 또는 지자체 홈페이지 모바일 배출</h3>
+      <p>장롱, 침대 매트리스, 소파 등 가구류는 가전이 아니라 무상 수거 대상이 아닙니다. 예전처럼 주민센터나 슈퍼마켓을 찾아다니며 종이 스티커를 살 필요 없이 모바일로 처리할 수 있습니다.</p>
+      <ul>
+        <li><strong>'빼기' 또는 '여기로' 모바일 앱:</strong> 가구 사진을 찍어 올리면 AI가 품목을 판별해 수수료를 결제해 줍니다. 결제 후 발급된 예약번호를 A4용지에 매직으로 크게 적어 배출 가구에 붙여두면 끝납니다.</li>
+        <li>혼자서 무거운 장롱을 계단 아래로 내리기 힘들다면 앱 내 '내려드림(유료 운반)' 서비스를 신청하면 수거 기사님이 집 안에서 1층 배출 장소까지 안전하게 내려줍니다.</li>
+      </ul>
+
+      <h3 id="dis3">3. 쓸 만한 가구·가전은 당근마켓 '직접 가져가는 조건' 무료 나눔</h3>
+      <p>상태가 양호하지만 이사 갈 집에 맞지 않는 가구는 버리는 스티커 비용(1만~2만 원)을 내기보다 당근마켓에 <strong>"직접 분해해서 1층으로 가져가시는 조건으로 무료 나눔합니다"</strong>라고 올리면 하루 만에 가져가는 사람이 나타납니다. 폐기 비용도 아끼고 운반 수고도 덜 수 있는 가장 영리한 방법입니다.</p>
+
+      <h3 id="dis4">4. 헌 옷과 잡화는 기부하고 연말정산 소득공제 챙기기</h3>
+      <p>깨끗한 의류, 신발, 주방용품, 소형 가전은 '아름다운가게'나 '굿윌스토어'에 기부해 보세요. 3박스 이상이면 택배 기사님이 무료로 방문 수거하며, 기부 물품의 가치를 산정해 연말정산 시 <strong>'지정기부금 세액공제 영수증'</strong>을 발행해 주므로 세금을 쏠쏠하게 돌려받을 수 있습니다.</p>
+      <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-18 | 감수: 하우징허브 생활환경팀</p>
+    `
+  },
 ];

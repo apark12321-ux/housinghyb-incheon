@@ -63,10 +63,10 @@ for (const post of POSTS) {
 
 const todayStr = TODAY.toISOString().slice(0, 10);
 if (problems.length > 0) {
-  console.error(`\n❌ [날짜 검증 실패] 오늘=${todayStr}, ${count}개 글 중 ${problems.length}건 문제:`);
+  console.error(`\n[날짜 검증 실패] 오늘=${todayStr}, ${count}개 글 중 ${problems.length}건 문제:`);
   problems.forEach((p) => console.error("   " + p));
   console.error("\n→ src/data/ 내의 날짜를 수정한 뒤 다시 빌드하세요.\n");
   process.exit(1);
 } else {
-  console.log(`✅ [날짜 검증 통과] 오늘=${todayStr}, ${count}개 글 모두 정상 (미래날짜·모순 없음)`);
+  console.log(`[날짜 검증 통과] 오늘=${todayStr}, ${count}개 글 모두 정상 (미래날짜·모순 없음)`);
 }

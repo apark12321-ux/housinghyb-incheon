@@ -231,48 +231,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p>시장의 흐름은 한 번에 바뀌지 않습니다. 지금이 안정세 전환의 시점이라면 결정을 서두를 필요는 없습니다. 본인의 자금 사정하고 거주 계획을 차분히 점검하시기 바랍니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용 정보다. 실제 청약 자격과 당첨 가능성은 개별 단지 공고와 본인 조건에 따라 달라진다.</p>
     
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-emerald-50/40 p-6 sm:p-8 rounded-2xl border border-emerald-100 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-emerald-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-emerald-600 text-white text-[10px] uppercase font-mono">수도권 만점청약</span>
-      하우징허브 분양 포커스: 수도권 3기 신도시 청약 지도 및 부적격 차단 완정 가이드
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 및 주요 도시 서구 검단 신도시의 공공 개발 지구 분양부터 연수구 송도 인근 민간 하이엔드 분양 단지, 계양 3기 신도시 및 계양 테크노밸리 사전 부지 등 2026-2027년도 아파트 청약 전장은 무주택 실수요자들에게 <strong>'생애 최고의 주거 점프 업' 기회</strong>를 제공합니다. 내 집 마련 성공 당첨 확률을 가치 극대화하고 소수점 소득 가중 격차나 사소한 계산 착오 실수로 다 잡은 로또 분양 가치를 무단 부적격 취소당하지 않도록 현역 청약 분양 분석관의 철저한 사실 연산 고증을 쳐서 마련한 특급 지침을 송출합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 신도시 청약 입지 지도 및 분양가 상한제 메리트 극복법</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 고가 당첨 후보자이거나 가점이 다소 열악한 가점 소외 가점 주체들은 지점별 주거 성격과 택지 공급 지침을 교차 판단해야 합니다. 
-      특히 수도권 서구 검단 지구나 계양 공공 주택 지구처럼 국가가 지정 공급하는 공기업 부지의 주택들은 <strong>'분양가상한제' 조건이 강제 연동 부과</strong>되기 때문에 주위 구축 대비 30% 이상 유의미하게 싼 공급 이점을 선물합니다. 
-      다만 분상제 단지들은 매매 계약 즉시 최대 3년에서 5년짜리 '분양권 전매 제한' 조항이 등기 탑재되고 계약 후 실제 입주 후 곧바로 최대 3년간 직접 살아야 하는 '의무 거주 주거 기간' 규율이 동반 발동될 수 있으므로 분양 공고 명세서의 의약 조치 란을 정밀 현지 대조 점검해야 자금 융통 사고를 방지할 수 있습니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 청약홈 사이트 신청 단계에서 범하는 부적격 사유 탑 3 사전 원천 차단</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 당첨 결의 후 최종 부재 서류 심사에서 무려 10%에 달하는 고득점 당첨자들이 '부적격 조치'로 당첨 무효 소멸 처분을 받고 향후 최대 1년간 청약 접수 자격 자체가 정지되는 슬픈 시나리오는 사전에 충분히 극복할 수 있습니다. 
-      첫째, <strong>'무주택 보유 기간 산정 시의 가점 계산 착오'</strong>입니다. 만 30세 미취업 시점 이전에 혼인 수립 이행 가치가 없다면 무주택 계산 시작일은 온당히 '만 30세가 도래하는 당일'부터 연 단위 누적해야 함을 착각하시면 안 됩니다. 
-      둘째, 소형 저가 주택 1채 소지로 아파트 청약 가치를 무주택으로 오인한 실수이며, 셋째는 세대원 전원의 주택 소유 여부 누락 확인입니다. 직계존속 부모님이 소유한 구축 하우스가 존재한다면 청약 공고 실행 이틀 전까지 구성원에서 정상 세대 분리 및 대항 등기 완료 처리해 놓으셔야 불이익을 회피합니다.
-    </p>
-
-    <div class="my-5 p-5 bg-amber-50 rounded-xl border border-amber-200">
-      <h5 class="text-amber-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 신혼부부 및 생애최초 소득 구간 세분화 획기적 공략 비법
-      </h5>
-      <p class="text-xs text-amber-900 leading-relaxed">
-        특별공급 유형에 배당되는 청년 특혜 포인트를  점수화하려면 가구 소득 기준 배수를 소수점 단위까지 정교히 대조하십시오. 
-        전년도 도시근로자 월평균 소득 기준액의 140%(맞벌이 가구 160% 등)를 단 1만 원이라도 이탈하여 초과할 시 서류 전형 자체에서 가차 없이 예선 탈락 수리되므로, 연말 성과급 총 합계나 고액 휴직 미반영 수당 액수 지표를 미리 재무 전문가와 조율 배치해 가입 기준선을 안전하게 맞추어 접수해야 황금 당첨 확률 보장을 거머쥘 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 청약 합격 대비 핵심 실천 전략 일람표</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>청약 실천 지목</div>
-        <div class="col-span-2">안심 대처 합격 세부 액션 플랜 기준 요강</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
         <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
       </div>
@@ -382,48 +341,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p>공공임대주택은 경쟁이 치열한 편이라 꾸준히 여러 공고에 도전하시는 게 현실적인 전략이에요. 자세한 모집 일정은 <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer">LH 청약센터</a>와 <a href="https://www.myhome.go.kr" target="_blank" rel="noopener noreferrer">마이홈포털</a>에서 확인하실 수 있어요.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용이에요. 공공임대주택 자격과 기준은 매년·유형별로 달라지니, 신청 전 LH 청약센터(1600-1004)나 마이홈포털에서 본인 케이스를 꼭 확인하세요.</p>
     
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-emerald-50/40 p-6 sm:p-8 rounded-2xl border border-emerald-100 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-emerald-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-emerald-600 text-white text-[10px] uppercase font-mono">수도권 만점청약</span>
-      하우징허브 분양 포커스: 수도권 3기 신도시 청약 지도 및 부적격 차단 완정 가이드
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 및 주요 도시 서구 검단 신도시의 공공 개발 지구 분양부터 연수구 송도 인근 민간 하이엔드 분양 단지, 계양 3기 신도시 및 계양 테크노밸리 사전 부지 등 2026-2027년도 아파트 청약 전장은 무주택 실수요자들에게 <strong>'생애 최고의 주거 점프 업' 기회</strong>를 제공합니다. 내 집 마련 성공 당첨 확률을 가치 극대화하고 소수점 소득 가중 격차나 사소한 계산 착오 실수로 다 잡은 로또 분양 가치를 무단 부적격 취소당하지 않도록 현역 청약 분양 분석관의 철저한 사실 연산 고증을 쳐서 마련한 특급 지침을 송출합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 신도시 청약 입지 지도 및 분양가 상한제 메리트 극복법</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 고가 당첨 후보자이거나 가점이 다소 열악한 가점 소외 가점 주체들은 지점별 주거 성격과 택지 공급 지침을 교차 판단해야 합니다. 
-      특히 수도권 서구 검단 지구나 계양 공공 주택 지구처럼 국가가 지정 공급하는 공기업 부지의 주택들은 <strong>'분양가상한제' 조건이 강제 연동 부과</strong>되기 때문에 주위 구축 대비 30% 이상 유의미하게 싼 공급 이점을 선물합니다. 
-      다만 분상제 단지들은 매매 계약 즉시 최대 3년에서 5년짜리 '분양권 전매 제한' 조항이 등기 탑재되고 계약 후 실제 입주 후 곧바로 최대 3년간 직접 살아야 하는 '의무 거주 주거 기간' 규율이 동반 발동될 수 있으므로 분양 공고 명세서의 의약 조치 란을 정밀 현지 대조 점검해야 자금 융통 사고를 방지할 수 있습니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 청약홈 사이트 신청 단계에서 범하는 부적격 사유 탑 3 사전 원천 차단</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 당첨 결의 후 최종 부재 서류 심사에서 무려 10%에 달하는 고득점 당첨자들이 '부적격 조치'로 당첨 무효 소멸 처분을 받고 향후 최대 1년간 청약 접수 자격 자체가 정지되는 슬픈 시나리오는 사전에 충분히 극복할 수 있습니다. 
-      첫째, <strong>'무주택 보유 기간 산정 시의 가점 계산 착오'</strong>입니다. 만 30세 미취업 시점 이전에 혼인 수립 이행 가치가 없다면 무주택 계산 시작일은 온당히 '만 30세가 도래하는 당일'부터 연 단위 누적해야 함을 착각하시면 안 됩니다. 
-      둘째, 소형 저가 주택 1채 소지로 아파트 청약 가치를 무주택으로 오인한 실수이며, 셋째는 세대원 전원의 주택 소유 여부 누락 확인입니다. 직계존속 부모님이 소유한 구축 하우스가 존재한다면 청약 공고 실행 이틀 전까지 구성원에서 정상 세대 분리 및 대항 등기 완료 처리해 놓으셔야 불이익을 회피합니다.
-    </p>
-
-    <div class="my-5 p-5 bg-amber-50 rounded-xl border border-amber-200">
-      <h5 class="text-amber-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 신혼부부 및 생애최초 소득 구간 세분화 획기적 공략 비법
-      </h5>
-      <p class="text-xs text-amber-900 leading-relaxed">
-        특별공급 유형에 배당되는 청년 특혜 포인트를  점수화하려면 가구 소득 기준 배수를 소수점 단위까지 정교히 대조하십시오. 
-        전년도 도시근로자 월평균 소득 기준액의 140%(맞벌이 가구 160% 등)를 단 1만 원이라도 이탈하여 초과할 시 서류 전형 자체에서 가차 없이 예선 탈락 수리되므로, 연말 성과급 총 합계나 고액 휴직 미반영 수당 액수 지표를 미리 재무 전문가와 조율 배치해 가입 기준선을 안전하게 맞추어 접수해야 황금 당첨 확률 보장을 거머쥘 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 청약 합격 대비 핵심 실천 전략 일람표</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>청약 실천 지목</div>
-        <div class="col-span-2">안심 대처 합격 세부 액션 플랜 기준 요강</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
         <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
       </div>
@@ -641,15 +559,15 @@ export const POSTS_SUB_HEAVY: Post[] = [
 
       <h3 id="section6">청약 전 체크리스트</h3>
       <ul>
-        <li><strong>✅ 청약 자격·가점 확인:</strong> 청약홈에서 본인 가점과 청약 자격을 정확히 조회</li>
-        <li><strong>✅ 분양가 vs 주변 시세:</strong> 실제 차익 여력이 있는지 직접 비교</li>
-        <li><strong>✅ 전매·실거주 조건:</strong> 입주자 모집공고에서 반드시 확인</li>
-        <li><strong>✅ 자금 계획:</strong> 계약금·중도금·잔금 단계별 마련 방안</li>
+        <li><strong>청약 자격·가점 확인:</strong> 청약홈에서 본인 가점과 청약 자격을 정확히 조회</li>
+        <li><strong>분양가 vs 주변 시세:</strong> 실제 차익 여력이 있는지 직접 비교</li>
+        <li><strong>전매·실거주 조건:</strong> 입주자 모집공고에서 반드시 확인</li>
+        <li><strong>자금 계획:</strong> 계약금·중도금·잔금 단계별 마련 방안</li>
       </ul>
       <p>정확한 청약 자격과 가점은 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a>에서 직접 확인하시기 바랍니다.</p>
 
       <div class="not-prose my-8 p-5 bg-indigo-50 rounded-2xl border border-indigo-100">
-        <p class="font-bold text-indigo-900 mb-3">💡 오늘의 핵심 정리</p>
+        <p class="font-bold text-indigo-900 mb-3">[핵심 정리]</p>
         <ul class="space-y-2 text-sm text-gray-700">
           <li>· 송도 국제업무지구 분양가는 전용 84㎡ 기준 <strong>12억~13억 원대</strong>로 수도권 최고 수준</li>
           <li>· 분양가가 높아져 <strong>\"당첨 = 차익\" 공식이 약화</strong> — 주변 시세와 꼭 비교</li>
@@ -703,48 +621,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p>정확한 청약 자격과 가점은 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a>에서 제공합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-15</p>
     
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-emerald-50/40 p-6 sm:p-8 rounded-2xl border border-emerald-100 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-emerald-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-emerald-600 text-white text-[10px] uppercase font-mono">수도권 만점청약</span>
-      하우징허브 분양 포커스: 수도권 3기 신도시 청약 지도 및 부적격 차단 완정 가이드
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 및 주요 도시 서구 검단 신도시의 공공 개발 지구 분양부터 연수구 송도 인근 민간 하이엔드 분양 단지, 계양 3기 신도시 및 계양 테크노밸리 사전 부지 등 2026-2027년도 아파트 청약 전장은 무주택 실수요자들에게 <strong>'생애 최고의 주거 점프 업' 기회</strong>를 제공합니다. 내 집 마련 성공 당첨 확률을 가치 극대화하고 소수점 소득 가중 격차나 사소한 계산 착오 실수로 다 잡은 로또 분양 가치를 무단 부적격 취소당하지 않도록 현역 청약 분양 분석관의 철저한 사실 연산 고증을 쳐서 마련한 특급 지침을 송출합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 신도시 청약 입지 지도 및 분양가 상한제 메리트 극복법</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 고가 당첨 후보자이거나 가점이 다소 열악한 가점 소외 가점 주체들은 지점별 주거 성격과 택지 공급 지침을 교차 판단해야 합니다. 
-      특히 수도권 서구 검단 지구나 계양 공공 주택 지구처럼 국가가 지정 공급하는 공기업 부지의 주택들은 <strong>'분양가상한제' 조건이 강제 연동 부과</strong>되기 때문에 주위 구축 대비 30% 이상 유의미하게 싼 공급 이점을 선물합니다. 
-      다만 분상제 단지들은 매매 계약 즉시 최대 3년에서 5년짜리 '분양권 전매 제한' 조항이 등기 탑재되고 계약 후 실제 입주 후 곧바로 최대 3년간 직접 살아야 하는 '의무 거주 주거 기간' 규율이 동반 발동될 수 있으므로 분양 공고 명세서의 의약 조치 란을 정밀 현지 대조 점검해야 자금 융통 사고를 방지할 수 있습니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 청약홈 사이트 신청 단계에서 범하는 부적격 사유 탑 3 사전 원천 차단</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 당첨 결의 후 최종 부재 서류 심사에서 무려 10%에 달하는 고득점 당첨자들이 '부적격 조치'로 당첨 무효 소멸 처분을 받고 향후 최대 1년간 청약 접수 자격 자체가 정지되는 슬픈 시나리오는 사전에 충분히 극복할 수 있습니다. 
-      첫째, <strong>'무주택 보유 기간 산정 시의 가점 계산 착오'</strong>입니다. 만 30세 미취업 시점 이전에 혼인 수립 이행 가치가 없다면 무주택 계산 시작일은 온당히 '만 30세가 도래하는 당일'부터 연 단위 누적해야 함을 착각하시면 안 됩니다. 
-      둘째, 소형 저가 주택 1채 소지로 아파트 청약 가치를 무주택으로 오인한 실수이며, 셋째는 세대원 전원의 주택 소유 여부 누락 확인입니다. 직계존속 부모님이 소유한 구축 하우스가 존재한다면 청약 공고 실행 이틀 전까지 구성원에서 정상 세대 분리 및 대항 등기 완료 처리해 놓으셔야 불이익을 회피합니다.
-    </p>
-
-    <div class="my-5 p-5 bg-amber-50 rounded-xl border border-amber-200">
-      <h5 class="text-amber-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 신혼부부 및 생애최초 소득 구간 세분화 획기적 공략 비법
-      </h5>
-      <p class="text-xs text-amber-900 leading-relaxed">
-        특별공급 유형에 배당되는 청년 특혜 포인트를  점수화하려면 가구 소득 기준 배수를 소수점 단위까지 정교히 대조하십시오. 
-        전년도 도시근로자 월평균 소득 기준액의 140%(맞벌이 가구 160% 등)를 단 1만 원이라도 이탈하여 초과할 시 서류 전형 자체에서 가차 없이 예선 탈락 수리되므로, 연말 성과급 총 합계나 고액 휴직 미반영 수당 액수 지표를 미리 재무 전문가와 조율 배치해 가입 기준선을 안전하게 맞추어 접수해야 황금 당첨 확률 보장을 거머쥘 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 청약 합격 대비 핵심 실천 전략 일람표</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>청약 실천 지목</div>
-        <div class="col-span-2">안심 대처 합격 세부 액션 플랜 기준 요강</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
         <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
       </div>
@@ -809,54 +686,13 @@ export const POSTS_SUB_HEAVY: Post[] = [
 
       <h3 id="section5">청라 매수 판단 체크리스트</h3>
       <ul>
-        <li><strong>✅ 단지 실거래가 직접 확인:</strong> 청라 평균이 아닌 관심 단지의 최근 거래 조회</li>
-        <li><strong>✅ 실거주 적합성:</strong> 직장·학교·생활권과의 거리, 교통편</li>
-        <li><strong>✅ 교통 호재 진위:</strong> 계획 단계인지 확정 단계인지 구분</li>
+        <li><strong>단지 실거래가 직접 확인:</strong> 청라 평균이 아닌 관심 단지의 최근 거래 조회</li>
+        <li><strong>실거주 적합성:</strong> 직장·학교·생활권과의 거리, 교통편</li>
+        <li><strong>교통 호재 진위:</strong> 계획 단계인지 확정 단계인지 구분</li>
       </ul>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-16</p>
     
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-emerald-50/40 p-6 sm:p-8 rounded-2xl border border-emerald-100 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-emerald-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-emerald-600 text-white text-[10px] uppercase font-mono">수도권 만점청약</span>
-      하우징허브 분양 포커스: 수도권 3기 신도시 청약 지도 및 부적격 차단 완정 가이드
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 및 주요 도시 서구 검단 신도시의 공공 개발 지구 분양부터 연수구 송도 인근 민간 하이엔드 분양 단지, 계양 3기 신도시 및 계양 테크노밸리 사전 부지 등 2026-2027년도 아파트 청약 전장은 무주택 실수요자들에게 <strong>'생애 최고의 주거 점프 업' 기회</strong>를 제공합니다. 내 집 마련 성공 당첨 확률을 가치 극대화하고 소수점 소득 가중 격차나 사소한 계산 착오 실수로 다 잡은 로또 분양 가치를 무단 부적격 취소당하지 않도록 현역 청약 분양 분석관의 철저한 사실 연산 고증을 쳐서 마련한 특급 지침을 송출합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 수도권 권역별 신도시 청약 입지 지도 및 분양가 상한제 메리트 극복법</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 고가 당첨 후보자이거나 가점이 다소 열악한 가점 소외 가점 주체들은 지점별 주거 성격과 택지 공급 지침을 교차 판단해야 합니다. 
-      특히 수도권 서구 검단 지구나 계양 공공 주택 지구처럼 국가가 지정 공급하는 공기업 부지의 주택들은 <strong>'분양가상한제' 조건이 강제 연동 부과</strong>되기 때문에 주위 구축 대비 30% 이상 유의미하게 싼 공급 이점을 선물합니다. 
-      다만 분상제 단지들은 매매 계약 즉시 최대 3년에서 5년짜리 '분양권 전매 제한' 조항이 등기 탑재되고 계약 후 실제 입주 후 곧바로 최대 3년간 직접 살아야 하는 '의무 거주 주거 기간' 규율이 동반 발동될 수 있으므로 분양 공고 명세서의 의약 조치 란을 정밀 현지 대조 점검해야 자금 융통 사고를 방지할 수 있습니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 청약홈 사이트 신청 단계에서 범하는 부적격 사유 탑 3 사전 원천 차단</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 당첨 결의 후 최종 부재 서류 심사에서 무려 10%에 달하는 고득점 당첨자들이 '부적격 조치'로 당첨 무효 소멸 처분을 받고 향후 최대 1년간 청약 접수 자격 자체가 정지되는 슬픈 시나리오는 사전에 충분히 극복할 수 있습니다. 
-      첫째, <strong>'무주택 보유 기간 산정 시의 가점 계산 착오'</strong>입니다. 만 30세 미취업 시점 이전에 혼인 수립 이행 가치가 없다면 무주택 계산 시작일은 온당히 '만 30세가 도래하는 당일'부터 연 단위 누적해야 함을 착각하시면 안 됩니다. 
-      둘째, 소형 저가 주택 1채 소지로 아파트 청약 가치를 무주택으로 오인한 실수이며, 셋째는 세대원 전원의 주택 소유 여부 누락 확인입니다. 직계존속 부모님이 소유한 구축 하우스가 존재한다면 청약 공고 실행 이틀 전까지 구성원에서 정상 세대 분리 및 대항 등기 완료 처리해 놓으셔야 불이익을 회피합니다.
-    </p>
-
-    <div class="my-5 p-5 bg-amber-50 rounded-xl border border-amber-200">
-      <h5 class="text-amber-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 신혼부부 및 생애최초 소득 구간 세분화 획기적 공략 비법
-      </h5>
-      <p class="text-xs text-amber-900 leading-relaxed">
-        특별공급 유형에 배당되는 청년 특혜 포인트를  점수화하려면 가구 소득 기준 배수를 소수점 단위까지 정교히 대조하십시오. 
-        전년도 도시근로자 월평균 소득 기준액의 140%(맞벌이 가구 160% 등)를 단 1만 원이라도 이탈하여 초과할 시 서류 전형 자체에서 가차 없이 예선 탈락 수리되므로, 연말 성과급 총 합계나 고액 휴직 미반영 수당 액수 지표를 미리 재무 전문가와 조율 배치해 가입 기준선을 안전하게 맞추어 접수해야 황금 당첨 확률 보장을 거머쥘 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 수도권 청약 합격 대비 핵심 실천 전략 일람표</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>청약 실천 지목</div>
-        <div class="col-span-2">안심 대처 합격 세부 액션 플랜 기준 요강</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
         <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
       </div>
@@ -964,49 +800,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       </ul>
 
       <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-07-17</p>
-
-
-<div class="mt-8 pt-8 border-t-2 border-dashed border-slate-200">
-  <div class="bg-emerald-50/40 p-6 sm:p-8 rounded-2xl border border-emerald-100 text-left font-sans text-slate-800">
-    <h3 class="text-base sm:text-lg font-bold text-emerald-950 mb-3 flex items-center gap-2">
-      <span class="p-1 px-2.5 rounded bg-emerald-600 text-white text-[10px] uppercase font-mono">인천 만점청약</span>
-      하우징허브 분양 포커스: 인천 3기 신도시 청약 지도 및 부적격 차단 완정 가이드
-    </h3>
-    <p class="text-xs sm:text-sm text-slate-600 leading-relaxed mb-4">
-      수도권 및 주요 도시 서구 검단 신도시의 공공 개발 지구 분양부터 연수구 송도 인근 민간 하이엔드 분양 단지, 계양 3기 신도시 및 계양 테크노밸리 사전 부지 등 2026-2027년도 아파트 청약 전장은 무주택 실수요자들에게 <strong>'생애 최고의 주거 점프 업' 기회</strong>를 제공합니다. 내 집 마련 성공 당첨 확률을 가치 극대화하고 소수점 소득 가중 격차나 사소한 계산 착오 실수로 다 잡은 로또 분양 가치를 무단 부적격 취소당하지 않도록 현역 청약 분양 분석관의 철저한 사실 연산 고증을 쳐서 마련한 특급 지침을 송출합니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">1. 인천 권역별 신도시 청약 입지 지도 및 분양가 상한제 메리트 극복법</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 고가 당첨 후보자이거나 가점이 다소 열악한 가점 소외 가점 주체들은 지점별 주거 성격과 택지 공급 지침을 교차 판단해야 합니다. 
-      특히 인천 서구 검단 지구나 계양 공공 주택 지구처럼 국가가 지정 공급하는 공기업 부지의 주택들은 <strong>'분양가상한제' 조건이 강제 연동 부과</strong>되기 때문에 주위 구축 대비 30% 이상 유의미하게 싼 공급 이점을 선물합니다. 
-      다만 분상제 단지들은 매매 계약 즉시 최대 3년에서 5년짜리 '분양권 전매 제한' 조항이 등기 탑재되고 계약 후 실제 입주 후 곧바로 최대 3년간 직접 살아야 하는 '의무 거주 주거 기간' 규율이 동반 발동될 수 있으므로 분양 공고 명세서의 의약 조치 란을 정밀 현지 대조 점검해야 자금 융통 사고를 방지할 수 있습니다.
-    </p>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">2. 청약홈 사이트 신청 단계에서 범하는 부적격 사유 탑 3 사전 원천 차단</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-4">
-      청약 당첨 결의 후 최종 부재 서류 심사에서 무려 10%에 달하는 고득점 당첨자들이 '부적격 조치'로 당첨 무효 소멸 처분을 받고 향후 최대 1년간 청약 접수 자격 자체가 정지되는 슬픈 시나리오는 사전에 충분히 극복할 수 있습니다. 
-      첫째, <strong>'무주택 보유 기간 산정 시의 가점 계산 착오'</strong>입니다. 만 30세 미취업 시점 이전에 혼인 수립 이행 가치가 없다면 무주택 계산 시작일은 온당히 '만 30세가 도래하는 당일'부터 연 단위 누적해야 함을 착각하시면 안 됩니다. 
-      둘째, 소형 저가 주택 1채 소지로 아파트 청약 가치를 무주택으로 오인한 실수이며, 셋째는 세대원 전원의 주택 소유 여부 누락 확인입니다. 직계존속 부모님이 소유한 구축 하우스가 존재한다면 청약 공고 실행 이틀 전까지 구성원에서 정상 세대 분리 및 대항 등기 완료 처리해 놓으셔야 불이익을 회피합니다.
-    </p>
-
-    <div class="my-5 p-5 bg-amber-50 rounded-xl border border-amber-200">
-      <h5 class="text-amber-950 font-bold text-xs mb-1.5 flex items-center gap-1">
-        <span>💡</span> 신혼부부 및 생애최초 소득 구간 세분화 획기적 공략 비법
-      </h5>
-      <p class="text-xs text-amber-900 leading-relaxed">
-        특별공급 유형에 배당되는 청년 특혜 포인트를  점수화하려면 가구 소득 기준 배수를 소수점 단위까지 정교히 대조하십시오. 
-        전년도 도시근로자 월평균 소득 기준액의 140%(맞벌이 가구 160% 등)를 단 1만 원이라도 이탈하여 초과할 시 서류 전형 자체에서 가차 없이 예선 탈락 수리되므로, 연말 성과급 총 합계나 고액 휴직 미반영 수당 액수 지표를 미리 재무 전문가와 조율 배치해 가입 기준선을 안전하게 맞추어 접수해야 황금 당첨 확률 보장을 거머쥘 수 있습니다.
-      </p>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">3. 인천 청약 합격 대비 핵심 실천 전략 일람표</h4>
-    <div class="border border-slate-200 rounded-xl overflow-hidden text-xs my-4 bg-white">
-      <div class="grid grid-cols-3 bg-slate-50 p-2.5 font-bold text-slate-700 border-b border-slate-200">
-        <div>청약 실천 지목</div>
-        <div class="col-span-2">안심 대처 합격 세부 액션 플랜 기준 요강</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
+<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
         <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
         <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 인천 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
       </div>

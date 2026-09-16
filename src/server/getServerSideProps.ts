@@ -200,7 +200,6 @@ export function getServerSideProps(
             <time datetime="${targetPost.date}">발행일: ${targetPost.date}</time>
             <span>작성자: ${htmlEscape(targetPost.author || "박 실장")}</span>
             <span>분류: ${htmlEscape(targetPost.category)}</span>
-            <span>읽는 시간: ${htmlEscape(targetPost.readTime || "5분")}</span>
           </div>
         </header>
         <div class="mb-6 rounded-2xl overflow-hidden shadow-sm">
@@ -336,7 +335,6 @@ export function getServerSideProps(
             <p class="text-sm text-slate-600 line-clamp-2 mb-2">${htmlEscape(p.excerpt)}</p>
             <div class="flex items-center gap-3 text-xs text-slate-400 font-mono">
               <time datetime="${p.date}">${p.date}</time>
-              <span>${htmlEscape(p.readTime || "5분")}</span>
             </div>
           </a>
         </li>`

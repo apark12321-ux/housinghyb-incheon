@@ -55,7 +55,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          🏛️ 서비스 소개 &amp; 발행원칙
+          서비스 소개 &amp; 발행원칙
         </button>
         <button
           onClick={() => onTabChange("privacy")}
@@ -65,7 +65,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          🔒 개인정보처리방침
+          개인정보처리방침
         </button>
         <button
           onClick={() => onTabChange("terms")}
@@ -75,7 +75,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          📄 이용약관
+          이용약관
         </button>
         <button
           onClick={() => onTabChange("disclaimer")}
@@ -85,7 +85,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          ⚖️ 면책고지
+          면책고지
         </button>
       </div>
 
@@ -268,7 +268,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
             </div>
 
             <div className="p-5 bg-amber-50/70 border border-amber-200 rounded-2xl space-y-3">
-              <h3 className="font-bold text-amber-950 text-sm">⚠️ 주거·금융 의사결정 시 법적 책임 고지</h3>
+              <h3 className="font-bold text-amber-950 text-sm">[주의] 주거·금융 의사결정 시 법적 책임 고지</h3>
               <p className="text-xs sm:text-sm text-amber-950/90 leading-relaxed">
                 하우징허브(zip9.kr)가 제공하는 모든 분석 리포트, 계산기 시뮬레이션 결과, 주거 가이드는 실수요자의 이해를 돕기 위한 <strong>참고용 학술·정보성 자료</strong>에 불과하며, 어떠한 경우에도 법률적 자문이나 금융기관의 대출 승인 확약으로 해석될 수 없습니다.
               </p>

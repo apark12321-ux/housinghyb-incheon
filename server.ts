@@ -893,14 +893,14 @@ app.post("/api/advisor", async (req, res) => {
     당신의 이름은 '하우징허브 주거 전문 상담원'입니다.
     청약 자격, 전월세 대항력 및 안전 계약, 이사 절차, 대출(디딤돌, 신생아 특례대출, 버팀목, DSR 규제 등)을 직접 겪어보고 꿰뚫고 있는 주거·금융 실무 상담 멘토입니다.
 
-    [★ 상담 지침 - 친절하고 명쾌한 사람 전문가 톤 ★]:
+    [상담 지침 - 친절하고 명쾌한 사람 전문가 톤]:
     1. 인공지능이나 로봇이라는 표현을 일절 쓰지 마십시오. 실제로 질문자의 상황을 공감하고 도와주는 다정하고 전문적인 실무 선배처럼 답변하십시오.
     2. **절대로 마크다운 기호(#, ##, ###, *, **, ---)를 답변에 포함하지 마십시오.**
     3. 강조할 핵심 내용은 <strong>강조할 문구</strong> 태그를 활용하고, 단락 간 줄바꿈은 반드시 <br/> 태그를 이용하십시오.
     4. 목록 표기가 필요한 경우 <ul> 및 <li> 등의 HTML 태그를 사용하십시오.
     5. **답변은 질문에 대해 핵심 위주로 아주 간단명료하게 2~3문장 이내로 압축하여 작성하십시오.**
     6. 답변 내용에 깊이가 더 필요하거나 구체적인 가이드가 필요한 경우, 아래의 [하우징허브 가용 아티클 목록] 중 가장 연관성 높은 아티클 링크를 찾아서 **답변 맨 끝에 하이퍼링크 형식**으로 반드시 연결해 주십시오.
-       - 링크 형식: <br/><br/><a href="/post/아티클-슬러그" class="text-blue-600 underline font-bold" target="_blank">👉 관련 실전 가이드: '아티클제목' 바로가기</a>
+       - 링크 형식: <br/><br/><a href="/post/아티클-슬러그" class="text-blue-600 underline font-bold" target="_blank">관련 실전 가이드: '아티클제목' 바로가기</a>
     7. 대외적 공식 홈페이지나 제도 홈페이지 소개가 수반되는 경우, 공식 링크를 함께 제시하십시오.
        - 청약홈: <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈</a>
        - LH청약플러스: <a href="https://apply.lh.or.kr" class="text-blue-600 underline font-bold" target="_blank">LH청약플러스</a>
@@ -925,31 +925,31 @@ app.post("/api/advisor", async (req, res) => {
     const msg = message.toLowerCase();
 
     if (msg.includes("청약") || msg.includes("통장")) {
-      fallbackText += `<strong>💡 청약 전문 조언:</strong> 주택 청약을 노릴 때는 청약통장 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
+      fallbackText += `<strong>[청약 전문 조언]</strong> 주택 청약을 노릴 때는 청약통장 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
       const post = findPostByKeyword("청약") || findPostByKeyword("가점");
       if (post) {
-        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
       }
       fallbackText += `추가로 공식 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 꼭 확인하세요!`;
     } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-      fallbackText += `<strong>💰 대출/자금 조언:</strong> 스트레스 DSR 3단계 등의 영향으로 본인의 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
+      fallbackText += `<strong>[대출/자금 조언]</strong> 스트레스 DSR 3단계 등의 영향으로 본인의 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
       const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
       if (post) {
-        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
       }
       fallbackText += `금융 정책의 상세 요건은 <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금 홈페이지</a>에서 실시간으로 대조해 보실 수 있습니다.`;
     } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기") || msg.includes("특약") || msg.includes("등기")) {
-      fallbackText += `<strong>🛡️ 전월세 계약 조언:</strong> 등기부등본 확인 시 을구의 근저당권 채무액과 갑구의 소유주 권리 관계를 반드시 계약 직전까지 면밀히 검사해야 보증금을 사수할 수 있습니다. <br/><br/>`;
+      fallbackText += `<strong>[전월세 계약 조언]</strong> 등기부등본 확인 시 을구의 근저당권 채무액과 갑구의 소유주 권리 관계를 반드시 계약 직전까지 면밀히 검사해야 보증금을 사수할 수 있습니다. <br/><br/>`;
       const post = findPostByKeyword("특약") || findPostByKeyword("보증금") || findPostByKeyword("전세");
       if (post) {
-        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+        fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
       }
       fallbackText += `또한 계약 후에는 당일 즉시 전입신고와 확정일자를 처리해 대항력을 반드시 선점해 확보하세요.`;
     } else {
       fallbackText += `요청하신 사항 관련하여, 하우징허브가 준비한 안심 주거 가이드 아티클을 추천해 드립니다. <br/><br/>`;
       const post = activePosts[0];
       if (post) {
-        fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
+        fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
       }
       fallbackText += `더 세밀한 맞춤형 LTV 및 청약 가점 조율은 상단 '자가진단' 탭의 계산기를 통해 무료로 진단해보실 수 있어요.`;
     }
@@ -990,30 +990,30 @@ app.post("/api/advisor", async (req, res) => {
       
       const msg = message.toLowerCase();
       if (msg.includes("청약") || msg.includes("통장")) {
-        fallbackText += `<strong>💡 청약 전문 조언:</strong> 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
+        fallbackText += `<strong>[청약 전문 조언]</strong> 아파트 청약을 노릴 때는 특히 인정 한도를 월 25만 원까지 꽉 채우는 전략이 유리합니다. <br/><br/>`;
         const post = findPostByKeyword("청약") || findPostByKeyword("가점");
         if (post) {
-          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
         }
         fallbackText += `상세 일정은 <a href="https://www.applyhome.co.kr" class="text-blue-600 underline font-bold" target="_blank">청약홈 홈페이지</a>를 참조하세요!`;
       } else if (msg.includes("대출") || msg.includes("자금") || msg.includes("한도")) {
-        fallbackText += `<strong>💰 대출/자금 조언:</strong> 현재 스트레스 DSR 적용 강도로 내 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
+        fallbackText += `<strong>[대출/자금 조언]</strong> 현재 스트레스 DSR 적용 강도로 내 대출 실효 한도가 변동되었을 확률이 매우 높습니다. <br/><br/>`;
         const post = findPostByKeyword("대출") || findPostByKeyword("버팀목");
         if (post) {
-          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
         }
         fallbackText += `금리 정보는 <a href="https://nhuf.molit.go.kr" class="text-blue-600 underline font-bold" target="_blank">주택도시기금 홈페이지</a>를 통해 실시간 조회해보실 수 있습니다.`;
       } else if (msg.includes("월세") || msg.includes("전세") || msg.includes("보증금") || msg.includes("사기") || msg.includes("특약") || msg.includes("등기")) {
-        fallbackText += `<strong>🛡️ 전월세 안전 조언:</strong> 전세계약서 작성 시에는 대항력 효력 시점(익일 0시)을 안전하게 수호할 권리 변동 금지 특약을 명시하고, 등기부등본상의 근저당 설정 여부를 필수적으로 감시하셔야 안전합니다. <br/><br/>`;
+        fallbackText += `<strong>[전월세 안전 조언]</strong> 전세계약서 작성 시에는 대항력 효력 시점(익일 0시)을 안전하게 수호할 권리 변동 금지 특약을 명시하고, 등기부등본상의 근저당 설정 여부를 필수적으로 감시하셔야 안전합니다. <br/><br/>`;
         const post = findPostByKeyword("특약") || findPostByKeyword("보증금") || findPostByKeyword("전세");
         if (post) {
-          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">👉 관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
+          fallbackText += `<a href="${post.link}" class="text-blue-600 underline font-bold" target="_blank">관련 안심 아티클: '${post.title}' 바로가기</a><br/>`;
         }
       } else {
         fallbackText += `말씀하신 '${message}' 관련하여, 저희 하우징허브가 준비한 안심 가이드 아티클을 추천해 드립니다. <br/><br/>`;
         const post = activePosts[0];
         if (post) {
-          fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">👉 추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
+          fallbackText += `<a href="/post/${slugify(post.title)}" class="text-blue-600 underline font-bold" target="_blank">추천 아티클: '${post.title}' 바로가기</a><br/><br/>`;
         }
         fallbackText += `상단의 '자가진단' 탭에서 청약 가점 계산기와 대출 이자 계산기도 무상으로 적극 활용해 가이드라인을 바로 잡아보실 수 있어요.`;
       }

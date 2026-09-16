@@ -222,7 +222,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          💰 DSR/LTV 대출 한도
+          DSR/LTV 대출 한도
         </button>
         <button
           onClick={() => setActiveTab("score")}
@@ -232,7 +232,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          🎯 청약 가점(84점 만점)
+          청약 가점(84점 만점)
         </button>
         <button
           onClick={() => setActiveTab("rent")}
@@ -242,7 +242,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
-          🛡️ 전세 안전도 (보증보험)
+          전세 안전도 (보증보험)
         </button>
       </div>
 

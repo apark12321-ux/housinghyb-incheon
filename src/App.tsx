@@ -87,7 +87,7 @@ export default function App() {
   const [searchInput, setSearchInput] = useState<string>("");
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [currentPage, setCurrentPage] = useState<number>(1);
-  const [sortOrder, setSortOrder] = useState<"latest" | "popular">("latest");
+  const [sortOrder, setSortOrder] = useState<"latest" | "recommended">("latest");
 
   // 북마크 관리
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
@@ -310,8 +310,10 @@ export default function App() {
       }
       return true;
     }).sort((a, b) => {
-      if (sortOrder === "popular") {
-        return (b.views || 1000) - (a.views || 1000);
+      if (sortOrder === "recommended") {
+        const aScore = (a.isEssential ? 2 : 0) + (a.isHot ? 1 : 0);
+        const bScore = (b.isEssential ? 2 : 0) + (b.isHot ? 1 : 0);
+        if (bScore !== aScore) return bScore - aScore;
       }
       return (b.date || "").localeCompare(a.date || "");
     });
@@ -324,17 +326,12 @@ export default function App() {
     return filteredPosts.slice(start, start + POSTS_PER_PAGE);
   }, [filteredPosts, currentPage]);
 
-  // ko.phongnhaexplorer.com 스타일 "가장 추천하는 핵심 가이드 (Favourite Guides)"
+  // 가장 추천하는 핵심 가이드 (Favourite Guides)
   const favouritePosts = useMemo(() => {
     return posts.filter(p => p.isEssential || p.isHot).slice(0, 6);
   }, [posts]);
 
-  // ko.phongnhaexplorer.com 스타일 "가장 많이 본 글 TOP 6 (Most Viewed)"
-  const topPopularPosts = useMemo(() => {
-    return [...posts].sort((a, b) => (b.views || 1200) - (a.views || 1200)).slice(0, 6);
-  }, [posts]);
-
-  // 최신글 TOP 5
+  // 최신 등록 실무 가이드 TOP 5
   const topRecentPosts = useMemo(() => {
     return [...posts].sort((a, b) => (b.date || "").localeCompare(a.date || "")).slice(0, 5);
   }, [posts]);
@@ -543,12 +540,12 @@ export default function App() {
                         최신순
                       </button>
                       <button
-                        onClick={() => setSortOrder("popular")}
+                        onClick={() => setSortOrder("recommended")}
                         className={`px-2.5 py-1 rounded cursor-pointer ${
-                          sortOrder === "popular" ? "bg-slate-800 text-white font-bold" : "text-slate-500 hover:bg-slate-100"
+                          sortOrder === "recommended" ? "bg-slate-800 text-white font-bold" : "text-slate-500 hover:bg-slate-100"
                         }`}
                       >
-                        인기순
+                        추천순
                       </button>
                     </div>
                   </div>
@@ -625,14 +622,6 @@ export default function App() {
                             {post.category}
                           </span>
                           <span className="text-slate-400 font-mono text-[11px]">{post.date}</span>
-                          <span className="text-slate-300">·</span>
-                          <span className="text-slate-500 font-mono text-[11px]">
-                            조회 {post.views || 1420}회
-                          </span>
-                          <span className="text-slate-300">·</span>
-                          <span className="text-slate-500 font-mono text-[11px]">
-                            {post.readTime || "5분"} 읽기
-                          </span>
                         </div>
 
                         {/* 제목 (dwqa-question-title) */}
@@ -679,15 +668,15 @@ export default function App() {
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2 text-xs text-slate-600">
                     <div className="bg-white p-3 rounded border border-slate-200 space-y-1">
-                      <strong className="text-slate-900 font-bold block">✓ 다양성 (Comprehensive)</strong>
+                      <strong className="text-slate-900 font-bold block">다양성 (Comprehensive)</strong>
                       <p className="text-slate-500">청약 가점 계산부터 전세사기 예방, DSR 대출 한도까지 A to Z 망라</p>
                     </div>
                     <div className="bg-white p-3 rounded border border-slate-200 space-y-1">
-                      <strong className="text-slate-900 font-bold block">✓ 최신성 (2026 Updated)</strong>
+                      <strong className="text-slate-900 font-bold block">최신성 (2026 Updated)</strong>
                       <p className="text-slate-500">2026년 최신 개정 청약 시행령 및 정책 대출 요건 실시간 반영</p>
                     </div>
                     <div className="bg-white p-3 rounded border border-slate-200 space-y-1">
-                      <strong className="text-slate-900 font-bold block">✓ 신뢰성 (Cross-Verified)</strong>
+                      <strong className="text-slate-900 font-bold block">신뢰성 (Cross-Verified)</strong>
                       <p className="text-slate-500">한국부동산원 청약홈, 주택도시기금 등 공식 공고문 교차 검증</p>
                     </div>
                   </div>
@@ -701,7 +690,7 @@ export default function App() {
                       disabled={currentPage === 1}
                       className="px-3 py-1.5 rounded border border-slate-300 bg-white text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                     >
-                      ◀ 이전
+                      이전
                     </button>
 
                     {Array.from({ length: totalPages }, (_, i) => i + 1).map(page => (
@@ -726,7 +715,7 @@ export default function App() {
                       disabled={currentPage === totalPages}
                       className="px-3 py-1.5 rounded border border-slate-300 bg-white text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer"
                     >
-                      다음 ▶
+                      다음
                     </button>
                   </nav>
                 )}
@@ -765,16 +754,16 @@ export default function App() {
               </ul>
             </div>
 
-            {/* 2. ko.phongnhaexplorer.com 벤치마킹: 가장 많이 본 글 TOP 6 (most-viewed) */}
+            {/* 2. 최신 실무 가이드 TOP 5 */}
             <div className="bg-white rounded-lg border border-slate-200 p-5 shadow-2xs space-y-3">
               <div className="flex items-center justify-between border-b border-slate-100 pb-2.5">
                 <h3 className="text-sm font-bold text-slate-900 flex items-center gap-2">
-                  <Trophy className="w-4 h-4 text-emerald-700" />
-                  <span>가장 많이 본 글 TOP 6</span>
+                  <Clock className="w-4 h-4 text-emerald-700" />
+                  <span>최신 실무 가이드 TOP 5</span>
                 </h3>
               </div>
               <ol className="space-y-2.5 text-xs sm:text-sm">
-                {topPopularPosts.map((pp, idx) => (
+                {topRecentPosts.map((pp, idx) => (
                   <li 
                     key={pp.id}
                     onClick={() => handleSelectPost(pp)}
@@ -788,7 +777,7 @@ export default function App() {
                         {pp.title}
                       </p>
                       <span className="text-[10px] text-slate-400 font-mono">
-                        조회 {pp.views || 1420} · {pp.date}
+                        {pp.category} · {pp.date}
                       </span>
                     </div>
                   </li>
