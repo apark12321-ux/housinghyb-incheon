@@ -28,7 +28,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
       <div className="p-4 sm:p-6 border-b border-slate-100 flex items-center justify-between bg-slate-50/80">
         <button
           onClick={onBack}
-          className="inline-flex items-center space-x-2 text-slate-700 hover:text-blue-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
+          className="inline-flex items-center space-x-2 text-slate-700 hover:text-emerald-700 font-bold text-xs sm:text-sm transition-colors cursor-pointer"
         >
           <ChevronLeft className="w-4 h-4" />
           <span>메인 홈으로 돌아가기</span>
@@ -36,7 +36,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
         <div className="flex items-center space-x-2 text-xs font-mono text-slate-500">
           <span>하우징허브</span>
           <span>&gt;</span>
-          <span className="text-blue-700 font-bold">
+          <span className="text-emerald-700 font-bold">
             {activeTab === "about" && "서비스 소개"}
             {activeTab === "privacy" && "개인정보처리방침"}
             {activeTab === "terms" && "이용약관"}
@@ -51,7 +51,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
           onClick={() => onTabChange("about")}
           className={`flex-1 min-w-[120px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "about"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
@@ -61,7 +61,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
           onClick={() => onTabChange("privacy")}
           className={`flex-1 min-w-[120px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "privacy"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
@@ -71,7 +71,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
           onClick={() => onTabChange("terms")}
           className={`flex-1 min-w-[120px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "terms"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
@@ -81,7 +81,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
           onClick={() => onTabChange("disclaimer")}
           className={`flex-1 min-w-[120px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "disclaimer"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >

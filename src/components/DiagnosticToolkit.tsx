@@ -19,7 +19,8 @@ interface DiagnosticToolkitProps {
 
 export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
   initialTab = "loan",
-  isStandalonePage = false
+  isStandalonePage = false,
+  onBack
 }) => {
   const [activeTab, setActiveTab] = useState<"loan" | "score" | "rent">(initialTab);
 
@@ -191,7 +192,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
       <div className="bg-slate-900 text-white p-6 sm:p-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-2">
-            <span className="bg-blue-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">
+            <span className="bg-emerald-600 text-white text-[11px] font-bold px-2.5 py-0.5 rounded-full">
               2026 개정 주거금융 반영
             </span>
             <span className="text-slate-400 text-xs font-mono">
@@ -207,7 +208,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
         </div>
 
         <div className="flex items-center gap-2 text-xs text-slate-400 font-mono">
-          <ShieldCheck className="w-4 h-4 text-blue-400" />
+          <ShieldCheck className="w-4 h-4 text-emerald-400" />
           <span>금융위·국토부 공식 기준 적용</span>
         </div>
       </div>
@@ -218,7 +219,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
           onClick={() => setActiveTab("loan")}
           className={`flex-1 min-w-[130px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "loan"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
@@ -228,7 +229,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
           onClick={() => setActiveTab("score")}
           className={`flex-1 min-w-[130px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "score"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >
@@ -238,7 +239,7 @@ export const DiagnosticToolkit: React.FC<DiagnosticToolkitProps> = ({
           onClick={() => setActiveTab("rent")}
           className={`flex-1 min-w-[130px] py-3 text-center text-xs sm:text-sm font-bold transition-all rounded-xl cursor-pointer ${
             activeTab === "rent"
-              ? "bg-white text-blue-600 shadow-xs"
+              ? "bg-white text-emerald-700 shadow-xs"
               : "text-slate-600 hover:text-slate-900 hover:bg-slate-200/50"
           }`}
         >

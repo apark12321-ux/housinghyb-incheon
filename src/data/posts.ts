@@ -5,7 +5,7 @@ import { POSTS_RENT } from "./posts-rent";
 import { POSTS_RENT_HEAVY } from "./posts-rent-heavy";
 import { POSTS_MOVE } from "./posts-move";
 import { POSTS_FINANCE } from "./posts-finance";
-import autoPostsData from "./auto-posts.json";
+import { POSTS_AUTO } from "./posts-auto";
 
 // 카테고리별 고품질 이미지 및 안심 가이드 캡션 풀
 const IMAGE_COLLECTIONS: Record<string, { images: string[]; captions: string[] }> = {
@@ -99,9 +99,9 @@ function getRelativeDateString(daysAgo: number): string {
   return `${yyyy}-${mm}-${dd}`;
 }
 
-// 원본 포스트 리스트 불러오기 (기존 정적 64편 + 최신 작성 16편 = 총 80편 통합 관리)
-const RAW_POSTS: Post[] = [
-  ...(Array.isArray(autoPostsData) ? (autoPostsData as Post[]) : []),
+// 원본 포스트 리스트 불러오기 (기존 정적 64편 + 최신 실무 17편 = 총 81편 완전 고정 정적 포스트, 고유 ID 중복 방지)
+const CANDIDATE_POSTS: Post[] = [
+  ...POSTS_AUTO,
   ...POSTS_SUB,
   ...POSTS_SUB_HEAVY,
   ...POSTS_RENT,
@@ -109,6 +109,14 @@ const RAW_POSTS: Post[] = [
   ...POSTS_MOVE,
   ...POSTS_FINANCE
 ];
+
+const rawMap = new Map<string, Post>();
+for (const p of CANDIDATE_POSTS) {
+  if (p && p.id && !rawMap.has(p.id)) {
+    rawMap.set(p.id, p);
+  }
+}
+const RAW_POSTS: Post[] = Array.from(rawMap.values());
 
 // 작성자 정리 및 팀 표현 정리 헬퍼
 function sanitizePostAuthor(p: Post): Post {

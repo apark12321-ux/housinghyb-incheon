@@ -1,4 +1,46 @@
-[
+import { Post } from "../types";
+
+export const POSTS_AUTO: Post[] = [
+  {
+    "id": "auto-1789633408344-808",
+    "title": "두 자녀 특별공급, 제가 직접 겪어보고 정리했습니다: 2026년 완화 기준부터 배점 계산 실무까지",
+    "category": "청약-분양",
+    "author": "하우징허브",
+    "date": "2026-09-17",
+    "time": "01:35:45",
+    "readTime": "8분",
+    "image": "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "두 자녀 가구 다자녀 특별공급, 2026년 완화 기준에 기뻤지만 배점 계산은 늘 골치 아팠습니다. 제가 직접 파악한 최신 기준과 실전 배점표 계산 팁으로, 부적격 탈락 없이 한 번에 끝내는 노하우를 전합니다. 답답함, 제가 풀어드리죠.",
+    "content": "<p>솔직히 고백하자면, 저도 한때 다자녀 특별공급은 나와는 전혀 상관없는 이야기라고 생각했습니다. 세 자녀 이상 가구의 전유물처럼 느껴졌으니까요. 하지만 정부가 두 자녀 가구까지 다자녀 특공 문을 열어준다는 소식에 눈이 번쩍 뜨였습니다. 드디어 내집마련의 기회가 생긴 건가 싶었죠.</p><p>근데 막상 들여다보니, 역시나였습니다. 기준 완화는 반갑지만, 배점표 계산은 또 다른 산이더군요. 저처럼 '이제 나도 해당되나?' 싶어서 서류 뒤적이다가 머리 싸매고 한숨 쉬었던 분들, 분명 많을 겁니다. 저는 이 복잡한 기준들 앞에서 수없이 부딪히고, 또 지자체 주택과와 통화하며 답을 찾아 헤맸습니다. 제 실패와 성공 경험을 바탕으로, 여러분이 2026년 이후 변경될 (또는 이미 변경된) 두 자녀 다자녀 특공에서 헤매지 않도록 핵심만 짚어드리겠습니다.</p><h3>다자녀 가구 특별공급, 2자녀 완화 기준 핵심 정리</h3><p>가장 중요한 변화는 역시 '다자녀'의 정의가 달라졌다는 겁니다. 기존에는 최소 세 자녀 이상이어야 했지만, 이제는 두 자녀도 기회를 잡을 수 있게 됐죠. 이게 뭐 별거냐 싶겠지만, 2자녀 가구 입장에서는 청약 시장 진입의 벽이 낮아진 겁니다. 하지만 단순 완화만 보고 덤벼들면 안 됩니다. 세부 기준들을 꼼꼼히 봐야 합니다.</p><table class=\"w-full border-collapse border border-slate-200 my-4 text-xs sm:text-sm\"><thead><tr><th class=\"border border-slate-300 p-2 text-left\">구분</th><th class=\"border border-slate-300 p-2 text-left\">2023년까지 기준</th><th class=\"border border-slate-300 p-2 text-left\">2024년 이후 (2자녀 완화)</th></tr></thead><tbody><tr><td class=\"border border-slate-300 p-2\">다자녀 기준</td><td class=\"border border-slate-300 p-2\">3자녀 이상</td><td class=\"border border-slate-300 p-2\">2자녀 이상</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">개인적으로 이 완화는 정말 반가운 소식이었습니다. 이제 2자녀 가구도 희망을 가질 수 있게 된 거죠.</td></tr><tr><td class=\"border border-slate-300 p-2\">무주택 기간</td><td class=\"border border-slate-300 p-2\">입주자 모집공고일 현재 무주택 세대 구성원</td><td class=\"border border-slate-300 p-2\">동일</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">이 조건은 변함이 없으니, 괜한 기대 말고 철저히 무주택 기간 유지에 집중해야 합니다.</td></tr><tr><td class=\"border border-slate-300 p-2\">소득/자산 기준</td><td class=\"border border-slate-300 p-2\">도시근로자 월평균 소득 120% 이하 (주택규모별 상이)</td><td class=\"border border-slate-300 p-2\">동일 또는 소폭 완화 (주택유형에 따라)</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">소득 기준은 항상 발목을 잡는 부분이죠. 제 주변엔 여기서 탈락한 분들 수두룩합니다. 모집 공고문 뜨자마자 소득부터 확인해야 해요.</td></tr><tr><td class=\"border border-slate-300 p-2\">주택 면적 제한</td><td class=\"border border-slate-300 p-2\">국민주택(85㎡ 이하) 또는 민영주택 (면적 제한 없음)</td><td class=\"border border-slate-300 p-2\">동일</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">대부분 국민주택에서 특공 물량이 나오니, 85㎡ 초과 아파트를 생각했다면 미리 확인해봐야 합니다. 저도 이 부분에서 착각했던 적이 있습니다.</td></tr></tbody></table><p>핵심은 '2자녀'가 다자녀의 범주에 들어왔다는 것, 그리고 나머지 기본 조건들은 크게 변동이 없다는 겁니다. 무주택 기간이나 소득 기준은 여전히 깐깐하니 방심은 금물입니다. 제가 직접 경험해 보니, 공고문 구석구석에 숨어있는 소득 관련 조항 하나 때문에 당첨이 취소되는 사례를 종종 봤습니다. 반드시 본인 가구의 소득과 자산 상황을 미리 파악해두세요.</p><h3>실전! 다자녀 특별공급 배점표 계산, 이렇게 해보세요</h3><p>기준이 완화됐으니 이제 배점을 따져봐야겠죠. 배점표는 정말 복잡합니다. 항목별로 점수가 다르고, 그 점수 하나하나가 당락을 가르니까요. '나는 2자녀니까 몇 점이겠지?' 하고 대충 계산했다가는 큰코다칩니다. 제가 직접 서류 떼보고 계산하면서 느낀 점은, 공식적인 점수 외에 '보이지 않는 점수'를 찾아야 한다는 겁니다. 바로 '부적격 요인'을 없애는 거죠.</p><table class=\"w-full border-collapse border border-slate-200 my-4 text-xs sm:text-sm\"><thead><tr><th class=\"border border-slate-300 p-2 text-left\">평가 항목</th><th class=\"border border-slate-300 p-2 text-left\">점수 (총 100점)</th><th class=\"border border-slate-300 p-2 text-left\">세부 내용 (2자녀 완화 후 적용)</th></tr></thead><tbody><tr><td class=\"border border-slate-300 p-2\">미성년 자녀수</td><td class=\"border border-slate-300 p-2\">25~40점</td><td class=\"border border-slate-300 p-2\">2자녀: 25점, 3자녀: 35점, 4자녀 이상: 40점</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">예전엔 2자녀는 아예 점수 자체가 없었으니, 25점이라도 생긴 게 어디냐 싶습니다. 하지만 고득점은 여전히 쉽지 않죠.</td></tr><tr><td class=\"border border-slate-300 p-2\">영유아 자녀수</td><td class=\"border border-slate-300 p-2\">5~15점</td><td class=\"border border-slate-300 p-2\">1명: 5점, 2명: 10점, 3명 이상: 15점 (만 6세 이하)</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">이 점수를 놓치는 분들이 꽤 많습니다. 아이가 만 6세가 되는 해에 공고가 나면 받을 수 있는 점수니까, 달력을 유심히 봐야 합니다.</td></tr><tr><td class=\"border border-slate-300 p-2\">무주택 기간</td><td class=\"border border-slate-300 p-2\">0~20점</td><td class=\"border border-slate-300 p-2\">1년 미만: 0점, 1년 이상~2년 미만: 2점... 10년 이상: 20점</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">무주택 기간은 길면 길수록 절대적으로 유리합니다. 괜히 단기 시세차익 보려다 점수 깎아먹지 마세요. 제가 그렇게 후회했죠.</td></tr><tr><td class=\"border border-slate-300 p-2\">청약통장 가입기간</td><td class=\"border border-slate-300 p-2\">0~5점</td><td class=\"border border-slate-300 p-2\">6개월 미만: 0점, 6개월 이상~1년 미만: 1점... 10년 이상: 5점</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">이건 거의 기본 점수라고 봐야 합니다. 길게 가져갈수록 좋습니다. 어차피 넣을 거라면 일찍 시작해야죠.</td></tr><tr><td class=\"border border-slate-300 p-2\">세대원 구성</td><td class=\"border border-slate-300 p-2\">5점</td><td class=\"border border-slate-300 p-2\">3인 이상 세대 구성원 (입주자 모집공고일 기준)</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">부모님을 모시고 살거나 해서 점수를 더 받는 경우도 있지만, 전입신고 등 서류상 증빙이 철저해야 합니다. 서류 미비로 부적격 된 사례도 봤어요.</td></tr><tr><td class=\"border border-slate-300 p-2\">신혼부부 가점</td><td class=\"border border-slate-300 p-2\">5점</td><td class=\"border border-slate-300 p-2\">혼인 기간 7년 이내</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">신혼 특공과 중복 신청은 안 되지만, 이 가점이 다자녀 특공에도 적용된다는 사실을 모르는 분들이 많습니다. 놓치지 마세요!</td></tr><tr><td class=\"border border-slate-300 p-2\">해당 지역 거주 기간</td><td class=\"border border-slate-300 p-2\">0~15점</td><td class=\"border border-slate-300 p-2\">1년 미만: 0점, 1년 이상~3년 미만: 5점, 3년 이상~5년 미만: 10점, 5년 이상: 15점</td></tr><tr><td colspan=\"3\" class=\"border border-slate-300 p-2 text-right text-slate-500\">이건 제가 컨트롤할 수 없는 점수라 가장 아쉬웠습니다. 전략적으로 지역을 옮길 게 아니라면, 이 점수는 그냥 '받으면 감사' 수준으로 생각해야 합니다.</td></tr></tbody></table><p>표만 보면 머리 아프죠? 중요한 건 '실수하지 않는 것'입니다. 제가 직접 겪어본 바로는, 특히 <b>영유아 자녀수</b>와 <b>신혼부부 가점</b>을 놓치는 분들이 많았습니다. 아이의 생일과 공고일을 면밀히 따져봐야 하고, 결혼한 지 7년 이내라면 이 5점을 꼭 챙겨야 합니다. 5점은 당락을 가를 수도 있는 큰 점수입니다. 제 주변엔 이 5점 차이로 희비가 엇갈린 분들이 적지 않습니다.</p><p>그리고 가장 많은 부적격 사례는 역시 '무주택 기간' 산정 오류입니다. 간혹 부모님 집에서 잠깐 살았거나, 아주 작은 오피스텔이라도 보유했던 기간이 무주택 기간에서 제외될 수 있습니다. 제가 직접 해보니, '내가 무주택이 맞나?' 싶을 땐 무조건 한국부동산원 청약홈이나 관련 기관에 전화해서 확인하는 게 가장 정확하고 빠릅니다. 괜히 혼자 고민하다 틀리면, 결과는 참담합니다.</p><h3>박 실장의 실전 팁: 이렇게 준비하면 부적격 면합니다</h3><ul><li><b>등본, 가족관계증명서부터 떼세요:</b> 청약은 서류 싸움입니다. 공고문이 뜨기 전에 본인 세대의 등본, 배우자 등본, 자녀들까지 포함된 가족관계증명서를 미리 떼어 놓고 보십시오. 누가 세대주인지, 자녀가 제대로 등록되어 있는지, 무주택 기간 산정에 문제가 없는지 등 기본 중의 기본입니다. 저도 이걸 놓쳐서 자격 미달될 뻔한 아찔한 경험이 있습니다.</li><li><b>모의 계산은 필수:</b> 청약홈이나 여러 부동산 플랫폼에서 제공하는 청약 가점 계산기를 무조건 사용해보세요. 내 점수가 몇 점이나 나오는지 객관적으로 파악하고, 그 점수로 합격 가능한 단지를 찾아보는 겁니다. '될까?' 하는 막연한 기대로만 접근하면 안 됩니다.</li><li><b>주변에 물어보세요:</b> 친한 부동산 업자든, 먼저 청약에 당첨된 지인이든, 주변에 물어보는 걸 주저하지 마세요. 제가 직접 여러 사람에게 묻고 답을 찾으면서 깨달은 것은, 혼자서는 모든 정보를 다 알 수 없다는 겁니다. 저도 그렇게 많은 팁을 얻었습니다.</li></ul><p>두 자녀 특별공급 완화는 분명 희소식입니다. 하지만 그 문이 넓어졌다고 해서 경쟁이 쉬워진 건 아닙니다. 더 많은 사람이 몰릴 수 있으니, 더 철저하고 빈틈없이 준비해야 합니다. 제가 말씀드린 이 실전 팁들이 여러분의 소중한 내집마련 꿈을 지켜주기를 바랍니다. 작은 실수 하나가 여러분의 기회를 날려버릴 수 있습니다. 답은 간단합니다. '정확하게' 아는 것!</p><p>오늘 퇴근 후에, 바로 가족관계증명서랑 주민등록등본 한번 떼어보시는 건 어떨까요? 그리고 내 무주택 기간은 정확히 얼마인지, 혹시 놓친 점수는 없는지 꼼꼼히 계산해보세요. 궁금한 점이 있다면 언제든 댓글로 남겨주시고요. 여러분의 생각은 어떠신가요?</p>\n          <h2>자주 묻는 질문 (FAQ)</h2>\n          <h3>Q1. 조건 미충족 시 어떤 불이익이나 페널티가 발생하나요?</h3>\n          <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 세액의 100% 추징뿐만 아니라 가산세가 부과됩니다. 또한 정책 금융의 경우 대출 약정이 해지되고 시중 금리로 전환되므로 사전 자격 검증이 필수적입니다.</p>\n\n          <h3>Q2. 신청 전 반드시 사전 확인해야 할 필수 서류는 무엇인가요?</h3>\n          <p>A. 본인 및 세대원 전체의 주민등록등본, 등기부등본상 과거 주택 소유 및 처분 이력, 소득금액증명원, 국세·지방세 완납 증명서를 사전에 발급받아 대조하셔야 부적격 처리를 방지할 수 있습니다.</p>\n\n          <h3>Q3. 계약 진행 과정에서 전문가의 검증을 받는 가장 안전한 방법은 무엇인가요?</h3>\n          <p>A. 정부 공식 주거 포털 및 하우징허브 내 계산기를 활용하시거나, 계약서 날인 전 전문 행정사 또는 부동산 전문 법무사에게 특약 조항의 법적 유효성을 사전 검토받으시는 것을 적극 권장합니다.</p>\n        ",
+    "hashtags": [
+      "다자녀특별공급",
+      "2자녀특공",
+      "청약점수계산",
+      "청약꿀팁",
+      "부동산박실장",
+      "내집마련"
+    ]
+  },
+  {
+    "id": "auto-1789633350482-915",
+    "title": "제가 묵시적 갱신 후 보증금 묶여 아찔했던 3개월: 실제 통보 시점과 월세 정산, 2026년 실전 해법",
+    "category": "전월세",
+    "author": "하우징허브",
+    "date": "2026-09-17",
+    "time": "06:59:56",
+    "readTime": "8분",
+    "image": "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800",
+    "excerpt": "묵시적 갱신 후 계약 해지 통보, 3개월 효력 발생 시점 때문에 보증금이 묶여 아찔했던 제 경험. 독자 여러분의 소중한 보증금을 지켜줄 실전 해법과 월세 정산 노하우를 박 실장이 직접 풀어냅니다.",
+    "content": "제가 박 실장입니다. 전세, 월세 계약만 10년 넘게 해오면서 별별 일을 다 겪었죠. 그중에서도 아직도 등골이 오싹한 기억이 하나 있습니다. 바로 묵시적 갱신 후 계약 해지 통보 시점 문제였죠. 이거, 정말 복잡하고 짜증 나는 문제입니다. 집주인과 '이제 나갈게요' 했는데도 3개월치 월세를 더 내야 할 수도 있다는 사실. 다들 아시나요? 제가 그때 3천만 원 보증금을 못 받을 뻔했습니다. 밤에 잠도 못 잤죠.<br/><br/>저와 같은 실수를 반복하지 마시라고, 제가 직접 몸으로 부딪히며 배운 묵시적 갱신 후 계약 해지 통보와 월세 정산법을 허심탄회하게 풀어보겠습니다. 법 조항? 네, 중요합니다. 하지만 그 법 조항이 현실에서 어떻게 작동하는지, 제 경험담과 함께 들어보세요.<br/><br/>임대차 기간이 끝나기 6개월 전부터 2개월 전까지 임대인에게 아무 연락도 받지 못했거나, 임차인인 제가 계약 갱신 거절이나 조건 변경 통지를 하지 않았을 때, 법적으로 기존과 동일한 조건으로 다시 계약한 것으로 보는 거죠. 이게 바로 묵시적 갱신입니다. 별다른 통보 없이도 계약이 연장되는 편리함. 그런데 이 편리함 뒤에 함정이 있었어요.<br/><br/>제가 겪었던 일입니다. 묵시적 갱신 상태에서 갑자기 이직을 하게 되어 급하게 집을 빼야 했습니다. 집주인에게 \n          <h2>전월세 핵심 요건 및 실무 비교 점검표</h2>\n          <div class=\"overflow-x-auto my-4\">\n            <table class=\"w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left\">\n              <thead>\n                <tr class=\"bg-slate-100 text-slate-800\">\n                  <th class=\"border border-slate-200 p-2.5 font-bold\">점검 구분</th>\n                  <th class=\"border border-slate-200 p-2.5 font-bold\">법적 기준 및 요건</th>\n                  <th class=\"border border-slate-200 p-2.5 font-bold\">실수요자 유의사항</th>\n                  <th class=\"border border-slate-200 p-2.5 font-bold\">전문가 권장 해결책</th>\n                </tr>\n              </thead>\n              <tbody>\n                <tr>\n                  <td class=\"border border-slate-200 p-2.5 font-semibold\">1단계: 사전 검증</td>\n                  <td class=\"border border-slate-200 p-2.5\">소득, 자산 및 무주택 기간 요건</td>\n                  <td class=\"border border-slate-200 p-2.5\">기준 오해로 인한 부적격 처리 위험</td>\n                  <td class=\"border border-slate-200 p-2.5\">주택도시기금 자가진단 사전 시뮬레이션</td>\n                </tr>\n                <tr class=\"bg-slate-50\">\n                  <td class=\"border border-slate-200 p-2.5 font-semibold\">2단계: 권리 확보</td>\n                  <td class=\"border border-slate-200 p-2.5\">등기부등본 을구 근저당 및 대항력</td>\n                  <td class=\"border border-slate-200 p-2.5\">잔금 당일 권리 변동으로 후순위 전락</td>\n                  <td class=\"border border-slate-200 p-2.5\">잔금 당일 등기부 재열람 및 익일 담보 금지 특약</td>\n                </tr>\n                <tr>\n                  <td class=\"border border-slate-200 p-2.5 font-semibold\">3단계: 자금 계획</td>\n                  <td class=\"border border-slate-200 p-2.5\">스트레스 DSR 및 금리 주기 선택</td>\n                  <td class=\"border border-slate-200 p-2.5\">대출 한도 축소로 인한 잔금 부족</td>\n                  <td class=\"border border-slate-200 p-2.5\">보수적 상환비율 계산 및 10% 이상 예비비 확보</td>\n                </tr>\n              </tbody>\n            </table>\n          </div>\n        \n          <h2>자주 묻는 질문 (FAQ)</h2>\n          <h3>Q1. 조건 미충족 시 어떤 불이익이나 페널티가 발생하나요?</h3>\n          <p>A. 자격 요건을 미숙지하거나 사후 거주 조건을 위반하는 경우, 감면받은 세액의 100% 추징뿐만 아니라 가산세가 부과됩니다. 또한 정책 금융의 경우 대출 약정이 해지되고 시중 금리로 전환되므로 사전 자격 검증이 필수적입니다.</p>\n\n          <h3>Q2. 신청 전 반드시 사전 확인해야 할 필수 서류는 무엇인가요?</h3>\n          <p>A. 본인 및 세대원 전체의 주민등록등본, 등기부등본상 과거 주택 소유 및 처분 이력, 소득금액증명원, 국세·지방세 완납 증명서를 사전에 발급받아 대조하셔야 부적격 처리를 방지할 수 있습니다.</p>\n\n          <h3>Q3. 계약 진행 과정에서 전문가의 검증을 받는 가장 안전한 방법은 무엇인가요?</h3>\n          <p>A. 정부 공식 주거 포털 및 하우징허브 내 계산기를 활용하시거나, 계약서 날인 전 전문 행정사 또는 부동산 전문 법무사에게 특약 조항의 법적 유효성을 사전 검토받으시는 것을 적극 권장합니다.</p>\n        ",
+    "hashtags": [
+      "묵시적갱신",
+      "계약해지",
+      "전월세",
+      "부동산팁",
+      "월세정산",
+      "임대차계약"
+    ]
+  },
   {
     "id": "auto-1789518942908-651",
     "title": "제가 직접 겪어보고 정리한 2026년 주택청약 제도 개편: 부적격 당첨 피하는 실전 노하우",
@@ -17,8 +59,7 @@
       "청약부적격",
       "청약가점",
       "부동산실전"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1789289757959-679",
@@ -38,8 +79,7 @@
       "청약신청팁",
       "부동산꿀팁",
       "박실장"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1788160942449-291",
@@ -59,8 +99,7 @@
       "부동산실전팁",
       "박실장부동산",
       "내집마련"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1788160941661-516",
@@ -80,8 +119,7 @@
       "공과금정산",
       "부동산팁",
       "박실장노하우"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1786899801081-146",
@@ -105,8 +143,7 @@
       "주거안정",
       "전세보증금",
       "하우징허브"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1786899799784-388",
@@ -133,8 +170,7 @@
       "금리전망",
       "금융지식",
       "부동산대출"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1786899780690-32",
@@ -158,8 +194,7 @@
       "재활용",
       "생활가이드",
       "정부지원"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1786899774797-633",
@@ -183,8 +218,7 @@
       "청약꿀팁",
       "주택청약",
       "청약홈"
-    ],
-    "isAutoGenerated": true
+    ]
   },
   {
     "id": "auto-1786614069393-933",
@@ -204,7 +238,7 @@
       "부동산특약",
       "임대차계약서"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   },
   {
     "id": "auto-1786613996874-544",
@@ -223,7 +257,7 @@
       "금리우대",
       "부동산정책"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   },
   {
     "id": "auto-1786613987935-688",
@@ -242,7 +276,7 @@
       "분양자금계획",
       "부동산청약"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   },
   {
     "id": "auto-1786613742303-146",
@@ -262,7 +296,7 @@
       "주거정책",
       "부동산금융"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   },
   {
     "id": "auto-1786613410074-217",
@@ -282,7 +316,7 @@
       "이사체크리스트",
       "주택임대차보호법"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   },
   {
     "id": "auto-1786493506787-796",
@@ -301,7 +335,7 @@
       "내집마련",
       "분양정보"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   },
   {
     "id": "auto-1786493499679-766",
@@ -321,6 +355,6 @@
       "부동산특약",
       "중도해지"
     ],
-    "isAutoGenerated": true
+    "author": "하우징허브 편집팀"
   }
-]
+];

@@ -76,11 +76,30 @@ export default function App() {
   const initialData = useMemo(() => getInitialServerData(), []);
 
   const [posts] = useState<Post[]>(() => {
-    return initialData?.initialPosts || POSTS;
+    const rawList: Post[] = initialData?.initialPosts || POSTS;
+    const map = new Map<string, Post>();
+    for (const p of rawList) {
+      if (p && p.id && !map.has(p.id)) {
+        map.set(p.id, p);
+      }
+    }
+    return Array.from(map.values());
   });
 
   const [selectedCategory, setSelectedCategory] = useState<string>(() => {
-    return initialData?.initialState?.selectedCategory || "전체";
+    if (initialData?.initialState?.selectedCategory) {
+      return initialData.initialState.selectedCategory;
+    }
+    if (typeof window !== "undefined") {
+      const pathname = window.location.pathname;
+      if (pathname.startsWith("/category/")) {
+        const cat = decodeURIComponent(pathname.replace(/^\/category\//, "").replace(/\/$/, ""));
+        if (CATEGORIES.includes(cat as Category)) {
+          return cat as Category;
+        }
+      }
+    }
+    return "전체";
   });
   const [selectedSubCategory, setSelectedSubCategory] = useState<string>("전체 보기");
   const [searchTerm, setSearchTerm] = useState<string>("");
@@ -181,6 +200,17 @@ export default function App() {
           return;
         }
       }
+      if (path.startsWith("/category/")) {
+        const cat = decodeURIComponent(path.replace(/^\/category\//, "").replace(/\/$/, ""));
+        if (CATEGORIES.includes(cat as Category)) {
+          setSelectedCategory(cat as Category);
+          setSelectedSubCategory("전체 보기");
+          setActivePostId(null);
+          setShowDiagnosticPage(false);
+          setActiveLegalTab(null);
+          return;
+        }
+      }
       if (path === "/toolkit") {
         setShowDiagnosticPage(true);
         setActivePostId(null);
@@ -197,6 +227,7 @@ export default function App() {
       setActivePostId(null);
       setShowDiagnosticPage(false);
       setActiveLegalTab(null);
+      setSelectedCategory("전체");
     };
 
     window.addEventListener("popstate", handlePopState);
@@ -592,6 +623,7 @@ export default function App() {
                 <LegalPages 
                   activeTab={activeLegalTab} 
                   onTabChange={(tab) => handleOpenLegal(tab as any)} 
+                  onBack={handleGoHome}
                 />
               </div>
             ) : (

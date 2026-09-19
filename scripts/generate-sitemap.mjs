@@ -26,27 +26,9 @@ function slugify(title) {
     .replace(/^-+|-+$/g, "");
 }
 
-// POSTS 리스트 반환 (기본 POSTS + auto-posts.json 병합)
+// POSTS 리스트 반환 (고정 정적 POSTS)
 function loadPosts() {
-  const map = new Map();
-  for (const p of POSTS) {
-    map.set(p.id, p);
-  }
-  try {
-    const autoPath = resolve(ROOT, "src", "data", "auto-posts.json");
-    if (existsSync(autoPath)) {
-      const raw = readFileSync(autoPath, "utf-8");
-      const autoPosts = JSON.parse(raw);
-      if (Array.isArray(autoPosts)) {
-        for (const p of autoPosts) {
-          map.set(p.id, p);
-        }
-      }
-    }
-  } catch (e) {
-    console.warn("Failed to load auto-posts for sitemap:", e);
-  }
-  return Array.from(map.values()).sort((a, b) => {
+  return [...POSTS].sort((a, b) => {
     const dateA = `${a.date || ""} ${a.time || "00:00:00"}`;
     const dateB = `${b.date || ""} ${b.time || "00:00:00"}`;
     return dateB.localeCompare(dateA);
