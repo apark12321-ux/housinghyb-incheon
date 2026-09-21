@@ -218,7 +218,7 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
             <section className="space-y-2">
               <h3 className="font-bold text-slate-900 text-sm">4. 개인정보 보호책임자 및 문의처</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-mono">
-                책임자: 상상아트 개인정보 관리팀 · 공식 이메일: apark12321@gmail.com
+                운영 주체: 하우징허브 (HousingHub) · 개인정보 보호책임자: 박진혁 · 공식 문의: apark12321@gmail.com
               </p>
             </section>
           </div>
@@ -237,14 +237,14 @@ export const LegalPages: React.FC<LegalPagesProps> = ({
             <section className="space-y-2">
               <h3 className="font-bold text-slate-900 text-sm">제1조 (목적)</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                본 약관은 상상아트(이하 "회사")가 운영하는 하우징허브(zip9.kr) 웹사이트에서 제공하는 모든 주택청약, 임대차, 금융 관련 정보 및 자가진단 계산기 서비스의 이용 조건과 절차를 규정함을 목적으로 합니다.
+                본 약관은 하우징허브(HousingHub, 이하 "서비스 운영팀")가 운영하는 웹사이트(zip9.kr)에서 제공하는 모든 주택청약, 임대차, 주거금융 관련 심층 분석 리포트 및 자가진단 계산기 서비스의 이용 조건과 절차를 규정함을 목적으로 합니다.
               </p>
             </section>
 
             <section className="space-y-2">
               <h3 className="font-bold text-slate-900 text-sm">제2조 (정보의 제공 및 저작권)</h3>
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                하우징허브에 게재된 모든 심층 분석 칼럼, 인포그래픽, 계산기 로직의 저작권은 회사에 귀속됩니다. 무단 전재, 크롤링을 통한 상업적 재배포는 엄격히 금지되며, 개인적인 학습 및 정보 공유 목적의 출처 표기 인용은 허용됩니다.
+                하우징허브에 게재된 모든 심층 분석 칼럼, 인포그래픽, 수식 계산 로직의 저작권은 하우징허브에 귀속됩니다. 무단 전재, 기계적 크롤링을 통한 상업적 재배포는 엄격히 금지되며, 출처를 명시한 비영리 목적의 인용 및 공유는 허용됩니다.
               </p>
             </section>
 

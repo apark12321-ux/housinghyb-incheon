@@ -164,31 +164,7 @@ export const POSTS_FINANCE: Post[] = [
   <p style="color:#777; font-size:0.9em; margin-top:30px;"></p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -270,31 +246,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결론적으로 가장 좋은 상환 방식은 <strong>'본인의 현재 소득 대비 여유 자금'</strong>과 <strong>'향후 대출 유지 기간'</strong>에 따라 결정됩니다. 수도권에서의 안정적인 주거 정착을 위해 오늘 설명해 드린 내용을 바탕으로 여러분의 재무 성향에 딱 맞는 대출 플랜을 설계하시길 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "20:31:49",
@@ -381,31 +333,7 @@ export const POSTS_FINANCE: Post[] = [
     <p><strong>전문 기자의 마지막 조언:</strong> 디딤돌 대출은 매년 정부 예산 소진 속도에 따라 정책 변화가 있을 수 있습니다. 따라서 수도권 지역의 부동산 거래를 계획 중이라면, 잔금 처리 전 최소 1개월 반 전에는 은행 상담을 완료하여 금리 변동 리스크를 최소화하시길 권장합니다. <strong>꼼꼼한 자금 계획이 곧 수도권에서의 안정적인 주거 생활의 시작입니다.</strong></p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -494,31 +422,7 @@ export const POSTS_FINANCE: Post[] = [
     <p style="color: #666; font-size: 0.9em;">최종 업데이트: 2026-06-07 | 수도권 노후 설계 전문 에디터</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "19:57:03",
@@ -604,31 +508,7 @@ export const POSTS_FINANCE: Post[] = [
       
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-06-08 | 감수: 하우징허브 주거금융 정책분석 지원부</p>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -708,31 +588,7 @@ export const POSTS_FINANCE: Post[] = [
     <p style="font-size: 0.8rem; color: #888; margin-top: 2rem;">최종 업데이트: 2026-06-09 | 금융 정보는 정부 정책에 따라 수시로 변동될 수 있습니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "21:08:32",
@@ -804,31 +660,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결론적으로 중도상환 수수료는 '비용'이 아니라 <strong>'금융 효율을 높이기 위한 투자금'</strong>으로 접근해야 합니다. 현재 거주하시는 수도권 내 아파트의 시세 변화와 본인의 대출 약정서를 면밀히 비교하여 가장 똑똑한 상환 계획을 세우시길 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -996,31 +828,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결국 장기보유특별공제 개편은 무주택자에게는 주거 사다리를, 1주택 실거주자에게는 혜택을, 투기 세력에게는 규제를 가하는 정책입니다. 수도권에서의 똘똘한 한 채를 유지하고 계신 여러분께는 이번 개편이 '실거주 완성'이라는 또 다른 자산 방어 전략을 세우는 계기가 될 것입니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -1108,31 +916,7 @@ export const POSTS_FINANCE: Post[] = [
     <p style="color: #999; font-size: 0.8em; margin-top: 20px;">최종 업데이트: 2026-06-01 | 본 내용은 일반적인 정보 제공을 목적으로 하며, 실제 대출 실행 시에는 금융기관의 공식 심사 기준에 따라 차이가 있을 수 있습니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "21:50:50",
@@ -1213,31 +997,7 @@ export const POSTS_FINANCE: Post[] = [
     <p>결론적으로 다주택자 주담대 만기연장 금지 조치는 단순히 금융 시장의 규제를 넘어, 수도권을 비롯한 수도권 부동산 시장이 투기적 수요에서 실수요 중심의 안정적인 시장으로 재편되는 신호탄이 될 것입니다. 시장의 흐름을 정확히 읽고 본인의 자산 가치를 냉철하게 평가하는 투자자만이 이 격변기에서 기회를 잡을 수 있을 것입니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -1310,31 +1070,7 @@ export const POSTS_FINANCE: Post[] = [
     <p><strong>결론:</strong> 양도세 중과 유예 종료는 위기이자 정비의 기회입니다. 수도권 및 주요 거점의 다주택자 여러분께서는 당장의 매도보다는 보유 물건의 등기부등본 확인, 현재 공시가격 재확인, 그리고 세대 구성원의 주택 현황을 종합적으로 점검하시어 최적의 의사결정을 내리시길 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "20:40:40",
@@ -1498,31 +1234,7 @@ export const POSTS_FINANCE: Post[] = [
     <p style="margin-top: 50px; font-size: 0.8em; color: #888;"></p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "20:22:58",
@@ -1600,31 +1312,7 @@ export const POSTS_FINANCE: Post[] = [
     <p style="text-align: right; color: #888; font-size: 0.9em;"></p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     author: "하우징허브",
@@ -1706,31 +1394,7 @@ export const POSTS_FINANCE: Post[] = [
     <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-05-28</p>
 </div>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">가계 순소득 대비 이자율</div>
-        <div class="col-span-2 text-slate-600 font-sans">실제 나가는 월 주담대 납부 원리금이 내 실수령 가계 총 소득의 30%를 영원히 이탈하거나 초과하지 않도록 보장 설계할 것.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">서브 부채의 완전 정리</div>
-        <div class="col-span-2 text-slate-600 font-sans">중도금 잔금 대출 심사일 최소 한 달 전에 시중 고금리 카드론 및 다단계 자동차 할부 잔액 철저 잔금 변제 후 서류 첨부.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">비상 생활 예비 가치 적치</div>
-        <div class="col-span-2 text-slate-600 font-sans">금리 인상기에 대항하기 위해 대출 실행 총액의 약 35%에 수렴하는 현금성 안심 펀드를 상시 이탈 분배 보관할 것.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 중도상환 페널티 우회 기법 및 장기 실거주 절세 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed mb-3">
-      주담대 실행 후 계약 기간 3년 내에 고액의 성과급이나 여유 자산으로 빚을 자정 갚을 때 부과되는 중도상환수수료(약 1.2% 부과 페널티 슬라이드)를 피하려면, <strong>매년 원금의 10%까지 무상 중도상환 한계를 열어주는 우수 금융사 특례 조항</strong>을 공략하셔야 합니다. 3년이 경과하는 당일 즉시 무수수료 해제가 기동하므로 상환 스케줄을 밀접하게 분산 배치하십시오. 
-      또한 수도권에서 주택을 매수해 영구 자산 안정과 1세대 1주택 보유 세제 면제(보통 양도세 2년 거주 충족 고지 등) 혜택을 완성하는 날까지 정기 등기 이관 분석을 소홀히 하지 마시기를 엄숙히 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 내용은 주택도시기금 및 시중은행 공식 대출 규정을 기반으로 작성된 실무 검증 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "대출-금융",
     time: "19:48:12",

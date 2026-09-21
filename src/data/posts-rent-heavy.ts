@@ -75,30 +75,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
   <p>결론적으로 2026년의 수도권 전세 시장은 쉽지 않은 흐름을 보이고 있습니다. 하지만 수도권 지역 내의 <strong>신도시 입주 물량과 구도심 재개발 일정을 사전에 파악</strong>하고, 보증금 보호를 위한 법적 장치를 철저히 준비한다면 이 난관을 충분히 슬기롭게 극복할 수 있을 것입니다. 정보가 곧 돈이 되는 시대입니다. 여러분의 소중한 자산을 지키기 위해 오늘 설명해 드린 기준들을 반드시 기억하시기 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     author: "하우징허브",
@@ -181,30 +158,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p style="color: #777; font-size: 0.9em;">본 포스트는 부동산 정책 전문 분석을 바탕으로 작성되었으며, 실제 계약 시에는 관련 법령을 반드시 재확인하시기 바랍니다. 최종 업데이트: 2026-07-05</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     time: "08:52:28",
@@ -288,30 +242,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p style="color: #888; margin-top: 30px;">최종 업데이트: 2026-06-26 | 본 정보는 법률적 상담이 아닌 참고용 가이드이며, 실제 계약 시 반드시 전문가의 자문을 구하시기 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     author: "하우징허브",
@@ -399,30 +330,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p>마지막으로 강조드리고 싶은 점은, 지원금은 신청한 날이 속하는 달부터 지급된다는 것입니다. 미루면 미룰수록 받을 수 있는 총액이 줄어듭니다. 수도권 및 주요 거점의 치열한 도심 속에서 내 집 마련을 꿈꾸는 청년들에게 이 제도가 든든한 징검다리가 되기를 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     time: "09:26:14",
@@ -511,30 +419,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p style="color: #999; font-size: 12px; margin-top: 30px;">최종 업데이트: 2026-06-28 | 본 콘텐츠는 부동산 시장의 일반적인 분석을 담고 있으며, 실제 계약 시에는 반드시 전문가 및 법률 전문가의 조언을 구하시기 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     author: "하우징허브",
@@ -611,30 +496,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p>결론적으로 2026년의 전세 시장은 임차인에게 결코 녹록지 않은 환경이 될 것입니다. 그러나 지역별 입주 데이터에 기반한 전략적 접근과 갱신권 활용, 그리고 철저한 보증금 보호 장치를 갖춘다면 충분히 안정적인 주거 생활을 영위할 수 있습니다. 수도권 및 주요 거점의 임차인 여러분, 시장의 흐름을 미리 읽고 대비하는 자만이 주거 안정이라는 열매를 맺을 수 있음을 잊지 마시기 바랍니다.</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     time: "09:50:50",
@@ -709,30 +571,7 @@ export const POSTS_RENT_HEAVY: Post[] = [
     <p style="text-align: right; color: #888; font-size: 0.9em;">최종 업데이트: 2026-06-30</p>
 </div>
     
-<div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">최우선 변제 수치</div>
-        <div class="col-span-3 text-slate-600 font-sans">수도권 및 주요 도시 과밀억제권역 기준, 내 보증금 총액이 법적 허용한 소액임차인 구간에 포함 시 담보 설정일 기준 최고 한도액을 저당 자산 매각 대금의 1/2 내에서 우선 변제받습니다.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">임차권등기명령권</div>
-        <div class="col-span-3 text-slate-600 font-sans">임대차 조약 명시일이 종료되었는데도 집주인이 보증금을 주지 않고 지체할 시, 이사 나간 후 대항력을 그대로 보전받는 조치로 등기소 법원 양식 서류 접출 기동.</div>
-      </div>
-      <div class="grid grid-cols-4 p-2.5">
-        <div class="font-semibold text-slate-900">내용증명 예방 선고</div>
-        <div class="col-span-3 text-slate-600 font-sans">계약 해지 의사를 명시한 문서 3부를 우체국을 경유해 도장 인가 후 집주인에게 발송하여 사후 소송 증거력을 완전무결 획득 보증함.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분쟁 분쟁 임대 계약 극복 및 최종 구제 안심 요약</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      집주인의 일방적인 보증 환급 거절이 일어난 도정이라도 두려워 마시고 대한민국 정부가 무상 주관하는 '주택임대차분쟁조정위원회' 창구 조기 접수나 수도권지방법원 민사 소송 경로를 활용해 주거 주권을 지켜내십시오. 내가 취한 전입신고 한 방과 확정 등기 이식 상태는 주거 생존을 방어하는 절대 무적의 열쇠입니다. 언제나 법률 기준 지도를 면면히 조회하며 당차게 계약 권리를 개진해 나가는 우수한 수도권 상시 세입 주체가 되시기를 응원 조언합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 가이드는 주택임대차보호법 및 법원 판례를 바탕으로 작성된 실무 안내 자료입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "전월세",
     author: "하우징허브",

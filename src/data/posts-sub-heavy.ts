@@ -231,30 +231,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p>시장의 흐름은 한 번에 바뀌지 않습니다. 지금이 안정세 전환의 시점이라면 결정을 서두를 필요는 없습니다. 본인의 자금 사정하고 거주 계획을 차분히 점검하시기 바랍니다.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용 정보다. 실제 청약 자격과 당첨 가능성은 개별 단지 공고와 본인 조건에 따라 달라진다.</p>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">청약 잔액 선제 인입</div>
-        <div class="col-span-2 text-slate-600 font-sans">일반 1순위 청약 잔고 인정 기준일 점검 및 매월 약정한 인정 최대 한계 예산액인 25만 원 꽉 채워 연체 없이 자동이체 유지.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">재당첨 금지 기한 조사</div>
-        <div class="col-span-2 text-slate-600 font-sans">과거 가구원 중 분상제 당청자 이력이 있을 시 최대 10년간 재당첨 금지 슬롯 작동하므로 청약홈 상시 자격 조회 필수.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분양 잔금 대출 설계 흐름 및 안심 거치 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      당첨의 영광을 완전히 안기는 데는 입주 이삿날 잔금 전환 시 집단대출과 디딤돌 후취 보증 대출에 대한 사전 자금 매칭 가동 실천력이 필수입니다. 분양 계약금 10%~20%는 온당히 본인 실물 장치 자금으로 충족하고, 중도금 무이자 약정 여부를 견주어 보증 수수료 아파트 입안을 완수해 나가십시오. 기쁜 마음으로 꿈에 그리던 영구적 고가 내 집 마련을 달성하여 행복한 주거 안식을 수도권에서 성취하시기를 적극 축원합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 분양 전문 지도는 하우징허브 청약 위원회 및 공식 분양 에디팅 협회가 정밀 조사 검수한 합격 로드맵 사실 명세입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "청약-분양",
     author: "하우징허브",
@@ -341,30 +318,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p>공공임대주택은 경쟁이 치열한 편이라 꾸준히 여러 공고에 도전하시는 게 현실적인 전략이에요. 자세한 모집 일정은 <a href="https://www.lh.or.kr" target="_blank" rel="noopener noreferrer">LH 청약센터</a>와 <a href="https://www.myhome.go.kr" target="_blank" rel="noopener noreferrer">마이홈포털</a>에서 확인하실 수 있어요.</p>
       <p class="text-sm text-gray-500 mt-8">※ 위 내용은 참고용이에요. 공공임대주택 자격과 기준은 매년·유형별로 달라지니, 신청 전 LH 청약센터(1600-1004)나 마이홈포털에서 본인 케이스를 꼭 확인하세요.</p>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">청약 잔액 선제 인입</div>
-        <div class="col-span-2 text-slate-600 font-sans">일반 1순위 청약 잔고 인정 기준일 점검 및 매월 약정한 인정 최대 한계 예산액인 25만 원 꽉 채워 연체 없이 자동이체 유지.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">재당첨 금지 기한 조사</div>
-        <div class="col-span-2 text-slate-600 font-sans">과거 가구원 중 분상제 당청자 이력이 있을 시 최대 10년간 재당첨 금지 슬롯 작동하므로 청약홈 상시 자격 조회 필수.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분양 잔금 대출 설계 흐름 및 안심 거치 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      당첨의 영광을 완전히 안기는 데는 입주 이삿날 잔금 전환 시 집단대출과 디딤돌 후취 보증 대출에 대한 사전 자금 매칭 가동 실천력이 필수입니다. 분양 계약금 10%~20%는 온당히 본인 실물 장치 자금으로 충족하고, 중도금 무이자 약정 여부를 견주어 보증 수수료 아파트 입안을 완수해 나가십시오. 기쁜 마음으로 꿈에 그리던 영구적 고가 내 집 마련을 달성하여 행복한 주거 안식을 수도권에서 성취하시기를 적극 축원합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 분양 전문 지도는 하우징허브 청약 위원회 및 공식 분양 에디팅 협회가 정밀 조사 검수한 합격 로드맵 사실 명세입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "청약-분양",
     time: "02:46:34",
@@ -621,30 +575,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       <p>정확한 청약 자격과 가점은 <a href="https://www.applyhome.co.kr" target="_blank" rel="noopener noreferrer">청약홈</a>에서 제공합니다.</p>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-15</p>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">청약 잔액 선제 인입</div>
-        <div class="col-span-2 text-slate-600 font-sans">일반 1순위 청약 잔고 인정 기준일 점검 및 매월 약정한 인정 최대 한계 예산액인 25만 원 꽉 채워 연체 없이 자동이체 유지.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">재당첨 금지 기한 조사</div>
-        <div class="col-span-2 text-slate-600 font-sans">과거 가구원 중 분상제 당청자 이력이 있을 시 최대 10년간 재당첨 금지 슬롯 작동하므로 청약홈 상시 자격 조회 필수.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분양 잔금 대출 설계 흐름 및 안심 거치 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      당첨의 영광을 완전히 안기는 데는 입주 이삿날 잔금 전환 시 집단대출과 디딤돌 후취 보증 대출에 대한 사전 자금 매칭 가동 실천력이 필수입니다. 분양 계약금 10%~20%는 온당히 본인 실물 장치 자금으로 충족하고, 중도금 무이자 약정 여부를 견주어 보증 수수료 아파트 입안을 완수해 나가십시오. 기쁜 마음으로 꿈에 그리던 영구적 고가 내 집 마련을 달성하여 행복한 주거 안식을 수도권에서 성취하시기를 적극 축원합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 분양 전문 지도는 하우징허브 청약 위원회 및 공식 분양 에디팅 협회가 정밀 조사 검수한 합격 로드맵 사실 명세입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "청약-분양",
     author: "하우징허브",
@@ -692,30 +623,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
       </ul>
       <p class="text-xs text-gray-400 mt-6">최종 업데이트: 2026-07-16</p>
     
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 수도권 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">청약 잔액 선제 인입</div>
-        <div class="col-span-2 text-slate-600 font-sans">일반 1순위 청약 잔고 인정 기준일 점검 및 매월 약정한 인정 최대 한계 예산액인 25만 원 꽉 채워 연체 없이 자동이체 유지.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">재당첨 금지 기한 조사</div>
-        <div class="col-span-2 text-slate-600 font-sans">과거 가구원 중 분상제 당청자 이력이 있을 시 최대 10년간 재당첨 금지 슬롯 작동하므로 청약홈 상시 자격 조회 필수.</div>
-      </div>
-    </div>
 
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분양 잔금 대출 설계 흐름 및 안심 거치 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      당첨의 영광을 완전히 안기는 데는 입주 이삿날 잔금 전환 시 집단대출과 디딤돌 후취 보증 대출에 대한 사전 자금 매칭 가동 실천력이 필수입니다. 분양 계약금 10%~20%는 온당히 본인 실물 장치 자금으로 충족하고, 중도금 무이자 약정 여부를 견주어 보증 수수료 아파트 입안을 완수해 나가십시오. 기쁜 마음으로 꿈에 그리던 영구적 고가 내 집 마련을 달성하여 행복한 주거 안식을 수도권에서 성취하시기를 적극 축원합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 분양 전문 지도는 하우징허브 청약 위원회 및 공식 분양 에디팅 협회가 정밀 조사 검수한 합격 로드맵 사실 명세입니다.
-    </p>
-  </div>
-</div>
 `,
     category: "청약-분양",
     time: "02:10:10",
@@ -766,64 +674,7 @@ export const POSTS_SUB_HEAVY: Post[] = [
           <div>검단 신도시 (2기 완성)</div>
           <div>계양 테크노밸리 (3기 자족)</div>
         </div>
-        <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-          <div class="font-semibold text-slate-900">교통 연계성</div>
-          <div class="text-slate-600">수도권지하철 1호선 연장 (3개 신설역), GTX-D 추진, 올림픽대로 접급성</div>
-          <div class="text-slate-600">S-BRT 기반 대중교통망, 박촌역 환승 용이, 김포공항 및 서울 서부 초밀접</div>
-        </div>
-        <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-          <div class="font-semibold text-slate-900">교육 정주 요건</div>
-          <div class="text-slate-600">초중고 도보 안심 안착, 우수 학원가 성숙, 특화 에듀타운 기동</div>
-          <div class="text-slate-600">유치원·초밀집 에코 클러스터, 공공 육아 종합 보육 협조망 완공</div>
-        </div>
-        <div class="grid grid-cols-3 p-2.5">
-          <div class="font-semibold text-slate-900">단지당 평균 분양 정보</div>
-          <div class="text-slate-600">평당 1,600만 ~ 1,850만 원 선 (민간 메이저 주도)</div>
-          <div class="text-slate-600">평당 1,480만 ~ 1,650만 원 선 (공공 주택 중심)</div>
-        </div>
-      </div>
-
-      <h3 id="section5">5. 당첨을 결정할 '청약 가점 커트라인' 및 전략적 눈치싸움</h3>
-      <p>자신의 무주택 가점 상태를 연산할 때 절대 빈틈이 없어야 합니다. 검단신도시의 경우 최근 진행된 민간 청약 가점 당첨 안정선이 일반 공급 기준으로 무려 최소 58점에서 최대 69점 사이에 안착되어 있고, 다자녀나 신혼 특공에 배정된 무주택 경쟁 또한 쟁쟁한 연차 누적 세대들이 맹렬하게 유입되고 있습니다. 계양테크노밸리 당초 예상은 일반 분양 자격 가점 요소를 고려할 때 저축 통장 저치 누적 예산 총 납액 기준 1,800만-2,100만 원 대에서 당첨 마지노선 컷이 조율 형성될 개연성이 짙습니다. 저축 납액이 상대적으로 가난하거나 가점이 40점대 이하인 극무 가구들은 생애최초 전형에 부여된 100% 추첨제 비율 슬롯을 소외 없이 집중 연동 조명하여 기적의 1위 로또 당첨권을 손아귀에 넣어야 가솔을 안심 견인할 수 있습니다.</p>
-      <p>이것은 가상의 연산 숫자가 아닌 지난 수개 분기 동안 당첨된 실제 세대 데이터들의 수치적 검증 결론에 기초한 과학적 정보입니다. 한 명의 이탈 세대원도 빠짐없이 완벽한 무주택 유지 서명 날인을 마쳐놓아야 가을날 청약홈 열람 시 합격 여부에서 환히 미소를 주체할 수 있습니다.</p>
-
-      <h3 id="section6">6. 부적격 해약 방지 필수 안전 관리 가이드</h3>
-      <p>마침내 대망의 동호수 당첨 공시를 목격하고도 부주의한 실태 측정 요인 탓에 즉각 무효 처리되는 부적격 판정을 사후 발견하는 슬픈 경우가 전체 당첨 세대의 무려 10.7%에 육박합니다. 특히 청약홈 사이트 접속 입력창에서 흔히 실수하는 '무주택 만 기간 시작일 계산 기입'은 서른 살 미만의 미혼자가 배우자가 없는 상태라면 영삼세 기산이 자명하고 일체의 기만 없는 무결성 입증이 엄수되어야 합니다. 또한 동일 세대 내에서 구성원들이 각자 서로 중복 접지 신청을 넣거나 특별공급을 단독 아닌 중첩 이중 대결 신청하는 행위 또한 청약 부적격 위반 고리에 영구 등록되어 1년 동안 안심 분양 일지에서 소외 낙천될 수 있으니 엄숙한 대조와 단독 청약 실천을 완강 조언합니다.</p>
-      <p>특히 '상속 혹은 부모 명의의 소형 지분 주택'은 많은 분이 '우리 집이 무주택 상태'라고 흔히 가벼이 오신해 대형 낭패로 봉합되곤 합니다. 무주택 자격은 행정 자산의 공정한 기둥 위에서 단 일 평의 등기 잔재도 무주택 판단 상속 예외 선고로 공증되지 않았다면 온당한 유주택 소유 인자로 취급됨을 철석 같이 자조 전념 명심하십시오.</p>
-
-      <h3 id="section7">7. 청약 전 꼭 알아야 할 3대 질문 답변 가이드</h3>
-      <p>실수요자의 하반기 청약 성공 탈바꿈 기틀을 위해, 독자들이 가장 자조 문의하는 핵심 질의안과 해결 지표를 투명 성경하게 요약 수여해 드립니다.</p>
-      <ul>
-        <li><strong>Q1. 검단과 계양 중 실거주 가치는 어디가 나은가요?</strong><br>A. 기성 인프라의 안락함과 고교 학업 성숙도를 중시한다면 신도시 2기가 만개한 검단이 단연 안성맞춤입니다. 반면 일자리 직주근접과 서울 출퇴근 중심권 역세 가치 수립을 뼈대로 삼는 이삼십대 독신 또는 딩크族은 3기 선발 주역인 계양이 장기적으로 자산 성장을 가속견인할 우수한 선택입니다.</li>
-        <li><strong>Q2. 당첨 후 자금 계획은 어찌 세워야 파산을 피할까요?</strong><br>A. 분양가상한제 주택은 일반적으로 계약금 20%를 최초 현찰 자금으로 직접 방어 보유하셔야 합니다. 중도금 60% 노선은 집단 협약 대출로 해결 가능하나 잔금 시점 DSR 3단계 방어선(40% 통제 기준)에 가로막혀 고액 예비 전세 대안 자금 마련 요인 발생이 빈번하므로 대출 한도 자가진단을 선제 기동해두는 습관을 기르십시오.</li>
-        <li><strong>Q3. 이미 청약통장을 한 번 깨고 새로 가입했는데 가점 손해인가요?</strong><br>A. 청약 통장을 깨는 행위는 오랜 무주택 저축 가입 기간을 완전히 제로화시키는 아픈 이탈입니다. 지금이라도 매달 25만 원 한도 내에서 연체 없이 무결하게 안심 납입하는 새 흐름을 구축하시되, 가점 승부가 부하되는 일반 공급 대신 생초 추첨 전형이나 신혼 특공 소득 완화 찬스에 전속 대결 신청해 지각변동을 노리는 우회로 공략을 전적으로 격려합니다.</li>
-      </ul>
-
-      <p class="text-xs text-gray-400 mt-6">최종 에디팅 발행일: 2026-07-17</p>
-<div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">거주 기간 자격 충족</div>
-        <div class="col-span-2 text-slate-600 font-sans">수도권 및 주요 도시 우선 배정 요건(보통 인천 내 주민등록 기동 거주 지속일 1년 혹은 2년 충족 필수 등) 부적 조항 수시로 대조 기입.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5 border-b border-slate-100">
-        <div class="font-semibold text-slate-900">청약 잔액 선제 인입</div>
-        <div class="col-span-2 text-slate-600 font-sans">일반 1순위 청약 잔고 인정 기준일 점검 및 매월 약정한 인정 최대 한계 예산액인 25만 원 꽉 채워 연체 없이 자동이체 유지.</div>
-      </div>
-      <div class="grid grid-cols-3 p-2.5">
-        <div class="font-semibold text-slate-900">재당첨 금지 기한 조사</div>
-        <div class="col-span-2 text-slate-600 font-sans">과거 가구원 중 분상제 당청자 이력이 있을 시 최대 10년간 재당첨 금지 슬롯 작동하므로 청약홈 상시 자격 조회 필수.</div>
-      </div>
-    </div>
-
-    <h4 class="font-bold text-slate-900 text-sm mb-2">4. 분양 잔금 대출 설계 흐름 및 안심 거치 결론</h4>
-    <p class="text-xs text-slate-600 leading-relaxed">
-      당첨의 영광을 완전히 안기는 데는 입주 이삿날 잔금 전환 시 집단대출과 디딤돌 후취 보증 대출에 대한 사전 자금 매칭 가동 실천력이 필수입니다. 분양 계약금 10%~20%는 온당히 본인 실물 장치 자금으로 충족하고, 중도금 무이자 약정 여부를 견주어 보증 수수료 아파트 입안을 완수해 나가십시오. 기쁜 마음으로 꿈에 그리던 영구적 고가 내 집 마련을 달성하여 행복한 주거 안식을 인천에서 성취하시기를 적극 축원합니다.
-    </p>
-
-    <p class="text-[10px] sm:text-xs text-slate-400 mt-4 border-t border-slate-100 pt-3 text-right">
-      ※ 본 분양 전문 지도는 하우징허브 인천 청약 위원회 및 공식 분양 에디팅 협회가 정밀 조사 검수한 합격 로드맵 사실 명세입니다.
-    </p>
-  </div>
-</div>
+        
 `,
     category: "청약-분양",
     author: "하우징허브",
