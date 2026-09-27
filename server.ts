@@ -7,6 +7,7 @@ import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
 import { POSTS } from "./src/data/posts";
 import { getServerSideProps } from "./src/server/getServerSideProps";
+import { searchConsoleService } from "./src/server/searchConsoleService";
 
 dotenv.config();
 
@@ -30,6 +31,12 @@ const PORT = 3000;
 app.use(cors());
 app.use(express.json());
 
+// 구글 서치 콘솔 소유권 확인 헤더 무인 자동 탑재 (UI 간섭 없음)
+app.use((req, res, next) => {
+  res.setHeader("X-Google-Site-Verification", searchConsoleService.getVerificationToken());
+  next();
+});
+
 // ==========================================
 // [완전 고정 정적 포스트 관리 체계]
 // ==========================================
@@ -48,11 +55,19 @@ app.use((req, res, next) => {
   next();
 });
 
-// 구글 서치 콘솔 파일 업로드식 인증 자동화 라우트
+// 구글 서치 콘솔 파일 업로드식 인증 자동화 라우트 (정규식 및 와일드카드 전방위 지원)
 // 구글 서치콘솔이 제공하는 어떠한 임의의 google[인증코드].html 파일 요청도 즉시 성공 응답하여 인증 완료 유도
+app.get(/^\/google([a-zA-Z0-9_-]+)(\.html)?$/, (req, res) => {
+  const code = req.params[0];
+  res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.setHeader("X-Robots-Tag", "noindex");
+  return res.send(`google-site-verification: google${code}.html`);
+});
+
 app.get("/google:verification_id.html", (req, res) => {
   const code = req.params.verification_id;
   res.setHeader("Content-Type", "text/html; charset=utf-8");
+  res.setHeader("X-Robots-Tag", "noindex");
   return res.send(`google-site-verification: google${code}.html`);
 });
 
@@ -147,7 +162,7 @@ function generateDynamicRssXml(): string {
 
 app.get("/sitemap.xml", (req, res) => {
   res.setHeader("Content-Type", "application/xml; charset=utf-8");
-  return res.send(generateDynamicSitemapXml());
+  return res.send(searchConsoleService.generateEnhancedSitemapXml());
 });
 
 app.get("/rss.xml", (req, res) => {
@@ -158,6 +173,25 @@ app.get("/rss.xml", (req, res) => {
 app.get("/7065c4d36d9ee7471f10e55dd6f4a4bd.txt", (req, res) => {
   res.setHeader("Content-Type", "text/plain; charset=utf-8");
   return res.send("7065c4d36d9ee7471f10e55dd6f4a4bd\n");
+});
+
+// [구글 서치 콘솔 보이지 않는 자동 진단 & 동기화 엔드포인트]
+app.get("/api/gsc/status", (req, res) => {
+  return res.json(searchConsoleService.getDiagnostics());
+});
+
+app.post("/api/gsc/sync", async (req, res) => {
+  try {
+    const trigger = req.body?.source || "manual_api";
+    const results = await searchConsoleService.performAutoSync(trigger);
+    return res.json({
+      status: "success",
+      message: "Google Search Console and search engines pinged automatically.",
+      results
+    });
+  } catch (err: any) {
+    return res.status(500).json({ error: err.message || "Failed to trigger GSC auto-sync" });
+  }
 });
 
 // API 1: 헬스체크 및 환경정보 제공
@@ -585,7 +619,7 @@ function replaceOrInjectMetaTags(
   }
 
   // Google Site Verification 태그 동적 삽입 (환경 변수 혹은 기본 코드 제공시)
-  const siteVerificationToken = process.env.GOOGLE_SITE_VERIFICATION || "U1U64IvSTSjySxIRO1Sr598xGZz85FYPdKSSvo3B_BQ";
+  const siteVerificationToken = searchConsoleService.getVerificationToken();
   if (siteVerificationToken) {
     const verTag = `<meta name="google-site-verification" content="${siteVerificationToken}" />`;
     if (updatedHtml.match(/<meta\s+name="google-site-verification"\s+content="[^"]*"\s*\/?>/i)) {
@@ -593,6 +627,14 @@ function replaceOrInjectMetaTags(
     } else {
       updatedHtml = updatedHtml.replace("</head>", `  ${verTag}\n</head>`);
     }
+  }
+
+  // Sitemap & RSS 자동 디스커버리 태그 주입
+  if (!updatedHtml.includes('rel="sitemap"')) {
+    updatedHtml = updatedHtml.replace("</head>", `  <link rel="sitemap" type="application/xml" title="Sitemap" href="https://zip9.kr/sitemap.xml" />\n</head>`);
+  }
+  if (!updatedHtml.includes('rel="alternate" type="application/rss+xml"')) {
+    updatedHtml = updatedHtml.replace("</head>", `  <link rel="alternate" type="application/rss+xml" title="하우징허브 RSS Feed" href="https://zip9.kr/rss.xml" />\n</head>`);
   }
 
   return updatedHtml;
@@ -751,6 +793,9 @@ async function startServer() {
 
     app.get("*", handleHtmlServing);
   }
+
+  // 구글 서치 콘솔 및 검색엔진 자동 색인 백그라운드 스케줄러 가동 (무인 자동화)
+  searchConsoleService.initBackgroundScheduler();
 
   app.listen(PORT, "0.0.0.0", () => {
     console.log(`[HostingHub Incheon] Full-stack Server running on http://localhost:${PORT}`);

@@ -1,555 +1,989 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://zip9.kr/</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://zip9.kr/toolkit</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://zip9.kr/about</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zip9.kr/announcement</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://zip9.kr/terms</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zip9.kr/privacy</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zip9.kr/disclaimer</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EC%B2%AD%EC%95%BD-%EB%B6%84%EC%96%91</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EC%A0%84%EC%9B%94%EC%84%B8</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EC%9D%B4%EC%82%AC-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EB%8C%80%EC%B6%9C-%EA%B8%88%EC%9C%B5</loc>
-    <lastmod>2026-09-17</lastmod>
+    <lastmod>2026-09-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/2026%EB%85%84-%EA%B0%80%EC%9D%84-%EB%B6%84%EC%96%91-%EC%84%B1%EC%88%98%EA%B8%B0-%EC%B2%AD%EC%95%BD%ED%99%88-%EC%99%84%EC%A0%84-%EA%B0%9C%ED%8E%B8-%EB%B6%84%EC%84%9D-%EB%AC%B4%EC%A3%BC%ED%83%9D-%EA%B0%80%EC%A0%90-84%EC%A0%90-%EB%A7%8C%EC%A0%90%ED%91%9C%EC%99%80-%EC%8B%A0%ED%98%BC-%EC%8B%A0%EC%83%9D%EC%95%84-%EC%9A%B0%EC%84%A0%EB%B0%B0%EC%A0%95-%EC%99%84%EB%B2%BD-%EA%B3%B5%EB%9E%B5</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 가을 분양 성수기 청약홈 완전 개편 분석: 무주택 가점 84점 만점표와 신혼·신생아 우선배정 완벽 공략</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/2026%EB%85%84-9%EC%9B%94-%EC%B5%9C%EC%8B%A0-%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4-dsr-3%EB%8B%A8%EA%B3%84-%EC%8B%9C%ED%96%89%EA%B3%BC-%EC%A3%BC%EB%8B%B4%EB%8C%80-%ED%95%9C%EB%8F%84-%EC%B6%95%EC%86%8C-%EB%82%B4-%ED%95%9C%EB%8F%84-%EC%A7%81%EC%A0%91-%EA%B3%84%EC%82%B0%ED%95%98%EA%B3%A0-%EC%82%AC%EC%88%98%ED%95%98%EB%8A%94-%EC%8B%A4%EC%A0%84-5%EB%8C%80-%EC%A0%84%EB%9E%B5</loc>
+    <lastmod>2026-09-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 9월 최신 스트레스 DSR 3단계 시행과 주담대 한도 축소: 내 한도 직접 계산하고 사수하는 실전 5대 전략</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8%EB%B3%B4%EC%A6%9D%EB%B3%B4%ED%97%98-hug-%EA%B0%80%EC%9E%85-%EA%B8%B0%EC%A4%80-126-%EB%A3%B0-%EC%8B%A4%EB%AC%B4-%EA%B3%84%EC%82%B0%EB%B2%95-%EA%B3%B5%EC%8B%9C%EA%B0%80%EA%B2%A9-%ED%95%98%EB%9D%BD-%EC%8B%9C-%EC%A0%84%EC%84%B8-%EC%95%88%EC%A0%84%EB%8F%84-%EC%A7%84%EB%8B%A8%EA%B3%BC-%EC%9E%84%EB%8C%80%EC%9D%B8-%EC%97%AD%EC%A0%84%EC%84%B8-%ED%98%91%EC%83%81%EB%B2%95</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세보증보험 HUG 가입 기준 126% 룰 실무 계산법: 공시가격 하락 시 전세 안전도 진단과 임대인 역전세 협상법</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%95%84%ED%8C%8C%ED%8A%B8-%EC%9E%85%EC%A3%BC-%EC%9D%B4%EC%82%AC-%EC%A0%84-%ED%95%84%EC%88%98-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8-30%EC%84%A0-%EC%9E%94%EA%B8%88-%EB%82%A9%EB%B6%80-%EA%B4%80%EB%A6%AC%EB%B9%84-%EC%A0%95%EC%82%B0-%ED%95%98%EC%9E%90%EB%B3%B4%EC%88%98-%EB%82%B4%EC%9A%A9%EC%A6%9D%EB%AA%85-%EB%B0%9C%EC%86%A1-%EC%8B%A4%EC%A0%84-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
+    <lastmod>2026-09-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>아파트 입주·이사 전 필수 체크리스트 30선: 잔금 납부, 관리비 정산, 하자보수 내용증명 발송 실전 가이드</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EB%94%94%EB%94%A4%EB%8F%8C-%EB%B2%84%ED%8C%80%EB%AA%A9-%EC%A0%84%EC%84%B8%EC%9E%90%EA%B8%88%EB%8C%80%EC%B6%9C-%EC%86%8C%EB%93%9D-%EA%B8%B0%EC%A4%80-%EC%99%84%ED%99%94%EC%99%80-%EB%8C%80%ED%99%98%EB%8C%80%EC%B6%9C-%EC%9D%B8%ED%94%84%EB%9D%BC-1%EB%8C%80-%EC%A0%80%EA%B8%88%EB%A6%AC-%EA%B0%88%EC%95%84%ED%83%80%EA%B8%B0-%EC%84%B1%EA%B3%B5-%EC%88%98%EA%B8%B0-%EB%B0%8F-%EC%A3%BC%EC%9D%98%EC%A0%90</loc>
+    <lastmod>2026-09-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>디딤돌·버팀목 전세자금대출 소득 기준 완화와 대환대출 인프라: 1%대 저금리 갈아타기 성공 수기 및 주의점</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%B2%AD%EC%95%BD%ED%86%B5%EC%9E%A5-%EC%9B%94-%EB%82%A9%EC%9E%85-%EC%9D%B8%EC%A0%95-%ED%95%9C%EB%8F%84-25%EB%A7%8C-%EC%9B%90-%EC%83%81%ED%96%A5-%EC%8B%A4%EC%A0%84-%ED%99%9C%EC%9A%A9%EB%B2%95-%EA%B3%B5%EA%B3%B5%EB%B6%84%EC%96%91-%EB%8B%B9%EC%B2%A8-%ED%95%A9%EA%B2%A9%EC%84%A0%EA%B3%BC-%EC%B2%AD%EC%95%BD%EC%98%88%EA%B8%88-%EC%A0%84%ED%99%98-%EC%B5%9C%EC%A0%81-%ED%83%80%EC%9D%B4%EB%B0%8D</loc>
+    <lastmod>2026-09-23</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>청약통장 월 납입 인정 한도 25만 원 상향 실전 활용법: 공공분양 당첨 합격선과 청약예금 전환 최적 타이밍</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%9E%84%EB%8C%80%EC%B0%A8-%EA%B3%84%EC%95%BD-%EA%B0%B1%EC%8B%A0%EC%B2%AD%EA%B5%AC%EA%B6%8C-%ED%96%89%EC%82%AC%EC%99%80-%EC%A7%91%EC%A3%BC%EC%9D%B8-%EC%8B%A4%EA%B1%B0%EC%A3%BC-%EC%9E%85%EC%A6%9D-%EC%9D%98%EB%AC%B4-%EA%B0%B1%EC%8B%A0-%EA%B1%B0%EC%A0%88-%EC%86%90%ED%95%B4%EB%B0%B0%EC%83%81-%EC%B2%AD%EA%B5%AC-%EC%86%8C%EC%86%A1%EA%B3%BC-%EC%8B%A4%EC%A0%84-%ED%95%A9%EC%9D%98-%EB%85%B8%ED%95%98%EC%9A%B0</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>임대차 계약 갱신청구권 행사와 집주인 실거주 입증 의무: 갱신 거절 손해배상 청구 소송과 실전 합의 노하우</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4-%ED%84%B4%ED%82%A4-%EA%B3%84%EC%95%BD%EC%84%9C-%ED%8A%B9%EC%95%BD-%EC%9E%91%EC%84%B1%EB%B2%95-%EA%B3%B5%EC%82%AC-%EC%A7%80%EC%97%B0-%EB%B0%B0%EC%83%81%EA%B8%88-%EC%A7%80%EC%B2%B4%EC%83%81%EA%B8%88-%EC%9E%90%EC%9E%AC-%EB%B3%80%EA%B2%BD-%EB%8F%99%EC%9D%98%EA%B6%8C-%ED%95%98%EC%9E%90%EB%B3%B4%EC%88%98%EC%9D%B4%ED%96%89%EC%A6%9D%EA%B6%8C-%EB%B0%9C%EA%B8%89-%EC%9A%94%EB%A0%B9</loc>
+    <lastmod>2026-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>인테리어 턴키 계약서 특약 작성법: 공사 지연 배상금(지체상금), 자재 변경 동의권, 하자보수이행증권 발급 요령</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%83%9D%EC%95%A0%EC%B5%9C%EC%B4%88-%EC%A3%BC%ED%83%9D%EA%B5%AC%EC%9E%85-ltv-80-%ED%99%9C%EC%9A%A9-%EC%8B%9C-%EC%A3%BC%EC%9D%98%ED%95%A0-%EC%A0%90-%EB%B0%A9%EA%B3%B5%EC%A0%9C-mcimcg-%EA%B0%80%EC%9E%85-%EC%97%AC%EB%B6%80%EC%97%90-%EB%94%B0%EB%A5%B8-%EB%8C%80%EC%B6%9C%EA%B8%88-%EC%B0%A8%EC%9D%B4%EC%99%80-%EB%B6%80%EB%8C%80%EB%B9%84%EC%9A%A9-%EC%B4%9D%EC%A0%95%EB%A6%AC</loc>
+    <lastmod>2026-09-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>생애최초 주택구입 LTV 80% 활용 시 주의할 점: 방공제(MCI/MCG) 가입 여부에 따른 대출금 차이와 부대비용 총정리</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EB%AC%B4%EC%88%9C%EC%9C%84-%EC%A4%8D%EC%A4%8D-%EC%82%AC%ED%9B%84-%EB%AC%B4%EC%88%9C%EC%9C%84-%EC%B2%AD%EC%95%BD-%EC%9E%90%EA%B2%A9-%EC%A0%9C%ED%95%9C-%EC%99%84%ED%99%94%EC%99%80-%EC%8B%A4%EA%B1%B0%EC%A3%BC-%EC%9D%98%EB%AC%B4-%EC%88%98%EB%8F%84%EA%B6%8C-%EC%A4%8D%EC%A4%8D-%EC%B2%AD%EC%95%BD-%EC%8B%9C-%EC%9E%90%EA%B8%88%EC%A1%B0%EB%8B%AC%EA%B3%84%ED%9A%8D%EC%84%9C-%EC%9E%91%EC%84%B1-%EB%B0%8F-%EC%84%B8%EA%B8%88-%EB%B6%84%EC%84%9D</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1582407947304-fd86f028f716?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>무순위 줍줍(사후 무순위) 청약 자격 제한 완화와 실거주 의무: 수도권 줍줍 청약 시 자금조달계획서 작성 및 세금 분석</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/%EC%8B%A0%ED%83%81%EB%B6%80%EB%8F%99%EC%82%B0-%EC%A0%84%EC%84%B8%EA%B3%84%EC%95%BD-%EC%82%AC%EA%B8%B0-%EC%98%88%EB%B0%A9-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%8B%A0%ED%83%81%EC%9B%90%EB%B6%80-%EB%B0%9C%EA%B8%89-%EC%97%B4%EB%9E%8C%EB%B2%95%EA%B3%BC-%EC%9C%84%ED%83%81%EC%9E%90-%EC%88%98%ED%83%81%EC%9E%90-%EB%8F%99%EC%9D%98%EC%84%9C-%ED%99%95%EC%9D%B8-%EC%8B%A4%EB%AC%B4</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>신탁부동산 전세계약 사기 예방 완벽 가이드: 신탁원부 발급 열람법과 위탁자·수탁자 동의서 확인 실무</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%9C%EA%B0%80-%EB%AC%B5%EC%8B%9C%EC%A0%81-%EA%B0%B1%EC%8B%A0-%ED%9B%84-%EB%B3%B4%EC%A6%9D%EA%B8%88-%EB%AC%B6%EC%97%AC-%EC%95%84%EC%B0%94%ED%96%88%EB%8D%98-3%EA%B0%9C%EC%9B%94-%EC%8B%A4%EC%A0%9C-%ED%86%B5%EB%B3%B4-%EC%8B%9C%EC%A0%90%EA%B3%BC-%EC%9B%94%EC%84%B8-%EC%A0%95%EC%82%B0-2026%EB%85%84-%EC%8B%A4%EC%A0%84-%ED%95%B4%EB%B2%95</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>제가 묵시적 갱신 후 보증금 묶여 아찔했던 3개월: 실제 통보 시점과 월세 정산, 2026년 실전 해법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%91%90-%EC%9E%90%EB%85%80-%ED%8A%B9%EB%B3%84%EA%B3%B5%EA%B8%89-%EC%A0%9C%EA%B0%80-%EC%A7%81%EC%A0%91-%EA%B2%AA%EC%96%B4%EB%B3%B4%EA%B3%A0-%EC%A0%95%EB%A6%AC%ED%96%88%EC%8A%B5%EB%8B%88%EB%8B%A4-2026%EB%85%84-%EC%99%84%ED%99%94-%EA%B8%B0%EC%A4%80%EB%B6%80%ED%84%B0-%EB%B0%B0%EC%A0%90-%EA%B3%84%EC%82%B0-%EC%8B%A4%EB%AC%B4%EA%B9%8C%EC%A7%80</loc>
     <lastmod>2026-09-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>두 자녀 특별공급, 제가 직접 겪어보고 정리했습니다: 2026년 완화 기준부터 배점 계산 실무까지</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%9C%EA%B0%80-%EC%A7%81%EC%A0%91-%EA%B2%AA%EC%96%B4%EB%B3%B4%EA%B3%A0-%EC%A0%95%EB%A6%AC%ED%95%9C-2026%EB%85%84-%EC%A3%BC%ED%83%9D%EC%B2%AD%EC%95%BD-%EC%A0%9C%EB%8F%84-%EA%B0%9C%ED%8E%B8-%EB%B6%80%EC%A0%81%EA%B2%A9-%EB%8B%B9%EC%B2%A8-%ED%94%BC%ED%95%98%EB%8A%94-%EC%8B%A4%EC%A0%84-%EB%85%B8%ED%95%98%EC%9A%B0</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>제가 직접 겪어보고 정리한 2026년 주택청약 제도 개편: 부적격 당첨 피하는 실전 노하우</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://zip9.kr/post/%EC%B2%AD%EC%95%BD-%EB%8B%B9%EC%9D%BC-%EB%A9%98%EB%B6%95-%EB%A7%89%EC%95%84%EC%A4%84-%EB%B0%95-%EC%8B%A4%EC%9E%A5%EC%9D%98-%EC%8B%A4%EC%A0%84-%EC%A4%80%EB%B9%84%EB%AC%BC-2026%EB%85%84-%EC%B2%AD%EC%95%BD%ED%99%88-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%98%A4%EB%A5%98-%EC%83%9D%EC%A1%B4%EA%B8%B0</loc>
+    <loc>https://zip9.kr/post/%EC%B2%AD%EC%95%BD-%EB%8B%B9%EC%9D%BC-%ED%98%BC%EC%84%A0-%EB%A7%89%EC%95%84%EC%A4%84-%ED%95%98%EC%9A%B0%EC%A7%95%ED%97%88%EB%B8%8C%EC%9D%98-%EC%8B%A4%EC%A0%84-%EC%A4%80%EB%B9%84%EB%AC%BC-2026%EB%85%84-%EC%B2%AD%EC%95%BD%ED%99%88-%EC%9D%B8%EC%A6%9D%EC%84%9C-%EC%98%A4%EB%A5%98-%EC%83%9D%EC%A1%B4%EA%B8%B0</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>청약 당일 혼선 막아줄 하우징허브의 실전 준비물: 2026년 청약홈 인증서 오류 생존기</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://zip9.kr/post/%EC%9E%90%EA%B8%88%EC%A1%B0%EB%8B%AC%EA%B3%84%ED%9A%8D%EC%84%9C-%EC%A0%9C%EA%B0%80-%EC%A7%81%EC%A0%91-%EB%B9%A0%EA%BE%B8-%EB%A8%B9%EA%B3%A0-%EA%B9%A8%EB%8B%AC%EC%9D%80-2026%EB%85%84-%EC%8B%A4%EC%A0%84-%EC%A6%9D%EB%B9%99-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
+    <loc>https://zip9.kr/post/%EC%9E%90%EA%B8%88%EC%A1%B0%EB%8B%AC%EA%B3%84%ED%9A%8D%EC%84%9C-%EC%A0%9C%EA%B0%80-%EC%A7%81%EC%A0%91-%EB%B0%98%EB%A0%A4-%EB%A8%B9%EA%B3%A0-%EA%B9%A8%EB%8B%AC%EC%9D%80-2026%EB%85%84-%EC%8B%A4%EC%A0%84-%EC%A6%9D%EB%B9%99-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>자금조달계획서? 제가 직접 반려 먹고 깨달은 2026년 실전 증빙 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%9C%EA%B0%80-%EC%A7%81%EC%A0%91-%EA%B2%AA%EC%96%B4%EB%B3%B4%EA%B3%A0-%EC%A0%95%EB%A6%AC%ED%95%9C-%EC%9D%B4%EC%82%AC-%EB%8B%B9%EC%9D%BC-%ED%95%84%EC%88%98-%ED%96%89%EC%A0%95-%EC%A0%88%EC%B0%A8-2026%EB%85%84-%EC%8B%A4%EB%AC%B4-%EB%B6%84%EC%84%9D-%EB%B0%8F-%EC%8B%A4%EC%88%98%EC%9A%94%EC%9E%90-%EC%83%9D%EC%A1%B4%EA%B8%B0</loc>
     <lastmod>2026-08-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>제가 직접 겪어보고 정리한 이사 당일 필수 행정 절차: 2026년 실무 분석 및 실수요자 생존기</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%9B%94%EC%84%B8-%EA%B3%84%EC%95%BD-%EC%A0%84-%ED%95%84%EC%88%98-%EC%B2%B4%ED%81%AC-%EB%93%B1%EA%B8%B0%EB%B6%80%EB%93%B1%EB%B3%B8-%EC%9D%84%EA%B5%AC-%EA%B7%BC%EC%A0%80%EB%8B%B9%EA%B3%BC-%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90-%EB%8B%B9%EC%9D%BC-%ED%9A%A8%EB%A0%A5</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전월세 계약 전 필수 체크: 등기부등본 을구 근저당과 확정일자 당일 효력</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%B2%AD%EC%95%BD-%EC%9E%AC%EB%8B%B9%EC%B2%A8-%EC%A0%9C%ED%95%9C-%EC%99%84%EB%B2%BD-%ED%95%B4%EB%B6%80-%EC%84%B8%EB%8C%80%EC%9B%90-%EC%A0%84%EC%B2%B4-%EA%B3%BC%EA%B1%B0-%EB%8B%B9%EC%B2%A8-%EC%9D%B4%EB%A0%A5-%EC%A1%B0%ED%9A%8C%EB%B6%80%ED%84%B0-%EC%8B%A4%EB%AC%B4-%ED%8C%81%EA%B9%8C%EC%A7%80</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>청약 재당첨 제한 완벽 해부: 세대원 전체 과거 당첨 이력 조회부터 실무 팁까지 </image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%8C%80%ED%98%95-%ED%8F%90%EA%B8%B0%EB%AC%BC-%EC%8A%A4%ED%8B%B0%EC%BB%A4-%EC%9D%B8%ED%84%B0%EB%84%B7-%EB%B0%9C%EA%B8%89-%EB%B0%8F-%EB%AC%B4%EC%83%81-%EB%B0%A9%EB%AC%B8%EC%88%98%EA%B1%B0-%EC%84%9C%EB%B9%84%EC%8A%A4-%EC%9D%B4%EC%9A%A9%EB%B2%95-%EB%98%91%EB%98%91%ED%95%9C-%ED%8F%90%EA%B8%B0%EB%AC%BC-%EC%B2%98%EB%A6%AC-%EC%8B%A4%EC%A0%84-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>대형 폐기물 스티커 인터넷 발급 및 무상 방문수거 서비스 이용법: 똑똑한 폐기물 처리 실전 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%B3%80%EB%8F%99%EA%B8%88%EB%A6%AC-vs-%EA%B3%A0%EC%A0%95%EA%B8%88%EB%A6%AC-%EC%A3%BC%EA%B8%B0%ED%98%95-%ED%98%BC%ED%95%A9%ED%98%95-%EB%8C%80%EC%B6%9C-%ED%98%84%EB%AA%85%ED%95%9C-%EC%84%A0%ED%83%9D-%EA%B8%B0%EC%A4%80%EA%B3%BC-%EA%B8%88%EB%A6%AC-%EC%A3%BC%EA%B8%B0-%EC%98%88%EC%B8%A1</loc>
     <lastmod>2026-08-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>변동금리 vs 고정금리(주기형·혼합형) 대출, 현명한 선택 기준과 금리 주기 예측</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026%EB%85%84-%EC%8B%A0%EC%83%9D%EC%95%84-%ED%8A%B9%EB%A1%80%EB%8C%80%EC%B6%9C-%EA%B8%88%EB%A6%AC-%EC%9A%B0%EB%8C%80-%EC%9A%94%EA%B1%B4-%EB%B0%8F-%EC%8B%A4%EC%A7%88-%EC%9D%B4%EC%9E%90-%EC%A0%88%EA%B0%90-%EC%A0%84%EB%9E%B5</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 신생아 특례대출 금리 우대 요건 및 실질 이자 절감 전략</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9E%84%EB%8C%80%EC%B0%A8-3%EB%B2%95-%ED%95%B5%EC%8B%AC-%ED%8A%B9%EC%95%BD%EA%B3%BC-%EB%A7%8C%EA%B8%B0-%EC%A0%84-%EB%B3%B4%EC%A6%9D%EA%B8%88-%EB%B0%98%ED%99%98-%ED%95%A9%EC%9D%98%EC%84%9C-%EC%9E%91%EC%84%B1-%EC%8B%A4%EB%AC%B4-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>임대차 3법 핵심 특약과 만기 전 보증금 반환 합의서 작성 실무 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026%EB%85%84-%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%ED%8A%B9%EB%B3%84%EA%B3%B5%EA%B8%89-%EC%86%8C%EB%93%9D-%EC%9A%94%EA%B1%B4-%EC%99%84%ED%99%94-%EB%B6%84%EC%84%9D-%EB%B0%8F-%EC%B2%AD%EC%95%BD-%EB%A7%9E%EC%B6%A4%ED%98%95-%EC%9E%90%EA%B8%88-%EC%A1%B0%EB%8B%AC-%ED%94%8C%EB%9E%9C-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 신혼부부 특별공급 소득 요건 완화 분석 및 청약 맞춤형 자금 조달 플랜 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%83%9D%EC%95%A0%EC%B5%9C%EC%B4%88-%EC%A3%BC%ED%83%9D%EA%B5%AC%EC%9E%85%EC%9E%90-%EC%B7%A8%EB%93%9D%EC%84%B8-%EA%B0%90%EB%A9%B4-%EC%9A%94%EA%B1%B4-%EB%B0%8F-%EC%A0%95%EB%B6%80-%EC%A3%BC%EA%B1%B0-%EA%B8%88%EC%9C%B5-%ED%98%9C%ED%83%9D-%EC%B4%9D%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>생애최초 주택구입자 취득세 감면 요건 및 정부 주거 금융 혜택 총정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B4%EC%82%AC-%EB%8B%B9%EC%9D%BC-%ED%95%84%EC%88%98-%ED%96%89%EC%A0%95-%EC%A0%88%EC%B0%A8-%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%EB%B0%8F-%EC%9E%84%EB%8C%80%EC%B0%A8-%EA%B3%84%EC%95%BD%EC%84%9C-%EC%88%98%EA%B8%B0-%EB%B3%B4%EC%99%84-%ED%8C%81</loc>
     <lastmod>2026-08-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>이사 당일 필수 행정 절차: 전입신고 및 임대차 계약서 수기 보완 팁</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%95%84%ED%8C%8C%ED%8A%B8-%EB%AC%B4%EC%88%9C%EC%9C%84-%EC%B2%AD%EC%95%BD-%EC%A4%8D%EC%A4%8D-%EC%9E%90%EA%B2%A9-%EC%A1%B0%EA%B1%B4-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC-%EB%B0%8F-%EB%8B%B9%EC%B2%A8-%ED%99%95%EB%A5%A0-%EA%B7%B9%EB%8C%80%ED%99%94-%EB%B9%84%EB%B2%95</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>아파트 무순위 청약(줍줍) 자격 조건 완벽 정리 및 당첨 확률 극대화 비법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9E%84%EB%8C%80%EC%B0%A8-3%EB%B2%95-%ED%95%B5%EC%8B%AC-%ED%8A%B9%EC%95%BD%EA%B3%BC-%EB%A7%8C%EA%B8%B0-%EC%A0%84-%EB%B3%B4%EC%A6%9D%EA%B8%88-%EB%B0%98%ED%99%98-%EA%B3%84%EC%95%BD%EC%84%9C-%EC%9E%91%EC%84%B1-%EC%8B%A4%EB%AC%B4-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-08-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>임대차 3법 핵심 특약과 만기 전 보증금 반환 계약서 작성 실무 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/9-7-%EA%B3%B5%EA%B8%89%EB%8C%80%EC%B1%85%EA%B3%BC-%EB%8F%84%EC%8B%AC%EA%B3%B5%EA%B3%B5%EC%A3%BC%ED%83%9D-%EB%B3%B5%ED%95%A9%EC%82%AC%EC%97%85-%EC%84%9C%EC%9A%B8-%EB%8F%84%EC%8B%AC-%EC%B6%94%EC%A7%84-%ED%9D%90%EB%A6%84-%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-07-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>9.7 공급대책과 도심공공주택 복합사업: 서울 도심 추진 흐름 정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%ED%86%A0%EC%A7%80%EA%B1%B0%EB%9E%98%ED%97%88%EA%B0%80%EA%B5%AC%EC%97%AD-%EC%8B%A4%EA%B1%B0%EC%A3%BC-%EC%9C%A0%EC%98%88-%ED%99%95%EB%8C%80-%EC%88%98%EB%8F%84%EA%B6%8C-%EB%AC%B4%EC%A3%BC%ED%83%9D%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-%EC%A0%90</loc>
     <lastmod>2026-07-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1467533003447-e295ff1b0435?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>토지거래허가구역 실거주 유예 확대: 수도권 무주택자가 알아야 할 점</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%B6%84%EC%96%91%EA%B6%8C-%EC%96%91%EB%8F%84%EC%86%8C%EB%93%9D%EC%84%B8-%EC%A0%95%EB%A6%AC-%EB%B3%B4%EC%9C%A0%EA%B8%B0%EA%B0%84%EB%B3%84-%EC%84%B8%EC%9C%A8%EA%B3%BC-%EC%9D%BC%EC%8B%9C%EC%A0%81-2%EC%A3%BC%ED%83%9D-%ED%8A%B9%EB%A1%80</loc>
     <lastmod>2026-07-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>분양권 양도소득세 정리: 보유기간별 세율과 일시적 2주택 특례</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EA%B3%B5%EA%B3%B5%EB%B6%84%EC%96%91-vs-%EB%AF%BC%EA%B0%84%EB%B6%84%EC%96%91-%EB%B9%84%EA%B5%90-%EB%B6%84%EC%96%91%EA%B0%80-%EC%A0%84%EB%A7%A4%EC%A0%9C%ED%95%9C-%EA%B1%B0%EC%A3%BC%EC%9D%98%EB%AC%B4</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486718448742-163732cd1544?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>공공분양 vs 민간분양 비교: 분양가·전매제한·거주의무</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%88%98%EB%8F%84%EA%B6%8C-%EC%B2%AD%EC%95%BD-%EA%B0%80%EC%A0%90-%EC%98%AC%EB%A6%AC%EB%8A%94-%ED%98%84%EC%8B%A4%EC%A0%81-%EB%B0%A9%EB%B2%95-%EB%AC%B4%EC%A3%BC%ED%83%9D%EA%B8%B0%EA%B0%84-%EB%B6%80%EC%96%91%EA%B0%80%EC%A1%B1-%ED%86%B5%EC%9E%A5%EA%B8%B0%EA%B0%84</loc>
     <lastmod>2026-07-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>수도권 청약 가점 올리는 현실적 방법: 무주택기간·부양가족·통장기간</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%ED%8A%B9%EB%B3%84%EA%B3%B5%EA%B8%89-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC-%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%83%9D%EC%95%A0%EC%B5%9C%EC%B4%88-%EB%8B%A4%EC%9E%90%EB%85%80-%EC%A4%91-%EB%82%B4%EA%B2%8C-%EB%A7%9E%EB%8A%94-%EC%9C%A0%ED%98%95</loc>
     <lastmod>2026-07-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>특별공급 완벽 정리: 신혼부부·생애최초·다자녀 중 내게 맞는 유형</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%88%98%EB%8F%84%EA%B6%8C-%EC%8B%A0%ED%98%BC-%EC%B6%9C%EC%82%B0-%EA%B0%80%EA%B5%AC%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%8B%A0%EC%83%9D%EC%95%84-%ED%8A%B9%EB%A1%80-%EB%8C%80%EC%B6%9C%EA%B3%BC-%EC%B2%AD%EC%95%BD-%EA%B0%80%EC%A0%90</loc>
     <lastmod>2026-07-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>수도권 신혼·출산 가구를 위한 신생아 특례 대출과 청약 가점</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026%EB%85%84-7%EC%9B%94-%EC%B5%9C%EC%8B%A0-%EA%B0%9C%EC%A0%95-%EB%AC%B4%EC%A3%BC%ED%83%9D-%EC%B2%AD%EC%95%BD-%EA%B0%80%EC%A0%90-%EA%B0%9C%ED%8E%B8%EC%95%88%EA%B3%BC-%EC%8B%A0%ED%98%BC-%EB%8B%A4%EC%9E%90%EB%85%80-%EA%B3%B5%EA%B3%B5%EB%B6%84%EC%96%91-%EC%95%88%EC%8B%AC-%EC%A0%84%EB%9E%B5</loc>
     <lastmod>2026-07-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 7월 최신 개정: 무주택 청약 가점 개편안과 신혼·다자녀 공공분양 안심 전략</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%84%9C%EC%9A%B8-%EA%B3%B5%EA%B3%B5%EB%B6%84%EC%96%91-%EB%85%B8%EB%A6%B0%EB%8B%A4%EB%A9%B4-%EB%89%B4-%ED%99%88-%EB%82%98%EB%88%94%ED%98%95-%EC%84%A0%ED%83%9D%ED%98%95-%EC%9D%BC%EB%B0%98%ED%98%95-%EB%B9%84%EA%B5%90</loc>
     <lastmod>2026-07-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1487958449943-2429e8be8625?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>서울 공공분양 노린다면: 뉴:홈 나눔형·선택형·일반형 비교</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EB%AC%B8%EA%B0%80-%EB%A7%A4%EB%A7%A4%EC%8B%A0%EA%B3%A0-%EC%A6%9D%EB%B9%99-%EC%9D%98%EB%AC%B4%ED%99%94-%EC%8B%A4%EC%88%98%EC%9A%94%EC%9E%90%EC%97%90%EA%B2%8C-%EC%A2%8B%EC%9D%80-%EC%A0%90</loc>
     <lastmod>2026-07-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1480074568708-e7b720bb3f09?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전문가 매매신고 증빙 의무화: 실수요자에게 좋은 점</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%88%98%EB%8F%84%EA%B6%8C-%EC%B2%AD%EC%95%BD-%EC%A4%80%EB%B9%84-%EC%B2%AD%EC%95%BD%ED%86%B5%EC%9E%A5-%EC%9B%94-%EB%82%A9%EC%9E%85%EA%B8%88-%EC%96%BC%EB%A7%88%EA%B0%80-%EC%A0%81%EB%8B%B9%ED%95%A0%EA%B9%8C</loc>
     <lastmod>2026-07-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>수도권 청약 준비, 청약통장 월 납입금 얼마가 적당할까</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026%EB%85%84-6%EC%9B%94-%EC%B5%9C%EC%8B%A0-%EA%B8%B0%EC%A4%80-%EC%A0%84%EC%9B%94%EC%84%B8-%EB%8C%80%ED%95%AD%EB%A0%A5-%EC%99%84%EC%84%B1-%EC%8B%9C%EC%A0%90%EA%B3%BC-%EC%9E%84%EB%8C%80%EC%B0%A8-3%EB%8C%80-%ED%95%84%EC%88%98-%ED%8A%B9%EC%95%BD-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-07-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 6월 최신 기준: 전월세 대항력 완성 시점과 임대차 3대 필수 특약 완벽 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B8%EC%B2%9C-%EA%B2%80%EB%8B%A8%EC%8B%A0%EB%8F%84%EC%8B%9C-%EA%B3%84%EC%96%91%ED%85%8C%ED%81%AC%EB%85%B8%EB%B0%B8%EB%A6%AC-%ED%95%98%EB%B0%98%EA%B8%B0-%EC%B2%AD%EC%95%BD-%EC%99%84%EB%B2%BD-%EB%B6%84%EC%84%9D-%EC%9E%85%EC%A7%80-%EB%B9%84%EA%B5%90%EC%99%80-%EB%8B%B9%EC%B2%A8-%EC%98%88%EC%83%81-%EA%B0%80%EC%A0%90</loc>
     <lastmod>2026-07-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>인천 검단신도시·계양테크노밸리 하반기 청약 완벽 분석: 입지 비교와 당첨 예상 가점</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%B2%AD%EB%9D%BC%EA%B5%AD%EC%A0%9C%EB%8F%84%EC%8B%9C-%EC%95%84%ED%8C%8C%ED%8A%B8-%EC%A7%80%EA%B8%88-%EC%82%AC%EB%8F%84-%EB%90%A0%EA%B9%8C-%EB%8B%A8%EC%A7%80%EB%B3%84-%EC%8B%9C%EC%84%B8-%ED%9D%90%EB%A6%84%EA%B3%BC-%EB%A7%A4%EC%88%98-%ED%8C%90%EB%8B%A8%EB%B2%95</loc>
     <lastmod>2026-07-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>청라국제도시 아파트, 지금 사도 될까: 단지별 시세 흐름과 매수 판단법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B8%EC%B2%9C-%EB%B6%84%EC%96%91%EA%B0%80%EC%83%81%ED%95%9C%EC%A0%9C-%EB%8B%A8%EC%A7%80%EC%97%90-%EC%B2%AD%EC%95%BD%EC%9D%B4-%EB%AA%B0%EB%A6%AC%EB%8A%94-%EC%9D%B4%EC%9C%A0-%EB%A1%9C%EB%98%90-%EC%B2%AD%EC%95%BD-%EC%A0%84%EB%9E%B5</loc>
     <lastmod>2026-07-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1567496898669-ee935f5f647a?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>인천 분양가상한제 단지에 청약이 몰리는 이유: 로또 청약 전략</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%86%A1%EB%8F%84-%EC%B2%AD%EC%95%BD-12%EC%96%B5-%EB%B6%84%EC%96%91%EA%B0%80-%EC%8B%9C%EB%8C%80-%EB%8B%B9%EC%B2%A8%EB%8F%BC%EB%8F%84-%EC%9B%83%EC%A7%80-%EB%AA%BB%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%EC%9E%90%EA%B8%88-%EC%A0%84%EB%9E%B5</loc>
     <lastmod>2026-07-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1480714378408-67cf0d13bc1b?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>송도 청약, 12억 분양가 시대… 당첨돼도 웃지 못하는 이유와 자금 전략</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%96%91%EB%8F%84%EC%84%B8-%EC%A4%91%EA%B3%BC-%EB%B6%80%ED%99%9C-%ED%9B%84-%EC%84%9C%EC%9A%B8-%EB%A7%A4%EB%AC%BC-%EA%B0%90%EC%86%8C-3%EC%A3%BC-%EC%97%B0%EC%86%8D-%EC%98%A4%EB%A5%B4%EB%8A%94-%EC%A7%91%EA%B0%92-%EB%A7%A4%EC%88%98%EC%9E%90-%EC%A0%84%EB%9E%B5%EC%9D%80</loc>
     <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1574362848149-11496d93a7c7?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>양도세 중과 부활 후 서울 매물 감소: 3주 연속 오르는 집값, 매수자 전략은</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%84%9C%EC%9A%B8-%EA%B2%BD%EA%B8%B0%EC%97%90%EC%84%9C-%EC%A0%84%EC%84%B8-%EB%AA%BB-%EA%B5%AC%ED%95%A0-%EB%95%8C-%ED%96%89%EB%B3%B5%EC%A3%BC%ED%83%9D-%EA%B5%AD%EB%AF%BC%EC%9E%84%EB%8C%80-%EC%8B%A0%EC%B2%AD-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-07-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>서울·경기에서 전세 못 구할 때: 행복주택·국민임대 신청 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/kb-2026-%EB%B6%80%EB%8F%99%EC%82%B0-%EB%B3%B4%EA%B3%A0%EC%84%9C-%EC%84%9C%EC%9A%B8-%EB%B0%8F-%EC%88%98%EB%8F%84%EA%B6%8C-%EC%8B%9C%EC%9E%A5-%EA%B4%80%EC%A0%90%EC%97%90%EC%84%9C-%EB%B3%B8-%EC%8B%9C%EC%82%AC%EC%A0%90</loc>
     <lastmod>2026-07-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>KB 2026 부동산 보고서: 서울 및 수도권 시장 관점에서 본 시사점</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%97%90%EC%84%9C-%EC%9B%94%EC%84%B8-vs-%EC%A0%84%EC%84%B8-vs-%EB%B0%98%EC%A0%84%EC%84%B8-%EA%B8%88%EB%A6%AC-%EC%9E%90%EC%82%B0%EB%B3%84-%ED%95%A9%EB%A6%AC%EC%A0%81-%EC%84%A0%ED%83%9D</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>에서 월세 vs 전세 vs 반전세: 금리·자산별 합리적 선택</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8-%EC%82%AC%EA%B8%B0-7%EB%8C%80-%EC%9C%A0%ED%98%95%EA%B3%BC-%EC%B0%A8%EB%8B%A8%EB%B2%95-%EA%B9%A1%ED%86%B5%EC%A0%84%EC%84%B8%EB%B6%80%ED%84%B0-%EC%9D%B4%EC%A4%91%EA%B3%84%EC%95%BD%EA%B9%8C%EC%A7%80</loc>
     <lastmod>2026-07-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세 사기 7대 유형과 차단법: 깡통전세부터 이중계약까지</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8%EB%B3%B4%EC%A6%9D%EB%B3%B4%ED%97%98-%EA%B0%80%EC%9E%85-%EB%8C%80%EC%83%81%EA%B3%BC-%EC%A0%88%EC%B0%A8-%EB%B3%B4%EC%A6%9D%EA%B8%88-%EC%A7%80%ED%82%A4%EB%8A%94-%EC%B5%9C%ED%9B%84%EC%9D%98-%EB%B3%B4%EB%A3%A8</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세보증보험 가입 대상과 절차: 보증금 지키는 최후의 보루</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9E%84%EC%B0%A8%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EB%AC%B5%EC%8B%9C%EC%A0%81-%EA%B0%B1%EC%8B%A0%EA%B3%BC-%EC%9E%AC%EA%B3%84%EC%95%BD-%EC%B0%A8%EC%9D%B4-%EC%99%84%EB%B2%BD-%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-07-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>임차인을 위한 묵시적 갱신과 재계약 차이 완벽 정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8-%EA%B3%84%EC%95%BD-%EC%A0%84-%ED%95%84%EB%8F%85-%EB%93%B1%EA%B8%B0%EB%B6%80%EB%93%B1%EB%B3%B8-3%EB%8C%80-%EB%8F%85%EC%86%8C-%EC%A1%B0%ED%95%AD-%ED%99%95%EC%9D%B8%EB%B2%95</loc>
     <lastmod>2026-07-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세 계약 전 필독: 등기부등본 3대 독소 조항 확인법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%99%B8%EA%B5%AD%EC%9D%B8-%EB%B6%80%EB%8F%99%EC%82%B0-%EA%B1%B0%EB%9E%98%EC%8B%A0%EA%B3%A0-%EA%B0%95%ED%99%94-%EC%9E%84%EC%B0%A8%EC%9D%B8-%EC%98%81%ED%96%A5-%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-07-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554995207-c18c203602cb?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>외국인 부동산 거래신고 강화: 임차인 영향 정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026-%EC%88%98%EB%8F%84%EA%B6%8C-%EC%A0%84%EC%84%B8%EB%82%9C-%EC%A7%84%EB%8B%A8-%EC%84%9C%EC%9A%B8-%EC%88%98%EB%8F%84%EA%B6%8C-%EA%B2%BD%EA%B8%B0-%EC%9E%84%EC%B0%A8%EC%9D%B8%EC%9D%B4-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-%EA%B3%B5%EA%B8%89-%ED%9D%90%EB%A6%84</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1571508601891-ca5e7a713859?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026 수도권 전세난 진단: 서울·수도권·경기 임차인이 알아야 할 공급 흐름</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%97%90%EC%84%9C-%EB%B3%B4%EC%A6%9D%EA%B8%88-%EB%B0%98%ED%99%98%EB%B0%9B%EB%8A%94-%EB%B2%95-%EB%B6%84%EC%9F%81%EC%A1%B0%EC%A0%95%EB%B6%80%ED%84%B0-%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9%EA%B9%8C%EC%A7%80</loc>
     <lastmod>2026-07-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1540518614846-7eded433c457?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>에서 보증금 반환받는 법: 분쟁조정부터 임차권등기명령까지</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9E%84%EC%B0%A8%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%9E%84%EB%8C%80%EC%B0%A8-3%EB%B2%95-%ED%95%B4%EC%84%A4-%EA%B0%B1%EC%8B%A0%EC%B2%AD%EA%B5%AC%EA%B6%8C-%EC%83%81%ED%95%9C%EC%A0%9C-%EC%8B%A0%EA%B3%A0%EC%A0%9C</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>임차인을 위한 임대차 3법 해설: 갱신청구권·상한제·신고제</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B8%EC%B2%9C-%EC%95%84%ED%8C%8C%ED%8A%B8-%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94-%EC%A0%84%EC%84%B8-%EA%B3%84%EC%95%BD-%EC%A0%84-%EC%A0%95%EB%B6%80-%EC%95%88%EC%A0%84-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8-5%EC%84%A0-%EB%B0%8F-hug-%EB%B3%B4%EC%A6%9D-%EC%8B%A4%EB%AC%B4</loc>
     <lastmod>2026-07-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>인천 아파트·오피스텔 전세 계약 전 ‘정부 안전 체크리스트 5선’ 및 HUG 보증 실무</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%84%9C%EC%9A%B8-%EA%B2%BD%EA%B8%B0-%EC%84%B8-%EB%82%80-%EB%A7%A4%EB%A7%A4-%EB%8C%80%EC%B6%9C%EC%9D%B4-%EB%A7%89%ED%9E%88%EB%8A%94-%EC%9D%B4%EC%9C%A0%EC%99%80-%EC%9E%90%EA%B8%88-%EA%B3%84%ED%9A%8D</loc>
     <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1430285561322-7808604715df?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>서울·경기 세 낀 매매, 대출이 막히는 이유와 자금 계획</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026-%EC%9E%85%EC%A3%BC-%EB%AC%BC%EB%9F%89-%EA%B8%89%EA%B0%90-%EC%88%98%EB%8F%84%EA%B6%8C-%EC%9E%84%EC%B0%A8%EC%9D%B8%EC%9D%84-%EC%9C%84%ED%95%9C-%EC%A0%84%EC%84%B8-%EC%83%9D%EC%A1%B4-%EC%A0%84%EB%9E%B5</loc>
     <lastmod>2026-06-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1513584684374-8bab748fbf90?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026 입주 물량 급감: 수도권 임차인을 위한 전세 생존 전략</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8%EC%8B%9C%EC%9E%A5-%EC%9B%94%EC%84%B8%ED%99%94-%EA%B0%80%EC%86%8D-%EC%9E%84%EC%B0%A8%EC%9D%B8%EC%9D%B4-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-5%EA%B0%80%EC%A7%80-%ED%9D%90%EB%A6%84</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502005097973-6a7082348e28?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세시장 월세화 가속: 임차인이 알아야 할 5가지 흐름</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%B2%AD%EB%85%84-%EC%9B%94%EC%84%B8-%EC%A7%80%EC%9B%90-%EC%83%81%EC%8B%9C-%EC%82%AC%EC%97%85-%EC%A0%84%ED%99%98-%EC%84%9C%EC%9A%B8-%EC%88%98%EB%8F%84%EA%B6%8C-%EA%B2%BD%EA%B8%B0-%EC%B2%AD%EB%85%84%EC%9D%B4-%EC%9B%94-20%EB%A7%8C%EC%9B%90-%EB%B0%9B%EB%8A%94-%EB%B2%95</loc>
     <lastmod>2026-06-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1416339306562-f3d12fefd36f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>청년 월세 지원 상시 사업 전환: 서울·수도권·경기 청년이 월 20만원 받는 법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%EC%A6%89%EC%8B%9C-%EB%8C%80%ED%95%AD%EB%A0%A5-%EB%B0%9C%EC%83%9D-%EC%9E%84%EC%B0%A8%EC%9D%B8-%EB%B3%B4%ED%98%B8-%EA%B0%95%ED%99%94-%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-06-26</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전입신고 즉시 대항력 발생: 임차인 보호 강화 정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%84%9C%EC%9A%B8-%EA%B2%BD%EA%B8%B0-%ED%8F%AC%EC%9E%A5%EC%9D%B4%EC%82%AC-%EA%B2%AC%EC%A0%81-%EB%B9%84%EA%B5%90-%EC%82%AC%EB%8B%A4%EB%A6%AC%EC%B0%A8-%EB%B3%B4%EA%B4%80%EC%9D%B4%EC%82%AC-%EC%B6%94%EA%B0%80-%EB%B9%84%EC%9A%A9-%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-06-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>서울·경기 포장이사 견적 비교: 사다리차·보관이사·추가 비용 정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EA%B5%AC%EC%B6%95-%EC%95%84%ED%8C%8C%ED%8A%B8-%EC%85%80%ED%94%84-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4-%EA%B0%80%EC%84%B1%EB%B9%84%EB%A1%9C-%EB%B6%84%EC%9C%84%EA%B8%B0-%EB%B0%94%EA%BE%B8%EB%8A%94-5%EB%8B%A8%EA%B3%84</loc>
     <lastmod>2026-06-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1494438639946-1ebd1d20bf85?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>구축 아파트 셀프 인테리어: 가성비로 분위기 바꾸는 5단계</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9A%B0%EB%A6%AC-%EC%A7%91-%EB%93%B1%EA%B8%B0%EB%B6%80%EB%93%B1%EB%B3%B8-%EC%85%80%ED%94%84-%EC%A0%90%EA%B2%80-5%EA%B0%80%EC%A7%80-%ED%8F%AC%EC%9D%B8%ED%8A%B8</loc>
     <lastmod>2026-06-23</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>우리 집 등기부등본 셀프 점검 5가지 포인트</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%95%84%ED%8C%8C%ED%8A%B8-%EA%B4%80%EB%A6%AC%EB%B9%84-%EC%A4%84%EC%9D%B4%EB%8A%94-6%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95-%EC%9B%94-5%EB%A7%8C%EC%9B%90-%EC%A0%88%EC%95%BD%ED%95%98%EA%B8%B0</loc>
     <lastmod>2026-06-22</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>아파트 관리비 줄이는 6가지 방법: 월 5만원 절약하기</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9E%84%EC%B0%A8%EC%9D%B8-%ED%95%84%EC%88%98-%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0%EC%99%80-%ED%99%95%EC%A0%95%EC%9D%BC%EC%9E%90-%EB%B0%9B%EB%8A%94-%EC%88%9C%EC%84%9C%EC%99%80-%EB%8C%80%ED%95%AD%EB%A0%A5-%EC%99%84%EC%84%B1%EB%B2%95</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>임차인 필수: 전입신고와 확정일자 받는 순서와 대항력 완성법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9B%90%EB%A3%B8-%EC%98%A4%ED%94%BC%EC%8A%A4%ED%85%94-%EA%B0%80%EC%84%B1%EB%B9%84-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4-5%EA%B3%84%EB%AA%85-100%EB%A7%8C%EC%9B%90%EC%9C%BC%EB%A1%9C-%EB%B3%80%EC%8B%A0</loc>
     <lastmod>2026-06-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>원룸·오피스텔 가성비 인테리어 5계명: 100만원으로 변신</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8-%EB%A7%8C%EA%B8%B0-%ED%9B%84-%EB%B3%B4%EC%A6%9D%EA%B8%88-%EB%AC%B6%EC%9D%B8-%EC%B1%84-%EC%9D%B4%EC%82%AC%ED%95%98%EB%8A%94-%EB%B2%95-%EC%9E%84%EC%B0%A8%EA%B6%8C%EB%93%B1%EA%B8%B0%EB%AA%85%EB%A0%B9-%ED%99%9C%EC%9A%A9</loc>
     <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세 만기 후 보증금 묶인 채 이사하는 법: 임차권등기명령 활용</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B4%EC%82%AC-%EA%B0%80%EC%A0%84-%EA%B0%80%EA%B5%AC-%EC%B2%98%EB%B6%84%EB%B2%95-%ED%8F%90%EA%B8%B0%EB%AC%BC-%EC%8A%A4%ED%8B%B0%EC%BB%A4%EB%B6%80%ED%84%B0-%EB%AC%B4%EC%83%81%EC%88%98%EA%B1%B0%EA%B9%8C%EC%A7%80</loc>
     <lastmod>2026-06-18</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1538688525198-9b88f6f53126?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>이사 가전·가구 처분법: 폐기물 스티커부터 무상수거까지</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4-%ED%8A%B8%EB%A0%8C%EB%93%9C-4%EA%B0%80%EC%A7%80-%EC%88%98%EB%8F%84%EA%B6%8C-%EC%9A%B0%EB%A6%AC-%EC%A7%91-%EC%A0%81%EC%9A%A9%EB%B2%95</loc>
     <lastmod>2026-06-17</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026 인테리어 트렌드 4가지: 수도권 우리 집 적용법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%95%EB%B6%8024-%EB%AA%A8%EB%B0%94%EC%9D%BC-%EC%A0%84%EC%9E%85%EC%8B%A0%EA%B3%A0-%EB%B0%A9%EB%B2%95-%EB%8F%99%EC%82%AC%EB%AC%B4%EC%86%8C-%EC%95%88-%EA%B0%80%EA%B3%A0-%EC%8A%A4%EB%A7%88%ED%8A%B8%ED%8F%B0%EC%9C%BC%EB%A1%9C-3%EB%B6%84-%EB%A7%8C%EC%97%90-%EB%81%9D%EB%82%B4%EB%8A%94-%EB%B2%95</loc>
     <lastmod>2026-06-16</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>정부24 모바일 전입신고 방법: 동사무소 안 가고 스마트폰으로 3분 만에 끝내는 법</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B4%EC%82%AC-%ED%95%9C-%EB%8B%AC-%EC%A0%84-%EC%B2%B4%ED%81%AC%EB%A6%AC%EC%8A%A4%ED%8A%B8-%EC%84%B1%EC%88%98%EA%B8%B0-%EB%A7%89%ED%8C%90-%EA%B2%AC%EC%A0%81-%EC%98%88%EC%95%BD-%EB%85%B8%ED%95%98%EC%9A%B0</loc>
     <lastmod>2026-06-15</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>이사 한 달 전 체크리스트: 성수기 막판 견적·예약 노하우</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A3%BC%ED%83%9D%EB%8B%B4%EB%B3%B4%EB%8C%80%EC%B6%9C-%EC%83%81%ED%99%98-%EB%B0%A9%EC%8B%9D-%EB%B9%84%EA%B5%90-%EC%9B%90%EB%A6%AC%EA%B8%88-%EC%9B%90%EA%B8%88-%EC%B2%B4%EC%A6%9D%EC%8B%9D-%EB%AC%B4%EC%97%87%EC%9D%B4-%EC%9C%A0%EB%A6%AC%ED%95%A0%EA%B9%8C</loc>
     <lastmod>2026-06-14</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>주택담보대출 상환 방식 비교: 원리금·원금·체증식 무엇이 유리할까</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%82%B4-%EC%A7%91-%EB%A7%88%EB%A0%A8-%EB%8C%80%EC%B6%9C-%ED%95%9C%EB%8F%84-%EA%B3%84%EC%82%B0-ltv-dsr-dti-%EC%99%84%EB%B2%BD-%ED%95%B4%EC%84%A4</loc>
     <lastmod>2026-06-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>내 집 마련 대출 한도 계산: LTV·DSR·DTI 완벽 해설</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026%EB%85%84-7%EC%9B%94-%ED%95%98%EB%B0%98%EA%B8%B0-%EC%A3%BC%ED%83%9D%EB%8B%B4%EB%B3%B4-%EC%A0%84%EC%84%B8%EB%8C%80%EC%B6%9C-%EA%B7%9C%EC%A0%9C-%EC%A7%80%ED%91%9C-%EB%B0%8F-%EB%B2%84%ED%8C%80%EB%AA%A9-%EB%94%94%EB%94%A4%EB%8F%8C-%EC%84%9C%EB%AF%BC-%EC%9A%B0%EB%8C%80%EA%B8%88%EB%A6%AC-%EC%B4%9D%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 7월 하반기 주택담보·전세대출 규제 지표 및 버팀목 디딤돌 서민 우대금리 총정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%8B%A4%EC%A3%BC%ED%83%9D%EC%9E%90-%EC%96%91%EB%8F%84%EC%84%B8-%EC%A4%91%EA%B3%BC-%EC%9E%AC%EC%8B%9C%ED%96%89-%EC%88%98%EB%8F%84%EA%B6%8C-%EB%8B%A4%EC%A3%BC%ED%83%9D%EC%9E%90%EA%B0%80-%EC%95%8C%EC%95%84%EC%95%BC-%ED%95%A0-%EB%B3%80%ED%99%94</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>다주택자 양도세 중과 재시행: 수도권 다주택자가 알아야 할 변화</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A3%BC%ED%83%9D%EB%8B%B4%EB%B3%B4%EB%8C%80%EC%B6%9C-%EC%A4%91%EB%8F%84%EC%83%81%ED%99%98-%EC%88%98%EC%88%98%EB%A3%8C-%EC%A4%84%EC%9D%B4%EB%8A%94-%EB%B2%95-%EB%A9%B4%EC%A0%9C-%EC%A1%B0%EA%B1%B4%EA%B3%BC-%EB%B6%80%EB%B6%84%EC%83%81%ED%99%98-%EC%A0%84%EB%9E%B5</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>주택담보대출 중도상환 수수료 줄이는 법: 면제 조건과 부분상환 전략</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%84%9C%EC%9A%B8-%EA%B2%BD%EA%B8%B0-%EC%8B%A0%ED%98%BC-%EC%8B%A0%EC%83%9D%EC%95%84-%EA%B0%80%EA%B5%AC-%EC%8B%A0%EC%83%9D%EC%95%84-%ED%8A%B9%EB%A1%80%EB%8C%80%EC%B6%9C-vs-%EB%B3%B4%EA%B8%88%EC%9E%90%EB%A6%AC%EB%A1%A0-%EB%B9%84%EA%B5%90</loc>
     <lastmod>2026-06-09</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1559526324-c1f275fbfa32?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>서울·경기 신혼·신생아 가구: 신생아 특례대출 vs 보금자리론 비교</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A0%84%EC%84%B8%EB%8C%80%EC%B6%9C-%ED%95%9C%EB%8F%84-%EB%8A%98%EB%A6%AC%EB%8A%94-5%EA%B0%80%EC%A7%80-%EB%B0%A9%EB%B2%95-%EC%86%8C%EB%93%9D-%EC%8B%A0%EC%9A%A9-%EC%9A%B0%EB%8C%80%EC%A1%B0%EA%B1%B4-%ED%99%9C%EC%9A%A9</loc>
     <lastmod>2026-06-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>전세대출 한도 늘리는 5가지 방법: 소득·신용·우대조건 활용</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%A3%BC%ED%83%9D%EC%97%B0%EA%B8%88-%EA%B0%80%EC%9E%85-%EC%A0%84-%EB%94%B0%EC%A0%B8%EC%95%BC-%ED%95%A0-5%EA%B0%80%EC%A7%80-%EC%A2%85%EC%8B%A0-vs-%ED%99%95%EC%A0%95%EA%B8%B0%EA%B0%84-%EC%88%98%EB%A0%B9%EC%95%A1-%EB%B9%84%EA%B5%90</loc>
     <lastmod>2026-06-07</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>주택연금 가입 전 따져야 할 5가지: 종신 vs 확정기간 수령액 비교</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%8B%A4%EC%88%98%EC%9A%94%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EB%94%94%EB%94%A4%EB%8F%8C-%EB%8C%80%EC%B6%9C-%EB%B6%84%EC%84%9D-%EC%9E%90%EA%B2%A9-%ED%95%9C%EB%8F%84-%EA%B8%88%EB%A6%AC-%EC%A0%88%EC%B0%A8</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1579621970795-87facc2f976d?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>실수요자를 위한 디딤돌 대출 분석: 자격·한도·금리·절차</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%88%98%EB%8F%84%EA%B6%8C-%ED%92%8D%EC%84%A0%ED%9A%A8%EA%B3%BC-%EB%B3%B8%EA%B2%A9%ED%99%94-%EC%84%9C%EC%9A%B8-%EC%99%B8%EA%B3%BD%EC%84%9C-%EA%B2%BD%EA%B8%B0-%EC%88%98%EB%8F%84%EA%B6%8C%EC%9C%BC%EB%A1%9C-%EB%8C%80%EC%B2%B4%EC%A7%80%EC%97%AD-%EC%98%AE%EA%B2%A8%EA%B0%80%EB%8A%94-%EC%8B%A4%EC%88%98%EC%9A%94</loc>
     <lastmod>2026-06-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>수도권 풍선효과 본격화: 서울 외곽서 경기·수도권으로, 대체지역 옮겨가는 실수요</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EA%B2%B0%ED%98%BC-%ED%8E%98%EB%84%90%ED%8B%B0-%EB%85%BC%EB%9E%80-%EC%8B%A0%ED%98%BC%EB%B6%80%EB%B6%80-%EC%A0%95%EC%B1%85%EB%8C%80%EC%B6%9C-%EC%86%8C%EB%93%9D-%ED%95%A9%EC%82%B0-%EB%AC%B8%EC%A0%9C</loc>
     <lastmod>2026-06-04</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>&apos;결혼 페널티&apos; 논란: 신혼부부 정책대출 소득 합산 문제</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%8B%A4%EC%A3%BC%ED%83%9D%EC%9E%90-%EC%96%91%EB%8F%84%EC%84%B8-%EC%A4%91%EA%B3%BC-%EC%9C%A0%EC%98%88-%EC%A2%85%EB%A3%8C-%EB%8B%A4%EC%A3%BC%ED%83%9D%EC%9E%90-%EC%A0%90%EA%B2%80-%EC%82%AC%ED%95%AD</loc>
     <lastmod>2026-06-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>다주택자 양도세 중과 유예 종료: 다주택자 점검 사항</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%8B%A4%EC%A3%BC%ED%83%9D%EC%9E%90-%EC%A3%BC%EB%8B%B4%EB%8C%80-%EB%A7%8C%EA%B8%B0%EC%97%B0%EC%9E%A5-%EA%B8%88%EC%A7%80-%EC%84%9C%EC%9A%B8-%EC%88%98%EB%8F%84%EA%B6%8C-%EB%A7%A4%EB%AC%BC-%EC%B6%9C%ED%9A%8C-%EC%A0%84%EB%A7%9D</loc>
     <lastmod>2026-06-02</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1559589689-577aabd1db4f?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>다주택자 주담대 만기연장 금지: 서울·수도권 매물 출회 전망</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%8A%A4%ED%8A%B8%EB%A0%88%EC%8A%A4-dsr-3%EB%8B%A8%EA%B3%84-%EC%8B%9C%ED%96%89-%EC%8B%A4%EC%88%98%EC%9A%94%EC%9E%90-%EB%8C%80%EC%B6%9C-%ED%95%9C%EB%8F%84-%EB%B3%80%ED%99%94</loc>
     <lastmod>2026-06-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>스트레스 DSR 3단계 시행: 실수요자 대출 한도 변화</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/1%EC%A3%BC%ED%83%9D-%EC%9E%A5%EA%B8%B0%EB%B3%B4%EC%9C%A0%ED%8A%B9%EB%B3%84%EA%B3%B5%EC%A0%9C-%EA%B0%9C%ED%8E%B8-%EB%85%BC%EC%9D%98-%EC%88%98%EB%8F%84%EA%B6%8C-%EC%8B%A4%EA%B1%B0%EC%A3%BC%EC%9E%90-%EC%98%81%ED%96%A5%EC%9D%80</loc>
     <lastmod>2026-05-31</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1543286386-2e659306cd6c?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>1주택 장기보유특별공제 개편 논의: 수도권 실거주자 영향은</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EA%B7%BC%EB%A1%9C%EB%B3%B5%EC%A7%80%EA%B3%B5%EB%8B%A8-%EC%83%9D%ED%99%9C%EC%95%88%EC%A0%95%EC%9E%90%EA%B8%88%EB%8C%80%EC%B6%9C-1%EC%B2%9C%EB%A7%8C%EC%9B%90-%EC%99%84%EB%B2%BD-%EA%B0%80%EC%9D%B4%EB%93%9C-%EC%9E%90%EA%B2%A9-%EC%A1%B0%EA%B1%B4-%EC%B5%9C%EC%A0%80-1-5-%EA%B8%88%EB%A6%AC-%EC%8B%A0%EC%B2%AD-%EB%B0%A9%EB%B2%95-%EC%B4%9D%EC%A0%95%EB%A6%AC</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>근로복지공단 생활안정자금대출 1천만원 완벽 가이드: 자격 조건, 최저 1.5% 금리, 신청 방법 총정리</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EC%9D%B8%EC%B2%9C-%EC%8B%A4%EC%88%98%EC%9A%94%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-2026-%ED%95%98%EB%B0%98%EA%B8%B0-%EC%A0%95%EC%B1%85%EB%8C%80%EC%B6%9C-%EB%B0%8F-%EC%8B%9C%EC%A4%91-%EC%A3%BC%EB%8B%B4%EB%8C%80-%EA%B3%A0%EC%A0%95%EA%B8%88%EB%A6%AC-%ED%98%BC%ED%95%A9-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
     <lastmod>2026-05-29</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>인천 실수요자를 위한 2026 하반기 정책대출 및 시중 주담대 고정금리 혼합 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%B3%B4%EC%9C%A0%EC%84%B8-%EA%B8%B0%EC%A4%80%EC%9D%BC-%EC%A3%BC%EC%9A%94-%EC%A3%BC%ED%83%9D-%EB%B3%B4%EC%9C%A0%EC%84%B8-%EC%A7%81%EC%A0%91-%EA%B3%84%EC%82%B0%ED%95%98%EB%8A%94-%EB%B2%95%EA%B3%BC-%EA%B3%B5%EC%8B%9C%EA%B0%80%EA%B2%A9-%EC%A1%B0%ED%9A%8C</loc>
     <lastmod>2026-05-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>보유세 기준일, 주요 주택 보유세 직접 계산하는 법과 공시가격 조회</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/%EB%B3%B4%EC%9C%A0%EC%84%B8-%EA%B8%B0%EC%A4%80%EC%9D%BC-6%EC%9B%94-1%EC%9D%BC-%EC%A3%BC%ED%83%9D-%EB%B3%B4%EC%9C%A0%EC%9E%90%EB%A5%BC-%EC%9C%84%ED%95%9C-%EC%A0%88%EC%84%B8-%ED%83%80%EC%9D%B4%EB%B0%8D</loc>
     <lastmod>2026-05-27</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1586486855514-8c633cc6fd38?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>보유세 기준일 6월 1일: 주택 보유자를 위한 절세 타이밍</image:title>
+    </image:image>
   </url>
 </urlset>

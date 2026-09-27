@@ -597,7 +597,15 @@ export function getServerSideProps(
           "url": baseUrl,
           "name": SITE_NAME,
           "description": DEFAULT_DESCRIPTION,
-          "inLanguage": "ko-KR"
+          "inLanguage": "ko-KR",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": `${baseUrl}/?q={search_term_string}`
+            },
+            "query-input": "required name=search_term_string"
+          }
         },
         {
           "@type": "Organization",

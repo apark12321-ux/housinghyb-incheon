@@ -71,18 +71,24 @@ function buildSitemap(posts) {
       loc: `${SITE_URL}/post/${encodeURIComponent(slug)}`,
       lastmod: p.date || today,
       changefreq: "monthly",
-      priority: "0.7",
+      priority: "0.85",
+      image: p.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+      imageTitle: p.title || ""
     });
   }
 
   const body = urls
-    .map(
-      (u) =>
-        `  <url>\n    <loc>${xmlEscape(u.loc)}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>\n  </url>`
-    )
+    .map((u) => {
+      let item = `  <url>\n    <loc>${xmlEscape(u.loc)}</loc>\n    <lastmod>${u.lastmod}</lastmod>\n    <changefreq>${u.changefreq}</changefreq>\n    <priority>${u.priority}</priority>`;
+      if (u.image) {
+        item += `\n    <image:image>\n      <image:loc>${xmlEscape(u.image)}</image:loc>\n      <image:title>${xmlEscape(u.imageTitle)}</image:title>\n    </image:image>`;
+      }
+      item += `\n  </url>`;
+      return item;
+    })
     .join("\n");
 
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>\n`;
 }
 
 function buildRobots() {

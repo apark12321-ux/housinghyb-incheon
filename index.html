@@ -20,6 +20,8 @@
     <meta name="format-detection" content="telephone=no" />
     <meta name="theme-color" content="#1e293b" />
     <link rel="canonical" href="https://zip9.kr/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://zip9.kr/sitemap.xml" />
+    <link rel="alternate" type="application/rss+xml" title="하우징허브 RSS Feed" href="https://zip9.kr/rss.xml" />
 
     <!-- Open Graph (SEO / Social Cards) -->
     <meta property="og:title" content="하우징허브 (HousingHub) | 2026 주거·청약·대출 실무 가이드" />
@@ -59,7 +61,15 @@
           "name": "하우징허브",
           "description": "신혼부부와 무주택자를 위한 주거·청약·대출 실무 지식 포털",
           "publisher": { "@id": "https://zip9.kr/#organization" },
-          "inLanguage": "ko-KR"
+          "inLanguage": "ko-KR",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://zip9.kr/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         },
         {
           "@type": "Organization",

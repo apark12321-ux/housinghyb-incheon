@@ -166,6 +166,55 @@ export const MOCK_SUBSCRIPTIONS: SubscriptionItem[] = [
     highlights: ["용산역 도보 3분", "초역세권 주상복합", "분양가상한제 적용", "높은 경쟁률 예상"],
     description: "용산 한강로 핵심지에 들어서는 주상복합. 희소성 높은 서울 도심 주거단지로 높은 청약가점 필요.",
     relatedPostId: 7
+  },
+  {
+    id: "sub-8",
+    complexName: "디에이치 대치 에델루이",
+    location: "서울 강남구 대치동",
+    regionCategory: "서울",
+    totalUnits: 282,
+    generalUnits: 72,
+    priceRange: "3.3㎡당 6,530만 원 (59㎡ 약 16.4억 / 84㎡ 약 22.3억)",
+    specialDate: "2026-09-21",
+    rank1Date: "2026-09-22",
+    rank2Date: "2026-09-23",
+    winnerDate: "2026-09-29",
+    status: "당첨발표",
+    regulationType: "투기과열지구·분양가상한제",
+    highlights: ["대치동 학군지 입지", "분양가상한제 시세차익 10억 기대", "실거주의무 3년", "전매제한 3년"],
+    description: "강남구 대치동 구마을 제3지구 재건축. 분양가상한제 적용으로 강남권 최고 인기 청약 단지."
+  },
+  {
+    id: "sub-9",
+    complexName: "과천 디에트르 퍼스티지 무순위",
+    location: "경기 과천시 지식정보타운",
+    regionCategory: "경기/인천",
+    totalUnits: 740,
+    generalUnits: 8,
+    priceRange: "최초 분양가 84㎡ 기준 약 8.7억 원 (주변 시세 15억 대비 반값)",
+    specialDate: "2026-09-25",
+    rank1Date: "2026-09-25",
+    winnerDate: "2026-09-30",
+    status: "청약중",
+    regulationType: "무순위/줍줍",
+    highlights: ["과천 지정타 로또 줍줍", "무주택 세대구성원", "재당첨제한 10년", "시세차익 6억 이상"],
+    description: "과천 지식정보타운 S2블록 부적격 해지분 8세대 무순위 사후접수. 과천 거주 무주택자 대상."
+  },
+  {
+    id: "sub-10",
+    complexName: "마포 에피트 어바닉",
+    location: "서울 마포구 아현동",
+    regionCategory: "서울",
+    totalUnits: 407,
+    generalUnits: 163,
+    priceRange: "3.3㎡당 4,350만 원 (46㎡ 약 7.4억 / 59㎡ 약 10.2억)",
+    specialDate: "2026-09-27",
+    rank1Date: "2026-09-28",
+    winnerDate: "2026-10-06",
+    status: "청약중",
+    regulationType: "비규제지역",
+    highlights: ["애오개역 5호선 도보 2분", "실거주의무 없음", "전매제한 1년", "신혼·생초 특공 비중 50%"],
+    description: "서울 마포로 3구역 2지구 도시정비형 재개발. 광화문·여의도 직주근접 역세권 단지."
   }
 ];
 
@@ -178,7 +227,7 @@ export const SubscriptionCalendar: React.FC<SubscriptionCalendarProps> = ({
   onSelectPost,
   posts = []
 }) => {
-  const [currentMonth, setCurrentMonth] = useState({ year: 2026, month: 8 });
+  const [currentMonth, setCurrentMonth] = useState({ year: 2026, month: 9 });
   const [selectedRegion, setSelectedRegion] = useState<string>("전체");
   const [selectedType, setSelectedType] = useState<string>("전체");
   const [selectedDateFilter, setSelectedDateFilter] = useState<string | null>(null);
