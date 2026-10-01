@@ -2,6 +2,105 @@ import { Post } from "../types";
 
 export const POSTS_RECENT: Post[] = [
   {
+    id: "post-20261001-didimdol-policy",
+    title: "2026년 10월 1일 시행 4분기 주거안정 정책금융 개편 총정리: 신혼·출산 가구 디딤돌·버팀목 소득 기준 완화와 1%대 저금리 대환 실무 가이드",
+    category: "대출-금융",
+    author: "하우징허브",
+    date: "2026-10-01",
+    time: "09:30:15",
+    readTime: "10분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 1일부터 신혼부부 및 신생아 출산 가구를 대상으로 한 주택도시기금 디딤돌(구입)·버팀목(전세) 대출의 부부합산 소득 요건이 대폭 완화 적용됩니다. 시중은행 고금리 대출 대비 연간 수백만 원의 이자를 절감할 수 있는 1%대 저금리 대환 조건과 차주별 필수 점검 사항을 하우징허브가 상세히 분석합니다.",
+    content: `<p>2026년 10월 1일, 4분기의 시작과 함께 무주택 서민과 신혼부부, 그리고 출산 가구를 위한 정부의 핵심 주거안정 정책금융 지원 기준이 대대적으로 개편 시행되었습니다. 그동안 맞벌이 부부라는 이유만으로 소득 기준을 살짝 초과해 1~2%대 저리 정책대출에서 탈락하고, 연 4% 중후반대의 시중은행 일반 주택담보대출로 내몰렸던 많은 실수요자들에게 실질적인 주거비 경감 혜택이 열리게 되었습니다.</p>
+
+<p>하우징허브 금융분석팀은 국토교통부 및 주택도시보증공사(HUG)의 2026년 4분기 업무지침 개정안을 정밀 검토하여, 금일부터 즉시 적용되는 <b>소득 기준 상향 폭, 시중은행 대출과의 실질 이자 차이, 그리고 기존 고금리 대출에서 정책금융으로 갈아타는 대환(Refinancing) 4대 실무 전략</b>을 명쾌하게 정리해 드립니다.</p>
+
+<h2>1. 2026년 10월 1일 개편 정책금융 핵심 지원 요건 비교표</h2>
+<p>이번 조치의 핵심은 이른바 '결혼 패널티'라 불리던 신혼부부 합산 소득 제한을 현실 물가와 급여 수준에 맞게 상향 조정한 것입니다. 1인 가구 기준과 비교했을 때 불합리했던 구간이 대폭 완화되었습니다.</p>
+
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">대출 상품명</th>
+        <th class="border border-slate-200 p-2.5 font-bold">기존 소득 요건</th>
+        <th class="border border-slate-200 p-2.5 font-bold bg-emerald-50 text-emerald-900">2026년 10월 1일 개정 요건</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700">적용 금리 구간</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">신혼부부 디딤돌 (구입자금)</td>
+        <td class="border border-slate-200 p-2.5">부부합산 연 8,500만 원 이하</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">부부합산 연 1억 원 이하</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 2.45% ~ 3.55%</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">신생아 특례 디딤돌</td>
+        <td class="border border-slate-200 p-2.5">부부합산 연 1억 3,000만 원 이하</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">부부합산 연 2억 원 이하</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 1.60% ~ 3.30%</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">신혼부부 버팀목 (전세자금)</td>
+        <td class="border border-slate-200 p-2.5">부부합산 연 7,500만 원 이하</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">부부합산 연 1억 원 이하</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 2.10% ~ 2.90%</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">신생아 특례 버팀목</td>
+        <td class="border border-slate-200 p-2.5">부부합산 연 1억 3,000만 원 이하</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">부부합산 연 2억 원 이하</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 1.10% ~ 3.00%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. 시중은행 주담대 vs 신생아·신혼 디딤돌 실제 상환액 격차</h2>
+<p>실제 4억 원 대출(30년 만기, 원리금균등상환)을 기준으로 시중은행 변동금리(연 4.40%)와 신생아 특례 디딤돌 우대금리(연 2.20%)를 비교해 보면, 가계가 체감하는 월 상환액과 총 이자 부담에서 상상을 초월하는 격차가 발생합니다.</p>
+
+<ul>
+  <li><b>시중은행 주담대 (연 4.40% 가정):</b> 매월 원리금 약 <b>2,003,000원</b> 납부 (30년 총이자 약 3억 2,120만 원)</li>
+  <li><b>개편 신생아 특례 디딤돌 (연 2.20% 가정):</b> 매월 원리금 약 <b>1,519,000원</b> 납부 (30년 총이자 약 1억 4,690만 원)</li>
+  <li><b>가계 순절감 효과:</b> 매월 <b>약 48만 4,000원 절약</b>, 30년 환산 시 <b>이자만 무려 1억 7,430만 원 절감</b></li>
+</ul>
+
+<p>이처럼 월 50만 원 가까운 고정 지출을 줄일 수 있으므로, 이번 소득 요건 완화 구간(합산 소득 8,500만~1억 원, 출산가구 1억 3,000만~2억 원)에 해당하는 분들은 반드시 대환 가능 여부를 따져보아야 합니다.</p>
+
+<h2>3. 기존 고금리 대출에서 정책대출로 갈아탈 때 4대 필수 수칙</h2>
+<ol class="space-y-2 my-3">
+  <li><b>1) 소득 산정 기준일 확인:</b> 최근 1년 치 근로소득원천징수영수증 또는 소득금액증명원을 기준으로 합니다. 맞벌이의 경우 상여금 및 성과급이 포함된 세전 총급여액이 기준선에 걸치는지 인터넷 홈택스를 통해 사전에 1원 단위까지 합산해 보아야 합니다.</li>
+  <li><b>2) 담보 대상 주택 가격 상한선 준수:</b> 디딤돌 대출의 경우 주택 가격이 <b>6억 원 이하(신생아 특례는 9억 원 이하)</b>, 전용면적 85㎡ 이하(읍·면 100㎡ 이하)여야 합니다. KB부동산 시세 또는 한국부동산원 시세 중 일반평균가를 기준으로 판정됩니다.</li>
+  <li><b>3) 기존 대출의 중도상환수수료 대조:</b> 실행한 지 3년이 지나지 않은 시중은행 대출은 1.0~1.2% 수준의 중도상환수수료가 발생합니다. 하지만 정책금융으로 전환 시 절감되는 이자가 수수료보다 통상 4~6개월 만에 상쇄되므로, 기회비용을 계산해 과감히 전환하는 것이 유리합니다.</li>
+  <li><b>4) 스트레스 DSR 미적용 혜택 극대화:</b> 일반 시중은행 주담대는 2026년 9월부터 시행된 스트레스 DSR 3단계 규제를 정면으로 적용받아 한도가 크게 축소되지만, <b>주택도시기금 디딤돌·버팀목 대출은 DSR이 아닌 DTI 60%를 적용</b>받으므로 대출 한도 확보 측면에서 압도적인 우위를 점할 수 있습니다.</li>
+</ol>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 스마트 자가진단 툴킷 연동 안내</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    개편된 소득 기준에 따른 본인 가구의 정확한 대출 가능 금액과 월별 원리금 상환 부담이 궁금하시다면, 상단 메뉴의 <b>[자가진단 계산기 &gt; DSR/LTV 대출 한도 계산기]</b>를 실행해 보세요. 연소득과 주택 시세를 입력하면 스트레스 DSR 일반 주담대와 기금 정책대출의 한도 차이를 즉시 비교 분석해 드립니다.
+  </p>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 오늘(2026년 10월 1일) 이전에 이미 시중은행에서 대출을 받아 살고 있는 집도 대환 신청이 가능한가요?</h3>
+<p>A. 네, 가능합니다. 주택 소유권이전등기 접수일로부터 3개월 이내에 신청해야 하는 일반 신규 구입자금과 달리, 신생아 특례 디딤돌 및 신혼부부 전용 상품의 경우 1주택 무주택 서민 기준을 충족하면 기존 대출 잔액 범위 내에서 대환 대출 신청이 허용됩니다.</p>
+
+<h3>Q2. 육아휴직 중인 배우자의 소득은 어떻게 산정되나요?</h3>
+<p>A. 휴직 직전 최근 1개년의 소득을 연환산하여 인정받거나, 휴직 기간이 1년을 초과하여 소득 증빙이 어려운 경우 건강보험료 납부확인서 또는 무소득 사실증명을 통해 산정 방식의 혜택을 받을 수 있으므로 기금e든든 사전심사 시 증빙서류를 꼼꼼히 챙기셔야 합니다.</p>
+
+<h3>Q3. 오피스텔이나 분양권 상태인 주택도 디딤돌 대출 대상이 되나요?</h3>
+<p>A. 주거용 오피스텔은 건축법상 업무시설에 해당하므로 주택도시기금 디딤돌 대출 대상에서 제외되며, 전세의 경우 주거용 오피스텔 버팀목 대출은 가능합니다. 분양권의 경우 입주 잔금 시점에 소유권 이전이 완료되는 신축 아파트에 한하여 후취담보 조건으로 신청할 수 있습니다.</p>
+`,
+    hashtags: ["디딤돌대출", "버팀목전세대출", "신생아특례대출", "주택담보대출", "저금리대환", "스트레스DSR", "하우징허브"]
+  },
+  {
     id: "post-20260927-dsr3",
     title: "2026년 9월 최신 스트레스 DSR 3단계 시행과 주담대 한도 축소: 내 한도 직접 계산하고 사수하는 실전 5대 전략",
     category: "대출-금융",

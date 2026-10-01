@@ -75,7 +75,7 @@ function getInitialServerData(): any {
 export default function App() {
   const initialData = useMemo(() => getInitialServerData(), []);
 
-  const [posts] = useState<Post[]>(() => {
+  const [posts, setPosts] = useState<Post[]>(() => {
     const rawList: Post[] = initialData?.initialPosts || POSTS;
     const map = new Map<string, Post>();
     for (const p of rawList) {

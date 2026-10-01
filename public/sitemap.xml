@@ -2,69 +2,79 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://zip9.kr/</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://zip9.kr/toolkit</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://zip9.kr/about</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://zip9.kr/announcement</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
     <loc>https://zip9.kr/terms</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zip9.kr/privacy</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zip9.kr/disclaimer</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EC%B2%AD%EC%95%BD-%EB%B6%84%EC%96%91</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EC%A0%84%EC%9B%94%EC%84%B8</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EC%9D%B4%EC%82%AC-%EC%9D%B8%ED%85%8C%EB%A6%AC%EC%96%B4</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://zip9.kr/category/%EB%8C%80%EC%B6%9C-%EA%B8%88%EC%9C%B5</loc>
-    <lastmod>2026-09-27</lastmod>
+    <lastmod>2026-10-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zip9.kr/post/2026%EB%85%84-10%EC%9B%94-1%EC%9D%BC-%EC%8B%9C%ED%96%89-4%EB%B6%84%EA%B8%B0-%EC%A3%BC%EA%B1%B0%EC%95%88%EC%A0%95-%EC%A0%95%EC%B1%85%EA%B8%88%EC%9C%B5-%EA%B0%9C%ED%8E%B8-%EC%B4%9D%EC%A0%95%EB%A6%AC-%EC%8B%A0%ED%98%BC-%EC%B6%9C%EC%82%B0-%EA%B0%80%EA%B5%AC-%EB%94%94%EB%94%A4%EB%8F%8C-%EB%B2%84%ED%8C%80%EB%AA%A9-%EC%86%8C%EB%93%9D-%EA%B8%B0%EC%A4%80-%EC%99%84%ED%99%94%EC%99%80-1%EB%8C%80-%EC%A0%80%EA%B8%88%EB%A6%AC-%EB%8C%80%ED%99%98-%EC%8B%A4%EB%AC%B4-%EA%B0%80%EC%9D%B4%EB%93%9C</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&amp;fit=crop&amp;q=80&amp;w=800</image:loc>
+      <image:title>2026년 10월 1일 시행 4분기 주거안정 정책금융 개편 총정리: 신혼·출산 가구 디딤돌·버팀목 소득 기준 완화와 1%대 저금리 대환 실무 가이드</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://zip9.kr/post/2026%EB%85%84-%EA%B0%80%EC%9D%84-%EB%B6%84%EC%96%91-%EC%84%B1%EC%88%98%EA%B8%B0-%EC%B2%AD%EC%95%BD%ED%99%88-%EC%99%84%EC%A0%84-%EA%B0%9C%ED%8E%B8-%EB%B6%84%EC%84%9D-%EB%AC%B4%EC%A3%BC%ED%83%9D-%EA%B0%80%EC%A0%90-84%EC%A0%90-%EB%A7%8C%EC%A0%90%ED%91%9C%EC%99%80-%EC%8B%A0%ED%98%BC-%EC%8B%A0%EC%83%9D%EC%95%84-%EC%9A%B0%EC%84%A0%EB%B0%B0%EC%A0%95-%EC%99%84%EB%B2%BD-%EA%B3%B5%EB%9E%B5</loc>
