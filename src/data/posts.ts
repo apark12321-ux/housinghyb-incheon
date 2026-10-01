@@ -1,4 +1,5 @@
 import { Post } from "../types";
+import { injectSummaryAndChecklist } from "../utils/postTemplate";
 import { POSTS_SUB } from "./posts-sub";
 import { POSTS_SUB_HEAVY } from "./posts-sub-heavy";
 import { POSTS_RENT } from "./posts-rent";
@@ -72,7 +73,7 @@ const IMAGE_COLLECTIONS: Record<string, { images: string[]; captions: string[] }
   }
 };
 
-// 각 포스트의 본문을 읽기 편하고 자연스러운 규격으로 정리
+// 각 포스트의 본문을 읽기 편하고 자연스러운 규격으로 정리 (핵심 요약 카드 및 체크리스트 자동 보강)
 function enrichPostContent(post: Post): Post {
   let newContent = post.content;
 
@@ -83,6 +84,13 @@ function enrichPostContent(post: Post): Post {
       '<div class="overflow-x-auto my-4"><table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left"$1>'
     );
   }
+
+  // 핵심 요약 카드 및 체크리스트 요약 블록 자동 보강
+  newContent = injectSummaryAndChecklist(newContent, {
+    title: post.title,
+    category: post.category,
+    excerpt: post.excerpt
+  });
 
   return {
     ...post,
