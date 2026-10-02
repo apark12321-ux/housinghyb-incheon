@@ -2,6 +2,189 @@ import { Post } from "../types";
 
 export const POSTS_RECENT: Post[] = [
   {
+    id: "post-20261001-newhome-supply",
+    title: "2026년 10월 1일 긴급 확정 고시: 4분기 수도권 공공분양 뉴:홈 1만 호 공급 일정과 무주택 청년·신혼부부 당첨선 예측 분석",
+    category: "청약-분양",
+    author: "하우징허브",
+    date: "2026-10-01",
+    time: "21:30:00",
+    readTime: "9분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 1일 국토교통부와 LH가 4분기 수도권 공공분양 '뉴:홈' 1만 호 사전청약 및 본청약 공급 계획을 긴급 확정 고시했습니다. 나눔형·선택형·일반형 유형별 시세 대비 70% 분양가와 1%대 장기 모기지 조건, 청년·신혼부부 특별공급 당첨선 예측치를 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 1일 야간, 국토교통부와 한국토지주택공사(LH)는 무주택 서민의 주거 안정을 위한 <b>2026년 4분기 공공분양주택 '뉴:홈' 총 10,240호의 입주자모집 공고 일정 및 대상 지구</b>를 최종 확정 고시했습니다. 고분양가 논란이 지속되는 민간 분양 시장 속에서 주변 시세의 70~80% 수준으로 공급되는 공공분양에 청년층과 신혼부부의 이목이 집중되고 있습니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">무주택 청년·신혼부부 및 생애최초 청약 대기자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 9분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>총 1만 호 공급 확정:</strong> 2026년 10월 중순부터 마곡, 고양창릉, 남양주왕숙, 하남교산 등 핵심 입지 순차 분양</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>전용 모기지 혜택:</strong> 나눔형 선택 시 연 1.9~3.0% 고정금리로 LTV 최대 80%(한도 5억 원) 40년 분할상환 지원</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>당첨 전략:</strong> 특별공급(청년 15%, 신혼 30%, 생애최초 25%)의 소득·자산 인정 기준 대조 선행 필수</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">청년 특별공급은 부모 소득이 아닌 본인 소득만 산정하므로, 부모님과 주민등록상 세대가 분리되어 있다면 소득 기준 충족이 훨씬 수월합니다.</span>
+  </div>
+</div>
+
+<h2>1. 2026년 4분기 뉴:홈 3대 공급 유형별 세부 조건 비교</h2>
+<p>뉴:홈은 수분양자의 자금 사정과 생애 주기에 맞춰 나눔형, 선택형, 일반형 3가지 모델로 나뉩니다. 각 유형별 특징과 금융 지원 조건의 차이를 정확히 인지해야 본인에게 가장 유리한 주택을 선택할 수 있습니다.</p>
+
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">공급 유형</th>
+        <th class="border border-slate-200 p-2.5 font-bold">분양가 수준</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50">전용 대출 지원 (모기지)</th>
+        <th class="border border-slate-200 p-2.5 font-bold">처분 및 거주 조건</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">나눔형 (이익공유)</td>
+        <td class="border border-slate-200 p-2.5">시세의 70% 이하</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-700 bg-emerald-50/50">LTV 80%, 연 1.9~3.0% (최장 40년)</td>
+        <td class="border border-slate-200 p-2.5">의무거주 5년 후 LH 환매 시 시세차익 70% 수분양자 귀속</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">선택형 (임대 후 분양)</td>
+        <td class="border border-slate-200 p-2.5">시세 70~80% 보증금</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-700 bg-emerald-50/50">임대 기간 1%대 전세대출, 분양 시 장기모기지</td>
+        <td class="border border-slate-200 p-2.5">6년 거주 후 분양 여부 선택 (분양가는 입주시 감정가+분양시 감정가 평균)</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">일반형 (기존 공공분양)</td>
+        <td class="border border-slate-200 p-2.5">시세의 80% 수준</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-slate-700">기존 디딤돌·보금자리론 대출 적용</td>
+        <td class="border border-slate-200 p-2.5">일반적인 전매제한 및 실거주 의무 적용 후 자유 처분</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. 무주택 청년·신혼부부 당첨선 예측 및 가점 합격선</h2>
+<p>하우징허브 청약리서치팀이 분석한 주요 선호 지구의 예상 청약 저축 인정 금액 및 가점 커트라인은 다음과 같습니다.</p>
+
+<ul>
+  <li><b>고양창릉 / 남양주왕숙 (나눔형):</b> 일반공급 저축총액 당첨선 약 <b>1,850만~2,100만 원</b> 선 예상, 청년 특공 우선공급은 만점(9점) 경합 유력</li>
+  <li><b>마곡 / 한강변 거점지구:</b> 저축총액 <b>2,400만 원 이상</b> 및 신혼특공 12~13점(자녀 2명 이상 필수) 필요</li>
+  <li><b>수도권 외곽 지구:</b> 저축총액 1,200만 원 내외 및 추첨제 물량(청년 특공 20% 잔여 물량)을 노리는 2030 세대의 실속 청약 추천</li>
+</ul>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 스마트 자가진단 툴킷 연동 안내</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    본인의 정확한 청약통장 납입 회차와 인정 금액, 그리고 나눔형 전용 모기지 이용 시의 월 상환금을 사전에 점검하려면 상단 메뉴의 <b>[자가진단 계산기 > 청약 가점 및 대출 시뮬레이터]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 뉴:홈 청약 접수 전 필수 점검 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">LH청약플러스 청약일 전 아래 5가지 자격 요건을 반드시 대조하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nh-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nh-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 세대 구성원 전원 무주택 세대구성원 자격 유지</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">주민등록등본상 직계존비속의 주택 소유 여부 사전 조회 (단, 만 60세 이상 직계존속 소유는 일부 예외)</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nh-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nh-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 전년도 도시근로자 가구당 월평균 소득 기준 대조</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">청년 140% 이하(약 470만 원), 신혼 130%(맞벌이 140%) 소득 구간 부합 여부 홈택스 원천징수 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nh-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nh-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 총자산(부동산+금융자산+자동차) 기준선 점검</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">청년 순자산 2억 8,900만 원 이하, 신혼부부 총자산 3억 7,900만 원 이하 및 자동차가액 기준 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nh-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nh-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 청약통장 납입 횟수 및 연체 내역 정상 납입 확인</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">자격확보</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">매월 10만 원(개편 후 25만 원) 인정 납입액 누락 여부 은행 방문 사전 검증</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nh-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nh-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 입주 후 의무거주 및 전매제한 기간 자금 흐름 계획</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">나눔형의 경우 최소 5년 의무거주 후 환매 시 시세차익 분배 구조 숙지</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">공공분양은 부적격 당첨 시 최장 1년간 수도권 내 청약 신청 자격이 엄격히 박탈되므로, 소득 및 자산 산정액을 1원 단위까지 재확인하십시오.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 사전청약 당첨 후 본청약 전까지 다른 민간 아파트 청약이 가능한가요?</h3>
+<p>A. 사전청약 당첨자 지위를 유지한 채로는 다른 공공분양 사전청약에 중복 신청할 수 없습니다. 다만 일반 민간 분양에 청약하여 정규 당첨된 경우 기존 사전청약 당첨 지위는 자동 취소 처리됩니다.</p>
+
+<h3>Q2. 나눔형 주택을 분양받은 후 5년 뒤 시세가 떨어지면 어떻게 되나요?</h3>
+<p>A. 의무거주 5년 후 LH에 환매할 때 시세 차손(손실)이 발생한 경우에도 차손의 70%는 수분양자가 부담하고 30%는 LH가 분담하는 구조로 설계되어 위험을 일부 덜 수 있습니다.</p>
+
+<h3>Q3. 미혼 청년 특별공급은 소득세 납부 이력이 반드시 필요한가요?</h3>
+<p>A. 네, 공고일 현재 근로자 또는 자영업자로서 5년 이상 소득세를 납부한 이력이 증빙되어야 청년 특별공급 1순위 자격이 충족됩니다.</p>
+`,
+    hashtags: ["공공분양", "뉴홈", "사전청약", "청약가점", "청년특별공급", "신혼부부특공", "하우징허브"]
+  },
+  {
     id: "post-20261001-didimdol-policy",
     title: "2026년 10월 1일 시행 4분기 주거안정 정책금융 개편 총정리: 신혼·출산 가구 디딤돌·버팀목 소득 기준 완화와 1%대 저금리 대환 실무 가이드",
     category: "대출-금융",
