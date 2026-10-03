@@ -2,6 +2,372 @@ import { Post } from "../types";
 
 export const POSTS_RECENT: Post[] = [
   {
+    id: "post-20261003-onehouse-tax",
+    title: "2026년 10월 3일 최신 1주택 상급지 갈아타기 세무 가이드: 일시적 2주택 3년 비과세 요건과 취득세 중과 배제 및 자금조달계획서 작성 실무",
+    category: "대출-금융",
+    author: "하우징허브",
+    date: "2026-10-03",
+    time: "10:15:00",
+    readTime: "10분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 3일 기준 1주택자의 상급지 갈아타기 시 필수적인 일시적 1가구 2주택 양도소득세 비과세 요건(종전주택 취득 후 1년 경과, 신규주택 취득 후 3년 내 처분)과 취득세 기본세율(1~3%) 적용 기준, 자금조달계획서 증빙 서류 작성법을 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 3일, 가을 부동산 시장에서 무주택자의 내 집 마련뿐만 아니라 기존 1주택자의 '상급지 갈아타기' 수요가 급증하고 있습니다. 하지만 취득세와 양도소득세의 복잡한 세법 규정, 특히 <b>'일시적 1가구 2주택 비과세' 요건의 기한과 종전주택 매도 시점</b>을 하루라도 어기면 수천만 원에서 수억 원에 달하는 세금 폭탄을 맞을 수 있습니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">상급지 이동 및 평수 확대 준비 1주택자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 10분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>일시적 2주택 3년 처분 기한:</strong> 종전주택 취득일로부터 최소 1년 경과 후 신규주택을 취득해야 하며, 신규주택 취득일로부터 3년 이내에 종전주택을 양도해야 12억 원까지 비과세 적용</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>취득세 중과 배제 (1~3% 일반세율):</strong> 조정대상지역 여부와 무관하게 일시적 2주택자는 신규주택 취득 시 1주택 일반세율(1~3%)로 우선 신고·납부 가능</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>자금조달계획서 증빙 철저:</strong> 투기과열지구 매수 시 기존 주택 매매계약서, 예금 잔액증명서, 주담대 금융거래확인서를 1원 단위까지 일치시켜 국세청 자금출처 소명 대비</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">종전주택의 양도 시점은 '잔금일'과 '소유권이전등기 접수일' 중 빠른 날 기준이므로, 계약 잔금일을 3년 기한 만료일보다 최소 1~2개월 여유 있게 잡아야 안전합니다.</span>
+  </div>
+</div>
+
+<h2>1. 일시적 1가구 2주택 핵심 세무 요건 비교표</h2>
+<p>갈아타기를 진행할 때 반드시 충족해야 할 3대 기본 요건(1-2-3 법칙)을 정리했습니다.</p>
+
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">구분</th>
+        <th class="border border-slate-200 p-2.5 font-bold">필수 충족 기준</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700">세제 혜택 내용</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-red-600">위반 시 불이익</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">1단계: 취득 간격</td>
+        <td class="border border-slate-200 p-2.5">종전주택 취득 후 <b>최소 1년 이상 경과</b> 후 신규주택 계약</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700">일시적 2주택 비과세 자격 인정</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold">1년 미만 취득 시 다주택자 양도세 중과</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">2단계: 보유·거주</td>
+        <td class="border border-slate-200 p-2.5">종전주택 <b>2년 이상 보유</b> (취득당시 조정지역이면 2년 거주)</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700">1주택 양도소득세 12억 원까지 전액 비과세</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold">일반 과세 및 장특공제 축소</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">3단계: 종전주택 처분</td>
+        <td class="border border-slate-200 p-2.5">신규주택 취득일로부터 <b>3년 이내</b> 종전주택 매도</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700">취득세 중과(8%) 배제 + 1~3% 일반세율 확정</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold">취득세 차액 추징 + 가산세 부과</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. 1주택 갈아타기 자금조달계획서 작성 3대 원칙</h2>
+<p>투기과열지구 및 조정대상지역 내 주택 취득 시 자금조달계획서와 증빙자료 제출은 필수적입니다. 국세청의 상시 자금출처 조사 대상에서 제외되기 위해 아래 원칙을 엄수해야 합니다.</p>
+
+<ol class="space-y-2 my-3">
+  <li><b>1) 종전주택 매도 대금 연계:</b> 종전주택 매매계약서 사본을 제출하고, 잔금일이 신규주택 잔금일보다 늦어 일시적 브릿지 론(신용대출, 주담대)을 쓰는 경우 부채 항목에 정확히 명시해야 합니다.</li>
+  <li><b>2) 증여·차용 계약서 사전 확립:</b> 부모님이나 친족으로부터 일부 자금을 융통하는 경우 반드시 공증을 받거나 확정일자를 부여받은 차용증을 작성하고 법정 이자(연 4.6%)를 계좌 이체한 금융 거래 내역을 확보하십시오.</li>
+  <li><b>3) 스트레스 DSR 3단계 대출 한도 사전 확인:</b> 2026년 9월부터 강화된 스트레스 DSR 규제로 인해 기존 주택 처분 조건부 주담대라도 한도가 줄어들 수 있으므로 잔금 부족 리스크를 사전에 방지해야 합니다.</li>
+</ol>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 세무 & 대출 계산기 연동 안내</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    갈아탈 상급지 아파트의 매매가와 종전주택 양도가액을 입력하여 예상 취득세와 양도세 비과세 혜택 구간을 즉시 산출하려면 상단 메뉴의 <b>[자가진단 계산기 > 부동산 세금 및 DSR 계산기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 갈아타기 계약 전 필수 점검 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">신규 아파트 계약금 입금 전 아래 5가지 세무·행정 항목을 확인하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="tax-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="tax-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 종전주택 취득일로부터 만 1년 경과 여부 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">등기접수일 기준으로 정확히 1년 1일 이상 지난 후 신규주택 매매계약 체결</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="tax-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="tax-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 종전주택 거주 요건(취득 당시 조정지역 여부) 점검</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">취득일 당시 조정대상지역이었다면 단순 보유 2년 외에 실제 2년 전입 거주 증빙 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="tax-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="tax-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 신규주택 취득일로부터 3년 내 매도 일정 캘린더 등록</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">만기 3년 도래 전 최소 6개월 전부터 매물 출납 및 시세 조정 계획 수립</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="tax-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="tax-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 신규주택 취득세 1주택 일반세율 신고서 작성 확인</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">절세</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">법무사 소유권이전 등기 시 일시적 2주택 처분 서약서를 첨부해 1~3% 세율 적용 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="tax-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="tax-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 자금조달계획서 통장 잔고 및 차용 내역 일치 점검</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">계약금 및 잔금 출처 증빙 서류를 1원 단위까지 은행 거래내역서와 일치 완료</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">3년 기한 내에 종전주택이 매도되지 않으면 일반 다주택자 취득세 중과(8%) 차액 및 무거운 가산세가 소급 추징되므로 매도 시세를 보수적으로 책정해야 합니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 종전주택 양도가액이 12억 원을 넘으면 비과세를 아예 못 받나요?</h3>
+<p>A. 아닙니다. 양도가액 12억 원까지는 양도차익에 대해 100% 비과세가 적용되며, 12억 원을 초과하는 고가주택 분에 대해서만 초과 비율만큼 안분 계산하여 세금이 과세됩니다. 장기보유특별공제(최대 80%)도 적용받을 수 있습니다.</p>
+
+<h3>Q2. 신규주택에 반드시 실제로 입주해서 전입신고를 해야 하나요?</h3>
+<p>A. 현행 세법상 일시적 2주택 비과세를 위해 신규주택에 반드시 의무 전입할 필요는 없습니다. 3년 이내에 종전주택을 매도하기만 하면 비과세 요건이 충족됩니다. (단, 신규주택 담보대출 시 은행과의 전입 특약이 있다면 해당 은행 특약은 준수해야 합니다.)</p>
+
+<h3>Q3. 분양권을 취득한 경우에도 일시적 2주택 3년 규정이 적용되나요?</h3>
+<p>A. 분양권 취득일로부터 3년 이내에 종전주택을 매도하거나, 신축 아파트 완공 후 3년 이내에 세대원 전원이 입주하여 1년 이상 계속 거주하면서 완공 후 3년 이내에 종전주택을 매도하면 비과세 특례가 인정됩니다.</p>
+`,
+    hashtags: ["일시적2주택", "갈아타기", "양도소득세비과세", "취득세중과배제", "자금조달계획서", "하우징허브"]
+  },
+  {
+    id: "post-20261002-jeonse-safety",
+    title: "2026년 10월 가을 이사철 전세사기 안심 계약 5단계 특약 실무 가이드: HUG 전세보증금 반환보증 가입 기준 완화와 대항력 사수법",
+    category: "전월세",
+    author: "하우징허브",
+    date: "2026-10-02",
+    time: "09:20:00",
+    readTime: "9분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&q=80&w=800",
+    excerpt: "가을 이사철을 맞아 HUG 전세보증금 반환보증 가입 요건(공시가격 126% 기준)과 계약 당일 확정일자 대항력 공백을 막는 5대 필수 특약, 집주인 세금 체납 및 선순위 근저당 감액등기 서면 확약법을 하우징허브 주거안정팀이 상세히 공개합니다.",
+    content: `<p>2026년 10월, 본격적인 가을 이사철을 맞아 전세 계약을 앞둔 세입자들의 불안감이 높아지고 있습니다. 특히 다세대·빌라뿐만 아니라 아파트 전세 시장에서도 임대인의 무자본 갭투자나 선순위 근저당, 국세 체납 등으로 인해 전세보증금을 온전히 돌려받지 못하는 사고가 지속적으로 발생하고 있기 때문입니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">전세 및 반전세 신규 계약 예정 임차인</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 9분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>HUG 126% 룰 점검:</strong> 공시가격의 140%에 전세가율 90%를 곱한 126% 기준 이내여야 HUG 전세보증금 반환보증 가입 가능</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>대항력 공백 방어 특약:</strong> 전입신고 효력이 익일 0시에 발생하는 취약점을 방어하기 위해 '잔금일 익일까지 일체의 권리 변동 금지' 조항 명시</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>임대인 미납 국세 사전 열람:</strong> 계약 체결 전 집주인의 국세·지방세 납세증명서 열람 요구 및 당해세 우선변제 리스크 원천 차단</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">반환보증 거절 시 계약금을 무조건 반환한다는 특약 없이는 계약금(보증금의 5~10%)을 절대 먼저 송금하지 마십시오.</span>
+  </div>
+</div>
+
+<h2>1. 전세 계약 시 반드시 넣어야 할 5대 안전 특약 문구</h2>
+<p>부동산 중개업소의 표준 계약서 양식에 만족하지 말고, 특약사항 란에 아래 문구를 토씨 하나 틀리지 않고 기재해야 법적 안전판이 확보됩니다.</p>
+
+<ol class="space-y-2 my-3">
+  <li><b>1) 대항력 효력 발생 특약:</b> "임대인은 임차인의 잔금 지급일 다음 날까지 담보권(근저당권 등) 설정 및 소유권 이전 등 일체의 권리 변동을 하지 않으며, 위반 시 본 계약은 무효로 하고 임대인은 계약금 및 보증금 전액을 즉시 반환하며 위약금으로 보증금의 10%를 지급한다."</li>
+  <li><b>2) 보증보험 가입 불가 시 계약 해제:</b> "임대인 또는 임차 목적물의 하자로 인해 HUG 또는 SGI의 전세보증금 반환보증 가입이 승인되지 않을 경우, 본 계약은 소급하여 무효로 하며 임대인은 기지급된 계약금 전액을 조건 없이 즉시 반환한다."</li>
+  <li><b>3) 선순위 근저당 감액 및 말소 확약:</b> "임대인은 잔금 지급 당일까지 등기부상 채권최고액 ○○억 원의 근저당권을 전액 말소(또는 감액) 처리하고 영수증을 공인중개사를 통해 임차인에게 교부한다."</li>
+  <li><b>4) 임대인 변경 사전 고지 및 동의:</b> "임대차 계약 기간 중 매매 등으로 임대인이 변경될 경우 임대인은 잔금일 1개월 전 임차인에게 서면 고지해야 하며, 임차인이 승계를 원하지 않을 경우 계약을 해지하고 보증금을 즉시 반환받을 수 있다."</li>
+  <li><b>5) 국세·지방세 완납 증명:</b> "임대인은 계약 시 국세 및 지방세 완납증명서를 임차인에게 제시하며, 잔금일 현재 미납 세금이 확인될 경우 계약을 해제할 수 있다."</li>
+</ol>
+
+<h2>2. 2026년 가을 HUG 보증 요건 vs 시중 전세가율 비교표</h2>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">주택 유형</th>
+        <th class="border border-slate-200 p-2.5 font-bold">공시가격 인정 비율</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50">HUG 보증 한도 (공시가 대비)</th>
+        <th class="border border-slate-200 p-2.5 font-bold">안전성 평가</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">아파트</td>
+        <td class="border border-slate-200 p-2.5">KB부동산 시세 1순위 적용</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-700 bg-emerald-50/50">KB시세 일반평균가의 90% 이내</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">안전 (시세 투명성 높음)</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">연립·다세대 (빌라)</td>
+        <td class="border border-slate-200 p-2.5">공시가격의 140%</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-700 bg-emerald-50/50">공시가격의 126% 이내 (140% × 90%)</td>
+        <td class="border border-slate-200 p-2.5 text-amber-700 font-bold">주의 (126% 초과 시 보증 불가)</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">주거용 오피스텔</td>
+        <td class="border border-slate-200 p-2.5">홈택스 기준시가의 120%</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-700 bg-emerald-50/50">기준시가의 약 108% 이내</td>
+        <td class="border border-slate-200 p-2.5 text-amber-700 font-bold">주의 (전세가율 80% 이하 권장)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 스마트 자가진단 툴킷 연동 안내</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    입주하려는 집의 공시가격이나 KB시세를 입력하여 HUG 전세보증금 반환보증 가입 가능 여부와 적정 전세 보증금을 산출하려면 상단 메뉴의 <b>[자가진단 계산기 > 전세가율 및 보증보험 진단기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 전세 계약 당일 필수 점검 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">잔금 이체 전 아래 5가지 필수 절차를 현장에서 반드시 완료하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="js-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="js-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 잔금 당일 아침 등기부등본 실시간 재열람</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">계약 체결일과 잔금일 사이에 새로운 가압류, 근저당권, 임차권등기 설정 여부 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="js-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="js-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 집주인 신분증 진위 확인 및 집주인 명의 계좌 입금</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">정부24 주민등록증 진위확인 서비스 조회 및 대리인 계약 시 인감증명서·위임장 대조</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="js-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="js-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 잔금 지급 즉시 주민센터 전입신고 및 확정일자 부여</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">이사 당일 오후 6시 전 관할 주민센터를 방문하여 주택임대차 신고와 전입신고를 동시에 접수</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="js-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="js-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 계약서 상 5대 안전 특약 문구 누락 확인</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">안전보장</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">반환보증 불가 시 계약금 반환 및 익일까지 권리변동 금지 조항 날인 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="js-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="js-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. HUG 또는 카카오페이 안심전세 모바일 보증 가입 신청</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">잔금 지급일로부터 1개월 이내에 전세보증금 반환보증 가입 절차를 신속히 완료</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">부동산 공인중개사의 구두 설명만 믿지 마시고 반드시 등기부등본 원본과 건축물대장상 위반건축물 표기 여부를 직접 확인하십시오.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 전입신고를 인터넷(정부24)으로 해도 당일 대항력이 생기나요?</h3>
+<p>A. 정부24를 통한 온라인 전입신고는 공무원의 근무 시간(오후 6시) 내에 승인 처리되어야 합니다. 업무 마감 직전이나 주말에 접수하면 다음 영업일에 수리되어 대항력 공백이 길어질 수 있으므로 잔금일에는 가급적 주민센터를 직접 방문하시는 것을 권장합니다.</p>
+
+<h3>Q2. 집주인이 보증금 반환보증 가입에 동의하지 않으면 가입이 불가능한가요?</h3>
+<p>A. 아닙니다. 현행 HUG 전세보증금 반환보증 제도는 임대인의 동의가 전혀 필요 없습니다. 임차인이 전단계약서와 확정일자, 주민등록등본을 구비하여 단독으로 신청할 수 있습니다.</p>
+
+<h3>Q3. 위반건축물로 등재된 원룸이나 다세대주택도 보증보험에 가입할 수 있나요?</h3>
+<p>A. 건축물대장상 위반건축물로 등재되어 있거나 불법 쪼개기 방인 경우 HUG 전세보증금 반환보증 가입이 전면 거절됩니다. 계약 전 건축물대장 총괄표제부를 반드시 무료 열람해 보셔야 합니다.</p>
+`,
+    hashtags: ["전세사기예방", "전세보증금반환보증", "HUG", "안전특약", "대항력", "가을이사철", "하우징허브"]
+  },
+  {
     id: "post-20261001-newhome-supply",
     title: "2026년 10월 1일 긴급 확정 고시: 4분기 수도권 공공분양 뉴:홈 1만 호 공급 일정과 무주택 청년·신혼부부 당첨선 예측 분석",
     category: "청약-분양",
