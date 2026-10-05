@@ -2,6 +2,354 @@ import { Post } from "../types";
 
 export const POSTS_RECENT: Post[] = [
   {
+    id: "post-20261005-jeonse-bijeongsaek",
+    title: "2026년 10월 5일 시행 주택도시기금 버팀목 전세대출 개편 총정리: 청년·신혼부부 수도권 보증금 한도 3억 원 상향과 1%대 금리 우대 실무",
+    category: "대출-금융",
+    author: "하우징허브",
+    date: "2026-10-05",
+    time: "09:15:00",
+    readTime: "10분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 5일 월요일부터 주택도시기금 버팀목 전세자금대출의 수도권 임차보증금 한도가 기존 3억 원에서 4억 원(대출 한도 최대 3억 원)으로 상향 적용됩니다. 청년 전용 및 신혼부부 전용 금리 우대(최저 연 1.5%) 요건과 은행 심사 시 필수 서류를 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 5일 월요일, 국토교통부와 주택도시보증공사(HUG)는 무주택 청년과 신혼부부의 주거 사다리 강화를 위해 <b>'주택도시기금 버팀목 전세자금대출 지원 기준 확대 개정안'</b>을 금일 오전부터 전국 5대 수탁은행을 통해 전면 시행했습니다. 최근 수도권 빌라 및 소형 아파트 전세가격 상승분을 반영하여 보증금 대상 한도와 대출 상한액을 대폭 증액한 것이 핵심입니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">전세 계약 예정 무주택 청년·신혼가구</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 10분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>수도권 보증금 한도 4억 원 상향:</strong> 대상 주택 임차보증금 상한선이 수도권 4억 원(대출 한도 최대 3억 원), 지방 3억 원으로 확대되어 선택 폭 대폭 증대</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>금리 최저 1.5% 우대 혜택:</strong> 부부합산 연 소득 구간에 따라 연 2.1~2.9% 기본 금리에 다자녀·신혼·전자계약 우대 누적 시 최저 연 1.5% 적용</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>HUG 안심전세보증 패키지 연계:</strong> 대출 실행과 동시에 보증금 반환보증이 일괄 가입되어 깡통전세 리스크 원천 차단</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">부동산 전자계약시스템(부동산원)을 이용해 계약서를 작성하면 대출 우대금리 0.1%p가 자동 적용되어 2년간 약 60만 원의 이자가 추가 절약됩니다.</span>
+  </div>
+</div>
+
+<h2>1. 2026년 10월 5일 개편 버팀목 전세대출 세부 변경 기준표</h2>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">상품 구분</th>
+        <th class="border border-slate-200 p-2.5 font-bold">기존 보증금 / 대출 한도</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50">10월 5일 개정 보증금 / 대출 한도</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700">적용 금리 (우대 후)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">청년전용 버팀목 (만 19~34세)</td>
+        <td class="border border-slate-200 p-2.5">보증금 3억 / 한도 2억 원</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">보증금 3.5억 / <b>한도 2.5억 원</b></td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 1.80% ~ 2.70%</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">신혼부부 전용 버팀목 (혼인 7년)</td>
+        <td class="border border-slate-200 p-2.5">수도권 3억 / 한도 2.5억 원</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">수도권 4억 / <b>한도 3.0억 원</b></td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 1.50% ~ 2.40%</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">일반 버팀목 전세자금</td>
+        <td class="border border-slate-200 p-2.5">수도권 3억 / 한도 1.2억 원</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50/50">수도권 3.5억 / <b>한도 1.8억 원</b></td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 2.10% ~ 2.90%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. 시중은행 전세대출 vs 기금 버팀목 월 이자 지출 비교</h2>
+<p>동일한 전세보증금 3억 원(대출금 2억 4천만 원 가정)을 실행했을 때의 월 이자 지출 차이입니다.</p>
+<ul>
+  <li><b>시중은행 일반 전세대출 (연 4.30% 적용 시):</b> 월 이자 약 <b>860,000원</b></li>
+  <li><b>신혼부부 버팀목 전세대출 (연 1.80% 적용 시):</b> 월 이자 약 <b>360,000원</b></li>
+  <li><b>👉 절감액:</b> <b>매월 50만 원 (연간 600만 원, 2년 약정 시 총 1,200만 원 순절약)</b></li>
+</ul>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 전세대출 & DSR 시뮬레이터</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    본인의 부부합산 소득과 계약하려는 집의 보증금을 입력하여 버팀목 전세대출 승인 가능 한도와 월 이자액을 즉시 산출하려면 상단 메뉴의 <b>[자가진단 계산기 > 버팀목 전세자금 대출 계산기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 버팀목 전세대출 신청 전 5대 점검 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">은행 방문 전 아래 5가지 필수 서류와 요건을 반드시 대조하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="bt-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="bt-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 부부합산 순자산 기준(3억 4,500만 원 이하) 대조</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">금융자산, 부동산, 자동차가액 합산액에서 부채를 차감한 순자산 적격 여부 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="bt-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="bt-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 임대차계약서 상 확정일자 부여 및 계약금 5% 이상 납입영수증</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">주민센터 또는 인터넷등기소를 통한 확정일자 날인과 임대인 계좌 입금증 확보</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="bt-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="bt-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 목적물 HUG 반환보증 가입 가능 여부(공시가 126% 룰)</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">보증보험 미가입 시 대출 승인이 불가하므로 주택 시세 및 근저당 말소 여부 사전 심사</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="bt-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="bt-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 부동산 전자계약 체결을 통한 추가 우대금리 0.1%p 확보</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">절세</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">공인중개사에게 부동산 전자계약 요청 시 대출 금리 추가 인하 적용</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="bt-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="bt-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 계약서 상 버팀목 대출 부적격 시 계약금 무조건 반환 특약 기재</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">은행 심사 거절 시 기납입 계약금을 안전하게 돌려받기 위한 필수 안전장치</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">기금e든든 사전심사 적격 판정을 받더라도 실제 은행 영업점 서류 심사에서 부채 과다 등으로 한도가 삭감될 수 있으므로 잔금일 최소 1개월 전에 신청해야 합니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 무소득자나 프리랜서도 청년 버팀목 대출을 받을 수 있나요?</h3>
+<p>A. 네, 무소득자이거나 입사 1년 미만인 경우에도 HUG 보증서를 활용하면 최대 3,300만 원~최대 1억 원 한도 내에서 대출 승인이 가능합니다.</p>
+
+<h3>Q2. 생애주기 중 1회만 이용 가능한가요?</h3>
+<p>A. 아닙니다. 버팀목 대출은 대출금을 전액 상환하고 무주택 자격을 유지하고 있다면 이사 시 새로운 주택에 대해 재신청이 가능합니다. (기본 2년 만기, 4회 연장으로 최장 10년 이용 가능)</p>
+
+<h3>Q3. 오피스텔도 버팀목 전세대출 대상이 되나요?</h3>
+<p>A. 전용면적 85㎡ 이하이며 주민등록 전입이 가능한 주거용 오피스텔은 버팀목 전세자금대출 대상에 온전히 포함됩니다.</p>
+`,
+    hashtags: ["버팀목전세대출", "청년버팀목", "신혼부부전세대출", "전세보증금한도", "주택도시기금", "하우징허브"]
+  },
+  {
+    id: "post-20261004-interior-as",
+    title: "2026년 가을 인테리어 리모델링 하자보증 5대 특약 가이드: 턴키 계약 시 하자이행보증증권 발급과 공사 지체상금 방어법",
+    category: "이사-인테리어",
+    author: "하우징허브",
+    date: "2026-10-04",
+    time: "14:20:00",
+    readTime: "9분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&q=80&w=800",
+    excerpt: "가을 이사철 인테리어 공사 분쟁을 원천 차단하기 위해 실내건축공사업 면허 업체 확인법과 계약금·중도금·잔금(10:40:40:10) 황금 지급 비율, 서울보증보험 하자이행보증증권 의무 발행 특약 작성법을 상세히 공개합니다.",
+    content: `<p>2026년 가을 이사철을 맞아 노후 아파트나 주택을 매수하고 전체 인테리어 리모델링을 진행하는 가구가 급증하고 있습니다. 그러나 공사 중단, 추가금 강요, 입주 후 누수나 결로 등 하자가 발생했을 때 시공업체가 연락을 두절하는 등 이른바 '인테리어 먹튀' 피해 사례가 한국소비자원에 끊이지 않고 접수되고 있습니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">턴키 아파트 인테리어 및 셀프 리모델링 준비자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 9분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>실내건축공사업 면허 필수:</strong> 공사비 1,500만 원 이상 시 국토교통부 등록 전문건설업 면허 보유 업체와 계약해야 건설산업기본법 보호 가능</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>대금 지급 1-4-4-1 공식:</strong> 계약금 10%, 착공 후 중도금 40%, 마감 중간검수 40%, 입주 후 최종 하자 점검 잔금 10% 분할 지급 엄수</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>하자이행보증증권 의무화:</strong> 총 공사금액의 10%에 해당하는 서울보증보험(SGI) 하자보증증권을 잔금 지급과 동시 교부받는 특약 명시</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">공사 완공 예정일 하루 지연 시마다 총 공사금액의 0.1%(지체상금율)를 공제하는 '지체상금 조항'을 계약서에 넣으면 공기 지연을 99% 방지할 수 있습니다.</span>
+  </div>
+</div>
+
+<h2>1. 인테리어 대금 지급 단계별 기준 및 리스크 방어표</h2>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">지급 단계</th>
+        <th class="border border-slate-200 p-2.5 font-bold">권장 지급 비율</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700">현장 확인 필수 사항</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-red-600">위험 요인</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">1단계: 계약금</td>
+        <td class="border border-slate-200 p-2.5">총 공사비의 <b>10% 이하</b></td>
+        <td class="border border-slate-200 p-2.5">공정표, 상세 자재 명세서(스펙북) 첨부 확인</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">계약금 과다 요구 후 착공 지연</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">2단계: 1차 중도금</td>
+        <td class="border border-slate-200 p-2.5">총 공사비의 <b>30~40%</b></td>
+        <td class="border border-slate-200 p-2.5">철거 완료, 단열·배관·창호 현장 입고 확인</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">자재 미반입 상태에서 대금 선지급 위험</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">3단계: 2차 중도금</td>
+        <td class="border border-slate-200 p-2.5">총 공사비의 <b>30~40%</b></td>
+        <td class="border border-slate-200 p-2.5">목공, 타일, 도장 완료 및 싱크대 설치 확인</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">시공 불량 상태에서 압박 결제 요구</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">4단계: 최종 잔금</td>
+        <td class="border border-slate-200 p-2.5">총 공사비의 <b>10%</b></td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">입주 청소 후 하자 보수 완료 + 보증증권 수령</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">잔금 지급 후 하자 AS 불이행</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 인테리어 계약 전 필수 점검 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">업체와 도장 찍기 전 아래 5대 조항을 계약서에 명시하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="int-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="int-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 키스콘(KISCON) 실내건축공사업 정식 등록 면허 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">무면허 인테리어 업체의 부실시공 분쟁 시 행정처분 및 보증 청구 제한 방지</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="int-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="int-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 공정거래위원회 표준계약서 양식 채택 여부</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">업체 자체 간이 계약서 대신 공정위 실내건축·창호 공사 표준계약서 사용</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="int-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="int-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 서울보증보험(SGI) 하자보수보증증권(10%, 1~2년) 발급 확약</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">안전보장</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">업체가 폐업하더라도 보증기관에서 수리비 전액을 직접 보상받는 안전장치</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="int-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="int-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 지체상금율(일당 공사비의 0.1%) 지연 배상 명시</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">공기엄수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">입주일 맞춤 이사 일정 차질 및 임시 숙박비 손해 방지 조항 명기</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="int-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="int-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 상세 자재 브랜드·규격(스펙북) 계약서 첨부</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">'동급 자재'라는 모호한 표현 대신 타일 브랜드, 마루 품번을 명확히 명기</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">현금 결제 시 부가세를 빼주겠다는 제안은 탈세 유도일 뿐만 아니라 추후 하자 발생 시 법적 계약 증빙이 어려워지므로 반드시 현금영수증 또는 세금계산서를 발급받으십시오.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 공사 도중 추가 공사비를 요구하면 무조건 줘야 하나요?</h3>
+<p>A. 아닙니다. 사전에 소비자의 서면 동의 없는 일방적인 추가 공사는 대금을 지급할 의무가 없습니다. 추가 공사가 필요한 경우 사전 견적서와 작업 내역에 대한 상호 서면 합의가 선행되어야 합니다.</p>
+
+<h3>Q2. 아파트 인테리어 공사 시 입주민 동의서는 몇 % 받아야 하나요?</h3>
+<p>A. 관리규약에 따라 다르지만 통상 해당 동 입주민의 50% 이상(비내력벽 철거 등 행위허가 수반 시 50~70% 이상)의 동의서가 필요합니다.</p>
+
+<h3>Q3. 하자 담보 책임 기간은 법적으로 며칠인가요?</h3>
+<p>A. 건설산업기본법상 실내의장 공사의 법정 하자담보책임 기간은 1년입니다. 방수나 단열 등 중대 하자는 특약을 통해 2~3년으로 연장 합의할 수 있습니다.</p>
+`,
+    hashtags: ["인테리어계약", "하자이행보증증권", "리모델링특약", "실내건축공사업", "지체상금", "하우징허브"]
+  },
+  {
     id: "post-20261003-onehouse-tax",
     title: "2026년 10월 3일 최신 1주택 상급지 갈아타기 세무 가이드: 일시적 2주택 3년 비과세 요건과 취득세 중과 배제 및 자금조달계획서 작성 실무",
     category: "대출-금융",
