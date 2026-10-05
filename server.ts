@@ -213,6 +213,55 @@ app.get("/api/posts", (req, res) => {
   });
 });
 
+// API 1.6: 4개 블로그 통합 최신 포스트 데이터 JSON 서빙 (외부 스크립트 및 타 사이트 연동 지원)
+app.get("/api/exports/latest", (req, res) => {
+  try {
+    const exportsDir = path.join(process.cwd(), "exports", "2026-10-05");
+    const nutubePath = path.join(exportsDir, "nutube.json");
+    const virginroadPath = path.join(exportsDir, "virginroad.json");
+    const lifecalcPath = path.join(exportsDir, "life-calc.json");
+    const zip9Path = path.join(exportsDir, "zip9-housinghub.json");
+
+    const result: Record<string, any> = {
+      date: "2026-10-05",
+      sites: {
+        "zip9.kr": fs.existsSync(zip9Path) ? JSON.parse(fs.readFileSync(zip9Path, "utf-8")) : null,
+        "nutube.kr": fs.existsSync(nutubePath) ? JSON.parse(fs.readFileSync(nutubePath, "utf-8")) : null,
+        "virginroad.kr": fs.existsSync(virginroadPath) ? JSON.parse(fs.readFileSync(virginroadPath, "utf-8")) : null,
+        "life-calc.kr": fs.existsSync(lifecalcPath) ? JSON.parse(fs.readFileSync(lifecalcPath, "utf-8")) : null,
+      }
+    };
+    res.json(result);
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+app.get("/api/exports/:site", (req, res) => {
+  try {
+    const site = req.params.site.replace(/\.kr$/, "").replace(/www\./, "");
+    const exportsDir = path.join(process.cwd(), "exports", "2026-10-05");
+    let targetFile = "";
+    if (site.includes("nutube") || site.includes("nitube")) targetFile = "nutube.json";
+    else if (site.includes("virginroad")) targetFile = "virginroad.json";
+    else if (site.includes("life-calc") || site.includes("lifecalc")) targetFile = "life-calc.json";
+    else if (site.includes("zip9")) targetFile = "zip9-housinghub.json";
+
+    if (!targetFile) {
+      return res.status(404).json({ error: "Site not found. Valid: zip9, nutube, virginroad, life-calc" });
+    }
+
+    const filePath = path.join(exportsDir, targetFile);
+    if (!fs.existsSync(filePath)) {
+      return res.status(404).json({ error: `File ${targetFile} not found` });
+    }
+    return res.json(JSON.parse(fs.readFileSync(filePath, "utf-8")));
+  } catch (err: any) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
+
 // API 1.8: 구글 서치콘솔 및 검색엔진 색인 자동 삭제(De-indexing) 백단 자동 처리
 // 삭제되거나 만료된 포스트 URL 요청 시 백엔드에서 HTTP 410 Gone + X-Robots-Tag: noindex를 자동 반환하며
 // IndexNow에 즉시 전송하여 구글 서치콘솔 및 검색엔진에서 색인이 자동으로 삭제되도록 처리합니다.
