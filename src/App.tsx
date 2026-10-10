@@ -630,6 +630,98 @@ export default function App() {
               /* D. 메인 글 목록 (티스토리 웹진형/리스트형 블로그 피드) */
               <div className="space-y-6">
                 
+                {/* [고가치 콘텐츠 인증] 스마트 주거 자가진단 툴킷 & E-E-A-T 공인 안내 섹션 */}
+                {selectedCategory === "전체" && !searchTerm && !selectedTag && currentPage === 1 && (
+                  <div className="bg-gradient-to-br from-slate-900 via-slate-800 to-indigo-950 text-white rounded-2xl p-6 sm:p-7 shadow-xs border border-slate-700/80 space-y-5">
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-700/60 pb-4">
+                      <div className="space-y-1">
+                        <div className="flex items-center gap-2">
+                          <span className="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-emerald-500 text-slate-950 font-mono">
+                            FREE INTERACTIVE TOOLKIT
+                          </span>
+                          <span className="text-xs text-slate-300 font-medium">무료 주거 자가진단</span>
+                        </div>
+                        <h2 className="text-lg sm:text-xl font-bold tracking-tight text-white m-0">
+                          신혼부부·무주택자를 위한 2026 스마트 주거 자가진단 툴킷
+                        </h2>
+                        <p className="text-xs sm:text-sm text-slate-300 leading-relaxed m-0">
+                          국토교통부·한국부동산원 공시 기준 반영! DSR 대출한도, 청약 가점, HUG 전세보증금 안전선, 부동산 세금을 즉시 모의 계산하세요.
+                        </p>
+                      </div>
+                      <button
+                        onClick={handleOpenToolkit}
+                        className="shrink-0 px-4 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-xs sm:text-sm rounded-xl transition-all shadow-xs flex items-center justify-center gap-1.5 cursor-pointer"
+                      >
+                        <Calculator className="w-4 h-4" />
+                        <span>진단 툴킷 열기</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+
+                    {/* 4대 퀵 진단 카드 */}
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+                      <button
+                        onClick={handleOpenToolkit}
+                        className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 text-left transition-all cursor-pointer group"
+                      >
+                        <div className="text-emerald-400 font-bold text-xs mb-1 flex items-center justify-between">
+                          <span>스트레스 DSR</span>
+                          <span className="text-[10px] opacity-70 group-hover:translate-x-0.5 transition-transform">→</span>
+                        </div>
+                        <p className="text-[11px] text-slate-300 font-medium leading-tight m-0">주담대 최대 인출 한도 및 월 상환액 역산</p>
+                      </button>
+
+                      <button
+                        onClick={handleOpenToolkit}
+                        className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 text-left transition-all cursor-pointer group"
+                      >
+                        <div className="text-blue-400 font-bold text-xs mb-1 flex items-center justify-between">
+                          <span>청약 가점 84점</span>
+                          <span className="text-[10px] opacity-70 group-hover:translate-x-0.5 transition-transform">→</span>
+                        </div>
+                        <p className="text-[11px] text-slate-300 font-medium leading-tight m-0">무주택기간·부양가족수 부적격 방지 판정</p>
+                      </button>
+
+                      <button
+                        onClick={handleOpenToolkit}
+                        className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 text-left transition-all cursor-pointer group"
+                      >
+                        <div className="text-amber-400 font-bold text-xs mb-1 flex items-center justify-between">
+                          <span>HUG 안심 전세</span>
+                          <span className="text-[10px] opacity-70 group-hover:translate-x-0.5 transition-transform">→</span>
+                        </div>
+                        <p className="text-[11px] text-slate-300 font-medium leading-tight m-0">공시가 126% 기준 반환보증 가입 여부</p>
+                      </button>
+
+                      <button
+                        onClick={handleOpenToolkit}
+                        className="p-3 bg-white/5 hover:bg-white/10 rounded-xl border border-white/10 text-left transition-all cursor-pointer group"
+                      >
+                        <div className="text-purple-400 font-bold text-xs mb-1 flex items-center justify-between">
+                          <span>취득·양도세 플랜</span>
+                          <span className="text-[10px] opacity-70 group-hover:translate-x-0.5 transition-transform">→</span>
+                        </div>
+                        <p className="text-[11px] text-slate-300 font-medium leading-tight m-0">일시적 2주택 3년 처분 및 비과세 구간</p>
+                      </button>
+                    </div>
+
+                    {/* E-E-A-T 검증 및 투명성 보증 배너 */}
+                    <div className="pt-3 border-t border-slate-700/60 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-300">
+                      <div className="flex items-center gap-2">
+                        <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
+                        <span>하우징허브 4인 전문 연구진(공인중개사·여신자문역 등) 법령 교차 검증</span>
+                      </div>
+                      <button
+                        onClick={() => handleOpenLegal("about")}
+                        className="text-emerald-400 hover:text-emerald-300 hover:underline font-semibold flex items-center gap-1 cursor-pointer bg-transparent border-none p-0"
+                      >
+                        <span>발행 헌장 &amp; 팩트체크 기준 확인</span>
+                        <ChevronRight className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  </div>
+                )}
+
                 {/* 상단 분류 헤더 및 소분류 필터 바 */}
                 <div className="p-5 bg-white rounded-lg border border-slate-200 shadow-2xs space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-100 pb-3">

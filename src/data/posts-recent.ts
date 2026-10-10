@@ -2,6 +2,911 @@ import { Post } from "../types";
 
 export const POSTS_RECENT: Post[] = [
   {
+    id: "post-20261010-reconstruction-jeonse-move",
+    title: "2026년 10월 10일 최신 서울 재건축·재개발 관리처분인가 후 이주비 대출 및 전세 안전 계약 실무 가이드",
+    category: "청약-분양",
+    author: "하우징허브",
+    date: "2026-10-10",
+    time: "09:30:00",
+    readTime: "11분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 10일 가을 이사철 대규모 정비사업 이주 시작! 관리처분인가 단지 조합원 이주비 대출 LTV 한도 승계 규정과 인근 전세 품귀 현상 속 깡통전세 예방을 위한 등기부 신탁등기 말소 특약 작성법을 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 10일, 서울 및 수도권 핵심 정비사업 단지들의 <b>관리처분계획인가 고시와 가을철 대규모 주민 이주</b>가 본격화되고 있습니다. 수천 세대가 일시에 전세 시장으로 유입되면서 인근 아파트 및 빌라 전세가격이 불안정해지고, 조합원 이주비 대출 규제와 세입자 보증금 반환 분쟁이 속출하고 있습니다. 하우징허브 정책분석실이 재건축 이주비 대출 승계 요건과 인근 대체 전세 계약 시 깡통전세를 차단하는 무결점 실무 가이드를 정리해 드립니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">정비사업 조합원, 이주 세입자, 인근 주택 임대차 계약 예정자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 11분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>조합원 이주비 대출 (LTV 50~60%):</strong> 관리처분인가 후 조합이 선정한 주간 금융기관을 통해 종전자산평가액 기준으로 기본 이주비 일괄 실행</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>세입자 주거이전비 및 이사비 보상:</strong> 사업인정고시일(정비구역 지정공람일) 3개월 전부터 계속 거주한 세입자는 가구원 수에 따른 법정 주거이전비 수령 자격 확보</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>신탁등기 물건 임대차 주의보:</strong> 재건축 단지 내 전세계약 시 신탁원부 확인 없이 위탁자(조합원)와 맺은 계약은 무효이므로 반드시 수탁자(신탁사) 사전 승낙 확인 필수</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">이주 기간 개시 후 세입자가 제때 퇴거하지 않으면 조합원에게 연체 이자가 부과되므로, 세입자 임차보증금 반환 시점과 이주비 대출 실행일을 1주일 이내로 정밀 동기화해야 합니다.</span>
+  </div>
+</div>
+
+<h2>1. 재개발 vs 재건축 이주비 및 세입자 보상 규정 정밀 비교표</h2>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">비교 항목</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700 bg-blue-50">공공성 재개발 (도시정비법 제54조)</th>
+        <th class="border border-slate-200 p-2.5 font-bold">민간 재건축</th>
+        <th class="border border-slate-200 p-2.5 font-bold">실무 주의사항</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">1. 세입자 주거이전비</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold bg-blue-50/50">법정 의무 지급 (4개월치 가계지출비)</td>
+        <td class="border border-slate-200 p-2.5 text-slate-600">법적 지급 의무 없음 (조합 자율)</td>
+        <td class="border border-slate-200 p-2.5">정비구역 공람공고일 기준 거주 요건 검증</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">2. 동산이전비 (이사비)</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold bg-blue-50/50">노임·차량 운임 실비 지급</td>
+        <td class="border border-slate-200 p-2.5 text-slate-600">지급 의무 없음</td>
+        <td class="border border-slate-200 p-2.5">주택 면적별 차등 지급</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">3. 조합원 이주비 대출</td>
+        <td class="border border-slate-200 p-2.5 font-bold">종전자산평가액 LTV 50~60%</td>
+        <td class="border border-slate-200 p-2.5 font-bold">종전자산평가액 LTV 50~60%</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">다주택자는 이주비 대출 규제 적용 주의</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">4. 전세보증금 반환 시점</td>
+        <td class="border border-slate-200 p-2.5">이주 기간 내 퇴거 완료일</td>
+        <td class="border border-slate-200 p-2.5">이주 기간 내 퇴거 완료일</td>
+        <td class="border border-slate-200 p-2.5">명도 완료 확인서 수령 후 지급</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 DSR 및 주택담보대출 한도 진단기</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    정비사업 이주비 대출 및 추가 임차보증금 반환 자금 대출 신청 시 본인의 DSR 한도 충족 여부를 1초 만에 확인하세요. 상단 메뉴의 <b>[자가진단 계산기 > DSR·LTV 한도 계산기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 재건축·재개발 이주 및 대체주택 계약 5대 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">이주비 신청 및 인근 전세계약 체결 전 반드시 확인해야 할 필수 점검표</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-ij1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-ij1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 관리처분인가 후 신탁등기 완료 여부 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">조합으로 소유권이 신탁 이전된 경우 신탁사의 사전 동의 없는 임대차 계약은 대항력 상실</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-ij2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-ij2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 다주택 조합원의 이주비 대출 규제 예외 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">2주택 이상 보유 세대는 이주비 대출이 제한될 수 있으므로 주택 처분 서약 등 은행 규정 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-ij3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-ij3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 명도확인서 발급 및 공과금 완납 영수증 구비</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">보증금정산</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">세입자 퇴거 시 수도·전기·가스 계량기 폐전 처리 및 조합 사무실 명도확인 도장 확보</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-ij4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-ij4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 인근 대체주택 계약 시 전세보증보험 가입 가부 확인</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">이주 수요로 급등한 빌라·다세대 전세계약 시 HUG 전세보증금 반환보증 126% 기준 충족 대조</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-ij5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-ij5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 양도소득세 대체주택 비과세 특례 요건 점검</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">이주 기간 중 취득한 대체주택에서 1년 이상 실거주 및 신축 아파트 완공 후 3년 내 전입 요건 확인</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">신축 아파트 완공 후 3년 이내에 세대 전원이 이사하여 1년 이상 계속 거주하지 않으면 대체주택 비과세 혜택이 취소되고 가산세가 추징됩니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 재건축 조합원이 받은 이주비 대출은 DSR(총부채원리금상환비율) 산정에 포함되나요?</h3>
+<p>A. 정비사업 이주비 대출은 정책상 집단대출로 취급되어 차주 단위 DSR 규제 대상에서 제외됩니다. 다만 금융당국의 가계부채 관리 기조에 따라 은행별로 자체 가산금리가 차등 적용될 수 있습니다.</p>
+
+<h3>Q2. 세입자가 관리처분인가 후 계약 기간이 남았다고 이주를 거부할 수 있나요?</h3>
+<p>A. 도시 및 주거환경정비법 제81조에 따라 관리처분계획인가의 고시가 있은 때에는 종전 토지 또는 건축물의 사용·수익이 정지되므로, 임차인은 임대차 계약 기간 만료 전이라도 계약을 해지하고 보증금 반환을 청구할 수 있으며 이주 명령에 응해야 합니다.</p>
+
+<h3>Q3. 대체주택을 매수할 때 취득세 중과세율이 적용되나요?</h3>
+<p>A. 관리처분인가 이후 철거 또는 멸실되어 멸실등기가 완료된 조합원입주권은 주택 수 산정에는 포함되나, 실주거를 위해 취득하는 대체주택은 일시적 2주택 특례가 적용되어 일반세율(1~3%)이 적용될 수 있으므로 매수 시점의 멸실 여부를 세무사와 사전 상담해야 합니다.</p>
+`,
+    hashtags: ["재건축이주비", "관리처분인가", "정비사업", "대체주택", "하우징허브"]
+  },
+  {
+    id: "post-20261009-first-homebuyer-didimdol",
+    title: "2026년 10월 9일 한글날 최신 생애최초 주택구입자 디딤돌 대출 LTV 80% 한도와 최저 1.5% 우대금리 요건 총정리",
+    category: "대출-금융",
+    author: "하우징허브",
+    date: "2026-10-09",
+    time: "09:30:00",
+    readTime: "11분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 9일 기준 주택도시기금 내집마련 디딤돌 대출의 생애최초 특례 규정 점검! 주택가격 6억 원 이하, 부부소득 8.5천만 원 이하 대상 최대 4억 원 대출 한도와 청약통장 보유·신혼가구 우대금리 중복 적용을 통한 월 원리금 절감법을 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 9일 한글날, 시중은행 주택담보대출 금리가 연 4%대를 웃도는 상황에서 <b>생애 처음으로 내 집 마련에 나서는 무주택 서민들의 최대 피난처</b>는 국토교통부 주택도시기금의 '내집마련 디딤돌 대출'입니다. 생애최초 주택구입자에게는 <b>LTV 최대 80%와 한도 4억 원</b>이 부여되며, 각종 정책 우대금리를 결합하면 <b>연 1.5~2.4%대의 압도적인 초저금리</b>를 최장 30년간 고정·변동으로 누릴 수 있습니다. 하우징허브 금융정책팀이 심사 통과 노하우를 총정리합니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">생애 처음 주택을 구입하는 무주택 세대주</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 11분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>소득 및 주택 기준:</strong> 부부합산 연소득 8,500만 원 이하(신혼·2자녀 이상), 대상 주택가격 6억 원 이하(전용 85㎡ 이하)</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>생애최초 한도 특례:</strong> 일반 LTV 70%가 아닌 LTV 80% 적용, 최대 한도 4억 원까지 지원</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>우대금리 중복 할인:</strong> 생애최초 0.2%p, 청약통장 5년 60회 0.3%p, 전자계약 0.1%p, 신혼 0.2%p 중복 차감</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">생애최초 LTV 80%를 전액 받으려면 주택금융공사의 모기지신용보증(MCG)에 반드시 가입하여 방공제(소액임차보증금 차감) 금액을 커버해야 합니다.</span>
+  </div>
+</div>
+
+<h2>1. 생애최초 디딤돌 vs 시중은행 주택담보대출 4억 원 대출 상환액 비교표</h2>
+<p>기준: 2026년 10월, 30년 만기 원리금균등분할상환 기준 (단위: 원)</p>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">구분</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700 bg-blue-50">생애최초 디딤돌 (우대적용 연 2.1%)</th>
+        <th class="border border-slate-200 p-2.5 font-bold">시중 5대 은행 주담대 (연 4.3%)</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-emerald-800">절감 효과 (디딤돌 우위)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">대출 원금</td>
+        <td class="border border-slate-200 p-2.5">400,000,000원</td>
+        <td class="border border-slate-200 p-2.5">400,000,000원</td>
+        <td class="border border-slate-200 p-2.5">동일</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">월 원리금 상환액</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold bg-blue-50/50">약 1,498,000원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">약 1,979,000원</td>
+        <td class="border border-slate-200 p-2.5 text-emerald-700 font-bold">매월 약 481,000원 절약</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">30년 총 납입 이자</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold bg-blue-50/50">약 139,400,000원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">약 312,700,000원</td>
+        <td class="border border-slate-200 p-2.5 text-emerald-800 font-extrabold bg-emerald-100/60">총 이자 1억 7,330만 원 절감</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">중도상환수수료</td>
+        <td class="border border-slate-200 p-2.5">3년 후 전액 면제 (슬라이딩)</td>
+        <td class="border border-slate-200 p-2.5">3년 후 면제 (최대 1.2%)</td>
+        <td class="border border-slate-200 p-2.5">공공기금 저수수료</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 내집마련 디딤돌 원리금 상환 시뮬레이터</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    본인의 소득과 주택가격, 보유한 청약통장 납입 횟수를 입력하여 최종 적용 금리와 월 상환 원리금을 1초 만에 자동 계산하세요. 상단 메뉴의 <b>[자가진단 계산기 > 디딤돌·버팀목 계산기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 디딤돌 대출 신청 전 5대 자격 검증 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">기금e든든 심사 부적격 판정을 사전에 방어하는 점검표</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-dd1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-dd1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 세대원 전원의 무주택 유지 및 생애최초 여부 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">주민등록등본상 배우자 및 세대원 전원이 과거에 한 번도 주택을 소유한 이력이 없어야 함</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-dd2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-dd2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 매매계약서상 매매대금 6억 원 이하 충족</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">KB부동산 시세 및 실거래 매매가액 중 둘 다 6억 원 이하(신혼·2자녀 가구 기준)여야 승인 가능</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-dd3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-dd3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 청약통장 순위확인서 발급 및 우대금리 반영</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">금리우대</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">가입기간 5년 이상 60회차 이상 납입 시 연 0.3%p 금리 우대 즉시 반영</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-dd4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-dd4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 부동산 전자계약 체결 여부 (0.1%p 할인)</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">국토교통부 부동산거래 전자계약시스템을 통해 매매계약을 체결하여 우대금리 추가 획득</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-dd5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-dd5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 1개월 내 전입 및 1년 이상 실거주 의무 서약</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">대출 실행 후 1개월 이내 전입신고 및 1년간 계속 거주 요건 위반 시 대출금 즉시 회수 주의</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">대출 실행 후 불가피한 사유 없이 1개월 내 전입신고를 하지 않거나 1년 미만 거주 후 퇴거 시 대출 원리금 전액 상환 요구와 함께 가산금리가 부과됩니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 생애최초 주택구입 시 소형 아파트를 과거에 상속받았던 적이 있어도 가능한가요?</h3>
+<p>A. 무주택 세대주 인정 기준상 상속으로 인해 주택의 공유지분을 취득하였다가 상속개시일로부터 3개월 이내에 그 지분을 처분한 경우에는 무주택자로 간주되어 생애최초 신청이 가능합니다.</p>
+
+<h3>Q2. 생애최초 LTV 80% 적용 시 방공제(최우선변제 소액임차보증금)는 어떻게 면제받나요?</h3>
+<p>A. 한국주택금융공사의 모기지신용보증(MCG)을 연계 신청하면 서울 기준 5,500만 원의 방공제 금액 차감 없이 주택가격의 최대 80%를 그대로 대출받을 수 있습니다.</p>
+
+<h3>Q3. 부부 중 한 사람만 무주택이고 한 사람은 유주택자였던 이력이 있으면 생애최초가 안 되나요?</h3>
+<p>A. 생애최초 특례는 주민등록상 세대원 전원이 단 한 번도 주택을 취득한 적이 없어야 하므로, 배우자가 결혼 전에 주택을 보유했다가 매도한 이력이 있더라도 생애최초 자격은 상실되며 일반 디딤돌(LTV 70%)로 진행해야 합니다.</p>
+`,
+    hashtags: ["디딤돌대출", "생애최초", "주택도시기금", "초저금리", "내집마련", "하우징허브"]
+  },
+  {
+    id: "post-20261008-stress-dsr-stage3",
+    title: "2026년 10월 8일 최신 3단계 스트레스 DSR 전면 적용 대비: 주택담보대출 한도 축소액 계산 및 은행권 가산금리 방어 5대 전략",
+    category: "대출-금융",
+    author: "하우징허브",
+    date: "2026-10-08",
+    time: "09:30:00",
+    readTime: "11분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 8일 금융위원회의 3단계 스트레스 DSR 확대 시행 일정 점검! 연봉 8,000만 원 맞벌이 가구의 주담대 한도가 기존 대비 최대 6,500만 원 축소되는 시뮬레이션 결과와 주기형·혼합형 금리 선택을 통한 한도 사수 비법을 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 8일, 금융당국이 가계부채 관리를 위해 <b>'3단계 스트레스 DSR(총부채원리금상환비율)'의 전면 시행 세부 가이드라인</b>을 고시했습니다. 기존 2단계 스트레스 DSR에 비해 가산금리 반영 비율이 100%로 확대되고 전세대출 및 신용대출까지 합산 규제망에 포섭되면서, <b>연봉 8,000만 원 직장인의 주담대 대출 가능 한도가 최대 5,000만~6,500만 원 이상 대폭 삭감</b>됩니다. 하우징허브 금융분석팀이 대출 절벽을 뚫고 한도를 극대화하는 5대 실전 전략을 제시합니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">연내 주택 매수 및 주담대 신규 신청 예정자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 11분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>스트레스 금리 100% 반영:</strong> 과거 5년 중 최고금리와 현재금리의 차이를 가산금리로 100% 얹어 대출 심사 시 연 소득 대비 상환 원리금을 강제 상향</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>주기형(5년 고정) 금리 선택 필수:</strong> 순수 변동금리는 스트레스 금리가 100% 적용되지만, 5년 주기형은 30%만 반영되어 한도가 약 3,500만 원 더 나옴</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>신용대출·마이너스통장 사전 상환:</strong> 마이너스통장은 쓰지 않고 한도만 열어두어도 DSR 계산 시 전액 부채로 잡혀 주담대 한도를 깎아먹으므로 즉시 해지 권장</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">주택 매매 계약 체결 전 '매수인의 귀책 없는 대출 미발생 시 계약금 전액 무조건 반환' 특약을 부동산 계약서에 특약사항으로 명문화해야 계약금을 지킬 수 있습니다.</span>
+  </div>
+</div>
+
+<h2>1. 소득 구간별 스트레스 DSR 적용 단계별 주담대 한도 축소액 비교표</h2>
+<p>기준: 30년 만기 원리금균등분할상환, 변동금리 대출 신청 시 (단위: 만 원)</p>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">연 소득</th>
+        <th class="border border-slate-200 p-2.5 font-bold">스트레스 DSR 미적용 (과거)</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-blue-700 bg-blue-50">2단계 적용 (현재)</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-red-600 bg-red-50">3단계 전면 적용 (예정)</th>
+        <th class="border border-slate-200 p-2.5 font-bold">한도 삭감 총액</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">연봉 5,000만 원</td>
+        <td class="border border-slate-200 p-2.5">약 3억 3,000만 원</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 bg-blue-50/50">약 3억 200만 원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold bg-red-50/50">약 2억 8,800만 원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold">-4,200만 원</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">연봉 8,000만 원</td>
+        <td class="border border-slate-200 p-2.5">약 5억 2,800만 원</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 bg-blue-50/50">약 4억 8,300만 원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold bg-red-50/50">약 4억 6,100만 원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold">-6,700만 원</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">연봉 1억 원 (맞벌이)</td>
+        <td class="border border-slate-200 p-2.5">약 6억 6,000만 원</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 bg-blue-50/50">약 6억 400만 원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-bold bg-red-50/50">약 5억 7,600만 원</td>
+        <td class="border border-slate-200 p-2.5 text-red-600 font-extrabold bg-red-100/60">-8,400만 원 (최대 축소)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 3단계 스트레스 DSR 실시간 한도 계산기</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    본인의 연 소득과 기존 보유 대출, 신규 매수 주택 가격을 입력하면 스트레스 DSR 단계별 축소액과 대출 가능 금액을 1초 만에 확인해 드립니다. 상단 메뉴의 <b>[자가진단 계산기 > DSR·LTV 한도 계산기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 스트레스 DSR 대출 한도 사수 5대 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">은행 창구 방문 전 반드시 확인해야 할 부채 정리 리스트</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-st1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-st1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 주기형(5년 주기 고정) 금리 상품 지정</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">변동금리 대비 가산금리가 대폭 낮아져 동일 연봉 기준 대출 한도가 수천만 원 증가</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-st2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-st2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 미사용 마이너스통장 한도 감액 및 해지</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">실제 인출하지 않은 5,000만 원 한도 통장도 DSR 원리금으로 잡히므로 대출 심사 전 해지</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-st3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-st3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 대출 만기 기간 최대 설정 (30년~40년)</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">한도확보</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">만기를 길게 늘려 연간 원리금 상환 부담을 낮춤으로써 DSR 40% 한도 내 총 대출액 극대화</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-st4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-st4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 배우자 소득 합산 및 맞벌이 DSR 활용</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">부부 공동명의로 주택을 매수하고 소득을 합산하여 DSR 기준 모수를 두 배로 확장</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="chk-st5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="chk-st5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 부동산 계약서 대출 특약 문구 삽입</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">'금융기관의 DSR 규제 강화로 인한 대출 거절 시 본 계약은 조건 없이 무효로 한다' 명기</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">은행별 가계대출 총량 관리로 지점마다 주담대 가산금리와 한도가 상이하므로, 계약 체결 최소 2주 전에 1금융권 3개 이상의 주거래 은행에서 사전 가심사를 받아두어야 합니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 전세자금대출도 스트레스 DSR 산정에 포함되나요?</h3>
+<p>A. 3단계 스트레스 DSR 시행부터는 갭투자 방지를 위해 유주택자의 신규 전세자금대출 이자 상환액이 차주 단위 DSR 산정에 전면 합산됩니다. 단, 무주택 서민의 1주택 실거주용 전세대출은 합산이 유예됩니다.</p>
+
+<h3>Q2. 디딤돌 대출이나 보금자리론 등 정책금융 상품도 스트레스 DSR을 적용받나요?</h3>
+<p>A. 아닙니다. 주택도시기금의 디딤돌·버팀목 대출과 한국주택금융공사의 정책 모기지는 서민 주거 안정을 위한 정책금융이므로 스트레스 DSR 적용 대상에서 제외되어 기존 한도를 그대로 적용받습니다.</p>
+
+<h3>Q3. 기존에 받아둔 주택담보대출을 연장하거나 대환(갈아타기)할 때도 스트레스 DSR이 적용되나요?</h3>
+<p>A. 동일 은행에서 만기를 단순 연장하는 경우에는 신규 적용되지 않습니다. 그러나 타 은행으로 갈아타거나 대출 증액이 발생하는 신규 대환 대출의 경우에는 3단계 스트레스 DSR 기준이 전면 적용됩니다.</p>
+`,
+    hashtags: ["스트레스DSR", "3단계DSR", "주담대한도", "주기형금리", "하우징허브"]
+  },
+  {
+    id: "post-20261007-cheongyak-score",
+    title: "2026년 10월 7일 최신 청약 가점 84점 만점 산정 기준표: 무주택기간 착오 방지법과 부양가족 부적격 취소 0건 달성 가이드",
+    category: "청약-분양",
+    author: "하우징허브",
+    date: "2026-10-07",
+    time: "09:30:00",
+    readTime: "11분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 7일 기준 한국부동산원 청약홈 가점제 84점 만점 구조(무주택기간 32점, 부양가족수 35점, 통장 가입기간 17점)와 당첨자 부적격 취소 1위인 무주택기간 기산일 산정 오류 방지법, 직계존속 3년 계속 등재 검증 요령을 하우징허브 연구팀이 정밀 분석합니다.",
+    content: `<p>2026년 10월 7일, 수도권 인기 분양 단지의 청약 열기가 고조되는 가운데 청약홈 통계에 따르면 <b>일반공급 가점제 당첨자의 약 10~15%가 서류 검증 단계에서 '단순 계산 착오'로 인해 당첨이 취소</b>되고 있습니다. 당첨이 부적격으로 취소되면 수도권 기준 최장 1년간 모든 아파트의 청약 신청이 전면 금지되는 치명적인 불이익을 받게 됩니다. 하우징허브 정책분석실이 84점 만점의 무결점 산정법을 완벽 해부합니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">민영주택 일반공급 가점제 청약 준비자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 11분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>무주택기간 기산일 (최대 32점):</strong> 만 30세가 되는 날부터 기산하되, 만 30세 이전에 혼인신고를 마친 경우 혼인관계증명서상 혼인신고일부터 기산</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>부양가족수 산정 (최대 35점, 1인당 5점):</strong> 직계존속(부모·시부모)은 입주자모집공고일 기준 최근 3년 이상 동일 주민등록등본에 계속 등재되어 있어야 인정</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>통장 가입기간 (최대 17점):</strong> 15년 이상 시 17점 만점이며, 청약홈 로그인 시 시스템에서 자동 산정되므로 임의 수정 금지</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">부모님이 만 60세 이상 주택을 소유하신 경우 민영주택 청약 시 무주택으로 인정되지만, '부양가족 점수' 산정 시에는 부양가족에서 제외해야 부적격을 피할 수 있습니다.</span>
+  </div>
+</div>
+
+<h2>1. 2026년 청약 가점 3대 평가 항목 배점표 총정리</h2>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">평가 항목</th>
+        <th class="border border-slate-200 p-2.5 font-bold">만점 기준</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50">배점 구조</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-red-600">주요 탈락 원인</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">1. 무주택기간</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-blue-700">32점 (15년 이상)</td>
+        <td class="border border-slate-200 p-2.5">1년 미만(2점)부터 매년 2점씩 누적 증가</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">만 30세 미만 미혼 기간 포함 오류, 세대원 유주택 간과</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">2. 부양가족수</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-blue-700">35점 (6인 이상)</td>
+        <td class="border border-slate-200 p-2.5">기본 0명(5점) + 1인당 5점씩 가산</td>
+        <td class="border border-slate-200 p-2.5 text-red-600">부모님 3년 계속 등재 미달, 만 30세 이상 미혼 자녀 1년 미등재</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">3. 입주자저축 가입기간</td>
+        <td class="border border-slate-200 p-2.5 font-bold text-blue-700">17점 (15년 이상)</td>
+        <td class="border border-slate-200 p-2.5">6개월 미만(1점)부터 매년 1점씩 누적 증가</td>
+        <td class="border border-slate-200 p-2.5 text-slate-600">청약통장 명의변경 시 가입일 기산 착오</td>
+      </tr>
+      <tr class="bg-slate-100 font-bold">
+        <td class="border border-slate-200 p-2.5">합계 (총점)</td>
+        <td class="border border-slate-200 p-2.5 text-emerald-800">84점 만점</td>
+        <td class="border border-slate-200 p-2.5 colspan-2">수도권 주요 정비사업 당첨선: 65~74점 형성</td>
+        <td class="border border-slate-200 p-2.5 text-blue-800">무결점 산정 필수</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. 무주택기간 산정의 3대 필수 원칙과 실전 판정 공식</h2>
+<ol class="space-y-2.5 my-3">
+  <li><b>1) 만 30세 이전 미혼자의 무주택기간:</b> 만 30세 미만이고 혼인하지 않은 단독 무주택자는 무주택기간이 '0점'입니다. 만 30세 생일이 도래하는 날부터 비로소 1년 차(2점) 계산이 시작됩니다.</li>
+  <li><b>2) 조기 결혼자의 기산일 특례:</b> 만 28세에 혼인신고를 마쳤다면, 만 30세가 아닌 '혼인신고일'부터 무주택기간이 기산되어 동년배 대비 4점의 가점을 조기에 확보할 수 있습니다.</li>
+  <li><b>3) 과거 주택을 매도한 유경험자:</b> 과거에 집을 소유했다가 매도한 경우, 무주택자가 된 날(등기접수일과 잔금일 중 늦은 날)과 만 30세(또는 혼인일) 중 더 늦은 날부터 새롭게 무주택기간을 기산해야 합니다.</li>
+</ol>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 청약 가점 84점 자동 산출 툴킷</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    본인의 생년월일, 혼인신고일, 세대원수, 통장 가입일을 입력하면 무주택기간 기산일부터 청약 가점을 1초 만에 자동 계산해 드립니다. 상단 메뉴의 <b>[자가진단 계산기 > 청약 가점 및 특별공급 진단기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 청약 신청 당일 가점 검증 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">청약홈 접수 버튼을 누르기 전 아래 5대 검증 항목을 대조하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="sc-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="sc-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 세대원 전원의 전국 건축물대장 및 지방세 과세증명 조회</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">배우자 및 동일 등본상 직계존비속의 분양권, 입주권, 시골 상속지분 소유 여부 사전 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="sc-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="sc-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 부모님 부양가족 산정 시 만 60세 이상 유주택 여부 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">부모님이 집을 소유한 경우 무주택 세대 인정은 되나 부양가족 점수(1인당 5점)에서는 반드시 제외</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="sc-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="sc-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 직계존속 3년 계속 등재 기간 중 일시적 전출 이력 검증</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">단 하루라도 다른 주소지로 전출된 이력이 있다면 3년 계속 등재 요건이 초기화되므로 등본 초본 검수</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="sc-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="sc-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 청약통장 지역별·면적별 예치금액 사전 충족 확인</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">자격유지</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">모집공고일 당일까지 서울 300만 원(85㎡ 이하) 등 지역별 예치금 일시납 완납 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="sc-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="sc-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 청약홈 모의청약 자격 사전검증 서비스 실행</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">한국부동산원 청약홈 사전검증을 통해 세대원 정보 및 과거 5년 재당첨 제한 여부 최종 대조</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">가점을 높여 적어 당첨된 후 부적격으로 판정되면 당첨 취소는 물론 수도권 최대 1년간 청약통장 효력이 정지되어 다른 유망 단지에도 신청할 수 없게 됩니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 소형·저가주택 1채를 소유하고 있어도 무주택자로 인정되나요?</h3>
+<p>A. 민영주택 일반공급 청약 시 전용면적 60㎡ 이하로서 공시가격이 수도권 1억 6천만 원, 지방 1억 원 이하인 소형·저가주택 1채를 소유한 세대는 무주택자로 간주하여 가점제 신청이 가능합니다. (단, 국민주택 및 공공분양 특별공급은 유주택으로 분류됩니다.)</p>
+
+<h3>Q2. 분양권을 취득한 경우 언제부터 유주택자가 되나요?</h3>
+<p>A. 2018년 12월 11일 이후 입주자모집공고를 통해 취득한 분양권이나 매수한 분양권은 '공급계약 체결일(또는 분양권 매매 잔금일)'부터 주택을 소유한 것으로 보아 무주택기간이 상실됩니다.</p>
+
+<h3>Q3. 배우자와 주민등록등본이 분리되어 있는 경우 무주택기간은 어떻게 계산하나요?</h3>
+<p>A. 법률상 부부는 주민등록이 분리되어 있더라도 동일한 세대로 간주됩니다. 따라서 분리배우자가 주택을 소유하고 있다면 본인도 유주택자로 분류되며, 무주택기간은 두 사람 중 더 늦게 무주택자가 된 시점을 기준으로 계산합니다.</p>
+`,
+    hashtags: ["청약가점", "84점만점", "무주택기간", "부양가족수", "청약홈", "하우징허브"]
+  },
+  {
+    id: "post-20261006-newborn-special-loan",
+    title: "2026년 10월 6일 국토교통부 신생아 특례 대출 소득 2억 원 완화 세부 지침: 디딤돌·버팀목 금리 구간 및 1주택 대환대출 신청 실무",
+    category: "대출-금융",
+    author: "하우징허브",
+    date: "2026-10-06",
+    time: "10:10:00",
+    readTime: "10분",
+    isEssential: true,
+    isHot: true,
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800",
+    excerpt: "2026년 10월 6일 국토교통부가 신생아 특례 구입자금(디딤돌) 및 전세자금(버팀목) 대출의 부부합산 소득 요건을 기존 1억 3천만 원에서 2억 원으로 전면 완화하는 세부 시행령을 고시했습니다. 9억 원 이하 주택 대상 1%대 금리 구간과 기존 1주택자의 대환대출 조건을 하우징허브가 정밀 분석합니다.",
+    content: `<p>2026년 10월 6일, 국토교통부와 주택도시보증공사(HUG)는 저출생 극복을 위한 주거지원 종합대책의 핵심 후속 조치로서 <b>'신생아 특례 대출 소득 요건 2억 원 완화 세부 운용 지침'</b>을 공식 확정 발표했습니다. 맞벌이 신혼부부의 소득 역차별을 해소하기 위해 부부합산 소득 상한을 2억 원까지 대폭 완화함으로써 고소득 맞벌이 가구도 1~2%대 초저리 정책 모기지를 이용할 수 있게 되었습니다.</p>
+
+<!-- [고도화 템플릿] 핵심 요약 카드 -->
+<div class="summary-card my-6 p-5 sm:p-6 bg-gradient-to-br from-blue-50/80 via-slate-50 to-indigo-50/60 border-2 border-blue-200/80 rounded-2xl shadow-xs space-y-4">
+  <div class="flex flex-wrap items-center justify-between gap-2 pb-3 border-b border-blue-200/60">
+    <div class="flex items-center gap-2">
+      <span class="px-3 py-1 bg-blue-700 text-white rounded-full text-xs font-bold tracking-wide shadow-2xs">
+        💡 30초 핵심 요약 카드
+      </span>
+      <span class="text-xs text-slate-500 font-medium">🎯 대상: <strong class="text-slate-700">2년 이내 출산(입양) 무주택 가구 및 1주택 대환 희망자</strong></span>
+    </div>
+    <span class="text-xs font-mono font-semibold px-2 py-0.5 bg-white border border-slate-200 rounded text-slate-600">
+      ⏱️ 10분 완독
+    </span>
+  </div>
+  <ul class="space-y-2.5 my-2 list-none p-0">
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>소득 기준 2억 원 완화:</strong> 부부합산 연 소득 1.3억 원 이하에서 2억 원 이하로 상향되어 맞벌이 가구 대다수가 수혜 대상 편입</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>매매가 9억 원 / 한도 5억 원:</strong> 주택 가격 9억 원 이하, 전용면적 85㎡ 이하 대상 최대 5억 원(LTV 최대 80%, DSR 미적용)</span>
+    </li>
+    <li class="flex items-start gap-2.5">
+      <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-blue-600 text-white text-xs font-bold shrink-0 mt-0.5">✓</span>
+      <span class="text-slate-800 font-medium text-sm sm:text-base leading-relaxed"><strong>기존 1주택 대환 허용:</strong> 이미 시중은행의 4%대 고금리 주담대를 이용 중인 1주택 출산 가구도 1%대 신생아 특례로 대환 갈아타기 가능</span>
+    </li>
+  </ul>
+  <div class="pt-3 border-t border-blue-200/60 flex items-start gap-2 text-xs sm:text-sm text-blue-900 bg-blue-100/50 p-3 rounded-xl">
+    <span class="font-bold shrink-0 text-blue-700">✨ 실무 팁:</span>
+    <span class="leading-relaxed">대출 실행 후 추가로 아이를 출산하면 1명당 연 0.2%p 금리가 추가 인하되며, 특례 금리 적용 기간이 5년씩 최장 15년까지 연장됩니다.</span>
+  </div>
+</div>
+
+<h2>1. 2026년 10월 개편 신생아 특례 디딤돌 금리 구간표</h2>
+<div class="overflow-x-auto my-4">
+  <table class="w-full border-collapse border border-slate-200 text-xs sm:text-sm text-left">
+    <thead>
+      <tr class="bg-slate-100 text-slate-800">
+        <th class="border border-slate-200 p-2.5 font-bold">부부합산 연소득 구간</th>
+        <th class="border border-slate-200 p-2.5 font-bold">만기 10년 금리</th>
+        <th class="border border-slate-200 p-2.5 font-bold">만기 20년 금리</th>
+        <th class="border border-slate-200 p-2.5 font-bold text-emerald-800 bg-emerald-50">만기 30년 금리</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">2,000만 원 이하</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 1.60%</td>
+        <td class="border border-slate-200 p-2.5 text-blue-700 font-bold">연 1.70%</td>
+        <td class="border border-slate-200 p-2.5 text-emerald-800 font-bold bg-emerald-50/50">연 1.75%</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">2,000만 ~ 4,000만 원</td>
+        <td class="border border-slate-200 p-2.5">연 2.05%</td>
+        <td class="border border-slate-200 p-2.5">연 2.15%</td>
+        <td class="border border-slate-200 p-2.5 font-semibold bg-emerald-50/50">연 2.20%</td>
+      </tr>
+      <tr>
+        <td class="border border-slate-200 p-2.5 font-semibold">4,000만 ~ 8,500만 원</td>
+        <td class="border border-slate-200 p-2.5">연 2.40%</td>
+        <td class="border border-slate-200 p-2.5">연 2.50%</td>
+        <td class="border border-slate-200 p-2.5 font-semibold bg-emerald-50/50">연 2.55%</td>
+      </tr>
+      <tr class="bg-slate-50">
+        <td class="border border-slate-200 p-2.5 font-semibold">8,500만 ~ 1.3억 원</td>
+        <td class="border border-slate-200 p-2.5">연 2.70%</td>
+        <td class="border border-slate-200 p-2.5">연 2.80%</td>
+        <td class="border border-slate-200 p-2.5 font-semibold bg-emerald-50/50">연 2.90%</td>
+      </tr>
+      <tr class="bg-blue-50 font-bold">
+        <td class="border border-slate-200 p-2.5 text-blue-900">1.3억 ~ 2.0억 원 (신설 구간)</td>
+        <td class="border border-slate-200 p-2.5 text-blue-800">연 3.05%</td>
+        <td class="border border-slate-200 p-2.5 text-blue-800">연 3.20%</td>
+        <td class="border border-slate-200 p-2.5 text-blue-900 bg-blue-100/50">연 3.30%</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>2. 시중은행 주담대 4.3% vs 신생아 특례 디딤돌 2.5% 이자 절감 실측치</h2>
+<p>주택 매매가 8억 원 아파트를 매수하며 5억 원을 30년 원리금균등분할상환으로 대출받았을 때의 비교입니다.</p>
+<ul>
+  <li><b>시중은행 일반 주담대 (연 4.30% 적용 시):</b> 월 원리금 약 <b>2,474,000원</b> (총 이자 3억 9,080만 원)</li>
+  <li><b>신생아 특례 디딤돌 (연 2.55% 적용 시):</b> 월 원리금 약 <b>1,988,000원</b> (총 이자 2억 1,595만 원)</li>
+  <li><b>👉 절감액:</b> <b>매월 48만 6천 원 순절약 (연간 583만 원, 5년 특례 기간 총 2,916만 원 순이자 절감)</b></li>
+</ul>
+
+<!-- 하우징허브 계산기 연계 안내 박스 -->
+<div class="my-6 p-5 bg-emerald-50/70 border border-emerald-300 rounded-xl space-y-2">
+  <div class="flex items-center gap-2 text-emerald-800 font-bold text-sm">
+    <span>💡 하우징허브 신생아 특례 대출 & 상환액 계산기</span>
+  </div>
+  <p class="text-xs sm:text-sm text-slate-700 leading-relaxed">
+    본인의 부부합산 소득과 매수할 주택 가격을 입력하면 예상 적용 금리와 월별 원리금 상환액, 이자 절감액을 즉시 계산해 드립니다. 상단 메뉴의 <b>[자가진단 계산기 > 주택담보대출 및 DSR 계산기]</b>를 활용하세요.
+  </p>
+</div>
+
+<!-- [고도화 템플릿] 체크리스트 요약 블록 -->
+<div class="checklist-block my-8 p-5 sm:p-6 bg-gradient-to-br from-emerald-50/70 via-white to-teal-50/50 border-2 border-emerald-300 rounded-2xl shadow-xs space-y-4">
+  <div class="flex items-center justify-between pb-3 border-b border-emerald-200">
+    <div class="space-y-1">
+      <div class="flex items-center gap-2">
+        <span class="p-1.5 bg-emerald-600 text-white rounded-lg inline-flex items-center justify-center text-xs">✓</span>
+        <h3 class="text-base sm:text-lg font-extrabold text-slate-900 m-0 tracking-tight">📋 신생아 특례 대출 신청 전 5대 점검 체크리스트</h3>
+      </div>
+      <p class="text-xs text-slate-500 m-0">은행 창구 방문 전 아래 5가지 필수 요건을 점검하세요.</p>
+    </div>
+    <span class="text-xs font-bold text-emerald-800 bg-emerald-100/80 px-2.5 py-1 rounded-full shrink-0">총 5개 항목</span>
+  </div>
+  <ul class="space-y-2.5 my-3 list-none p-0">
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nb-chk-1" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nb-chk-1" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">1. 대출신청일 기준 2년 내 출산(출생증명서/등본) 여부</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">2023년 1월 1일 이후 출생아부터 적용되며 임신 중인 태아는 출생 후 신청 가능</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nb-chk-2" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nb-chk-2" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">2. 매매 대상 주택 매매가 9억 원 및 전용 85㎡ 이하 확인</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">계약서상 실거래가와 KB부동산 일반평균가 모두 9억 원 이하 충족 필수</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nb-chk-3" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nb-chk-3" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">3. 부부합산 순자산 가액 4억 6,900만 원 이하 대조</span>
+          <span class="text-[10px] bg-red-100 text-red-700 px-1.5 py-0.2 rounded font-bold">필수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">금융자산, 부동산, 자동차가액에서 부채를 뺀 순자산 심사 기준 준수</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nb-chk-4" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nb-chk-4" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">4. 대환 목적 시 기존 주택담보대출 잔액 범위 내 대출 신청</span>
+          <span class="text-[10px] bg-emerald-100 text-emerald-800 px-1.5 py-0.2 rounded font-bold">대환확인</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">기존 은행 대출 잔액 범위 내에서만 대환 가능(추가 증액 불가) 확인</p>
+      </label>
+    </li>
+    <li class="checklist-item p-3.5 bg-white rounded-xl border border-emerald-200/80 flex items-start gap-3">
+      <input type="checkbox" id="nb-chk-5" class="w-4 h-4 text-emerald-600 mt-1 cursor-pointer" />
+      <label for="nb-chk-5" class="cursor-pointer flex-1">
+        <div class="flex items-center gap-2 mb-0.5">
+          <span class="font-bold text-sm text-slate-900">5. 기금e든든 모바일 앱을 통한 사전 자격 심사 접수</span>
+        </div>
+        <p class="text-xs text-slate-600 m-0">은행 방문 전 주택도시기금 기금e든든 사이트에서 스크래핑 서류 사전 적격 판정 확인</p>
+      </label>
+    </li>
+  </ul>
+  <div class="p-3 bg-amber-50 border border-amber-200 rounded-xl text-xs text-amber-900 flex items-start gap-2">
+    <span class="font-bold shrink-0 text-amber-700">⚠️ 사전 주의:</span>
+    <span class="leading-relaxed">대출 실행 후 1개월 이내에 목적물 주택에 전입신고를 완료하고 1년 이상 실거주를 유지해야 하며, 위반 시 대출금이 전액 즉시 회수됩니다.</span>
+  </div>
+</div>
+
+<h2>자주 묻는 질문 (FAQ)</h2>
+<h3>Q1. 미혼모나 사실혼 관계에서도 신생아 특례 대출이 가능한가요?</h3>
+<p>A. 혼인신고를 하지 않은 미혼모나 한부모 가정이라도 자녀의 출생증명서상 자녀가 등재되어 있다면 단독 소득 기준으로 신생아 특례 대출을 신청할 수 있습니다.</p>
+
+<h3>Q2. 분양권 상태인 아파트도 입주 잔금용으로 신생아 특례 디딤돌을 쓸 수 있나요?</h3>
+<p>A. 네, 분양가 9억 원 이하이고 소유권이전등기가 가능한 준공 시점의 아파트라면 분양 잔금 대출로 신생아 특례 디딤돌 대출을 실행할 수 있습니다.</p>
+
+<h3>Q3. 특례 금리 5년이 지나면 금리가 일반 시중은행 금리로 바뀌나요?</h3>
+<p>A. 5년 후 특례 기간이 종료되면 부부합산 소득에 따라 한국은행 기준금리 또는 시중은행 최저 수준의 금리가 적용되며, 추가 출산 시 1명당 5년씩 특례 기간이 최장 15년까지 연장됩니다.</p>
+`,
+    hashtags: ["신생아특례대출", "소득2억완화", "디딤돌대출", "버팀목대출", "대환대출", "하우징허브"]
+  },
+  {
     id: "post-20261005-jeonse-bijeongsaek",
     title: "2026년 10월 5일 시행 주택도시기금 버팀목 전세대출 개편 총정리: 청년·신혼부부 수도권 보증금 한도 3억 원 상향과 1%대 금리 우대 실무",
     category: "대출-금융",
