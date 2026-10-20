@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { POSTS } from "../data/posts";
+import { getActiveManualArticles, MANUAL_CATEGORY } from "../data/manual-articles";
 import { slugify } from "../types";
 
 export interface GscStatus {
@@ -40,46 +40,31 @@ class SearchConsoleAutoService {
   }
 
   /**
-   * Generates enhanced Google-compliant sitemap XML with image extensions
+   * Generates enhanced Google-compliant sitemap XML with active manual articles
    */
   public generateEnhancedSitemapXml(): string {
     const todayStr = new Date().toISOString().split("T")[0];
-    const categories = ["청약-분양", "전월세", "대출-금융", "이사-인테리어"];
-    const subpages = ["toolkit", "about", "terms", "privacy", "disclaimer", "announcement"];
+    const subpages = ["about", "contact", "privacy"];
 
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
-    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n`;
+    xml += `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
 
     // 1. Home
     xml += `  <url>\n    <loc>${SITE_URL}/</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>1.0</priority>\n  </url>\n`;
 
-    // 2. Categories
-    for (const cat of categories) {
-      xml += `  <url>\n    <loc>${SITE_URL}/category/${encodeURIComponent(cat)}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
-    }
+    // 2. Single Category
+    xml += `  <url>\n    <loc>${SITE_URL}/category/manual</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>daily</changefreq>\n    <priority>0.9</priority>\n  </url>\n`;
 
     // 3. Subpages
     for (const page of subpages) {
-      xml += `  <url>\n    <loc>${SITE_URL}/${page}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
+      xml += `  <url>\n    <loc>${SITE_URL}/${page}</loc>\n    <lastmod>${todayStr}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.8</priority>\n  </url>\n`;
     }
 
-    // 4. Posts with Google Image Schema
-    for (const post of POSTS) {
-      const slug = slugify(post.title);
-      const postDate = post.date || todayStr;
-      const cleanTitle = (post.title || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
-      const postImg = post.image || "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800";
-
-      xml += `  <url>\n`;
-      xml += `    <loc>${SITE_URL}/post/${encodeURIComponent(slug)}</loc>\n`;
-      xml += `    <lastmod>${postDate}</lastmod>\n`;
-      xml += `    <changefreq>monthly</changefreq>\n`;
-      xml += `    <priority>0.85</priority>\n`;
-      xml += `    <image:image>\n`;
-      xml += `      <image:loc>${postImg}</image:loc>\n`;
-      xml += `      <image:title>${cleanTitle}</image:title>\n`;
-      xml += `    </image:image>\n`;
-      xml += `  </url>\n`;
+    // 4. Currently Active Manual Articles
+    const activeArticles = getActiveManualArticles(todayStr);
+    for (const a of activeArticles) {
+      const postDate = a.publishedAt || todayStr;
+      xml += `  <url>\n    <loc>${SITE_URL}/post/${encodeURIComponent(a.slug)}</loc>\n    <lastmod>${postDate}</lastmod>\n    <changefreq>monthly</changefreq>\n    <priority>0.85</priority>\n  </url>\n`;
     }
 
     xml += `</urlset>`;
@@ -140,10 +125,15 @@ class SearchConsoleAutoService {
    * Submits active post URLs to IndexNow (Bing, Naver, Yandex, Seznam)
    */
   public async submitIndexNow(): Promise<{ status: number | string; ok: boolean; submittedUrls: number }> {
+    const todayStr = new Date().toISOString().split("T")[0];
+    const activeArticles = getActiveManualArticles(todayStr);
     const targetUrls: string[] = [
       `${SITE_URL}/`,
-      `${SITE_URL}/toolkit`,
-      ...POSTS.slice(0, 30).map(p => `${SITE_URL}/post/${encodeURIComponent(slugify(p.title))}`)
+      `${SITE_URL}/category/manual`,
+      `${SITE_URL}/about`,
+      `${SITE_URL}/contact`,
+      `${SITE_URL}/privacy`,
+      ...activeArticles.map(a => `${SITE_URL}/post/${encodeURIComponent(a.slug)}`)
     ];
 
     try {
@@ -230,7 +220,9 @@ class SearchConsoleAutoService {
    * Returns current internal state for silent diagnostics
    */
   public getDiagnostics(): GscStatus {
-    const totalSitemapUrls = 1 + 4 + 6 + POSTS.length; // Home + Categories + Subpages + Posts
+    const todayStr = new Date().toISOString().split("T")[0];
+    const activeArticles = getActiveManualArticles(todayStr);
+    const totalSitemapUrls = 1 + 1 + 3 + activeArticles.length; // Home + Category + 3 Subpages + Active Manual Articles
     return {
       service: "Google Search Console & Search Engine Auto-Indexer",
       mode: "Invisible Background Automation",
@@ -243,7 +235,7 @@ class SearchConsoleAutoService {
         headerToken: this.getVerificationToken(),
         verified: true
       },
-      totalActivePosts: POSTS.length,
+      totalActivePosts: activeArticles.length,
       totalSitemapUrls,
       lastSyncTimestamp: this.lastSyncTime,
       lastSyncResults: this.lastSyncResult

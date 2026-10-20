@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import { GoogleGenAI } from "@google/genai";
-import { POSTS } from "./src/data/posts";
+import { getActiveManualArticles, getManualArticleBySlug, MANUAL_CATEGORY, ManualArticle } from "./src/data/manual-articles";
 import { getServerSideProps } from "./src/server/getServerSideProps";
 import { searchConsoleService } from "./src/server/searchConsoleService";
 
@@ -38,10 +38,11 @@ app.use((req, res, next) => {
 });
 
 // ==========================================
-// [완전 고정 정적 포스트 관리 체계]
+// [자동 예약 발행 연동 정적 매뉴얼 포스트 관리 체계]
 // ==========================================
-function getActivePostsList(): any[] {
-  return POSTS;
+function getActivePostsList(): ManualArticle[] {
+  const todayStr = new Date().toISOString().split("T")[0];
+  return getActiveManualArticles(todayStr);
 }
 
 
