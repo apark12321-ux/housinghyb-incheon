@@ -143,7 +143,7 @@ function generateDynamicRssXml(): string {
   for (const post of recentPosts) {
     const slug = slugify(post.title);
     const pubDate = post.date ? new Date(post.date).toUTCString() : todayDate;
-    const cleanDesc = (post.excerpt || post.title).replace(/<[^>]*>/g, "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const cleanDesc = ((post.summary && post.summary[0]) || post.title).replace(/<[^>]*>/g, "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
     const cleanTitle = (post.title || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 
     rss += `    <item>\n`;
@@ -359,7 +359,7 @@ app.post("/api/advisor", async (req, res) => {
   if (activePostId) {
     const post = activePosts.find(p => p.id === activePostId);
     if (post) {
-      activePostContext = `\n[사용자 열람 중인 아티클 정보]:\n제목: ${post.title}\n요약: ${post.excerpt}`;
+      activePostContext = `\n[사용자 열람 중인 아티클 정보]:\n제목: ${post.title}\n요약: ${post.summary?.join(" ") || post.title}`;
     }
   }
 
@@ -393,7 +393,7 @@ app.post("/api/advisor", async (req, res) => {
   `;
 
   const findPostByKeyword = (kw: string) => {
-    const found = activePosts.find(p => p.title.includes(kw) || p.excerpt.includes(kw));
+    const found = activePosts.find(p => p.title.includes(kw) || (p.summary && p.summary.some(s => s.includes(kw))));
     return found ? { title: found.title, link: `/post/${slugify(found.title)}` } : null;
   };
 
@@ -728,8 +728,8 @@ async function startServer() {
       const ssrProps = getServerSideProps(req.path, req.query, activePosts, baseUrl);
 
       // 구글 검색엔진 색인 표준화: ID 형태나 비표준 슬러그로 진입 시 표준 URL로 301 영구 리디렉션
-      if (ssrProps.pageType === "post" && ssrProps.post) {
-        const canonicalSlug = slugify(ssrProps.post.title);
+      if (ssrProps.pageType === "post" && ssrProps.article) {
+        const canonicalSlug = slugify(ssrProps.article.title);
         const currentSlug = decodeURIComponent(req.path.replace(/^\/post\//, "").replace(/\/$/, ""));
         if (currentSlug && currentSlug !== canonicalSlug) {
           return res.redirect(301, `/post/${encodeURIComponent(canonicalSlug)}`);
@@ -739,8 +739,8 @@ async function startServer() {
       // 운영 환경에서 이미 빌드된 완전 정적 HTML 파일이 존재하는 경우 해당 파일 즉시 서빙 (크롤러 최적화)
       res.setHeader("Content-Type", "text/html; charset=utf-8");
       if (isProd) {
-        if (ssrProps.pageType === "post" && ssrProps.post) {
-          const slug = slugify(ssrProps.post.title);
+        if (ssrProps.pageType === "post" && ssrProps.article) {
+          const slug = slugify(ssrProps.article.title);
           const prerenderedPostPath = path.join(process.cwd(), "dist", "post", slug, "index.html");
           if (fs.existsSync(prerenderedPostPath)) {
             return res.send(fs.readFileSync(prerenderedPostPath, "utf-8"));
